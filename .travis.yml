@@ -1,6 +1,6 @@
 language: android
 jdk: oraclejdk8
-sudo: false
+sudo: true
 
 android:
   components:
@@ -10,8 +10,9 @@ android:
     - android-24
     - extra-android-m2repository
     - extra-google-m2repository
-    - NDK
-    - CMake
-    - LLDB
+
+before_install:
+  - git clone https://github.com/urho3d/android-ndk.git $HOME/android-ndk-root
+  - export ANDROID_NDK_HOME=$HOME/android-ndk-root
 
 script:
