@@ -1,6 +1,7 @@
+sudo: required
+dist: trusty
 language: android
 jdk: oraclejdk8
-sudo: true
 
 android:
   components:
