@@ -16,7 +16,7 @@ before_install:
   - export ANDROID_NDK_HOME=$HOME/android-ndk-root
   - sudo add-apt-repository ppa:george-edison55/precise-backports --yes
   - sudo apt-get -qq update
-  - sudo apt-get install cmake -y
+  - sudo apt-get -yq --no-install-suggests --no-install-recommends --force-yes install cmake cmake-data
   - sudo apt-get install -y ninja-build
   - sudo mkdir -p /usr/local/android-sdk/cmake/bin/
   - sudo ln -s /usr/bin/cmake /usr/local/android-sdk/cmake/bin/cmake
