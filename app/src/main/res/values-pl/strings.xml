@@ -64,8 +64,8 @@
     <string name="notify_error_not_ppf_patch">Niewłaściwa łatka PPF</string>
     <string name="notify_error_not_dps_patch">Niewłaściwa łatka DPS</string>
     <string name="notify_error_not_xdelta3_patch">Niewłaściwa łatka XDelta3</string>
-    <string name="notify_error_xdelta1_unsupported">I am not able to work with XDelta1 patches</string>
-    <string name="notify_error_unable_open_file">Unable open file</string>
+    <string name="notify_error_xdelta1_unsupported">Nie jestem wstanie pracować z łatkami XDelta1</string>
+    <string name="notify_error_unable_open_file">Nie można otworzyć pliku</string>
     <string name="notify_error_unknown_patch_format">Nieznany format łatki</string>
     <string name="notify_error_unexpected_end_of_file">Niespodziewany koniec pliku</string>
     <string name="notify_error_patch_corrupted">Plik łatki jest zepsuty</string>
@@ -99,7 +99,7 @@
     <string name="help_activity_changelog_tab_title">Dziennik zmian</string>
     <string name="help_activity_about_tab_title">O aplikacji</string>
     <string name="help_activity_about_tab_version">Wersja %1$s</string>
-    <string name="help_activity_about_tab_license">License: GNU GPLv3</string>
+    <string name="help_activity_about_tab_license">Licencja: GNU GPLv3</string>
     <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2016</string>
     <string name="help_activity_action_send_feedback">Wyślij opinię</string>
     <string name="help_activity_action_visit_site">Odwiedź stronę</string>
