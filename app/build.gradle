@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '24.0.2'
+
+    signingConfigs {
+        release
+    }
+
+    defaultConfig {
+        applicationId "org.emunix.unipatcher"
+        minSdkVersion 14
+        targetSdkVersion 24
+        versionCode 100000
+        versionName "0.10"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+                arguments "-DANDROID_PLATFORM=android-14"
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFile './proguard-android.txt'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+def Properties props = new Properties()
+def propFile = file('../../signing.properties')
+if (propFile.canRead()){
+    props.load(new FileInputStream(propFile))
+
+    if (props!=null && props.containsKey('STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
+            props.containsKey('KEY_ALIAS') && props.containsKey('KEY_PASSWORD')) {
+
+        println 'RELEASE BUILD SIGNING'
+
+        android.signingConfigs.release.storeFile = file(props['STORE_FILE'])
+        android.signingConfigs.release.storePassword = props['STORE_PASSWORD']
+        android.signingConfigs.release.keyAlias = props['KEY_ALIAS']
+        android.signingConfigs.release.keyPassword = props['KEY_PASSWORD']
+    } else {
+        println 'RELEASE BUILD NOT FOUND SIGNING PROPERTIES'
+
+        android.buildTypes.release.signingConfig = null
+    }
+} else {
+    println 'RELEASE BUILD NOT FOUND SIGNING FILE'
+    android.buildTypes.release.signingConfig = null
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v4:24.2.0'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:cardview-v7:24.2.0'
+    compile 'com.android.support:preference-v14:24.2.0'
+    compile 'com.android.support:recyclerview-v7:24.2.0'
+    compile 'com.android.support:design:24.2.0'
+    compile 'com.google.firebase:firebase-ads:9.4.0'
+    compile 'com.google.firebase:firebase-core:9.4.0'
+    compile 'com.google.firebase:firebase-crash:9.4.0'
+    compile 'com.anjlab.android.iab.v3:library:1.0.32'
+    compile 'commons-io:commons-io:2.5'
+    compile 'org.sufficientlysecure:html-textview:2.0'
+    compile 'com.afollestad.material-dialogs:core:0.9.0.1'
+}
+
+apply plugin: 'com.google.gms.google-services'

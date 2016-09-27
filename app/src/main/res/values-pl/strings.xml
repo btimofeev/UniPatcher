@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UniPatcher</string>
+    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
+    <string name="app_email">mashin87@gmail.com</string>
+
+    <!--Główna aktywność-->
+    <string name="main_activity_rom_file">Plik ROM</string>
+    <string name="main_activity_patch_file">Plik Łatki</string>
+    <string name="main_activity_output_file">Plik wyjściowy</string>
+    <string name="main_activity_header_file">Plik Nagłówkowy</string>
+    <string name="main_activity_tap_to_select">dotknij aby wybrać</string>
+    <string name="main_activity_tap_to_rename">dotknij aby zmienić nazwę</string>
+    <string name="main_activity_toast_rom_and_patch_not_selected">Pliki ROM i Łatki nie są wybrane</string>
+    <string name="main_activity_toast_rom_not_selected">ROM nie jest wybrany</string>
+    <string name="main_activity_toast_patch_not_selected">Łatka nie jest zaznaczona</string>
+    <string name="main_activity_toast_archives_not_supported">Archiwa powinny być wypakowane w zewnętrznym programie</string>
+
+    <!--Dialog zmiany nazwy-->
+    <string name="dialog_rename_title">Zmień Nazwę</string>
+    <string name="dialog_rename_ok">OK</string>
+    <string name="dialog_rename_cancel">Anuluj</string>
+    <string name="dialog_rename_error_same_name">Wejściowe i wyjściowe nazwy ROM-ów muszą być różne</string>
+    <string name="dialog_rename_error_invalid_chars">Niewłaściwy symbol /</string>
+
+    <!-- Informacja dla nagłówka SNES SMC-->
+    <string name="snes_smc_header_help">Ta opcja jest tylko dla ROM-ów Super Nintendo.\n\nIf ROM zawiera nagłówek SMC - zostanie on usunięty. Inaczej zostanie on dodany.\n\nUwaga: ta funkcja nie tworzy kopii zapasowej.</string>
+    <string name="snes_smc_header_will_be_removed">Ten ROM zawiera nagłówek SMC. Zostanie on usunięty.</string>
+    <string name="snes_smc_header_will_be_added">Ten ROM nie ma nagłówka SMC. Zostanie on dodany. Możesz wybrać swój nagłówek zamiast standardowego nagłówka.</string>
+
+    <!--Informacja dla naprawy sumy kontrolnej SMD-->
+    <string name="smd_fix_checksum_help">Ta opcja jest tylko dla ROM-ów Sega Mega Drive (Sega Genesis).\n\nIt naprawia \"czerwony ekran śmierci\".\n\nUwaga: ta opcja nie tworzy kopii zapasowej.</string>
+
+    <!-- Ekran Wybierania Plików -->
+    <string name="file_picker_activity_title">Wybierz plik</string>
+    <string name="file_picker_activity_title_select_rom">Wybierz plik ROM</string>
+    <string name="file_picker_activity_title_select_patch">Wybier plik Łatki</string>
+    <string name="file_picker_activity_title_select_header">Wybierz plik nagłówka</string>
+    <string name="file_picker_activity_error_unable_read_dir">Błędna ścieżka %1$s</string>
+
+    <!-- Dialog właściwości plików -->
+    <string name="file_properties_dialog_title">Właściwości</string>
+    <string name="file_properties_dialog_name">Nazwa:</string>
+    <string name="file_properties_dialog_path">Ścieżka:</string>
+    <string name="file_properties_dialog_size">Wielkość:</string>
+    <string name="file_properties_dialog_size_value">%1$s (%2$d bytes)</string>
+    <string name="file_properties_dialog_crc32">CRC32:</string>
+    <string name="file_properties_dialog_sha1">SHA1:</string>
+    <string name="file_properties_dialog_md5">MD5:</string>
+    <string name="file_properties_dialog_close_button">Zamknij</string>
+    <string name="file_properties_dialog_wait_message">Proszę czekać&#8230;</string>
+
+    <!--Powiadomienia-->
+    <string name="notify_applying_patch">Stosowanie łatki</string>
+    <string name="notify_patching_complete">Łatkowanie ukończone</string>
+    <string name="toast_patching_started_check_notify">Łatkowanie rozpoczęte. Sprawdzaj pasek powiadomień.</string>
+    <string name="notify_error">Błąd</string>
+    <string name="notify_error_could_not_copy_file">Nie można skopiować pliku</string>
+    <string name="notify_error_file_not_found">Plik nie znaleziony</string>
+    <string name="notify_error_not_enough_space">Brak miejsca na Karcie Pamięci</string>
+    <string name="notify_error_not_ips_patch">Niewłaściwa łatka IPS</string>
+    <string name="notify_error_not_ups_patch">Niewłaściwa łatka UPS</string>
+    <string name="notify_error_not_bps_patch">Niewłaściwa łatka BPS</string>
+    <string name="notify_error_not_ppf_patch">Niewłaściwa łatka PPF</string>
+    <string name="notify_error_not_dps_patch">Niewłaściwa łatka DPS</string>
+    <string name="notify_error_not_xdelta3_patch">Niewłaściwa łatka XDelta3</string>
+    <string name="notify_error_xdelta1_unsupported">I am not able to work with XDelta1 patches</string>
+    <string name="notify_error_unable_open_file">Unable open file</string>
+    <string name="notify_error_unknown_patch_format">Nieznany format łatki</string>
+    <string name="notify_error_unexpected_end_of_file">Niespodziewany koniec pliku</string>
+    <string name="notify_error_patch_corrupted">Plik łatki jest zepsuty</string>
+    <string name="notify_error_rom_not_compatible_with_patch">Ten ROM nie jest kompatybilny z tą Łatką</string>
+    <string name="notify_error_wrong_checksum_after_patching">Plik ma błędną sumę kontrolną po łatkowaniu</string>
+    <string name="notify_error_not_smd_rom">To nie jest ROM Sega Mega Drive</string>
+    <string name="notify_smd_fix_checksum_in_progress">Naprawianie sumy kontrolnej</string>
+    <string name="notify_smd_fix_checksum_complete">Suma kontrolna naprawiona</string>
+    <string name="notify_smd_fix_checksum_started_check_notify">Naprawianie sumy kontrolnej rozpoczęte. Sprawdzaj pasek powiadomień.</string>
+    <string name="notify_snes_add_smc_header_in_progress">Dodawanie nagłówka SMC</string>
+    <string name="notify_snes_add_smc_header_complete">Dodawanie nagłówka SMC</string>
+    <string name="notify_snes_add_smc_header_stared_check_noify">Dodawanie nagłówka SMC rozpoczęte. Sprawdzaj pasek powiadomień.</string>
+    <string name="notify_snes_delete_smc_header_in_progress">Usuń nagłówek SMC</string>
+    <string name="notify_snes_delete_smc_header_complete">Usuwanie nagłówka SMC ukończone</string>
+    <string name="notify_snes_delete_smc_header_stared_check_noify">Usuwanie nagłówka SMC. Sprawdzaj pasek powiadomień.</string>
+
+    <!--Pozwolenia-->
+    <string name="permissions_storage_error_info">Aplikacja nie ma uprawnień do odczytywania/tworzenia plików. Bez tego uprawnienia UniPatcher nie będzie działał poprawnie.</string>
+    <string name="permissions_storage_error_notify_access_denied">Dostęp do plików nie został przyznany</string>
+
+    <!--Ścieżki-->
+    <string name="settings_activity_title">Ustawienia</string>
+    <string name="settings_directories_header">Ścieżki</string>
+    <string name="settings_remember_last_directories">Zapamiętaj ostatnią otworzoną ścieżkę</string>
+    <string name="settings_rom_directory">Sprecyzuj ścieżkę Rom-ów</string>
+    <string name="settings_patch_directory">Sprecyzuj ścieżkę łatek</string>
+
+    <!--Pomocna aktywność-->
+    <string name="help_activity_title">Pomoc</string>
+    <string name="help_activity_faq_tab_title">FAQ</string>
+    <string name="help_activity_changelog_tab_title">Dziennik zmian</string>
+    <string name="help_activity_about_tab_title">O aplikacji</string>
+    <string name="help_activity_about_tab_version">Wersja %1$s</string>
+    <string name="help_activity_about_tab_license">License: GNU GPLv3</string>
+    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2016</string>
+    <string name="help_activity_action_send_feedback">Wyślij opinię</string>
+    <string name="help_activity_action_visit_site">Odwiedź stronę</string>
+    <string name="send_feedback_dialog_title">Wyślij E-Maila</string>
+    <string name="send_feedback_error_no_email_apps">Tu nie ma żadnych klientów E-Mail zainstalowanych</string>
+    <string name="share_dialog_title">Udostępnij UniPatcher-a swoim znajomym</string>
+    <string name="share_text">Pobierz najlepszy program do łatkowania ROM-ów. Wspiera typy łatek: IPS, UPS, BPS, PPF, DPS i XDelta3.\n\n</string>
+
+    <!--Lista Nawigacyjna-->
+    <string name="nav_apply_patch">Zastosuj łatkę</string>
+    <string name="nav_smd_fix_checksum">Napraw sumę kontrolną (SMD)</string>
+    <string name="nav_snes_add_del_smc_header">Dodaj/Usuń nagłówek SMC (SNES)</string>
+    <string name="nav_settings">Ustawienia</string>
+    <string name="nav_rate">Oceń tą aplikację</string>
+    <string name="nav_buy">Kup Mi Piwo</string>
+    <string name="nav_share">Udostępnij</string>
+    <string name="nav_help">Pomoc</string>
+    <string name="nav_drawer_open">Otwórz kartę nawigacyjną</string>
+    <string name="nav_drawer_close">Zamknij kartę nawigacyjną</string>
+
+    <!--Dialog ,,Oceń Aplikację"-->
+    <string name="rate_dialog_title">Oceń tą aplikację</string>
+    <string name="rate_dialog_message">Jeżeli lubisz UniPatcher-a, to poświęć chwilkę aby go ocenić.Dzięki za twoją opinię!</string>
+    <string name="rate_dialog_ok">Oceń</string>
+    <string name="rate_dialog_later">Przypomnij mi później</string>
+    <string name="purchase_successful">Dziękuję!</string>
+    <string name="icon">ikona</string>
+</resources>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="8dp"
+            android:text="@string/file_properties_dialog_name"
+            android:id="@+id/name_label"
+            android:textSize="@dimen/material_text_subhead" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name_value"
+            android:textSize="@dimen/material_text_subhead"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="8dp"
+            android:text="@string/file_properties_dialog_path"
+            android:id="@+id/path_label"
+            android:textSize="@dimen/material_text_subhead" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/path_value"
+            android:textSize="@dimen/material_text_subhead"
+            android:textIsSelectable="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="8dp"
+            android:text="@string/file_properties_dialog_size"
+            android:id="@+id/size_label"
+            android:textSize="@dimen/material_text_subhead" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/size_value"
+            android:textSize="@dimen/material_text_subhead"
+            android:textIsSelectable="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="8dp"
+            android:text="@string/file_properties_dialog_crc32"
+            android:id="@+id/crc32_label"
+            android:textSize="@dimen/material_text_subhead" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/file_properties_dialog_wait_message"
+            android:id="@+id/crc32_value"
+            android:textSize="@dimen/material_text_subhead"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="8dp"
+            android:text="@string/file_properties_dialog_sha1"
+            android:id="@+id/SHA1_label"
+            android:textSize="@dimen/material_text_subhead" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/file_properties_dialog_wait_message"
+            android:id="@+id/sha1_value"
+            android:textSize="@dimen/material_text_subhead"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="8dp"
+            android:text="@string/file_properties_dialog_md5"
+            android:id="@+id/md5_label"
+            android:textSize="@dimen/material_text_subhead" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/file_properties_dialog_wait_message"
+            android:id="@+id/md5_value"
+            android:textSize="@dimen/material_text_subhead"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UniPatcher</string>
+    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
+    <string name="app_email">mashin87@gmail.com</string>
+
+    <!-- Main activity -->
+    <string name="main_activity_rom_file">Оригинальный ROM</string>
+    <string name="main_activity_patch_file">Патч</string>
+    <string name="main_activity_output_file">Пропатченный ROM</string>
+    <string name="main_activity_header_file">Файл заголовка</string>
+    <string name="main_activity_tap_to_select">нажмите, чтобы выбрать</string>
+    <string name="main_activity_tap_to_rename">нажмите, чтобы переименовать</string>
+    <string name="main_activity_toast_rom_and_patch_not_selected">Сначала выберите патч и ROM</string>
+    <string name="main_activity_toast_rom_not_selected">Сначала выберите ROM файл</string>
+    <string name="main_activity_toast_patch_not_selected">Сначала выберите патч</string>
+    <string name="main_activity_toast_archives_not_supported">Архив необходимо распаковать во внешней программе</string>
+
+    <!-- Rename dialog -->
+    <string name="dialog_rename_title">Переименовать</string>
+    <string name="dialog_rename_ok">Переименовать</string>
+    <string name="dialog_rename_cancel">Отмена</string>
+    <string name="dialog_rename_error_same_name">Имена ROM файлов должны отличаться</string>
+    <string name="dialog_rename_error_invalid_chars">Некорректный символ /</string>
+
+    <!-- Info for SNES SMC header -->
+    <string name="snes_smc_header_help">Эта функция только для ROM\'ов Super Nintendo.\n\nЕсли ROM содержит SMC заголовок - он будет удалён. Иначе он будет добавлен.\n\nПредупреждение: эта функция не создаёт резервную копию.</string>
+    <string name="snes_smc_header_will_be_removed">У этого ROM\'а есть SMC заголовок. Он будет удалён.</string>
+    <string name="snes_smc_header_will_be_added">У этого ROM\'а нет SMC заголовка. Он будет добавлен. Вы можете выбрать свой собственный заголовок, вместо заголовка по-умолчанию.</string>
+
+    <!-- Info for SMD fix checksum -->
+    <string name="smd_fix_checksum_help">Эта функция только для игр Sega Mega Drive.\n\nОна исправляет \"красный экран смерти\".\n\nПредупреждение: эта функция не создаёт резервную копию.</string>
+
+    <!-- File picker title -->
+    <string name="file_picker_activity_title">Выберите файл</string>
+    <string name="file_picker_activity_title_select_rom">Выберите ROM файл</string>
+    <string name="file_picker_activity_title_select_patch">Выберите патч</string>
+    <string name="file_picker_activity_title_select_header">Выберите файл заголовка</string>
+    <string name="file_picker_activity_error_unable_read_dir">Не удалось открыть директорию %1$s</string>
+
+    <!-- File properties dialog -->
+    <string name="file_properties_dialog_title">Свойства</string>
+    <string name="file_properties_dialog_name">Имя:</string>
+    <string name="file_properties_dialog_path">Путь:</string>
+    <string name="file_properties_dialog_size">Размер:</string>
+    <string name="file_properties_dialog_size_value">%1$s (%2$d байт)</string>
+    <string name="file_properties_dialog_crc32">CRC32:</string>
+    <string name="file_properties_dialog_sha1">SHA1:</string>
+    <string name="file_properties_dialog_md5">MD5:</string>
+    <string name="file_properties_dialog_close_button">Закрыть</string>
+    <string name="file_properties_dialog_wait_message">Пожалуйста, подождите&#8230;</string>
+
+    <!-- Notifications -->
+    <string name="notify_applying_patch">Применяю патч</string>
+    <string name="notify_patching_complete">Применение патча завершено</string>
+    <string name="toast_patching_started_check_notify">Применяю патч. Проверьте область уведомлений</string>
+
+    <string name="notify_error">Ошибка</string>
+    <string name="notify_error_could_not_copy_file">Не удалось скопировать файл</string>
+    <string name="notify_error_file_not_found">Файл не найден</string>
+    <string name="notify_error_not_enough_space">Не хватает места на диске</string>
+    <string name="notify_error_not_ips_patch">Некорректный IPS патч</string>
+    <string name="notify_error_not_ups_patch">Некорректный UPS патч</string>
+    <string name="notify_error_not_bps_patch">Некорректный BPS патч</string>
+    <string name="notify_error_not_ppf_patch">Некорректный PPF патч</string>
+    <string name="notify_error_not_dps_patch">Некорректный DPS патч</string>
+    <string name="notify_error_not_xdelta3_patch">Некорректный XDelta3 патч</string>
+    <string name="notify_error_xdelta1_unsupported">Не умею работать с XDelta1 патчами</string>
+    <string name="notify_error_unable_open_file">Не удалось открыть файл</string>
+    <string name="notify_error_unknown_patch_format">Неизвестный формат патча</string>
+    <string name="notify_error_unexpected_end_of_file">Неожиданный конец файла</string>
+    <string name="notify_error_patch_corrupted">Патч повреждён</string>
+    <string name="notify_error_rom_not_compatible_with_patch">Этот ROM не совместим с патчем</string>
+    <string name="notify_error_wrong_checksum_after_patching">Контрольная сумма пропатченного файла неправильная</string>
+
+    <string name="notify_error_not_smd_rom">Это не ROM для Sega Mega Drive</string>
+    <string name="notify_smd_fix_checksum_in_progress">Исправляю контрольную сумму</string>
+    <string name="notify_smd_fix_checksum_complete">Контр. сумма исправлена</string>
+    <string name="notify_smd_fix_checksum_started_check_notify">Исправляю контрольную сумму. Проверьте область уведомлений</string>
+
+    <string name="notify_snes_add_smc_header_in_progress">Добавляю SMC заголовок</string>
+    <string name="notify_snes_add_smc_header_complete">SMC заголовок добавлен</string>
+    <string name="notify_snes_add_smc_header_stared_check_noify">Добавляю SMC заголовок. Проверьте область уведомлений</string>
+
+    <string name="notify_snes_delete_smc_header_in_progress">Удаляю SMC заголовок</string>
+    <string name="notify_snes_delete_smc_header_complete">SMC заголовок удалён</string>
+    <string name="notify_snes_delete_smc_header_stared_check_noify">Удаляю SMC заголовок. Проверьте область уведомлений</string>
+
+    <!-- Permissions -->
+    <string name="permissions_storage_error_info">Приложению не были предоставлены права на чтение/запись файлов. Без этих прав UniPatcher не может выполнять свою работу.</string>
+    <string name="permissions_storage_error_notify_access_denied">Доступ к файлам был запрещён</string>
+
+    <!-- Settings -->
+    <string name="settings_activity_title">Настройки</string>
+    <string name="settings_directories_header">Директории</string>
+    <string name="settings_remember_last_directories">Запоминать последнюю открытую директорию</string>
+    <string name="settings_rom_directory">Укажите директорию с ROM\'ами</string>
+    <string name="settings_patch_directory">Укажите директорию с патчами</string>
+
+    <!-- Help activity -->
+    <string name="help_activity_title">Помощь</string>
+    <string name="help_activity_faq_tab_title">ЧАВО</string>
+    <string name="help_activity_changelog_tab_title">Изменения</string>
+    <string name="help_activity_about_tab_title">О программе</string>
+    <string name="help_activity_about_tab_version">Версия %1$s</string>
+    <string name="help_activity_about_tab_license">Лицензия: GNU GPLv3</string>
+    <string name="help_activity_about_tab_copyright">&#169; Борис Тимофеев, 2013&#8211;2016</string>
+    <string name="help_activity_action_send_feedback">Написать письмо автору</string>
+    <string name="help_activity_action_visit_site">Посетить веб-сайт</string>
+
+    <string name="send_feedback_dialog_title">Отправить e-mail</string>
+    <string name="send_feedback_error_no_email_apps">Не установлен email клиент</string>
+
+    <string name="share_dialog_title">Рассказать о UniPatcher</string>
+    <string name="share_text">Скачай лучший ROM патчер для Android. Поддерживает патчи в форматах IPS, UPS, BPS, PPF, DPS и XDelta3.\n\n</string>
+
+    <!-- Navigation list -->
+    <string name="nav_apply_patch">Применить патч</string>
+    <string name="nav_smd_fix_checksum">Испр. контр. сумму (SMD)</string>
+    <string name="nav_snes_add_del_smc_header">SMC заголовок (SNES)</string>
+    <string name="nav_settings">Настройки</string>
+    <string name="nav_rate">Оценить приложение</string>
+    <string name="nav_buy">Убрать рекламу</string>
+    <string name="nav_share">Рассказать друзьям</string>
+    <string name="nav_help">Помощь</string>
+    <string name="nav_drawer_open">Открыть главное меню</string>
+    <string name="nav_drawer_close">Закрыть главное меню</string>
+
+    <!-- Rate the App dialog -->
+    <string name="rate_dialog_title">Оцените приложение</string>
+    <string name="rate_dialog_message">Если вам нравится приложение, поставьте ему оценку, пожалуйста. Спасибо за вашу поддержку!</string>
+    <string name="rate_dialog_ok">Поставить оценку</string>
+    <string name="rate_dialog_later">Напомнить позже</string>
+
+    <string name="purchase_successful">Спасибо!</string>
+    <string name="icon">иконка</string>
+
+</resources>
+

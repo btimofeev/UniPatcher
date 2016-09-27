@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UniPatcher</string>
+    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
+    <string name="app_email">mashin87@gmail.com</string>
+
+    <!-- Main activity -->
+    <string name="main_activity_rom_file">ROM file</string>
+    <string name="main_activity_patch_file">Patch file</string>
+    <string name="main_activity_output_file">Output file</string>
+    <string name="main_activity_header_file">Header file</string>
+    <string name="main_activity_tap_to_select">tap to select</string>
+    <string name="main_activity_tap_to_rename">tap to rename</string>
+    <string name="main_activity_toast_rom_and_patch_not_selected">The ROM and the Patch files is not selected</string>
+    <string name="main_activity_toast_rom_not_selected">The ROM is not selected</string>
+    <string name="main_activity_toast_patch_not_selected">The Patch is not selected</string>
+    <string name="main_activity_toast_archives_not_supported">Archive should be unpacked in an external program</string>
+
+    <!-- Rename dialog -->
+    <string name="dialog_rename_title">Rename</string>
+    <string name="dialog_rename_ok">OK</string>
+    <string name="dialog_rename_cancel">Cancel</string>
+    <string name="dialog_rename_error_same_name">The input and output ROM names must be different</string>
+    <string name="dialog_rename_error_invalid_chars">Invalid symbol /</string>
+
+    <!-- Info for SNES SMC header -->
+    <string name="snes_smc_header_help">This feature is only for Super Nintendo ROMs.\n\nIf the ROM contains the SMC header - it will be removed. Otherwise, it will be added.\n\nWarning: this function does not create a backup.</string>
+    <string name="snes_smc_header_will_be_removed">This ROM has the SMC header. It will be removed.</string>
+    <string name="snes_smc_header_will_be_added">This ROM does not have the SMC header. It will be added. You can choose your own header instead of the header by default.</string>
+
+    <!-- Info for SMD fix checksum -->
+    <string name="smd_fix_checksum_help">This feature is only for Sega Mega Drive (Sega Genesis) ROMs.\n\nIt fixes \"the red screen of death\".\n\nWarning: this function does not create a backup.</string>
+
+    <!-- File picker title -->
+    <string name="file_picker_activity_title">Select file</string>
+    <string name="file_picker_activity_title_select_rom">Select the ROM file</string>
+    <string name="file_picker_activity_title_select_patch">Select the patch file</string>
+    <string name="file_picker_activity_title_select_header">Select the header file</string>
+    <string name="file_picker_activity_error_unable_read_dir">Unable to read directory %1$s</string>
+    
+    <!-- File properties dialog -->
+    <string name="file_properties_dialog_title">Properties</string>
+    <string name="file_properties_dialog_name">Name:</string>
+    <string name="file_properties_dialog_path">Path:</string>
+    <string name="file_properties_dialog_size">Size:</string>
+    <string name="file_properties_dialog_size_value">%1$s (%2$d bytes)</string>
+    <string name="file_properties_dialog_crc32">CRC32:</string>
+    <string name="file_properties_dialog_sha1">SHA1:</string>
+    <string name="file_properties_dialog_md5">MD5:</string>
+    <string name="file_properties_dialog_close_button">Close</string>
+    <string name="file_properties_dialog_wait_message">Please wait&#8230;</string>
+
+    <!-- Notifications -->
+    <string name="notify_applying_patch">Applying patch</string>
+    <string name="notify_patching_complete">Patching complete</string>
+    <string name="toast_patching_started_check_notify">Patching started. Check the notification area</string>
+
+    <string name="notify_error">Error</string>
+    <string name="notify_error_could_not_copy_file">Could not copy file</string>
+    <string name="notify_error_file_not_found">File not found</string>
+    <string name="notify_error_not_enough_space">Not enough space on the disk</string>
+    <string name="notify_error_not_ips_patch">Not a valid IPS patch</string>
+    <string name="notify_error_not_ups_patch">Not a valid UPS patch</string>
+    <string name="notify_error_not_bps_patch">Not a valid BPS patch</string>
+    <string name="notify_error_not_ppf_patch">Not a valid PPF patch</string>
+    <string name="notify_error_not_dps_patch">Not a valid DPS patch</string>
+    <string name="notify_error_not_xdelta3_patch">Not a valid XDelta3 patch</string>
+    <string name="notify_error_xdelta1_unsupported">I am not able to work with XDelta1 patches</string>
+    <string name="notify_error_unable_open_file">Unable open file</string>
+    <string name="notify_error_unknown_patch_format">Unknown patch format</string>
+    <string name="notify_error_unexpected_end_of_file">Unexpected end of file</string>
+    <string name="notify_error_patch_corrupted">The patch file is corrupted</string>
+    <string name="notify_error_rom_not_compatible_with_patch">This ROM is not compatible with the patch</string>
+    <string name="notify_error_wrong_checksum_after_patching">File have the wrong checksum after it was patched</string>
+
+    <string name="notify_error_not_smd_rom">Not a Sega Mega Drive ROM</string>
+    <string name="notify_smd_fix_checksum_in_progress">Fixing checksum</string>
+    <string name="notify_smd_fix_checksum_complete">Checksum fixed</string>
+    <string name="notify_smd_fix_checksum_started_check_notify">Fixing checksum started. Check the notification area</string>
+
+    <string name="notify_snes_add_smc_header_in_progress">Adding SMC header</string>
+    <string name="notify_snes_add_smc_header_complete">Adding SMC header complete</string>
+    <string name="notify_snes_add_smc_header_stared_check_noify">Adding SMC header started. Check the notification area</string>
+
+    <string name="notify_snes_delete_smc_header_in_progress">Delete SMC header</string>
+    <string name="notify_snes_delete_smc_header_complete">Deleting SMC header complete</string>
+    <string name="notify_snes_delete_smc_header_stared_check_noify">Deleting SMC header started. Check the notification area</string>
+
+    <!-- Permissions -->
+    <string name="permissions_storage_error_info">App has not been granted permission to read/write files. Without this permission UniPatcher will not function correctly.</string>
+    <string name="permissions_storage_error_notify_access_denied">Access to the files was denied</string>
+
+    <!-- Settings -->
+    <string name="settings_activity_title">Settings</string>
+    <string name="settings_directories_header">Directories</string>
+    <string name="settings_remember_last_directories">Remember last opened directories</string>
+    <string name="settings_rom_directory">Specify ROM\'s directory</string>
+    <string name="settings_patch_directory">Specify patches directory</string>
+
+    <!-- Help activity -->
+    <string name="help_activity_title">Help</string>
+    <string name="help_activity_faq_tab_title">Faq</string>
+    <string name="help_activity_changelog_tab_title">Changelog</string>
+    <string name="help_activity_about_tab_title">About</string>
+    <string name="help_activity_about_tab_version">Version %1$s</string>
+    <string name="help_activity_about_tab_license">License: GNU GPLv3</string>
+    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2016</string>
+    <string name="help_activity_action_send_feedback">Send feedback</string>
+    <string name="help_activity_action_visit_site">Visit website</string>
+
+    <string name="send_feedback_dialog_title">Send e-mail</string>
+    <string name="send_feedback_error_no_email_apps">There are no email clients installed</string>
+
+    <string name="share_dialog_title">Share UniPatcher</string>
+    <string name="share_text">Download the best ROM patcher for Android. It supports IPS, UPS, BPS, PPF, DPS and XDelta3 patch types.\n\n</string>
+
+    <!-- Navigation list -->
+    <string name="nav_apply_patch">Apply patch</string>
+    <string name="nav_smd_fix_checksum">Fix checksum (SMD)</string>
+    <string name="nav_snes_add_del_smc_header">Add/Del SMC header (SNES)</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_rate">Rate this App</string>
+    <string name="nav_buy">Buy Me a Beer</string>
+    <string name="nav_share">Share</string>
+    <string name="nav_help">Help</string>
+    <string name="nav_drawer_open">Open navigation drawer</string>
+    <string name="nav_drawer_close">Close navigation drawer</string>
+
+    <!-- Rate the App dialog -->
+    <string name="rate_dialog_title">Rate this app</string>
+    <string name="rate_dialog_message">If you like UniPatcher, please take a moment to rate it. Thank you for your support!</string>
+    <string name="rate_dialog_ok">Rate</string>
+    <string name="rate_dialog_later">Remind later</string>
+
+    <string name="purchase_successful">Thank you!</string>
+    <string name="icon">icon</string>
+
+</resources>
+

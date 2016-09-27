@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/settings_directories_header">
+        <CheckBoxPreference
+            android:key="remember_last_directories"
+            android:defaultValue="true"
+            android:disableDependentsState="true"
+            android:title="@string/settings_remember_last_directories" />
+        <EditTextPreference
+            android:dependency="remember_last_directories"
+            android:key="rom_directory"
+            android:title="@string/settings_rom_directory"
+            android:defaultValue="/" />
+        <EditTextPreference
+            android:dependency="remember_last_directories"
+            android:key="patch_directory"
+            android:title="@string/settings_patch_directory"
+            android:defaultValue="/" />
+    </PreferenceCategory>
+</PreferenceScreen>

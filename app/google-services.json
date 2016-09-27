@@ -1,0 +1,53 @@
+{
+  "project_info": {
+    "project_number": "32713218397",
+    "firebase_url": "https://unipatcher-897b3.firebaseio.com",
+    "project_id": "unipatcher-897b3",
+    "storage_bucket": "unipatcher-897b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32713218397:android:4b0afdca1aa174e1",
+        "android_client_info": {
+          "package_name": "org.emunix.unipatcher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32713218397-h8ptc6lelg9l871v10pgq11ni8ejaavg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.emunix.unipatcher",
+            "certificate_hash": "C31CB23D974F426B38D7AF0848A6F1066FCF1FD9"
+          }
+        },
+        {
+          "client_id": "32713218397-bhgevevp6i5coukhnkti1g9cecnujuav.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_8JprF21wL7wpRV7JymLzlbHR-jUBZKI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-77394676-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

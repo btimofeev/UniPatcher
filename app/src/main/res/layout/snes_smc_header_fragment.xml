@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true">
+
+    <LinearLayout
+        style="@style/CardsHolder">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/romCardView"
+            style="@style/Card.Clickable">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/romLabel"
+                    android:padding="8dp"
+                    android:text="@string/main_activity_rom_file"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24sp"/>
+
+                <View
+                    android:id="@+id/romLine"
+                    android:layout_marginTop="@dimen/card_line_margin"
+                    android:layout_marginBottom="@dimen/card_line_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_line_height"
+                    android:background="@color/line"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/romNameTextView"
+                    android:padding="8dp"
+                    android:text="@string/main_activity_tap_to_select"
+                    android:textSize="20sp"
+                    android:drawableLeft="@drawable/ic_folder_grey600_24dp"
+                    android:drawablePadding="8dp"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/helpCardView"
+            style="@style/Card">
+
+            <TextView
+                android:padding="@dimen/card_padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/headerInfoTextView"
+                android:textSize="16sp"
+                android:text="@string/snes_smc_header_help"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/headerCardView"
+            style="@style/Card.Clickable"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/headerLabel"
+                    android:padding="8dp"
+                    android:text="@string/main_activity_header_file"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24sp"/>
+
+                <View
+                    android:id="@+id/headerLine"
+                    android:layout_marginTop="@dimen/card_line_margin"
+                    android:layout_marginBottom="@dimen/card_line_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_line_height"
+                    android:background="@color/line"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/headerNameTextView"
+                    android:padding="8dp"
+                    android:text="@string/main_activity_tap_to_select"
+                    android:textSize="20sp"
+                    android:drawableLeft="@drawable/ic_folder_grey600_24dp"
+                    android:drawablePadding="8dp"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
