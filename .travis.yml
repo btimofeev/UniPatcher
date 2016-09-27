@@ -14,5 +14,7 @@ android:
 before_install:
   - git clone https://github.com/urho3d/android-ndk.git $HOME/android-ndk-root
   - export ANDROID_NDK_HOME=$HOME/android-ndk-root
+  - sudo apt-get -qq update
+  - sudo apt-get install -y ninja-build
   - sudo mkdir -p /usr/local/android-sdk/cmake/bin/
   - sudo ln -s /usr/bin/cmake /usr/local/android-sdk/cmake/bin/cmake
