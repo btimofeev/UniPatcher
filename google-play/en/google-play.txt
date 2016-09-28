@@ -6,13 +6,13 @@ Utility to apply patches to game rom.
 <b>UniPatcher</b> allows you to apply patches to the game rom. What is a <i>patch</i>? The patch is a file with the modified data of the game. For example, a game translated from Japanese to English. You download the patch containing the translation. It must be applied to the Japanese version to get the English version.
 
 
-<b>UniPatcher</b> supports the most popular formats patches used in Nintendo, Super Nintendo, Sega MegaDrive / Sega Genesis, Gameboy, Game Boy Advance, Sony PlayStation and other games:
-&bull; <b>IPS</b>
-&bull; <b>UPS</b>
-&bull; <b>BPS</b>
-&bull; <b>PPF</b>
-&bull; <b>DPS</b>
-&bull; <b>XDelta 3</b>
+<b>UniPatcher supports the most popular formats patches</b> used in Nintendo, Super Nintendo, Sega MegaDrive / Sega Genesis, Gameboy, Game Boy Advance, Sony PlayStation and other games:
+&bull; IPS
+&bull; UPS
+&bull; BPS
+&bull; PPF
+&bull; DPS
+&bull; XDelta 3
 
 
 <b>How to use?</b> Very simple:
@@ -28,7 +28,7 @@ Utility to apply patches to game rom.
 
 
 <b>Help with translations:</b>
-You can help with translation of the program into your language. The translations are managed on https://www.transifex.com/unipatcher/unipatcher﻿
+You can help with translation of the program into your language. The translations are managed on https://www.transifex.com/unipatcher/unipatcher/dashboard/
 
 
 If you have any problems with the program please contact me by e-mail mashin87@gmail.com. In a letter to specify the full name of the game and the patch (better add the patch in attachment). So we can solve your problem quickly.
