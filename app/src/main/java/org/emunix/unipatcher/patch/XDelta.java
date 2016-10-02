@@ -52,7 +52,7 @@ public class XDelta extends Patch {
         try {
             System.loadLibrary("xdelta3");
         } catch (UnsatisfiedLinkError e) {
-            throw new PatchException("Failed to load library libxdelta3.so");
+            throw new PatchException(context.getString(R.string.notify_error_failed_load_lib_xdelta3));
         }
 
         int ret = xdelta3apply(patchFile.getPath(), romFile.getPath(), outputFile.getPath());
@@ -74,7 +74,7 @@ public class XDelta extends Patch {
             case ERR_INVALID_INPUT:
                 throw new PatchException(context.getString(R.string.notify_error_not_xdelta3_patch));
             default:
-                throw new PatchException("Unknown error");
+                throw new PatchException(context.getString(R.string.notify_error_unknown));
         }
     }
 

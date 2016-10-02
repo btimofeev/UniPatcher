@@ -73,6 +73,8 @@
     <string name="notify_error_patch_corrupted">The patch file is corrupted</string>
     <string name="notify_error_rom_not_compatible_with_patch">This ROM is not compatible with the patch</string>
     <string name="notify_error_wrong_checksum_after_patching">File have the wrong checksum after it was patched</string>
+    <string name="notify_error_failed_load_lib_xdelta3">Failed to load library libxdelta3.so</string>
+    <string name="notify_error_unknown">Unknown error</string>
 
     <string name="notify_error_not_smd_rom">Not a Sega Mega Drive ROM</string>
     <string name="notify_smd_fix_checksum_in_progress">Fixing checksum</string>
