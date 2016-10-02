@@ -38,7 +38,7 @@
     <string name="file_picker_activity_title_select_patch">Выберите патч</string>
     <string name="file_picker_activity_title_select_header">Выберите файл заголовка</string>
     <string name="file_picker_activity_error_unable_read_dir">Не удалось открыть директорию %1$s</string>
-
+    
     <!-- File properties dialog -->
     <string name="file_properties_dialog_title">Свойства</string>
     <string name="file_properties_dialog_name">Имя:</string>
@@ -73,6 +73,8 @@
     <string name="notify_error_patch_corrupted">Патч повреждён</string>
     <string name="notify_error_rom_not_compatible_with_patch">Этот ROM не совместим с патчем</string>
     <string name="notify_error_wrong_checksum_after_patching">Контрольная сумма пропатченного файла неправильная</string>
+    <string name="notify_error_failed_load_lib_xdelta3">Не удалось загрузить библиотеку libxdelta3.so</string>
+    <string name="notify_error_unknown">Неизвестная ошибка</string>
 
     <string name="notify_error_not_smd_rom">Это не ROM для Sega Mega Drive</string>
     <string name="notify_smd_fix_checksum_in_progress">Исправляю контрольную сумму</string>
