@@ -347,7 +347,8 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
         sha1 = (TextView) dialog.getCustomView().findViewById(R.id.sha1_value);
         new FileChecksumsTask().execute(file);
 
-        dialog.show();
+        if (this.hasWindowFocus())
+            dialog.show();
     }
 
     static public class FileEntry {
