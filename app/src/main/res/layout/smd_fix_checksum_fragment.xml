@@ -23,7 +23,7 @@
                     android:id="@+id/romLabel"
                     android:padding="8dp"
                     android:text="@string/main_activity_rom_file"
-                    android:textColor="@color/colorHeaderText"
+                    android:textColor="@color/colorCardHeaderText"
                     android:textSize="24sp"/>
 
                 <View
@@ -32,7 +32,7 @@
                     android:layout_marginBottom="@dimen/card_line_margin"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/card_line_height"
-                    android:background="@color/line"/>
+                    android:background="@color/colorCardLine"/>
 
                 <TextView
                     android:layout_width="match_parent"

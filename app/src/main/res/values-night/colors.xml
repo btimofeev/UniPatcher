@@ -3,14 +3,11 @@
     <color name="colorPrimary">#393939</color>
     <color name="colorPrimaryDark">#2d2d2d</color>
     <color name="colorAccent">#f2777a</color>
-    <color name="colorPrimaryText">#eeeeee</color>
-    <color name="colorSecondaryText">#cccccc</color>
-    <color name="colorHeaderText">@color/colorPrimaryText</color>
-    <color name="colorIcons">#cccccc</color>
-    <color name="colorDivider">#393939</color>
 
-    <color name="line">#2d2d2d</color>
-    <color name="card_background">#393939</color>
-    <color name="drawer_background">#ff343434</color>
-    <color name="drawer_text">#cccccc</color>
+    <color name="colorCardHeaderText">#cccccc</color>
+    <color name="colorCardLine">#4b4b4b</color>
+    <color name="colorCardBackground">#393939</color>
+    <color name="colorAdBackground">#393939</color>
+
+    <color name="colorDrawerText">@color/colorCardHeaderText</color>
 </resources>
