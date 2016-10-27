@@ -130,7 +130,7 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
 
     @Override
     public void onItemClick(View view, int position) {
-        if (position < 0 || position > fileList.size()) // fix 'fast tapping' crash
+        if (position < 0 || position >= fileList.size()) // fix 'fast tapping' crash
             return;
 
         String fileName = fileList.get(position).getName();
