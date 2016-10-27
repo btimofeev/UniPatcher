@@ -23,7 +23,7 @@
                     android:id="@+id/romLabel"
                     android:padding="8dp"
                     android:text="@string/main_activity_rom_file"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorHeaderText"
                     android:textSize="24sp"/>
 
                 <View
@@ -79,7 +79,7 @@
                     android:id="@+id/headerLabel"
                     android:padding="8dp"
                     android:text="@string/main_activity_header_file"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorHeaderText"
                     android:textSize="24sp"/>
 
                 <View

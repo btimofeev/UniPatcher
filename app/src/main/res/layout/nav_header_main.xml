@@ -11,12 +11,4 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="@string/app_name"
-        android:textColor="#ffffff"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1" />
-
 </LinearLayout>

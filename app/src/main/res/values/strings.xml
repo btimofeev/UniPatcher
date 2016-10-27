@@ -95,6 +95,14 @@
 
     <!-- Settings -->
     <string name="settings_activity_title">Settings</string>
+    <string name="settings_interface_header">User interface</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_description">Change the color palette. DayNight theme allows to switch between Light and Dark themes based on the time of day.</string>
+    <string name="settings_theme_dialog_title">Select theme</string>
+    <string name="settings_theme_name_light">Light</string>
+    <string name="settings_theme_name_dark">Dark</string>
+    <string name="settings_theme_name_daynight">DayNight</string>
+    <string name="settings_theme_message_restart_app">Please restart the application</string>
     <string name="settings_directories_header">Directories</string>
     <string name="settings_remember_last_directories">Remember last opened directories</string>
     <string name="settings_rom_directory">Specify ROM\'s directory</string>

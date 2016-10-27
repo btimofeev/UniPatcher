@@ -23,7 +23,7 @@
                     android:id="@+id/patchLabel"
                     android:padding="8dp"
                     android:text="@string/main_activity_patch_file"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorHeaderText"
                     android:textSize="24sp"/>
 
                 <View
@@ -63,7 +63,7 @@
                     android:id="@+id/romLabel"
                     android:padding="8dp"
                     android:text="@string/main_activity_rom_file"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorHeaderText"
                     android:textSize="24sp"/>
 
                 <View
@@ -103,7 +103,7 @@
                     android:id="@+id/outputLabel"
                     android:padding="8dp"
                     android:text="@string/main_activity_output_file"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorHeaderText"
                     android:textSize="24sp"/>
 
                 <View

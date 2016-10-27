@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#393939</color>
+    <color name="colorPrimaryDark">#2d2d2d</color>
+    <color name="colorAccent">#f2777a</color>
+    <color name="colorPrimaryText">#eeeeee</color>
+    <color name="colorSecondaryText">#cccccc</color>
+    <color name="colorHeaderText">@color/colorPrimaryText</color>
+    <color name="colorIcons">#cccccc</color>
+    <color name="colorDivider">#393939</color>
+
+    <color name="line">#2d2d2d</color>
+    <color name="card_background">#393939</color>
+    <color name="drawer_background">#ff343434</color>
+    <color name="drawer_text">#cccccc</color>
+</resources>

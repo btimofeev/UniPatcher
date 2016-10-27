@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/settings_interface_header">
+        <ListPreference
+            android:key="theme"
+            android:title="@string/settings_theme"
+            android:summary="@string/settings_theme_description"
+            android:dialogTitle="@string/settings_theme_dialog_title"
+            android:entries="@array/theme_names"
+            android:entryValues="@array/theme_values"
+            android:defaultValue="light" />
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/settings_directories_header">
         <CheckBoxPreference
             android:key="remember_last_directories"

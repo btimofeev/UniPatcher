@@ -21,6 +21,7 @@ package org.emunix.unipatcher.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -32,6 +33,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -54,6 +57,10 @@ import org.emunix.unipatcher.ui.fragment.PatchingFragment;
 import org.emunix.unipatcher.ui.fragment.SmdFixChecksumFragment;
 import org.emunix.unipatcher.ui.fragment.SnesSmcHeaderFragment;
 
+import static android.support.v7.app.AppCompatDelegate.MODE_NIGHT_AUTO;
+import static android.support.v7.app.AppCompatDelegate.MODE_NIGHT_NO;
+import static android.support.v7.app.AppCompatDelegate.MODE_NIGHT_YES;
+
 public class MainActivity extends AppCompatActivity
      implements NavigationView.OnNavigationItemSelectedListener {
     private static final String LOG_TAG = "org.emunix.unipatcher";
@@ -68,6 +75,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme();
         super.onCreate(savedInstanceState);
         context = this;
         setContentView(R.layout.activity_main);
@@ -150,6 +158,22 @@ public class MainActivity extends AppCompatActivity
                         ad.show(false);
                 }
             }, 1000);
+        }
+    }
+
+    private void setTheme() {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        String theme = sp.getString("theme","light");
+        switch (theme) {
+            case "light":
+                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO);
+                break;
+            case "dark":
+                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES);
+                break;
+            case "daynight":
+                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_AUTO);
+                break;
         }
     }
 
