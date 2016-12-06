@@ -71,6 +71,9 @@
     <string name="notify_error_patch_corrupted">Plik łatki jest zepsuty</string>
     <string name="notify_error_rom_not_compatible_with_patch">Ten ROM nie jest kompatybilny z tą Łatką</string>
     <string name="notify_error_wrong_checksum_after_patching">Plik ma błędną sumę kontrolną po łatkowaniu</string>
+    <string name="notify_error_failed_load_lib_xdelta3">Failed to load library libxdelta3.so</string>
+    <string name="notify_error_unknown">Unknown error</string>
+
     <string name="notify_error_not_smd_rom">To nie jest ROM Sega Mega Drive</string>
     <string name="notify_smd_fix_checksum_in_progress">Naprawianie sumy kontrolnej</string>
     <string name="notify_smd_fix_checksum_complete">Suma kontrolna naprawiona</string>
@@ -88,6 +91,14 @@
 
     <!--Ścieżki-->
     <string name="settings_activity_title">Ustawienia</string>
+    <string name="settings_interface_header">User interface</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_description">Change the color palette. DayNight theme allows to switch between Light and Dark themes based on the time of day.</string>
+    <string name="settings_theme_dialog_title">Select theme</string>
+    <string name="settings_theme_name_light">Light</string>
+    <string name="settings_theme_name_dark">Dark</string>
+    <string name="settings_theme_name_daynight">DayNight</string>
+    <string name="settings_theme_message_restart_app">Please restart the application</string>
     <string name="settings_directories_header">Ścieżki</string>
     <string name="settings_remember_last_directories">Zapamiętaj ostatnią otworzoną ścieżkę</string>
     <string name="settings_rom_directory">Sprecyzuj ścieżkę Rom-ów</string>
