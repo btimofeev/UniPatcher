@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +19,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(MockitoJUnitRunner.Silent.class)
 public class BPSTest {
 
     private static final String PATCH_CORRUPTED = "The patch file is corrupted.";
@@ -36,13 +36,8 @@ public class BPSTest {
                 .thenReturn(PATCH_CORRUPTED);
     }
 
-//    @Test
-//    public void testApply() throws Exception {
-//        assertTrue(ApplyPatch("/bps/an.bps", "/bps/an_jp.smc", "/bps/an_en.smc"));
-//    }
-
     @Test
-    public void testApply1() throws Exception {
+    public void testApply() throws Exception {
         assertTrue(ApplyPatch("/bps/1.bps", "/bps/1.bin", "/bps/1m.bin"));
     }
 
