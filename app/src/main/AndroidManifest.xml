@@ -38,6 +38,7 @@
                 <data android:pathPattern="/.*\\.ups" />
                 <data android:pathPattern="/.*\\.bps" />
                 <data android:pathPattern="/.*\\.ppf" />
+                <data android:pathPattern="/.*\\.ebp" />
                 <data android:pathPattern="/.*\\.dps" />
                 <data android:pathPattern="/.*\\.xdelta" />
                 <data android:pathPattern="/.*\\.xdelta3" />

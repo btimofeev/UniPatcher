@@ -139,6 +139,14 @@ public class Utils {
         }
     }
 
+    public static String bytesToHexString(byte[] bytes) {
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < bytes.length ;i++) {
+            sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+        }
+        return sb.toString();
+    }
+
     public static boolean isPatch(File file) {
         String[] patches = {"ips", "ups", "bps", "ppf", "dps", "xdelta", "xdelta3", "vcdiff"};
         String ext = FilenameUtils.getExtension(file.getName()).toLowerCase(Locale.getDefault());

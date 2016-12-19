@@ -31,6 +31,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.emunix.unipatcher.patch.BPS;
 import org.emunix.unipatcher.patch.DPS;
+import org.emunix.unipatcher.patch.EBP;
 import org.emunix.unipatcher.patch.IPS;
 import org.emunix.unipatcher.patch.PPF;
 import org.emunix.unipatcher.patch.Patch;
@@ -118,6 +119,8 @@ public class WorkerService extends IntentService {
             patcher = new BPS(this, patchFile, romFile, outputFile);
         else if ("ppf".equals(ext))
             patcher = new PPF(this, patchFile, romFile, outputFile);
+        else if ("ebp".equals(ext))
+            patcher = new EBP(this, patchFile, romFile, outputFile);
         else if ("dps".equals(ext))
             patcher = new DPS(this, patchFile, romFile, outputFile);
         else if ("xdelta".equals(ext) || "xdelta3".equals(ext) || "vcdiff".equals(ext))
@@ -218,7 +221,7 @@ public class WorkerService extends IntentService {
         startForeground(notify.getID(), notify.getNotifyBuilder().build());
 
         try {
-            worker.deleteSnesSmcHeader(this, romFile);
+            worker.deleteSnesSmcHeader(this, romFile, true);
         } catch (RomException | IOException e) {
             if (Utils.getFreeSpace(romFile.getParentFile()) == 0) {
                 errorMsg = getString(R.string.notify_error_not_enough_space);

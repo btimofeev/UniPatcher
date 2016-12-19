@@ -39,9 +39,9 @@ public class SnesSmcHeader {
         return (romSize & 0x7fff) == 512;
     }
 
-    public void deleteSnesSmcHeader(Context context, File romfile) throws IOException, RomException {
+    public void deleteSnesSmcHeader(Context context, File romfile, boolean saveHeader) throws IOException, RomException {
         if (!isHasSmcHeader(romfile)) {
-            throw new RomException();
+            throw new RomException("ROM don't have SMC header");
         }
 
         FileInputStream inputRom = null;
@@ -51,17 +51,19 @@ public class SnesSmcHeader {
 
         try {
             tmpfile = File.createTempFile(romfile.getName(), null, romfile.getParentFile());
-            File headerfile = new File(romfile.getPath()+".smc_header");
 
             inputRom = new FileInputStream(romfile);
             outputRom = new FileOutputStream(tmpfile);
-            outputHeader = new FileOutputStream(headerfile);
 
             // write smc header in a file
             byte[] header = new byte[HEADER_SIZE];
             int length;
             length = inputRom.read(header);
-            outputHeader.write(header, 0, length);
+            if (saveHeader) {
+                File headerfile = new File(romfile.getPath()+".smc_header");
+                outputHeader = new FileOutputStream(headerfile);
+                outputHeader.write(header, 0, length);
+            }
 
             // write headerless rom in tmp file
             byte[] buffer = new byte[32768];

@@ -420,22 +420,14 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
             fis.close();
 
             String crc32 = Long.toHexString(crc32Digest.getValue());
-            String md5 = bytesToHexString(md5Digest.digest());
-            String sha1 = bytesToHexString(sha1Digest.digest());
+            String md5 = Utils.bytesToHexString(md5Digest.digest());
+            String sha1 = Utils.bytesToHexString(sha1Digest.digest());
 
             HashMap<String, String> checksum = new HashMap<>();
             checksum.put(CRC32, crc32);
             checksum.put(MD5, md5);
             checksum.put(SHA1, sha1);
             return checksum;
-        }
-
-        private String bytesToHexString(byte[] bytes) {
-            StringBuilder sb = new StringBuilder();
-            for(int i = 0; i < bytes.length ;i++) {
-                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-            }
-            return sb.toString();
         }
     }
 }

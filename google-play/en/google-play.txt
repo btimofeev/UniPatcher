@@ -12,6 +12,7 @@ Utility to apply patches to game rom.
 &bull; BPS
 &bull; PPF
 &bull; DPS
+&bull; EBP
 &bull; XDelta 3
 
 
