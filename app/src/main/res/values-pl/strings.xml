@@ -62,6 +62,7 @@
     <string name="notify_error_not_ups_patch">Niewłaściwa łatka UPS</string>
     <string name="notify_error_not_bps_patch">Niewłaściwa łatka BPS</string>
     <string name="notify_error_not_ppf_patch">Niewłaściwa łatka PPF</string>
+    <string name="notify_error_not_ebp_patch">Niewłaściwa łatka EBP</string>
     <string name="notify_error_not_dps_patch">Niewłaściwa łatka DPS</string>
     <string name="notify_error_not_xdelta3_patch">Niewłaściwa łatka XDelta3</string>
     <string name="notify_error_xdelta1_unsupported">Nie jestem wstanie pracować z łatkami XDelta1</string>

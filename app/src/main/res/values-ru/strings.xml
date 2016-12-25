@@ -64,6 +64,7 @@
     <string name="notify_error_not_ups_patch">Некорректный UPS патч</string>
     <string name="notify_error_not_bps_patch">Некорректный BPS патч</string>
     <string name="notify_error_not_ppf_patch">Некорректный PPF патч</string>
+    <string name="notify_error_not_ebp_patch">Некорректный EBP патч</string>
     <string name="notify_error_not_dps_patch">Некорректный DPS патч</string>
     <string name="notify_error_not_xdelta3_patch">Некорректный XDelta3 патч</string>
     <string name="notify_error_xdelta1_unsupported">Не умею работать с XDelta1 патчами</string>
