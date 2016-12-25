@@ -10,6 +10,11 @@ UniPatcher is a ROM patcher for Android that supports IPS, UPS, BPS, PPF, DPS, E
 * Fix checksum in Sega Mega Drive ROMs
 * Add/Delete SMC header in Super Nintendo ROMs
 
+### Screenshots:
+
+<img src="/google-play/screenshot_1.png" width="350">
+<img src="/google-play/screenshot_2.png" width="350">
+
 ### Install UniPatcher:
 
 [<img src="https://play.google.com/intl/de_de/badges/images/generic/en_badge_web_generic.png" width="192">](https://play.google.com/store/apps/details?id=org.emunix.unipatcher)
