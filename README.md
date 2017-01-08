@@ -3,7 +3,7 @@
 UniPatcher
 ----------
 
-UniPatcher is a ROM patcher for Android that supports IPS, UPS, BPS, PPF, DPS, EBP and XDelta3 patch types.
+UniPatcher is a ROM patcher for Android that supports IPS, UPS, BPS, APS (N64), PPF, DPS, EBP and XDelta3 patch types.
 
 ### Additional features:
 

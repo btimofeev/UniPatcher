@@ -10,6 +10,7 @@ Utility to apply patches to game rom.
 &bull; IPS
 &bull; UPS
 &bull; BPS
+&bull; APS (N64)
 &bull; PPF
 &bull; DPS
 &bull; EBP

@@ -34,6 +34,7 @@
 
                 <data android:scheme="file" />
                 <data android:mimeType="*/*" />
+                <data android:pathPattern="/.*\\.aps" />
                 <data android:pathPattern="/.*\\.ips" />
                 <data android:pathPattern="/.*\\.ups" />
                 <data android:pathPattern="/.*\\.bps" />

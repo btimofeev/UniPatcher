@@ -29,6 +29,7 @@ import android.support.v4.app.NotificationCompat;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.emunix.unipatcher.patch.APS;
 import org.emunix.unipatcher.patch.BPS;
 import org.emunix.unipatcher.patch.DPS;
 import org.emunix.unipatcher.patch.EBP;
@@ -119,6 +120,8 @@ public class WorkerService extends IntentService {
             patcher = new BPS(this, patchFile, romFile, outputFile);
         else if ("ppf".equals(ext))
             patcher = new PPF(this, patchFile, romFile, outputFile);
+        else if ("aps".equals(ext))
+            patcher = new APS(this, patchFile, romFile, outputFile);
         else if ("ebp".equals(ext))
             patcher = new EBP(this, patchFile, romFile, outputFile);
         else if ("dps".equals(ext))
