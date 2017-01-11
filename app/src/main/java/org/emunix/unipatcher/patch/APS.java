@@ -36,7 +36,7 @@ public class APS extends Patch {
     public static final int APS_GBA_PATCH = 2;
 
     private static final byte[] APS_N64_MAGIC = {0x41, 0x50, 0x53, 0x31, 0x30}; // APS10
-    private static final byte[] APS_GBA_MAGIC = {0x41, 0x50, 0x53, 0x31, 0x00}; // APS1
+    private static final byte[] APS_GBA_MAGIC = {0x41, 0x50, 0x53, 0x31, 0x00}; // APS1 TODO удалить 0x00
 
     public APS(Context context, File patch, File rom, File output) {
         super(context, patch, rom, output);
@@ -49,7 +49,7 @@ public class APS extends Patch {
             case APS_N64_PATCH:
                 aps = new APS_N64(context, patchFile, romFile, outputFile); break;
             case APS_GBA_PATCH:
-                throw new PatchException(context.getString(R.string.notify_error_aps_gba));
+                aps = new APS_GBA(context, patchFile, romFile, outputFile); break;
             case NOT_APS_PATCH:
                 throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
         }

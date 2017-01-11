@@ -65,7 +65,6 @@
     <string name="notify_error_not_bps_patch">Not a valid BPS patch</string>
     <string name="notify_error_not_ppf_patch">Not a valid PPF patch</string>
     <string name="notify_error_not_aps_patch">Not a valid APS patch</string>
-    <string name="notify_error_aps_gba">APS for GBA not supported yet</string>
     <string name="notify_error_not_ebp_patch">Not a valid EBP patch</string>
     <string name="notify_error_not_dps_patch">Not a valid DPS patch</string>
     <string name="notify_error_not_xdelta3_patch">Not a valid XDelta3 patch</string>
@@ -126,7 +125,7 @@
     <string name="send_feedback_error_no_email_apps">There are no email clients installed</string>
 
     <string name="share_dialog_title">Share UniPatcher</string>
-    <string name="share_text">Download the best ROM patcher for Android. It supports IPS, UPS, BPS, APS (N64), PPF, DPS, EBP and XDelta3 patch types.\n\n</string>
+    <string name="share_text">Download the best ROM patcher for Android. It supports IPS, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patch types.\n\n</string>
 
     <!-- Navigation list -->
     <string name="nav_apply_patch">Apply patch</string>

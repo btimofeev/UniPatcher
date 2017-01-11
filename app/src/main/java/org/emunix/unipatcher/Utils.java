@@ -34,11 +34,14 @@ import android.util.Log;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.IOUtils;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
@@ -104,6 +107,12 @@ public class Utils {
             copyFile(context, from, to);
             FileUtils.deleteQuietly(from);
         }
+    }
+
+    public static void truncateFile(File f, long size) throws IOException {
+        FileChannel channel = new FileOutputStream(f, true).getChannel();
+        channel.truncate(size);
+        IOUtils.closeQuietly(channel);
     }
 
     public static void copy(InputStream from, OutputStream to, long size) throws IOException {
