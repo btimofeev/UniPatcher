@@ -21,6 +21,7 @@ package org.emunix.unipatcher.ui.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,8 +29,11 @@ import android.widget.TextView;
 
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.Utils;
+import org.markdown4j.Markdown4jProcessor;
 import org.sufficientlysecure.htmltextview.HtmlResImageGetter;
 import org.sufficientlysecure.htmltextview.HtmlTextView;
+
+import java.io.IOException;
 
 public class AboutFragment extends Fragment {
 
@@ -41,7 +45,13 @@ public class AboutFragment extends Fragment {
         TextView versionText = (TextView) view.findViewById(R.id.versionText);
         versionText.setText(getString(R.string.help_activity_about_tab_version, Utils.getAppVersion(getActivity())));
         HtmlTextView aboutText = (HtmlTextView) view.findViewById(R.id.aboutText);
-        aboutText.setHtml(R.raw.about, new HtmlResImageGetter(aboutText));
+        try {
+            String html = new Markdown4jProcessor().process(
+                    getActivity().getResources().openRawResource(R.raw.about));
+            aboutText.setHtml(html, new HtmlResImageGetter(aboutText));
+        } catch (IOException e) {
+            Log.e("UniPatcher", "IOException", e);
+        }
 
         return view;
     }

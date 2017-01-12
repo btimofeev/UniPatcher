@@ -21,13 +21,17 @@ package org.emunix.unipatcher.ui.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import org.emunix.unipatcher.R;
+import org.markdown4j.Markdown4jProcessor;
 import org.sufficientlysecure.htmltextview.HtmlResImageGetter;
 import org.sufficientlysecure.htmltextview.HtmlTextView;
+
+import java.io.IOException;
 
 public class ChangelogFragment extends Fragment {
 
@@ -41,7 +45,13 @@ public class ChangelogFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_changelog, container, false);
 
         HtmlTextView changelogText = (HtmlTextView) view.findViewById(R.id.changelogText);
-        changelogText.setHtml(R.raw.changelog, new HtmlResImageGetter(changelogText));
+        try {
+            String html = new Markdown4jProcessor().process(
+                    getActivity().getResources().openRawResource(R.raw.changelog));
+            changelogText.setHtml(html, new HtmlResImageGetter(changelogText));
+        } catch (IOException e) {
+            Log.e("UniPatcher", "IOException", e);
+        }
 
         return view;
     }

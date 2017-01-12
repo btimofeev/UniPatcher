@@ -83,6 +83,7 @@ dependencies {
     compile 'com.anjlab.android.iab.v3:library:1.0.36'
     compile 'commons-io:commons-io:2.5'
     compile 'org.sufficientlysecure:html-textview:3.0'
+    compile 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.1'
     compile 'com.afollestad.material-dialogs:core:0.9.1.0'
 }
 
