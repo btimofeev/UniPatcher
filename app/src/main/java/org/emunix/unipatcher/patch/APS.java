@@ -36,7 +36,7 @@ public class APS extends Patch {
     public static final int APS_GBA_PATCH = 2;
 
     private static final byte[] APS_N64_MAGIC = {0x41, 0x50, 0x53, 0x31, 0x30}; // APS10
-    private static final byte[] APS_GBA_MAGIC = {0x41, 0x50, 0x53, 0x31, 0x00}; // APS1 TODO удалить 0x00
+    private static final byte[] APS_GBA_MAGIC = {0x41, 0x50, 0x53, 0x31};       // APS1
 
     public APS(Context context, File patch, File rom, File output) {
         super(context, patch, rom, output);
@@ -57,16 +57,22 @@ public class APS extends Patch {
         aps.apply();
     }
 
-    public int checkAPS(File file) throws IOException {
+    public int checkAPS(File file) throws PatchException, IOException {
         FileInputStream stream = null;
         try {
             stream = new FileInputStream(file);
-            byte[] magic = new byte[5];
-            stream.read(magic);
-            if (Arrays.equals(magic, APS_N64_MAGIC)) {
+            byte[] magicN64 = new byte[5];
+            int count = stream.read(magicN64);
+            if (count < 5)
+                throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
+            if (Arrays.equals(magicN64, APS_N64_MAGIC)) {
                 return APS_N64_PATCH;
-            } else if (Arrays.equals(magic, APS_GBA_MAGIC)) {
-                return APS_GBA_PATCH;
+            } else {
+                byte[] magicGBA = new byte[4];
+                System.arraycopy(magicN64, 0, magicGBA, 0, 4);
+                if (Arrays.equals(magicGBA, APS_GBA_MAGIC)) {
+                    return APS_GBA_PATCH;
+                }
             }
         } finally {
             IOUtils.closeQuietly(stream);
