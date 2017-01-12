@@ -1,0 +1,32 @@
+[main]
+host = https://www.transifex.com
+
+[unipatcher.strings_xml]
+file_filter = app/src/main/res/values-<lang>/strings.xml
+source_file = app/src/main/res/values/strings.xml
+source_lang = en
+type = ANDROID
+
+[unipatcher.about_md]
+file_filter = app/src/main/res/raw-<lang>/about.md
+source_file = app/src/main/res/raw/about.md
+source_lang = en
+type = TXT
+
+[unipatcher.faq_md]
+file_filter = app/src/main/res/raw-<lang>/faq.md
+source_file = app/src/main/res/raw/faq.md
+source_lang = en
+type = TXT
+
+[unipatcher.changelog_md]
+file_filter = app/src/main/res/raw-<lang>/changelog.md
+source_file = app/src/main/res/raw/changelog.md
+source_lang = en
+type = TXT
+
+[unipatcher.google-play_txt]
+file_filter = google-play/<lang>/google-play.txt
+source_file = google-play/en/google-play.txt
+source_lang = en
+type = TXT
