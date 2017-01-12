@@ -10,8 +10,11 @@ Narzędzie do aplikowania łatek do ROM-ów
 &bull; IPS
 &bull; UPS
 &bull; BPS
+&bull; APS (GBA)
+&bull; APS (N64)
 &bull; PPF
 &bull; DPS
+&bull; EBP
 &bull; XDelta 3
 
 

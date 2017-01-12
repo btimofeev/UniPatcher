@@ -1,0 +1,78 @@
+<div>
+
+<h2>Często Zadawane Pytania</h2>
+
+<h4>Co to jest UniPatcher</h4>
+<p>UniPatcher jest narzędziem do łatkowania ROM-ów różnych konsol</p>
+
+<h4>Jakie formaty łatek są obsługiwane?</h4>
+<p>The app supports IPS, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patches.</p>
+
+<h4>Czy mogę hakować albo crackować gry Android za pomocą tej aplikacji?</h4>
+<p>Nie. UniPatcher nie został stworzony do hakowania gier Androida</p>
+
+<h4>Co to jest ROM image (czyt. Imidż)?</h4>
+<p>ROM (Ang.Read-Only-Memory) image jest plikiem komputerowym który zawiera kopię danych z tylko-do-odczytu chipu pamięci kartridża gry komputerowej.
+Określenie jest używane w kontekście emulacji, gdzie starsze gry są skopiowane do pliku ROM i za pomocą emulatorów (oprogramowania do emulacji) mogą być puszczone na komputerze, urządzenie przenośnym albo na Android TV.</p>
+
+<h4>Co to jest ROM haking?</h4>
+<p>ROM haking jet modyfikowaniem danych w ROM image. To może być zmana kolorów, zmienianie poziomów gry czy nawet tłumaczenie na język w którym gra nie była oryginalnie dostępna.</p>
+
+<h4>Co to jest łatka?</h4>
+<p>Łatka jest plikiem który zawiera różnicę między oryginalną wersją ROM-u, a shakowaną wersją.</p>
+<p>Łatka jest wypuszczona i finalni użytkownicy aplikują łatkę do oryginalego ROM-u, który produkuję grywalną wersję haku.</p>
+
+<h4>Dlaczego romhakerzy nie wypuszczają zmodyfikowanej gry?</h4>
+<p>Haki i tłumaczenia są generalnie wypuszczanie jako łatki aby zredukować wielkość pliku i aby ominąć problemy z prawami autorskimi</p>
+
+<h4>Jak zaaplikować łatkę do ROM-u?</h4>
+<p>To bardzo proste: musisz wybrać plik ROM, łatkę i nacisnąć okrągły czerwony przycisk.</p>
+<p>Jako wynik, dostajesz złatkowany ROM, który będzie zlokalizowany w tej samej ścieżce co oryginalny ROM</p>
+
+<h4>Aplikacja wyświetla wiadomość do wybraniu pliku: "Archiwa powinny być wypakowane w zewnętrznym programie"</h4>
+<p>Plik który wybrałeś jest archiwum. Archiwa zawierają ścieżki i pliki w skompresowanym formacie</p>
+<p>Narazie UniPatcher nie może wypakowywać archiw, więc musisz wypakować je w zewnętrznym programie. Rekomenduje darmowy program <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</p>
+
+<h4>Aplikacja wyświetla błąd: "Ten ROM nie jest kompatybilny z łatką".</h4>
+<p>Aplikacja będzie wyświetlać ten błąd jeżeli suma kontrolna przechowywana w łatce nie jest taka sama jak suma kontrolna ROM-u. To znaczy że ROM nie jest kompatybilny z łatką. Potrzebujesz wybrać inny ROM . Często jest kilka wersji ROM-u dla danej gry (Np. mamy wersję Europejską, Amerykańską, Japońską, lepszy dump lub gorszy itp.).</p>
+<p>Romhakerzy często publikują sumę kontrolną pliku ROM (na stronie internetowej albo w pliku Readme.txt razem z łatką). Potrzebujesz ją porównać z twoim ROM-em. Dłużej przytrzymaj na pliku w menedżerze plików i wtedy zobaczysz trzy linijki: CRC2, SHA1 i MD5. Masz poprawny ROM jeżeli jedna z tych linijek równa się z sumą kontrolną podaną przez Romhakera. Jeżeli sumy kontrolne się nie równają poszukaj innego ROM-u.</p>
+
+<h4>I can not find the correct ROM for the game "Pokemon Emerald".</h4>
+<p>Większość łatek do gry ,,Pokémon - Emerald Version" działa z ROM-em "Pokemon - Emerald Version (U) [f1] (Save Type).gba".</p>
+
+<h4>I apply the IPS patch and then the game is not working / contains graphic glitches. What am I doing wrong?</h4>
+<p>IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM. In this case, you need to look for another ROM.</p>
+
+<h4>Co mogę zrobić z typem pliku .ECM?</h4>
+<p>ECM is a data compression format designed specifically for disc images. You can decompress the file using <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> program.</p>
+
+<h4>The app shows the error: "Could not copy file".</h4>
+<p>The error occurs on some devices with Android 4.4. Possible solutions:</p>
+<ul>
+<li>Copy the ROM file on the memory card in the folder <b>Android/data/org.emunix.unipatcher/</b>. Then you need to select the ROM from this directory.</li>
+    <li>Install <a href="https://play.google.com/store/apps/details?id=nextapp.sdfix">SDFix</a> application (requires ROOT access).</li>
+</ul>
+<h4>The app shows the error: "File have the wrong checksum after it was patched".</h4>
+<p>Maybe it's a bug in my program. Please contact me at <a href="mailto:mashin87@gmail.com">e-mail</a> and attach the patch to the letter.</p>
+
+<h4>Czy UniPatcher ma dodatkowe funkcje?</h4>
+<p>Tak. UniPatcher może:</p>
+<ul>
+<li>fix checksum for a Sega Mega Drive / Sega Genesis games.</li>
+    <li>add or remove SMC header for a Super Nintendo games.</li>
+</ul>
+<h4>Why do I have to fix checksum for the Sega Mega Drive games?</h4>
+<p>Sega Mega Drive (Genesis) has protection from game modification. ROM stores the checksum value, and if it differs from the actual checksum the game displays a red screen and stops running. This function writes the correct checksum in the ROM.</p>
+<p><b>Warning:</b> This function does not create a backup ROM.</p>
+
+<h4>Why it's needed sometimes to add or remove SMC headers from Super Nintendo games?</h4>
+<p>An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing or adding a header is sometimes used for the purpose of correctly applying a patch.</p>
+<p><b>Warning:</b> This function does not create a backup ROM.</p>
+
+<h4>How to translate the app?</h4>
+<p>If you would like to translate the app into another language or improve an existing translation, you can do it on <a href="https://www.transifex.com/unipatcher/unipatcher/dashboard/">Transifex</a> site.</p>
+
+<h4>Mam pytanie, prośba o dodanie funkcji albo raport w sprawie błędu</h4>
+<p>Contact me at e-mail <a href="mailto:mashin87@gmail.com">mashin87@gmail.com</a>. Please write in English or Russian. If you have problems with patching, attach the patch to the letter and write the name of your ROM, it will save our time.</p>
+
+</div>

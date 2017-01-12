@@ -10,6 +10,8 @@ Utilità per applicare le patch alle ROM dei giochi.
 &bull; IPS
 &bull; UPS
 &bull; BPS
+&bull; APS (GBA)
+&bull; APS (N64)
 &bull; PPF
 &bull; DPS
 &bull; EBP

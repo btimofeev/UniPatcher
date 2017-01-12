@@ -64,6 +64,7 @@
     <string name="notify_error_not_ups_patch">Некорректный UPS патч</string>
     <string name="notify_error_not_bps_patch">Некорректный BPS патч</string>
     <string name="notify_error_not_ppf_patch">Некорректный PPF патч</string>
+    <string name="notify_error_not_aps_patch">Некорректный APS патч</string>
     <string name="notify_error_not_ebp_patch">Некорректный EBP патч</string>
     <string name="notify_error_not_dps_patch">Некорректный DPS патч</string>
     <string name="notify_error_not_xdelta3_patch">Некорректный XDelta3 патч</string>
@@ -98,7 +99,7 @@
     <string name="settings_activity_title">Настройки</string>
     <string name="settings_interface_header">Внешний вид</string>
     <string name="settings_theme">Тема</string>
-    <string name="settings_theme_description">Изменить палитру цветов. Тема DayNight переключается между светлой и тёмной темами в зависимости от времени суток.</string>
+    <string name="settings_theme_description">Изменить палитру цветов. Тема DayNight использует светлые или тёмные цвета в зависимости от времени суток.</string>
     <string name="settings_theme_dialog_title">Выберите тему</string>
     <string name="settings_theme_name_light">Светлая</string>
     <string name="settings_theme_name_dark">Тёмная</string>
@@ -116,7 +117,7 @@
     <string name="help_activity_about_tab_title">О программе</string>
     <string name="help_activity_about_tab_version">Версия %1$s</string>
     <string name="help_activity_about_tab_license">Лицензия: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">&#169; Борис Тимофеев, 2013&#8211;2016</string>
+    <string name="help_activity_about_tab_copyright">&#169; Борис Тимофеев, 2013&#8211;2017</string>
     <string name="help_activity_action_send_feedback">Написать письмо автору</string>
     <string name="help_activity_action_visit_site">Посетить веб-сайт</string>
 
@@ -124,7 +125,8 @@
     <string name="send_feedback_error_no_email_apps">Не установлен email клиент</string>
 
     <string name="share_dialog_title">Рассказать о UniPatcher</string>
-    <string name="share_text">Скачай лучший ROM патчер для Android. Поддерживает патчи в форматах IPS, UPS, BPS, PPF, DPS и XDelta3.\n\n</string>
+    <string name="share_text">Скачай лучший ROM патчер для Android. Поддерживает патчи в форматах IPS, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP и XDelta3.\\n\\n
+</string>
 
     <!-- Navigation list -->
     <string name="nav_apply_patch">Применить патч</string>

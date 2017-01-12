@@ -64,6 +64,7 @@
     <string name="notify_error_not_ups_patch">Patch UPS non valida</string>
     <string name="notify_error_not_bps_patch">Patch BPS non valida</string>
     <string name="notify_error_not_ppf_patch">Patch PPF non valida</string>
+    <string name="notify_error_not_aps_patch">Patch APS non valida</string>
     <string name="notify_error_not_ebp_patch">Patch EBP non valida</string>
     <string name="notify_error_not_dps_patch">Patch DPS non valida</string>
     <string name="notify_error_not_xdelta3_patch">Patch XDelta3 non valida</string>
@@ -116,7 +117,7 @@
     <string name="help_activity_about_tab_title">A proposito</string>
     <string name="help_activity_about_tab_version">Versione %1$s</string>
     <string name="help_activity_about_tab_license">Licensa: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2016</string>
+    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2017</string>
     <string name="help_activity_action_send_feedback">Invia feedback</string>
     <string name="help_activity_action_visit_site">Visita sito web</string>
 
@@ -124,7 +125,7 @@
     <string name="send_feedback_error_no_email_apps">Non ci sono client email installati</string>
 
     <string name="share_dialog_title">Condividi UniPatcher</string>
-    <string name="share_text">Scarica il miglior patcher di ROM per Android. Supporta i formati IPS, UPS, BPS, PPF, DPS, EBP e XDelta3.\\n\\n
+    <string name="share_text">Scarica il miglior patcher di ROM per Android. Supporta i formati IPS, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.\\n\\n
 </string>
 
     <!-- Navigation list -->
