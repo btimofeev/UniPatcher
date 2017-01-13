@@ -1,5 +1,5 @@
 def versionMajor = 0
-def versionMinor = 11
+def versionMinor = 12
 def versionPatch = 0
 def versionBuild = 0
 
@@ -80,11 +80,11 @@ dependencies {
     compile 'com.google.firebase:firebase-ads:10.0.1'
     compile 'com.google.firebase:firebase-core:10.0.1'
     compile 'com.google.firebase:firebase-crash:10.0.1'
-    compile 'com.anjlab.android.iab.v3:library:1.0.36'
+    compile 'com.anjlab.android.iab.v3:library:1.0.38'
     compile 'commons-io:commons-io:2.5'
     compile 'org.sufficientlysecure:html-textview:3.0'
     compile 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.1'
-    compile 'com.afollestad.material-dialogs:core:0.9.1.0'
+    compile 'com.afollestad.material-dialogs:core:0.9.2.3'
 }
 
 apply plugin: 'com.google.gms.google-services'
