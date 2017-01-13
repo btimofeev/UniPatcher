@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013-2016 Boris Timofeev
+Copyright (C) 2013-2017 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -63,16 +63,7 @@ public class WorkerService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         // if user deny write storage permission
         if (!Utils.hasStoragePermission(this)) {
-            Intent notificationIntent = new Intent(this, MainActivity.class);
-            NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            Notification notify = new NotificationCompat.Builder(this)
-                    .setContentTitle(getString(R.string.notify_error))
-                    .setContentText(getString(R.string.permissions_storage_error_notify_access_denied))
-                    .setSmallIcon(R.drawable.ic_stat_patching)
-                    .setContentIntent(PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT))
-                    .setAutoCancel(true)
-                    .build();
-            nm.notify(0, notify);
+            showErrorNotification(getString(R.string.permissions_storage_error_notify_access_denied));
             return;
         }
 
@@ -110,6 +101,30 @@ public class WorkerService extends IntentService {
 
         if(!fileExists(patchFile) || !fileExists(romFile))
             return;
+
+        // create output dir
+        try {
+            if (!outputFile.getParentFile().exists()) {
+                FileUtils.forceMkdirParent(outputFile);
+            }
+        } catch (IOException | SecurityException e) {
+            String text = getString(R.string.notify_error_unable_to_create_directory, outputFile.getParent());
+            showErrorNotification(text);
+            return;
+        }
+
+        // check access to output dir
+        try {
+            if (!outputFile.getParentFile().canWrite()){
+                String text = getString(R.string.notify_error_unable_to_write_to_directory, outputFile.getParent());
+                showErrorNotification(text);
+                return;
+            }
+        } catch (SecurityException e) {
+            String text = getString(R.string.notify_error_unable_to_write_to_directory, outputFile.getParent());
+            showErrorNotification(text);
+            return;
+        }
 
         String ext = FilenameUtils.getExtension(patchFile.getName()).toLowerCase(Locale.getDefault());
         if ("ips".equals(ext))
@@ -239,19 +254,25 @@ public class WorkerService extends IntentService {
 
     private boolean fileExists(File f) {
         if (!f.exists() || f.isDirectory()) {
-            Intent notificationIntent = new Intent(this, MainActivity.class);
             String text = getString(R.string.notify_error_file_not_found).concat(": ").concat(f.getName());
-            NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            Notification notify = new NotificationCompat.Builder(this)
-                    .setContentTitle(getString(R.string.notify_error))
-                    .setContentText(text)
-                    .setSmallIcon(R.drawable.ic_stat_patching)
-                    .setContentIntent(PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT))
-                    .setAutoCancel(true)
-                    .build();
-            nm.notify(0, notify);
+            showErrorNotification(text);
             return false;
         }
         return true;
+    }
+
+    private void showErrorNotification(String text) {
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        Notification notify = new NotificationCompat.Builder(this)
+                .setContentTitle(getString(R.string.notify_error))
+                .setContentText(text)
+                .setSmallIcon(R.drawable.ic_stat_patching)
+                .setContentIntent(PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT))
+                .setAutoCancel(true)
+                .setStyle(new NotificationCompat.BigTextStyle()
+                    .bigText(text))
+                .build();
+        nm.notify(0, notify);
     }
 }

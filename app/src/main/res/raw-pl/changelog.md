@@ -1,6 +1,7 @@
 #### 0.12 (January 15, 2017)
 
 - Support APS patches (Nintendo 64 and Game Boy Advance)
+- Added the ability to specify the output directory
 
 #### 0.11 (December 25, 2016)
 

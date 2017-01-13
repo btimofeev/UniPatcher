@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014, 2016 Boris Timofeev
+Copyright (C) 2014, 2016, 2017 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -191,7 +191,10 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
     }
 
     private String makeOutputPath(String fullname) {
-        String dir = FilenameUtils.getPath(fullname);
+        String dir = Settings.getOutputDir(getActivity());
+        if (dir.equals("")) { // get ROM directory
+            dir = FilenameUtils.getFullPath(fullname);
+        }
         String baseName = FilenameUtils.getBaseName(fullname);
         String ext = FilenameUtils.getExtension(fullname);
         return FilenameUtils.concat(dir, baseName.concat(" [patched].").concat(ext));
@@ -244,16 +247,17 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String newName = input.getText().toString();
-                if (newName.equals(romNameTextView.getText())) {
-                    Toast.makeText(getActivity(), R.string.dialog_rename_error_same_name, Toast.LENGTH_LONG).show();
-                    return;
-                }
                 if (newName.contains("/")) {
                     newName = newName.replaceAll("/", "_");
                     Toast.makeText(getActivity(), R.string.dialog_rename_error_invalid_chars, Toast.LENGTH_LONG).show();
                 }
+                String newPath = new File(outputPath).getParent().concat(File.separator).concat(newName);
+                if (FilenameUtils.equals(newPath, romPath)) {
+                    Toast.makeText(getActivity(), R.string.dialog_rename_error_same_name, Toast.LENGTH_LONG).show();
+                    return;
+                }
                 outputNameTextView.setText(newName);
-                outputPath = new File(romPath).getParent().concat(File.separator).concat(newName);
+                outputPath = newPath;
             }
         });
         dialog.setNegativeButton(R.string.dialog_rename_cancel, new DialogInterface.OnClickListener() {

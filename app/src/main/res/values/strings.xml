@@ -60,6 +60,8 @@
     <string name="notify_error_could_not_copy_file">Could not copy file</string>
     <string name="notify_error_file_not_found">File not found</string>
     <string name="notify_error_not_enough_space">Not enough space on the disk</string>
+    <string name="notify_error_unable_to_create_directory">Unable to create directory %1$s</string>
+    <string name="notify_error_unable_to_write_to_directory">Unable to write to directory %1$s</string>
     <string name="notify_error_not_ips_patch">Not a valid IPS patch</string>
     <string name="notify_error_not_ups_patch">Not a valid UPS patch</string>
     <string name="notify_error_not_bps_patch">Not a valid BPS patch</string>
@@ -109,6 +111,8 @@
     <string name="settings_remember_last_directories">Remember last opened directories</string>
     <string name="settings_rom_directory">Specify ROM\'s directory</string>
     <string name="settings_patch_directory">Specify patches directory</string>
+    <string name="settings_output_directory">Specify output directory</string>
+    <string name="settings_output_directory_description">Otherwise ROM will be stored in the ROM directory</string>
 
     <!-- Help activity -->
     <string name="help_activity_title">Help</string>

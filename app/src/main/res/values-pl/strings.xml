@@ -60,6 +60,8 @@
     <string name="notify_error_could_not_copy_file">Nie można skopiować pliku</string>
     <string name="notify_error_file_not_found">Plik nie znaleziony</string>
     <string name="notify_error_not_enough_space">Brak miejsca na Karcie Pamięci</string>
+    <string name="notify_error_unable_to_create_directory">Unable to create directory %1$s</string>
+    <string name="notify_error_unable_to_write_to_directory">Unable to write to directory %1$s</string>
     <string name="notify_error_not_ips_patch">Niewłaściwa łatka IPS</string>
     <string name="notify_error_not_ups_patch">Niewłaściwa łatka UPS</string>
     <string name="notify_error_not_bps_patch">Niewłaściwa łatka BPS</string>
@@ -109,6 +111,8 @@
     <string name="settings_remember_last_directories">Zapamiętaj ostatnią otworzoną ścieżkę</string>
     <string name="settings_rom_directory">Sprecyzuj ścieżkę Rom-ów</string>
     <string name="settings_patch_directory">Sprecyzuj ścieżkę łatek</string>
+    <string name="settings_output_directory">Specify output directory</string>
+    <string name="settings_output_directory_description">Otherwise ROM will be stored in the ROM directory</string>
 
     <!-- Help activity -->
     <string name="help_activity_title">Pomoc</string>

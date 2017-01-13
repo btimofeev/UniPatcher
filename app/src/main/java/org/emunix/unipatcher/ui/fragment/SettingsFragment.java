@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016 Boris Timofeev
+Copyright (C) 2016-2017 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -36,7 +36,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
                                           String key) {
-        if (key.equals("theme")) {
+        if (key.equals("theme") || key.equals("output_directory")) {
             Toast.makeText(getActivity(), R.string.settings_theme_message_restart_app, Toast.LENGTH_SHORT).show();
         }
     }

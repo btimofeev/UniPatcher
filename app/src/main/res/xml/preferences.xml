@@ -27,5 +27,10 @@
             android:key="patch_directory"
             android:title="@string/settings_patch_directory"
             android:defaultValue="/" />
+        <EditTextPreference
+            android:key="output_directory"
+            android:title="@string/settings_output_directory"
+            android:summary="@string/settings_output_directory_description"
+            android:defaultValue="" />
     </PreferenceCategory>
 </PreferenceScreen>

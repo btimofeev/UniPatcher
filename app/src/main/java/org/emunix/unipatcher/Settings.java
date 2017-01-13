@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016 Boris Timofeev
+Copyright (C) 2016, 2017 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -63,5 +63,10 @@ public class Settings {
             return getLastPatchDir(context);
         } else
             return prefs.getString("patch_directory", "/");
+    }
+
+    public static String getOutputDir(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getString("output_directory", "");
     }
 }
