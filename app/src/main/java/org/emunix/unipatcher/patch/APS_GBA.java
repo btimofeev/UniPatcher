@@ -152,9 +152,9 @@ public class APS_GBA extends Patch {
         }
 
         if(isOriginal) {
-            Utils.truncateFile(outputFile, fileSize1);
-        } else {
             Utils.truncateFile(outputFile, fileSize2);
+        } else {
+            Utils.truncateFile(outputFile, fileSize1);
         }
     }
 
