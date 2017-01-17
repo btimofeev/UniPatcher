@@ -34,7 +34,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,10 +41,8 @@ import com.afollestad.materialdialogs.MaterialDialog;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
-import org.emunix.unipatcher.Globals;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.Utils;
-import org.emunix.unipatcher.ad.AdMobController;
 import org.emunix.unipatcher.ui.adapter.FilePickerAdapter;
 
 import java.io.File;
@@ -63,7 +60,6 @@ import java.util.zip.CRC32;
 
 public class FilePickerActivity extends AppCompatActivity implements FilePickerAdapter.OnItemClickListener {
 
-    private AdMobController ad;
     private RecyclerView list;
     private FilePickerAdapter listAdapter;
     private TextView permissionErrorText;
@@ -118,14 +114,6 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
         listAdapter.setOnItemClickListener(this);
 
         requestStoragePermission();
-
-        // Load ads
-        if (!Globals.isFullVersion()) {
-            FrameLayout adView = (FrameLayout) findViewById(R.id.adView);
-            ad = new AdMobController(this, adView);
-            if (!Utils.isOnline(this))
-                ad.show(false);
-        }
     }
 
     @Override
@@ -259,30 +247,6 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
             savedInstanceState.putString("currentDirectory", currentDir.getAbsolutePath());
     }
 
-    @Override
-    public void onPause() {
-        if (ad != null) {
-            ad.pause();
-        }
-        super.onPause();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (ad != null) {
-            ad.resume();
-        }
-    }
-
-    @Override
-    public void onDestroy() {
-        if (ad != null) {
-            ad.destroy();
-        }
-        super.onDestroy();
-    }
-
     private void requestStoragePermission() {
         if (!Utils.hasStoragePermission(this)) {
             ActivityCompat.requestPermissions(this,
@@ -311,13 +275,9 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
     private void showPermissionError(boolean on) {
         if (on) {
             list.setVisibility(View.GONE);
-            if (ad != null)
-                ad.show(false);
             permissionErrorText.setVisibility(View.VISIBLE);
         } else {
             permissionErrorText.setVisibility(View.GONE);
-            if (ad != null)
-                ad.show(true);
             list.setVisibility(View.VISIBLE);
         }
     }

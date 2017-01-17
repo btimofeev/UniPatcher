@@ -19,11 +19,9 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher.ui.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -39,7 +37,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.anjlab.android.iab.v3.BillingProcessor;
@@ -49,8 +46,6 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import org.emunix.unipatcher.BuildConfig;
 import org.emunix.unipatcher.Globals;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.Utils;
-import org.emunix.unipatcher.ad.AdMobController;
 import org.emunix.unipatcher.ui.dialog.RateThisApp;
 import org.emunix.unipatcher.ui.fragment.ActionFragment;
 import org.emunix.unipatcher.ui.fragment.PatchingFragment;
@@ -69,15 +64,12 @@ public class MainActivity extends AppCompatActivity
     private static final String SKU_REMOVE_ADS = "ad";
     private boolean readyToPurchase = false;
     private BillingProcessor bp;
-    private AdMobController ad;
     private FirebaseAnalytics firebaseAnalytics;
-    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme();
         super.onCreate(savedInstanceState);
-        context = this;
         setContentView(R.layout.activity_main);
 
         firebaseAnalytics = FirebaseAnalytics.getInstance(this);
@@ -145,20 +137,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
         RateThisApp.launch(this);
-
-        // Load ads
-        if (!Globals.isFullVersion()) {
-            Handler adHandler = new Handler();
-            adHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    FrameLayout adView = (FrameLayout) findViewById(R.id.adView);
-                    ad = new AdMobController(context, adView);
-                    if (!Utils.isOnline(context))
-                        ad.show(false);
-                }
-            }, 1000);
-        }
     }
 
     private void setTheme() {
@@ -257,8 +235,6 @@ public class MainActivity extends AppCompatActivity
 
     private void setFullVersion() {
         Globals.setFullVersion();
-        if (ad != null)
-            ad.show(false);
     }
 
     private void complain(String message) {
@@ -267,28 +243,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onPause() {
-        if (ad != null) {
-            ad.pause();
-        }
-        super.onPause();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (ad != null) {
-            ad.resume();
-        }
-    }
-
-    @Override
     public void onDestroy() {
         if (bp != null) {
             bp.release();
-        }
-        if (ad != null) {
-            ad.destroy();
         }
         super.onDestroy();
     }
