@@ -18,5 +18,6 @@ Funzioni aggiuntive:
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) da SufficientlySecure, sotto licenza Apache 2.0
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) by John Casey, licensed under the Apache 2.0 license.
 - [**Icone Material Design**](https://github.com/google/material-design-icons) da Google, sotto la licenza Creative Common Attribution 4.0 International License (CC-BY 4.0).
+- [**Material design icons**](https://materialdesignicons.com) by community, licensed under SIL Open Font License 1.1.
 - [**Material Dialogs**](https://github.com/afollestad/material-dialogs) da Aidan Follestad, sotto la licenza MIT.
 - [**XDelta versione 3**](https://github.com/jmacd/xdelta) da Joshua MacDonald, sotto licenza Apache 2.0

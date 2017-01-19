@@ -31,7 +31,7 @@
             android:title="@string/nav_rate" />
         <item
             android:id="@+id/nav_donate"
-            android:icon="@drawable/ic_shopping_cart_grey600_24dp"
+            android:icon="@drawable/ic_gift_grey600_24dp"
             android:title="@string/nav_donate" />
         <item
             android:id="@+id/nav_share"
