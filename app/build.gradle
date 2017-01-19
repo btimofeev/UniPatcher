@@ -38,7 +38,7 @@ android {
 
     productFlavors {
         free {
-            buildConfigField "String", "PAYPAL_USER", "\"mashin87@gmail.com\""
+            buildConfigField "String", "PAYPAL_USER", "\"btimofeev@emunix.org\""
             buildConfigField "String", "PAYPAL_CURRENCY_CODE", "\"USD\""
             buildConfigField "String", "BITCOIN_ADDRESS", "\"16coztryz7xbNNDNhhf98wuHmi3hEintsW\""
         }
