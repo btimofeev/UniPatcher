@@ -45,15 +45,18 @@ public class DonateActivity extends AppCompatActivity {
         }
         getSupportActionBar().setTitle(R.string.donate_activity_title);
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        DonationsFragment donationsFragment = DonationsFragment.newInstance(BuildConfig.DEBUG,
-                false, null, null, null,
-                true, BuildConfig.PAYPAL_USER, BuildConfig.PAYPAL_CURRENCY_CODE, getString(R.string.donation),
-                false, null, null,
-                true, BuildConfig.BITCOIN_ADDRESS);
+        DonationsFragment fragment = (DonationsFragment) getSupportFragmentManager().findFragmentByTag("donationsFragment");
+        if (fragment == null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            fragment = DonationsFragment.newInstance(BuildConfig.DEBUG,
+                    false, null, null, null,
+                    true, BuildConfig.PAYPAL_USER, BuildConfig.PAYPAL_CURRENCY_CODE, getString(R.string.donation),
+                    false, null, null,
+                    true, BuildConfig.BITCOIN_ADDRESS);
 
-        ft.replace(R.id.donate_fragment, donationsFragment, "fragment");
-        ft.commit();
+            ft.replace(R.id.donate_fragment, fragment, "donationsFragment");
+            ft.commit();
+        }
     }
 
     @Override

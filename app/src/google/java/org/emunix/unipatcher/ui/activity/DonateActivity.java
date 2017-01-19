@@ -53,15 +53,18 @@ public class DonateActivity extends AppCompatActivity {
         }
         getSupportActionBar().setTitle(R.string.donate_activity_title);
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        DonationsFragment donationsFragment = DonationsFragment.newInstance(BuildConfig.DEBUG,
-                true, BuildConfig.GOOGLE_PLAY_PUBKEY, GOOGLE_PLAY_CATALOG, GOOGLE_PLAY_COST,
-                false, null, null, null,
-                false, null, null,
-                false, null);
+        DonationsFragment fragment = (DonationsFragment) getSupportFragmentManager().findFragmentByTag("donationsFragment");
+        if (fragment == null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            fragment = DonationsFragment.newInstance(BuildConfig.DEBUG,
+                    true, BuildConfig.GOOGLE_PLAY_PUBKEY, GOOGLE_PLAY_CATALOG, GOOGLE_PLAY_COST,
+                    false, null, null, null,
+                    false, null, null,
+                    false, null);
 
-        ft.replace(R.id.donate_fragment, donationsFragment, "donationsFragment");
-        ft.commit();
+            ft.replace(R.id.donate_fragment, fragment, "donationsFragment");
+            ft.commit();
+        }
     }
 
     @Override
