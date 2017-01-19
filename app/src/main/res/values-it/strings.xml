@@ -125,6 +125,8 @@
     <string name="help_activity_action_send_feedback">Invia feedback</string>
     <string name="help_activity_action_visit_site">Visita sito web</string>
 
+    <string name="donate_activity_title">Donate</string>
+
     <string name="send_feedback_dialog_title">Invia e-mail</string>
     <string name="send_feedback_error_no_email_apps">Non ci sono client email installati</string>
 
@@ -138,7 +140,7 @@
     <string name="nav_snes_add_del_smc_header">Aggiungi/Cancella intestazione SMC (SNES)</string>
     <string name="nav_settings">Impostazioni</string>
     <string name="nav_rate">Valuta questa App</string>
-    <string name="nav_buy">Offrimi una Birra</string>
+    <string name="nav_donate">Donate</string>
     <string name="nav_share">Condividi</string>
     <string name="nav_help">Aiuto</string>
     <string name="nav_drawer_open">Apri cassetto di navigazione</string>
@@ -150,7 +152,7 @@
     <string name="rate_dialog_ok">Valuta</string>
     <string name="rate_dialog_later">Ricorda dopo</string>
 
-    <string name="purchase_successful">Grazie!</string>
+    <string name="donation">Donation</string>
     <string name="icon">icona</string>
 
 </resources>

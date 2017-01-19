@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013-2016 Boris Timofeev
+Copyright (C) 2013-2017 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -24,8 +24,6 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.StatFs;
 import android.support.v4.content.ContextCompat;
@@ -42,7 +40,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.channels.FileChannel;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -65,12 +62,6 @@ public class Utils {
     public static boolean hasStoragePermission(Context context) {
         return ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 == PackageManager.PERMISSION_GRANTED;
-    }
-
-    public static boolean isOnline(Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-        return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
     public static int dpToPx(Context context, int dp) {

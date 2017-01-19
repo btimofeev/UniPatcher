@@ -125,6 +125,8 @@
     <string name="help_activity_action_send_feedback">Send feedback</string>
     <string name="help_activity_action_visit_site">Visit website</string>
 
+    <string name="donate_activity_title">Donate</string>
+
     <string name="send_feedback_dialog_title">Send e-mail</string>
     <string name="send_feedback_error_no_email_apps">There are no email clients installed</string>
 
@@ -137,7 +139,7 @@
     <string name="nav_snes_add_del_smc_header">Add/Del SMC header (SNES)</string>
     <string name="nav_settings">Settings</string>
     <string name="nav_rate">Rate this App</string>
-    <string name="nav_buy">Buy Me a Beer</string>
+    <string name="nav_donate">Donate</string>
     <string name="nav_share">Share</string>
     <string name="nav_help">Help</string>
     <string name="nav_drawer_open">Open navigation drawer</string>
@@ -149,7 +151,7 @@
     <string name="rate_dialog_ok">Rate</string>
     <string name="rate_dialog_later">Remind later</string>
 
-    <string name="purchase_successful">Thank you!</string>
+    <string name="donation">Donation</string>
     <string name="icon">icon</string>
 
 </resources>

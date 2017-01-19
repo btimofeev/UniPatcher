@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013-2016 Boris Timofeev
+Copyright (C) 2013-2017 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -20,9 +20,7 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher;
 
 public class Globals {
-    private static final String KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA384jTCBEuJ8nCWaC4S6AFrnMQN4mBlmkOXHV3Xg5hlFOl8TkVwiCfqz8r20yJpEy0IJ1+3QRnlq59zadUxbkD+PacJlGB/r2b3mbKfu+m0K+e/0aL6eWupjMSIyPgpnbN3uswiBEGUb4ytzYF53ZKTbLARnruQdMnjV6+VyfwMgpor/48anVQawDARBj/AIAj6VGtRHLmg6DmKDyOGQ7uCgXSv+ysnBKJjtIX/L/5nQgL8Q+9jsr2knuWY7j9BmrtpUXaDH3Kb50M1TOCKiqxPGa8lInOOIndABWxcpqmSMXP06SPYOanUlEH7lT0jjqpHpFNx8hRTT9xf652rgMJwIDAQAB";
     private static String cmdArgument = null;
-    private static boolean isFullVersion = false;
 
     public static String getCmdArgument() {
         return cmdArgument;
@@ -30,18 +28,6 @@ public class Globals {
 
     public static void setCmdArgument(String cmdArgument) {
         Globals.cmdArgument = cmdArgument;
-    }
-
-    public static boolean isFullVersion() {
-        return isFullVersion;
-    }
-
-    public static void setFullVersion() {
-        isFullVersion = true;
-    }
-
-    public static String getKey() {
-        return KEY;
     }
 
     public static final int ACTION_PATCHING = 1;

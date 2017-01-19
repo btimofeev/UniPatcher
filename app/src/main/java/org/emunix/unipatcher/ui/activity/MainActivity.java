@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013-2016 Boris Timofeev
+Copyright (C) 2013-2017 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -37,10 +37,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-import com.anjlab.android.iab.v3.BillingProcessor;
-import com.anjlab.android.iab.v3.TransactionDetails;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import org.emunix.unipatcher.BuildConfig;
@@ -60,10 +57,6 @@ public class MainActivity extends AppCompatActivity
      implements NavigationView.OnNavigationItemSelectedListener {
     private static final String LOG_TAG = "org.emunix.unipatcher";
 
-    private static final String SKU_FULL = "full";
-    private static final String SKU_REMOVE_ADS = "ad";
-    private boolean readyToPurchase = false;
-    private BillingProcessor bp;
     private FirebaseAnalytics firebaseAnalytics;
 
     @Override
@@ -107,35 +100,6 @@ public class MainActivity extends AppCompatActivity
         }
 
         parseArgument();
-        bp = new BillingProcessor(this, Globals.getKey(), new BillingProcessor.IBillingHandler() {
-            @Override
-            public void onBillingInitialized() {
-                Log.d(LOG_TAG, "Billing initialized");
-                readyToPurchase = true;
-                if (bp.isPurchased(SKU_FULL) || bp.isPurchased(SKU_REMOVE_ADS)) {
-                    setFullVersion();
-                }
-            }
-            @Override
-            public void onProductPurchased(String productId, TransactionDetails details) {
-                Log.d(LOG_TAG, "Item purchased: " + productId);
-                complain(getString(R.string.purchase_successful));
-                setFullVersion();
-            }
-            @Override
-            public void onBillingError(int errorCode, Throwable error) {
-                if (errorCode != 110) // cancel purchase
-                    complain("Billing error: " + Integer.toString(errorCode));
-            }
-            @Override
-            public void onPurchaseHistoryRestored() {
-                for(String sku : bp.listOwnedProducts())
-                    Log.d(LOG_TAG, "Owned Managed Product: " + sku);
-                if (bp.isPurchased(SKU_FULL) || bp.isPurchased(SKU_REMOVE_ADS)) {
-                    setFullVersion();
-                }
-            }
-        });
         RateThisApp.launch(this);
     }
 
@@ -175,8 +139,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(settingsIntent);
         } else if (id == R.id.nav_rate) {
             RateThisApp.rate(this);
-        } else if (id == R.id.nav_buy) {
-            buyFullVersion();
+        } else if (id == R.id.nav_donate) {
+            Intent donateIntent = new Intent(this, DonateActivity.class);
+            startActivity(donateIntent);
         } else if (id == R.id.nav_share) {
             shareApp();
         } else if (id == R.id.nav_help) {
@@ -211,42 +176,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        Log.d(LOG_TAG, "onActivityResult(" + requestCode + "," + resultCode + "," + data);
-        if (!bp.handleActivityResult(requestCode, resultCode, data))
-            super.onActivityResult(requestCode, resultCode, data);
-    }
-
     private void shareApp() {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
         shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text) + "https://play.google.com/store/apps/details?id=org.eminix.unipatcher");
         startActivity(Intent.createChooser(shareIntent, getString(R.string.share_dialog_title)));
-    }
-
-    private void buyFullVersion() {
-        if (readyToPurchase)
-            bp.purchase(this, SKU_REMOVE_ADS);
-        else
-            complain("Billing not initialized.");
-    }
-
-    private void setFullVersion() {
-        Globals.setFullVersion();
-    }
-
-    private void complain(String message) {
-        Log.d(LOG_TAG, message);
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onDestroy() {
-        if (bp != null) {
-            bp.release();
-        }
-        super.onDestroy();
     }
 }

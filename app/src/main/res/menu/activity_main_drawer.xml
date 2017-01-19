@@ -30,9 +30,9 @@
             android:icon="@drawable/ic_thumb_up_grey600_24dp"
             android:title="@string/nav_rate" />
         <item
-            android:id="@+id/nav_buy"
+            android:id="@+id/nav_donate"
             android:icon="@drawable/ic_shopping_cart_grey600_24dp"
-            android:title="@string/nav_buy" />
+            android:title="@string/nav_donate" />
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_share_grey600_24dp"

@@ -36,6 +36,17 @@ android {
         }
     }
 
+    productFlavors {
+        fdroid {
+            buildConfigField "String", "PAYPAL_USER", "\"mashin87@gmail.com\""
+            buildConfigField "String", "PAYPAL_CURRENCY_CODE", "\"USD\""
+            buildConfigField "String", "BITCOIN_ADDRESS", "\"16coztryz7xbNNDNhhf98wuHmi3hEintsW\""
+        }
+        google {
+            buildConfigField "String", "GOOGLE_PLAY_PUBKEY", "\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA384jTCBEuJ8nCWaC4S6AFrnMQN4mBlmkOXHV3Xg5hlFOl8TkVwiCfqz8r20yJpEy0IJ1+3QRnlq59zadUxbkD+PacJlGB/r2b3mbKfu+m0K+e/0aL6eWupjMSIyPgpnbN3uswiBEGUb4ytzYF53ZKTbLARnruQdMnjV6+VyfwMgpor/48anVQawDARBj/AIAj6VGtRHLmg6DmKDyOGQ7uCgXSv+ysnBKJjtIX/L/5nQgL8Q+9jsr2knuWY7j9BmrtpUXaDH3Kb50M1TOCKiqxPGa8lInOOIndABWxcpqmSMXP06SPYOanUlEH7lT0jjqpHpFNx8hRTT9xf652rgMJwIDAQAB\""
+        }
+    }
+
     externalNativeBuild {
         cmake {
             path "CMakeLists.txt"
@@ -79,8 +90,8 @@ dependencies {
     compile 'com.android.support:design:25.1.0'
     compile 'com.google.firebase:firebase-core:10.0.1'
     compile 'com.google.firebase:firebase-crash:10.0.1'
-    compile 'com.anjlab.android.iab.v3:library:1.0.38'
     compile 'commons-io:commons-io:2.5'
+    compile 'org.sufficientlysecure:donations:2.5'
     compile 'org.sufficientlysecure:html-textview:3.0'
     compile 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.1'
     compile 'com.afollestad.material-dialogs:core:0.9.2.3'

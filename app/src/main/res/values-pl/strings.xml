@@ -125,6 +125,8 @@
     <string name="help_activity_action_send_feedback">Wyślij opinię</string>
     <string name="help_activity_action_visit_site">Odwiedź stronę</string>
 
+    <string name="donate_activity_title">Donate</string>
+
     <string name="send_feedback_dialog_title">Wyślij E-Maila</string>
     <string name="send_feedback_error_no_email_apps">Tu nie ma żadnych klientów E-Mail zainstalowanych</string>
 
@@ -137,7 +139,7 @@
     <string name="nav_snes_add_del_smc_header">Dodaj/Usuń nagłówek SMC (SNES)</string>
     <string name="nav_settings">Ustawienia</string>
     <string name="nav_rate">Oceń tą aplikację</string>
-    <string name="nav_buy">Kup Mi Piwo</string>
+    <string name="nav_donate">Donate</string>
     <string name="nav_share">Udostępnij</string>
     <string name="nav_help">Pomoc</string>
     <string name="nav_drawer_open">Otwórz kartę nawigacyjną</string>
@@ -149,7 +151,7 @@
     <string name="rate_dialog_ok">Oceń</string>
     <string name="rate_dialog_later">Przypomnij mi później</string>
 
-    <string name="purchase_successful">Dziękuję!</string>
+    <string name="donation">Donation</string>
     <string name="icon">ikona</string>
 
 </resources>
