@@ -216,7 +216,7 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
                 fileList.add(entry);
             } else {
                 entry = new FileEntry();
-                if (Utils.isPatch(file)){
+                if (Utils.isPatch(file)) {
                     entry.setIcon(R.drawable.ic_healing_grey600_24dp);
                 } else {
                     entry.setIcon(R.drawable.ic_insert_drive_file_grey600_24dp);
@@ -359,8 +359,7 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
             }
         }
 
-        private HashMap<String, String> getFileChecksums(File file) throws IOException, NoSuchAlgorithmException, IllegalArgumentException
-        {
+        private HashMap<String, String> getFileChecksums(File file) throws IOException, NoSuchAlgorithmException, IllegalArgumentException {
             if (file.isDirectory())
                 throw new IllegalArgumentException("Unable calculate checksum for directory");
 

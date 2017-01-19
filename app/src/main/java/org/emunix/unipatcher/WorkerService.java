@@ -99,7 +99,7 @@ public class WorkerService extends IntentService {
         File outputFile = new File(intent.getStringExtra("outputPath"));
         Patch patcher = null;
 
-        if(!fileExists(patchFile) || !fileExists(romFile))
+        if (!fileExists(patchFile) || !fileExists(romFile))
             return;
 
         // create output dir
@@ -115,7 +115,7 @@ public class WorkerService extends IntentService {
 
         // check access to output dir
         try {
-            if (!outputFile.getParentFile().canWrite()){
+            if (!outputFile.getParentFile().canWrite()) {
                 String text = getString(R.string.notify_error_unable_to_write_to_directory, outputFile.getParent());
                 showErrorNotification(text);
                 return;
@@ -176,7 +176,7 @@ public class WorkerService extends IntentService {
         String errorMsg = null;
         File romFile = new File(intent.getStringExtra("romPath"));
 
-        if(!fileExists(romFile))
+        if (!fileExists(romFile))
             return;
 
         SmdFixChecksum fixer = new SmdFixChecksum(this, romFile);
@@ -200,7 +200,7 @@ public class WorkerService extends IntentService {
         File romFile = new File(intent.getStringExtra("romPath"));
         String headerPath = intent.getStringExtra("headerPath");
 
-        if(!fileExists(romFile))
+        if (!fileExists(romFile))
             return;
 
         SnesSmcHeader worker = new SnesSmcHeader();
@@ -230,7 +230,7 @@ public class WorkerService extends IntentService {
 
         File romFile = new File(intent.getStringExtra("romPath"));
 
-        if(!fileExists(romFile))
+        if (!fileExists(romFile))
             return;
 
         SnesSmcHeader worker = new SnesSmcHeader();
@@ -271,7 +271,7 @@ public class WorkerService extends IntentService {
                 .setContentIntent(PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT))
                 .setAutoCancel(true)
                 .setStyle(new NotificationCompat.BigTextStyle()
-                    .bigText(text))
+                        .bigText(text))
                 .build();
         nm.notify(0, notify);
     }

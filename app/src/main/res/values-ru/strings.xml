@@ -38,7 +38,7 @@
     <string name="file_picker_activity_title_select_patch">Выберите патч</string>
     <string name="file_picker_activity_title_select_header">Выберите файл заголовка</string>
     <string name="file_picker_activity_error_unable_read_dir">Не удалось открыть директорию %1$s</string>
-    
+
     <!-- File properties dialog -->
     <string name="file_properties_dialog_title">Свойства</string>
     <string name="file_properties_dialog_name">Имя:</string>

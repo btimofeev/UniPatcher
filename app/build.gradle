@@ -56,10 +56,10 @@ android {
 
 def Properties props = new Properties()
 def propFile = file('../../signing.properties')
-if (propFile.canRead()){
+if (propFile.canRead()) {
     props.load(new FileInputStream(propFile))
 
-    if (props!=null && props.containsKey('STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
+    if (props != null && props.containsKey('STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
             props.containsKey('KEY_ALIAS') && props.containsKey('KEY_PASSWORD')) {
 
         println 'RELEASE BUILD SIGNING'

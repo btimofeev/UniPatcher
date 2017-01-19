@@ -60,7 +60,7 @@ public class SnesSmcHeader {
             int length;
             length = inputRom.read(header);
             if (saveHeader) {
-                File headerfile = new File(romfile.getPath()+".smc_header");
+                File headerfile = new File(romfile.getPath() + ".smc_header");
                 outputHeader = new FileOutputStream(headerfile);
                 outputHeader.write(header, 0, length);
             }

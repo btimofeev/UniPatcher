@@ -55,7 +55,8 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
 
     private int action = 0;
 
-    public SnesSmcHeaderFragment() {}
+    public SnesSmcHeaderFragment() {
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,7 +70,7 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
         romNameTextView = (TextView) view.findViewById(R.id.romNameTextView);
         headerNameTextView = (TextView) view.findViewById(R.id.headerNameTextView);
         headerInfoTextView = (TextView) view.findViewById(R.id.headerInfoTextView);
-        
+
         CardView romCardView = (CardView) view.findViewById(R.id.romCardView);
         romCardView.setOnClickListener(this);
         headerCardView = (CardView) view.findViewById(R.id.headerCardView);
@@ -99,7 +100,7 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
     }
 
     private void restoreState(Bundle savedInstanceState) {
-        if (savedInstanceState != null){
+        if (savedInstanceState != null) {
             romPath = savedInstanceState.getString("romPath");
             headerPath = savedInstanceState.getString("headerPath");
             action = savedInstanceState.getInt("action");
@@ -126,7 +127,7 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
     }
 
     @Override
-    public void onClick(View view){
+    public void onClick(View view) {
         Intent intent = new Intent(getActivity(), FilePickerActivity.class);
         switch (view.getId()) {
             case R.id.romCardView:
@@ -142,7 +143,7 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d(LOG_TAG, "onActivityResult(" + requestCode + "," + resultCode + "," + data);
         if (resultCode == Activity.RESULT_OK) {
             String path = data.getStringExtra("path");
@@ -179,8 +180,8 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    public boolean runAction(){
-        if (romPath == null){
+    public boolean runAction() {
+        if (romPath == null) {
             Toast.makeText(getActivity(), getString(R.string.main_activity_toast_rom_not_selected), Toast.LENGTH_LONG).show();
             return false;
         }

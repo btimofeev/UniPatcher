@@ -38,7 +38,7 @@
     <string name="file_picker_activity_title_select_patch">Select the patch file</string>
     <string name="file_picker_activity_title_select_header">Select the header file</string>
     <string name="file_picker_activity_error_unable_read_dir">Unable to read directory %1$s</string>
-    
+
     <!-- File properties dialog -->
     <string name="file_properties_dialog_title">Properties</string>
     <string name="file_properties_dialog_name">Name:</string>

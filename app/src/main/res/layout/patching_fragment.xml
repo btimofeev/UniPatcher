@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentTop="true">
@@ -18,30 +19,30 @@
                 android:padding="@dimen/card_padding">
 
                 <TextView
+                    android:id="@+id/patchLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/patchLabel"
                     android:padding="8dp"
                     android:text="@string/main_activity_patch_file"
                     android:textColor="@color/colorCardHeaderText"
                     android:textSize="24sp"/>
 
                 <View
-                    android:layout_marginTop="@dimen/card_line_margin"
-                    android:layout_marginBottom="@dimen/card_line_margin"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/card_line_height"
+                    android:layout_marginBottom="@dimen/card_line_margin"
+                    android:layout_marginTop="@dimen/card_line_margin"
                     android:background="@color/colorCardLine"/>
 
                 <TextView
+                    android:id="@+id/patchNameTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/patchNameTextView"
+                    android:drawableLeft="@drawable/ic_folder_grey600_24dp"
+                    android:drawablePadding="8dp"
                     android:padding="8dp"
                     android:text="@string/main_activity_tap_to_select"
-                    android:textSize="20sp"
-                    android:drawableLeft="@drawable/ic_folder_grey600_24dp"
-                    android:drawablePadding="8dp"/>
+                    android:textSize="20sp"/>
 
             </LinearLayout>
 
@@ -58,30 +59,30 @@
                 android:padding="@dimen/card_padding">
 
                 <TextView
+                    android:id="@+id/romLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/romLabel"
                     android:padding="8dp"
                     android:text="@string/main_activity_rom_file"
                     android:textColor="@color/colorCardHeaderText"
                     android:textSize="24sp"/>
 
                 <View
-                    android:layout_marginTop="@dimen/card_line_margin"
-                    android:layout_marginBottom="@dimen/card_line_margin"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/card_line_height"
+                    android:layout_marginBottom="@dimen/card_line_margin"
+                    android:layout_marginTop="@dimen/card_line_margin"
                     android:background="@color/colorCardLine"/>
 
                 <TextView
+                    android:id="@+id/romNameTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/romNameTextView"
+                    android:drawableLeft="@drawable/ic_folder_grey600_24dp"
+                    android:drawablePadding="8dp"
                     android:padding="8dp"
                     android:text="@string/main_activity_tap_to_select"
-                    android:textSize="20sp"
-                    android:drawableLeft="@drawable/ic_folder_grey600_24dp"
-                    android:drawablePadding="8dp"/>
+                    android:textSize="20sp"/>
 
             </LinearLayout>
 
@@ -98,30 +99,30 @@
                 android:padding="@dimen/card_padding">
 
                 <TextView
+                    android:id="@+id/outputLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/outputLabel"
                     android:padding="8dp"
                     android:text="@string/main_activity_output_file"
                     android:textColor="@color/colorCardHeaderText"
                     android:textSize="24sp"/>
 
                 <View
-                    android:layout_marginTop="@dimen/card_line_margin"
-                    android:layout_marginBottom="@dimen/card_line_margin"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/card_line_height"
+                    android:layout_marginBottom="@dimen/card_line_margin"
+                    android:layout_marginTop="@dimen/card_line_margin"
                     android:background="@color/colorCardLine"/>
 
                 <TextView
+                    android:id="@+id/outputNameTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/outputNameTextView"
-                    android:padding="8dp"
-                    android:textSize="20sp"
-                    android:text="@string/main_activity_tap_to_rename"
                     android:drawableLeft="@drawable/ic_edit_grey600_24dp"
-                    android:drawablePadding="8dp"/>
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:text="@string/main_activity_tap_to_rename"
+                    android:textSize="20sp"/>
             </LinearLayout>
 
         </android.support.v7.widget.CardView>

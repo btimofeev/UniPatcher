@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <include layout="@layout/toolbar" />
+            <include layout="@layout/toolbar"/>
 
         </android.support.design.widget.AppBarLayout>
 
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
-            android:src="@drawable/ic_save_white_24dp" />
+            android:src="@drawable/ic_save_white_24dp"/>
 
     </android.support.design.widget.CoordinatorLayout>
 
@@ -47,8 +47,8 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer"
+        app:itemIconTint="@color/colorDrawerText"
         app:itemTextColor="@color/colorDrawerText"
-        app:itemIconTint="@color/colorDrawerText" />
+        app:menu="@menu/activity_main_drawer"/>
 
 </android.support.v4.widget.DrawerLayout>

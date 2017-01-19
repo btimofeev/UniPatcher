@@ -6,18 +6,19 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".ui.activity.FilePickerActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/appbar"
             android:layout_alignParentTop="true"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <include layout="@layout/toolbar" />
+            <include layout="@layout/toolbar"/>
 
         </android.support.design.widget.AppBarLayout>
 
@@ -26,12 +27,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/appbar"
+            android:layout_margin="@dimen/activity_horizontal_margin"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:visibility="gone"
+            android:text="@string/permissions_storage_error_info"
             android:textStyle="bold"
-            android:text="@string/permissions_storage_error_info" />
+            android:visibility="gone"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/list"

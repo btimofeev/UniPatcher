@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,19 +12,19 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/name_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="8dp"
             android:text="@string/file_properties_dialog_name"
-            android:id="@+id/name_label"
-            android:textSize="@dimen/material_text_subhead" />
+            android:textSize="@dimen/material_text_subhead"/>
 
         <TextView
+            android:id="@+id/name_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/name_value"
-            android:textSize="@dimen/material_text_subhead"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            android:textSize="@dimen/material_text_subhead"/>
     </LinearLayout>
 
     <LinearLayout
@@ -33,19 +34,19 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/path_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="8dp"
             android:text="@string/file_properties_dialog_path"
-            android:id="@+id/path_label"
-            android:textSize="@dimen/material_text_subhead" />
+            android:textSize="@dimen/material_text_subhead"/>
 
         <TextView
+            android:id="@+id/path_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/path_value"
-            android:textSize="@dimen/material_text_subhead"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            android:textSize="@dimen/material_text_subhead"/>
 
     </LinearLayout>
 
@@ -56,19 +57,19 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/size_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="8dp"
             android:text="@string/file_properties_dialog_size"
-            android:id="@+id/size_label"
-            android:textSize="@dimen/material_text_subhead" />
+            android:textSize="@dimen/material_text_subhead"/>
 
         <TextView
+            android:id="@+id/size_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/size_value"
-            android:textSize="@dimen/material_text_subhead"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            android:textSize="@dimen/material_text_subhead"/>
 
     </LinearLayout>
 
@@ -79,20 +80,20 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/crc32_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="8dp"
             android:text="@string/file_properties_dialog_crc32"
-            android:id="@+id/crc32_label"
-            android:textSize="@dimen/material_text_subhead" />
+            android:textSize="@dimen/material_text_subhead"/>
 
         <TextView
+            android:id="@+id/crc32_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/file_properties_dialog_wait_message"
-            android:id="@+id/crc32_value"
-            android:textSize="@dimen/material_text_subhead"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            android:textSize="@dimen/material_text_subhead"/>
     </LinearLayout>
 
     <LinearLayout
@@ -102,20 +103,20 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/SHA1_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="8dp"
             android:text="@string/file_properties_dialog_sha1"
-            android:id="@+id/SHA1_label"
-            android:textSize="@dimen/material_text_subhead" />
+            android:textSize="@dimen/material_text_subhead"/>
 
         <TextView
+            android:id="@+id/sha1_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/file_properties_dialog_wait_message"
-            android:id="@+id/sha1_value"
-            android:textSize="@dimen/material_text_subhead"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            android:textSize="@dimen/material_text_subhead"/>
     </LinearLayout>
 
     <LinearLayout
@@ -124,20 +125,20 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/md5_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="8dp"
             android:text="@string/file_properties_dialog_md5"
-            android:id="@+id/md5_label"
-            android:textSize="@dimen/material_text_subhead" />
+            android:textSize="@dimen/material_text_subhead"/>
 
         <TextView
+            android:id="@+id/md5_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/file_properties_dialog_wait_message"
-            android:id="@+id/md5_value"
-            android:textSize="@dimen/material_text_subhead"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            android:textSize="@dimen/material_text_subhead"/>
     </LinearLayout>
 
 </LinearLayout>

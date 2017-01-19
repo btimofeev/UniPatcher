@@ -68,6 +68,7 @@ public abstract class Notify {
     }
 
     public abstract void setCompleted();
+
     public abstract void setFailed(String message);
 
     public void setProgress(boolean isEnabled) {

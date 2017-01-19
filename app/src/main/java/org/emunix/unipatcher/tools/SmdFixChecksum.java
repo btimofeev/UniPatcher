@@ -51,7 +51,7 @@ public class SmdFixChecksum {
         try {
             smdStream = new BufferedInputStream(new FileInputStream(smdFile));
 
-            long c =  IOUtils.skip(smdStream, 512);
+            long c = IOUtils.skip(smdStream, 512);
             if (c != 512)
                 throw new IOException("Skip failed");
 
@@ -83,7 +83,7 @@ public class SmdFixChecksum {
             smdStream.writeByte((sum >> 8) & 0xff);
             smdStream.writeByte(sum & 0xff);
         } finally {
-           IOUtils.closeQuietly(smdStream);
+            IOUtils.closeQuietly(smdStream);
         }
     }
 }

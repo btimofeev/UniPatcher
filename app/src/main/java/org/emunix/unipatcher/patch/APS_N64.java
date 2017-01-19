@@ -144,7 +144,7 @@ public class APS_N64 extends Patch {
                 size = patchStream.read();
                 patchPos++;
                 if (size != 0) {
-                    byte[] data = new byte[(int)size];
+                    byte[] data = new byte[(int) size];
                     patchStream.read(data);
                     patchPos += size;
                     outputStream.write(data);
@@ -153,7 +153,7 @@ public class APS_N64 extends Patch {
                     byte val = (byte) patchStream.read();
                     size = patchStream.read();
                     patchPos += 2;
-                    byte[] data = new byte[(int)size];
+                    byte[] data = new byte[(int) size];
                     Arrays.fill(data, val);
                     outputStream.write(data);
                     outPos += size;
@@ -164,7 +164,7 @@ public class APS_N64 extends Patch {
                     if (romPos + size > romSize) {
                         romPos = (int) romSize;
                     } else {
-                        byte[] buf = new byte[(int)size];
+                        byte[] buf = new byte[(int) size];
                         romStream.read(buf);
                         romPos += size;
                     }
@@ -226,7 +226,7 @@ public class APS_N64 extends Patch {
     }
 
     private long readLELong(InputStream stream) throws IOException {
-        return (stream.read() & 0xff)  + ((stream.read() & 0xff) << 8)
+        return (stream.read() & 0xff) + ((stream.read() & 0xff) << 8)
                 + ((stream.read() & 0xff) << 16) + ((stream.read() & 0xff) << 24);
     }
 }

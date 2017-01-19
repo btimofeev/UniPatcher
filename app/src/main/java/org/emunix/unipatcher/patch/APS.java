@@ -47,9 +47,11 @@ public class APS extends Patch {
         Patch aps = null;
         switch (checkAPS(patchFile)) {
             case APS_N64_PATCH:
-                aps = new APS_N64(context, patchFile, romFile, outputFile); break;
+                aps = new APS_N64(context, patchFile, romFile, outputFile);
+                break;
             case APS_GBA_PATCH:
-                aps = new APS_GBA(context, patchFile, romFile, outputFile); break;
+                aps = new APS_GBA(context, patchFile, romFile, outputFile);
+                break;
             case NOT_APS_PATCH:
                 throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
         }

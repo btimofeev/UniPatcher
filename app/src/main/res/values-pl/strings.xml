@@ -38,7 +38,7 @@
     <string name="file_picker_activity_title_select_patch">Wybier plik Łatki</string>
     <string name="file_picker_activity_title_select_header">Wybierz plik nagłówka</string>
     <string name="file_picker_activity_error_unable_read_dir">Błędna ścieżka %1$s</string>
-    
+
     <!-- File properties dialog -->
     <string name="file_properties_dialog_title">Właściwości</string>
     <string name="file_properties_dialog_name">Nazwa:</string>

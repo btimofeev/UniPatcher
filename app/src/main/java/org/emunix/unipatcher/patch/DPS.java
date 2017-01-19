@@ -44,11 +44,11 @@ public class DPS extends Patch {
     @Override
     public void apply() throws PatchException, IOException {
 
-		if (patchFile.length() < MIN_SIZE_PATCH) {
-		    throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
-		}
+        if (patchFile.length() < MIN_SIZE_PATCH) {
+            throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+        }
 
-		BufferedInputStream patchStream = null;
+        BufferedInputStream patchStream = null;
         RandomAccessFile romStream = null;
         RandomAccessFile outputStream = null;
 
@@ -121,7 +121,7 @@ public class DPS extends Patch {
     }
 
     private long getUInt(byte[] a, int offset) {
-    	return 	((long)(a[offset] & 0xff)) + ((long)(a[offset + 1] & 0xff) << 8) +
-    			((long)(a[offset + 2] & 0xff) << 16) + ((long)(a[offset + 3] & 0xff) << 24);
+        return ((long) (a[offset] & 0xff)) + ((long) (a[offset + 1] & 0xff) << 8) +
+                ((long) (a[offset + 2] & 0xff) << 16) + ((long) (a[offset + 3] & 0xff) << 24);
     }
 }

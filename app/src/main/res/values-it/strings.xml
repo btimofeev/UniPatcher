@@ -38,7 +38,7 @@
     <string name="file_picker_activity_title_select_patch">Seleziona il file di patch</string>
     <string name="file_picker_activity_title_select_header">Scegli il file di intestazione</string>
     <string name="file_picker_activity_error_unable_read_dir">Impossibile leggere la cartella %1$s</string>
-    
+
     <!-- File properties dialog -->
     <string name="file_properties_dialog_title">Proprietà</string>
     <string name="file_properties_dialog_name">Nome:</string>

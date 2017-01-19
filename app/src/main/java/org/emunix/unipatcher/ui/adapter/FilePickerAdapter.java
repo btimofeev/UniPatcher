@@ -38,6 +38,7 @@ public class FilePickerAdapter extends RecyclerView.Adapter<FilePickerAdapter.Vi
 
     public interface OnItemClickListener {
         void onItemClick(View v, int position);
+
         void onItemLongClick(View v, int position);
     }
 

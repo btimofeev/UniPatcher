@@ -32,7 +32,6 @@ import java.util.Arrays;
 
 public class PPF extends Patch {
 
-//    private static final String LOG_TAG = "PPF";
     private static final byte[] MAGIC_NUMBER = {0x50, 0x50, 0x46}; // "PPF" without version
 
     private RandomAccessFile patchStream;
@@ -75,10 +74,17 @@ public class PPF extends Patch {
         }
 
         switch (getPPFVersion(patchFile)) {
-            case 1: applyPPF1(); break;
-            case 2: applyPPF2(); break;
-            case 3: applyPPF3(); break;
-            default: throw new PatchException(context.getString(R.string.notify_error_not_ppf_patch));
+            case 1:
+                applyPPF1();
+                break;
+            case 2:
+                applyPPF2();
+                break;
+            case 3:
+                applyPPF3();
+                break;
+            default:
+                throw new PatchException(context.getString(R.string.notify_error_not_ppf_patch));
         }
     }
 
@@ -217,24 +223,24 @@ public class PPF extends Patch {
     private long readLittleEndianLong(RandomAccessFile stream) throws IOException {
         byte[] b = new byte[8];
         stream.read(b);
-        long result = ((long)(b[7] & 0xff) << 56) + ((long)(b[6] & 0xff) << 48 ) +
-                ((long)(b[5] & 0xff) << 40) + ((long)(b[4] & 0xff) << 32 ) +
-                ((long)(b[3] & 0xff) << 24) + ((long)(b[2] & 0xff) << 16 ) +
-                ((long)(b[1] & 0xff) << 8) + ((long)b[0] & 0xff);
+        long result = ((long) (b[7] & 0xff) << 56) + ((long) (b[6] & 0xff) << 48) +
+                ((long) (b[5] & 0xff) << 40) + ((long) (b[4] & 0xff) << 32) +
+                ((long) (b[3] & 0xff) << 24) + ((long) (b[2] & 0xff) << 16) +
+                ((long) (b[1] & 0xff) << 8) + ((long) b[0] & 0xff);
         return result;
     }
 
     private int readLittleEndianInt(RandomAccessFile stream) throws IOException {
         byte[] b = new byte[4];
         stream.read(b);
-        return ((b[3] & 0xff) << 24) + ((b[2] & 0xff) <<16 ) +
-                ((b[1] & 0xff) << 8) + (b[0]&0xff);
+        return ((b[3] & 0xff) << 24) + ((b[2] & 0xff) << 16) +
+                ((b[1] & 0xff) << 8) + (b[0] & 0xff);
     }
 
     /**
      * Returns size of FileID
      *
-     * @param stream stream of PPF file
+     * @param stream     stream of PPF file
      * @param ppfVersion version of PPF patch
      * @return size of FileID or 0
      */

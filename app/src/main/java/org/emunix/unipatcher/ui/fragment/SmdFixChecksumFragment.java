@@ -49,7 +49,8 @@ public class SmdFixChecksumFragment extends ActionFragment implements View.OnCli
     private TextView fixChecksumInfoTextview;
     private String romPath = null;
 
-    public SmdFixChecksumFragment() {}
+    public SmdFixChecksumFragment() {
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,7 +88,7 @@ public class SmdFixChecksumFragment extends ActionFragment implements View.OnCli
     }
 
     private void restoreState(Bundle savedInstanceState) {
-        if (savedInstanceState != null){
+        if (savedInstanceState != null) {
             romPath = savedInstanceState.getString("romPath");
             if (romPath != null)
                 romNameTextView.setText(new File(romPath).getName());
@@ -101,7 +102,7 @@ public class SmdFixChecksumFragment extends ActionFragment implements View.OnCli
     }
 
     @Override
-    public void onClick(View view){
+    public void onClick(View view) {
         Intent intent = new Intent(getActivity(), FilePickerActivity.class);
         switch (view.getId()) {
             case R.id.romCardView:
@@ -113,7 +114,7 @@ public class SmdFixChecksumFragment extends ActionFragment implements View.OnCli
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d(LOG_TAG, "onActivityResult(" + requestCode + "," + resultCode + "," + data);
         if (resultCode == Activity.RESULT_OK) {
             String path = data.getStringExtra("path");
@@ -134,8 +135,8 @@ public class SmdFixChecksumFragment extends ActionFragment implements View.OnCli
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    public boolean runAction(){
-        if (romPath == null){
+    public boolean runAction() {
+        if (romPath == null) {
             Toast.makeText(getActivity(), getString(R.string.main_activity_toast_rom_not_selected), Toast.LENGTH_LONG).show();
             return false;
         }
@@ -145,7 +146,7 @@ public class SmdFixChecksumFragment extends ActionFragment implements View.OnCli
         intent.putExtra("romPath", romPath);
         getActivity().startService(intent);
 
-        Toast.makeText(getActivity(), R.string.notify_smd_fix_checksum_started_check_notify,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), R.string.notify_smd_fix_checksum_started_check_notify, Toast.LENGTH_SHORT).show();
         return true;
     }
 }

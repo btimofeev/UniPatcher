@@ -106,7 +106,7 @@ public class EBP extends Patch {
 
         // if we couldn't fix the ROM, try to remove a 0xff byte at the end.
         if (!checkMD5(file)) {
-            int length = (int)file.length();
+            int length = (int) file.length();
             byte[] buffer = new byte[length];
             FileInputStream in = new FileInputStream(file);
             int count = in.read(buffer);
@@ -254,7 +254,7 @@ public class EBP extends Patch {
                 if (size < 2)
                     throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
                 ips.write(buffer, 0, 2);
-                size = (((int)buffer[0] & 0xff) << 8) + ((int)buffer[1] & 0xff);
+                size = (((int) buffer[0] & 0xff) << 8) + ((int) buffer[1] & 0xff);
                 if (size != 0) {
                     int c = ebp.read(buffer, 0, size);
                     if (c < size)

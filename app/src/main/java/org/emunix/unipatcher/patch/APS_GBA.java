@@ -130,7 +130,7 @@ public class APS_GBA extends Patch {
 
                 crc = crc16(romBuf);
 
-                for(int i = 0; i < CHUNK_SIZE; i++)
+                for (int i = 0; i < CHUNK_SIZE; i++)
                     romBuf[i] ^= patchBuf[i];
 
                 if (crc == patchCrc1) {
@@ -151,7 +151,7 @@ public class APS_GBA extends Patch {
             IOUtils.closeQuietly(output);
         }
 
-        if(isOriginal) {
+        if (isOriginal) {
             Utils.truncateFile(outputFile, fileSize2);
         } else {
             Utils.truncateFile(outputFile, fileSize1);

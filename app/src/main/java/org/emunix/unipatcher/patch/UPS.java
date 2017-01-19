@@ -38,6 +38,7 @@ import java.util.zip.CRC32;
 public class UPS extends Patch {
 
     private static final byte[] MAGIC_NUMBER = {0x55, 0x50, 0x53, 0x31}; // "UPS1"
+
     public UPS(Context context, File patch, File rom, File output) {
         super(context, patch, rom, output);
     }
@@ -197,7 +198,7 @@ public class UPS extends Patch {
                 throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
             return new UpsCrc(inputCrc, outputCrc, patchCrc, realPatchCrc);
         } finally {
-           IOUtils.closeQuietly(stream);
+            IOUtils.closeQuietly(stream);
         }
     }
 
@@ -243,7 +244,7 @@ public class UPS extends Patch {
             return realPatchCRC;
         }
 
-        public void swapInOut(){
+        public void swapInOut() {
             long tmp;
             tmp = inputFileCRC;
             inputFileCRC = outputFileCRC;

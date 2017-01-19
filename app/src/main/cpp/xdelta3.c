@@ -39,11 +39,10 @@ const int ERR_UNABLE_OPEN_OUTPUT = -5003;
 const int ERR_WRONG_CHECKSUM = -5010;
 
 int Java_org_emunix_unipatcher_patch_XDelta_xdelta3apply(JNIEnv *env,
-            jobject this,
-            jstring patchPath,
-            jstring romPath,
-            jstring outputPath)
-{
+                                                         jobject this,
+                                                         jstring patchPath,
+                                                         jstring romPath,
+                                                         jstring outputPath) {
     int ret = 0;
     const char *patchName = (*env)->GetStringUTFChars(env, patchPath, NULL);
     const char *romName = (*env)->GetStringUTFChars(env, romPath, NULL);
@@ -57,19 +56,16 @@ int Java_org_emunix_unipatcher_patch_XDelta_xdelta3apply(JNIEnv *env,
     (*env)->ReleaseStringUTFChars(env, romPath, romName);
     (*env)->ReleaseStringUTFChars(env, outputPath, outputName);
 
-    if (!patchFile)
-    {
+    if (!patchFile) {
         return ERR_UNABLE_OPEN_PATCH;
     }
 
-    if (!romFile)
-    {
+    if (!romFile) {
         fclose(patchFile);
         return ERR_UNABLE_OPEN_ROM;
     }
 
-    if (!outputFile)
-    {
+    if (!outputFile) {
         fclose(patchFile);
         fclose(romFile);
         return ERR_UNABLE_OPEN_OUTPUT;
@@ -83,19 +79,18 @@ int Java_org_emunix_unipatcher_patch_XDelta_xdelta3apply(JNIEnv *env,
     return ret;
 }
 
-int apply(FILE *patch, FILE *in, FILE *out)
-{
+int apply(FILE *patch, FILE *in, FILE *out) {
     int BUFFER_SIZE = 32768;
 
     int r, ret;
     xd3_stream stream;
     xd3_config config;
     xd3_source source;
-    void* Input_Buf;
+    void *Input_Buf;
     int Input_Buf_Read;
 
-    memset (&stream, 0, sizeof (stream));
-    memset (&source, 0, sizeof (source));
+    memset(&stream, 0, sizeof(stream));
+    memset(&source, 0, sizeof(source));
 
     xd3_init_config(&config, 0);
     config.winsize = BUFFER_SIZE;
@@ -108,18 +103,16 @@ int apply(FILE *patch, FILE *in, FILE *out)
     r = fseek(in, 0, SEEK_SET);
     if (r)
         return r;
-    source.onblk = fread((void*)source.curblk, 1, source.blksize, in);
+    source.onblk = fread((void *) source.curblk, 1, source.blksize, in);
     source.curblkno = 0;
     xd3_set_source(&stream, &source);
 
     Input_Buf = malloc(BUFFER_SIZE);
 
     fseek(patch, 0, SEEK_SET);
-    do
-    {
+    do {
         Input_Buf_Read = fread(Input_Buf, 1, BUFFER_SIZE, patch);
-        if (Input_Buf_Read < BUFFER_SIZE)
-        {
+        if (Input_Buf_Read < BUFFER_SIZE) {
             xd3_set_flags(&stream, XD3_FLUSH | stream.flags);
         }
         xd3_avail_input(&stream, Input_Buf, Input_Buf_Read);
@@ -128,14 +121,13 @@ int apply(FILE *patch, FILE *in, FILE *out)
 
         ret = xd3_decode_input(&stream);
 
-        switch (ret)
-        {
+        switch (ret) {
             case XD3_INPUT:
                 continue;
 
             case XD3_OUTPUT:
                 r = fwrite(stream.next_out, 1, stream.avail_out, out);
-                if (r != (int)stream.avail_out)
+                if (r != (int) stream.avail_out)
                     return r;
                 xd3_consume_output(&stream);
                 goto process;
@@ -144,7 +136,7 @@ int apply(FILE *patch, FILE *in, FILE *out)
                 r = fseek(in, source.blksize * source.getblkno, SEEK_SET);
                 if (r)
                     return r;
-                source.onblk = fread((void*)source.curblk, 1, source.blksize, in);
+                source.onblk = fread((void *) source.curblk, 1, source.blksize, in);
                 source.curblkno = source.getblkno;
                 goto process;
 
@@ -166,7 +158,7 @@ int apply(FILE *patch, FILE *in, FILE *out)
 
     free(Input_Buf);
 
-    free((void*)source.curblk);
+    free((void *) source.curblk);
     xd3_close_stream(&stream);
     xd3_free_stream(&stream);
 

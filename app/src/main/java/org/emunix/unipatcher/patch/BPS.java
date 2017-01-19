@@ -250,7 +250,7 @@ public class BPS extends Patch {
                 throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
             return new BpsCrc(inputCrc, outputCrc, patchCrc, realPatchCrc);
         } finally {
-           IOUtils.closeQuietly(stream);
+            IOUtils.closeQuietly(stream);
         }
     }
 

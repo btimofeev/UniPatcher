@@ -54,7 +54,7 @@ import static android.support.v7.app.AppCompatDelegate.MODE_NIGHT_NO;
 import static android.support.v7.app.AppCompatDelegate.MODE_NIGHT_YES;
 
 public class MainActivity extends AppCompatActivity
-     implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener {
     private static final String LOG_TAG = "org.emunix.unipatcher";
 
     private FirebaseAnalytics firebaseAnalytics;
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 ActionFragment fragment = (ActionFragment) fragmentManager.findFragmentById(R.id.content_frame);
-                if (fragment != null){
+                if (fragment != null) {
                     boolean ret = fragment.runAction();
                 }
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity
 
     private void setTheme() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        String theme = sp.getString("theme","light");
+        String theme = sp.getString("theme", "light");
         switch (theme) {
             case "light":
                 AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO);
@@ -156,9 +156,14 @@ public class MainActivity extends AppCompatActivity
         // update the main content by replacing fragments
         Fragment fragment;
         switch (position) {
-            case 1: fragment = new SmdFixChecksumFragment(); break;
-            case 2: fragment = new SnesSmcHeaderFragment(); break;
-            default: fragment = new PatchingFragment();
+            case 1:
+                fragment = new SmdFixChecksumFragment();
+                break;
+            case 2:
+                fragment = new SnesSmcHeaderFragment();
+                break;
+            default:
+                fragment = new PatchingFragment();
         }
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

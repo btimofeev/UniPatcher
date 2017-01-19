@@ -73,17 +73,20 @@ public class Utils {
     public static long getFreeSpace(File file) {
         StatFs stat = new StatFs(file.getPath());
         long bytesAvailable;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
             bytesAvailable = stat.getAvailableBytes();
-        else
-            //noinspection deprecation
+        } else
+        //noinspection deprecation
+        {
             bytesAvailable = (long) stat.getBlockSize() * (long) stat.getAvailableBlocks();
+        }
         return bytesAvailable;
     }
 
     public static void copyFile(Context context, File from, File to) throws IOException {
-        if (Utils.getFreeSpace(to.getParentFile()) < from.length())
+        if (Utils.getFreeSpace(to.getParentFile()) < from.length()) {
             throw new IOException(context.getString(R.string.notify_error_not_enough_space));
+        }
 
         try {
             FileUtils.copyFile(from, to);
@@ -94,7 +97,7 @@ public class Utils {
 
     public static void moveFile(Context context, File from, File to) throws IOException {
         FileUtils.deleteQuietly(to);
-        if(!from.renameTo(to)) {
+        if (!from.renameTo(to)) {
             copyFile(context, from, to);
             FileUtils.deleteQuietly(from);
         }
@@ -141,24 +144,28 @@ public class Utils {
 
     public static String bytesToHexString(byte[] bytes) {
         StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < bytes.length ;i++) {
+        for (int i = 0; i < bytes.length; i++) {
             sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
         }
         return sb.toString();
     }
 
     public static boolean isPatch(File file) {
-        String[] patches = {"ips", "ups", "bps", "aps", "ppf", "dps", "ebp", "xdelta", "xdelta3", "vcdiff"};
+        String[] patches =
+                {"ips", "ups", "bps", "aps", "ppf", "dps", "ebp", "xdelta", "xdelta3", "vcdiff"};
         String ext = FilenameUtils.getExtension(file.getName()).toLowerCase(Locale.getDefault());
         for (String patch : patches) {
-            if (ext.equals(patch))
-                return true;
+            if (ext.equals(patch)) return true;
         }
         return false;
     }
 
     public static boolean isArchive(String path) {
         String ext = FilenameUtils.getExtension(path).toLowerCase(Locale.getDefault());
-        return ext.equals("zip") || ext.equals("rar") || ext.equals("7z") || ext.equals("gz") || ext.equals("tgz");
+        return ext.equals("zip")
+                || ext.equals("rar")
+                || ext.equals("7z")
+                || ext.equals("gz")
+                || ext.equals("tgz");
     }
 }

@@ -58,7 +58,8 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
     private String patchPath = null;
     private String outputPath = null;
 
-    public PatchingFragment() {}
+    public PatchingFragment() {
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -118,14 +119,14 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
     }
 
     private void restoreState(Bundle savedInstanceState) {
-        if (savedInstanceState != null){
+        if (savedInstanceState != null) {
             romPath = savedInstanceState.getString("romPath");
             patchPath = savedInstanceState.getString("patchPath");
             outputPath = savedInstanceState.getString("outputPath");
             if (romPath != null)
                 romNameTextView.setText(new File(romPath).getName());
             if (patchPath != null)
-                patchNameTextView.setText(new File (patchPath).getName());
+                patchNameTextView.setText(new File(patchPath).getName());
             if (outputPath != null)
                 outputNameTextView.setText(new File(outputPath).getName());
         }
@@ -140,7 +141,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
     }
 
     @Override
-    public void onClick(View view){
+    public void onClick(View view) {
         Intent intent = new Intent(getActivity(), FilePickerActivity.class);
         switch (view.getId()) {
             case R.id.patchCardView:
@@ -160,7 +161,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d(LOG_TAG, "onActivityResult(" + requestCode + "," + resultCode + "," + data);
         if (resultCode == Activity.RESULT_OK) {
             String path = data.getStringExtra("path");
@@ -171,20 +172,20 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
             }
 
             switch (requestCode) {
-                    case SELECT_ROM_FILE:
-                        romPath = path;
-                        romNameTextView.setVisibility(View.VISIBLE);
-                        romNameTextView.setText(fpath.getName());
-                        Settings.setLastRomDir(getActivity(), fpath.getParent());
-                        outputPath = makeOutputPath(path);
-                        outputNameTextView.setText(new File(outputPath).getName());
-                        break;
-                    case SELECT_PATCH_FILE:
-                        patchPath = path;
-                        patchNameTextView.setVisibility(View.VISIBLE);
-                        patchNameTextView.setText(fpath.getName());
-                        Settings.setLastPatchDir(getActivity(), fpath.getParent());
-                        break;
+                case SELECT_ROM_FILE:
+                    romPath = path;
+                    romNameTextView.setVisibility(View.VISIBLE);
+                    romNameTextView.setText(fpath.getName());
+                    Settings.setLastRomDir(getActivity(), fpath.getParent());
+                    outputPath = makeOutputPath(path);
+                    outputNameTextView.setText(new File(outputPath).getName());
+                    break;
+                case SELECT_PATCH_FILE:
+                    patchPath = path;
+                    patchNameTextView.setVisibility(View.VISIBLE);
+                    patchNameTextView.setText(fpath.getName());
+                    Settings.setLastPatchDir(getActivity(), fpath.getParent());
+                    break;
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
@@ -200,14 +201,14 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
         return FilenameUtils.concat(dir, baseName.concat(" [patched].").concat(ext));
     }
 
-    public boolean runAction(){
-        if (romPath == null & patchPath == null){
+    public boolean runAction() {
+        if (romPath == null & patchPath == null) {
             Toast.makeText(getActivity(), getString(R.string.main_activity_toast_rom_and_patch_not_selected), Toast.LENGTH_LONG).show();
             return false;
-        } else if (romPath == null){
+        } else if (romPath == null) {
             Toast.makeText(getActivity(), getString(R.string.main_activity_toast_rom_not_selected), Toast.LENGTH_LONG).show();
             return false;
-        } else if (patchPath == null){
+        } else if (patchPath == null) {
             Toast.makeText(getActivity(), getString(R.string.main_activity_toast_patch_not_selected), Toast.LENGTH_LONG).show();
             return false;
         }
@@ -219,11 +220,11 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
         intent.putExtra("outputPath", outputPath);
         getActivity().startService(intent);
 
-        Toast.makeText(getActivity(), R.string.toast_patching_started_check_notify,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), R.string.toast_patching_started_check_notify, Toast.LENGTH_SHORT).show();
         return true;
     }
 
-    private void renameOutputRom(){
+    private void renameOutputRom() {
         if (romPath == null) {
             Toast.makeText(getActivity(), getString(R.string.main_activity_toast_rom_not_selected), Toast.LENGTH_LONG).show();
             return;

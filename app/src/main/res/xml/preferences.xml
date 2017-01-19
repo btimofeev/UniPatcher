@@ -2,35 +2,35 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/settings_interface_header">
         <ListPreference
-            android:key="theme"
-            android:title="@string/settings_theme"
-            android:summary="@string/settings_theme_description"
+            android:defaultValue="light"
             android:dialogTitle="@string/settings_theme_dialog_title"
             android:entries="@array/theme_names"
             android:entryValues="@array/theme_values"
-            android:defaultValue="light" />
+            android:key="theme"
+            android:summary="@string/settings_theme_description"
+            android:title="@string/settings_theme"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/settings_directories_header">
         <CheckBoxPreference
-            android:key="remember_last_directories"
             android:defaultValue="true"
             android:disableDependentsState="true"
-            android:title="@string/settings_remember_last_directories" />
+            android:key="remember_last_directories"
+            android:title="@string/settings_remember_last_directories"/>
         <EditTextPreference
+            android:defaultValue="/"
             android:dependency="remember_last_directories"
             android:key="rom_directory"
-            android:title="@string/settings_rom_directory"
-            android:defaultValue="/" />
+            android:title="@string/settings_rom_directory"/>
         <EditTextPreference
+            android:defaultValue="/"
             android:dependency="remember_last_directories"
             android:key="patch_directory"
-            android:title="@string/settings_patch_directory"
-            android:defaultValue="/" />
+            android:title="@string/settings_patch_directory"/>
         <EditTextPreference
+            android:defaultValue=""
             android:key="output_directory"
-            android:title="@string/settings_output_directory"
             android:summary="@string/settings_output_directory_description"
-            android:defaultValue="" />
+            android:title="@string/settings_output_directory"/>
     </PreferenceCategory>
 </PreferenceScreen>
