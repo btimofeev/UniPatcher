@@ -13,7 +13,7 @@ Funzioni aggiuntive:
 
 ##### Librerie usate:
 
-- [**Android In-App Billing v3 Library**](https://github.com/anjlab/android-inapp-billing-v3) da AnjLab, sotto licenza Apache 2.0
+- [**Android Donations**](https://github.com/SufficientlySecure/donations) by SufficientlySecure, licensed under the Apache 2.0 license.
 - [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) dalla The Apache Software Foundation, sotto licenza Apache 2.0.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) da SufficientlySecure, sotto licenza Apache 2.0
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) by John Casey, licensed under the Apache 2.0 license.
