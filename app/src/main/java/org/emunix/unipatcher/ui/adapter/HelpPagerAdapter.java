@@ -39,14 +39,11 @@ public class HelpPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                FaqFragment tab1 = new FaqFragment();
-                return tab1;
+                return new FaqFragment();
             case 1:
-                ChangelogFragment tab2 = new ChangelogFragment();
-                return tab2;
+                return new ChangelogFragment();
             case 2:
-                AboutFragment tab3 = new AboutFragment();
-                return tab3;
+                return new AboutFragment();
             default:
                 return null;
         }

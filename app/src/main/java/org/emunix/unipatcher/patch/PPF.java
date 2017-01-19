@@ -223,11 +223,10 @@ public class PPF extends Patch {
     private long readLittleEndianLong(RandomAccessFile stream) throws IOException {
         byte[] b = new byte[8];
         stream.read(b);
-        long result = ((long) (b[7] & 0xff) << 56) + ((long) (b[6] & 0xff) << 48) +
+        return ((long) (b[7] & 0xff) << 56) + ((long) (b[6] & 0xff) << 48) +
                 ((long) (b[5] & 0xff) << 40) + ((long) (b[4] & 0xff) << 32) +
                 ((long) (b[3] & 0xff) << 24) + ((long) (b[2] & 0xff) << 16) +
                 ((long) (b[1] & 0xff) << 8) + ((long) b[0] & 0xff);
-        return result;
     }
 
     private int readLittleEndianInt(RandomAccessFile stream) throws IOException {
