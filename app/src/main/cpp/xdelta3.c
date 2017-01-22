@@ -23,7 +23,6 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 #include <jni.h>
 #include <stdio.h>
 #include <string.h>
-#include <android/log.h>
 
 #define SIZEOF_SIZE_T 4
 #define SIZEOF_UNSIGNED_LONG_LONG 8
@@ -146,7 +145,6 @@ int apply(FILE *patch, FILE *in, FILE *out) {
                 goto process;
 
             default:
-                __android_log_print(ANDROID_LOG_ERROR, "XDelta3", "Error %d: %s", ret, stream.msg);
                 if (stream.msg != NULL) {
                     if (strcmp(stream.msg, "target window checksum mismatch") == 0)
                         return ERR_WRONG_CHECKSUM;
