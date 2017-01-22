@@ -20,6 +20,8 @@ UniPatcher is a ROM patcher for Android that supports IPS, UPS, BPS, APS (GBA), 
 
 [<img src="https://play.google.com/intl/de_de/badges/images/generic/en_badge_web_generic.png" width="192">](https://play.google.com/store/apps/details?id=org.emunix.unipatcher)
 
+[... or get a Release APK here on GitHub](https://github.com/btimofeev/UniPatcher/releases)
+
 ### How to contribute to UniPatcher:
 
 #### Report a bug or suggest a new feature
@@ -27,4 +29,7 @@ UniPatcher is a ROM patcher for Android that supports IPS, UPS, BPS, APS (GBA), 
 Bugs and new features are being discussed on the GitHub [Issue Tracker](https://github.com/btimofeev/UniPatcher/issues).
 
 #### Help with translations
-The translations are managed on [Transifex](https://www.transifex.com/unipatcher/unipatcher/). 
+If you want to translate UniPatcher into another language, you can visit the [Transifex project page](https://www.transifex.com/unipatcher/unipatcher/). 
+
+### License
+UniPatcher is licensed under the GPL version 3. You can find the license text in the COPYING file.
