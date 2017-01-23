@@ -1,4 +1,4 @@
-UniPatcher это ROM патчер поддерживающий патчи в форматах IPS, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP и XDelta3.
+UniPatcher это ROM патчер поддерживающий патчи в форматах IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP и XDelta3.
 
 Дополнительные функции:
 

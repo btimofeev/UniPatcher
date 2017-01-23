@@ -8,6 +8,7 @@ Narzędzie do aplikowania łatek do ROM-ów
 
 <b>UniPatcher wspiera najbardziej popularne łatki</b> używane w Nintendo, Super Nintendo, Sega MegaDrive / Sega Genesis, Gameboy, Game Boy Advance, Sony PlayStation i innych grach:
 &bull; IPS
+&bull; IPS32
 &bull; UPS
 &bull; BPS
 &bull; APS (GBA)

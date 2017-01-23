@@ -1,4 +1,4 @@
-UniPatcher jest programem do łatkowania ROM-ów. Wsparcie dla typów łatek: IPS, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP i XDelta3.
+UniPatcher jest programem do łatkowania ROM-ów. Wsparcie dla typów łatek: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP i XDelta3.
 
 Dodatkowe funkcje:
 

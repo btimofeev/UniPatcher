@@ -1,4 +1,4 @@
-UniPatcher è un patcher che supporta i tipi di patch IPS, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.
+UniPatcher è un patcher che supporta i tipi di patch IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.
 
 Funzioni aggiuntive:
 

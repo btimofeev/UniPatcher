@@ -8,6 +8,7 @@
 
 <b>Unipatcher поддерживает самые популярные форматы патчей</b> используемые в играх Nintendo, Sega MegaDrive, Gameboy, Sony PlayStation и многих других:
 &bull; IPS
+&bull; IPS32
 &bull; UPS
 &bull; BPS
 &bull; APS (GBA)

@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013, 2016 Boris Timofeev
+Copyright (C) 2013, 2016, 2017 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -36,7 +36,12 @@ import java.util.Arrays;
 
 public class IPS extends Patcher {
 
-    private static final byte[] MAGIC_NUMBER = {0x50, 0x41, 0x54, 0x43, 0x48}; // "PATCH"
+    public static final int NOT_IPS_PATCH = 0;
+    public static final int IPS_PATCH = 1;
+    public static final int IPS32_PATCH = 2;
+
+    private static final byte[] MAGIC_NUMBER_IPS = {0x50, 0x41, 0x54, 0x43, 0x48};   // "PATCH"
+    private static final byte[] MAGIC_NUMBER_IPS32 = {0x49, 0x50, 0x53, 0x33, 0x32}; // "IPS32"
 
     public IPS(Context context, File patch, File rom, File output) {
         super(context, patch, rom, output);
@@ -44,6 +49,19 @@ public class IPS extends Patcher {
 
     @Override
     public void apply() throws PatchException, IOException {
+        switch (checkIPS(patchFile)) {
+            case IPS_PATCH:
+                applyIPS();
+                break;
+            case IPS32_PATCH:
+                applyIPS32();
+                break;
+            case NOT_IPS_PATCH:
+                throw new PatchException(context.getString(R.string.notify_error_not_ips_patch));
+        }
+    }
+
+    public void applyIPS() throws PatchException, IOException {
 
         BufferedInputStream romStream = null;
         BufferedInputStream patchStream = null;
@@ -67,17 +85,17 @@ public class IPS extends Patcher {
             // check magic string
             byte[] magic = new byte[5];
             size = patchStream.read(magic);
-            if (size != 5 || !Arrays.equals(magic, MAGIC_NUMBER))
+            if (size != 5 || !Arrays.equals(magic, MAGIC_NUMBER_IPS))
                 throw new PatchException(context.getString(R.string.notify_error_not_ips_patch));
 
             while (true) {
-                offset = readOffset(patchStream, 3);
+                offset = (int)readOffset(patchStream, 3);
                 if (offset < 0)
                     throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
                 if (offset == 0x454f46) { // EOF
                     // truncate file or copy tail
                     if (romPos < romSize) {
-                        offset = readOffset(patchStream, 3);
+                        offset = (int)readOffset(patchStream, 3);
                         if (offset != -1 && offset >= romPos) {
                             size = offset - romPos;
                         } else {
@@ -142,8 +160,119 @@ public class IPS extends Patcher {
         }
     }
 
-    private int readOffset(InputStream stream, int numBytes) throws IOException {
-        int offset = 0;
+    public void applyIPS32() throws PatchException, IOException {
+
+        BufferedInputStream romStream = null;
+        BufferedInputStream patchStream = null;
+        BufferedOutputStream outputStream = null;
+
+        try {
+            romStream = new BufferedInputStream(new FileInputStream(romFile));
+            patchStream = new BufferedInputStream(new FileInputStream(patchFile));
+            outputStream = new BufferedOutputStream(new FileOutputStream(outputFile));
+
+            long romSize = romFile.length();
+            long romPos = 0;
+            long outPos = 0;
+            long offset;
+            long size;
+
+            if (patchFile.length() < 16) {
+                throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+            }
+
+            byte[] magic = new byte[5];
+            size = patchStream.read(magic);
+            if (size != 5 || !Arrays.equals(magic, MAGIC_NUMBER_IPS32))
+                throw new PatchException(context.getString(R.string.notify_error_not_ips_patch));
+
+            while (true) {
+                offset = readOffset(patchStream, 4);
+                if (offset < 0)
+                    throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+                if (offset == 0x45454f46) { // EEOF
+                    // copy tail
+                    if (romPos < romSize) {
+                        size = romSize - romPos;
+                        Utils.copy(romStream, outputStream, size);
+                    }
+                    break;
+                }
+
+                if (offset <= romSize) {
+                    if (outPos < offset) {
+                        size = offset - outPos;
+                        Utils.copy(romStream, outputStream, size);
+                        romPos += size;
+                        outPos += size;
+                    }
+                } else {
+                    if (outPos < romSize) {
+                        size = romSize - outPos;
+                        Utils.copy(romStream, outputStream, size);
+                        romPos += size;
+                        outPos += size;
+                    }
+                    if (outPos < offset) {
+                        size = offset - outPos;
+                        Utils.copy(size, (byte) 0x0, outputStream);
+                        outPos += size;
+                    }
+                }
+
+                size = (patchStream.read() << 8) + patchStream.read();
+                if (size != 0) {
+                    byte[] data = new byte[(int)size];
+                    patchStream.read(data);
+                    outputStream.write(data);
+                    outPos += size;
+                } else { // RLE
+                    size = (patchStream.read() << 8) + patchStream.read();
+                    byte val = (byte) patchStream.read();
+                    byte[] data = new byte[(int)size];
+                    Arrays.fill(data, val);
+                    outputStream.write(data);
+                    outPos += size;
+                }
+
+                if (offset <= romSize) {
+                    if (romPos + size > romSize) {
+                        romPos = (int) romSize;
+                    } else {
+                        byte[] buf = new byte[(int)size];
+                        romStream.read(buf);
+                        romPos += size;
+                    }
+                }
+            }
+        } finally {
+            IOUtils.closeQuietly(romStream);
+            IOUtils.closeQuietly(patchStream);
+            IOUtils.closeQuietly(outputStream);
+        }
+    }
+
+    public int checkIPS(File file) throws PatchException, IOException {
+        FileInputStream stream = null;
+        try {
+            stream = new FileInputStream(file);
+            byte[] magic = new byte[5];
+            int count = stream.read(magic);
+            if (count < 5)
+                throw new PatchException(context.getString(R.string.notify_error_not_ips_patch));
+            if (Arrays.equals(magic, MAGIC_NUMBER_IPS)) {
+                return IPS_PATCH;
+            } else if (Arrays.equals(magic, MAGIC_NUMBER_IPS32)) {
+                return IPS32_PATCH;
+            }
+        } finally {
+            IOUtils.closeQuietly(stream);
+        }
+        return NOT_IPS_PATCH;
+    }
+
+    private long readOffset(InputStream stream, int numBytes) throws IOException {
+        long offset = 0;
         while (numBytes-- != 0) {
             int b = stream.read();
             if (b == -1)

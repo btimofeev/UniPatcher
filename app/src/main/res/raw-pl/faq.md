@@ -6,7 +6,7 @@ UniPatcher jest narzędziem do łatkowania ROM-ów różnych konsol
 
 #### Jakie formaty łatek są obsługiwane?
 
-The app supports IPS, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patches.
+The app supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patches.
 
 #### Czy mogę hakować albo crackować gry Android za pomocą tej aplikacji?
 

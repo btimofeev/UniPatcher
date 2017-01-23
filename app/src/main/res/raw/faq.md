@@ -6,7 +6,7 @@ UniPatcher is an Android tool for applying patches to ROM images of various vide
 
 #### What patch formats are supported?
 
-The app supports IPS, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patches.
+The app supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patches.
 
 #### Can I hack or crack Android game using this app?
 

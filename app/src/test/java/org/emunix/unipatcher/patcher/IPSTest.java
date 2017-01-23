@@ -74,6 +74,21 @@ public class IPSTest {
         assertTrue(ApplyPatch("/ips/truncate.ips", "/ips/truncate.bin", "/ips/truncate_modified.bin"));
     }
 
+    @Test
+    public void IPS32_MinPatch() throws Exception {
+        assertTrue(ApplyPatch("/ips/min_ips32.ips", "/ips/min_ips32.bin", "/ips/min_ips32_mod.bin"));
+    }
+
+    @Test
+    public void IPS32_RlePatch() throws Exception {
+        assertTrue(ApplyPatch("/ips/rle_ips32.ips", "/ips/rle_ips32.bin", "/ips/rle_ips32_mod.bin"));
+    }
+
+    @Test
+    public void IPS32_ExtendPatch() throws Exception {
+        assertTrue(ApplyPatch("/ips/extend_ips32.ips", "/ips/extend_ips32.bin", "/ips/extend_ips32_mod.bin"));
+    }
+
     private boolean ApplyPatch(String patchName, String origName, String modifiedName) throws Exception {
         File patch = new File(this.getClass().getResource(patchName).getPath());
         File in = new File(getClass().getResource(origName).getPath());

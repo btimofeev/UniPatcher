@@ -131,7 +131,7 @@
     <string name="send_feedback_error_no_email_apps">Не установлен email клиент</string>
 
     <string name="share_dialog_title">Рассказать о UniPatcher</string>
-    <string name="share_text">Скачай лучший ROM патчер для Android. Поддерживает патчи в форматах IPS, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP и XDelta3.\\n\\n
+    <string name="share_text">Скачай лучший ROM патчер для Android. Поддерживает патчи в форматах IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP и XDelta3.\\n\\n
 </string>
 
     <!-- Navigation list -->

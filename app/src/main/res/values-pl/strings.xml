@@ -131,7 +131,7 @@
     <string name="send_feedback_error_no_email_apps">Tu nie ma żadnych klientów E-Mail zainstalowanych</string>
 
     <string name="share_dialog_title">Udostępnij UniPatcher-a swoim znajomym</string>
-    <string name="share_text">Pobierz najlepszy program do łatkowania ROM-ów. Wspiera typy łatek: IPS, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP i XDelta3.\n\n</string>
+    <string name="share_text">Pobierz najlepszy program do łatkowania ROM-ów. Wspiera typy łatek: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP i XDelta3.\n\n</string>
 
     <!-- Navigation list -->
     <string name="nav_apply_patch">Zastosuj łatkę</string>

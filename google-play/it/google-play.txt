@@ -8,6 +8,7 @@ Utilità per applicare le patch alle ROM dei giochi.
 
 <b>UniPatcher supporta i più popolari formati di patch</b> usati da Nintendo, Super Nintendo, Sega Mega Drive / Sega Genesis, Gameboy, Game Boy Advance, Sony PlayStation e altri giochi:
 &bull; IPS
+&bull; IPS32
 &bull; UPS
 &bull; BPS
 &bull; APS (GBA)
