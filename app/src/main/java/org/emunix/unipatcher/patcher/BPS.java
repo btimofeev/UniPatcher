@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package org.emunix.unipatcher.patch;
+package org.emunix.unipatcher.patcher;
 
 import android.content.Context;
 
@@ -35,7 +35,7 @@ import java.nio.channels.FileChannel;
 import java.util.Arrays;
 import java.util.zip.CRC32;
 
-public class BPS extends Patch {
+public class BPS extends Patcher {
 
     private static final byte[] MAGIC_NUMBER = {0x42, 0x50, 0x53, 0x31}; // "BPS1"
     private static final byte SOURCE_READ = 0b00;

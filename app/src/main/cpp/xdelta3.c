@@ -37,7 +37,7 @@ const int ERR_UNABLE_OPEN_ROM = -5002;
 const int ERR_UNABLE_OPEN_OUTPUT = -5003;
 const int ERR_WRONG_CHECKSUM = -5010;
 
-int Java_org_emunix_unipatcher_patch_XDelta_xdelta3apply(JNIEnv *env,
+int Java_org_emunix_unipatcher_patcher_XDelta_xdelta3apply(JNIEnv *env,
                                                          jobject this,
                                                          jstring patchPath,
                                                          jstring romPath,

@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package org.emunix.unipatcher.patch;
+package org.emunix.unipatcher.patcher;
 
 import android.content.Context;
 
@@ -29,7 +29,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class XDelta extends Patch {
+public class XDelta extends Patcher {
 
     private static final int NO_ERROR = 0;
     private static final int ERR_UNABLE_OPEN_PATCH = -5001;

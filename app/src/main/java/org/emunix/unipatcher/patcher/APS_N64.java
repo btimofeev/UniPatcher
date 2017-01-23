@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package org.emunix.unipatcher.patch;
+package org.emunix.unipatcher.patcher;
 
 import android.content.Context;
 
@@ -35,7 +35,7 @@ import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.util.Arrays;
 
-public class APS_N64 extends Patch {
+public class APS_N64 extends Patcher {
 
     private static final byte[] MAGIC_NUMBER = {0x41, 0x50, 0x53, 0x31, 0x30}; // APS10
     private static final int TYPE_SIMPLE_PATCH = 0;

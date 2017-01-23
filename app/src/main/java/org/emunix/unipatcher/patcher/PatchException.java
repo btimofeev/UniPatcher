@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package org.emunix.unipatcher.patch;
+package org.emunix.unipatcher.patcher;
 
 public class PatchException extends Exception {
 

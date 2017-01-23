@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package org.emunix.unipatcher.patch;
+package org.emunix.unipatcher.patcher;
 
 import android.content.Context;
 
@@ -30,7 +30,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.Arrays;
 
-public class PPF extends Patch {
+public class PPF extends Patcher {
 
     private static final byte[] MAGIC_NUMBER = {0x50, 0x50, 0x46}; // "PPF" without version
 

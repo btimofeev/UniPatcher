@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package org.emunix.unipatcher.patch;
+package org.emunix.unipatcher.patcher;
 
 import android.content.Context;
 
@@ -29,7 +29,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class APS extends Patch {
+public class APS extends Patcher {
 
     public static final int NOT_APS_PATCH = 0;
     public static final int APS_N64_PATCH = 1;
@@ -44,7 +44,7 @@ public class APS extends Patch {
 
     @Override
     public void apply() throws PatchException, IOException {
-        Patch aps = null;
+        Patcher aps = null;
         switch (checkAPS(patchFile)) {
             case APS_N64_PATCH:
                 aps = new APS_N64(context, patchFile, romFile, outputFile);

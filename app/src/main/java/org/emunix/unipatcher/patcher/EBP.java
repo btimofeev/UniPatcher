@@ -19,7 +19,7 @@ You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package org.emunix.unipatcher.patch;
+package org.emunix.unipatcher.patcher;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -45,7 +45,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class EBP extends Patch {
+public class EBP extends Patcher {
 
     private static final byte[] MAGIC_NUMBER = {0x50, 0x41, 0x54, 0x43, 0x48}; // "PATCH"
     private static final byte[] EARTH_BOUND = {0x45, 0x41, 0x52, 0x54, 0x48, 0x20, 0x42, 0x4f, 0x55, 0x4e, 0x44};

@@ -29,16 +29,16 @@ import android.support.v4.app.NotificationCompat;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
-import org.emunix.unipatcher.patch.APS;
-import org.emunix.unipatcher.patch.BPS;
-import org.emunix.unipatcher.patch.DPS;
-import org.emunix.unipatcher.patch.EBP;
-import org.emunix.unipatcher.patch.IPS;
-import org.emunix.unipatcher.patch.PPF;
-import org.emunix.unipatcher.patch.Patch;
-import org.emunix.unipatcher.patch.PatchException;
-import org.emunix.unipatcher.patch.UPS;
-import org.emunix.unipatcher.patch.XDelta;
+import org.emunix.unipatcher.patcher.APS;
+import org.emunix.unipatcher.patcher.BPS;
+import org.emunix.unipatcher.patcher.DPS;
+import org.emunix.unipatcher.patcher.EBP;
+import org.emunix.unipatcher.patcher.IPS;
+import org.emunix.unipatcher.patcher.PPF;
+import org.emunix.unipatcher.patcher.Patcher;
+import org.emunix.unipatcher.patcher.PatchException;
+import org.emunix.unipatcher.patcher.UPS;
+import org.emunix.unipatcher.patcher.XDelta;
 import org.emunix.unipatcher.tools.RomException;
 import org.emunix.unipatcher.tools.SmdFixChecksum;
 import org.emunix.unipatcher.tools.SnesSmcHeader;
@@ -97,7 +97,7 @@ public class WorkerService extends IntentService {
         File romFile = new File(intent.getStringExtra("romPath"));
         File patchFile = new File(intent.getStringExtra("patchPath"));
         File outputFile = new File(intent.getStringExtra("outputPath"));
-        Patch patcher = null;
+        Patcher patcher = null;
 
         if (!fileExists(patchFile) || !fileExists(romFile))
             return;

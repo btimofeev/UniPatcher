@@ -17,20 +17,20 @@ You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package org.emunix.unipatcher.patch;
+package org.emunix.unipatcher.patcher;
 
 import android.content.Context;
 
 import java.io.File;
 import java.io.IOException;
 
-public abstract class Patch {
+public abstract class Patcher {
     protected File patchFile = null;
     protected File romFile = null;
     protected File outputFile = null;
     protected Context context = null;
 
-    public Patch(Context c, File patch, File rom, File output) {
+    public Patcher(Context c, File patch, File rom, File output) {
         context = c;
         patchFile = patch;
         romFile = rom;
