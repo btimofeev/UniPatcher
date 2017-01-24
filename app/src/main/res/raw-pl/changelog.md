@@ -1,3 +1,8 @@
+#### 0.13 (January 24, 2017)
+
+- Support IPS32 patches
+- Deleted ads. Thanks to all who supported the development of the program.
+
 #### 0.12 (January 13, 2017)
 
 - Support APS patches (Nintendo 64 and Game Boy Advance)
