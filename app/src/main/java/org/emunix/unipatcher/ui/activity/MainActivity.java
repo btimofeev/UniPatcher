@@ -21,6 +21,7 @@ package org.emunix.unipatcher.ui.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -43,7 +44,6 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import org.emunix.unipatcher.BuildConfig;
 import org.emunix.unipatcher.Globals;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.ui.dialog.RateThisApp;
 import org.emunix.unipatcher.ui.fragment.ActionFragment;
 import org.emunix.unipatcher.ui.fragment.PatchingFragment;
 import org.emunix.unipatcher.ui.fragment.SmdFixChecksumFragment;
@@ -100,7 +100,6 @@ public class MainActivity extends AppCompatActivity
         }
 
         parseArgument();
-        RateThisApp.launch(this);
     }
 
     private void setTheme() {
@@ -138,7 +137,7 @@ public class MainActivity extends AppCompatActivity
             Intent settingsIntent = new Intent(this, SettingsActivity.class);
             startActivity(settingsIntent);
         } else if (id == R.id.nav_rate) {
-            RateThisApp.rate(this);
+            rateApp();
         } else if (id == R.id.nav_donate) {
             Intent donateIntent = new Intent(this, DonateActivity.class);
             startActivity(donateIntent);
@@ -187,5 +186,15 @@ public class MainActivity extends AppCompatActivity
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
         shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text) + BuildConfig.SHARE_URL);
         startActivity(Intent.createChooser(shareIntent, getString(R.string.share_dialog_title)));
+    }
+
+    public void rateApp() {
+        Intent rateAppIntent = new Intent(Intent.ACTION_VIEW);
+        rateAppIntent.setData(Uri.parse(BuildConfig.RATE_URL));
+        if (getPackageManager().queryIntentActivities(rateAppIntent, 0).size() == 0) {
+            // Market app is not installed. Open web browser
+            rateAppIntent.setData(Uri.parse(BuildConfig.SHARE_URL));
+        }
+        startActivity(rateAppIntent);
     }
 }
