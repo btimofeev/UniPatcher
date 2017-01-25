@@ -145,12 +145,6 @@
     <string name="nav_drawer_open">Открыть главное меню</string>
     <string name="nav_drawer_close">Закрыть главное меню</string>
 
-    <!-- Rate the App dialog -->
-    <string name="rate_dialog_title">Оцените приложение</string>
-    <string name="rate_dialog_message">Если вам нравится приложение, поставьте ему оценку, пожалуйста. Спасибо за вашу поддержку!</string>
-    <string name="rate_dialog_ok">Поставить оценку</string>
-    <string name="rate_dialog_later">Напомнить позже</string>
-
     <string name="donation">Пожертвование</string>
     <string name="icon">иконка</string>
 

@@ -145,12 +145,6 @@
     <string name="nav_drawer_open">Apri cassetto di navigazione</string>
     <string name="nav_drawer_close">Chiudi cassetto di navigazione</string>
 
-    <!-- Rate the App dialog -->
-    <string name="rate_dialog_title">Valuta questa app</string>
-    <string name="rate_dialog_message">Se ti piace UniPatcher, per favore prendi un momento per valutarla. Grazie per il tuo supporto!</string>
-    <string name="rate_dialog_ok">Valuta</string>
-    <string name="rate_dialog_later">Ricorda dopo</string>
-
     <string name="donation">Donation</string>
     <string name="icon">icona</string>
 

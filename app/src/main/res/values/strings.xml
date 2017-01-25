@@ -145,12 +145,6 @@
     <string name="nav_drawer_open">Open navigation drawer</string>
     <string name="nav_drawer_close">Close navigation drawer</string>
 
-    <!-- Rate the App dialog -->
-    <string name="rate_dialog_title">Rate this app</string>
-    <string name="rate_dialog_message">If you like UniPatcher, please take a moment to rate it. Thank you for your support!</string>
-    <string name="rate_dialog_ok">Rate</string>
-    <string name="rate_dialog_later">Remind later</string>
-
     <string name="donation">Donation</string>
     <string name="icon">icon</string>
 

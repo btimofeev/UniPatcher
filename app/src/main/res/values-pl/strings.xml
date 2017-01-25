@@ -145,12 +145,6 @@
     <string name="nav_drawer_open">Otwórz kartę nawigacyjną</string>
     <string name="nav_drawer_close">Zamknij kartę nawigacyjną</string>
 
-    <!-- Rate the App dialog -->
-    <string name="rate_dialog_title">Oceń tą aplikację</string>
-    <string name="rate_dialog_message">Jeżeli lubisz UniPatcher-a, to poświęć chwilkę aby go ocenić.Dzięki za twoją opinię!</string>
-    <string name="rate_dialog_ok">Oceń</string>
-    <string name="rate_dialog_later">Przypomnij mi później</string>
-
     <string name="donation">Donation</string>
     <string name="icon">ikona</string>
 
