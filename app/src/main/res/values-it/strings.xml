@@ -131,8 +131,7 @@
     <string name="send_feedback_error_no_email_apps">Non ci sono client email installati</string>
 
     <string name="share_dialog_title">Condividi UniPatcher</string>
-    <string name="share_text">Scarica il miglior patcher di ROM per Android. Supporta i formati IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.\\n\\n
-</string>
+    <string name="share_text">Scarica il miglior patcher di ROM per Android. Supporta i formati IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.\n\n</string>
 
     <!-- Navigation list -->
     <string name="nav_apply_patch">Applica patch</string>

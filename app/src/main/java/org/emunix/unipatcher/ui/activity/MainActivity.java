@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
-        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text) + "https://play.google.com/store/apps/details?id=org.eminix.unipatcher");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text) + BuildConfig.SHARE_URL);
         startActivity(Intent.createChooser(shareIntent, getString(R.string.share_dialog_title)));
     }
 }
