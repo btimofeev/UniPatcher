@@ -10,6 +10,7 @@ Funzioni aggiuntive:
 - **Italiano**: Matteo Sechi
 - **Polacco**: Michal Bychowski
 - **Russo**: Борис Тимофеев
+- **Ukrainian**: Володимир Шевчук
 
 ##### Librerie usate:
 

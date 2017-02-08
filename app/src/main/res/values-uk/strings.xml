@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UniPatcher</string>
+    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
+    <string name="app_email">mashin87@gmail.com</string>
+
+    <!-- Main activity -->
+    <string name="main_activity_rom_file">ROM файл</string>
+    <string name="main_activity_patch_file">Патч файл</string>
+    <string name="main_activity_output_file">Вихідний файл</string>
+    <string name="main_activity_header_file">Файл заголовок</string>
+    <string name="main_activity_tap_to_select">Вибрати файл</string>
+    <string name="main_activity_tap_to_rename">Перейменувати</string>
+    <string name="main_activity_toast_rom_and_patch_not_selected">ROM та Патч файли не вибрано</string>
+    <string name="main_activity_toast_rom_not_selected">Оберіть ROM</string>
+    <string name="main_activity_toast_patch_not_selected">Оберіть Патч</string>
+    <string name="main_activity_toast_archives_not_supported">Архів повинен бути розпакований в зовнішній програмі</string>
+
+    <!-- Rename dialog -->
+    <string name="dialog_rename_title">Перейменувати</string>
+    <string name="dialog_rename_ok">OK</string>
+    <string name="dialog_rename_cancel">Скасувати</string>
+    <string name="dialog_rename_error_same_name">Назви вхідного та вихідного ROMу не повинні відрізнятись</string>
+    <string name="dialog_rename_error_invalid_chars">Недійсний символ /</string>
+
+    <!-- Info for SNES SMC header -->
+    <string name="snes_smc_header_help">Ця функція доступна тільки для Super Nintendo ROMів.\n\nЯкщо ROM містить SMC заголовок - його буде перезаписано. При його відсутності, він буде доданий.\n\nУвага: ця функція не створює резервної копії.</string>
+    <string name="snes_smc_header_will_be_removed">Цей ROM має SMC заголовок. Його буде перезаписано.</string>
+    <string name="snes_smc_header_will_be_added">Цей ROM не має SMC заголовку. Його буде додано. Ви можете вибрати свій власний заголовок, замість заголовка за замовчуванням.</string>
+
+    <!-- Info for SMD fix checksum -->
+    <string name="smd_fix_checksum_help">Ця функція працює лише на Sega Mega Drive (Sega Genesis) ROMах.\n\nЦе виправлення \"червоний екран смерті\".\n\nУвага: ця функція не створює резервної копії.</string>
+
+    <!-- File picker title -->
+    <string name="file_picker_activity_title">Обрати файл</string>
+    <string name="file_picker_activity_title_select_rom">Обрати ROM файл</string>
+    <string name="file_picker_activity_title_select_patch">Обрати Патч файл</string>
+    <string name="file_picker_activity_title_select_header">Обрати файл заголовок</string>
+    <string name="file_picker_activity_error_unable_read_dir">Неможливо прочитати папку %1$s</string>
+
+    <!-- File properties dialog -->
+    <string name="file_properties_dialog_title">Властивості</string>
+    <string name="file_properties_dialog_name">Ім\'я:</string>
+    <string name="file_properties_dialog_path">Патч:</string>
+    <string name="file_properties_dialog_size">Розмір:</string>
+    <string name="file_properties_dialog_size_value">%1$s (%2$d байт)</string>
+    <string name="file_properties_dialog_crc32">CRC32:</string>
+    <string name="file_properties_dialog_sha1">SHA1:</string>
+    <string name="file_properties_dialog_md5">MD5:</string>
+    <string name="file_properties_dialog_close_button">Назад</string>
+    <string name="file_properties_dialog_wait_message">Будь-ласка зачекайте&#8230;</string>
+
+    <!-- Notifications -->
+    <string name="notify_applying_patch">Застосування патчу</string>
+    <string name="notify_patching_complete">Патчинг завершено</string>
+    <string name="toast_patching_started_check_notify">Патчинг почався. Перевірте область повідомлень</string>
+
+    <string name="notify_error">Помилка</string>
+    <string name="notify_error_could_not_copy_file">Не вдалося скопіювати файл</string>
+    <string name="notify_error_file_not_found">Файл не знайдено</string>
+    <string name="notify_error_not_enough_space">Недостатньо місця</string>
+    <string name="notify_error_unable_to_create_directory">Неможливо створити папку %1$s</string>
+    <string name="notify_error_unable_to_write_to_directory">Неможливо записати у папку %1$s</string>
+    <string name="notify_error_not_ips_patch">Не дійсний IPS патч</string>
+    <string name="notify_error_not_ups_patch">Не дійсний UPS патч</string>
+    <string name="notify_error_not_bps_patch">Не дійсний BPS патч</string>
+    <string name="notify_error_not_ppf_patch">Не дійсний PPF патч</string>
+    <string name="notify_error_not_aps_patch">Не дійсний APS патч</string>
+    <string name="notify_error_not_ebp_patch">Не дійсний EBP патч</string>
+    <string name="notify_error_not_dps_patch">Не дійсний DPS патч</string>
+    <string name="notify_error_not_xdelta3_patch">Не дійсний XDelta3 патч</string>
+    <string name="notify_error_xdelta1_unsupported">Я не в змозі працювати з XDelta1 патчами</string>
+    <string name="notify_error_unable_open_file">Неможливо відкрити файл</string>
+    <string name="notify_error_unknown_patch_format">Невідомий формат патчу</string>
+    <string name="notify_error_unexpected_end_of_file">Несподіване закінчення файлу</string>
+    <string name="notify_error_patch_corrupted">Патч файл пошкоджений</string>
+    <string name="notify_error_rom_not_compatible_with_patch">Цей ROM є несумісний з патчем</string>
+    <string name="notify_error_wrong_checksum_after_patching">Файл має неправильну контрольну суму, це відбулося після патчингу</string>
+    <string name="notify_error_failed_load_lib_xdelta3">Помилка завантаження бібліотеки libxdelta3.so</string>
+    <string name="notify_error_unknown">Невідома помилка</string>
+
+    <string name="notify_error_not_smd_rom">Це не Sega Mega Drive ROM</string>
+    <string name="notify_smd_fix_checksum_in_progress">Фіксація контрольної суми</string>
+    <string name="notify_smd_fix_checksum_complete">Контрольну суму фіксовано</string>
+    <string name="notify_smd_fix_checksum_started_check_notify">Фіксацію контрольної суми розпочато. Перевірте область повідомлень</string>
+
+    <string name="notify_snes_add_smc_header_in_progress">Додавання SMC заголовку</string>
+    <string name="notify_snes_add_smc_header_complete">Додавання SMC заголовку закінчено</string>
+    <string name="notify_snes_add_smc_header_stared_check_noify">Додавання SMC заголовку почалось. Check the notification area</string>
+
+    <string name="notify_snes_delete_smc_header_in_progress">Видалення SMC заголовку</string>
+    <string name="notify_snes_delete_smc_header_complete">Видалення SMC заголовку закінчено</string>
+    <string name="notify_snes_delete_smc_header_stared_check_noify">Видалення SMC заголовку почалось. Check the notification area</string>
+
+    <!-- Permissions -->
+    <string name="permissions_storage_error_info">Для додатка був скасований дозвіл на читання/написання файлів. Без цього дозволу UniPatcher не зможе функціонувати правильно.</string>
+    <string name="permissions_storage_error_notify_access_denied">Доступ до файлів було скасовано</string>
+
+    <!-- Settings -->
+    <string name="settings_activity_title">Налаштування</string>
+    <string name="settings_interface_header">Інтерфейс користувача</string>
+    <string name="settings_theme">Тема</string>
+    <string name="settings_theme_description">Змінити палітру кольорів. Світло-темна тема базується на автоматичному перемиканні між світлою та темною темами, на основі часу доби.</string>
+    <string name="settings_theme_dialog_title">Оберіть тему</string>
+    <string name="settings_theme_name_light">Світла</string>
+    <string name="settings_theme_name_dark">Темна</string>
+    <string name="settings_theme_name_daynight">Світло-темна</string>
+    <string name="settings_theme_message_restart_app">Будь-ласка перезапустіть додаток</string>
+    <string name="settings_directories_header">Папки</string>
+    <string name="settings_remember_last_directories">Запам\'ятати востаннє відкриту папку</string>
+    <string name="settings_rom_directory">Вкажіть папку для ROMу\ів</string>
+    <string name="settings_patch_directory">Вкажіть папку для патчу/ів</string>
+    <string name="settings_output_directory">Вкажіть вихідну папку</string>
+    <string name="settings_output_directory_description">Початково ROMи будуть зберігатись в папці ROM. Ви можете змінити шлях збережень</string>
+
+    <!-- Help activity -->
+    <string name="help_activity_title">Допомога</string>
+    <string name="help_activity_faq_tab_title">Питання та Відповіді</string>
+    <string name="help_activity_changelog_tab_title">Зміни</string>
+    <string name="help_activity_about_tab_title">Про</string>
+    <string name="help_activity_about_tab_version">Версія %1$s</string>
+    <string name="help_activity_about_tab_license">Ліцензія: GNU GPLv3</string>
+    <string name="help_activity_about_tab_copyright">&#169; Борис Тимофеев, 2013&#8211;2017</string>
+    <string name="help_activity_action_send_feedback">Надіслати відгук</string>
+    <string name="help_activity_action_visit_site">Відвідати веб-сайт</string>
+
+    <string name="donate_activity_title">Пожертвування</string>
+
+    <string name="send_feedback_dialog_title">Надіслати e-mail</string>
+    <string name="send_feedback_error_no_email_apps">Там немає встановлених поштових клієнтів</string>
+
+    <string name="share_dialog_title">Поділитись UniPatcher</string>
+    <string name="share_text">Завантажити найкращий ROM патчер для Андроїд. Який підтримує IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP та XDelta3 типи патчів.\n\n</string>
+
+    <!-- Navigation list -->
+    <string name="nav_apply_patch">Застосувати Патч</string>
+    <string name="nav_smd_fix_checksum">Виправити контрольну суму (SMD)</string>
+    <string name="nav_snes_add_del_smc_header">Додати/Видалити SMC заголовок (SNES)</string>
+    <string name="nav_settings">Налаштування</string>
+    <string name="nav_rate">Оцінити цей додаток</string>
+    <string name="nav_donate">Пожертвувати</string>
+    <string name="nav_share">Відправити</string>
+    <string name="nav_help">Допомога</string>
+    <string name="nav_drawer_open">Відкрити панель навігації</string>
+    <string name="nav_drawer_close">Закрити панель навігації</string>
+
+    <string name="donation">Пожертвування</string>
+    <string name="icon">icon</string>
+
+</resources>

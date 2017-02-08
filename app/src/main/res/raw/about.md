@@ -10,6 +10,7 @@ Additional features:
 - **Italian**: Matteo Sechi
 - **Polish**: Michal Bychowski
 - **Russian**: Борис Тимофеев
+- **Ukrainian**: Володимир Шевчук
 
 ##### Used libraries:
 

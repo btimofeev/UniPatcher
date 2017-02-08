@@ -10,6 +10,7 @@ Dodatkowe funkcje:
 - **Italian**: Matteo Sechi
 - **Polski**: Michal Bychowski
 - **Russian**: Борис Тимофеев
+- **Ukrainian**: Володимир Шевчук
 
 ##### Użyte biblioteki:
 
