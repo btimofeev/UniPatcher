@@ -1,3 +1,11 @@
+#### 0.13.2 (February 12, 2017)
+
+- Ukrainian translation (Thanks to Volodymyr Shevchuk)
+
+#### 0.13.1 (January 25, 2017)
+
+- Removed rate app dialog
+
 #### 0.13 (January 24, 2017)
 
 - Support IPS32 patches
