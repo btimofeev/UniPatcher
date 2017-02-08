@@ -18,7 +18,7 @@ UniPatcher is a ROM patcher for Android that supports IPS, IPS32, UPS, BPS, APS 
 
 ### Install UniPatcher:
 
-[<img src="https://play.google.com/intl/de_de/badges/images/generic/en_badge_web_generic.png" width="192">](https://play.google.com/store/apps/details?id=org.emunix.unipatcher)
+[<img src="/google-play/badges/google-play.png" width="220">](https://play.google.com/store/apps/details?id=org.emunix.unipatcher)  [<img src="/google-play/badges/amazon.png" width="220">](http://www.amazon.com/gp/mas/dl/android?p=org.emunix.unipatcher)  [<img src="/google-play/badges/slideme.png" width="220">](http://slideme.org/application/unipatcher)
 
 [... or get a Release APK here on GitHub](https://github.com/btimofeev/UniPatcher/releases)
 
