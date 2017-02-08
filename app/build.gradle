@@ -65,6 +65,11 @@ android {
         }
     }
 
+    sourceSets{
+        amazon.java.srcDir 'src/free/java'
+        slideme.java.srcDir 'src/free/java'
+    }
+
     externalNativeBuild {
         cmake {
             path "CMakeLists.txt"
