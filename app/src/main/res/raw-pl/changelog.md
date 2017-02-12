@@ -1,29 +1,29 @@
-#### 0.13.2 (February 12, 2017)
+#### 0.13.2 (12 Lutego 2017)
 
-- Ukrainian translation (Thanks to Volodymyr Shevchuk)
+- Tłumaczenie na język Ukraiński (Dzięki Volodymyr Shevchuk)
 
-#### 0.13.1 (January 25, 2017)
+#### 0.13.1 (25 Stycznia 2017)
 
-- Removed rate app dialog
+- Usunięto dialog "Oceń Aplikację"
 
-#### 0.13 (January 24, 2017)
+#### 0.13 (24 Styczeń 2017)
 
-- Support IPS32 patches
-- Deleted ads. Thanks to all who supported the development of the program.
+- Wsparcie dla łatek IPS32
+- Usunięto reklamy. Dziękuję wszystkim którzy wsparli rozwój programu.
 
-#### 0.12 (January 13, 2017)
+#### 0.12 (13 Stycznia 2017)
 
-- Support APS patches (Nintendo 64 and Game Boy Advance)
-- Added the ability to specify the output directory
+- Wsparcie dla łatek APS (Nintendo 64 i Game Boy Advance)
+- Dodano możliwość wyboru ścieżki dla złatkowanego ROM-u
 
-#### 0.11 (December 25, 2016)
+#### 0.11 (25 Grudnia 2016)
 
-- Support EBP patches (for EarthBound game)
-- Italian translation (Thanks to Matteo Sechi)
+- Wsparcie dla łatek EBP (do gry EarthBound)
+- Tłumaczenie na język Włoski (Dzięki Matteo Sechi) 
 
-#### 0.10.1 (December 6, 2016)
+#### 0.10.1 (6 Grudnia 2016)
 
-- Added dark theme
+- Dodano ciemny motyw
 
 #### 0.10 (Wrzesień 26, 2016)
 

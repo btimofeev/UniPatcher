@@ -44,7 +44,7 @@
     <string name="file_properties_dialog_name">Nazwa:</string>
     <string name="file_properties_dialog_path">Ścieżka:</string>
     <string name="file_properties_dialog_size">Wielkość:</string>
-    <string name="file_properties_dialog_size_value">%1$s (%2$d bytes)</string>
+    <string name="file_properties_dialog_size_value">%1$s (%2$d bajtów)</string>
     <string name="file_properties_dialog_crc32">CRC32:</string>
     <string name="file_properties_dialog_sha1">SHA1:</string>
     <string name="file_properties_dialog_md5">MD5:</string>
@@ -60,8 +60,8 @@
     <string name="notify_error_could_not_copy_file">Nie można skopiować pliku</string>
     <string name="notify_error_file_not_found">Plik nie znaleziony</string>
     <string name="notify_error_not_enough_space">Brak miejsca na Karcie Pamięci</string>
-    <string name="notify_error_unable_to_create_directory">Unable to create directory %1$s</string>
-    <string name="notify_error_unable_to_write_to_directory">Unable to write to directory %1$s</string>
+    <string name="notify_error_unable_to_create_directory">Niemożna utworzyć ścieżki %1$s</string>
+    <string name="notify_error_unable_to_write_to_directory">Nie można nadpisać ścieżki %1$s</string>
     <string name="notify_error_not_ips_patch">Niewłaściwa łatka IPS</string>
     <string name="notify_error_not_ups_patch">Niewłaściwa łatka UPS</string>
     <string name="notify_error_not_bps_patch">Niewłaściwa łatka BPS</string>
@@ -77,8 +77,8 @@
     <string name="notify_error_patch_corrupted">Plik łatki jest zepsuty</string>
     <string name="notify_error_rom_not_compatible_with_patch">Ten ROM nie jest kompatybilny z tą Łatką</string>
     <string name="notify_error_wrong_checksum_after_patching">Plik ma błędną sumę kontrolną po łatkowaniu</string>
-    <string name="notify_error_failed_load_lib_xdelta3">Failed to load library libxdelta3.so</string>
-    <string name="notify_error_unknown">Unknown error</string>
+    <string name="notify_error_failed_load_lib_xdelta3">Nie można załadować biblioteki libxdelta3.so</string>
+    <string name="notify_error_unknown">Nieznany bład</string>
 
     <string name="notify_error_not_smd_rom">To nie jest ROM Sega Mega Drive</string>
     <string name="notify_smd_fix_checksum_in_progress">Naprawianie sumy kontrolnej</string>
@@ -99,20 +99,20 @@
 
     <!-- Settings -->
     <string name="settings_activity_title">Ustawienia</string>
-    <string name="settings_interface_header">User interface</string>
-    <string name="settings_theme">Theme</string>
-    <string name="settings_theme_description">Change the color palette. DayNight theme allows to switch between Light and Dark themes based on the time of day.</string>
-    <string name="settings_theme_dialog_title">Select theme</string>
-    <string name="settings_theme_name_light">Light</string>
-    <string name="settings_theme_name_dark">Dark</string>
+    <string name="settings_interface_header">Interfejs użytkownika</string>
+    <string name="settings_theme">Motyw</string>
+    <string name="settings_theme_description">Zmienia kolor palety. Motyw DzieńNoc zmienia między jasnym, a ciemnym motywem w zależności od pory dnia.</string>
+    <string name="settings_theme_dialog_title">Wybierz motyw</string>
+    <string name="settings_theme_name_light">Jasny</string>
+    <string name="settings_theme_name_dark">Ciemny</string>
     <string name="settings_theme_name_daynight">DayNight</string>
-    <string name="settings_theme_message_restart_app">Please restart the application</string>
+    <string name="settings_theme_message_restart_app">Proszę zrestartować aplikację</string>
     <string name="settings_directories_header">Ścieżki</string>
     <string name="settings_remember_last_directories">Zapamiętaj ostatnią otworzoną ścieżkę</string>
     <string name="settings_rom_directory">Sprecyzuj ścieżkę Rom-ów</string>
     <string name="settings_patch_directory">Sprecyzuj ścieżkę łatek</string>
-    <string name="settings_output_directory">Specify output directory</string>
-    <string name="settings_output_directory_description">Otherwise ROM will be stored in the ROM directory</string>
+    <string name="settings_output_directory">Wyznacz ścieżkę wysjściową</string>
+    <string name="settings_output_directory_description">Inaczej ROM będzie przechowany w tym samym folderze co oryginalny ROM</string>
 
     <!-- Help activity -->
     <string name="help_activity_title">Pomoc</string>
@@ -125,7 +125,7 @@
     <string name="help_activity_action_send_feedback">Wyślij opinię</string>
     <string name="help_activity_action_visit_site">Odwiedź stronę</string>
 
-    <string name="donate_activity_title">Donate</string>
+    <string name="donate_activity_title">Donacja</string>
 
     <string name="send_feedback_dialog_title">Wyślij E-Maila</string>
     <string name="send_feedback_error_no_email_apps">Tu nie ma żadnych klientów E-Mail zainstalowanych</string>
@@ -139,13 +139,13 @@
     <string name="nav_snes_add_del_smc_header">Dodaj/Usuń nagłówek SMC (SNES)</string>
     <string name="nav_settings">Ustawienia</string>
     <string name="nav_rate">Oceń tą aplikację</string>
-    <string name="nav_donate">Donate</string>
+    <string name="nav_donate">Donacja</string>
     <string name="nav_share">Udostępnij</string>
     <string name="nav_help">Pomoc</string>
     <string name="nav_drawer_open">Otwórz kartę nawigacyjną</string>
     <string name="nav_drawer_close">Zamknij kartę nawigacyjną</string>
 
-    <string name="donation">Donation</string>
+    <string name="donation">Donacja</string>
     <string name="icon">ikona</string>
 
 </resources>

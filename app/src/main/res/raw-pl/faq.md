@@ -6,7 +6,7 @@ UniPatcher jest narzędziem do łatkowania ROM-ów różnych konsol
 
 #### Jakie formaty łatek są obsługiwane?
 
-The app supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patches.
+Aplikacja Wspiera łatki: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP i XDelta3.
 
 #### Czy mogę hakować albo crackować gry Android za pomocą tej aplikacji?
 
@@ -52,48 +52,48 @@ Romhakerzy często publikują sumę kontrolną pliku ROM (na stronie internetowe
 
 Większość łatek do gry "Pokémon - Emerald Version" działa z ROM-em "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
 
-#### I apply the IPS patch and then the game is not working / contains graphic glitches. What am I doing wrong?
+#### Po zaaplikowaniu łatki IPS gra nie działa/zawiera glitche graficzne. Co robię źle?
 
-IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM. In this case, you need to look for another ROM.
+Łatka typu IPS nie zawiera sumy kontrolnej. To znaczy że łatka zostanie zaaplikowana na jakikolwiek (nawet nieodpowiedni) ROM. W tym przypadku musisz poszukać innego ROM-a.
 
 #### Co mogę zrobić z typem pliku .ECM?
 
-ECM is a data compression format designed specifically for disc images. You can decompress the file using [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver) program.
+ECM jest formatem skompresowanego pliku specyficznego dla image-ów z dysku. Możesz go zdekompresować używając [ZArchiver] (http://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
 
-#### The app shows the error: "Could not copy file".
+#### Aplikacja wyświetla błąd: "Nie można skopiować pliku".
 
-The error occurs on some devices with Android 4.4. Possible solutions:
+Ten problem występuje na niektórych urządzeniach z androidem 4.4+. Możliwe rozwiązania:
 
-- Copy the ROM file on the memory card in the folder **Android/data/org.emunix.unipatcher/**. Then you need to select the ROM from this directory.
-- Install [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) application (requires ROOT access).
+- Skopiuj ROM na wewnętrzną kartę pamięci **mnt/storage/emulated/0/**. Wtedy wybierz ROM z tej ścieżki.
+- Zainstaluj [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) aplikację [Wymaga dostępu do ROOT (Jeżeli nie wiesz co to ROOT, albo nie wiesz ja zrootować swoję urządzenie sprawdź https://www.xda-developers.com)].
 
-#### The app shows the error: "File have the wrong checksum after it was patched".
+#### Aplikacja wyświetla błąd: "Plik ma złą sumę kontrolną po złatkowaniu".
 
-Maybe it's a bug in my program. Please contact me at [e-mail](mailto:mashin87@gmail.com) and attach the patch to the letter.
+Może jest to bug w moim programie. Proszę skontaktuj się ze mną przez [e-mail] (mailto:mashin87@gmail.com) i załącz łatkę w liście.
 
 #### Czy UniPatcher ma dodatkowe funkcje?
 
 Tak. UniPatcher może:
 
-- fix checksum for a Sega Mega Drive / Sega Genesis games.
-- add or remove SMC header for a Super Nintendo games.
+- naprawiać sumę kontrolną w grach z konsol Sega Mega Drive/Sega Genesis
+- Dodawać bądź usuwać nagłówek SMC dla gier z konsoli Super Nintendo Entertaiment System (SNES).
 
-#### Why do I have to fix checksum for the Sega Mega Drive games?
+#### Po co mam naprawiać sumę kontrolną w grach z Sega Mega Drive/Genesis?
 
-Sega Mega Drive (Genesis) has protection from game modification. ROM stores the checksum value, and if it differs from the actual checksum the game displays a red screen and stops running. This function writes the correct checksum in the ROM.
+Sega Mega Drive/Genesis ma zabezpieczenia przed modyfikacją gry. ROM przechowywuje wartość sumy kontrolnej i jeżeli ona różni się od aktualnej sumy kontrolnej gra wyświetla czerwony ekran śmierci oraz przestaje działać. Ta funkcja poprawia sumę kontrolną w ROM-ie.
 
-**Warning:** This function does not create a backup ROM.
+**Uwaga:** Ta funkcja nie tworzy kopii zapasowe ROM-u.
 
-#### Why it's needed sometimes to add or remove SMC headers from Super Nintendo games?
+#### Dlaczego jest to czasami wymagane aby dodać albo usunąć nagłówek SMC z gier Super Nintendo?
 
-An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing or adding a header is sometimes used for the purpose of correctly applying a patch.
+Nagłówek SMC jest pierwszymi 512 bitami znajdowanymi na początku niektórych SNES-owych ROM image-ów. Te bity nie mają celu, ale one zmieniają lokalizację danych. Usuwanie bądź dodawanie nagłówków jest używane w celach poprawnego zaaplikowania łatki.
 
-**Warning:** This function does not create a backup ROM.
+**Uwaga:** Ta funkcja nie tworzy kopii zapasowe ROM-u.
 
-#### How to translate the app?
+#### Jak przetłumaczyć aplikację?
 
-If you would like to translate the app into another language or improve an existing translation, you can do it on [Transifex](https://www.transifex.com/unipatcher/unipatcher/dashboard/) site.
+Jeżeli chciałbyś/chciałabyś przetłumaczyć aplikację na inny język, albo poprawić istniejące tłumaczenie, możesz to zrobić na stronie [Transifex](https://www.transifex.com/unipatcher/unipatcher/dashboard/).
 
 #### Mam pytanie, prośba o dodanie funkcji albo raport w sprawie błędu
 
-Contact me at e-mail <mashin87@gmail.com>. Please write in English or Russian. If you have problems with patching, attach the patch to the letter and write the name of your ROM, it will save our time.
+Skontaktuj się ze mną przez e-mail <mashin87@gmail.com>. Proszę pisz po Angielsku albo Rosyjsku. Jeżeli masz jakieś problemy z łatkowaniem, załącz łatkę do mail-a i napisz nazwę ROM-u, to oszczędzi nasz czas.
