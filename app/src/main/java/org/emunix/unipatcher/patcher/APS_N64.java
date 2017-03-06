@@ -47,7 +47,7 @@ public class APS_N64 extends Patcher {
     }
 
     @Override
-    public void apply() throws PatchException, IOException {
+    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
         BufferedInputStream romStream = null;
         BufferedInputStream patchStream = null;
         BufferedOutputStream outputStream = null;
@@ -96,8 +96,10 @@ public class APS_N64 extends Patcher {
                 int country = patchStream.read();
                 byte[] crc = new byte[8];
                 patchStream.read(crc);
-                if (!validateROM(endianness, cardID, country, crc))
-                    throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                if (!ignoreChecksum) {
+                    if (!validateROM(endianness, cardID, country, crc))
+                        throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                }
                 // skip bytes for future expansion
                 byte[] skip = new byte[5];
                 patchStream.read(skip);

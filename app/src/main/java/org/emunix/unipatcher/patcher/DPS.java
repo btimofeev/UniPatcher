@@ -42,7 +42,7 @@ public class DPS extends Patcher {
     }
 
     @Override
-    public void apply() throws PatchException, IOException {
+    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
 
         if (patchFile.length() < MIN_SIZE_PATCH) {
             throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
@@ -63,9 +63,11 @@ public class DPS extends Patcher {
                 throw new PatchException(context.getString(R.string.notify_error_not_dps_patch));
 
             // verify rom
-            long romSize = getUInt(buffer, 194);
-            if (romSize != romFile.length())
-                throw new IOException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+            if (!ignoreChecksum) {
+                long romSize = getUInt(buffer, 194);
+                if (romSize != romFile.length())
+                    throw new IOException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+            }
 
             romStream = new RandomAccessFile(romFile, "r");
             outputStream = new RandomAccessFile(outputFile, "rw");

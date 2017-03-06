@@ -113,6 +113,9 @@
     <string name="settings_patch_directory">Укажите директорию с патчами</string>
     <string name="settings_output_directory">Укажите директорию для сохранения</string>
     <string name="settings_output_directory_description">Иначе ROM будет сохранён в директорию с ROM\'ами</string>
+    <string name="settings_patching_header">Применение патчей</string>
+    <string name="settings_ignore_checksum">Игнорировать контрольную сумму</string>
+    <string name="settings_ignore_checksum_description">Не показывать ошибку, если используется неподходящий ROM. Используйте осторожно: включив эту опцию можно получить непроходимую игру.</string>
 
     <!-- Help activity -->
     <string name="help_activity_title">Помощь</string>

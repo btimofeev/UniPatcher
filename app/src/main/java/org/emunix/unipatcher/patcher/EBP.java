@@ -68,12 +68,12 @@ public class EBP extends Patcher {
     }
 
     @Override
-    public void apply() throws PatchException, IOException {
+    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
         File cleanRom = File.createTempFile("rom", null, context.getCacheDir());
         File ipsPatch = File.createTempFile("patch", null, context.getCacheDir());
         try {
             Utils.copyFile(context, romFile, cleanRom);
-            prepareCleanRom(cleanRom);
+            prepareCleanRom(cleanRom, ignoreChecksum);
 
             EBPtoIPS(patchFile, ipsPatch);
 
@@ -85,7 +85,7 @@ public class EBP extends Patcher {
         }
     }
 
-    private void prepareCleanRom(File file) throws IOException, PatchException {
+    private void prepareCleanRom(File file, boolean ignoreChecksum) throws IOException, PatchException {
         // delete smc header
         SnesSmcHeader smc = new SnesSmcHeader();
         try {
@@ -95,8 +95,10 @@ public class EBP extends Patcher {
         }
 
         // check rom size and remove unused expanded space
-        if (file.length() < EB_CLEAN_ROM_SIZE)
-            throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+        if (!ignoreChecksum) {
+            if (file.length() < EB_CLEAN_ROM_SIZE)
+                throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+        }
         if (file.length() > EB_CLEAN_ROM_SIZE && checkExpanded(file))
             removeExpanded(file);
 

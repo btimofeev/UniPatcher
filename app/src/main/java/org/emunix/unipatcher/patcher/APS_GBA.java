@@ -77,7 +77,7 @@ public class APS_GBA extends Patcher {
     }
 
     @Override
-    public void apply() throws PatchException, IOException {
+    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
         long fileSize1, fileSize2, bytesLeft, offset;
         int crc, patchCrc1, patchCrc2, pCount, oCount;
         boolean isOriginal = false;
@@ -138,7 +138,8 @@ public class APS_GBA extends Patcher {
                 } else if (crc == patchCrc2) {
                     isModified = true;
                 } else {
-                    throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                    if (!ignoreChecksum)
+                        throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
                 }
                 if (isOriginal && isModified)
                     throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
@@ -153,7 +154,7 @@ public class APS_GBA extends Patcher {
 
         if (isOriginal) {
             Utils.truncateFile(outputFile, fileSize2);
-        } else {
+        } else if (isModified) {
             Utils.truncateFile(outputFile, fileSize1);
         }
     }

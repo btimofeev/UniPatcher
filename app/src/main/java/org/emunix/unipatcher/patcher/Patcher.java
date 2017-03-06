@@ -37,5 +37,5 @@ public abstract class Patcher {
         outputFile = output;
     }
 
-    public abstract void apply() throws PatchException, IOException;
+    public abstract void apply(boolean ignoreChecksum) throws PatchException, IOException;
 }

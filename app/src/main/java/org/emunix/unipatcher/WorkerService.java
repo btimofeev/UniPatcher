@@ -158,7 +158,7 @@ public class WorkerService extends IntentService {
         try {
             if ("ppf".equals(ext))
                 Utils.copyFile(this, romFile, outputFile);
-            patcher.apply();
+            patcher.apply(Settings.getIgnoreChecksum(this));
         } catch (PatchException | IOException e) {
             if (Utils.getFreeSpace(outputFile.getParentFile()) == 0) {
                 errorMsg = getString(R.string.notify_error_not_enough_space);

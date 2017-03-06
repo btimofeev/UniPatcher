@@ -113,6 +113,9 @@
     <string name="settings_patch_directory">Specify patches directory</string>
     <string name="settings_output_directory">Specify output directory</string>
     <string name="settings_output_directory_description">Otherwise ROM will be stored in the ROM directory</string>
+    <string name="settings_patching_header">Patching</string>
+    <string name="settings_ignore_checksum">Ignore checksums</string>
+    <string name="settings_ignore_checksum_description">Do not interrupt patching if you use the wrong ROM. Use caution: this option can break your game.</string>
 
     <!-- Help activity -->
     <string name="help_activity_title">Help</string>

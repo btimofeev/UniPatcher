@@ -68,7 +68,7 @@ public class PPF extends Patcher {
     }
 
     @Override
-    public void apply() throws PatchException, IOException {
+    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
         if (patchFile.length() < 61) {
             throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
         }
@@ -78,10 +78,10 @@ public class PPF extends Patcher {
                 applyPPF1();
                 break;
             case 2:
-                applyPPF2();
+                applyPPF2(ignoreChecksum);
                 break;
             case 3:
-                applyPPF3();
+                applyPPF3(ignoreChecksum);
                 break;
             default:
                 throw new PatchException(context.getString(R.string.notify_error_not_ppf_patch));
@@ -112,15 +112,17 @@ public class PPF extends Patcher {
         }
     }
 
-    private void applyPPF2() throws IOException, PatchException {
+    private void applyPPF2(boolean ignoreChecksum) throws IOException, PatchException {
         try {
             patchStream = new RandomAccessFile(patchFile, "r");
 
             // Check size of ROM
             patchStream.seek(56);
             long romSize = readLittleEndianInt(patchStream);
-            if (romSize != romFile.length()) {
-                throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+            if (!ignoreChecksum) {
+                if (romSize != romFile.length()) {
+                    throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                }
             }
 
             outputStream = new RandomAccessFile(outputFile, "rw");
@@ -131,8 +133,10 @@ public class PPF extends Patcher {
             outputStream.seek(0x9320);
             patchStream.read(patchBinaryBlock, 0, 1024);
             outputStream.read(romBinaryBlock, 0, 1024);
-            if (!Arrays.equals(patchBinaryBlock, romBinaryBlock))
-                throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+            if (!ignoreChecksum) {
+                if (!Arrays.equals(patchBinaryBlock, romBinaryBlock))
+                    throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+            }
 
             // Calculate end of patch data
             long dataEnd = patchFile.length();
@@ -160,7 +164,7 @@ public class PPF extends Patcher {
         }
     }
 
-    private void applyPPF3() throws IOException, PatchException {
+    private void applyPPF3(boolean ignoreChecksum) throws IOException, PatchException {
         try {
             patchStream = new RandomAccessFile(patchFile, "r");
             outputStream = new RandomAccessFile(outputFile, "rw");
@@ -182,8 +186,10 @@ public class PPF extends Patcher {
                 }
                 patchStream.read(patchBinaryBlock, 0, 1024);
                 outputStream.read(romBinaryBlock, 0, 1024);
-                if (!Arrays.equals(patchBinaryBlock, romBinaryBlock))
-                    throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                if (!ignoreChecksum) {
+                    if (!Arrays.equals(patchBinaryBlock, romBinaryBlock))
+                        throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                }
             }
 
             // Calculate end of patch data

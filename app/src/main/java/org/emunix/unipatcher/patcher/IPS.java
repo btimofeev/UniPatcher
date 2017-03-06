@@ -50,6 +50,10 @@ public class IPS extends Patcher {
     }
 
     @Override
+    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
+        apply();
+    }
+
     public void apply() throws PatchException, IOException {
         BufferedInputStream romStream = null;
         BufferedInputStream patchStream = null;

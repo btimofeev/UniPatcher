@@ -30,7 +30,7 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 #include "xdelta3/xdelta3/xdelta3.h"
 #include "xdelta3/xdelta3/xdelta3.c"
 
-int apply(FILE *patch, FILE *in, FILE *out);
+int apply(FILE *patch, FILE *in, FILE *out, int ignoreChecksum);
 
 const int ERR_UNABLE_OPEN_PATCH = -5001;
 const int ERR_UNABLE_OPEN_ROM = -5002;
@@ -41,7 +41,8 @@ int Java_org_emunix_unipatcher_patcher_XDelta_xdelta3apply(JNIEnv *env,
                                                          jobject this,
                                                          jstring patchPath,
                                                          jstring romPath,
-                                                         jstring outputPath) {
+                                                         jstring outputPath,
+                                                         jboolean ignoreChecksum) {
     int ret = 0;
     const char *patchName = (*env)->GetStringUTFChars(env, patchPath, NULL);
     const char *romName = (*env)->GetStringUTFChars(env, romPath, NULL);
@@ -70,7 +71,7 @@ int Java_org_emunix_unipatcher_patcher_XDelta_xdelta3apply(JNIEnv *env,
         return ERR_UNABLE_OPEN_OUTPUT;
     }
 
-    ret = apply(patchFile, romFile, outputFile);
+    ret = apply(patchFile, romFile, outputFile, (int)ignoreChecksum);
 
     fclose(patchFile);
     fclose(romFile);
@@ -78,7 +79,7 @@ int Java_org_emunix_unipatcher_patcher_XDelta_xdelta3apply(JNIEnv *env,
     return ret;
 }
 
-int apply(FILE *patch, FILE *in, FILE *out) {
+int apply(FILE *patch, FILE *in, FILE *out, int ignoreChecksum) {
     int BUFFER_SIZE = 32768;
 
     int r, ret;
@@ -93,6 +94,9 @@ int apply(FILE *patch, FILE *in, FILE *out) {
 
     xd3_init_config(&config, 0);
     config.winsize = BUFFER_SIZE;
+    if (ignoreChecksum) {
+        config.flags |= XD3_ADLER32_NOVER;
+    }
     xd3_config_stream(&stream, &config);
 
     source.blksize = BUFFER_SIZE;

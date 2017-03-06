@@ -69,4 +69,9 @@ public class Settings {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         return prefs.getString("output_directory", "");
     }
+
+    public static boolean getIgnoreChecksum(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getBoolean("ignore_checksum", false);
+    }
 }

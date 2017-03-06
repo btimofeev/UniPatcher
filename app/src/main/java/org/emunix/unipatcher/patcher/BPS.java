@@ -50,7 +50,7 @@ public class BPS extends Patcher {
     }
 
     @Override
-    public void apply() throws PatchException, IOException {
+    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
 
         if (patchFile.length() < 19) {
             throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
@@ -68,9 +68,11 @@ public class BPS extends Patcher {
             if (bpsCrc.getPatchFileCRC() != bpsCrc.getRealPatchCRC())
                 throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
 
-            long realRomCrc = FileUtils.checksumCRC32(romFile);
-            if (realRomCrc != bpsCrc.getInputFileCRC()) {
-                throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+            if (!ignoreChecksum) {
+                long realRomCrc = FileUtils.checksumCRC32(romFile);
+                if (realRomCrc != bpsCrc.getInputFileCRC()) {
+                    throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                }
             }
 
             patch = new RandomAccessFile(patchFile, "r").getChannel();
@@ -133,9 +135,11 @@ public class BPS extends Patcher {
             IOUtils.closeQuietly(output);
         }
 
-        long realOutCrc = FileUtils.checksumCRC32(outputFile);
-        if (realOutCrc != bpsCrc.getOutputFileCRC())
-            throw new PatchException(context.getString(R.string.notify_error_wrong_checksum_after_patching));
+        if(!ignoreChecksum) {
+            long realOutCrc = FileUtils.checksumCRC32(outputFile);
+            if (realOutCrc != bpsCrc.getOutputFileCRC())
+                throw new PatchException(context.getString(R.string.notify_error_wrong_checksum_after_patching));
+        }
     }
 
     // decode pointer

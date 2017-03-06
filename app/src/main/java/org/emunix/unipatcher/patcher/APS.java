@@ -43,7 +43,7 @@ public class APS extends Patcher {
     }
 
     @Override
-    public void apply() throws PatchException, IOException {
+    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
         Patcher aps = null;
         switch (checkAPS(patchFile)) {
             case APS_N64_PATCH:
@@ -56,7 +56,7 @@ public class APS extends Patcher {
                 throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
         }
 
-        aps.apply();
+        aps.apply(ignoreChecksum);
     }
 
     public int checkAPS(File file) throws PatchException, IOException {

@@ -67,7 +67,7 @@ public class UPSTest {
 
         UPS patcher = new UPS(mockContext, patch, in, out);
         try {
-            patcher.apply();
+            patcher.apply(false);
         } catch (PatchException | IOException e) {
             fail("Patching failed");
         }

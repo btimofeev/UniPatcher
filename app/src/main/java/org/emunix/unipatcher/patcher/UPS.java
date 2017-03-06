@@ -44,7 +44,7 @@ public class UPS extends Patcher {
     }
 
     @Override
-    public void apply() throws PatchException, IOException {
+    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
 
         if (patchFile.length() < 18) {
             throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
@@ -90,7 +90,9 @@ public class UPS extends Patcher {
                 ySize = tmp;
                 upsCrc.swapInOut();
             } else {
-                throw new IOException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                if (!ignoreChecksum) {
+                    throw new IOException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                }
             }
 
             romStream = new BufferedInputStream(new FileInputStream(romFile));
@@ -125,9 +127,11 @@ public class UPS extends Patcher {
             IOUtils.closeQuietly(outputStream);
         }
 
-        long realOutCrc = FileUtils.checksumCRC32(outputFile);
-        if (realOutCrc != upsCrc.getOutputFileCRC())
-            throw new PatchException(context.getString(R.string.notify_error_wrong_checksum_after_patching));
+        if (!ignoreChecksum) {
+            long realOutCrc = FileUtils.checksumCRC32(outputFile);
+            if (realOutCrc != upsCrc.getOutputFileCRC())
+                throw new PatchException(context.getString(R.string.notify_error_wrong_checksum_after_patching));
+        }
     }
 
     // decode pointer

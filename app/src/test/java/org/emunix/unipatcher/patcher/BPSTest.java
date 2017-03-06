@@ -48,7 +48,7 @@ public class BPSTest {
 
         BPS patcher = new BPS(mockContext, patch, in, out);
         try {
-            patcher.apply();
+            patcher.apply(false);
         } catch (PatchException | IOException e) {
             fail("Patching failed");
         }

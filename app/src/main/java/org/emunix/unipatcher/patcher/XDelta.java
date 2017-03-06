@@ -38,14 +38,14 @@ public class XDelta extends Patcher {
     private static final int ERR_WRONG_CHECKSUM = -5010;
     private static final int ERR_INVALID_INPUT = -17712;
 
-    public static native int xdelta3apply(String patchPath, String romPath, String outputPath);
+    public static native int xdelta3apply(String patchPath, String romPath, String outputPath, boolean ignoreChecksum);
 
     public XDelta(Context context, File patch, File rom, File output) {
         super(context, patch, rom, output);
     }
 
     @Override
-    public void apply() throws PatchException, IOException {
+    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
         if (checkXDelta1(patchFile))
             throw new PatchException(context.getString(R.string.notify_error_xdelta1_unsupported));
 
@@ -55,7 +55,7 @@ public class XDelta extends Patcher {
             throw new PatchException(context.getString(R.string.notify_error_failed_load_lib_xdelta3));
         }
 
-        int ret = xdelta3apply(patchFile.getPath(), romFile.getPath(), outputFile.getPath());
+        int ret = xdelta3apply(patchFile.getPath(), romFile.getPath(), outputFile.getPath(), ignoreChecksum);
 
         switch (ret) {
             case NO_ERROR:
