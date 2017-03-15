@@ -113,6 +113,9 @@
     <string name="settings_patch_directory">Вкажіть папку для Патчу/ів</string>
     <string name="settings_output_directory">Вкажіть вихідну папку</string>
     <string name="settings_output_directory_description">Початково ROM\'и будуть зберігатись в папці ROM. Ви можете змінити шлях збережень</string>
+    <string name="settings_patching_header">Patching</string>
+    <string name="settings_ignore_checksum">Ignore checksums</string>
+    <string name="settings_ignore_checksum_description">Do not interrupt patching if you use the wrong ROM. Use caution: this option can break your game.</string>
 
     <!-- Help activity -->
     <string name="help_activity_title">Допомога</string>
