@@ -39,8 +39,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
-
 import org.emunix.unipatcher.BuildConfig;
 import org.emunix.unipatcher.Globals;
 import org.emunix.unipatcher.R;
@@ -57,17 +55,11 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static final String LOG_TAG = "org.emunix.unipatcher";
 
-    private FirebaseAnalytics firebaseAnalytics;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
-        if (BuildConfig.DEBUG)
-            firebaseAnalytics.setAnalyticsCollectionEnabled(false);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

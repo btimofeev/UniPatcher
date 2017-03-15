@@ -123,5 +123,3 @@ dependencies {
     compile 'com.afollestad.material-dialogs:core:0.9.3.0'
     compile 'com.android.support:support-v13:25.2.0' // TODO remove this line after update material-dialogs
 }
-
-apply plugin: 'com.google.gms.google-services'
