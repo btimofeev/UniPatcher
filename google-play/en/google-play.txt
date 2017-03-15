@@ -1,22 +1,17 @@
 Utility to apply patches to game rom.
 
-<b>Please read before you download:</b> This program will not help you hack native android games, it was created for the old console games.
+<b>Please read before you download:</b> This program will not help you hack native android games, it was created for the old console games (Super Nintendo, Sega MegaDrive, Game Boy Advance, Sony PlayStation etc.).
 
 
-<b>UniPatcher</b> allows you to apply patches to the game rom. What is a <i>patch</i>? The patch is a file with the modified data of the game. For example, a game translated from Japanese to English. You download the patch containing the translation. It must be applied to the Japanese version to get the English version.
+<b>UniPatcher</b> allows you to apply patches to the game ROM. What is a <i>patch</i>? The patch is a file with the modified data of the game. For example, a game translated from Japanese to English. You download the patch containing the translation. It must be applied to the Japanese version to get the English version.
 
 
-<b>UniPatcher supports the most popular formats patches</b> used in Nintendo, Super Nintendo, Sega MegaDrive / Sega Genesis, Gameboy, Game Boy Advance, Sony PlayStation and other games:
-&bull; IPS
-&bull; IPS32
-&bull; UPS
-&bull; BPS
-&bull; APS (GBA)
-&bull; APS (N64)
-&bull; PPF
-&bull; DPS
-&bull; EBP
-&bull; XDelta 3
+<b>Features:</b>
+&bull; Supported formats of patches: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta 3
+&bull; Fix checksum in Sega Mega Drive ROMs
+&bull; Add/Delete SMC header in Super Nintendo ROMs
+&bull; No ads
+&bull; Free and open source software. Source code available at https://github.com/btimofeev/UniPatcher
 
 
 <b>How to use?</b> Very simple:
@@ -26,13 +21,9 @@ Utility to apply patches to game rom.
 <b><u>Very important:</u> if the game and patch compressed (zip, rar, 7z or other), they first need to unzip (I recommend the free program ZArchiver).</b>
 
 
-<b>Additional features:</b>
-&bull; Fix checksum in Sega Mega Drive ROMs
-&bull; Add/Delete SMC header in Super Nintendo ROMs
-
-
 <b>Help with translations:</b>
-You can help with translation of the program into your language. The translations are managed on https://www.transifex.com/unipatcher/unipatcher/dashboard/
+You can help with translation of the program into your language. The translations are managed on https://www.transifex.com/unipatcher/unipatcher
 
 
-If you have any problems with the program please contact me by e-mail mashin87@gmail.com. In a letter to specify the full name of the game and the patch (better add the patch in attachment). So we can solve your problem quickly.
+<b>Feedback:</b>
+If you have a bug report or a feature request feel free to open issue on https://github.com/btimofeev/UniPatcher/issues

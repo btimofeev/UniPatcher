@@ -1,22 +1,17 @@
 Narzędzie do aplikowania łatek do ROM-ów
 
-<b>Proszę przeczytaj zanim pobierzesz:</b> Ten program nie pomoże ci hakować gier Android, on został stworzony dla starych gier konsolowych.
+<b>Proszę przeczytaj zanim pobierzesz:</b> Ten program nie pomoże ci hakować gier Android, on został stworzony dla starych gier konsolowych (Super Nintendo, Sega MegaDrive, Game Boy Advance, Sony PlayStation itd.).
 
 
 <b>UniPatcher</b> umożliwia ci aplikowanie łatek do ROM-ów. Co to jest <i>łatka</i>? Łatka jest plikiem zawierającym zmodyfikowane dane gry. Np. Gra przetłumaczona z Japońskiego na Angielski. Pobierasz łatkę zawierajacą tłumaczenie. Musi być ona zaaplikowana do Japońskiej wersji aby uzyskać Angielską wersję.
 
 
-<b>UniPatcher wspiera najbardziej popularne łatki</b> używane w Nintendo, Super Nintendo, Sega MegaDrive / Sega Genesis, Gameboy, Game Boy Advance, Sony PlayStation i innych grach:
-&bull; IPS
-&bull; IPS32
-&bull; UPS
-&bull; BPS
-&bull; APS (GBA)
-&bull; APS (N64)
-&bull; PPF
-&bull; DPS
-&bull; EBP
-&bull; XDelta 3
+<b>Features:</b>
+&bull; Supported formats of patches: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta 3
+&bull; Napraw sumę kontrolną dla ROM-ów Segs Mega Drive
+&bull; Dodaj/Usuń nagłówek SMC dla ROM-ów Super Nintendo
+&bull; No ads
+&bull; Free and open source software. Source code available at https://github.com/btimofeev/UniPatcher
 
 
 <b>Jak tego używać?</b> Bardzo prosto:
@@ -26,13 +21,9 @@ Narzędzie do aplikowania łatek do ROM-ów
 <b><u>Bardzo ważne:</u> Jeżeli gra i łatka są skompresowane (zip, rar, 7z lub inny format), najpierw muszą być wypakowane (rekomenduje darmowy program ZArchiver).</b>
 
 
-<b>Dodatkowe funkcje:</b>
-&bull; Napraw sumę kontrolną dla ROM-ów Segs Mega Drive
-&bull; Dodaj/Usuń nagłówek SMC dla ROM-ów Super Nintendo
-
-
 <b>Pomoc z tłumaczeniami</b>
-Możesz pomóc z tłumaczeniem UniPatcher-a na stronie https://www.transifex.com/unipatcher/unipatcher/dashboard/
+Możesz pomóc z tłumaczeniem UniPatcher-a na stronie https://www.transifex.com/unipatcher/unipatcher
 
 
-Jeżeli masz problem z programem, proszę skontaktuj się ze mną przez e-mail mashin87@gmail.com. W mailu wpisz pełną nazwę gry i łatkę (lepiej dodaj łatkę w załączniku), przez co możemy szybko rozwiązać twój problem.
+<b>Feedback:</b>
+If you have a bug report or a feature request feel free to open issue on https://github.com/btimofeev/UniPatcher/issues
