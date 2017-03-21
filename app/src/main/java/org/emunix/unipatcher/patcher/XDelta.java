@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016 Boris Timofeev
+Copyright (C) 2016-2017 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -35,10 +35,13 @@ public class XDelta extends Patcher {
     private static final int ERR_UNABLE_OPEN_PATCH = -5001;
     private static final int ERR_UNABLE_OPEN_ROM = -5002;
     private static final int ERR_UNABLE_OPEN_OUTPUT = -5003;
+    private static final int ERR_UNABLE_OPEN_SOURCE = -5004;
+    private static final int ERR_UNABLE_OPEN_MODIFIED = -5005;
     private static final int ERR_WRONG_CHECKSUM = -5010;
     private static final int ERR_INVALID_INPUT = -17712;
 
     public static native int xdelta3apply(String patchPath, String romPath, String outputPath, boolean ignoreChecksum);
+    public static native int xdelta3create(String patchPath, String sourcePath, String modifiedPath);
 
     public XDelta(Context context, File patch, File rom, File output) {
         super(context, patch, rom, output);
@@ -73,6 +76,32 @@ public class XDelta extends Patcher {
                 throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
             case ERR_INVALID_INPUT:
                 throw new PatchException(context.getString(R.string.notify_error_not_xdelta3_patch));
+            default:
+                throw new PatchException(context.getString(R.string.notify_error_unknown));
+        }
+    }
+
+    public void create() throws PatchException, IOException {
+        try {
+            System.loadLibrary("xdelta3");
+        } catch (UnsatisfiedLinkError e) {
+            throw new PatchException(context.getString(R.string.notify_error_failed_load_lib_xdelta3));
+        }
+
+        int ret = xdelta3create(patchFile.getPath(), romFile.getPath(), outputFile.getPath());
+
+        switch (ret) {
+            case NO_ERROR:
+                return;
+            case ERR_UNABLE_OPEN_PATCH:
+                throw new PatchException(context.getString(R.string.notify_error_unable_open_file)
+                        .concat(" ").concat(patchFile.getName()));
+            case ERR_UNABLE_OPEN_SOURCE:
+                throw new PatchException(context.getString(R.string.notify_error_unable_open_file)
+                        .concat(" ").concat(romFile.getName()));
+            case ERR_UNABLE_OPEN_MODIFIED:
+                throw new PatchException(context.getString(R.string.notify_error_unable_open_file)
+                        .concat(" ").concat(outputFile.getName()));
             default:
                 throw new PatchException(context.getString(R.string.notify_error_unknown));
         }

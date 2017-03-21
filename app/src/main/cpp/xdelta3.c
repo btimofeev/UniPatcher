@@ -2,7 +2,7 @@
 This file based on encode_decode_test.c from XDelta3 sources.
 
 Copyright (C) 2007 Ralf Junker
-Copyright (C) 2016 Boris Timofeev
+Copyright (C) 2016-2017 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -30,11 +30,13 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 #include "xdelta3/xdelta3/xdelta3.h"
 #include "xdelta3/xdelta3/xdelta3.c"
 
-int apply(FILE *patch, FILE *in, FILE *out, int ignoreChecksum);
+int code(int encode, FILE *in, FILE *src, FILE *out, int ignoreChecksum);
 
 const int ERR_UNABLE_OPEN_PATCH = -5001;
 const int ERR_UNABLE_OPEN_ROM = -5002;
 const int ERR_UNABLE_OPEN_OUTPUT = -5003;
+const int ERR_UNABLE_OPEN_SOURCE = -5004;
+const int ERR_UNABLE_OPEN_MODIFIED = -5005;
 const int ERR_WRONG_CHECKSUM = -5010;
 
 int Java_org_emunix_unipatcher_patcher_XDelta_xdelta3apply(JNIEnv *env,
@@ -71,7 +73,7 @@ int Java_org_emunix_unipatcher_patcher_XDelta_xdelta3apply(JNIEnv *env,
         return ERR_UNABLE_OPEN_OUTPUT;
     }
 
-    ret = apply(patchFile, romFile, outputFile, (int)ignoreChecksum);
+    ret = code(0, patchFile, romFile, outputFile, (int)ignoreChecksum);
 
     fclose(patchFile);
     fclose(romFile);
@@ -79,8 +81,50 @@ int Java_org_emunix_unipatcher_patcher_XDelta_xdelta3apply(JNIEnv *env,
     return ret;
 }
 
-int apply(FILE *patch, FILE *in, FILE *out, int ignoreChecksum) {
-    int BUFFER_SIZE = 32768;
+int Java_org_emunix_unipatcher_patcher_XDelta_xdelta3create(JNIEnv *env,
+                                                           jobject this,
+                                                           jstring patchPath,
+                                                           jstring sourcePath,
+                                                           jstring modifiedPath) {
+    int ret = 0;
+    const char *patchName = (*env)->GetStringUTFChars(env, patchPath, NULL);
+    const char *sourceName = (*env)->GetStringUTFChars(env, sourcePath, NULL);
+    const char *modifiedName = (*env)->GetStringUTFChars(env, modifiedPath, NULL);
+
+    FILE *patchFile = fopen(patchName, "wb");
+    FILE *sourceFile = fopen(sourceName, "rb");
+    FILE *modifiedFile = fopen(modifiedName, "rb");
+
+    (*env)->ReleaseStringUTFChars(env, patchPath, patchName);
+    (*env)->ReleaseStringUTFChars(env, sourcePath, sourceName);
+    (*env)->ReleaseStringUTFChars(env, modifiedPath, modifiedName);
+
+    if (!patchFile) {
+        return ERR_UNABLE_OPEN_PATCH;
+    }
+
+    if (!sourceFile) {
+        fclose(patchFile);
+        return ERR_UNABLE_OPEN_SOURCE;
+    }
+
+    if (!modifiedFile) {
+        fclose(patchFile);
+        fclose(sourceFile);
+        return ERR_UNABLE_OPEN_MODIFIED;
+    }
+
+    ret = code(1, modifiedFile, sourceFile, patchFile, 0);
+
+    fclose(patchFile);
+    fclose(sourceFile);
+    fclose(modifiedFile);
+    return ret;
+}
+
+
+int code(int encode, FILE *in, FILE *src, FILE *out, int ignoreChecksum) {
+    int BUFFER_SIZE = 0x1000;
 
     int r, ret;
     xd3_stream stream;
@@ -103,26 +147,28 @@ int apply(FILE *patch, FILE *in, FILE *out, int ignoreChecksum) {
     source.curblk = malloc(source.blksize);
 
     /* Load 1st block of stream. */
-    r = fseek(in, 0, SEEK_SET);
+    r = fseek(src, 0, SEEK_SET);
     if (r)
         return r;
-    source.onblk = fread((void *) source.curblk, 1, source.blksize, in);
+    source.onblk = fread((void *) source.curblk, 1, source.blksize, src);
     source.curblkno = 0;
     xd3_set_source(&stream, &source);
 
     Input_Buf = malloc(BUFFER_SIZE);
 
-    fseek(patch, 0, SEEK_SET);
+    fseek(in, 0, SEEK_SET);
     do {
-        Input_Buf_Read = fread(Input_Buf, 1, BUFFER_SIZE, patch);
+        Input_Buf_Read = fread(Input_Buf, 1, BUFFER_SIZE, in);
         if (Input_Buf_Read < BUFFER_SIZE) {
             xd3_set_flags(&stream, XD3_FLUSH | stream.flags);
         }
         xd3_avail_input(&stream, Input_Buf, Input_Buf_Read);
 
-        process:
-
-        ret = xd3_decode_input(&stream);
+process:
+        if (encode)
+            ret = xd3_encode_input(&stream);
+        else
+            ret = xd3_decode_input(&stream);
 
         switch (ret) {
             case XD3_INPUT:
@@ -136,10 +182,10 @@ int apply(FILE *patch, FILE *in, FILE *out, int ignoreChecksum) {
                 goto process;
 
             case XD3_GETSRCBLK:
-                r = fseek(in, source.blksize * source.getblkno, SEEK_SET);
+                r = fseek(src, source.blksize * source.getblkno, SEEK_SET);
                 if (r)
                     return r;
-                source.onblk = fread((void *) source.curblk, 1, source.blksize, in);
+                source.onblk = fread((void *) source.curblk, 1, source.blksize, src);
                 source.curblkno = source.getblkno;
                 goto process;
 

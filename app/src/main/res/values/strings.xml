@@ -21,8 +21,16 @@
     <string name="dialog_rename_title">Rename</string>
     <string name="dialog_rename_ok">OK</string>
     <string name="dialog_rename_cancel">Cancel</string>
-    <string name="dialog_rename_error_same_name">The input and output ROM names must be different</string>
+    <string name="dialog_rename_error_same_name">The input and output file names must be different</string>
     <string name="dialog_rename_error_invalid_chars">Invalid symbol /</string>
+
+    <!-- Create patch fragment -->
+    <string name="create_patch_fragment_source_file">Source file</string>
+    <string name="create_patch_fragment_modified_file">Modified file</string>
+    <string name="create_patch_fragment_patch_file">Patch file</string>
+    <string name="create_patch_fragment_toast_source_and_modified_not_selected">The source and modified files is not selected</string>
+    <string name="create_patch_fragment_toast_source_not_selected">The source file is not selected</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">The modified file is not selected</string>
 
     <!-- Info for SNES SMC header -->
     <string name="snes_smc_header_help">This feature is only for Super Nintendo ROMs.\n\nIf the ROM contains the SMC header - it will be removed. Otherwise, it will be added.\n\nWarning: this function does not create a backup.</string>
@@ -36,6 +44,8 @@
     <string name="file_picker_activity_title">Select file</string>
     <string name="file_picker_activity_title_select_rom">Select the ROM file</string>
     <string name="file_picker_activity_title_select_patch">Select the patch file</string>
+    <string name="file_picker_activity_title_select_source_file">Select the source file</string>
+    <string name="file_picker_activity_title_select_modified_file">Select the modified file</string>
     <string name="file_picker_activity_title_select_header">Select the header file</string>
     <string name="file_picker_activity_error_unable_read_dir">Unable to read directory %1$s</string>
 
@@ -54,7 +64,10 @@
     <!-- Notifications -->
     <string name="notify_applying_patch">Applying patch</string>
     <string name="notify_patching_complete">Patching complete</string>
+    <string name="notify_creating_patch">Creating patch</string>
+    <string name="notify_create_patch_complete">Patch creation completed</string>
     <string name="toast_patching_started_check_notify">Patching started. Check the notification area</string>
+    <string name="toast_create_patch_started_check_notify">Creating patch started. Check the notification area</string>
 
     <string name="notify_error">Error</string>
     <string name="notify_error_could_not_copy_file">Could not copy file</string>
@@ -138,6 +151,7 @@
 
     <!-- Navigation list -->
     <string name="nav_apply_patch">Apply patch</string>
+    <string name="nav_create_patch">Create patch</string>
     <string name="nav_smd_fix_checksum">Fix checksum (SMD)</string>
     <string name="nav_snes_add_del_smc_header">Add/Del SMC header (SNES)</string>
     <string name="nav_settings">Settings</string>

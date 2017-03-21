@@ -43,6 +43,7 @@ import org.emunix.unipatcher.BuildConfig;
 import org.emunix.unipatcher.Globals;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.ui.fragment.ActionFragment;
+import org.emunix.unipatcher.ui.fragment.CreatePatchFragment;
 import org.emunix.unipatcher.ui.fragment.PatchingFragment;
 import org.emunix.unipatcher.ui.fragment.SmdFixChecksumFragment;
 import org.emunix.unipatcher.ui.fragment.SnesSmcHeaderFragment;
@@ -116,10 +117,12 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_apply_patch) {
             selectDrawerItem(0);
-        } else if (id == R.id.nav_smd_fix_checksum) {
+        } else if (id == R.id.nav_create_patch) {
             selectDrawerItem(1);
-        } else if (id == R.id.nav_snes_add_del_smc_header) {
+        } else if (id == R.id.nav_smd_fix_checksum) {
             selectDrawerItem(2);
+        } else if (id == R.id.nav_snes_add_del_smc_header) {
+            selectDrawerItem(3);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -148,9 +151,12 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment;
         switch (position) {
             case 1:
-                fragment = new SmdFixChecksumFragment();
+                fragment = new CreatePatchFragment();
                 break;
             case 2:
+                fragment = new SmdFixChecksumFragment();
+                break;
+            case 3:
                 fragment = new SnesSmcHeaderFragment();
                 break;
             default:

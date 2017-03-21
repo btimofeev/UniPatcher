@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_healing_grey600_24dp"
             android:title="@string/nav_apply_patch"/>
         <item
+            android:id="@+id/nav_create_patch"
+            android:icon="@drawable/ic_plus_box_grey600_24dp"
+            android:title="@string/nav_create_patch"/>
+        <item
             android:id="@+id/nav_smd_fix_checksum"
             android:icon="@drawable/ic_fingerprint_grey600_24dp"
             android:title="@string/nav_smd_fix_checksum"/>

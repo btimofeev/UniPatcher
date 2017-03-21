@@ -75,6 +75,7 @@ Maybe it's a bug in my program. Please contact me at [e-mail](mailto:mashin87@gm
 
 Yes. UniPatcher can:
 
+- create XDelta3 patches.
 - fix checksum for a Sega Mega Drive / Sega Genesis games.
 - add or remove SMC header for a Super Nintendo games.
 

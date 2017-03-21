@@ -8,6 +8,7 @@ Utilità per applicare le patch alle ROM dei giochi.
 
 <b>Features:</b>
 &bull; Supported formats of patches: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta 3
+&bull; Creating XDelta patches
 &bull; Risolvi checksum nei ROM del Sega Mega Drive
 &bull; Aggiungi/Elimina intestazione SMC nei ROM del Super Nintendo
 &bull; No ads

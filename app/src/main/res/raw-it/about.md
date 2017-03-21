@@ -2,6 +2,7 @@ UniPatcher è un patcher che supporta i tipi di patch IPS, IPS32, UPS, BPS, APS 
 
 Funzioni aggiuntive:
 
+- Creating XDelta3 patches
 - Risolvi checksum nei ROM del Sega Mega Drive
 - Aggiungi/Elimina intestazione SMC nei ROM del Super Nintendo
 

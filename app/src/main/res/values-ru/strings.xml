@@ -21,8 +21,16 @@
     <string name="dialog_rename_title">Переименовать</string>
     <string name="dialog_rename_ok">Переименовать</string>
     <string name="dialog_rename_cancel">Отмена</string>
-    <string name="dialog_rename_error_same_name">Имена ROM файлов должны отличаться</string>
+    <string name="dialog_rename_error_same_name">Имена файлов должны отличаться</string>
     <string name="dialog_rename_error_invalid_chars">Некорректный символ /</string>
+
+    <!-- Create patch fragment -->
+    <string name="create_patch_fragment_source_file">Исходный файл</string>
+    <string name="create_patch_fragment_modified_file">Изменённый файл</string>
+    <string name="create_patch_fragment_patch_file">Патч</string>
+    <string name="create_patch_fragment_toast_source_and_modified_not_selected">Сначала выберите исходный и изменённый файлы</string>
+    <string name="create_patch_fragment_toast_source_not_selected">Сначала выберите исходный файл</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">Сначала выберите изменённый файл</string>
 
     <!-- Info for SNES SMC header -->
     <string name="snes_smc_header_help">Эта функция только для ROM\'ов Super Nintendo.\n\nЕсли ROM содержит SMC заголовок - он будет удалён. Иначе он будет добавлен.\n\nПредупреждение: эта функция не создаёт резервную копию.</string>
@@ -36,6 +44,8 @@
     <string name="file_picker_activity_title">Выберите файл</string>
     <string name="file_picker_activity_title_select_rom">Выберите ROM файл</string>
     <string name="file_picker_activity_title_select_patch">Выберите патч</string>
+    <string name="file_picker_activity_title_select_source_file">Выберите исходный файл</string>
+    <string name="file_picker_activity_title_select_modified_file">Выберите изменённый файл</string>
     <string name="file_picker_activity_title_select_header">Выберите файл заголовка</string>
     <string name="file_picker_activity_error_unable_read_dir">Не удалось открыть директорию %1$s</string>
 
@@ -54,7 +64,10 @@
     <!-- Notifications -->
     <string name="notify_applying_patch">Применяю патч</string>
     <string name="notify_patching_complete">Применение патча завершено</string>
+    <string name="notify_creating_patch">Создаю патч</string>
+    <string name="notify_create_patch_complete">Создание патча завершено</string>
     <string name="toast_patching_started_check_notify">Применяю патч. Проверьте область уведомлений</string>
+    <string name="toast_create_patch_started_check_notify">Создаю патч. Проверьте область уведомлений</string>
 
     <string name="notify_error">Ошибка</string>
     <string name="notify_error_could_not_copy_file">Не удалось скопировать файл</string>
@@ -138,6 +151,7 @@
 
     <!-- Navigation list -->
     <string name="nav_apply_patch">Применить патч</string>
+    <string name="nav_create_patch">Создать патч</string>
     <string name="nav_smd_fix_checksum">Испр. контр. сумму (SMD)</string>
     <string name="nav_snes_add_del_smc_header">SMC заголовок (SNES)</string>
     <string name="nav_settings">Настройки</string>

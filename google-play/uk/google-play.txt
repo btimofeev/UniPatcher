@@ -8,6 +8,7 @@
 
 <b>Features:</b>
 &bull; Supported formats of patches: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta 3
+&bull; Creating XDelta patches
 &bull; Виправлення контрольної суми для ігор Sega Mega Drive
 &bull; Додавання або Видаляння SMC заголовку для ігор Super Nintendo
 &bull; No ads

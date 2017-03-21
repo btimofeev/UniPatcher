@@ -43,6 +43,7 @@ import org.emunix.unipatcher.tools.RomException;
 import org.emunix.unipatcher.tools.SmdFixChecksum;
 import org.emunix.unipatcher.tools.SnesSmcHeader;
 import org.emunix.unipatcher.ui.activity.MainActivity;
+import org.emunix.unipatcher.ui.notify.CreatePatchNotify;
 import org.emunix.unipatcher.ui.notify.Notify;
 import org.emunix.unipatcher.ui.notify.PatchingNotify;
 import org.emunix.unipatcher.ui.notify.SmdFixChecksumNotify;
@@ -76,6 +77,9 @@ public class WorkerService extends IntentService {
             switch (action) {
                 case Globals.ACTION_PATCHING:
                     actionPatching(intent);
+                    break;
+                case Globals.ACTION_CREATE_PATCH:
+                    actionCreatePatch(intent);
                     break;
                 case Globals.ACTION_SMD_FIX_CHECKSUM:
                     actionSmdFixChecksum(intent);
@@ -166,6 +170,60 @@ public class WorkerService extends IntentService {
                 errorMsg = e.getMessage();
             }
             FileUtils.deleteQuietly(outputFile);
+        } finally {
+            stopForeground(true);
+        }
+        notify.showResult(errorMsg);
+    }
+
+    private void actionCreatePatch(Intent intent) {
+        String errorMsg = null;
+        File sourceFile = new File(intent.getStringExtra("sourcePath"));
+        File modifiedFile = new File(intent.getStringExtra("modifiedPath"));
+        File patchFile = new File(intent.getStringExtra("patchPath"));
+
+        if (!fileExists(sourceFile) || !fileExists(modifiedFile))
+            return;
+
+        // create output dir
+        try {
+            if (!patchFile.getParentFile().exists()) {
+                FileUtils.forceMkdirParent(patchFile);
+            }
+        } catch (IOException | SecurityException e) {
+            String text = getString(R.string.notify_error_unable_to_create_directory, patchFile.getParent());
+            showErrorNotification(text);
+            return;
+        }
+
+        // check access to output dir
+        try {
+            if (!patchFile.getParentFile().canWrite()) {
+                String text = getString(R.string.notify_error_unable_to_write_to_directory, patchFile.getParent());
+                showErrorNotification(text);
+                return;
+            }
+        } catch (SecurityException e) {
+            String text = getString(R.string.notify_error_unable_to_write_to_directory, patchFile.getParent());
+            showErrorNotification(text);
+            return;
+        }
+
+        XDelta patcher = new XDelta(this, patchFile, sourceFile, modifiedFile);
+
+        Notify notify = new CreatePatchNotify(this, patchFile.getName());
+
+        startForeground(notify.getID(), notify.getNotifyBuilder().build());
+
+        try {
+            patcher.create();
+        } catch (PatchException | IOException e) {
+            if (Utils.getFreeSpace(patchFile.getParentFile()) == 0) {
+                errorMsg = getString(R.string.notify_error_not_enough_space);
+            } else {
+                errorMsg = e.getMessage();
+            }
+            FileUtils.deleteQuietly(patchFile);
         } finally {
             stopForeground(true);
         }

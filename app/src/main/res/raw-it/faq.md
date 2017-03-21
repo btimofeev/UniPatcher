@@ -75,6 +75,7 @@ Forse c'è un bug nel mio programma. Ti prego di contattarmi alla [e-mail](mailt
 
 Si. UniPatcher può:
 
+- create XDelta3 patches.
 - Risolvere checksum per un gioco Sega Mega Drive / Sega Genesis.
 - aggiungere o rimuovere l'intestazione SMC per un gioco Super Nintendo.
 

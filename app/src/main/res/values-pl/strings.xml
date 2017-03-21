@@ -21,8 +21,16 @@
     <string name="dialog_rename_title">Zmień Nazwę</string>
     <string name="dialog_rename_ok">OK</string>
     <string name="dialog_rename_cancel">Anuluj</string>
-    <string name="dialog_rename_error_same_name">Wejściowe i wyjściowe nazwy ROM-ów muszą być różne</string>
+    <string name="dialog_rename_error_same_name">The input and output file names must be different</string>
     <string name="dialog_rename_error_invalid_chars">Niewłaściwy symbol /</string>
+
+    <!-- Create patch fragment -->
+    <string name="create_patch_fragment_source_file">Source file</string>
+    <string name="create_patch_fragment_modified_file">Modified file</string>
+    <string name="create_patch_fragment_patch_file">Patch file</string>
+    <string name="create_patch_fragment_toast_source_and_modified_not_selected">The source and modified files is not selected</string>
+    <string name="create_patch_fragment_toast_source_not_selected">The source file is not selected</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">The modified file is not selected</string>
 
     <!-- Info for SNES SMC header -->
     <string name="snes_smc_header_help">Ta opcja jest tylko dla ROM-ów Super Nintendo.\n\nJeżeli ROM zawiera nagłówek SMC - zostanie on usunięty. Inaczej zostanie on dodany.\n\nUwaga: ta funkcja nie tworzy kopii zapasowej.</string>
@@ -36,6 +44,8 @@
     <string name="file_picker_activity_title">Wybierz plik</string>
     <string name="file_picker_activity_title_select_rom">Wybierz plik ROM</string>
     <string name="file_picker_activity_title_select_patch">Wybier plik Łatki</string>
+    <string name="file_picker_activity_title_select_source_file">Select the source file</string>
+    <string name="file_picker_activity_title_select_modified_file">Select the modified file</string>
     <string name="file_picker_activity_title_select_header">Wybierz plik nagłówka</string>
     <string name="file_picker_activity_error_unable_read_dir">Błędna ścieżka %1$s</string>
 
@@ -54,7 +64,10 @@
     <!-- Notifications -->
     <string name="notify_applying_patch">Stosowanie łatki</string>
     <string name="notify_patching_complete">Łatkowanie ukończone</string>
+    <string name="notify_creating_patch">Creating patch</string>
+    <string name="notify_create_patch_complete">Patch creation completed</string>
     <string name="toast_patching_started_check_notify">Łatkowanie rozpoczęte. Sprawdzaj pasek powiadomień.</string>
+    <string name="toast_create_patch_started_check_notify">Creating patch started. Check the notification area</string>
 
     <string name="notify_error">Błąd</string>
     <string name="notify_error_could_not_copy_file">Nie można skopiować pliku</string>
@@ -138,6 +151,7 @@
 
     <!-- Navigation list -->
     <string name="nav_apply_patch">Zastosuj łatkę</string>
+    <string name="nav_create_patch">Create patch</string>
     <string name="nav_smd_fix_checksum">Napraw sumę kontrolną (SMD)</string>
     <string name="nav_snes_add_del_smc_header">Dodaj/Usuń nagłówek SMC (SNES)</string>
     <string name="nav_settings">Ustawienia</string>

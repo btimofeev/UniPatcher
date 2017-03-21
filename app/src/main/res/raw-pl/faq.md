@@ -75,6 +75,7 @@ Może jest to bug w moim programie. Proszę skontaktuj się ze mną przez [e-mai
 
 Tak. UniPatcher może:
 
+- create XDelta3 patches.
 - naprawiać sumę kontrolną w grach z konsol Sega Mega Drive/Sega Genesis
 - Dodawać bądź usuwać nagłówek SMC dla gier z konsoli Super Nintendo Entertaiment System (SNES).
 

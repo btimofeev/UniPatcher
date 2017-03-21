@@ -2,6 +2,7 @@ UniPatcher jest programem do łatkowania ROM-ów. Wsparcie dla typów łatek: IP
 
 Dodatkowe funkcje:
 
+- Creating XDelta3 patches
 - Napraw sumę kontrolną dla ROM-ów Sega Mega Drive
 - Dodaj/Usuń nagłówek dla Super Nintendo
 
