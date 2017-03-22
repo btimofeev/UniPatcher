@@ -1,0 +1,30 @@
+Utilidad para aplicar parches a ROM de juegos.
+
+<b>Por favor, lea antes de descargar:</b> Este programa no le ayudará a hackear juegos nativos de Android, fue creado para los viejos juegos de consola (Super Nintendo, Sega MegaDrive, Game Boy Advance, Sony PlayStation etc.).
+
+
+<b>UniPatcher</b> le permite aplicar parches a ROM de juegos. ¿Qué es un <i>parche</i>? El parche es un archivo con los datos modificados del juego. Por ejemplo, un juego traducido del Japonés al Inglés. Descargar el parche con la traducción. Se debe aplicar a la versión Japonesa para obtener la versión en Inglés.
+
+
+<b>Caracteristicas:</b>
+&bull; Formatos de parches soportados: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta 3
+&bull; Creando parches XDelta
+&bull; Fijar checksum en ROMs Sega Mega Drive
+&bull; Añadir/Eliminar cabezera SMC en ROMs Super Nintendo
+&bull; Sin anuncios
+&bull; Software libre y de código abierto. Código fuente disponible en https://github.com/btimofeev/UniPatcher
+
+
+<b>¿Cómo usar?</b> Muy simple:
+&bull; Elija un parche
+&bull; Elija un juego
+&bull; Haga clic en "Guardar"
+<b><u>Muy importante:</u> si el juego y el parche están comprimidos (zip, rar, 7z u otro), primero se deben descomprimir (Recomiendo el programa gratuito ZArchiver).</b>
+
+
+<b>Ayuda con traducciones:</b>
+Usted puede ayudar con la traducción del programa en su idioma. Las traducciones son administradas en https://www.transifex.com/unipatcher/unipatcher
+
+
+<b>Comentarios:</b>
+Si tiene un informe de error o una peticion de caracteristica no dude en abrir el tema en https://github.com/btimofeev/UniPatcher/issues
