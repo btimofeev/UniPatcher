@@ -232,6 +232,10 @@ public class CreatePatchFragment extends ActionFragment implements View.OnClickL
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String newName = input.getText().toString();
+                if (newName.equals("")) {
+                    Toast.makeText(getActivity(), R.string.dialog_rename_error_empty_name, Toast.LENGTH_LONG).show();
+                    return;
+                }
                 if (newName.contains("/")) {
                     newName = newName.replaceAll("/", "_");
                     Toast.makeText(getActivity(), R.string.dialog_rename_error_invalid_chars, Toast.LENGTH_LONG).show();

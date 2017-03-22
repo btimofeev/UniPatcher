@@ -23,6 +23,7 @@
     <string name="dialog_rename_cancel">Cancel</string>
     <string name="dialog_rename_error_same_name">The input and output file names must be different</string>
     <string name="dialog_rename_error_invalid_chars">Invalid symbol /</string>
+    <string name="dialog_rename_error_empty_name">File name can not be empty</string>
 
     <!-- Create patch fragment -->
     <string name="create_patch_fragment_source_file">Source file</string>

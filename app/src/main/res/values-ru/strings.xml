@@ -23,6 +23,7 @@
     <string name="dialog_rename_cancel">Отмена</string>
     <string name="dialog_rename_error_same_name">Имена файлов должны отличаться</string>
     <string name="dialog_rename_error_invalid_chars">Некорректный символ /</string>
+    <string name="dialog_rename_error_empty_name">Имя файла не может быть пустым</string>
 
     <!-- Create patch fragment -->
     <string name="create_patch_fragment_source_file">Исходный файл</string>

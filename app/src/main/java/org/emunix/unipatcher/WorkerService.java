@@ -169,7 +169,9 @@ public class WorkerService extends IntentService {
             } else {
                 errorMsg = e.getMessage();
             }
-            FileUtils.deleteQuietly(outputFile);
+            if (outputFile.isFile()) {
+                FileUtils.deleteQuietly(outputFile);
+            }
         } finally {
             stopForeground(true);
         }
