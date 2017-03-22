@@ -11,6 +11,7 @@ Dodatkowe funkcje:
 - **Włoski**: Matteo Sechi
 - **Polski**: Michal Bychowski
 - **Rosyjski**: Борис Тимофеев
+- **Spanish**: Carlos Sánchez
 - **Ukraiński**: Володимир Шевчук
 
 ##### Użyte biblioteki:

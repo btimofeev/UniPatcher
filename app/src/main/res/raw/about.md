@@ -11,6 +11,7 @@ Additional features:
 - **Italian**: Matteo Sechi
 - **Polish**: Michal Bychowski
 - **Russian**: Борис Тимофеев
+- **Spanish**: Carlos Sánchez
 - **Ukrainian**: Володимир Шевчук
 
 ##### Used libraries:
