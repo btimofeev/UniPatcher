@@ -1,3 +1,10 @@
+#### 0.14 (March 23, 2017)
+
+- Support creating XDelta3 patches
+- Added option "ignore checksum"
+- Spanish translation (Thanks to Carlos Sánchez)
+- Removed analytics library and crash reports
+
 #### 0.13.2 (February 12, 2017)
 
 - Ukrainian translation (Thanks to Volodymyr Shevchuk)
