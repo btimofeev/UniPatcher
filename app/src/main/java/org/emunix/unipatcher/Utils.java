@@ -152,7 +152,7 @@ public class Utils {
 
     public static boolean isPatch(File file) {
         String[] patches =
-                {"ips", "ups", "bps", "aps", "ppf", "dps", "ebp", "xdelta", "xdelta3", "vcdiff"};
+                {"ips", "ups", "bps", "aps", "ppf", "dps", "ebp", "xdelta", "xdelta3", "xd", "vcdiff"};
         String ext = FilenameUtils.getExtension(file.getName()).toLowerCase(Locale.getDefault());
         for (String patch : patches) {
             if (ext.equals(patch)) return true;

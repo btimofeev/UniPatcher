@@ -41,6 +41,7 @@
                 <data android:pathPattern="/.*\\.dps"/>
                 <data android:pathPattern="/.*\\.xdelta"/>
                 <data android:pathPattern="/.*\\.xdelta3"/>
+                <data android:pathPattern="/.*\\.xd"/>
                 <data android:pathPattern="/.*\\.vcdiff"/>
                 <data android:host="*"/>
             </intent-filter>

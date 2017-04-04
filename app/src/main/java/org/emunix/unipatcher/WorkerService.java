@@ -145,7 +145,7 @@ public class WorkerService extends IntentService {
             patcher = new EBP(this, patchFile, romFile, outputFile);
         else if ("dps".equals(ext))
             patcher = new DPS(this, patchFile, romFile, outputFile);
-        else if ("xdelta".equals(ext) || "xdelta3".equals(ext) || "vcdiff".equals(ext))
+        else if ("xdelta".equals(ext) || "xdelta3".equals(ext) || "xd".equals(ext) || "vcdiff".equals(ext))
             patcher = new XDelta(this, patchFile, romFile, outputFile);
         else
             errorMsg = getString(R.string.notify_error_unknown_patch_format);
