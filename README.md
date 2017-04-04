@@ -14,8 +14,7 @@ UniPatcher is a ROM patcher for Android that supports IPS, IPS32, UPS, BPS, APS 
 
 ### Screenshots:
 
-<img src="/google-play/screenshot_1.png" width="350">
-<img src="/google-play/screenshot_2.png" width="350">
+<img src="/google-play/screenshot_1.png" width="350"> <img src="/google-play/screenshot_2.png" width="350">
 
 ### Install UniPatcher:
 
