@@ -11,7 +11,7 @@ Características adicionales:
 - **Italiano**: Matteo Sechi
 - **Polaco**: Michal Bychowski
 - **Ruso**: Борис Тимофеев
-- **Spanish**: Carlos Sánchez
+- **Español**: Carlos Sánchez
 - **Ucraniano**: Володимир Шевчук
 
 ##### Bibliotecas usadas:

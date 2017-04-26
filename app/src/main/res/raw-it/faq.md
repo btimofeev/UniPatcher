@@ -14,7 +14,7 @@ No. UniPatcher non è progettato per hackerare i giochi di Android.
 
 #### Cosa è una immagine ROM?
 
-Una immagine ROM è un file del computer che contiene una copia dei dati da una memoria di sola lettura della cartuccia di un videogioco. Il termine è utilizzato nel contesto dell'emulazione, dove i giochi vengono copiati in un file ROM e possono essere eseguiti in un computer o un telefono, usando un programma chiamato emulatore.
+A ROM image is a computer file containing a copy of video game cartridge. Through the process of emulation, you copy that file out, run it in a piece of software called an "emulator", to enjoy the game on your computer or phone.
 
 #### Cosa è l'hackeraggio di una ROM?
 
@@ -32,7 +32,7 @@ Gli hack e le traduzioni sono generalmente distribuiti come patch per ridurre la
 
 #### Come si applica una patch ad una ROM?
 
-É molto semplice: devi scegliere il file ROM e la patch, quindi premi sul pulsante rotondo rosso.
+Devi scegliere il file ROM e la patch, quindi premi sul pulsante rotondo rosso.
 
 Come risultato, hai una ROM patchata, che verrà posizionata nella stessa cartella con la ROM originale.
 
@@ -44,11 +44,11 @@ Al momento attuale UniPatcher non può estrarre archivi, quindi c'è bisogno di 
 
 #### L'app mostra l'errore: "Questa ROM non è compatibile con la patch".
 
-L'app mostrerà questo errore se il checksum memorizzato nella patch non coincide con il checksum della ROM. Questo significa che la ROM non è compatibile con la patch. Devi scegliere una ROM differente. Di solito ci sono diverse ROM per ogni gioco (ad esempio la versione per Europa, USA, Giappone, buoni o brutti dettagli, etc).
+L'app mostrerà questo errore se il checksum memorizzato nella patch non coincide con il checksum della ROM. Questo significa che la ROM non è compatibile con la patch. Devi scegliere una ROM differente. Di solito ci sono diverse ROM per ogni gioco (ad esempio la versione per Europa, USA, Giappone, buoni o brutti dettagli, etc.).
 
-Gli hacker delle ROM speso pubblicano il checksum del file ROM (su una pagina web o su un file Readme). Devi compararlo con la tua ROM. Tieni premuto sul file nel gestore di file e vedrai 3 linee: CRC21, SHA1 e MD5. Se una di queste linee coincide con il checksum che è stato scritto dall'hacker della ROM, allora hai la ROM corretta.
+ROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. Long tap the file in the file manager and you will see these 3 lines: CRC32, SHA1 and MD5. If one of those numbers are the same, you have the ROM the patch was written for. If not, you need a different ROM.
 
-#### Non trovo la ROM corretta del gioco "Pokemon Emerald".
+#### Non trovo la ROM corretta del gioco "Pokémon Emerald".
 
 La maggior parte del gioco funziona con la ROM "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
 
@@ -75,13 +75,13 @@ Forse c'è un bug nel mio programma. Ti prego di contattarmi alla [e-mail](mailt
 
 Si. UniPatcher può:
 
-- create XDelta3 patches.
+- Create XDelta3 patches.
 - Risolvere checksum per un gioco Sega Mega Drive / Sega Genesis.
-- aggiungere o rimuovere l'intestazione SMC per un gioco Super Nintendo.
+- Aggiungere o rimuovere l'intestazione SMC per un gioco Super Nintendo.
 
 #### Perchè devo risolvere il checksum per i giochi del Sega Mega Drive?
 
-Il Sega Mega Drive (Genesis) ha delle protezioni dalle modifiche del gioco. La ROM contiene il valore checksum, e se è diverso dal checksum effettivo il gioco mostra uno schermo rosso e smette di funzionare. Questa funzione scrive il checksum corretto nella ROM.
+Sega Mega Drive (Genesis) games are protected from modification. If the checksum of the game differs from the one the ROM amounts to, the game displays a red screen and stops running. What this does is calculate the correct checksum and write it to the ROM.
 
 **Attenzione:** Questa funzione non crea una ROM di backup.
 

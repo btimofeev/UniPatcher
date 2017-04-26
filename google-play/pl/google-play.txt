@@ -7,7 +7,7 @@ Narzędzie do aplikowania łatek do ROM-ów
 
 
 <b>Features:</b>
-&bull; Supported formats of patches: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta 3
+&bull; Supported formats of patches: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
 &bull; Creating XDelta patches
 &bull; Napraw sumę kontrolną dla ROM-ów Segs Mega Drive
 &bull; Dodaj/Usuń nagłówek SMC dla ROM-ów Super Nintendo

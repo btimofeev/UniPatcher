@@ -78,6 +78,11 @@ android {
             path "CMakeLists.txt"
         }
     }
+
+    lintOptions {
+        disable 'MissingTranslation'
+    }
+
 }
 
 def Properties props = new Properties()

@@ -83,14 +83,14 @@
 
 - Risolto un crash su Android 2.3
 
-#### 0.7 (07 Maggio 2014)
+#### 0.7 (7 Maggio 2014)
 
 - A grande richiesta UniPatcher è ora gratuito, ma con pubblicità. Non è mostrata se hai acquistato il programma
 - Supporta le patch DPS
 - Funzione aggiunta: Risolto checksum per ROM del Sega Mega Drive
 - Funzione aggiunta: Aggiungi/Cancella intestazione SMC per ROM Super Nintendo
 
-#### 0.6 (04 Novembre 2013)
+#### 0.6 (4 Novembre 2013)
 
 - Supporta le patch PPF nella versione completa
 - Piccoli miglioramenti

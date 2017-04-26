@@ -14,7 +14,7 @@ Nie. UniPatcher nie został stworzony do hakowania gier Androida
 
 #### Co to jest ROM image (czyt. Imidż)?
 
-ROM (Ang.Read-Only-Memory) image jest plikiem komputerowym który zawiera kopię danych z tylko-do-odczytu chipu pamięci kartridża gry komputerowej. Określenie jest używane w kontekście emulacji, gdzie starsze gry są skopiowane do pliku ROM i za pomocą emulatorów (oprogramowania do emulacji) mogą być puszczone na komputerze, urządzenie przenośnym albo na Android TV.
+A ROM image is a computer file containing a copy of video game cartridge. Through the process of emulation, you copy that file out, run it in a piece of software called an "emulator", to enjoy the game on your computer or phone.
 
 #### Co to jest ROM haking?
 
@@ -26,13 +26,13 @@ ROM haking jet modyfikowaniem danych w ROM image. To może być zmana kolorów, 
 
 Łatka jest wypuszczona i finalni użytkownicy aplikują łatkę do oryginalego ROM-u, który produkuję grywalną wersję haku.
 
-#### Dlaczego romhakerzy nie wypuszczają zmodyfikowanej gry?
+#### Dlaczego ROM hakerzy nie wypuszczają zmodyfikowanej gry?
 
 Haki i tłumaczenia są generalnie wypuszczanie jako łatki aby zredukować wielkość pliku i aby ominąć problemy z prawami autorskimi
 
 #### Jak zaaplikować łatkę do ROM-u?
 
-To bardzo proste: musisz wybrać plik ROM, łatkę i nacisnąć okrągły czerwony przycisk.
+Musisz wybrać plik ROM, łatkę i nacisnąć okrągły czerwony przycisk.
 
 Jako wynik, dostajesz złatkowany ROM, który będzie zlokalizowany w tej samej ścieżce co oryginalny ROM
 
@@ -46,9 +46,9 @@ Narazie UniPatcher nie może wypakowywać archiw, więc musisz wypakować je w z
 
 Aplikacja będzie wyświetlać ten błąd jeżeli suma kontrolna przechowywana w łatce nie jest taka sama jak suma kontrolna ROM-u. To znaczy że ROM nie jest kompatybilny z łatką. Potrzebujesz wybrać inny ROM . Często jest kilka wersji ROM-u dla danej gry (Np. mamy wersję Europejską, Amerykańską, Japońską, lepszy dump lub gorszy itp.).
 
-Romhakerzy często publikują sumę kontrolną pliku ROM (na stronie internetowej albo w pliku Readme.txt razem z łatką). Potrzebujesz ją porównać z twoim ROM-em. Dłużej przytrzymaj na pliku w menedżerze plików i wtedy zobaczysz trzy linijki: CRC2, SHA1 i MD5. Masz poprawny ROM jeżeli jedna z tych linijek równa się z sumą kontrolną podaną przez Romhakera. Jeżeli sumy kontrolne się nie równają poszukaj innego ROM-u.
+ROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. Long tap the file in the file manager and you will see these 3 lines: CRC32, SHA1 and MD5. If one of those numbers are the same, you have the ROM the patch was written for. If not, you need a different ROM.
 
-#### I can not find the correct ROM for the game "Pokemon Emerald".
+#### I can not find the correct ROM for the game "Pokémon Emerald".
 
 Większość łatek do gry "Pokémon - Emerald Version" działa z ROM-em "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
 
@@ -75,13 +75,13 @@ Może jest to bug w moim programie. Proszę skontaktuj się ze mną przez [e-mai
 
 Tak. UniPatcher może:
 
-- create XDelta3 patches.
-- naprawiać sumę kontrolną w grach z konsol Sega Mega Drive/Sega Genesis
+- Create XDelta3 patches.
+- Naprawiać sumę kontrolną w grach z konsol Sega Mega Drive/Sega Genesis
 - Dodawać bądź usuwać nagłówek SMC dla gier z konsoli Super Nintendo Entertaiment System (SNES).
 
 #### Po co mam naprawiać sumę kontrolną w grach z Sega Mega Drive/Genesis?
 
-Sega Mega Drive/Genesis ma zabezpieczenia przed modyfikacją gry. ROM przechowywuje wartość sumy kontrolnej i jeżeli ona różni się od aktualnej sumy kontrolnej gra wyświetla czerwony ekran śmierci oraz przestaje działać. Ta funkcja poprawia sumę kontrolną w ROM-ie.
+Sega Mega Drive (Genesis) games are protected from modification. If the checksum of the game differs from the one the ROM amounts to, the game displays a red screen and stops running. What this does is calculate the correct checksum and write it to the ROM.
 
 **Uwaga:** Ta funkcja nie tworzy kopii zapasowe ROM-u.
 

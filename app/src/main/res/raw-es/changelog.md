@@ -83,14 +83,14 @@
 
 - Solucionado error en Android 2.3
 
-#### 0.7 (Mayo 07, 2014)
+#### 0.7 (Mayo 7, 2014)
 
 - Por demanda popular UniPatcher ahora es gratis, pero con publicidad. No se muestra si ha comprado el programa
 - Soporte de parches DPS
 - Característica añadida: Fijar checksum para ROMs Sega Mega Drive
 - Característica añadida: Añadir/Eliminar cabecera SMC para ROMs de Super Nintendo
 
-#### 0.6 (Noviembre 04, 2013)
+#### 0.6 (Noviembre 4, 2013)
 
 - Soporte de parches PPF en versión completa
 - Pequeñas mejoras
@@ -119,9 +119,9 @@
 
 #### 0.2 (Abril 17, 2013)
 
-- Añadido soporte para android 2.1
-- Añadida ActionBar para android 2.1+
-- Añadida la posibilidad de instalar en tarjeta sd
+- Añadido soporte para Android 2.1
+- Añadida ActionBar para Android 2.1+
+- Añadida la posibilidad de instalar en tarjeta SD
 - Aplicar parches en un subproceso independiente, la interfaz de usuario no se congela
 - Imagenes añadidas en el administrador de archivos
 - Corrección de errores

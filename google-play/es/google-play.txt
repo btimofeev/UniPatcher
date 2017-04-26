@@ -7,7 +7,7 @@ Utilidad para aplicar parches a ROM de juegos.
 
 
 <b>Caracteristicas:</b>
-&bull; Formatos de parches soportados: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta 3
+&bull; Formatos de parches soportados: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
 &bull; Creando parches XDelta
 &bull; Fijar checksum en ROMs Sega Mega Drive
 &bull; Añadir/Eliminar cabezera SMC en ROMs Super Nintendo

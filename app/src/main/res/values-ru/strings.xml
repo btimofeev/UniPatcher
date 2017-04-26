@@ -66,7 +66,7 @@
     <string name="notify_applying_patch">Применяю патч</string>
     <string name="notify_patching_complete">Применение патча завершено</string>
     <string name="notify_creating_patch">Создаю патч</string>
-    <string name="notify_create_patch_complete">Создание патча завершено</string>
+    <string name="notify_create_patch_complete">Патч создан</string>
     <string name="toast_patching_started_check_notify">Применяю патч. Проверьте область уведомлений</string>
     <string name="toast_create_patch_started_check_notify">Создаю патч. Проверьте область уведомлений</string>
 
@@ -145,7 +145,7 @@
     <string name="donate_activity_title">Пожертвование</string>
 
     <string name="send_feedback_dialog_title">Отправить e-mail</string>
-    <string name="send_feedback_error_no_email_apps">Не установлен email клиент</string>
+    <string name="send_feedback_error_no_email_apps">Не установлен e-mail клиент</string>
 
     <string name="share_dialog_title">Рассказать о UniPatcher</string>
     <string name="share_text">Скачай лучший ROM патчер для Android. Поддерживает патчи в форматах IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP и XDelta3.\n\n</string>

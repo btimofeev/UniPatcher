@@ -1,13 +1,13 @@
 Utilità per applicare le patch alle ROM dei giochi.
 
-<b>Per favore leggi prima di scaricare:</b> Questo programma non ti aiuterà ad hackerare i giochi nativi per android, è stato creato per i giochi delle vecchie console (Super Nintendo, Sega MegaDrive, Game Boy Advance, Sony PlayStation etc.).
+<b>Per favore leggi prima di scaricare:</b> Questo programma non ti aiuterà ad hackerare i giochi nativi per Android, è stato creato per i giochi delle vecchie console (Super Nintendo, Sega MegaDrive, Game Boy Advance, Sony PlayStation etc.).
 
 
 <b>UniPatcher</b> ti permette di applicare le patch ai ROM dei giochi. Cosa è una <i>patch</i>? La patch è un file con i dati modificati del gioco. Per esempio, un gioco tradotto dal giapponese all'inglese. Scarichi la patch contenente la traduzione. Deve essere applicata alla versione giapponese per ottenere la versione inglese.
 
 
 <b>Features:</b>
-&bull; Supported formats of patches: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta 3
+&bull; Supported formats of patches: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
 &bull; Creating XDelta patches
 &bull; Risolvi checksum nei ROM del Sega Mega Drive
 &bull; Aggiungi/Elimina intestazione SMC nei ROM del Super Nintendo

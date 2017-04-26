@@ -83,14 +83,14 @@
 
 - Naprawiono crash na Androidzie 2.3 (Gingerbread)
 
-#### 0.7 (Maj 07, 2014)
+#### 0.7 (Maj 7, 2014)
 
 - Z powodu popularności UniPtcher jest teraz darmowy, ale z reklamami. Reklamy nie będą wyświetlane jeżeli kupiłeś program
 - Wsparcie dla łatek DPS
 - Dodano funkcję: Napraw sumę kontrolną dla ROM-ów Sega Mega Drive
 - Dodano funkcję: Dodaj/Usuń nagłówek SMC dla ROM-ów Super Nintendo (SNES)
 
-#### 0.6 ( Listopad 04, 2013)
+#### 0.6 ( Listopad 4, 2013)
 
 - Wsparcie dla łatek PPF w pełnej wersji
 - Małe usprawnienia
