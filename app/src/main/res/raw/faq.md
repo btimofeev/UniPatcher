@@ -14,7 +14,7 @@ No. UniPatcher is not designed to hack the Android games.
 
 #### What is ROM image?
 
-A ROM image is a computer file which contains a copy of the data from a read-only memory chip of a video game cartridge. The term is used in the context of emulation, whereby older games are copied to ROM files and can, using a piece of software known as an emulator, be run on a computer or a phone.
+A ROM image is a computer file containing a copy of video game cartridge. Through the process of emulation, you copy that file out, run it in a piece of software called an "emulator", to enjoy the game on your computer or phone.
 
 #### What is ROM hacking?
 
@@ -26,13 +26,13 @@ A patch is a file that contains the differences between the original version of 
 
 The patch is distributed, and end users apply the patch to a copy of the original ROM, which produces a playable version of the hack.
 
-#### Why romhackers do not distribute modified games?
+#### Why ROM hackers do not distribute modified games?
 
 Hacks and translations are generally distributed as patches to reduce download size and avoid copyright issues.
 
 #### How to apply a patch to ROM?
 
-It's very simple: you must choose the ROM file and the patch, then tap on the red round button.
+You must choose the ROM file and the patch, then tap on the red round button.
 
 As a result, you get a patched ROM, which will be located in the same directory with the original ROM.
 
@@ -44,11 +44,11 @@ Currently UniPatcher can not extract archives, so you need to unpack your archiv
 
 #### The app shows the error: "This ROM is not compatible with the patch".
 
-The app will show this error if the checksum stored in the patch does not match the checksum of the ROM. This means that the ROM is not compatible with the patch. You need to choose a different ROM. Usually there are several ROMs for each game (such as the version for Europe, USA, Japan, good or bad dumps, etc).
+The app will show this error if the checksum stored in the patch does not match the checksum of the ROM. This means that the ROM is not compatible with the patch. You need to choose a different ROM. Usually there are several ROMs for each game (such as the version for Europe, USA, Japan, good or bad dumps, etc.).
 
-Romhackers often publish checksum of the ROM file (on a web page or in Readme file). You need to compare it with your ROM. Long tap on the file in the file manager and You will see 3 lines: CRC32, SHA1 and MD5. You have the correct ROM if one of these lines is equal to the checksum which was written by a romhacker. If the checksums do not match then look for another ROM.
+ROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. Long tap the file in the file manager and you will see these 3 lines: CRC32, SHA1 and MD5. If one of those numbers are the same, you have the ROM the patch was written for. If not, you need a different ROM.
 
-#### I can not find the correct ROM for the game "Pokemon Emerald".
+#### I can not find the correct ROM for the game "Pokémon Emerald".
 
 Most of the patches of the game work with ROM "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
 
@@ -75,13 +75,13 @@ Maybe it's a bug in my program. Please contact me at [e-mail](mailto:mashin87@gm
 
 Yes. UniPatcher can:
 
-- create XDelta3 patches.
-- fix checksum for a Sega Mega Drive / Sega Genesis games.
-- add or remove SMC header for a Super Nintendo games.
+- Create XDelta3 patches.
+- Fix checksum for a Sega Mega Drive / Sega Genesis games.
+- Add or remove SMC header for Super Nintendo games.
 
 #### Why do I have to fix checksum for the Sega Mega Drive games?
 
-Sega Mega Drive (Genesis) has protection from game modification. ROM stores the checksum value, and if it differs from the actual checksum the game displays a red screen and stops running. This function writes the correct checksum in the ROM.
+Sega Mega Drive (Genesis) games are protected from modification. If the checksum of the game differs from the one the ROM amounts to, the game displays a red screen and stops running. What this does is calculate the correct checksum and write it to the ROM.
 
 **Warning:** This function does not create a backup ROM.
 

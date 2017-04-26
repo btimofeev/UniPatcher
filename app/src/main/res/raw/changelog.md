@@ -83,14 +83,14 @@
 
 - Fixed crash on Android 2.3
 
-#### 0.7 (May 07, 2014)
+#### 0.7 (May 7, 2014)
 
 - By popular demand UniPatcher is now free, but with advertising. It is not displayed if you purchased the program
 - Support DPS patches
 - Added feature: Fix checksum for Sega Mega Drive ROMs
 - Added feature: Add/Delete SMC header for Super Nintendo ROMs
 
-#### 0.6 (November 04, 2013)
+#### 0.6 (November 4, 2013)
 
 - Support PPF patches in full version
 - Small improvements
@@ -102,7 +102,7 @@
 - The association with IPS and UPS files. Now you can open the patches from your file manager
 - Again redesigned
 - Added a dialog "What's New"
-- Added icons of high resolution
+- Added high resolution icons
 - Dropped support for Android 2.1. Sorry guys, this is no longer possible to maintain
 
 #### 0.4 (August 24, 2013)
@@ -119,9 +119,9 @@
 
 #### 0.2 (April 17, 2013)
 
-- Added support for android 2.1
-- Added ActionBar for android 2.1+
-- Added the ability to install it on sd-card
+- Added support for Android 2.1
+- Added ActionBar for Android 2.1+
+- Added the ability to install it on SD-card
 - Patching in a separate thread, the UI does not freeze
 - Added pictures in the file manager
 - Bugfixes
