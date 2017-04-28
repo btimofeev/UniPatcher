@@ -1,2 +1,2 @@
 #!/bin/sh
-tx pull -l ru,es,it,pl,uk -f
+tx pull -l es,it,nb_NO,pl,ru,uk -f

@@ -9,6 +9,7 @@ Funzioni aggiuntive:
 ##### Traduttori:
 
 - **Italiano**: Matteo Sechi
+- **Norwegian Bokmål**: Allan Nordhøy
 - **Polacco**: Michal Bychowski
 - **Russo**: Борис Тимофеев
 - **Spanish**: Carlos Sánchez

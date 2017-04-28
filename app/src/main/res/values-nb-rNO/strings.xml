@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UniPatcher</string>
+    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
+    <string name="app_email">mashin87@gmail.com</string>
+
+    <!-- Main activity -->
+    <string name="main_activity_rom_file">ROM-fil</string>
+    <string name="main_activity_patch_file">Programfiks-fil</string>
+    <string name="main_activity_output_file">Utdata-fil</string>
+    <string name="main_activity_header_file">Hode-fil</string>
+    <string name="main_activity_tap_to_select">trykk for å velge</string>
+    <string name="main_activity_tap_to_rename">trykk for å gi nytt navn</string>
+    <string name="main_activity_toast_rom_and_patch_not_selected">ROM- og programfiks -filene er ikke valgt</string>
+    <string name="main_activity_toast_rom_not_selected">ROM-fila er ikke valgt</string>
+    <string name="main_activity_toast_patch_not_selected">Programfiksen er ikke valgt</string>
+    <string name="main_activity_toast_archives_not_supported">Arkivet burde utpakkes i et eksternt program</string>
+
+    <!-- Rename dialog -->
+    <string name="dialog_rename_title">Gi nytt navn</string>
+    <string name="dialog_rename_ok">OK</string>
+    <string name="dialog_rename_cancel">Avbryt</string>
+    <string name="dialog_rename_error_same_name">Inn- og ut-datafila må være forskjellige</string>
+    <string name="dialog_rename_error_invalid_chars">Ugyldig symbol /</string>
+    <string name="dialog_rename_error_empty_name">Filnavnet kan ikke være tomt</string>
+
+    <!-- Create patch fragment -->
+    <string name="create_patch_fragment_source_file">Kildefil</string>
+    <string name="create_patch_fragment_modified_file">Modifisert fil</string>
+    <string name="create_patch_fragment_patch_file">Programfiks-fil</string>
+    <string name="create_patch_fragment_toast_source_and_modified_not_selected">Kilde- og modifisert -fil er ikke valgt</string>
+    <string name="create_patch_fragment_toast_source_not_selected">Kildefila er ikke valgt</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">Den modifiserte fila er ikke valgt</string>
+
+    <!-- Info for SNES SMC header -->
+    <string name="snes_smc_header_help">Denne funksjonen er bare for Super Nintendo ROM-filer.\n\nHvis ROM-fila inneholder et SMC-hode - vil den bli fjernet. Ellers, vil den bli lagt til.\n\nAdvarsel: Denne funksjonen tar ikke noen sikkerhetskopi.</string>
+    <string name="snes_smc_header_will_be_removed">Denne ROM-fila har et SMC-hode. Den vil bli fjernet.</string>
+    <string name="snes_smc_header_will_be_added">Denne ROM-fila har ikke et SMC-hode. Det vil bli lagt til. Du kan velge ditt eget hode i steden for det forvalgte hodet.</string>
+
+    <!-- Info for SMD fix checksum -->
+    <string name="smd_fix_checksum_help">Denne funksjonen er bare for Sega Mega Drive (Sega Genesis) ROM-filer.\n\nDen fikser \"rød dødsskjerm\".\n\nAdvarsel: Denne funksjonen tar ikke noen sikkerhetskopi.</string>
+
+    <!-- File picker title -->
+    <string name="file_picker_activity_title">Velg fil</string>
+    <string name="file_picker_activity_title_select_rom">Velg ROM-fil</string>
+    <string name="file_picker_activity_title_select_patch">Velg programfiks-fila</string>
+    <string name="file_picker_activity_title_select_source_file">Velg kildefila</string>
+    <string name="file_picker_activity_title_select_modified_file">Velg den modifiserte fila</string>
+    <string name="file_picker_activity_title_select_header">Velg hode-fila</string>
+    <string name="file_picker_activity_error_unable_read_dir">Klarte ikke å lese mappa %1$s</string>
+
+    <!-- File properties dialog -->
+    <string name="file_properties_dialog_title">Egenskaper</string>
+    <string name="file_properties_dialog_name">Navn:</string>
+    <string name="file_properties_dialog_path">Sti:</string>
+    <string name="file_properties_dialog_size">Størrelse:</string>
+    <string name="file_properties_dialog_size_value">%1$s (%2$d Byte)</string>
+    <string name="file_properties_dialog_crc32">CRC32:</string>
+    <string name="file_properties_dialog_sha1">SHA1:</string>
+    <string name="file_properties_dialog_md5">MD5:</string>
+    <string name="file_properties_dialog_close_button">Lukk</string>
+    <string name="file_properties_dialog_wait_message">Vent&#8230;</string>
+
+    <!-- Notifications -->
+    <string name="notify_applying_patch">Legger til programfiks</string>
+    <string name="notify_patching_complete">Programfiksing fullført</string>
+    <string name="notify_creating_patch">Oppretter programfiks</string>
+    <string name="notify_create_patch_complete">Programfiks opprettet</string>
+    <string name="toast_patching_started_check_notify">Programfiksing startet. Sjekk merknadsområdet</string>
+    <string name="toast_create_patch_started_check_notify">Opprettelse av programfiks startet. Sjekk merknadsområdet</string>
+
+    <string name="notify_error">Feil</string>
+    <string name="notify_error_could_not_copy_file">Kunne ikke kopiere fil</string>
+    <string name="notify_error_file_not_found">Fil ikke funnet</string>
+    <string name="notify_error_not_enough_space">Ikke nokk plass på disken</string>
+    <string name="notify_error_unable_to_create_directory">Kunne ikke opprette mappen %1$s</string>
+    <string name="notify_error_unable_to_write_to_directory">Kunne ikke skrive til mappen %1$s</string>
+    <string name="notify_error_not_ips_patch">Ikke en gyldig IPS-programfiks</string>
+    <string name="notify_error_not_ups_patch">Ikke en gyldig UPS-programfiks</string>
+    <string name="notify_error_not_bps_patch">Ikke en gyldig BPS-programfiks</string>
+    <string name="notify_error_not_ppf_patch">Ikke en gyldig PPF-programfiks</string>
+    <string name="notify_error_not_aps_patch">Ikke en gyldig APS-programfiks</string>
+    <string name="notify_error_not_ebp_patch">Ikke en gyldig EBP-programfiks</string>
+    <string name="notify_error_not_dps_patch">Ikke en gyldig DPS-programfiks</string>
+    <string name="notify_error_not_xdelta3_patch">Ikke en gyldig XDelta3-programfiks</string>
+    <string name="notify_error_xdelta1_unsupported">Jeg kan ikke lenger jobbe med XDelta1-programfikser</string>
+    <string name="notify_error_unable_open_file">Kunne ikke åpne fil</string>
+    <string name="notify_error_unknown_patch_format">Ukjent programfiks-format</string>
+    <string name="notify_error_unexpected_end_of_file">Uventet filendelse</string>
+    <string name="notify_error_patch_corrupted">Programfiks-fila er skadet</string>
+    <string name="notify_error_rom_not_compatible_with_patch">Denne ROM-fila er ikke kompatibel med programfiksen</string>
+    <string name="notify_error_wrong_checksum_after_patching">Fila har feil sjekksum etter at den ble programfikset</string>
+    <string name="notify_error_failed_load_lib_xdelta3">Klarte ikke å laste biblioteket libxdelta3.so</string>
+    <string name="notify_error_unknown">Ukjent feil</string>
+
+    <string name="notify_error_not_smd_rom">Ikke en Sega Mega Drive ROM-fil</string>
+    <string name="notify_smd_fix_checksum_in_progress">Fikser sjekksum</string>
+    <string name="notify_smd_fix_checksum_complete">Sjekksum fikset</string>
+    <string name="notify_smd_fix_checksum_started_check_notify">Fiksing av sjekksum startet. Sjekk merknadsområdet</string>
+
+    <string name="notify_snes_add_smc_header_in_progress">Tillegg av SMC-hode</string>
+    <string name="notify_snes_add_smc_header_complete">Tillegg av SMC-hode fullført</string>
+    <string name="notify_snes_add_smc_header_stared_check_noify">Tillegg av SMC-hode startet. Sjekk merknadsområdet</string>
+
+    <string name="notify_snes_delete_smc_header_in_progress">Slett SMC-hode</string>
+    <string name="notify_snes_delete_smc_header_complete">SMC-hode slettet</string>
+    <string name="notify_snes_delete_smc_header_stared_check_noify">Sletting av SMC-hode startet. Sjekk merknadsområdet</string>
+
+    <!-- Permissions -->
+    <string name="permissions_storage_error_info">Programmet har ikke blitt innvilget tilgang til å lese/skrive filer. Uten denne tilgangen vil ikke UniPatcher fungere på rett vis.</string>
+    <string name="permissions_storage_error_notify_access_denied">Filtilgang nektet</string>
+
+    <!-- Settings -->
+    <string name="settings_activity_title">Innstillinger</string>
+    <string name="settings_interface_header">Brukergrensesnitt</string>
+    <string name="settings_theme">Drakt</string>
+    <string name="settings_theme_description">Endre fargepaletten. DagNatt-drakten lar deg bytte mellom lys og mørk drakt avhengig av døgnets forløp.</string>
+    <string name="settings_theme_dialog_title">Velg drakt</string>
+    <string name="settings_theme_name_light">Lys</string>
+    <string name="settings_theme_name_dark">Mørk</string>
+    <string name="settings_theme_name_daynight">DagNatt</string>
+    <string name="settings_theme_message_restart_app">Start programmet på ny</string>
+    <string name="settings_directories_header">Mapper</string>
+    <string name="settings_remember_last_directories">Husk sist åpnede mapper</string>
+    <string name="settings_rom_directory">Angi mappe for ROM-filer</string>
+    <string name="settings_patch_directory">Angi mappe for programfikser</string>
+    <string name="settings_output_directory">Angi mappe til bruk for utdata</string>
+    <string name="settings_output_directory_description">Ellers vil ROM-fil bli lagret i ROM-mappe</string>
+    <string name="settings_patching_header">Programfiksing</string>
+    <string name="settings_ignore_checksum">Ignorer sjekksummer</string>
+    <string name="settings_ignore_checksum_description">Ikke forstyrr programfiksing hvis du bruker feil ROM. Vær forsiktig: Dette valget kan ødelegge spillet ditt.</string>
+
+    <!-- Help activity -->
+    <string name="help_activity_title">Hjelp</string>
+    <string name="help_activity_faq_tab_title">O-S-S</string>
+    <string name="help_activity_changelog_tab_title">Endringslogg</string>
+    <string name="help_activity_about_tab_title">Om</string>
+    <string name="help_activity_about_tab_version">Versjon %1$s</string>
+    <string name="help_activity_about_tab_license">Lisense: GNU GPLv3</string>
+    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2017</string>
+    <string name="help_activity_action_send_feedback">Send tilbakemelding</string>
+    <string name="help_activity_action_visit_site">Besøk nettside</string>
+
+    <string name="donate_activity_title">Doner</string>
+
+    <string name="send_feedback_dialog_title">Send e-post</string>
+    <string name="send_feedback_error_no_email_apps">Ingen e-postklienter installert</string>
+
+    <string name="share_dialog_title">Del UniPatcher</string>
+    <string name="share_text">Last ned den beste ROM-programfikseren for Android. Den støtter IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP og XDelta3 -programfikstyper.\n\n</string>
+
+    <!-- Navigation list -->
+    <string name="nav_apply_patch">Legg til programfiks</string>
+    <string name="nav_create_patch">Opprett programfiks</string>
+    <string name="nav_smd_fix_checksum">Fiks sjekksum (SMD)</string>
+    <string name="nav_snes_add_del_smc_header">Legg til/Slett SMC-hode (SNES)</string>
+    <string name="nav_settings">Innstillinger</string>
+    <string name="nav_rate">Vurder dette programmet</string>
+    <string name="nav_donate">Doner</string>
+    <string name="nav_share">Del</string>
+    <string name="nav_help">Hjelp</string>
+    <string name="nav_drawer_open">Åpne navigasjonsskuff</string>
+    <string name="nav_drawer_close">Lukk navigasjonsskuff</string>
+
+    <string name="donation">Donasjon</string>
+    <string name="icon">ikon</string>
+
+</resources>
+

@@ -1,0 +1,30 @@
+Verktøy for å legge programfikser til spill-ROM-filer.
+
+<b>Les før du laster ned:</b> Dette programmet vil ikke la deg hacke vanlig Android-spill. Det ble laget for game konsollspill (Super Nintendo, Sega MegaDrive, Game Boy Advance, Sony PlayStation osv.).
+
+
+<b>UniPatcher</b> lar deg legge programfikser til spill-ROM-filer. Hva er en <i>programfiks</i>? Programfiksen er ei fil med modifisert data tilhørende spillet. For eksempel kan spiller være oversatt fra Japansk til Engelsk. Du laster ned programfiksen inneholdende oversettelsen. Den må legges til den Japanske versjonen for å få spillet på Engelsk.
+
+
+<b>Funksjoner:</b>
+&bull; Støttede programfiks-formater: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP og XDelta3
+&bull; Opprettelse av XDelta-programfikser
+&bull; Fiks sjekksum i Sega Mega Drive ROM-filer
+&bull; Legg til/Slett SMC-hode i Super Nintendo ROM-filer
+&bull; Ingen reklame
+&bull; Fri og åpen programvare. Kildekode tilgjengelig på https://github.com/btimofeev/UniPatcher
+
+
+<b>Hvordan?</b> Veldig enkelt:
+&bull; Velg en programfiks
+&bull; Velg et spill
+&bull; Klikk "Lagre"
+<b><u>Veldig viktig:</u> Hvis spillet og programfiksen er komprimert (ZIP, RAR, 7z eller annet), må de først pakkes ut (Jeg anbefaler gratisprogrammet ZArchiver).</b>
+
+
+<b>Hjelp til med oversettelser:</b>
+Du kan hjelpe til i oversettelsen av programmet til ditt eget språk. Oversettelsene finner sted på https://www.transifex.com/unipatcher/unipatcher
+
+
+<b>Tilbakemeldinger:</b>
+Hvis du har en feilrapport eller en funksjonsforespørsel, føl deg som hjemme når du åpner en sak på https://github.com/btimofeev/UniPatcher/issues

@@ -1,3 +1,6 @@
+#### 0.14.1 (April 30, 2017)
+- Norwegian Bokmål translation (thanks to Allan Nordhøy)
+
 #### 0.14 (March 23, 2017)
 
 - Support creating XDelta3 patches
