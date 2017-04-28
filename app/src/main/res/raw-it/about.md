@@ -9,6 +9,7 @@ Funzioni aggiuntive:
 ##### Traduttori:
 
 - **Italiano**: Matteo Sechi
+- **Japanese**: Naofumi Fukue
 - **Norwegian Bokmål**: Allan Nordhøy
 - **Polacco**: Michal Bychowski
 - **Russo**: Борис Тимофеев

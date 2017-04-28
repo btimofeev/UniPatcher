@@ -9,6 +9,7 @@ Additional features:
 ##### Translators:
 
 - **Italian**: Matteo Sechi
+- **Japanese**: Naofumi Fukue
 - **Norwegian Bokmål**: Allan Nordhøy
 - **Polish**: Michal Bychowski
 - **Russian**: Борис Тимофеев

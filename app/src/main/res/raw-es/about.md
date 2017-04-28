@@ -9,6 +9,7 @@ Características adicionales:
 ##### Traductores:
 
 - **Italiano**: Matteo Sechi
+- **Japanese**: Naofumi Fukue
 - **Norwegian Bokmål**: Allan Nordhøy
 - **Polaco**: Michal Bychowski
 - **Ruso**: Борис Тимофеев

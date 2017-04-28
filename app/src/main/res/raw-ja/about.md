@@ -1,22 +1,22 @@
-UniPatcher це ROM патчер який підтримує патчі у форматах IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP та XDelta3.
+UniPatcher は IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP および XDelta3 パッチ形式をサポートする ROM パッチャです。
 
-Додаткові функції:
+特徴:
 
-- Creating XDelta3 patches
-- Виправлення контрольної суми для ігор Sega Mega Drive
-- Додавання або видаляння SMC заголовку для ігор Super Nintendo
+- XDelta3 パッチの作成
+- Sega Mega Drive ROM のチェックサムを修正
+- Super Nintendo ROM の SMC ヘッダーを追加/削除
 
-##### Перекладачі:
+##### 翻訳:
 
-- **Італійська**: Matteo Sechi
+- **イタリア語**: Matteo Sechi
 - **Japanese**: Naofumi Fukue
 - **Norwegian Bokmål**: Allan Nordhøy
-- **Польська**: Michal Bychowski
-- **Російська**: Борис Тимофеев
-- **Spanish**: Carlos Sánchez
-- **Українська**: Володимир Шевчук
+- **ポーランド語**: Michal Bychowski
+- **ロシア語**: Борис Тимофеев
+- **スペイン語**: Carlos Sánchez
+- **ウクライナ語**: Володимир Шевчук
 
-##### Використовуючі бібліотеки:
+##### 使用ライブラリー:
 
 - [**Android Donations**](https://github.com/SufficientlySecure/donations) by SufficientlySecure, licensed under the Apache 2.0 license.
 - [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) by The Apache Software Foundation, licensed under the Apache 2.0 license.

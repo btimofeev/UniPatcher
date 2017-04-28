@@ -9,6 +9,7 @@ Ytterligere funksjoner:
 ##### Oversettere:
 
 - **Italiensk**: Matteo Sechi
+- **Japanese**: Naofumi Fukue
 - **Norwegian Bokmål**: Allan Nordhøy
 - **Polsk**: Michal Bychowski
 - **Russisk**: Борис Тимофеев

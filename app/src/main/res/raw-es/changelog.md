@@ -1,5 +1,6 @@
 #### 0.14.1 (April 30, 2017)
-- Norwegian Bokmål translation (thanks to Allan Nordhøy)
+- Norwegian Bokmål translation (Thanks to Allan Nordhøy)
+- Japanese translation (Thanks to Naofumi Fukue)
 
 #### 0.14 (March 23, 2017)
 
