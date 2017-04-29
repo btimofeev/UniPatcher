@@ -8,9 +8,10 @@ UniPatcher は IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP およ�
 
 ##### 翻訳:
 
+- **French**: Thibaut Panis
 - **イタリア語**: Matteo Sechi
-- **Japanese**: Naofumi Fukue
-- **Norwegian Bokmål**: Allan Nordhøy
+- **日本語**: Naofumi Fukue
+- **ノルウェーボクモール**: Allan Nordhøy
 - **ポーランド語**: Michal Bychowski
 - **ロシア語**: Борис Тимофеев
 - **スペイン語**: Carlos Sánchez
@@ -18,7 +19,7 @@ UniPatcher は IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP およ�
 
 ##### 使用ライブラリー:
 
-- [**Android Donations**](https://github.com/SufficientlySecure/donations) by SufficientlySecure, licensed under the Apache 2.0 license.
+- [**Android Donations**](https://github.com/SufficientlySecure/donations) by SufficientlySecure, Apache 2.0 ライセンスの下でライセンスされます。
 - [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) by The Apache Software Foundation, licensed under the Apache 2.0 license.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) by SufficientlySecure, licensed under the Apache 2.0 license.
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) by John Casey, licensed under the Apache 2.0 license.

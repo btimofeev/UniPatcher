@@ -8,6 +8,7 @@ UniPatcher это ROM патчер поддерживающий патчи в ф
 
 ##### Переводчики:
 
+- **Французский**: Thibaut Panis
 - **Итальянский**: Matteo Sechi
 - **Японский**: Naofumi Fukue
 - **Норвежский Букмол**: Allan Nordhøy
@@ -18,11 +19,11 @@ UniPatcher это ROM патчер поддерживающий патчи в ф
 
 ##### Используемые библиотеки:
 
-- [**Android Donations**](https://github.com/SufficientlySecure/donations) by SufficientlySecure, licensed under the Apache 2.0 license.
-- [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) by The Apache Software Foundation, licensed under the Apache 2.0 license.
-- [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) by SufficientlySecure, licensed under the Apache 2.0 license.
-- [**Markdown4J**](https://github.com/jdcasey/markdown4j) by John Casey, licensed under the Apache 2.0 license.
-- [**Material design icons**](https://github.com/google/material-design-icons) by Google, licensed under the Creative Common Attribution 4.0 International License (CC-BY 4.0).
-- [**Material design icons**](https://materialdesignicons.com) by community, licensed under SIL Open Font License 1.1.
-- [**Material Dialogs**](https://github.com/afollestad/material-dialogs) by Aidan Follestad, licensed under The MIT license.
-- [**XDelta version 3**](https://github.com/jmacd/xdelta) by Joshua MacDonald, licensed under the Apache 2.0 license.
+- [**Android Donations**](https://github.com/SufficientlySecure/donations) от SufficientlySecure, распространяется под лицензией Apache 2.0.
+- [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) от The Apache Software Foundation, распространяется под лицензией Apache 2.0.
+- [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) от SufficientlySecure, распространяется под лицензией Apache 2.0.
+- [**Markdown4J**](https://github.com/jdcasey/markdown4j) от John Casey, распространяется под лицензией Apache 2.0.
+- [**Material design icons**](https://github.com/google/material-design-icons) от Google, распространяется под лицензией Creative Common Attribution 4.0 International License (CC-BY 4.0).
+- [**Material design icons**](https://materialdesignicons.com) от сообщества, распространяется под лицензией SIL Open Font License 1.1.
+- [**Material Dialogs**](https://github.com/afollestad/material-dialogs) от Aidan Follestad, распространяется под лицензией MIT.
+- [**XDelta version 3**](https://github.com/jmacd/xdelta) от Joshua MacDonald, распространяется под лицензией Apache 2.0.

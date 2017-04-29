@@ -1,31 +1,32 @@
-#### 0.14.1 (April 30, 2017)
-- Norwegian Bokmål translation (Thanks to Allan Nordhøy)
-- Japanese translation (Thanks to Naofumi Fukue)
+#### 0.14.1 (2017/4/30)
+- ノルウェーボクモール翻訳 (Thanks to Allan Nordhøy)
+- 日本語翻訳 (Thanks to Naofumi Fukue)
+- French translation (Thanks to Thibaut Panis)
 
-#### 0.14 (March 23, 2017)
+#### 0.14 (2017/3/23)
 
-- Support creating XDelta3 patches
-- Added option "ignore checksum"
-- Spanish translation (Thanks to Carlos Sánchez)
-- Removed analytics library and crash reports
+- XDelta3 パッチ作成のサポート
+- "チェックサムを無視する" オプションの追加
+- スペイン語翻訳 (Thanks to Carlos Sánchez)
+- アナリティクスライブラリとクラッシュレポートの削除
 
-#### 0.13.2 (February 12, 2017)
+#### 0.13.2 (2017/2/12)
 
-- Ukrainian translation (Thanks to Volodymyr Shevchuk)
+- ウクライナ語翻訳 (Thanks to Volodymyr Shevchuk)
 
-#### 0.13.1 (January 25, 2017)
+#### 0.13.1 (2017/1/25)
 
-- Removed rate app dialog
+- アプリ評価ダイアログの削除
 
-#### 0.13 (January 24, 2017)
+#### 0.13 (2017/1/24)
 
-- Support IPS32 patches
-- Deleted ads. Thanks to all who supported the development of the program.
+- IPS32 パッチのサポート
+- 広告を削除。 プログラム開発を支援してくれたすべての人に感謝します。
 
-#### 0.12 (January 13, 2017)
+#### 0.12 (2017/1/13)
 
-- Support APS patches (Nintendo 64 and Game Boy Advance)
-- Added the ability to specify the output directory
+- APS パッチのサポート (Nintendo 64 および Game Boy Advance)
+- 出力ディレクトリーを指定する機能を追加
 
 #### 0.11 (December 25, 2016)
 

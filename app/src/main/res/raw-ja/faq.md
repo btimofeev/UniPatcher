@@ -16,85 +16,85 @@ UniPatcher は、さまざまなビデオゲームコンソールの ROM イメ�
 
 ROM イメージは、ビデオゲームカートリッジのコピーを含むコンピューターファイルです。 エミュレーションのプロセスを通して、そのファイルをコピーし、 "エミュレーター" と呼ばれるソフトウェアで実行して、コンピューターや電話でゲームを楽しむことができます。
 
-#### What is ROM hacking?
+#### ROM ハックとは?
 
-ROM hacking is modifying the data in a ROM image. This may take the form of altering graphics, changing game levels, tweaking difficulty factor, or even translation into a language for which a game was not originally made available.
+ROM ハックは ROM イメージのデータを変更します。 これは、グラフィックスの変更、ゲームレベルの変更、難易度の調整、またはゲームがもともと利用できなかった言語への翻訳の形をとることがあります。
 
-#### What is a patch?
+#### パッチとは?
 
-A patch is a file that contains the differences between the original version of a ROM and the hacked version.
+パッチは、元のバージョンの ROM とハックしたバージョンの違いを含むファイルです。
 
-The patch is distributed, and end users apply the patch to a copy of the original ROM, which produces a playable version of the hack.
+パッチが配布されると、エンドユーザーは元の ROM のコピーにパッチを適用し、プレー可能なバージョンのハックを生成します。
 
-#### Why ROM hackers do not distribute modified games?
+#### なぜ ROM のハッカーは変更されたゲームを配布しないのですか?
 
-Hacks and translations are generally distributed as patches to reduce download size and avoid copyright issues.
+ダウンロードサイズを減らし、著作権の問題を避けるために、ハックや翻訳は一般にパッチとして配布されます。
 
-#### How to apply a patch to ROM?
+#### ROM にパッチを適用する方法は?
 
-You must choose the ROM file and the patch, then tap on the red round button.
+ROM ファイルとパッチを選択して、赤い丸のボタンをタップする必要があります。
 
-As a result, you get a patched ROM, which will be located in the same directory with the original ROM.
+その結果、元の ROM と同じディレクトリーでパッチされた ROM を入手します。
 
-#### App shows a message after file selection: "Archive should be unpacked in an external program".
+#### ファイルを選択した後、アプリがメッセージを表示します: 「アーカイブは外部プログラムで解凍する必要があります」。
 
-The file you have selected is an archive. The archive contains the directories and files in a compressed format.
+選択したファイルはアーカイブです。 アーカイブには、圧縮された形式のディレクトリーとファイルが含まれています。
 
-Currently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a free program [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
+現在、UniPatcher はアーカイブを抽出できないため、別のプログラムでアーカイブを解凍する必要があります。 無料のプログラムをお勧めします [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
 
-#### The app shows the error: "This ROM is not compatible with the patch".
+#### エラーが表示されます: 「この ROM はパッチと互換性がありません」。
 
-The app will show this error if the checksum stored in the patch does not match the checksum of the ROM. This means that the ROM is not compatible with the patch. You need to choose a different ROM. Usually there are several ROMs for each game (such as the version for Europe, USA, Japan, good or bad dumps, etc.).
+パッチに保存されているチェックサムが ROM のチェックサムと一致しない場合に、このエラーが表示されます。 つまり、ROM はパッチと互換性がありません。 別の ROM を選択する必要があります。 通常、それぞれのゲームにはいくつかの ROM があります (ヨーロッパ、アメリカ、日本向け、あるいは不良のダンプなど)。
 
-ROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. Long tap the file in the file manager and you will see these 3 lines: CRC32, SHA1 and MD5. If one of those numbers are the same, you have the ROM the patch was written for. If not, you need a different ROM.
+ROM のハッカーは、付随する ROM ファイルのチェックサムを (Web ページまたは README ファイルで) 公開することがよくあります。 それをお持ちのものと比較してください。 ファイルマネージャでファイルを長押しすると、CRC32、SHA1、MD5 の 3 行が表示されます。 それらの番号のうちの 1 つが同じ場合は、その ROM 用のパッチです。 そうでない場合は、別の ROM が必要です。
 
-#### I can not find the correct ROM for the game "Pokémon Emerald".
+#### ゲーム "ポケモンエメラルド" の正しい ROM を見つけることができません。
 
-Most of the patches of the game work with ROM "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
+ゲームのパッチのほとんどは、ROM "ポケモン - エメラルドバージョン (U) \[f1\] (Save Type).gba" で動作します。
 
-#### I apply the IPS patch and then the game is not working / contains graphic glitches. What am I doing wrong?
+#### IPS パッチを適用した後、ゲームが動作しない / グラフィックの不具合があります。 何か間違っていますか?
 
-IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM. In this case, you need to look for another ROM.
+IPS 形式のパッチにはチェックサムが含まれていません。 したがって、パッチはすべての (間違った) ROM にも適用されます。 この場合、別の ROM を探す必要があります。
 
-#### What can I do with .ECM file type?
+#### .ECM ファイル形式で何ができますか?
 
-ECM is a data compression format designed specifically for disc images. You can decompress the file using [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver) program.
+ECM は、ディスクイメージ専用に設計されたデータ圧縮形式です。 次のプログラムを使用してファイルを解凍することができます [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver) 。
 
-#### The app shows the error: "Could not copy file".
+#### アプリがエラーを表示します: 「ファイルをコピーできませんでした」。
 
-The error occurs on some devices with Android 4.4. Possible solutions:
+このエラーは Android 4.4 搭載の一部のデバイスで発生します。 可能な解決策は:
 
-- Copy the ROM file on the memory card in the folder **Android/data/org.emunix.unipatcher/**. Then you need to select the ROM from this directory.
-- Install [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) application (requires ROOT access).
+- フォルダー **Android/data/org.emunix.unipatcher/** にメモリカードの ROM ファイルをコピーします。 その後、このディレクトリーから ROM を選択する必要があります。
+- [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) アプリケーションをインストールします (ROOT アクセスが必要です)。
 
-#### The app shows the error: "File have the wrong checksum after it was patched".
+#### アプリがエラーを表示します: 「ファイルにパッチを当てた後、チェックサムが間違っています」。
 
-Maybe it's a bug in my program. Please contact me at [e-mail](mailto:mashin87@gmail.com) and attach the patch to the letter.
+プログラムのバグかもしれません。[e-mail](mailto:mashin87@gmail.com) に連絡してください。 メールにパッチを添付してください。
 
-#### Has UniPatcher some additional features?
+#### UniPatcher には追加機能がありますか?
 
-Yes. UniPatcher can:
+はい。 UniPatcher は次のことができます:
 
-- Create XDelta3 patches.
-- Fix checksum for a Sega Mega Drive / Sega Genesis games.
-- Add or remove SMC header for Super Nintendo games.
+- XDelta3 パッチの作成。
+- Sega Mega Drive / Sega Genesis ゲームのチェックサムの修正。
+- Super Nintendo ゲームの SMC ヘッダーの追加または削除。
 
-#### Why do I have to fix checksum for the Sega Mega Drive games?
+#### なぜ Sega Mega Drive ゲームのチェックサムを修正する必要があるのですか?
 
-Sega Mega Drive (Genesis) games are protected from modification. If the checksum of the game differs from the one the ROM amounts to, the game displays a red screen and stops running. What this does is calculate the correct checksum and write it to the ROM.
+Sega Mega Drive (Genesis) ゲームは変更を保護しています。 ゲームのチェックサムが ROM のものと異なる場合、ゲームは赤い画面を表示して実行を停止します。 この対策は正確なチェックサムを計算して、それを ROM に書き込むことです。
 
-**Warning:** This function does not create a backup ROM.
+**警告:** この機能はバックアップ ROM を作成しません。
 
-#### Why it's needed sometimes to add or remove SMC headers from Super Nintendo games?
+#### Super Nintendo ゲームから SMC ヘッダーを追加または削除する必要があるのはなぜですか?
 
-An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing or adding a header is sometimes used for the purpose of correctly applying a patch.
+SMC ヘッダーは、一部の SNES ROM イメージの先頭に 512 バイトあります。 これらのデータに目的はありませんが、残りのデータの位置は変更されます。 ヘッダーの削除や追加は、パッチを正しく適用するために使用されることがあります。
 
-**Warning:** This function does not create a backup ROM.
+**警告:** この機能はバックアップ ROM を作成しません。
 
-#### How to translate the app?
+#### アプリを翻訳する方法は?
 
-If you would like to translate the app into another language or improve an existing translation, you can do it on [Transifex](https://www.transifex.com/unipatcher/unipatcher/dashboard/) site.
+アプリを別の言語に翻訳したり、既存の翻訳を改善したい場合は [Transifex](https://www.transifex.com/unipatcher/unipatcher/dashboard/) サイトで行うことができます。
 
-#### I have a question, a feature request or a bug report.
+#### 質問、機能リクエスト、バグ報告があります。
 
-Contact me at e-mail <mashin87@gmail.com>. Please write in English or Russian. If you have problems with patching, attach the patch to the letter and write the name of your ROM, it will save our time.
+メール <mashin87@gmail.com> に私に連絡してください。 英語またはロシア語で記入してください。 パッチに問題がある場合は、パッチをメールに添付して ROM の名前を書いてください。これで時間を節約できます。
