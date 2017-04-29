@@ -8,6 +8,7 @@ Funzioni aggiuntive:
 
 ##### Traduttori:
 
+- **French**: Thibaut Panis
 - **Italiano**: Matteo Sechi
 - **Japanese**: Naofumi Fukue
 - **Norwegian Bokmål**: Allan Nordhøy

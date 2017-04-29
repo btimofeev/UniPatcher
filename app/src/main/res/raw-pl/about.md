@@ -8,6 +8,7 @@ Dodatkowe funkcje:
 
 ##### Tłumaczenia:
 
+- **French**: Thibaut Panis
 - **Włoski**: Matteo Sechi
 - **Japanese**: Naofumi Fukue
 - **Norwegian Bokmål**: Allan Nordhøy

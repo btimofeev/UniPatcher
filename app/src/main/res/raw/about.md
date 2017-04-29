@@ -8,6 +8,7 @@ Additional features:
 
 ##### Translators:
 
+- **French**: Thibaut Panis
 - **Italian**: Matteo Sechi
 - **Japanese**: Naofumi Fukue
 - **Norwegian Bokmål**: Allan Nordhøy

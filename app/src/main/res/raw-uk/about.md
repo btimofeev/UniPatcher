@@ -8,6 +8,7 @@ UniPatcher це ROM патчер який підтримує патчі у фо�
 
 ##### Перекладачі:
 
+- **French**: Thibaut Panis
 - **Італійська**: Matteo Sechi
 - **Japanese**: Naofumi Fukue
 - **Norwegian Bokmål**: Allan Nordhøy
