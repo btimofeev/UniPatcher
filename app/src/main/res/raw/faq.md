@@ -69,7 +69,7 @@ The error occurs on some devices with Android 4.4. Possible solutions:
 
 #### The app shows the error: "File have the wrong checksum after it was patched".
 
-Maybe it's a bug in my program. Please contact me at [e-mail](mailto:mashin87@gmail.com) and attach the patch to the letter.
+Maybe it's a bug in my program. Please contact me at [e-mail](mailto:unipatcher@gmail.com) and attach the patch to the letter.
 
 #### Has UniPatcher some additional features?
 
@@ -97,4 +97,4 @@ If you would like to translate the app into another language or improve an exist
 
 #### I have a question, a feature request or a bug report.
 
-Contact me at e-mail <mashin87@gmail.com>. Please write in English or Russian. If you have problems with patching, attach the patch to the letter and write the name of your ROM, it will save our time.
+Contact me at e-mail <unipatcher@gmail.com>. Please write in English or Russian. If you have problems with patching, attach the patch to the letter and write the name of your ROM, it will save our time.

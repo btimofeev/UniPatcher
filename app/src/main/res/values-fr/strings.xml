@@ -3,7 +3,7 @@
 
     <string name="app_name">UniPatcher</string>
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
-    <string name="app_email">mashin87@gmail.com</string>
+    <string name="app_email">unipatcher@gmail.com</string>
 
     <!-- Main activity -->
     <string name="main_activity_rom_file">ROM</string>

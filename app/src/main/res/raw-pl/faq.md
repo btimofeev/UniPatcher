@@ -69,7 +69,7 @@ Ten problem występuje na niektórych urządzeniach z androidem 4.4+. Możliwe r
 
 #### Aplikacja wyświetla błąd: "Plik ma złą sumę kontrolną po złatkowaniu".
 
-Może jest to bug w moim programie. Proszę skontaktuj się ze mną przez [e-mail] (mailto:mashin87@gmail.com) i załącz łatkę w liście.
+Może jest to bug w moim programie. Proszę skontaktuj się ze mną przez [e-mail] (mailto:unipatcher@gmail.com) i załącz łatkę w liście.
 
 #### Czy UniPatcher ma dodatkowe funkcje?
 
@@ -97,4 +97,4 @@ Jeżeli chciałbyś/chciałabyś przetłumaczyć aplikację na inny język, albo
 
 #### Mam pytanie, prośba o dodanie funkcji albo raport w sprawie błędu
 
-Skontaktuj się ze mną przez e-mail <mashin87@gmail.com>. Proszę pisz po Angielsku albo Rosyjsku. Jeżeli masz jakieś problemy z łatkowaniem, załącz łatkę do mail-a i napisz nazwę ROM-u, to oszczędzi nasz czas.
+Skontaktuj się ze mną przez e-mail <unipatcher@gmail.com>. Proszę pisz po Angielsku albo Rosyjsku. Jeżeli masz jakieś problemy z łatkowaniem, załącz łatkę do mail-a i napisz nazwę ROM-u, to oszczędzi nasz czas.

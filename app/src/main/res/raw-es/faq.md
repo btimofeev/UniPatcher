@@ -69,7 +69,7 @@ El error se produce en algunos dispositivos con Android 4.4. Posibles soluciones
 
 #### La aplicación muestra el error: "El archivo tiene checksum incorrecto después de haber sido parcheado".
 
-Tal vez sea un error en mi programa. Por favor, póngase en contacto conmigo en [e-mail](mailto:mashin87@gmail.com) y adjunte el parche en el mensaje.
+Tal vez sea un error en mi programa. Por favor, póngase en contacto conmigo en [e-mail](mailto:unipatcher@gmail.com) y adjunte el parche en el mensaje.
 
 #### ¿Tiene UniPatcher algunas características adicionales?
 
@@ -97,4 +97,4 @@ Si desea traducir la aplicación en otro idioma o mejorar una traducción existe
 
 #### Tengo una pregunta, una petición de característica o un informe de error.
 
-Contactame en e-mail <mashin87@gmail.com>. Por favor escriba en Inglés o Ruso. Si tienes problemas con parches, adjunte el parche al mensaje y escriba el nombre de su ROM, ahorrará nuestro tiempo.
+Contactame en e-mail <unipatcher@gmail.com>. Por favor escriba en Inglés o Ruso. Si tienes problemas con parches, adjunte el parche al mensaje y escriba el nombre de su ROM, ahorrará nuestro tiempo.

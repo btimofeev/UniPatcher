@@ -69,7 +69,7 @@ Kopier ROM-fila på minnekortet til mappa **Android/data/org.emunix.unipatcher/*
 
 #### Programmet viser feilmeldingen: "Fila har feil sjekksum etter at den ble programfikset".
 
-Kanskje det er en feil i programmet mitt. Kontakt meg på [e-post](mailto:mashin87@gmail.com) og legg ved hele programfiksen.
+Kanskje det er en feil i programmet mitt. Kontakt meg på [e-post](mailto:unipatcher@gmail.com) og legg ved hele programfiksen.
 
 #### Har UniPatcher noen flere funksjoner?
 
@@ -97,4 +97,4 @@ Hvis du vil oversette programmet til et annet språk eller forbedre en eksistere
 
 #### Jeg har et spørsmål, en funksjonsforespørsel eller en feilrapport.
 
-Kontakt meg på e-post <mashin87@gmail.com>. Skriv på Engelsk eller Russisk. Hvis du har problemer med programfiksing, legg ved hele programfiksen og skriv navnet på ROM-fila di, det vil spare tid.
+Kontakt meg på e-post <unipatcher@gmail.com>. Skriv på Engelsk eller Russisk. Hvis du har problemer med programfiksing, legg ved hele programfiksen og skriv navnet på ROM-fila di, det vil spare tid.

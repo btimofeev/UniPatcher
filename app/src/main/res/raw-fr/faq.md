@@ -69,7 +69,7 @@ C'est une erreur qui arrive sur certains appareils sous Android 4.4. Voici quelq
 
 #### L'appli affiche ce message : "Le fichier possède un mauvais checksum après avoir été patché".
 
-Il s'agit peut-être un bug dans mon programme. Envoyez-moi un [mail](mailto:mashin87@gmail.com) avec votre patch en pièce jointe.
+Il s'agit peut-être un bug dans mon programme. Envoyez-moi un [mail](mailto:unipatcher@gmail.com) avec votre patch en pièce jointe.
 
 #### Est-ce qu'UniPatcher a des fonctionnalités supplémentaires ?
 
@@ -97,4 +97,4 @@ Si vous souhaitez traduire cette appli dans une autre langue ou améliorer une t
 
 #### J'ai une question, une proposition d'amélioration ou un rapport de bug à soumettre.
 
-Contactez-moi par mail <mashin87@gmail.com>. Merci de m'écrire en Anglais ou en Russe. Si vous avez des problèmes pour patcher, attachez votre patch en pièce jointe et écrivez le nom de votre ROM, ce sera toujours un gain de temps.
+Contactez-moi par mail <unipatcher@gmail.com>. Merci de m'écrire en Anglais ou en Russe. Si vous avez des problèmes pour patcher, attachez votre patch en pièce jointe et écrivez le nom de votre ROM, ce sera toujours un gain de temps.
