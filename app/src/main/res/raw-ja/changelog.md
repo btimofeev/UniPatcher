@@ -1,7 +1,7 @@
 #### 0.14.1 (2017/4/30)
 - ノルウェーボクモール翻訳 (Thanks to Allan Nordhøy)
 - 日本語翻訳 (Thanks to Naofumi Fukue)
-- French translation (Thanks to Thibaut Panis)
+- フランス語翻訳 (Thanks to Thibaut Panis)
 
 #### 0.14 (2017/3/23)
 
@@ -28,109 +28,109 @@
 - APS パッチのサポート (Nintendo 64 および Game Boy Advance)
 - 出力ディレクトリーを指定する機能を追加
 
-#### 0.11 (December 25, 2016)
+#### 0.11 (2016/12/25)
 
-- Support EBP patches (for EarthBound game)
-- Italian translation (Thanks to Matteo Sechi)
+- EBP パッチのサポート (EarthBound ゲーム用)
+- イタリア語翻訳 (Thanks to Matteo Sechi)
 
-#### 0.10.1 (December 6, 2016)
+#### 0.10.1 (2016/12/6)
 
-- Added dark theme
+- ダークテーマを追加
 
-#### 0.10 (September 26, 2016)
+#### 0.10 (2016/9/26)
 
-- Support XDelta3 patches
+- XDelta3 パッチのサポート
 
-#### 0.9.2 (September 18, 2016)
+#### 0.9.2 (2016/9/18)
 
-- Long tap on the ROM file in file manager to see its checksum (CRC32, SHA1 and MD5).
-- Fixed bug
+- ファイルマネージャーで ROM ファイルを長押しするとチェックサムを表示 (CRC32, SHA1 and MD5)。
+- バグの修正
 
-#### 0.9.1 (September 2, 2016)
+#### 0.9.1 (2016/9/2)
 
-- The app remembers the last used directory
-- Added the ability to configure the directories for patches and ROMs
-- Polish translation (Thanks to Michal Bychowski)
+- アプリが前回使用したディレクトリを記憶
+- パッチと ROM のディレクトリを設定する機能を追加
+- ポーランド語翻訳 (Thanks to Michal Bychowski)
 
-#### 0.9 (June 1, 2016)
+#### 0.9 (2016/6/1)
 
-- Support BPS patches
-- Added help page (frequently asked questions)
-- Russian translation
-- Various improvements and bug fixes
+- BPS パッチのサポート
+- ヘルプページを追加 (FAQ)
+- ロシア語翻訳
+- 様々な改善とバグ修正
 
-#### 0.8.2 (May 6, 2016)
+#### 0.8.2 (2016/5/6)
 
-- Fixed an important bug introduced in version 0.8.1
+- バージョン 0.8.1 で引き落とした重要なバグを修正
 
-#### 0.8.1 (April 30, 2016)
+#### 0.8.1 (2016/4/30)
 
-- Improved performance. Now patches are applied quickly
+- パフォーマンスの向上。 パッチがすぐに適用されるようになりました
 
-#### 0.8 (April 12, 2016)
+#### 0.8 (2016/4/12)
 
-- Support Marshmallow permissions
-- Added ability to rename output file
-- Added floating action button
-- New colors, icons and navigation bar
-- Now the application only runs on devices with Android 4 and above
+- Marshmallow のアクセス許可をサポート
+- 出力ファイルの名前を変更する機能を追加
+- フローティングアクションボタンを追加
+- 新しい色、アイコン、ナビゲーションバー
+- アプリケーションが Android 4 以上のデバイスでのみ動作するようになりました
 
-#### 0.7.3 (January 12, 2015)
+#### 0.7.3 (2015/1/12)
 
-- Support Android 5
-- Improved design and usability
+- Android 5 のサポート
+- デザインとユーザビリティの改善
 
-#### 0.7.2 (May 31, 2014)
+#### 0.7.2 (2014/5/31)
 
-- Fixed a bug when the device goes into sleep mode
+- デバイスがスリープモードになったときのバグを修正
 
-#### 0.7.1 (May 13, 2014)
+#### 0.7.1 (2014/5/13)
 
-- Fixed crash on Android 2.3
+- Android 2.3 でのクラッシュを修正
 
-#### 0.7 (May 7, 2014)
+#### 0.7 (2014/5/7)
 
-- By popular demand UniPatcher is now free, but with advertising. It is not displayed if you purchased the program
-- Support DPS patches
-- Added feature: Fix checksum for Sega Mega Drive ROMs
-- Added feature: Add/Delete SMC header for Super Nintendo ROMs
+- 普及の需要により UniPatcher は無料になりましたが、広告があります。 プログラムを購入した場合は表示されません
+- DPS パッチのサポート
+- 機能追加: Sega Mega Drive ROM のチェックサムを修正
+- 機能追加: Super Nintendo ROM の SMC ヘッダーを追加/削除
 
-#### 0.6 (November 4, 2013)
+#### 0.6 (2013/11/4)
 
-- Support PPF patches in full version
-- Small improvements
+- フルバージョンの PPF パッチをサポート
+- 小さな改善
 
-#### 0.5 (October 15, 2013)
+#### 0.5 (2013/10/15)
 
-- UniPatcher now divided into a lite and full version. You can purchase the full version directly inside the app
-- Support UPS patches in full version
-- The association with IPS and UPS files. Now you can open the patches from your file manager
-- Again redesigned
-- Added a dialog "What's New"
-- Added high resolution icons
-- Dropped support for Android 2.1. Sorry guys, this is no longer possible to maintain
+- UniPatcher は、ライトとフルバージョンに分かれました。 アプリ内でフルバージョンを直接購入することができます
+- フルバージョンで UPS パッチのサポート
+- IPS と UPS ファイルとの関連付け。 ファイルマネージャからパッチを開くことができるようになりました
+- 再デザイン
+- ダイアログ "新着情報" の追加
+- 高解像度アイコンの追加
+- Android 2.1 のサポートを中止しました。 申し訳ありませんが、これはもはや維持することができません
 
-#### 0.4 (August 24, 2013)
+#### 0.4 (2013/8/24)
 
-- The result is stored in the new output file
+- 結果は新しい出力ファイルに保存されます
 
-#### 0.3 (May 23, 2013)
+#### 0.3 (2013/5/23)
 
-- New look and feel
-- New icon
-- Added a dialog "Rate this App"
-- Added a menu "Share"
-- Minor changes
+- 新しいルック＆フィール
+- 新しいアイコン
+- ダイアログ "このアプリを評価する" の追加
+- メニュー "共有" の追加
+- マイナーな変更
 
-#### 0.2 (April 17, 2013)
+#### 0.2 (2013/8/17)
 
-- Added support for Android 2.1
-- Added ActionBar for Android 2.1+
-- Added the ability to install it on SD-card
-- Patching in a separate thread, the UI does not freeze
-- Added pictures in the file manager
-- Bugfixes
+- Android 2.1 のサポートを追加
+- Android 2.1+ のアクションバーを追加
+- SD カードにインストールする機能を追加
+- 別のスレッドでパッチを適用。UI がフリーズしません
+- ファイルマネージャに画像を追加
+- バグ修正
 
-#### 0.1 (April 6, 2013)
+#### 0.1 (2013/4/6)
 
-- Initial release, supports only IPS patches
+- 初期リリース、IPS パッチのみサポート

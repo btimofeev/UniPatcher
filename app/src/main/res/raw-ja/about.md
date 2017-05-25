@@ -8,7 +8,7 @@ UniPatcher は IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP およ�
 
 ##### 翻訳:
 
-- **French**: Thibaut Panis
+- **フランス語**: Thibaut Panis
 - **イタリア語**: Matteo Sechi
 - **日本語**: Naofumi Fukue
 - **ノルウェーボクモール**: Allan Nordhøy
