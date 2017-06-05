@@ -4,7 +4,7 @@
 UniPatcher
 ----------
 
-UniPatcher is a ROM patcher for Android that supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patch types.
+UniPatcher is a way to make PS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 game console software work on Android after applying changes to them.
 
 ### Additional features:
 
@@ -24,14 +24,14 @@ UniPatcher is a ROM patcher for Android that supports IPS, IPS32, UPS, BPS, APS 
 
 [... or get a Release APK here on GitHub](https://github.com/btimofeev/UniPatcher/releases)
 
-### How to contribute to UniPatcher:
+### Contribute:
 
-#### Report a bug or suggest a new feature
+#### Report a bug or suggest features
 
-Bugs and new features are being discussed on the GitHub [Issue Tracker](https://github.com/btimofeev/UniPatcher/issues).
+These are discussed on the GitHub [Issue Tracker](https://github.com/btimofeev/UniPatcher/issues).
 
-#### Help with translations
-If you want to translate UniPatcher into another language, you can visit the [Transifex project page](https://www.transifex.com/unipatcher/unipatcher/). 
+#### Translations
+Help translate UniPatcher into another language on the [Transifex project page](https://www.transifex.com/unipatcher/unipatcher/). 
 
 ### License
 UniPatcher is licensed under the GPL version 3. You can find the license text in the COPYING file.
