@@ -4,7 +4,7 @@
 UniPatcher
 ----------
 
-UniPatcher is a way to make PS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 game console software work on Android after applying changes to them.
+-UniPatcher is a ROM patcher for Android that supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patch types.
 
 ### Additional features:
 
