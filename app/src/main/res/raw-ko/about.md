@@ -11,6 +11,7 @@
 - **프랑스어**: Thibaut Panis
 - **이탈리아어**: Matteo Sechi
 - **일본어**: Naofumi Fukue
+- **Korean**: Minseo Lee
 - **노르웨이어 보크몰**: Allan Nordhøy
 - **폴란드어**: Michal Bychowski
 - **러시아어**: Борис Тимофеев

@@ -11,6 +11,7 @@ Additional features:
 - **French**: Thibaut Panis
 - **Italian**: Matteo Sechi
 - **Japanese**: Naofumi Fukue
+- **Korean**: Minseo Lee
 - **Norwegian Bokmål**: Allan Nordhøy
 - **Polish**: Michal Bychowski
 - **Russian**: Борис Тимофеев

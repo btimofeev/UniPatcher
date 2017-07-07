@@ -1,14 +1,17 @@
+#### 0.14.2 (Jule 13, 2017)
+- Korean translation (Thanks to Minseo Lee)
+
 #### 0.14.1 (April 30, 2017)
 - Norwegian Bokmål translation (Thanks to Allan Nordhøy)
 - Japanese translation (Thanks to Naofumi Fukue)
 - French translation (Thanks to Thibaut Panis)
 
-#### 0.14 (March 23, 2017)
+#### 0.14 (23 березня, 2017)
 
-- Support creating XDelta3 patches
-- Added option "ignore checksum"
-- Spanish translation (Thanks to Carlos Sánchez)
-- Removed analytics library and crash reports
+- Додана можливість створювати патчі у форматі XDelta3
+- Додана опція "ігнорувати контрольну суму"
+- Переклад на іспанську мову (переклав Carlos Sánchez)
+- Видалені бібліотеки аналітики та звітів про помилки
 
 #### 0.13.2 (12 лютого, 2017)
 

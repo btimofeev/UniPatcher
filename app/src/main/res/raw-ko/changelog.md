@@ -1,3 +1,6 @@
+#### 0.14.2 (Jule 13, 2017)
+- Korean translation (Thanks to Minseo Lee)
+
 #### 0.14.1 (2017년 4월 30일)
 - 노르웨이어 보크몰 번역 (Thanks to Allan Nordhøy)
 - 일본어 번역 (Thanks to Naofumi Fukue)

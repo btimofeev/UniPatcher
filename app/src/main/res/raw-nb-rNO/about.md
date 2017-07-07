@@ -8,10 +8,11 @@ Ytterligere funksjoner:
 
 ##### Oversettere:
 
-- **French**: Thibaut Panis
+- **Fransk**: Thibaut Panis
 - **Italiensk**: Matteo Sechi
-- **Japanese**: Naofumi Fukue
-- **Norwegian Bokmål**: Allan Nordhøy
+- **Japansk**: Naofumi Fukue
+- **Korean**: Minseo Lee
+- **Norsk bokmål**: Allan Nordhøy
 - **Polsk**: Michal Bychowski
 - **Russisk**: Борис Тимофеев
 - **Spansk**: Carlos Sánchez

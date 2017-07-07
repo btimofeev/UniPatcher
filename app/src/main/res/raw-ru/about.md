@@ -11,6 +11,7 @@ UniPatcher это ROM патчер поддерживающий патчи в ф
 - **Французский**: Thibaut Panis
 - **Итальянский**: Matteo Sechi
 - **Японский**: Naofumi Fukue
+- **Корейский**: Minseo Lee
 - **Норвежский Букмол**: Allan Nordhøy
 - **Польский**: Michal Bychowski
 - **Русский**: Борис Тимофеев

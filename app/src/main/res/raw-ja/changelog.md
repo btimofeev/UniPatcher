@@ -1,3 +1,6 @@
+#### 0.14.2 (Jule 13, 2017)
+- Korean translation (Thanks to Minseo Lee)
+
 #### 0.14.1 (2017/4/30)
 - ノルウェーボクモール翻訳 (Thanks to Allan Nordhøy)
 - 日本語翻訳 (Thanks to Naofumi Fukue)

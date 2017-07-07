@@ -23,6 +23,16 @@
     <string name="dialog_rename_cancel">Скасувати</string>
     <string name="dialog_rename_error_same_name">Назви вхідного та вихідного ROM\'у не повинні відрізнятись</string>
     <string name="dialog_rename_error_invalid_chars">Недійсний символ /</string>
+    <string name="dialog_rename_error_empty_name">Назва файлу не може бути порожня</string>
+
+    <!-- Create patch fragment -->
+    <string name="create_patch_fragment_source_file">Вихідний файл</string>
+    <string name="create_patch_fragment_modified_file">Змінений файл</string>
+    <string name="create_patch_fragment_patch_file">Патч</string>
+    <string name="create_patch_fragment_toast_source_and_modified_not_selected">Спочатку виберіть вихідний та змінений файли</string>
+    <string name="create_patch_fragment_toast_source_not_selected">Спочатку виберіть вихідний файл</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">Спочатку виберіть змінений файл</string>
+
     <!-- Info for SNES SMC header -->
     <string name="snes_smc_header_help">Ця функція доступна тільки для Super Nintendo ROM\'ів.\n\nIf ROM містить SMC заголовок - його буде перезаписано. При його відсутності, він буде доданий.\n\nУвага: ця функція не створює резервної копії.</string>
     <string name="snes_smc_header_will_be_removed">Цей ROM має SMC заголовок. Його буде перезаписано.</string>
@@ -35,6 +45,8 @@
     <string name="file_picker_activity_title">Обрати файл</string>
     <string name="file_picker_activity_title_select_rom">Обрати ROM файл</string>
     <string name="file_picker_activity_title_select_patch">Обрати Патч файл</string>
+    <string name="file_picker_activity_title_select_source_file">Виберіть вихідний файл</string>
+    <string name="file_picker_activity_title_select_modified_file">Виберіть змінений файл</string>
     <string name="file_picker_activity_title_select_header">Обрати файл заголовок</string>
     <string name="file_picker_activity_error_unable_read_dir">Неможливо прочитати папку %1$s</string>
 
@@ -53,7 +65,11 @@
     <!-- Notifications -->
     <string name="notify_applying_patch">Застосування патчу</string>
     <string name="notify_patching_complete">Патчинг завершено</string>
+    <string name="notify_creating_patch">Створюю патч</string>
+    <string name="notify_create_patch_complete">Створення патчу закінчено</string>
     <string name="toast_patching_started_check_notify">Патчинг почався. Перевірте область повідомлень</string>
+    <string name="toast_create_patch_started_check_notify">Створюю патч. Перевірте область сповіщень</string>
+
     <string name="notify_error">Помилка</string>
     <string name="notify_error_could_not_copy_file">Не вдалося скопіювати файл</string>
     <string name="notify_error_file_not_found">Файл не знайдено</string>
@@ -111,6 +127,10 @@
     <string name="settings_patch_directory">Вкажіть папку для Патчу/ів</string>
     <string name="settings_output_directory">Вкажіть вихідну папку</string>
     <string name="settings_output_directory_description">Початково ROM\'и будуть зберігатись в папці ROM. Ви можете змінити шлях збережень</string>
+    <string name="settings_patching_header">Застосування патчів</string>
+    <string name="settings_ignore_checksum">Ігнорувати контрольну суму</string>
+    <string name="settings_ignore_checksum_description">Не показувати помилку, якщо використовується ROM який не підходить. Використовуйте обережно: включивши цю опцію можна отримати зіпсований файл.</string>
+
     <!-- Help activity -->
     <string name="help_activity_title">Допомога</string>
     <string name="help_activity_faq_tab_title">Питання та Відповіді</string>
@@ -132,6 +152,7 @@
 
     <!-- Navigation list -->
     <string name="nav_apply_patch">Застосувати Патч</string>
+    <string name="nav_create_patch">Створити патч</string>
     <string name="nav_smd_fix_checksum">Виправити контрольну суму (SMD)</string>
     <string name="nav_snes_add_del_smc_header">Додати/Видалити SMC заголовок (SNES)</string>
     <string name="nav_settings">Налаштування</string>

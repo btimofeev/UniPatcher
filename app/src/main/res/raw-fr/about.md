@@ -11,6 +11,7 @@ Fonctionnalités supplémentaires :
 - **Français** : Thibaut Panis
 - **Italien** : Matteo Sechi
 - **Japonais**: Naofumi Fukue
+- **Korean**: Minseo Lee
 - **Norvégien Bokmål**: Allan Nordhøy
 - **Polonais**: Michal Bychowski
 - **Russe**: Борис Тимофеев
