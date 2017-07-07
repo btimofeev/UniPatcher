@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">유니패처</string>
+    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
+    <string name="app_email">unipatcher@gmail.com</string>
+
+    <!-- Main activity -->
+    <string name="main_activity_rom_file">롬 파일</string>
+    <string name="main_activity_patch_file">패치 파일</string>
+    <string name="main_activity_output_file">출력 파일</string>
+    <string name="main_activity_header_file">헤더 파일</string>
+    <string name="main_activity_tap_to_select">탭하여 선택</string>
+    <string name="main_activity_tap_to_rename">탭하여 이름 바꾸기</string>
+    <string name="main_activity_toast_rom_and_patch_not_selected">롬 및 패치 파일이 선택되지 않음</string>
+    <string name="main_activity_toast_rom_not_selected">롬 파일이 선택되지 않음</string>
+    <string name="main_activity_toast_patch_not_selected">패치 파일이 선택되지 않음</string>
+    <string name="main_activity_toast_archives_not_supported">압축 파일은 외부 프로그램에서 압축을 풀어야 합니다.</string>
+
+    <!-- Rename dialog -->
+    <string name="dialog_rename_title">이름 바꾸기</string>
+    <string name="dialog_rename_ok">확인</string>
+    <string name="dialog_rename_cancel">취소</string>
+    <string name="dialog_rename_error_same_name">입력 및 출력 파일은 이름이 달라야 합니다.</string>
+    <string name="dialog_rename_error_invalid_chars">잘못된 기호 /</string>
+    <string name="dialog_rename_error_empty_name">파일 이름은 비워 둘 수 없습니다.</string>
+
+    <!-- Create patch fragment -->
+    <string name="create_patch_fragment_source_file">원본 파일</string>
+    <string name="create_patch_fragment_modified_file">수정된 파일</string>
+    <string name="create_patch_fragment_patch_file">패치 파일</string>
+    <string name="create_patch_fragment_toast_source_and_modified_not_selected">원본 및 수정된 파일이 선택되지 않음</string>
+    <string name="create_patch_fragment_toast_source_not_selected">원본 파일이 선택되지 않음</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">수정된 파일이 선택되지 않음</string>
+
+    <!-- Info for SNES SMC header -->
+    <string name="snes_smc_header_help">이 기능은 닌텐도 슈퍼 패미컴 롬만을 위한 것입니다.\n\n롬에 SMC 헤더가 있다면 제거되며 그렇지 않다면 추가됩니다.\n\n경고: 이 기능은 백업을 생성하지 않습니다.</string>
+    <string name="snes_smc_header_will_be_removed">이 롬은 SMC 헤더를 가지고 있습니다. 제거됩니다.</string>
+    <string name="snes_smc_header_will_be_added">이 롬은 SMC 헤더를 가지고 있지 않습니다. 추가됩니다. 기본 헤더 대신 자신의 헤더를 선택할 수 있습니다.</string>
+
+    <!-- Info for SMD fix checksum -->
+    <string name="smd_fix_checksum_help">이 기능은 세가 메가 드라이브 (세가 제네시스) 롬만을 위한 것입니다.\n\n이는 \"죽음의 레드 스크린\"을 해결합니다.\n\n경고: 이 기능은 백업을 생성하지 않습니다.</string>
+
+    <!-- File picker title -->
+    <string name="file_picker_activity_title">파일 선택</string>
+    <string name="file_picker_activity_title_select_rom">롬 파일 선택</string>
+    <string name="file_picker_activity_title_select_patch">패치 파일 선택</string>
+    <string name="file_picker_activity_title_select_source_file">원본 파일 선택</string>
+    <string name="file_picker_activity_title_select_modified_file">수정된 파일 선택</string>
+    <string name="file_picker_activity_title_select_header">헤더 파일 선택</string>
+    <string name="file_picker_activity_error_unable_read_dir">%1$s 디렉터리를 읽을 수 없음</string>
+
+    <!-- File properties dialog -->
+    <string name="file_properties_dialog_title">속성</string>
+    <string name="file_properties_dialog_name">이름:</string>
+    <string name="file_properties_dialog_path">위치:</string>
+    <string name="file_properties_dialog_size">크기:</string>
+    <string name="file_properties_dialog_size_value">%1$s (%2$d 바이트)</string>
+    <string name="file_properties_dialog_crc32">CRC32:</string>
+    <string name="file_properties_dialog_sha1">SHA1:</string>
+    <string name="file_properties_dialog_md5">MD5:</string>
+    <string name="file_properties_dialog_close_button">닫기</string>
+    <string name="file_properties_dialog_wait_message">기다려 주십시오&#8230;</string>
+
+    <!-- Notifications -->
+    <string name="notify_applying_patch">패치 적용 중</string>
+    <string name="notify_patching_complete">패치 완료</string>
+    <string name="notify_creating_patch">패치 생성 중</string>
+    <string name="notify_create_patch_complete">패치 생성됨</string>
+    <string name="toast_patching_started_check_notify">패치가 시작되었습니다. 알림 영역을 확인하십시오.</string>
+    <string name="toast_create_patch_started_check_notify">패치 생성이 시작되었습니다. 알림 영역을 확인하십시오.</string>
+
+    <string name="notify_error">오류</string>
+    <string name="notify_error_could_not_copy_file">파일을 복사할 수 없음</string>
+    <string name="notify_error_file_not_found">파일을 찾을 수 없음</string>
+    <string name="notify_error_not_enough_space">저장 공간 부족함</string>
+    <string name="notify_error_unable_to_create_directory">%1$s 디렉터리를 만들 수 없음</string>
+    <string name="notify_error_unable_to_write_to_directory">%1$s 디렉터리에 쓸 수 없음</string>
+    <string name="notify_error_not_ips_patch">유효한 IPS 패치가 아님</string>
+    <string name="notify_error_not_ups_patch">유효한 UPS 패치가 아님</string>
+    <string name="notify_error_not_bps_patch">유효한 BPS 패치가 아님</string>
+    <string name="notify_error_not_ppf_patch">유효한 PPF 패치가 아님</string>
+    <string name="notify_error_not_aps_patch">유효한 APS 패치가 아님</string>
+    <string name="notify_error_not_ebp_patch">유효한 EBP 패치가 아님</string>
+    <string name="notify_error_not_dps_patch">유효한 DPS 패치가 아님</string>
+    <string name="notify_error_not_xdelta3_patch">유효한 XDelta3 패치가 아님</string>
+    <string name="notify_error_xdelta1_unsupported">XDelta1 패치로 작업할 수 없습니다.</string>
+    <string name="notify_error_unable_open_file">파일을 열 수 없음</string>
+    <string name="notify_error_unknown_patch_format">알 수 없는 패치 형식</string>
+    <string name="notify_error_unexpected_end_of_file">예기치 않은 파일의 끝</string>
+    <string name="notify_error_patch_corrupted">패치 파일 손상됨</string>
+    <string name="notify_error_rom_not_compatible_with_patch">이 롬은 패치와 호환되지 않습니다.</string>
+    <string name="notify_error_wrong_checksum_after_patching">파일이 패치된 후 체크섬이 잘못되었습니다.</string>
+    <string name="notify_error_failed_load_lib_xdelta3">libxdelta3.so 라이브러리 불러오기 실패</string>
+    <string name="notify_error_unknown">알 수 없는 오류</string>
+
+    <string name="notify_error_not_smd_rom">세가 메가 드라이브 롬이 아님</string>
+    <string name="notify_smd_fix_checksum_in_progress">체크섬 수정 중</string>
+    <string name="notify_smd_fix_checksum_complete">체크섬 수정됨</string>
+    <string name="notify_smd_fix_checksum_started_check_notify">체크섬 수정이 시작되었습니다. 알림 영역을 확인하십시오.</string>
+
+    <string name="notify_snes_add_smc_header_in_progress">SMC 헤더 추가 중</string>
+    <string name="notify_snes_add_smc_header_complete">SMC 헤더 추가됨</string>
+    <string name="notify_snes_add_smc_header_stared_check_noify">SMC 헤더 추가가 시작되었습니다. 알림 영역을 확인하십시오.</string>
+
+    <string name="notify_snes_delete_smc_header_in_progress">SMC 헤더 제거 중</string>
+    <string name="notify_snes_delete_smc_header_complete">SMC 헤더 제거됨</string>
+    <string name="notify_snes_delete_smc_header_stared_check_noify">SMC 헤더 제거가 시작되었습니다. 알림 영역을 확인하십시오.</string>
+
+    <!-- Permissions -->
+    <string name="permissions_storage_error_info">앱에 파일 읽기/쓰기 권한이 부여되지 않았습니다. 이 권한이 없으면 유니패처가 올바르게 작동하지 않습니다.</string>
+    <string name="permissions_storage_error_notify_access_denied">파일 접근 거부됨</string>
+
+    <!-- Settings -->
+    <string name="settings_activity_title">설정</string>
+    <string name="settings_interface_header">사용자 인터페이스</string>
+    <string name="settings_theme">테마</string>
+    <string name="settings_theme_description">색상표를 변경합니다. 주야 테마를 사용하면 하루 중 시간대에 따라 밝은 테마와 어두운 테마를 전환할 수 있습니다.</string>
+    <string name="settings_theme_dialog_title">테마 선택</string>
+    <string name="settings_theme_name_light">밝게</string>
+    <string name="settings_theme_name_dark">어둡게</string>
+    <string name="settings_theme_name_daynight">주야</string>
+    <string name="settings_theme_message_restart_app">애플리케이션을 다시 시작해 주십시오.</string>
+    <string name="settings_directories_header">디렉터리</string>
+    <string name="settings_remember_last_directories">마지막으로 연 디렉터리 기억</string>
+    <string name="settings_rom_directory">롬 디렉터리 지정</string>
+    <string name="settings_patch_directory">패치 디렉터리 지정</string>
+    <string name="settings_output_directory">출력 디렉터리 지정</string>
+    <string name="settings_output_directory_description">지정하지 않으면 롬은 롬 디렉터리에 저장됩니다.</string>
+    <string name="settings_patching_header">패치</string>
+    <string name="settings_ignore_checksum">체크섬 무시</string>
+    <string name="settings_ignore_checksum_description">잘못된 롬을 사용한 경우에도 패치를 중단하지 않습니다. 주의: 이 옵션은 게임을 망가뜨릴 수 있습니다.</string>
+
+    <!-- Help activity -->
+    <string name="help_activity_title">도움말</string>
+    <string name="help_activity_faq_tab_title">자주 묻는 질문</string>
+    <string name="help_activity_changelog_tab_title">변경 이력</string>
+    <string name="help_activity_about_tab_title">정보</string>
+    <string name="help_activity_about_tab_version">버전 %1$s</string>
+    <string name="help_activity_about_tab_license">라이선스: GNU GPLv3</string>
+    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2017</string>
+    <string name="help_activity_action_send_feedback">의견 보내기</string>
+    <string name="help_activity_action_visit_site">웹사이트 방문</string>
+
+    <string name="donate_activity_title">기부</string>
+
+    <string name="send_feedback_dialog_title">메일 보내기</string>
+    <string name="send_feedback_error_no_email_apps">이메일 클라이언트가 설치되어 있지 않습니다.</string>
+
+    <string name="share_dialog_title">유니패처 공유</string>
+    <string name="share_text">안드로이드를 위한 최고의 롬 패처를 다운로드하십시오. IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP 및 XDelta3 패치 유형을 지원합니다.\n\n</string>
+
+    <!-- Navigation list -->
+    <string name="nav_apply_patch">패치 적용</string>
+    <string name="nav_create_patch">패치 생성</string>
+    <string name="nav_smd_fix_checksum">체크섬 수정 (SMD)</string>
+    <string name="nav_snes_add_del_smc_header">SMC 헤더 추가/제거 (SNES)</string>
+    <string name="nav_settings">설정</string>
+    <string name="nav_rate">앱 평가하기</string>
+    <string name="nav_donate">기부</string>
+    <string name="nav_share">공유</string>
+    <string name="nav_help">도움말</string>
+    <string name="nav_drawer_open">탐색 서랍 열기</string>
+    <string name="nav_drawer_close">탐색 서랍 닫기</string>
+
+    <string name="donation">기부</string>
+    <string name="icon">아이콘</string>
+
+</resources>
+
