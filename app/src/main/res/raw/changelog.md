@@ -93,7 +93,7 @@
 
 #### 0.7 (May 7, 2014)
 
-- By popular demand UniPatcher is now free, but with advertising. It is not displayed if you purchased the program
+- By popular demand UniPatcher is now free, both of charge, and as in freedom, but with advertising. It is not displayed if you purchase the program
 - Support DPS patches
 - Added feature: Fix checksum for Sega Mega Drive ROMs
 - Added feature: Add/Delete SMC header for Super Nintendo ROMs
