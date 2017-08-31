@@ -74,4 +74,28 @@ public class Settings {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         return prefs.getBoolean("ignore_checksum", false);
     }
+
+    public static void setPatchingSuccessful(Context context, Boolean isSuccessful) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("patching_successful", isSuccessful);
+        editor.apply();
+    }
+
+    public static boolean getPatchingSuccessful(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getBoolean("patching_successful", false);
+    }
+
+    public static void setDontShowDonateSnackbarCount(Context context, int count) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("dont_show_donate_snackbar", count);
+        editor.apply();
+    }
+
+    public static int getDontShowDonateSnackbarCount(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getInt("dont_show_donate_snackbar", 0);
+    }
 }

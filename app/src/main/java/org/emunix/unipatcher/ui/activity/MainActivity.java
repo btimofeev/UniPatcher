@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -40,12 +41,15 @@ import android.view.View;
 
 import org.emunix.unipatcher.BuildConfig;
 import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.Settings;
 import org.emunix.unipatcher.UniPatcher;
 import org.emunix.unipatcher.ui.fragment.ActionFragment;
 import org.emunix.unipatcher.ui.fragment.CreatePatchFragment;
 import org.emunix.unipatcher.ui.fragment.PatchingFragment;
 import org.emunix.unipatcher.ui.fragment.SmdFixChecksumFragment;
 import org.emunix.unipatcher.ui.fragment.SnesSmcHeaderFragment;
+
+import java.util.Random;
 
 import static android.support.v7.app.AppCompatDelegate.MODE_NIGHT_AUTO;
 import static android.support.v7.app.AppCompatDelegate.MODE_NIGHT_NO;
@@ -78,8 +82,6 @@ public class MainActivity extends AppCompatActivity
                 if (fragment != null) {
                     boolean ret = fragment.runAction();
                 }
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                //        .setAction("Action", null).show();
             }
         });
 
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         parseArgument();
+        showDonateSnackbar();
     }
 
     private void setTheme() {
@@ -132,8 +135,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_rate) {
             rateApp();
         } else if (id == R.id.nav_donate) {
-            Intent donateIntent = new Intent(this, DonateActivity.class);
-            startActivity(donateIntent);
+            showDonateActivity();
         } else if (id == R.id.nav_share) {
             shareApp();
         } else if (id == R.id.nav_help) {
@@ -173,6 +175,45 @@ public class MainActivity extends AppCompatActivity
         } catch (NullPointerException e) {
             // The application is not opened from the file manager
         }
+    }
+
+    private void showDonateSnackbar() {
+        // don't show snackbar if the user did not patch the file successfully
+        if (!Settings.getPatchingSuccessful(this))
+            return;
+
+        // don't show snackbar some time if the user swiped off it before
+        int count = Settings.getDontShowDonateSnackbarCount(this);
+        if (count != 0) {
+            Settings.setDontShowDonateSnackbarCount(this, --count);
+            return;
+        }
+
+        // don't show snackbar each time you open the application
+        if (new Random().nextInt(6) != 0)
+            return;
+
+        Snackbar.make(findViewById(R.id.content_frame), R.string.main_activity_donate_snackbar_text, Snackbar.LENGTH_INDEFINITE)
+                    .setAction(R.string.main_activity_donate_snackbar_button, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            showDonateActivity();
+                        }
+                    })
+                    .addCallback(new Snackbar.Callback() {
+                        @Override
+                        public void onDismissed(Snackbar snackbar, int event) {
+                            if (event == Snackbar.Callback.DISMISS_EVENT_SWIPE) {
+                                Settings.setDontShowDonateSnackbarCount(getApplicationContext(), 30);
+                            }
+                        }
+                    }
+                    ).show();
+    }
+
+    private void showDonateActivity() {
+        Intent donateIntent = new Intent(this, DonateActivity.class);
+        startActivity(donateIntent);
     }
 
     private void shareApp() {

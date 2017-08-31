@@ -16,6 +16,8 @@
     <string name="main_activity_toast_rom_not_selected">No ROM file selected</string>
     <string name="main_activity_toast_patch_not_selected">No patch file selected</string>
     <string name="main_activity_toast_archives_not_supported">Archive should be unpacked in an external program</string>
+    <string name="main_activity_donate_snackbar_text">Support the development of UniPatcher by making a donation</string>
+    <string name="main_activity_donate_snackbar_button">Donate</string>
 
     <!-- Rename dialog -->
     <string name="dialog_rename_title">Rename</string>
