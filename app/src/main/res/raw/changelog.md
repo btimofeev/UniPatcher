@@ -1,4 +1,4 @@
-#### 0.14.2 (Jule 13, 2017)
+#### 0.14.2 (July 13, 2017)
 - Korean translation (Thanks to Minseo Lee)
 
 #### 0.14.1 (April 30, 2017)
