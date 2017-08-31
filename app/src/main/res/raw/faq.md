@@ -40,7 +40,7 @@ As a result, you get a patched ROM, which will be located in the same directory 
 
 The file you have selected is an archive. The archive contains the directories and files in a compressed format.
 
-Currently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a free program [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
+Currently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
 
 #### The app shows the error: "This ROM is not compatible with the patch".
 
@@ -81,7 +81,7 @@ Yes. UniPatcher can:
 
 #### Why do I have to fix checksum for the Sega Mega Drive games?
 
-Sega Mega Drive (Genesis) games are protected from modification. If the checksum of the game differs from the one the ROM amounts to, the game displays a red screen and stops running. What this does is calculate the correct checksum and write it to the ROM.
+Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you only change any part of the game, they will not match, failing to run as a result. What this does is calculate the correct checksum of the change and write it to the modified ROM-file."
 
 **Warning:** This function does not create a backup ROM.
 
