@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application
+        android:name=".UniPatcher"
         android:allowBackup="false"
         android:extractNativeLibs="true"
         android:fullBackupContent="false"

@@ -37,9 +37,9 @@ import android.widget.Toast;
 
 import org.apache.commons.io.FilenameUtils;
 import org.emunix.unipatcher.Action;
-import org.emunix.unipatcher.Globals;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.Settings;
+import org.emunix.unipatcher.UniPatcher;
 import org.emunix.unipatcher.Utils;
 import org.emunix.unipatcher.WorkerService;
 import org.emunix.unipatcher.ui.activity.FilePickerActivity;
@@ -96,7 +96,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
     }
 
     private void parseArgument() {
-        patchPath = Globals.getCmdArgument();
+        patchPath = UniPatcher.getAppArgument();
         if (patchPath != null) {
             patchNameTextView.setText(new File(patchPath).getName());
         }

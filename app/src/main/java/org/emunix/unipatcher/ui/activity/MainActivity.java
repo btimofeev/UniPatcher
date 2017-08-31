@@ -35,13 +35,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
 import org.emunix.unipatcher.BuildConfig;
-import org.emunix.unipatcher.Globals;
 import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.UniPatcher;
 import org.emunix.unipatcher.ui.fragment.ActionFragment;
 import org.emunix.unipatcher.ui.fragment.CreatePatchFragment;
 import org.emunix.unipatcher.ui.fragment.PatchingFragment;
@@ -54,7 +53,6 @@ import static android.support.v7.app.AppCompatDelegate.MODE_NIGHT_YES;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private static final String LOG_TAG = "org.emunix.unipatcher";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -171,10 +169,9 @@ public class MainActivity extends AppCompatActivity
     private void parseArgument() {
         try {
             String arg = getIntent().getData().getPath();
-            Globals.setCmdArgument(arg);
-            Log.d(LOG_TAG, "Cmd argument: " + arg);
+            UniPatcher.setAppArgument(arg);
         } catch (NullPointerException e) {
-            Log.e(LOG_TAG, "NullPointerException in argument fetching");
+            // The application is not opened from the file manager
         }
     }
 
