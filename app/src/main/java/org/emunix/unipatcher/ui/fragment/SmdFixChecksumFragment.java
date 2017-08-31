@@ -31,7 +31,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.emunix.unipatcher.Globals;
+import org.emunix.unipatcher.Action;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.Settings;
 import org.emunix.unipatcher.Utils;
@@ -43,7 +43,6 @@ import java.io.File;
 public class SmdFixChecksumFragment extends ActionFragment implements View.OnClickListener {
     private static final String LOG_TAG = "org.emunix.unipatcher";
 
-    private static final int SELECT_ROM_FILE = 1;
 
     private TextView romNameTextView;
     private TextView fixChecksumInfoTextview;
@@ -108,7 +107,7 @@ public class SmdFixChecksumFragment extends ActionFragment implements View.OnCli
             case R.id.romCardView:
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_rom));
                 intent.putExtra("directory", Settings.getRomDir(getActivity()));
-                startActivityForResult(intent, SELECT_ROM_FILE);
+                startActivityForResult(intent, Action.SELECT_ROM_FILE);
                 break;
         }
     }
@@ -124,7 +123,7 @@ public class SmdFixChecksumFragment extends ActionFragment implements View.OnCli
             }
 
             switch (requestCode) {
-                case SELECT_ROM_FILE:
+                case Action.SELECT_ROM_FILE:
                     romPath = path;
                     romNameTextView.setVisibility(View.VISIBLE);
                     romNameTextView.setText(new File(path).getName());
@@ -142,8 +141,8 @@ public class SmdFixChecksumFragment extends ActionFragment implements View.OnCli
         }
 
         Intent intent = new Intent(getActivity(), WorkerService.class);
-        intent.putExtra("action", Globals.ACTION_SMD_FIX_CHECKSUM);
         intent.putExtra("romPath", romPath);
+        intent.putExtra("action", Action.SMD_FIX_CHECKSUM);
         getActivity().startService(intent);
 
         Toast.makeText(getActivity(), R.string.notify_smd_fix_checksum_started_check_notify, Toast.LENGTH_SHORT).show();

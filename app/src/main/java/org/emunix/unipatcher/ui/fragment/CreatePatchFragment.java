@@ -37,7 +37,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.commons.io.FilenameUtils;
-import org.emunix.unipatcher.Globals;
+import org.emunix.unipatcher.Action;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.Settings;
 import org.emunix.unipatcher.Utils;
@@ -50,8 +50,6 @@ public class CreatePatchFragment extends ActionFragment implements View.OnClickL
 
     private static final String LOG_TAG = "org.emunix.unipatcher";
 
-    private static final int SELECT_SOURCE_FILE = 1;
-    private static final int SELECT_MODIFIED_FILE = 2;
     private TextView sourceNameTextView;
     private TextView modifiedNameTextView;
     private TextView patchNameTextView;
@@ -136,12 +134,12 @@ public class CreatePatchFragment extends ActionFragment implements View.OnClickL
             case R.id.sourceFileCardView:
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_source_file));
                 intent.putExtra("directory", Settings.getRomDir(getActivity()));
-                startActivityForResult(intent, SELECT_SOURCE_FILE);
+                startActivityForResult(intent, Action.SELECT_SOURCE_FILE);
                 break;
             case R.id.modifiedFileCardView:
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_modified_file));
                 intent.putExtra("directory", Settings.getRomDir(getActivity()));
-                startActivityForResult(intent, SELECT_MODIFIED_FILE);
+                startActivityForResult(intent, Action.SELECT_MODIFIED_FILE);
                 break;
             case R.id.patchFileCardView:
                 renamePatchFile();
@@ -157,13 +155,13 @@ public class CreatePatchFragment extends ActionFragment implements View.OnClickL
             File fpath = new File(path);
 
             switch (requestCode) {
-                case SELECT_SOURCE_FILE:
+                case Action.SELECT_SOURCE_FILE:
                     sourcePath = path;
                     sourceNameTextView.setVisibility(View.VISIBLE);
                     sourceNameTextView.setText(fpath.getName());
                     Settings.setLastRomDir(getActivity(), fpath.getParent());
                     break;
-                case SELECT_MODIFIED_FILE:
+                case Action.SELECT_MODIFIED_FILE:
                     modifiedPath = path;
                     modifiedNameTextView.setVisibility(View.VISIBLE);
                     modifiedNameTextView.setText(fpath.getName());
@@ -198,7 +196,7 @@ public class CreatePatchFragment extends ActionFragment implements View.OnClickL
         }
 
         Intent intent = new Intent(getActivity(), WorkerService.class);
-        intent.putExtra("action", Globals.ACTION_CREATE_PATCH);
+        intent.putExtra("action", Action.CREATE_PATCH);
         intent.putExtra("sourcePath", sourcePath);
         intent.putExtra("modifiedPath", modifiedPath);
         intent.putExtra("patchPath", patchPath);

@@ -36,6 +36,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.commons.io.FilenameUtils;
+import org.emunix.unipatcher.Action;
 import org.emunix.unipatcher.Globals;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.Settings;
@@ -49,8 +50,6 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
 
     private static final String LOG_TAG = "org.emunix.unipatcher";
 
-    private static final int SELECT_ROM_FILE = 1;
-    private static final int SELECT_PATCH_FILE = 2;
     private TextView romNameTextView;
     private TextView patchNameTextView;
     private TextView outputNameTextView;
@@ -147,12 +146,12 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
             case R.id.patchCardView:
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_patch));
                 intent.putExtra("directory", Settings.getPatchDir(getActivity()));
-                startActivityForResult(intent, SELECT_PATCH_FILE);
+                startActivityForResult(intent, Action.SELECT_PATCH_FILE);
                 break;
             case R.id.romCardView:
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_rom));
                 intent.putExtra("directory", Settings.getRomDir(getActivity()));
-                startActivityForResult(intent, SELECT_ROM_FILE);
+                startActivityForResult(intent, Action.SELECT_ROM_FILE);
                 break;
             case R.id.outputCardView:
                 renameOutputRom();
@@ -172,7 +171,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
             }
 
             switch (requestCode) {
-                case SELECT_ROM_FILE:
+                case Action.SELECT_ROM_FILE:
                     romPath = path;
                     romNameTextView.setVisibility(View.VISIBLE);
                     romNameTextView.setText(fpath.getName());
@@ -180,7 +179,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
                     outputPath = makeOutputPath(path);
                     outputNameTextView.setText(new File(outputPath).getName());
                     break;
-                case SELECT_PATCH_FILE:
+                case Action.SELECT_PATCH_FILE:
                     patchPath = path;
                     patchNameTextView.setVisibility(View.VISIBLE);
                     patchNameTextView.setText(fpath.getName());
@@ -214,7 +213,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
         }
 
         Intent intent = new Intent(getActivity(), WorkerService.class);
-        intent.putExtra("action", Globals.ACTION_PATCHING);
+        intent.putExtra("action", Action.APPLY_PATCH);
         intent.putExtra("romPath", romPath);
         intent.putExtra("patchPath", patchPath);
         intent.putExtra("outputPath", outputPath);

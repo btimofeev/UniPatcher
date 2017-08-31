@@ -75,19 +75,19 @@ public class WorkerService extends IntentService {
         try {
             int action = intent.getIntExtra("action", 0);
             switch (action) {
-                case Globals.ACTION_PATCHING:
+                case Action.APPLY_PATCH:
                     actionPatching(intent);
                     break;
-                case Globals.ACTION_CREATE_PATCH:
+                case Action.CREATE_PATCH:
                     actionCreatePatch(intent);
                     break;
-                case Globals.ACTION_SMD_FIX_CHECKSUM:
+                case Action.SMD_FIX_CHECKSUM:
                     actionSmdFixChecksum(intent);
                     break;
-                case Globals.ACTION_SNES_ADD_SMC_HEADER:
+                case Action.SNES_ADD_SMC_HEADER:
                     actionSnesAddSmcHeader(intent);
                     break;
-                case Globals.ACTION_SNES_DELETE_SMC_HEADER:
+                case Action.SNES_DELETE_SMC_HEADER:
                     actionSnesDeleteSmcHeader(intent);
                     break;
             }

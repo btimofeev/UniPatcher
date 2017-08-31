@@ -31,7 +31,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.emunix.unipatcher.Globals;
+import org.emunix.unipatcher.Action;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.Settings;
 import org.emunix.unipatcher.Utils;
@@ -43,8 +43,6 @@ import java.io.File;
 
 public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClickListener {
     private static final String LOG_TAG = "org.emunix.unipatcher";
-    private static final int SELECT_ROM_FILE = 1;
-    private static final int SELECT_HEADER_FILE = 2;
 
     private TextView romNameTextView;
     private TextView headerNameTextView;
@@ -104,10 +102,10 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
             romPath = savedInstanceState.getString("romPath");
             headerPath = savedInstanceState.getString("headerPath");
             action = savedInstanceState.getInt("action");
-            if (action == Globals.ACTION_SNES_ADD_SMC_HEADER) {
+            if (action == Action.SNES_ADD_SMC_HEADER) {
                 headerInfoTextView.setText(R.string.snes_smc_header_will_be_added);
                 headerCardView.setVisibility(View.VISIBLE);
-            } else if (action == Globals.ACTION_SNES_DELETE_SMC_HEADER) {
+            } else if (action == Action.SNES_DELETE_SMC_HEADER) {
                 headerInfoTextView.setText(R.string.snes_smc_header_will_be_removed);
                 headerCardView.setVisibility(View.GONE);
             }
@@ -133,11 +131,11 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
             case R.id.romCardView:
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_rom));
                 intent.putExtra("directory", Settings.getRomDir(getActivity()));
-                startActivityForResult(intent, SELECT_ROM_FILE);
+                startActivityForResult(intent, Action.SELECT_ROM_FILE);
                 break;
             case R.id.headerCardView:
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_header));
-                startActivityForResult(intent, SELECT_HEADER_FILE);
+                startActivityForResult(intent, Action.SELECT_HEADER_FILE);
                 break;
         }
     }
@@ -153,25 +151,25 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
             }
 
             switch (requestCode) {
-                case SELECT_ROM_FILE:
+                case Action.SELECT_ROM_FILE:
                     romPath = path;
                     romNameTextView.setVisibility(View.VISIBLE);
                     romNameTextView.setText(new File(path).getName());
                     Settings.setLastRomDir(getActivity(), new File(path).getParent());
                     SnesSmcHeader checker = new SnesSmcHeader();
                     if (checker.isHasSmcHeader(new File(path))) {
-                        action = Globals.ACTION_SNES_DELETE_SMC_HEADER;
+                        action = Action.SNES_DELETE_SMC_HEADER;
                         headerCardView.setVisibility(View.GONE);
                         headerInfoTextView.setText(R.string.snes_smc_header_will_be_removed);
                     } else {
-                        action = Globals.ACTION_SNES_ADD_SMC_HEADER;
+                        action = Action.SNES_ADD_SMC_HEADER;
                         headerCardView.setVisibility(View.VISIBLE);
                         headerInfoTextView.setText(R.string.snes_smc_header_will_be_added);
                     }
                     headerPath = null;
                     headerNameTextView.setText(R.string.main_activity_tap_to_select);
                     break;
-                case SELECT_HEADER_FILE:
+                case Action.SELECT_HEADER_FILE:
                     headerPath = path;
                     headerNameTextView.setText(new File(path).getName());
                     break;
@@ -192,7 +190,7 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
         intent.putExtra("headerPath", headerPath);
         getActivity().startService(intent);
 
-        if (action == Globals.ACTION_SNES_ADD_SMC_HEADER) {
+        if (action == Action.SNES_ADD_SMC_HEADER) {
             Toast.makeText(getActivity(), R.string.notify_snes_add_smc_header_stared_check_noify, Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getActivity(), R.string.notify_snes_delete_smc_header_stared_check_noify, Toast.LENGTH_SHORT).show();
