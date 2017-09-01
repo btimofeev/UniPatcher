@@ -7,7 +7,6 @@
     <color name="colorCardHeaderText">#cccccc</color>
     <color name="colorCardLine">#4b4b4b</color>
     <color name="colorCardBackground">#393939</color>
-    <color name="colorAdBackground">#393939</color>
 
     <color name="colorDrawerText">@color/colorCardHeaderText</color>
 </resources>

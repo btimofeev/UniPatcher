@@ -29,6 +29,7 @@ import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -63,6 +64,7 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
     private RecyclerView list;
     private FilePickerAdapter listAdapter;
     private TextView permissionErrorText;
+    private CardView card;
 
     private TextView crc32;
     private TextView md5;
@@ -104,6 +106,7 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
         permissionErrorText = (TextView) findViewById(R.id.empty_view);
 
         list = (RecyclerView) findViewById(R.id.list);
+        card = (CardView) findViewById(R.id.card);
         try {
             list.setHasFixedSize(true);
         } catch (NullPointerException e) {/* TODO log */}
@@ -274,11 +277,11 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
 
     private void showPermissionError(boolean on) {
         if (on) {
-            list.setVisibility(View.GONE);
+            card.setVisibility(View.GONE);
             permissionErrorText.setVisibility(View.VISIBLE);
         } else {
             permissionErrorText.setVisibility(View.GONE);
-            list.setVisibility(View.VISIBLE);
+            card.setVisibility(View.VISIBLE);
         }
     }
 

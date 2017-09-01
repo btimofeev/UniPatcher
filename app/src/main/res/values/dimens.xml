@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
@@ -12,9 +11,11 @@
     <dimen name="drawer_padding_left">16dp</dimen>
     <dimen name="drawer_padding_right">16dp</dimen>
 
-    <dimen name="screen_top_padding">8dp</dimen>
-    <dimen name="screen_left_padding">16dp</dimen>
-    <dimen name="screen_right_padding">16dp</dimen>
+    <dimen name="content_top_margin">8dp</dimen>
+    <dimen name="content_left_margin">16dp</dimen>
+    <dimen name="content_right_margin">16dp</dimen>
+    <dimen name="file_browser_content_left_margin">0dp</dimen>
+    <dimen name="file_browser_content_right_margin">0dp</dimen>
 
     <dimen name="card_elevation">2dp</dimen>
     <dimen name="card_corner_radius">2dp</dimen>

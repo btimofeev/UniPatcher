@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="activity_horizontal_margin">64dp</dimen>
-    <dimen name="fab_margin">32dp</dimen>
+    <dimen name="fab_margin">24dp</dimen>
 
     <dimen name="content_top_margin">16dp</dimen>
-    <dimen name="content_left_margin">192dp</dimen>
-    <dimen name="content_right_margin">192dp</dimen>
-    <dimen name="file_browser_content_left_margin">192dp</dimen>
-    <dimen name="file_browser_content_right_margin">192dp</dimen>
+    <dimen name="content_left_margin">64dp</dimen>
+    <dimen name="content_right_margin">64dp</dimen>
+    <dimen name="file_browser_content_left_margin">64dp</dimen>
+    <dimen name="file_browser_content_right_margin">64dp</dimen>
 
     <dimen name="card_elevation">2dp</dimen>
     <dimen name="card_corner_radius">2dp</dimen>
