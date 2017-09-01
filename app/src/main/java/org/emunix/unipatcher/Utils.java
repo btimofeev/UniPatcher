@@ -22,6 +22,7 @@ package org.emunix.unipatcher;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -47,6 +48,14 @@ public class Utils {
     private static final String LOG_TAG = "Utils";
 
     private static final int BUFFER_SIZE = 10240; // 10 Kb
+
+    public static void startForegroundService(Context context, Intent intent) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            context.startService(intent);
+        } else {
+            context.startForegroundService(intent);
+        }
+    }
 
     public static String getAppVersion(Context context) {
         String versionName = "N/A";

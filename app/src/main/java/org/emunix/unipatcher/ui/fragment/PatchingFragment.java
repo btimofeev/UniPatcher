@@ -217,7 +217,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
         intent.putExtra("romPath", romPath);
         intent.putExtra("patchPath", patchPath);
         intent.putExtra("outputPath", outputPath);
-        getActivity().startService(intent);
+        Utils.startForegroundService(getActivity(), intent);
 
         Toast.makeText(getActivity(), R.string.toast_patching_started_check_notify, Toast.LENGTH_SHORT).show();
         return true;

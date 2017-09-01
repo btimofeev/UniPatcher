@@ -188,7 +188,7 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
         intent.putExtra("action", action);
         intent.putExtra("romPath", romPath);
         intent.putExtra("headerPath", headerPath);
-        getActivity().startService(intent);
+        Utils.startForegroundService(getActivity(), intent);
 
         if (action == Action.SNES_ADD_SMC_HEADER) {
             Toast.makeText(getActivity(), R.string.notify_snes_add_smc_header_stared_check_noify, Toast.LENGTH_SHORT).show();

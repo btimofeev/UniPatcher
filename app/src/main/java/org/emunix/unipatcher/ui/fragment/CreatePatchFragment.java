@@ -200,7 +200,7 @@ public class CreatePatchFragment extends ActionFragment implements View.OnClickL
         intent.putExtra("sourcePath", sourcePath);
         intent.putExtra("modifiedPath", modifiedPath);
         intent.putExtra("patchPath", patchPath);
-        getActivity().startService(intent);
+        Utils.startForegroundService(getActivity(), intent);
 
         Toast.makeText(getActivity(), R.string.toast_create_patch_started_check_notify, Toast.LENGTH_SHORT).show();
         return true;

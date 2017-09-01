@@ -143,7 +143,7 @@ public class SmdFixChecksumFragment extends ActionFragment implements View.OnCli
         Intent intent = new Intent(getActivity(), WorkerService.class);
         intent.putExtra("romPath", romPath);
         intent.putExtra("action", Action.SMD_FIX_CHECKSUM);
-        getActivity().startService(intent);
+        Utils.startForegroundService(getActivity(), intent);
 
         Toast.makeText(getActivity(), R.string.notify_smd_fix_checksum_started_check_notify, Toast.LENGTH_SHORT).show();
         return true;
