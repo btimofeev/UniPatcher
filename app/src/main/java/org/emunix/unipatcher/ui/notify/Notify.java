@@ -24,6 +24,7 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 
+import org.emunix.unipatcher.UniPatcher;
 import org.emunix.unipatcher.ui.activity.MainActivity;
 
 public abstract class Notify {
@@ -40,9 +41,8 @@ public abstract class Notify {
 
         Intent notificationIntent = new Intent(context, MainActivity.class);
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        notifyBuilder = new NotificationCompat.Builder(context);
+        notifyBuilder = new NotificationCompat.Builder(context, UniPatcher.NOTIFICATION_CHANNEL_ID);
         notifyBuilder.setContentIntent(PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT));
-        //notifyMng = (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
         notifyMng = NotificationManagerCompat.from(context);
     }
 

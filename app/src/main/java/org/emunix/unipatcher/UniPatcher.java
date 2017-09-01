@@ -21,9 +21,20 @@
 package org.emunix.unipatcher;
 
 import android.app.Application;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.os.Build;
 
 public class UniPatcher extends Application {
     private static String appArgument = null;
+    public static final String NOTIFICATION_CHANNEL_ID = "notifications";
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        initNotificationChannel();
+    }
 
     public static String getAppArgument() {
         return appArgument;
@@ -31,5 +42,16 @@ public class UniPatcher extends Application {
 
     public static void setAppArgument(String appArgument) {
         UniPatcher.appArgument = appArgument;
+    }
+
+    public void initNotificationChannel() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            return;
+        }
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID,
+                getString(R.string.notification_channel_name),
+                NotificationManager.IMPORTANCE_DEFAULT);
+        manager.createNotificationChannel(channel);
     }
 }

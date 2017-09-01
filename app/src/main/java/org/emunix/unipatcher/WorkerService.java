@@ -326,7 +326,7 @@ public class WorkerService extends IntentService {
     private void showErrorNotification(String text) {
         Intent notificationIntent = new Intent(this, MainActivity.class);
         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        Notification notify = new NotificationCompat.Builder(this)
+        Notification notify = new NotificationCompat.Builder(this, UniPatcher.NOTIFICATION_CHANNEL_ID)
                 .setContentTitle(getString(R.string.notify_error))
                 .setContentText(text)
                 .setSmallIcon(R.drawable.ic_stat_patching)

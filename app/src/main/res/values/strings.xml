@@ -167,6 +167,7 @@
 
     <string name="donation">Donation</string>
     <string name="icon">icon</string>
+    <string name="notification_channel_name">Notifications</string>
 
 </resources>
 
