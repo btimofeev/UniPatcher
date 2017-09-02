@@ -10,4 +10,6 @@
     <color name="colorAdBackground">#b6b6b6</color>
 
     <color name="colorDrawerText">#8a000000</color>
+
+    <color name="colorIcon">#757575</color>
 </resources>

@@ -29,7 +29,7 @@ public class CreatePatchNotify extends Notify {
 
     public CreatePatchNotify(Context c, String text) {
         super(c);
-        notifyBuilder.setSmallIcon(R.drawable.ic_stat_patching);
+        notifyBuilder.setSmallIcon(R.drawable.ic_gamepad_variant_white_24dp);
         notifyBuilder.setContentTitle(context.getString(R.string.notify_creating_patch));
         notifyBuilder.setContentText(text);
         notifyBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(text));

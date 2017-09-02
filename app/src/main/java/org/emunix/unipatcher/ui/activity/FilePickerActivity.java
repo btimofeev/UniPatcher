@@ -204,7 +204,7 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
 
         if (currentDir.getParent() != null && currentDir.getParentFile().canRead()) {
             entry = new FileEntry();
-            entry.setIcon(R.drawable.ic_folder_upload_grey600_24dp);
+            entry.setIcon(R.drawable.folder_upload);
             entry.setName("..");
             fileList.add(entry);
         }
@@ -214,15 +214,15 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
                 continue;
             if (file.isDirectory()) {
                 entry = new FileEntry();
-                entry.setIcon(R.drawable.ic_folder_grey600_24dp);
+                entry.setIcon(R.drawable.folder);
                 entry.setName(file.getName());
                 fileList.add(entry);
             } else {
                 entry = new FileEntry();
                 if (Utils.isPatch(file)) {
-                    entry.setIcon(R.drawable.ic_healing_grey600_24dp);
+                    entry.setIcon(R.drawable.healing);
                 } else {
-                    entry.setIcon(R.drawable.ic_insert_drive_file_grey600_24dp);
+                    entry.setIcon(R.drawable.file);
                 }
                 entry.setName(file.getName());
                 fileList.add(entry);

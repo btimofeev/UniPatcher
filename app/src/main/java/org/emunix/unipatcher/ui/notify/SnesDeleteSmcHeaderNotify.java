@@ -27,7 +27,7 @@ import org.emunix.unipatcher.R;
 public class SnesDeleteSmcHeaderNotify extends Notify {
     public SnesDeleteSmcHeaderNotify(Context c, String text) {
         super(c);
-        notifyBuilder.setSmallIcon(R.drawable.ic_stat_patching);
+        notifyBuilder.setSmallIcon(R.drawable.ic_gamepad_variant_white_24dp);
         notifyBuilder.setContentTitle(context.getString(R.string.notify_snes_delete_smc_header_in_progress));
         notifyBuilder.setContentText(text);
         notifyBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(text));

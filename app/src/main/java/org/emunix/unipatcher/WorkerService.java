@@ -329,7 +329,7 @@ public class WorkerService extends IntentService {
         Notification notify = new NotificationCompat.Builder(this, UniPatcher.NOTIFICATION_CHANNEL_ID)
                 .setContentTitle(getString(R.string.notify_error))
                 .setContentText(text)
-                .setSmallIcon(R.drawable.ic_stat_patching)
+                .setSmallIcon(R.drawable.ic_gamepad_variant_white_24dp)
                 .setContentIntent(PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT))
                 .setAutoCancel(true)
                 .setStyle(new NotificationCompat.BigTextStyle()

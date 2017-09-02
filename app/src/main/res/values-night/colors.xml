@@ -9,4 +9,6 @@
     <color name="colorCardBackground">#393939</color>
 
     <color name="colorDrawerText">@color/colorCardHeaderText</color>
+
+    <color name="colorIcon">#757575</color>
 </resources>

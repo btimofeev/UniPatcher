@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentTop="true">
@@ -35,16 +36,26 @@
                     android:layout_marginTop="@dimen/card_line_margin"
                     android:background="@color/colorCardLine"/>
 
-                <TextView
-                    android:id="@+id/romNameTextView"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_folder_grey600_24dp"
-                    android:drawablePadding="8dp"
-                    android:padding="8dp"
-                    android:text="@string/main_activity_tap_to_select"
-                    android:textSize="20sp"/>
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:tint="@color/colorIcon"
+                        app:srcCompat="@drawable/folder"/>
+
+                    <TextView
+                        android:id="@+id/romNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="@string/main_activity_tap_to_select"
+                        android:textSize="20sp"/>
+                </LinearLayout>
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
@@ -91,16 +102,26 @@
                     android:layout_marginTop="@dimen/card_line_margin"
                     android:background="@color/colorCardLine"/>
 
-                <TextView
-                    android:id="@+id/headerNameTextView"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_folder_grey600_24dp"
-                    android:drawablePadding="8dp"
-                    android:padding="8dp"
-                    android:text="@string/main_activity_tap_to_select"
-                    android:textSize="20sp"/>
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:tint="@color/colorIcon"
+                        app:srcCompat="@drawable/folder"/>
+
+                    <TextView
+                        android:id="@+id/headerNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="@string/main_activity_tap_to_select"
+                        android:textSize="20sp"/>
+                </LinearLayout>
             </LinearLayout>
 
         </android.support.v7.widget.CardView>

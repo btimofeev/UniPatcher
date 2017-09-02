@@ -28,7 +28,7 @@ public class SmdFixChecksumNotify extends Notify {
 
     public SmdFixChecksumNotify(Context c, String text) {
         super(c);
-        notifyBuilder.setSmallIcon(R.drawable.ic_stat_patching);
+        notifyBuilder.setSmallIcon(R.drawable.ic_gamepad_variant_white_24dp);
         notifyBuilder.setContentTitle(context.getString(R.string.notify_smd_fix_checksum_in_progress));
         notifyBuilder.setContentText(text);
         notifyBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(text));

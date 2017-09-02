@@ -6,19 +6,19 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_apply_patch"
-            android:icon="@drawable/ic_healing_grey600_24dp"
+            android:icon="@drawable/healing"
             android:title="@string/nav_apply_patch"/>
         <item
             android:id="@+id/nav_create_patch"
-            android:icon="@drawable/ic_plus_box_grey600_24dp"
+            android:icon="@drawable/plus_box"
             android:title="@string/nav_create_patch"/>
         <item
             android:id="@+id/nav_smd_fix_checksum"
-            android:icon="@drawable/ic_fingerprint_grey600_24dp"
+            android:icon="@drawable/fingerprint"
             android:title="@string/nav_smd_fix_checksum"/>
         <item
             android:id="@+id/nav_snes_add_del_smc_header"
-            android:icon="@drawable/ic_content_cut_grey600_24dp"
+            android:icon="@drawable/content_cut"
             android:title="@string/nav_snes_add_del_smc_header"/>
     </group>
 
@@ -27,23 +27,23 @@
         android:checkableBehavior="none">
         <item
             android:id="@+id/nav_settings"
-            android:icon="@drawable/ic_settings_grey600_24dp"
+            android:icon="@drawable/settings"
             android:title="@string/nav_settings"/>
         <item
             android:id="@+id/nav_rate"
-            android:icon="@drawable/ic_thumb_up_grey600_24dp"
+            android:icon="@drawable/thumb_up"
             android:title="@string/nav_rate"/>
         <item
             android:id="@+id/nav_donate"
-            android:icon="@drawable/ic_gift_grey600_24dp"
+            android:icon="@drawable/gift"
             android:title="@string/nav_donate"/>
         <item
             android:id="@+id/nav_share"
-            android:icon="@drawable/ic_share_grey600_24dp"
+            android:icon="@drawable/share_variant"
             android:title="@string/nav_share"/>
         <item
             android:id="@+id/nav_help"
-            android:icon="@drawable/ic_help_grey600_24dp"
+            android:icon="@drawable/help_circle"
             android:title="@string/nav_help"/>
     </group>
 
