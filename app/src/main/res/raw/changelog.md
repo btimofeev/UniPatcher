@@ -1,3 +1,8 @@
+#### 0.15 (September ??, 2017)
+- Support Android 8 (Oreo)
+- Improved UI on tablets
+- Only ARMv7 and x86 are supported (write to me if you need other architectures)
+
 #### 0.14.2 (July 13, 2017)
 - Korean translation (Thanks to Minseo Lee)
 
