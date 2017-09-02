@@ -24,6 +24,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.PowerManager;
 import android.support.v4.app.NotificationCompat;
 
@@ -150,13 +151,12 @@ public class WorkerService extends IntentService {
         else
             errorMsg = getString(R.string.notify_error_unknown_patch_format);
 
-        Notify notify = new PatchingNotify(this, outputFile.getName());
-
         if (errorMsg != null) {
-            notify.showResult(errorMsg);
+            showErrorNotification(errorMsg);
             return;
         }
 
+        Notify notify = new PatchingNotify(this, outputFile.getName());
         startForeground(notify.getID(), notify.getNotifyBuilder().build());
 
         try {
@@ -335,6 +335,12 @@ public class WorkerService extends IntentService {
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText(text))
                 .build();
-        nm.notify(0, notify);
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            nm.notify(32768, notify);
+        } else {
+            startForeground(32768, notify);
+            stopForeground(STOP_FOREGROUND_DETACH);
+        }
     }
 }
