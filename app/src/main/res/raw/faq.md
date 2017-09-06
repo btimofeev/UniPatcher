@@ -48,6 +48,8 @@ The app will show this error if the checksum stored in the patch does not match 
 
 ROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. Long tap the file in the file manager and you will see these 3 lines: CRC32, SHA1 and MD5. If one of those numbers are the same, you have the ROM the patch was written for. If not, you need a different ROM.
 
+In the worst case, if you can not find the correct ROM, you can set the option "ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
+
 #### I can not find the correct ROM for the game "Pokémon Emerald".
 
 Most of the patches of the game work with ROM "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
@@ -62,9 +64,13 @@ ECM is a data compression format designed specifically for disc images. You can 
 
 #### The app shows the error: "Could not copy file".
 
-The error occurs on some devices with Android 4.4. Possible solutions:
+The error occurs on some devices with Android 4.4+ having an external SD card. Android does not allow applications to write data to a SD card on these devices (a detailed description of the problem [here](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
 
-- Copy the ROM file on the memory card in the folder **Android/data/org.emunix.unipatcher/**. Then you need to select the ROM from this directory.
+There are several ways to solve this problem:
+
+- Copy the ROM to internal memory.
+- Set the "Output directory" setting to the internal memory (ROM can be left on the external SD card in this case)
+- Set the "Output directory" setting to **Android/data/org.emunix.unipatcher/** directory on the external SD card
 - Install [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) application (requires ROOT access).
 
 #### The app shows the error: "File have the wrong checksum after it was patched".
