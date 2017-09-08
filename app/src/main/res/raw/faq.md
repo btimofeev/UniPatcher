@@ -48,7 +48,7 @@ The app will show this error if the checksum stored in the patch does not match 
 
 ROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. Long tap the file in the file manager and you will see these 3 lines: CRC32, SHA1 and MD5. If one of those numbers are the same, you have the ROM the patch was written for. If not, you need a different ROM.
 
-In the worst case, if you can not find the correct ROM, you can set the option "ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
+In the worst case, if you can not find the correct ROM, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
 
 #### I can not find the correct ROM for the game "Pokémon Emerald".
 
@@ -68,9 +68,9 @@ The error occurs on some devices with Android 4.4+ having an external SD card. A
 
 There are several ways to solve this problem:
 
-- Copy the ROM to internal memory.
-- Set the "Output directory" setting to the internal memory (ROM can be left on the external SD card in this case)
-- Set the "Output directory" setting to **Android/data/org.emunix.unipatcher/** directory on the external SD card
+- Do not apply patches to the ROM located on the external SD card. Just move the ROM into the internal memory of the device.
+- Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
+- Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
 - Install [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) application (requires ROOT access).
 
 #### The app shows the error: "File have the wrong checksum after it was patched".
