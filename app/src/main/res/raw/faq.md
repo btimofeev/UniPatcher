@@ -44,11 +44,11 @@ Currently UniPatcher can not extract archives, so you need to unpack your archiv
 
 #### The app shows the error: "This ROM is not compatible with the patch".
 
-The app will show this error if the checksum stored in the patch does not match the checksum of the ROM. This means that the ROM is not compatible with the patch. You need to choose a different ROM. Usually there are several ROMs for each game (such as the version for Europe, USA, Japan, good or bad dumps, etc.).
+The app will show this error if the checksum stored in the patch does not match the checksum of the ROM. This means that the ROM file is not compatible with the patch. You need to choose a different ROM file. Usually there are several ROMs for each game (such as the version for Europe, USA, Japan, good or bad dumps, etc.).
 
 ROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. Long tap the file in the file manager and you will see these 3 lines: CRC32, SHA1 and MD5. If one of those numbers are the same, you have the ROM the patch was written for. If not, you need a different ROM.
 
-In the worst case, if you can not find the correct ROM, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
+In the worst case, if you can not find the correct ROM file, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
 
 #### I can not find the correct ROM for the game "Pokémon Emerald".
 
@@ -56,7 +56,7 @@ Most of the patches of the game work with ROM "Pokemon - Emerald Version (U) \[f
 
 #### I apply the IPS patch and then the game is not working / contains graphic glitches. What am I doing wrong?
 
-IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM. In this case, you need to look for another ROM.
+IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM file. In this case, you need to look for another ROM file.
 
 #### What can I do with .ECM file type?
 
@@ -68,7 +68,7 @@ The error occurs on some devices with Android 4.4+ having an external SD card. A
 
 There are several ways to solve this problem:
 
-- Do not apply patches to the ROM located on the external SD card. Just move the ROM into the internal memory of the device.
+- Do not apply patches to the ROM file located on the external SD card. Just move the ROM file into the internal memory of the device.
 - Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
 - Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
 - Install [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) application (requires ROOT access).
