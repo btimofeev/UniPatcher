@@ -16,7 +16,6 @@
     <string name="main_activity_toast_rom_not_selected">La ROM non è selezionata</string>
     <string name="main_activity_toast_patch_not_selected">La patch non è selezionata</string>
     <string name="main_activity_toast_archives_not_supported">L\'archivio dovrebbe essere decompresso in un programma esterno</string>
-
     <!-- Rename dialog -->
     <string name="dialog_rename_title">Rinomina</string>
     <string name="dialog_rename_ok">OK</string>
@@ -133,6 +132,5 @@
     <string name="nav_drawer_close">Chiudi cassetto di navigazione</string>
 
     <string name="icon">icona</string>
-
-</resources>
+    </resources>
 

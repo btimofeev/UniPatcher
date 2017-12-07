@@ -16,6 +16,8 @@
     <string name="main_activity_toast_rom_not_selected">Aucune ROM n\'est sélectionnée.</string>
     <string name="main_activity_toast_patch_not_selected">Aucun patch n\'est sélectionné.</string>
     <string name="main_activity_toast_archives_not_supported">L\'archive devrait d\'abord être extraite à l\'aide d\'une autre appli.</string>
+    <string name="main_activity_donate_snackbar_text">Soutenez le développement d\'UniPatcher en faisant un don</string>
+    <string name="main_activity_donate_snackbar_button">Faire un don</string>
 
     <!-- Rename dialog -->
     <string name="dialog_rename_title">Renommer</string>
@@ -165,6 +167,7 @@
 
     <string name="donation">Don</string>
     <string name="icon">icône</string>
+    <string name="notification_channel_name">Notifications</string>
 
 </resources>
 

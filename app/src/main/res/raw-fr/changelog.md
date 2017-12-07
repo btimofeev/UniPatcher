@@ -1,5 +1,12 @@
-#### 0.14.2 (Jule 13, 2017)
-- Korean translation (Thanks to Minseo Lee)
+#### 0.15 (7 Décembre 2017)
+- Prise en charge d'Android 8 (Oreo)
+- Interface améliorée sur les tablettes
+- Traduction en Chinois (merci à Nabarl Wang)
+- Portuguese translation (Thanks to Davi Lopes, Matheus Silva Sales and Jhonatan Cardoso)
+- Seules les architectures ARMv7 et x86 sont prises en charge (contactez-moi si vous avez besoin d'autres architectures)
+
+#### 0.14.2 (13 Juillet 2017)
+- Traduction en Coréen (merci à Minseo Lee)
 
 #### 0.14.1 (30 Avril 2017)
 - Traduction en Norvégien Bokmål (merci à Allan Nordhøy)
@@ -93,7 +100,7 @@
 
 #### 0.7 (7 Mai 2014)
 
-- Suite à de très nombreuses demandes, UniPatcher est maintenant gratuit, mais avec des pubs. Elles ne seront pas affichées si vous avez acheté l'appli.
+- À la demande générale, UniPatcher est maintenant gratuit, mais avec de la publicité. Cette dernière n'est pas affichée si vous achetez l'application.
 - Prise en charge des patchs DPS
 - Nouvelle fonctionnalité : réparation du checksum pour les ROMs Sega Mega Drive
 - Nouvelle fonctionnalité : Ajout/Suppression des en-têtes SMC pour les ROMs Super Nintendo

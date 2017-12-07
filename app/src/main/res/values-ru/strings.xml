@@ -6,7 +6,7 @@
     <string name="app_email">unipatcher@gmail.com</string>
 
     <!-- Main activity -->
-    <string name="main_activity_rom_file">Оригинальный ROM</string>
+    <string name="main_activity_rom_file">ROM-файл</string>
     <string name="main_activity_patch_file">Патч</string>
     <string name="main_activity_output_file">Пропатченный ROM</string>
     <string name="main_activity_header_file">Файл заголовка</string>
@@ -16,6 +16,8 @@
     <string name="main_activity_toast_rom_not_selected">Сначала выберите ROM файл</string>
     <string name="main_activity_toast_patch_not_selected">Сначала выберите патч</string>
     <string name="main_activity_toast_archives_not_supported">Архив необходимо распаковать во внешней программе</string>
+    <string name="main_activity_donate_snackbar_text">Поддержите разработку этого приложения</string>
+    <string name="main_activity_donate_snackbar_button">Пожертвовать</string>
 
     <!-- Rename dialog -->
     <string name="dialog_rename_title">Переименовать</string>
@@ -165,6 +167,7 @@
 
     <string name="donation">Пожертвование</string>
     <string name="icon">иконка</string>
+    <string name="notification_channel_name">Уведомления</string>
 
 </resources>
 

@@ -16,7 +16,6 @@
     <string name="main_activity_toast_rom_not_selected">롬 파일이 선택되지 않음</string>
     <string name="main_activity_toast_patch_not_selected">패치 파일이 선택되지 않음</string>
     <string name="main_activity_toast_archives_not_supported">압축 파일은 외부 프로그램에서 압축을 풀어야 합니다.</string>
-
     <!-- Rename dialog -->
     <string name="dialog_rename_title">이름 바꾸기</string>
     <string name="dialog_rename_ok">확인</string>
@@ -165,6 +164,5 @@
 
     <string name="donation">기부</string>
     <string name="icon">아이콘</string>
-
-</resources>
+    </resources>
 

@@ -14,7 +14,7 @@ No. UniPatcher no está diseñado para hackear los juegos de Android.
 
 #### ¿Qué es una imagen de ROM?
 
-A ROM image is a computer file containing a copy of video game cartridge. Through the process of emulation, you copy that file out, run it in a piece of software called an "emulator", to enjoy the game on your computer or phone.
+Una imagen ROM es un archivo de computadora que contiene una copia del cartucho de videojuegos. A través del proceso de emulación, copias ese archivo, lo ejecutas en una pieza de software que se llama un "emulador", para disfrutar del juego en su ordenador o teléfono.
 
 #### ¿Qué es ROM hacking?
 
@@ -40,13 +40,15 @@ Como resultado, obtiene una ROM parcheada, que se ubicará en el mismo directori
 
 El archivo que ha seleccionado es un archivo. El archivo contiene los directorios y archivos en un formato comprimido.
 
-Actualmente UniPatcher no puede extraer archivos, Por lo que necesita descomprimir su archivo en un programa diferente. Recomiendo [ZArchiver] un programa gratuito (https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
+Actualmente UniPatcher no puede extraer archivos, por lo que necesita descomprimir su archivo en un programa diferente. Te recomiendo un programa gratis [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
 
 #### La aplicación muestra el error: "Esta ROM no es compatible con el parche".
 
-La app muestra este error si el checksum almacenado en el parche no coincide con el checksum de la ROM. Esto significa que la ROM no es compatible con el parche. Debe elegir un ROM diferente. Normalmente hay varias ROMs para cada juego (como la versión para Europa, Estados Unidos, Japón, volcados buenos o malos, etcetera).
+The app will show this error if the checksum stored in the patch does not match the checksum of the ROM. This means that the ROM file is not compatible with the patch. You need to choose a different ROM file. Usually there are several ROMs for each game (such as the version for Europe, USA, Japan, good or bad dumps, etc.).
 
 ROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. Long tap the file in the file manager and you will see these 3 lines: CRC32, SHA1 and MD5. If one of those numbers are the same, you have the ROM the patch was written for. If not, you need a different ROM.
+
+In the worst case, if you can not find the correct ROM file, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
 
 #### No puedo encontrar la ROM correcta para el juego "Pokémon Esmeralda".
 
@@ -54,7 +56,7 @@ La mayoría de los parches del juego funcionan con la ROM "Pokemon - Emerald Ver
 
 #### Aplico el parche IPS y luego el juego no funciona/contiene fallos gráficos. ¿Qué estoy haciendo mal?
 
-Los parches de formato IPS no contienen un checksum. Por lo tanto, el parche se aplicará a cualquier (incluso mal) ROM. En este caso, necesita buscar otra ROM.
+IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM file. In this case, you need to look for another ROM file.
 
 #### ¿Qué puedo hacer con el tipo de archivo .ECM?
 
@@ -62,9 +64,13 @@ ECM es un formato de compresión de datos diseñado específicamente para imáge
 
 #### La aplicación muestra el error: "No se pudo copiar archivo".
 
-El error se produce en algunos dispositivos con Android 4.4. Posibles soluciones:
+The error occurs on some devices with Android 4.4+ having an external SD card. Android does not allow applications to write data to a SD card on these devices (a detailed description of the problem [here](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
 
-- Copiar el archivo ROM en la tarjeta de memoria en la carpeta **Android/data/org.emunix.unipatcher/**. Entonces debe seleccionar la ROM desde este directorio.
+There are several ways to solve this problem:
+
+- Do not apply patches to the ROM file located on the external SD card. Just move the ROM file into the internal memory of the device.
+- Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
+- Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
 - Instalar la aplicación [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) (Requiere acceso a ROOT).
 
 #### La aplicación muestra el error: "El archivo tiene checksum incorrecto después de haber sido parcheado".
@@ -81,7 +87,7 @@ Sí. UniPatcher puede:
 
 #### ¿Por qué tengo que fijar el checksum para los juegos de Sega Mega Drive?
 
-Sega Mega Drive (Genesis) games are protected from modification. If the checksum of the game differs from the one the ROM amounts to, the game displays a red screen and stops running. What this does is calculate the correct checksum and write it to the ROM.
+Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you only change any part of the game, they will not match, failing to run as a result. What this does is calculate the correct checksum of the change and write it to the modified ROM-file."
 
 **Advertencia:** Esta función no crea una ROM de respaldo.
 

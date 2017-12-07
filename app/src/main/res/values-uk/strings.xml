@@ -16,7 +16,6 @@
     <string name="main_activity_toast_rom_not_selected">Оберіть ROM</string>
     <string name="main_activity_toast_patch_not_selected">Оберіть Патч</string>
     <string name="main_activity_toast_archives_not_supported">Архів повинен бути розпакований в зовнішній програмі</string>
-
     <!-- Rename dialog -->
     <string name="dialog_rename_title">Перейменувати</string>
     <string name="dialog_rename_ok">OK</string>
@@ -165,6 +164,5 @@
 
     <string name="donation">Пожертвування</string>
     <string name="icon">icon</string>
-
-</resources>
+    </resources>
 

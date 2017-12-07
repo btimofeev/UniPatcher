@@ -1,9 +1,9 @@
-Утиліта застосовування Патчів для ROM ігор.
+Utility to apply patches to game ROM-files.
 
 <b>Будь-ласка прочитайте перед завантаженням:</b> Цей додаток не допоможе вам зламати рідної гри на Android, його створено для старих консольних ігор (Super Nintendo, Sega MegaDrive, Game Boy Advance, Sony PlayStation і т.п.).
 
 
-<b>UniPatcher</b> дозволяє вам застосувати патчі для Rom ігор. Що таке <i>Патч</i>? Патч це файл який містить модифікаційні дані для гри. Наприклад: перекладена гра з Японської мови на Англійську. Коли ви завантажили патч із перекладом ви повинні застосувати його до оригінальної Японської версії Rom'у щоб отримати переклад на данну Англійську мову.
+<b>UniPatcher</b> allows you to apply patches to the game ROM-file. What is a <i>patch</i>? The patch is a file with the modified data of the game. For example, a game translated from Japanese to English. You download the patch containing the translation. It must be applied to the Japanese version to get the game in English.
 
 
 <b>Features:</b>
@@ -12,14 +12,14 @@
 &bull; Виправлення контрольної суми для ігор Sega Mega Drive
 &bull; Додавання або Видаляння SMC заголовку для ігор Super Nintendo
 &bull; No ads
-&bull; Free and open source software. Source code available at https://github.com/btimofeev/UniPatcher
+&bull; Libre software. Source code available at https://github.com/btimofeev/UniPatcher
 
 
 <b>Як цим користуватись?</b> Дуже просто:
 &bull; Оберіть Патч
 &bull; Оберіть гру
 &bull; Натисніть "Зберегти"
-<b><u>Увага, дуже важливо:</u> якщо гра та Патч стиснені (zip, rar, 7z та інші архіви), в першу чергу вони потребують розархівування (Я рекомендую безкоштовний додаток ZArchiver).</b>
+<b><u>Very important:</u> if the game and patch is compressed (ZIP, RAR, 7z or other), they first need to be unzipped (I recommend the freeware (gratis) program ZArchiver).</b>
 
 
 <b>Допоможіть з перекладом:</b>
@@ -27,4 +27,4 @@
 
 
 <b>Feedback:</b>
-If you have a bug report or a feature request feel free to open issue on https://github.com/btimofeev/UniPatcher/issues
+If you have a bug report or a feature request feel free to open an issue on https://github.com/btimofeev/UniPatcher/issues

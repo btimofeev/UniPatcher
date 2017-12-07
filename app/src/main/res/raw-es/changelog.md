@@ -1,17 +1,24 @@
-#### 0.14.2 (Jule 13, 2017)
-- Korean translation (Thanks to Minseo Lee)
+#### 0.15 (December 7, 2017)
+- Soporte Android 8 (Oreo)
+- Interfaz de usuario mejorada en tabletas
+- Chinese translation (Thanks to Nabarl Wang)
+- Portuguese translation (Thanks to Davi Lopes, Matheus Silva Sales and Jhonatan Cardoso)
+- Sólo ARMv7 y x86 son soportados (escríbeme si necesitas otras arquitecturas)
 
-#### 0.14.1 (April 30, 2017)
-- Norwegian Bokmål translation (Thanks to Allan Nordhøy)
-- Japanese translation (Thanks to Naofumi Fukue)
-- French translation (Thanks to Thibaut Panis)
+#### 0.14.2 (Julio 13, 2017)
+- Traducción al Coreano (Gracias a Minseo Lee)
 
-#### 0.14 (March 23, 2017)
+#### 0.14.1 (Abril 30, 2017)
+- Traducción Noruego Bokmål (Gracias a Allan Nordhøy)
+- traducción Japonesa (Gracias a Naofumi Fukue)
+- Traducción Francés (Gracias a Thibaut Panis)
 
-- Support creating XDelta3 patches
-- Added option "ignore checksum"
-- Spanish translation (Thanks to Carlos Sánchez)
-- Removed analytics library and crash reports
+#### 0.14 (Marzo 23, 2017)
+
+- Soporte para crear parches XDelta3
+- Opción añadida "ignorar checksum"
+- Traducción en Español (Gracias a Carlos Sánchez)
+- Quitada biblioteca de análisis y reportes de fallos
 
 #### 0.13.2 (Febrero 12, 2017)
 
@@ -93,7 +100,7 @@
 
 #### 0.7 (Mayo 7, 2014)
 
-- Por demanda popular UniPatcher ahora es gratis, pero con publicidad. No se muestra si ha comprado el programa
+- Por demanda popular UniPatcher ahora es libre, libre de cargos, y libre de uso, pero con publicidad. No se muestra si compra el programa
 - Soporte de parches DPS
 - Característica añadida: Fijar checksum para ROMs Sega Mega Drive
 - Característica añadida: Añadir/Eliminar cabecera SMC para ROMs de Super Nintendo

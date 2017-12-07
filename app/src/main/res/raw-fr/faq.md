@@ -40,13 +40,15 @@ Vous obtiendrez ainsi une ROM patchée, qui se trouvera dans le même dossier qu
 
 Le fichier que vous avez sélectionné est une archive. Une archive contient vos dossiers et fichiers dans un format compressé.
 
-Actuellement, UniPatcher ne peut pas extraire les archives, vous devez alors extraire votre archive à l'aide d'une autre appli. Je vous recommande pour cela cette appli gratuite [ZArchiver] (https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
+Actuellement UniPatcher ne peut pas extraire les archives, vous devez alors extraire votre archive à l'aide d'une autre appli. Je recommande pour cela l'appli gratuite [ZArchiver] (https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
 
 #### L'appli affiche ce message : "Cette ROM n'est pas compatible avec le patch".
 
-L'appli affichera cette erreur si le checksum du patch ne correspond pas au checksum de la ROM. Ce qui veut dire que la ROM n'est pas compatible avec le patch. Vous devez alors choisir une autre ROM. En règle générale, il y a plusieurs ROMs de chaque jeu (par exemple des versions Europe, USA, Japon, etc.).
+L'appli affichera cette erreur si le checksum du patch ne correspond pas au checksum de la ROM. Cela veut dire que la ROM n'est pas compatible avec le patch. Vous devez alors choisir une autre ROM. En règle générale, il y a plusieurs ROMs de chaque jeu (par exemple des versions Europe, USA, Japon, etc.). 
 
 Les hackers de ROMs publient souvent le checksum de la ROM qui va avec (sur une page Web ou sur un fichier README). Comparez-le avec celui que vous avez. Appuyez longuement sur le fichier dans le gestionnaire de fichiers et vous verrez 3 lignes : CRC32, SHA1 et MD5. Si une de ces lignes est la même, alors votre ROM correspond au patch. Sinon, vous avez besoin d'une ROM différente.
+
+Dans le pire des cas si vous ne trouvez pas la ROM correcte, vous pouvez choisir l'option "Ignorer le checksum" dans les paramètres. Mais gardez à l'esprit que dans ce cas, le jeu pourra contenir des bugs ou être totalement injouable.
 
 #### Je ne parviens pas à trouver la bonne ROM pour le jeu "Pokémon Emeraude".
 
@@ -62,9 +64,13 @@ Le format ECM est un format de compression de données conçu exclusivement pour
 
 #### L'appli affiche ce message : "Impossible de copier le fichier".
 
-C'est une erreur qui arrive sur certains appareils sous Android 4.4. Voici quelques pistes :
+Cette erreur arrive avec certains appareils sous Android 4.4 ou ultérieur, possédant une carte SD externe. Android n'autorise pas les applications à créer des données sur une carte SD sous ces appareils (une présentation plus détaillée de ce problème [ici, en anglais] (http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
 
-- Copiez la ROM sur la carte SD dans le dossier **Android/data/org.emunix.unipatcher/**. Vous devrez ensuite sélectionner la ROM depuis ce dossier.
+Il y a plusieurs moyens de résoudre ce problème :
+
+- N'appliquez pas de patchs à une ROM qui se trouve sur une carte SD externe. Déplacez simplement la ROM vers la mémoire interne de l'appareil.
+- Le dossier où se trouvent les ROMs patchées (indiqué dans les paramètres) doit se trouver dans la mémoire interne de l'appareil.
+- Ou alors, le dossier des ROMs patchées doit, sur une carte SD externe, être **Android/data/org.emunix.unipatcher/** (à modifier dans les paramètres). 
 - Installez l'appli [SDFix] (https://play.google.com/store/apps/details?id=nextapp.sdfix) (Root nécessaire)
 
 #### L'appli affiche ce message : "Le fichier possède un mauvais checksum après avoir été patché".
@@ -81,7 +87,7 @@ Bien sûr. UniPatcher peut :
 
 #### Pourquoi je dois réparer le checksum des jeux Sega Mega Drive ?
 
-Parce que les jeux Sega Mega Drive (Genesis) sont protégés de toute modification. Si le checksum du jeu diffère de celui de la ROM, le jeu affiche un écran rouge et plante. La réparation permet de recalculer correctement le checksum et de l'incorporer à la ROM.
+Les checksums des jeux Sega Mega Drive (Genesis) sont directement insérés dans la ROM. Si vous changez une quelconque donnée du jeu, ils ne correspondront plus, et par conséquent feront crash le jeu. Cet utilitaire permet de recalculer correctement le checksum lié à la modification, et le réécrira sur le fichier ROM modifié.
 
 **Attention :** Cette fonctionnalité ne fait pas de backups de la ROM.
 

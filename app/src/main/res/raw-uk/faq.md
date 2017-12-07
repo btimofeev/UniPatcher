@@ -40,13 +40,15 @@ ROM хакінг це процес модифікації ROM файла з ме
 
 Файл який ви вибрали являється архівом. Архів містить у собі папки та файли у стисненому вигляді.
 
-На данний момент UniPatcher не уміє розпаковувати архіви, тому вам необхідно розпакувати свій архів за допомогою іншої програми. Я рекомендую безкоштовну програму [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
+Currently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
 
 #### Додаток вибиває помилку: "Цей ROM не сувмісний із патчем".
 
-Ця помилка з'являється, коли контрольна сума збережена у патчі не співпадає із контрольною сумою ROM'у. Це означає, що даний ROM не сувмісний із патчем. Вам необхідно вибрати інший ROM. Зазвичай існує декілька версій ROM'у для кожної гри (наприклад, версії для Європи, США, Японії, добрі або погані дампи і т.д.).
+The app will show this error if the checksum stored in the patch does not match the checksum of the ROM. This means that the ROM file is not compatible with the patch. You need to choose a different ROM file. Usually there are several ROMs for each game (such as the version for Europe, USA, Japan, good or bad dumps, etc.).
 
 Ромхакери часто публікують контрольну суму необхідного ROM файла (на веб сторінці або у файлі Readme). Вам необхідно порівняти її із вашим ROM'ом. Для цього у вікні вибору файла зробіть довгий тап на ROM файлі і ви побачите 3 лінії: CRC32, SHA1 та MD5. Якщо одна із ліній співпадає із контрольною сумою яку вказав ромхакер, тоді ваш ROM підходить. Якщо ж вона не співпадає, то вам потрібно пошукати інший ROM.
+
+In the worst case, if you can not find the correct ROM file, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
 
 #### Не можу підібрати ROM для гри "Pokémon Emerald".
 
@@ -54,7 +56,7 @@ ROM хакінг це процес модифікації ROM файла з ме
 
 #### Я застосовую патч у форматі IPS до гри а після цього гра не працює/містить графічні артефакти. Що я роблю не правильно?
 
-Патчі у форматі IPS не містять контрольної суми. Тому такий патч накладеться на будь-який (навіть той що не підходить) ROM. В цьому випадку потрібно використовувати ROM іншого регіону.
+IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM file. In this case, you need to look for another ROM file.
 
 #### Що можна зробити із файлом у форматі .ECM?
 
@@ -62,9 +64,13 @@ ECM це формат стискання даних створений спец�
 
 #### Додаток вибиває помилку "Не вдалося скопіювати файл".
 
-Ця помилка з'являється на деяких пристроях з Android 4.4. Можливі вирішення:
+The error occurs on some devices with Android 4.4+ having an external SD card. Android does not allow applications to write data to a SD card on these devices (a detailed description of the problem [here](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
 
-- Скопіювати ROM файл на карту пам'яті у папку **Android/data/org.emunix.unipatcher/**. Після в UniPatcher'і вибрати ROM із цієї папки.
+There are several ways to solve this problem:
+
+- Do not apply patches to the ROM file located on the external SD card. Just move the ROM file into the internal memory of the device.
+- Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
+- Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
 - Встановити програму [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) (необхідний ROOT).
 
 #### Додаток вибиває помилку "Контрольна сума пропатченого файлу неправильна".
@@ -81,7 +87,7 @@ ECM це формат стискання даних створений спец�
 
 #### Навіщо виправляти контрольну суму для ігор Sega Mega Drive?
 
-В Sega Mega Drive є захист від модифікації ігор. У ROM'і зберігається значення контрольної суми і якщо воно відрізняється від реальної, тоді гра не запускається, відображаючи червоний екран. Ця функція записує правильну контрольну суму в ROM.
+Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you only change any part of the game, they will not match, failing to run as a result. What this does is calculate the correct checksum of the change and write it to the modified ROM-file."
 
 **Попередження:** ця функція не створює резервної копії ROM'у.
 

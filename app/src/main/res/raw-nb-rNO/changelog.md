@@ -1,5 +1,12 @@
-#### 0.14.2 (Jule 13, 2017)
-- Korean translation (Thanks to Minseo Lee)
+#### 0.15 (25 desember 2017)
+- Støtte for Android 8 (Oreo)
+- Forbedret grensesnitt på brett
+- Kinesisk oversettelse (Takk til Nabarl Wang)
+- Portuguese translation (Thanks to Davi Lopes, Matheus Silva Sales and Jhonatan Cardoso)
+- Bare ARMv7 og x86 støttes (skriv til meg hvis du trenger andre arkitekturer)
+
+#### 0.14.2 (13 Juli, 2017)
+- Koreansk oversettelse (Takk til Minseo Lee)
 
 #### 0.14.1 (30 April, 2017)
 - Norsk bokmål oversettelse (Ved Allan Nordhøy)
@@ -93,7 +100,7 @@
 
 #### 0.7 (7 Mai 2014)
 
-- På overhvermende forespørsel er UniPatcher nå gratis, men med reklame. Det vises ikke hvis du kjøper programmet
+- På overveldende forespørsel er UniPatcher nå fritt, og gratis, men med reklame. Det vises ikke hvis du kjøper programmet
 - Støtte for DPS-programfikser
 - La til funksjon: Fiks sjekksum for Sega Mega Drive ROM-filer
 - La til funksjon: Legg til/slett SMC-hode for Super Nintendo ROM-filer

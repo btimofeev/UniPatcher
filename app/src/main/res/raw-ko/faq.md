@@ -40,13 +40,15 @@
 
 선택한 파일이 압축 파일입니다. 압축 파일에는 디렉터리와 파일이 압축된 형식으로 포함됩니다.
 
-현재 유니패처는 압축 파일을 풀 수 없으므로 다른 프로그램에서 압축 파일의 압축을 풀어야 합니다. 무료 프로그램 [ZArchiver] (https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver)를 권장합니다.
+Currently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
 
 #### 앱에 오류가 표시됩니다: "이 롬은 패치와 호환되지 않습니다".
 
-패치에 저장된 체크섬이 롬의 체크섬과 일치하지 않으면 앱에 이 오류가 표시됩니다. 이것은 롬이 패치와 호환되지 않음을 의미합니다. 다른 롬을 선택해야 합니다. 일반적으로 각 게임에 대해 여러 개의 롬이 있습니다 (예: 유럽, 미국, 일본 버전, 양호 또는 불량 덤프 등).
+The app will show this error if the checksum stored in the patch does not match the checksum of the ROM. This means that the ROM file is not compatible with the patch. You need to choose a different ROM file. Usually there are several ROMs for each game (such as the version for Europe, USA, Japan, good or bad dumps, etc.).
 
 롬 해커는 종종 첨부된 롬 파일의 체크섬을 게시합니다 (웹페이지 또는 README 파일에 있음). 당신이 가지고 있는 것과 그것을 비교하십시오. 파일 관리자에서 파일을 길게 누르면 CRC32, SHA1 및 MD5와 같은 세 줄이 표시됩니다. 그 숫자 중 하나가 같으면 패치가 작성된 롬이 있는 것입니다. 그렇지 않다면 다른 롬이 필요합니다.
+
+In the worst case, if you can not find the correct ROM file, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
 
 #### 게임 "포켓몬스터 에메랄드"에 맞는 롬을 찾을 수 없습니다.
 
@@ -54,7 +56,7 @@
 
 #### IPS 패치를 적용한 다음 게임이 작동하지 않거나 그래픽 결함이 있습니다. 내가 뭘 잘못한 겁니까?
 
-IPS 형식 패치에는 체크섬이 없습니다. 따라서 이 패치는 임의의 롬에도 적용됩니다. 이 경우 다른 롬을 찾아야 합니다.
+IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM file. In this case, you need to look for another ROM file.
 
 #### .ECM 파일 유형으로 무엇을 할 수 있습니까?
 
@@ -62,9 +64,13 @@ ECM은 디스크 이미지를 위해 특별히 고안된 데이터 압축 형식
 
 #### 앱에 오류가 표시됩니다: "파일을 복사할 수 없음".
 
-안드로이드 4.4가 설치된 일부 기기에서 오류가 발생합니다. 가능한 해결법:
+The error occurs on some devices with Android 4.4+ having an external SD card. Android does not allow applications to write data to a SD card on these devices (a detailed description of the problem [here](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
 
-- **Android/data/org.emunix.unipatcher/** 폴더에 메모리 카드에 있는 롬 파일을 복사하십시오. 그런 다음 이 디렉토리에서 롬을 선택합니다.
+There are several ways to solve this problem:
+
+- Do not apply patches to the ROM file located on the external SD card. Just move the ROM file into the internal memory of the device.
+- Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
+- Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
 - [SDFix] (https://play.google.com/store/apps/details?id=nextapp.sdfix) 애플리케이션을 설치하십시오 (루트 권한 필요).
 
 #### 앱에 오류가 표시됩니다: "파일이 패치된 후 체크섬이 잘못되었습니다".
@@ -81,7 +87,7 @@ ECM은 디스크 이미지를 위해 특별히 고안된 데이터 압축 형식
 
 #### 세가 메가 드라이브 게임의 체크섬을 수정해야 하는 이유는 무엇입니까?
 
-세가 메가 드라이브 (제네시스) 게임은 수정되지 않습니다. 게임의 체크섬이 롬과 다른 경우, 게임은 붉은색 화면을 표시하고 실행을 멈춥니다. 그러므로 이는 올바른 체크섬을 계산하여 롬에 기록합니다.
+Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you only change any part of the game, they will not match, failing to run as a result. What this does is calculate the correct checksum of the change and write it to the modified ROM-file."
 
 **경고:** 이 기능은 백업을 생성하지 않습니다.
 

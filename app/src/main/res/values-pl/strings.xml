@@ -16,7 +16,6 @@
     <string name="main_activity_toast_rom_not_selected">ROM nie jest wybrany</string>
     <string name="main_activity_toast_patch_not_selected">Łatka nie jest zaznaczona</string>
     <string name="main_activity_toast_archives_not_supported">Archiwa powinny być wypakowane w zewnętrznym programie</string>
-
     <!-- Rename dialog -->
     <string name="dialog_rename_title">Zmień Nazwę</string>
     <string name="dialog_rename_ok">OK</string>
@@ -144,6 +143,5 @@
 
     <string name="donation">Donacja</string>
     <string name="icon">ikona</string>
-
-</resources>
+    </resources>
 

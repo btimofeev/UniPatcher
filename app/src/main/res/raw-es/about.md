@@ -8,12 +8,14 @@ Características adicionales:
 
 ##### Traductores:
 
-- **French**: Thibaut Panis
+- **Chinese**: Nabarl Wang
+- **Francés**: Thibaut Panis
 - **Italiano**: Matteo Sechi
-- **Japanese**: Naofumi Fukue
-- **Korean**: Minseo Lee
-- **Norwegian Bokmål**: Allan Nordhøy
+- **Japonés**: Naofumi Fukue
+- **Coreano**: Minseo Lee
+- **Noruego Bokmål**: Allan Nordhøy
 - **Polaco**: Michal Bychowski
+- **Portuguese**: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso
 - **Ruso**: Борис Тимофеев
 - **Español**: Carlos Sánchez
 - **Ucraniano**: Володимир Шевчук
@@ -24,7 +26,7 @@ Características adicionales:
 - [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) por The Apache Software Foundation, bajo la licencia Apache 2.0.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) por SufficientlySecure, bajo la licencia Apache 2.0.
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) por John Casey, bajo la licencia Apache 2.0.
-- [**Iconos de Material design**](https://github.com/google/material-design-icons) por Google, bajo la licencia internacional Creative Common Attribution 4.0 (CC-BY 4.0).
+- [**Iconos de Material design**](https://github.com/google/material-design-icons) por Google, bajo la licencia Apache 2.0.
 - [**Iconos de Material design**](https://materialdesignicons.com) por la comunidad, bajo la licencia SIL Open Font 1.1.
 - [**Material Dialogs**](https://github.com/afollestad/material-dialogs) por Aidan Follestad, bajo la licencia The MIT.
 - [**XDelta version 3**](https://github.com/jmacd/xdelta) por Joshua MacDonald, bajo la licencia Apache 2.0.

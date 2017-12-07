@@ -16,6 +16,8 @@
     <string name="main_activity_toast_rom_not_selected">ROM が選択されていません</string>
     <string name="main_activity_toast_patch_not_selected">パッチが選択されていません</string>
     <string name="main_activity_toast_archives_not_supported">アーカイブは外部のプログラムで展開する必要があります</string>
+    <string name="main_activity_donate_snackbar_text">寄付をしてUniPatcherの開発をサポート</string>
+    <string name="main_activity_donate_snackbar_button">寄付する</string>
 
     <!-- Rename dialog -->
     <string name="dialog_rename_title">名前を変更</string>
@@ -165,6 +167,7 @@
 
     <string name="donation">寄付する</string>
     <string name="icon">アイコン</string>
+    <string name="notification_channel_name">通知</string>
 
 </resources>
 

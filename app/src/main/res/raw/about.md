@@ -8,12 +8,14 @@ Additional features:
 
 ##### Translators:
 
+- **Chinese**: Nabarl Wang
 - **French**: Thibaut Panis
 - **Italian**: Matteo Sechi
 - **Japanese**: Naofumi Fukue
 - **Korean**: Minseo Lee
 - **Norwegian Bokmål**: Allan Nordhøy
 - **Polish**: Michal Bychowski
+- **Portuguese**: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso
 - **Russian**: Борис Тимофеев
 - **Spanish**: Carlos Sánchez
 - **Ukrainian**: Володимир Шевчук

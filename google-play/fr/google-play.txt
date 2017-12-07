@@ -3,7 +3,7 @@ Un utilitaire qui applique des patchs aux ROMs de jeux.
 <b>Avant de télécharger :</b> Ce programme ne vous aidera pas à hacker des jeux Android. Il est conçu exclusivement pour des consoles de jeux rétro (Super Nintendo, Sega Mega Drive, Game Boy Advance, Sony PlayStation, etc.).
 
 
-<b>UniPatcher</b> vous permet d'appliquer des patchs à la ROM de votre jeu. Qu'est qu'un <i>patch</i> ? Il s'agit d'un fichier avec une version modifiée du jeu. Par exemple, un jeu traduit du japonais au français. Vous téléchargez le patch contenant la traduction, et il doit être appliqué à la version japonaise afin d'obtenir la version française.
+<b>UniPatcher</b> vous permet d'appliquer des patchs à la ROM de votre jeu. Qu'est-ce qu'un <i>patch</i> ? Il s'agit d'un fichier avec une version modifiée du jeu. Par exemple, un jeu traduit du japonais au français. Vous téléchargez le patch contenant la traduction, et il doit être appliqué à la version japonaise afin d'obtenir la version française.
 
 
 <b>Fonctionnalités :</b>
@@ -12,7 +12,7 @@ Un utilitaire qui applique des patchs aux ROMs de jeux.
 &bull; Réparation du checksum des ROMs Sega Mega Drive
 &bull; Ajout/Suppression des en-têtes SMC dans les ROMs Super Nintendo
 &bull; Pas de pubs
-&bull; Logiciel gratuit et open source. Code source disponible sur https://github.com/btimofeev/UniPatcher
+&bull; Logiciel libre et open source. Code source disponible sur https://github.com/btimofeev/UniPatcher
 
 
 <b>Comment s'en servir ?</b> C'est très simple :

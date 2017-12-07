@@ -40,13 +40,15 @@ Jako wynik, dostajesz złatkowany ROM, który będzie zlokalizowany w tej samej 
 
 Plik który wybrałeś jest archiwum. Archiwa zawierają ścieżki i pliki w skompresowanym formacie
 
-Narazie UniPatcher nie może wypakowywać archiw, więc musisz wypakować je w zewnętrznym programie. Rekomenduje darmowy program [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
+Currently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
 
 #### Aplikacja wyświetla błąd: "Ten ROM nie jest kompatybilny z łatką".
 
-Aplikacja będzie wyświetlać ten błąd jeżeli suma kontrolna przechowywana w łatce nie jest taka sama jak suma kontrolna ROM-u. To znaczy że ROM nie jest kompatybilny z łatką. Potrzebujesz wybrać inny ROM . Często jest kilka wersji ROM-u dla danej gry (Np. mamy wersję Europejską, Amerykańską, Japońską, lepszy dump lub gorszy itp.).
+The app will show this error if the checksum stored in the patch does not match the checksum of the ROM. This means that the ROM file is not compatible with the patch. You need to choose a different ROM file. Usually there are several ROMs for each game (such as the version for Europe, USA, Japan, good or bad dumps, etc.).
 
 ROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. Long tap the file in the file manager and you will see these 3 lines: CRC32, SHA1 and MD5. If one of those numbers are the same, you have the ROM the patch was written for. If not, you need a different ROM.
+
+In the worst case, if you can not find the correct ROM file, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
 
 #### I can not find the correct ROM for the game "Pokémon Emerald".
 
@@ -54,7 +56,7 @@ Większość łatek do gry "Pokémon - Emerald Version" działa z ROM-em "Pokemo
 
 #### Po zaaplikowaniu łatki IPS gra nie działa/zawiera glitche graficzne. Co robię źle?
 
-Łatka typu IPS nie zawiera sumy kontrolnej. To znaczy że łatka zostanie zaaplikowana na jakikolwiek (nawet nieodpowiedni) ROM. W tym przypadku musisz poszukać innego ROM-a.
+IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM file. In this case, you need to look for another ROM file.
 
 #### Co mogę zrobić z typem pliku .ECM?
 
@@ -62,9 +64,13 @@ ECM jest formatem skompresowanego pliku specyficznego dla image-ów z dysku. Mo�
 
 #### Aplikacja wyświetla błąd: "Nie można skopiować pliku".
 
-Ten problem występuje na niektórych urządzeniach z androidem 4.4+. Możliwe rozwiązania:
+The error occurs on some devices with Android 4.4+ having an external SD card. Android does not allow applications to write data to a SD card on these devices (a detailed description of the problem [here](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
 
-- Skopiuj ROM na wewnętrzną kartę pamięci **mnt/storage/emulated/0/**. Wtedy wybierz ROM z tej ścieżki.
+There are several ways to solve this problem:
+
+- Do not apply patches to the ROM file located on the external SD card. Just move the ROM file into the internal memory of the device.
+- Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
+- Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
 - Zainstaluj [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) aplikację [Wymaga dostępu do ROOT (Jeżeli nie wiesz co to ROOT, albo nie wiesz ja zrootować swoję urządzenie sprawdź https://www.xda-developers.com)].
 
 #### Aplikacja wyświetla błąd: "Plik ma złą sumę kontrolną po złatkowaniu".
@@ -81,7 +87,7 @@ Tak. UniPatcher może:
 
 #### Po co mam naprawiać sumę kontrolną w grach z Sega Mega Drive/Genesis?
 
-Sega Mega Drive (Genesis) games are protected from modification. If the checksum of the game differs from the one the ROM amounts to, the game displays a red screen and stops running. What this does is calculate the correct checksum and write it to the ROM.
+Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you only change any part of the game, they will not match, failing to run as a result. What this does is calculate the correct checksum of the change and write it to the modified ROM-file."
 
 **Uwaga:** Ta funkcja nie tworzy kopii zapasowe ROM-u.
 

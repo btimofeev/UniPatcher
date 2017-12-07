@@ -8,27 +8,27 @@
 #### 0.14.2 (July 13, 2017)
 - Korean translation (Thanks to Minseo Lee)
 
-#### 0.14.1 (April 30, 2017)
-- Norwegian Bokmål translation (Thanks to Allan Nordhøy)
-- Japanese translation (Thanks to Naofumi Fukue)
-- French translation (Thanks to Thibaut Panis)
+#### 0.14.1 (30 Abril, 2017)
+- Tradução para Norueguês (Obrigado para Allan Nordhøy)
+- Tradução para Japonês (Obrigado para Naofumi Fukue)
+- Tradução para Francês (Obrigado para Thibaut Panis)
 
-#### 0.14 (March 23, 2017)
+#### 0.14 (23 Março, 2017)
 
-- Support creating XDelta3 patches
-- Added option "ignore checksum"
-- Spanish translation (Thanks to Carlos Sánchez)
-- Removed analytics library and crash reports
+- Suporte para criar XDelta3 patches
+- Adicionada opção "ignorar checksum"
+- Tradução para Espanhol (Obrigado para Carlos Sánchez)
+- Removida a biblioteca de análises e os relatórios de falhas
 
-#### 0.13.2 (February 12, 2017)
+#### 0.13.2 (12 Fevereiro, 2017)
 
-- Ukrainian translation (Thanks to Volodymyr Shevchuk)
+- Tradução para Ucraniano (Obrigado para Volodymyr Shevchuk)
 
-#### 0.13.1 (January 25, 2017)
+#### 0.13.1 (25 Janeiro, 2017)
 
-- Removed rate app dialog
+- Dialógo removido "avalie o app"
 
-#### 0.13 (January 24, 2017)
+#### 0.13 (24 Janeiro, 2017)
 
 - Support IPS32 patches
 - Deleted ads. Thanks to all who supported the development of the program.

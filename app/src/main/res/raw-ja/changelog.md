@@ -1,3 +1,10 @@
+#### 0.15 (2017/12/7)
+- Android 8 (Oreo) のサポート
+- タブレットでの UI を改善
+- 中国語翻訳 (Thanks to Nabarl Wang)
+- Portuguese translation (Thanks to Davi Lopes, Matheus Silva Sales and Jhonatan Cardoso)
+- ARMv7 と x86 のみサポートされます (他のアーキテクチャが必要であればご連絡ください)
+
 #### 0.14.2 (2017/7/13)
 - 朝鮮語翻訳 (Thanks to Minseo Lee)
 
@@ -93,7 +100,7 @@
 
 #### 0.7 (2014/5/7)
 
-- 普及の需要により UniPatcher は無料になりましたが、広告があります。 プログラムを購入した場合は表示されません
+- 需要によりUniPatcherは無料または有料で利用できます。 無料の場合広告があります。 プログラムを購入した場合は表示されません。
 - DPS パッチのサポート
 - 機能追加: Sega Mega Drive ROM のチェックサムを修正
 - 機能追加: Super Nintendo ROM の SMC ヘッダーを追加/削除

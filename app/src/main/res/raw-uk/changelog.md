@@ -1,4 +1,11 @@
-#### 0.14.2 (Jule 13, 2017)
+#### 0.15 (December 7, 2017)
+- Support Android 8 (Oreo)
+- Improved UI on tablets
+- Chinese translation (Thanks to Nabarl Wang)
+- Portuguese translation (Thanks to Davi Lopes, Matheus Silva Sales and Jhonatan Cardoso)
+- Only ARMv7 and x86 are supported (write to me if you need other architectures)
+
+#### 0.14.2 (July 13, 2017)
 - Korean translation (Thanks to Minseo Lee)
 
 #### 0.14.1 (April 30, 2017)
@@ -93,7 +100,7 @@
 
 #### 0.7 (7 травня 2014)
 
-- По численних запитах UniPatcher тепер безкоштовний, але вміщує в собі рекламу. Її можна позбутись придбавши додаток
+- By popular demand UniPatcher is now free, both of charge, and as in freedom, but with advertising. It is not displayed if you purchase the program
 - Підтримка DPS патчів
 - Додано функцію: Виправлення контрольної суми для ігор Sega Mega Drive
 - Додано функцію: Додавання та видаляння SMC заголовків для ігор Super Nintendo

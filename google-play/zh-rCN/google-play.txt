@@ -1,0 +1,30 @@
+应用补丁到游戏 ROM 文件的工具。
+
+<b>下载前请阅读: </b> 本程序对修改原生 Android 游戏没有帮助，它是给老家用机游戏 (超级任天堂、世嘉 MegaDrive、Game Boy Advance、索尼 PlayStation 等) 使用。
+
+
+<b>UniPatcher</b> 可以让你将补丁应用到游戏 ROM 文件。什么是<i>补丁</i>？补丁是修改游戏数据的文件，打个比方，将游戏从日语翻译成英语，你下载了翻译补丁文件后，还须给日语版游戏打上才行。
+
+
+<b>包含功能:</b>
+&bull; 支持的补丁格式: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
+&bull; 创建 XDelta 补丁
+&bull; 修正世嘉 Mega Drive ROM 的校验和
+&bull; 添加/删除 超级任天堂 ROM 中的标头
+&bull; 无广告
+&bull; 本软件属于自由软件，源码: https://github.com/btimofeev/UniPatcher
+
+
+<b>如何使用</b> 非常简单:
+&bull; 选一个补丁
+&bull; 选一个游戏
+&bull; 点击“保存”
+<b><u>非常重要：</u> 如果游戏和补丁是压缩格式 (ZIP、RAR、7z 或其他)，首先需要解压它们 (个人推荐免费软件 (不要钱) 程序 ZArchiver).</b>
+
+
+<b>帮助翻译：</b>
+你可以帮助将程序翻译成你的语言，在此管理翻译 https://www.transifex.com/unipatcher/unipatcher
+
+
+<b>反馈：</b>
+如果你有 bug 要汇报或有新功能请求，请不吝于此开新问题 https://github.com/btimofeev/UniPatcher/issues

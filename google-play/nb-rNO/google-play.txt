@@ -12,7 +12,7 @@ Verktøy for å legge programfikser til spill-ROM-filer.
 &bull; Fiks sjekksum i Sega Mega Drive ROM-filer
 &bull; Legg til/Slett SMC-hode i Super Nintendo ROM-filer
 &bull; Ingen reklame
-&bull; Fri og åpen programvare. Kildekode tilgjengelig på https://github.com/btimofeev/UniPatcher
+&bull; Fri programvare. Kildekode tilgjengelig på https://github.com/btimofeev/UniPatcher
 
 
 <b>Hvordan?</b> Veldig enkelt:
