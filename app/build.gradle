@@ -12,8 +12,8 @@ android {
         applicationId "org.emunix.unipatcher"
         minSdkVersion 14
         targetSdkVersion 27
-        versionCode 140200
-        versionName "0.14.2"
+        versionCode 150000
+        versionName "0.15"
         vectorDrawables.useSupportLibrary = true
         ndk {
             abiFilters 'armeabi-v7a', 'x86'
