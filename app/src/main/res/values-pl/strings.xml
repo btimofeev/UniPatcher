@@ -16,12 +16,25 @@
     <string name="main_activity_toast_rom_not_selected">ROM nie jest wybrany</string>
     <string name="main_activity_toast_patch_not_selected">Łatka nie jest zaznaczona</string>
     <string name="main_activity_toast_archives_not_supported">Archiwa powinny być wypakowane w zewnętrznym programie</string>
+    <string name="main_activity_donate_snackbar_text">Wspieraj powstawanie UniPatcher poprzez przekazanie darowziny</string>
+    <string name="main_activity_donate_snackbar_button">Przekaż darowiznę</string>
+
     <!-- Rename dialog -->
     <string name="dialog_rename_title">Zmień Nazwę</string>
     <string name="dialog_rename_ok">OK</string>
     <string name="dialog_rename_cancel">Anuluj</string>
     <string name="dialog_rename_error_same_name">Wejściowe i wyjściowe nazwy ROM-ów muszą być różne</string>
     <string name="dialog_rename_error_invalid_chars">Niewłaściwy symbol /</string>
+    <string name="dialog_rename_error_empty_name">Nazwa pliku nie może być pusta</string>
+
+    <!-- Create patch fragment -->
+    <string name="create_patch_fragment_source_file">Plik źródłowy</string>
+    <string name="create_patch_fragment_modified_file">Zmodyfikowany plik</string>
+    <string name="create_patch_fragment_patch_file">Plik łatki</string>
+    <string name="create_patch_fragment_toast_source_and_modified_not_selected">Plik źródłowy oraz zmodyfikowany nie są zaznaczone</string>
+    <string name="create_patch_fragment_toast_source_not_selected">Plik źródłowy nie jest wybrany</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">Zmodyfikowany plik nie jest wybrany</string>
+
     <!-- Info for SNES SMC header -->
     <string name="snes_smc_header_help">Ta opcja jest tylko dla ROM-ów Super Nintendo.\n\nJeżeli ROM zawiera nagłówek SMC - zostanie on usunięty. Inaczej zostanie on dodany.\n\nUwaga: ta funkcja nie tworzy kopii zapasowej.</string>
     <string name="snes_smc_header_will_be_removed">Ten ROM zawiera nagłówek SMC. Zostanie on usunięty.</string>
@@ -34,6 +47,7 @@
     <string name="file_picker_activity_title">Wybierz plik</string>
     <string name="file_picker_activity_title_select_rom">Wybierz plik ROM</string>
     <string name="file_picker_activity_title_select_patch">Wybier plik Łatki</string>
+    <string name="file_picker_activity_title_select_source_file">Wybierz plik źródłowy</string>
     <string name="file_picker_activity_title_select_header">Wybierz plik nagłówka</string>
     <string name="file_picker_activity_error_unable_read_dir">Błędna ścieżka %1$s</string>
 

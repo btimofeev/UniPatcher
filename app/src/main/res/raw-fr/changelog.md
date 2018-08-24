@@ -1,8 +1,12 @@
+#### 0.16 (August 24, 2018)
+- Fix BPS patching (Thanks to everyone who sent me bug reports)
+- Now the application only runs on devices with Android 5 and above
+
 #### 0.15 (7 Décembre 2017)
 - Prise en charge d'Android 8 (Oreo)
 - Interface améliorée sur les tablettes
 - Traduction en Chinois (merci à Nabarl Wang)
-- Portuguese translation (Thanks to Davi Lopes, Matheus Silva Sales and Jhonatan Cardoso)
+- Traduction en Portugais (Merci à Davi Lopes, Matheus Silva Sales et Jhonatan Cardoso)
 - Seules les architectures ARMv7 et x86 sont prises en charge (contactez-moi si vous avez besoin d'autres architectures)
 
 #### 0.14.2 (13 Juillet 2017)

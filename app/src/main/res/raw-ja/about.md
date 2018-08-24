@@ -15,7 +15,7 @@ UniPatcher は IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP およ�
 - **朝鮮語**: Minseo Lee
 - **ノルウェーボクモール**: Allan Nordhøy
 - **ポーランド語**: Michal Bychowski
-- **Portuguese**: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso
+- **ポルトガル語**: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso
 - **ロシア語**: Борис Тимофеев
 - **スペイン語**: Carlos Sánchez
 - **ウクライナ語**: Володимир Шевчук

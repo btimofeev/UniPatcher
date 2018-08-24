@@ -1,8 +1,12 @@
+#### 0.16 (August 24, 2018)
+- Fix BPS patching (Thanks to everyone who sent me bug reports)
+- Now the application only runs on devices with Android 5 and above
+
 #### 0.15 (2017/12/7)
 - Android 8 (Oreo) のサポート
 - タブレットでの UI を改善
 - 中国語翻訳 (Thanks to Nabarl Wang)
-- Portuguese translation (Thanks to Davi Lopes, Matheus Silva Sales and Jhonatan Cardoso)
+- ポルトガル語翻訳 (Thanks to Davi Lopes, Matheus Silva Sales and Jhonatan Cardoso)
 - ARMv7 と x86 のみサポートされます (他のアーキテクチャが必要であればご連絡ください)
 
 #### 0.14.2 (2017/7/13)

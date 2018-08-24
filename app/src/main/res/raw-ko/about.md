@@ -8,14 +8,14 @@
 
 ##### 번역가:
 
-- **Chinese**: Nabarl Wang
+- **중국어**: Nabarl Wang
 - **프랑스어**: Thibaut Panis
 - **이탈리아어**: Matteo Sechi
 - **일본어**: Naofumi Fukue
 - **한국어**: Minseo Lee
 - **노르웨이어 보크몰**: Allan Nordhøy
 - **폴란드어**: Michal Bychowski
-- **Portuguese**: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso
+- **포르투갈어**: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso
 - **러시아어**: Борис Тимофеев
 - **스페인어**: Carlos Sánchez
 - **우크라이나어**: Володимир Шевчук
@@ -26,7 +26,7 @@
 - [**아파치 커먼즈 IO**](https://commons.apache.org/proper/commons-io/) by 아파치 소프트웨어 재단, 아파치 2.0 라이선스에 의해 라이선스됨.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) by SufficientlySecure, 아파치 2.0 라이선스에 의해 라이선스됨.
 - [**마크다운4J**](https://github.com/jdcasey/markdown4j) by John Casey, 아파치 2.0 라이선스에 의해 라이선스됨.
-- [**Material design icons**](https://github.com/google/material-design-icons) by Google, licensed under the Apache 2.0 license.
+- [**머티리얼 디자인 아이콘**](https://github.com/google/material-design-icons) by Google, 아파치 2.0 라이선스에 의해 라이선스됨.
 - [**머티리얼 디자인 아이콘**](https://materialdesignicons.com) by community, SIL 오픈 폰트 라이선스 1.1에 의해 라이선스됨.
 - [**머티리얼 대화 상자**](https://github.com/afollestad/material-dialogs) by Aidan Follestad, MIT 라이선스에 의해 라이선스됨.
 - [**XDelta 버전 3**](https://github.com/jmacd/xdelta) by Joshua MacDonald, 아파치 2.0 라이선스에 의해 라이선스됨.

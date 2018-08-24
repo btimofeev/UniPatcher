@@ -16,6 +16,9 @@
     <string name="main_activity_toast_rom_not_selected">La ROM no está seleccionada</string>
     <string name="main_activity_toast_patch_not_selected">El parche no está seleccionado</string>
     <string name="main_activity_toast_archives_not_supported">El archivo debe ser descomprimido en un programa externo</string>
+    <string name="main_activity_donate_snackbar_text">Haz una donación para apoyar el desarrollo de UniPatcher</string>
+    <string name="main_activity_donate_snackbar_button">Hacer una donación</string>
+
     <!-- Rename dialog -->
     <string name="dialog_rename_title">Renombrar</string>
     <string name="dialog_rename_ok">Aceptar</string>
@@ -164,5 +167,7 @@
 
     <string name="donation">Donación</string>
     <string name="icon">Icono</string>
-    </resources>
+    <string name="notification_channel_name">Notificaciones</string>
+
+</resources>
 

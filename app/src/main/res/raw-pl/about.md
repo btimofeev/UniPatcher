@@ -8,16 +8,16 @@ Dodatkowe funkcje:
 
 ##### Tłumaczenia:
 
-- **Chinese**: Nabarl Wang
+- **Chiński**: Nabarl Wang
 - **Francuski**: Thaibaut Panis
 - **Włoski**: Matteo Sechi
 - **Japoński**: Naofumi Fukue
-- **Korean**: Minseo Lee
+- **Koreański**: Minseo Lee
 - **Norweski**: Allan Nordhøy
 - **Polski**: Michal Bychowski
-- **Portuguese**: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso
+- **Portugalski**: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso
 - **Rosyjski**: Борис Тимофеев
-- **Spanish**: Carlos Sánchez
+- **Hiszpański**: Carlos Sánchez
 - **Ukraiński**: Володимир Шевчук
 
 ##### Użyte biblioteki:
@@ -26,7 +26,7 @@ Dodatkowe funkcje:
 - [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) by The Apache Software Foundation, licencjonowne na licencji Apache 2.0.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) przez SufficientlySecure, licencjonowany na licencji Apache 2.0.
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) by John Casey, licensed under the Apache 2.0 license.
-- [**Material design icons**](https://github.com/google/material-design-icons) by Google, licensed under the Apache 2.0 license.
+- [**Design Ikon**](https://github.com/google/material-design-icons) by Google, na licencj iApache 2.0
 - [**Material design icons**](https://materialdesignicons.com) stworzone przez spoeczność, licencjonowane na licencji SIL Open Font 1.1.
 - [**Material Dialogs**](https://github.com/afollestad/material-dialogs) przez Aidan Follestad, licencjonowane na licencji MIT.
 - [**Wersja XDelta 3**](https://github.com/jmacd/xdelta) stworzona przez Joshua MacDonald, licencjonowane na licencji Apache 2.0.

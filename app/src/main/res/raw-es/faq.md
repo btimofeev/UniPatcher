@@ -44,11 +44,11 @@ Actualmente UniPatcher no puede extraer archivos, por lo que necesita descomprim
 
 #### La aplicación muestra el error: "Esta ROM no es compatible con el parche".
 
-The app will show this error if the checksum stored in the patch does not match the checksum of the ROM. This means that the ROM file is not compatible with the patch. You need to choose a different ROM file. Usually there are several ROMs for each game (such as the version for Europe, USA, Japan, good or bad dumps, etc.).
+Este error ocurre si la checksum del patch no coincide con la checksum del ROM, lo cual significa que el ROM es incompatible con el patch. Por favor elige un ROM diferente. Generalmente hay varios ROM de cada juego (por ejemplo la versión europea, americana, japonesa, buen o mal dump del ROM, etc.)
 
-ROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. Long tap the file in the file manager and you will see these 3 lines: CRC32, SHA1 and MD5. If one of those numbers are the same, you have the ROM the patch was written for. If not, you need a different ROM.
+Los hackers de ROM suelen publicar el patch con la checksum del ROM adjunta (en la página web o el archivo LÉEME). Compara la del patch con la del ROM que tienes. Largo toca el archivo en el gestor de archivos y verás 3 líneas: CRC32, SHA1, y MD5. Si uno de los números coincide, tienes el patch hecho para el ROM.  Si no, tienes el ROM equivocado.
 
-In the worst case, if you can not find the correct ROM file, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
+Si desafortunadamente no puedes encontrar el ROM correcto, puedes activar la opción “Ignorar checksums” en la configuración. Pero ten en cuenta que el juego patcheado puede contener fallos o ser completamente injugable.
 
 #### No puedo encontrar la ROM correcta para el juego "Pokémon Esmeralda".
 
@@ -56,21 +56,21 @@ La mayoría de los parches del juego funcionan con la ROM "Pokemon - Emerald Ver
 
 #### Aplico el parche IPS y luego el juego no funciona/contiene fallos gráficos. ¿Qué estoy haciendo mal?
 
-IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM file. In this case, you need to look for another ROM file.
+Los patches IPS format no tienen una checksum. Por lo tanto cualquier ROM (incluso si es el equivocado) será patcheado. En este caso, tendrás que buscar otro archivo ROM.
 
 #### ¿Qué puedo hacer con el tipo de archivo .ECM?
 
-ECM es un formato de compresión de datos diseñado específicamente para imágenes de disco. Puede descomprimir el archivo con el programa [ZArchiver]. (https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver)
+ECM es un formato de compresión de datos diseñado específicamente para imágenes de disco. Puede descomprimir el archivo con el programa [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver)
 
 #### La aplicación muestra el error: "No se pudo copiar archivo".
 
-The error occurs on some devices with Android 4.4+ having an external SD card. Android does not allow applications to write data to a SD card on these devices (a detailed description of the problem [here](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
+El error ocurre en algunos dispositivos de Android 4.4+ con una tarjeta SD externa. Android no permite que los aplicaciones escriban datos con una tarjeta SD en estos dispositivos (se puede encontrar [aquí](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/) una descripción detallada en inglés).
 
-There are several ways to solve this problem:
+Hay varias maneras de resolver este problema:
 
-- Do not apply patches to the ROM file located on the external SD card. Just move the ROM file into the internal memory of the device.
-- Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
-- Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
+- No patchees los archivos ROM ubicadas en la tarjeta SD externa. Mueve el ROM a la memoria interna del dispositivo.
+- Espicifica la ruta a cualquier directorio en la memoria interna de la carpeta de salida.
+- Espicifica la ruta de la carpeta de salida a **Android/data/org.emunix.unipatcher/** en la tarjeta SD externa (en la configuración).
 - Instalar la aplicación [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) (Requiere acceso a ROOT).
 
 #### La aplicación muestra el error: "El archivo tiene checksum incorrecto después de haber sido parcheado".
@@ -87,7 +87,7 @@ Sí. UniPatcher puede:
 
 #### ¿Por qué tengo que fijar el checksum para los juegos de Sega Mega Drive?
 
-Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you only change any part of the game, they will not match, failing to run as a result. What this does is calculate the correct checksum of the change and write it to the modified ROM-file."
+La checksum de los juegos Sega Megadrive (Genesis) están escritos en sus ROM. Si editas cualquier parte del juego, ya no coinciden, y no se iniciará. Lo que esto hace es calcular la checksum correcta del cambio y escribirlo al archivo ROM modificado.”
 
 **Advertencia:** Esta función no crea una ROM de respaldo.
 

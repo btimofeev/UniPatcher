@@ -40,11 +40,11 @@
 
 선택한 파일이 압축 파일입니다. 압축 파일에는 디렉터리와 파일이 압축된 형식으로 포함됩니다.
 
-Currently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
+현재 유니패처는 압축 파일을 풀 수 없으므로 다른 프로그램에서 압축 파일의 압축을 풀어야 합니다. 무료 프로그램 [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver)를 권장합니다.
 
 #### 앱에 오류가 표시됩니다: "이 롬은 패치와 호환되지 않습니다".
 
-The app will show this error if the checksum stored in the patch does not match the checksum of the ROM. This means that the ROM file is not compatible with the patch. You need to choose a different ROM file. Usually there are several ROMs for each game (such as the version for Europe, USA, Japan, good or bad dumps, etc.).
+패치에 저장된 체크섬이 롬의 체크섬과 일치하지 않으면 앱에 이 오류가 표시됩니다. 이것은 롬이 패치와 호환되지 않음을 의미합니다. 다른 롬을 선택해야 합니다. 일반적으로 각 게임에 대해 여러 개의 롬이 있습니다 (예: 유럽, 미국, 일본 버전, 양호 또는 불량 덤프 등).
 
 롬 해커는 종종 첨부된 롬 파일의 체크섬을 게시합니다 (웹페이지 또는 README 파일에 있음). 당신이 가지고 있는 것과 그것을 비교하십시오. 파일 관리자에서 파일을 길게 누르면 CRC32, SHA1 및 MD5와 같은 세 줄이 표시됩니다. 그 숫자 중 하나가 같으면 패치가 작성된 롬이 있는 것입니다. 그렇지 않다면 다른 롬이 필요합니다.
 
@@ -56,11 +56,11 @@ In the worst case, if you can not find the correct ROM file, you can set the opt
 
 #### IPS 패치를 적용한 다음 게임이 작동하지 않거나 그래픽 결함이 있습니다. 내가 뭘 잘못한 겁니까?
 
-IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM file. In this case, you need to look for another ROM file.
+IPS 형식 패치에는 체크섬이 없습니다. 따라서 이 패치는 임의의 롬에도 적용됩니다. 이 경우 다른 롬을 찾아야 합니다.
 
 #### .ECM 파일 유형으로 무엇을 할 수 있습니까?
 
-ECM은 디스크 이미지를 위해 특별히 고안된 데이터 압축 형식입니다. [ZArchiver] (https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver) 프로그램을 사용하여 파일의 압축을 풀 수 있습니다.
+ECM은 디스크 이미지를 위해 특별히 고안된 데이터 압축 형식입니다. [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver) 프로그램을 사용하여 파일의 압축을 풀 수 있습니다.
 
 #### 앱에 오류가 표시됩니다: "파일을 복사할 수 없음".
 
@@ -71,11 +71,11 @@ There are several ways to solve this problem:
 - Do not apply patches to the ROM file located on the external SD card. Just move the ROM file into the internal memory of the device.
 - Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
 - Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
-- [SDFix] (https://play.google.com/store/apps/details?id=nextapp.sdfix) 애플리케이션을 설치하십시오 (루트 권한 필요).
+- [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) 애플리케이션을 설치하십시오 (루트 권한 필요).
 
 #### 앱에 오류가 표시됩니다: "파일이 패치된 후 체크섬이 잘못되었습니다".
 
-어쩌면 프로그램의 버그일 수 있습니다. [이메일] (mailto:unipatcher@gmail.com)로 메일에 패치를 첨부해 연락하십시오.
+어쩌면 프로그램의 버그일 수 있습니다. [이메일](mailto:unipatcher@gmail.com)로 메일에 패치를 첨부해 연락하십시오.
 
 #### 유니패처에 다른 추가 기능이 있습니까?
 
@@ -99,7 +99,7 @@ SMC 헤더는 일부 SNES 롬 이미지의 시작 부분에 있는 512 바이트
 
 #### 앱을 번역하는 방법은 무엇입니까?
 
-앱을 다른 언어로 번역하거나 기존 번역을 개선하려면 [Transifex] (https://www.transifex.com/unipatcher/unipatcher/dashboard/) 사이트에서 할 수 있습니다.
+앱을 다른 언어로 번역하거나 기존 번역을 개선하려면 [Transifex](https://www.transifex.com/unipatcher/unipatcher/dashboard/) 사이트에서 할 수 있습니다.
 
 #### 질문, 기능 요청 혹은 버그 보고를 하고 싶습니다.
 

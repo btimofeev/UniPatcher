@@ -1,36 +1,40 @@
-#### 0.15 (December 7, 2017)
+#### 0.16 (August 24, 2018)
+- Fix BPS patching (Thanks to everyone who sent me bug reports)
+- Now the application only runs on devices with Android 5 and above
+
+#### 0.15 (7 de diciembre de 2017)
 - Soporte Android 8 (Oreo)
-- Interfaz de usuario mejorada en tabletas
-- Chinese translation (Thanks to Nabarl Wang)
-- Portuguese translation (Thanks to Davi Lopes, Matheus Silva Sales and Jhonatan Cardoso)
+- Interfaz de usuario mejorada en tablets
+- Traducción al chino (Gracias a Nabarl Wang)
+- Traducción al portugués (Gracias a Davi Lopes, Matheus Silva Sales and Jhonatan Cardoso)
 - Sólo ARMv7 y x86 son soportados (escríbeme si necesitas otras arquitecturas)
 
 #### 0.14.2 (Julio 13, 2017)
-- Traducción al Coreano (Gracias a Minseo Lee)
+- Traducción al coreano (Gracias a Minseo Lee)
 
 #### 0.14.1 (Abril 30, 2017)
-- Traducción Noruego Bokmål (Gracias a Allan Nordhøy)
-- traducción Japonesa (Gracias a Naofumi Fukue)
-- Traducción Francés (Gracias a Thibaut Panis)
+- Traducción al noruego Bokmål (Gracias a Allan Nordhøy)
+- Traducción al japonés (Gracias a Naofumi Fukue)
+- Traducción al francés (Gracias a Thibaut Panis)
 
 #### 0.14 (Marzo 23, 2017)
 
 - Soporte para crear parches XDelta3
-- Opción añadida "ignorar checksum"
-- Traducción en Español (Gracias a Carlos Sánchez)
-- Quitada biblioteca de análisis y reportes de fallos
+- Opción añadida "Ignorar suma de chequeo"
+- Traducción al español (Gracias a Carlos Sánchez)
+- Biblioteca de análisis y reporte de fallos removida
 
 #### 0.13.2 (Febrero 12, 2017)
 
-- Traducción Ucraniana (Gracias a Volodymyr Shevchuk)
+- Traducción al ucraniano (Gracias a Volodymyr Shevchuk)
 
 #### 0.13.1 (Enero 25, 2017)
 
-- Removido diálogo calificar aplicación
+- Ventana emergente "Calificar aplicación" removida
 
 #### 0.13 (Enero 24, 2017)
 
-- Soporte de parches IPS32
+- Soporte a parches de formato IPS32
 - Anuncios eliminados. Gracias a todos los que apoyaron el desarrollo del programa.
 
 #### 0.12 (Enero 13, 2017)
@@ -41,7 +45,7 @@
 #### 0.11 (Diciembre 25, 2016)
 
 - Soporte de parches EBP (para el juego EarthBound)
-- Traduccion Italiana (Gracias a Matteo Sechi)
+- Traduccion al italiano (Gracias a Matteo Sechi)
 
 #### 0.10.1 (Diciembre 6, 2016)
 
@@ -53,21 +57,21 @@
 
 #### 0.9.2 (Septiembre 18, 2016)
 
-- Toque largo en archivo ROM en el administrador de archivos para ver su checksum (CRC32, SHA1 y MD5).
+- Efectuar un toque prolongado sobre el archivo ROM en el administrador de archivos para ver su suma de chequeo (CRC32, SHA1 y MD5).
 - Error corregido
 
 #### 0.9.1 (Septiembre 2, 2016)
 
 - La aplicación recuerda el último directorio usado
 - Añadida la capacidad de configurar directorios para parches y ROMs
-- Traducción Polaca (Gracias a Michal Bychowski)
+- Traducción al polaco (Gracias a Michal Bychowski)
 
 #### 0.9 (Junio 1, 2016)
 
 - Soporte de parches BPS
 - Añadida página de ayuda (preguntas frecuentes)
-- Traducción Rusa
-- Varias mejoras y correcciones de errores
+- Traducción al ruso
+- Varias mejoras y corrección de errores
 
 #### 0.8.2 (Mayo 6, 2016)
 
@@ -79,7 +83,7 @@
 
 #### 0.8 (Abril 12, 2016)
 
-- Soporte para permisos de Marshmallow
+- Soporte de permisos para Marshmallow
 - Añadida capacidad para renombrar archivo de salida
 - Añadido botón de acción flotante
 - Nuevos colores, iconos y barra de navegación

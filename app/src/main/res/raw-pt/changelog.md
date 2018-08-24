@@ -1,3 +1,7 @@
+#### 0.16 (August 24, 2018)
+- Fix BPS patching (Thanks to everyone who sent me bug reports)
+- Now the application only runs on devices with Android 5 and above
+
 #### 0.15 (December 7, 2017)
 - Support Android 8 (Oreo)
 - Improved UI on tablets

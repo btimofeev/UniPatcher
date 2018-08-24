@@ -1,11 +1,15 @@
-#### 0.15 (December 7, 2017)
-- Support Android 8 (Oreo)
-- Improved UI on tablets
-- Chinese translation (Thanks to Nabarl Wang)
-- Portuguese translation (Thanks to Davi Lopes, Matheus Silva Sales and Jhonatan Cardoso)
-- Only ARMv7 and x86 are supported (write to me if you need other architectures)
+#### 0.16 (August 24, 2018)
+- Fix BPS patching (Thanks to everyone who sent me bug reports)
+- Now the application only runs on devices with Android 5 and above
 
-#### 0.14.2 (July 13, 2017)
+#### 0.15 (2017년 12월 7일)
+- 안드로이드 8 (오레오) 지원
+- 태블릿용으로 개선된 UI
+- 중국어 번역 (Thanks to Nabarl Wang)
+- 포르투갈어 번역 (Thanks to Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso)
+- ARMv7과 x86만 지원됩니다 (다른 아키텍처가 필요하다면 저에게 연락하십시오)
+
+#### 0.14.2 (2017년 7월 13일)
 - 한국어 번역 (Thanks to Minseo Lee)
 
 #### 0.14.1 (2017년 4월 30일)
@@ -100,7 +104,7 @@
 
 #### 0.7 (2014년 5월 7일)
 
-- By popular demand UniPatcher is now free, both of charge, and as in freedom, but with advertising. It is not displayed if you purchase the program
+- 많은 수요에 의해 유니패처는 이제 무료이며 자유롭게 사용할 수 있지만 광고가 표시됩니다. 프로그램을 구매하면 표사되지 않습니다
 - DPS 패치 지원
 - 추가된 기능: 세가 메가 드라이브 롬을 위한 체크섬 수정
 - 추가된 기능: 닌텐도 슈퍼 패미컴 롬을 위한 SMC 헤더 추가/제거
