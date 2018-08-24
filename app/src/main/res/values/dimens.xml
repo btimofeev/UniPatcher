@@ -18,7 +18,7 @@
     <dimen name="file_browser_content_right_margin">0dp</dimen>
 
     <dimen name="card_elevation">2dp</dimen>
-    <dimen name="card_corner_radius">2dp</dimen>
+    <dimen name="card_corner_radius">4dp</dimen>
     <dimen name="card_padding">8dp</dimen>
     <dimen name="card_line_margin">8dp</dimen>
     <dimen name="card_line_height">1dp</dimen>
