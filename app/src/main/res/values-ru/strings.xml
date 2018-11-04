@@ -140,7 +140,7 @@
     <string name="help_activity_about_tab_title">О программе</string>
     <string name="help_activity_about_tab_version">Версия %1$s</string>
     <string name="help_activity_about_tab_license">Лицензия: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">&#169; Борис Тимофеев, 2013&#8211;2017</string>
+    <string name="help_activity_about_tab_copyright">&#169; Борис Тимофеев, 2013&#8211;2018</string>
     <string name="help_activity_action_send_feedback">Написать письмо автору</string>
     <string name="help_activity_action_visit_site">Посетить веб-сайт</string>
 

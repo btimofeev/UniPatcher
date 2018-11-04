@@ -1,6 +1,10 @@
-#### 0.16 (August 24, 2018)
-- Fix BPS patching (Thanks to everyone who sent me bug reports)
-- Now the application only runs on devices with Android 5 and above
+#### 0.16.1 (November 4, 2018)
+- Support Android 9 (Pie)
+- Changed gamepad image and added square launcher icon
+
+#### 0.16 (2018/8/24)
+- BPS パッチの修正 (バグレポートを送ってくれてありがとうございます)
+- アプリケーションが Android 5 以上のデバイスでのみ動作するようになりました
 
 #### 0.15 (2017/12/7)
 - Android 8 (Oreo) のサポート

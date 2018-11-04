@@ -140,7 +140,7 @@
     <string name="help_activity_about_tab_title">Om</string>
     <string name="help_activity_about_tab_version">Versjon %1$s</string>
     <string name="help_activity_about_tab_license">Lisense: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2017</string>
+    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2018</string>
     <string name="help_activity_action_send_feedback">Send tilbakemelding</string>
     <string name="help_activity_action_visit_site">Besøk nettside</string>
 

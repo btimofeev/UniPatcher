@@ -109,7 +109,7 @@
     <string name="help_activity_about_tab_title">A proposito</string>
     <string name="help_activity_about_tab_version">Versione %1$s</string>
     <string name="help_activity_about_tab_license">Licensa: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2017</string>
+    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2018</string>
     <string name="help_activity_action_send_feedback">Invia feedback</string>
     <string name="help_activity_action_visit_site">Visita sito web</string>
 

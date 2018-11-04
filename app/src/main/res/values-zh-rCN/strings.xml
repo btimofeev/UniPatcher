@@ -140,7 +140,7 @@
     <string name="help_activity_about_tab_title">关于</string>
     <string name="help_activity_about_tab_version">版本号 %1$s</string>
     <string name="help_activity_about_tab_license">许可: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2017</string>
+    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2018</string>
     <string name="help_activity_action_send_feedback">发送反馈</string>
     <string name="help_activity_action_visit_site">访问网站</string>
 

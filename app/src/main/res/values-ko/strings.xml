@@ -137,7 +137,7 @@
     <string name="help_activity_about_tab_title">정보</string>
     <string name="help_activity_about_tab_version">버전 %1$s</string>
     <string name="help_activity_about_tab_license">라이선스: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2017</string>
+    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2018</string>
     <string name="help_activity_action_send_feedback">의견 보내기</string>
     <string name="help_activity_action_visit_site">웹사이트 방문</string>
 
