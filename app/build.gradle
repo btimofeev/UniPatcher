@@ -22,7 +22,7 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags ""
-                arguments "-DANDROID_PLATFORM=android-14", "-DCMAKE_BUILD_TYPE=Release"
+                arguments "-DCMAKE_BUILD_TYPE=Release"
             }
         }
     }
