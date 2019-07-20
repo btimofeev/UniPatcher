@@ -78,18 +78,9 @@ public class Utils {
         return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
     }
 
-    @TargetApi(18)
     public static long getFreeSpace(File file) {
         StatFs stat = new StatFs(file.getPath());
-        long bytesAvailable;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            bytesAvailable = stat.getAvailableBytes();
-        } else
-        //noinspection deprecation
-        {
-            bytesAvailable = (long) stat.getBlockSize() * (long) stat.getAvailableBlocks();
-        }
-        return bytesAvailable;
+        return stat.getAvailableBytes();
     }
 
     public static void copyFile(Context context, File from, File to) throws IOException {
