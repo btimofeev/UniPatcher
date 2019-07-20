@@ -9,7 +9,7 @@
     <LinearLayout
         style="@style/CardsHolder">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/sourceFileCardView"
             style="@style/Card.Clickable">
 
@@ -57,9 +57,9 @@
                 </LinearLayout>
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/modifiedFileCardView"
             style="@style/Card.Clickable">
 
@@ -107,9 +107,9 @@
                 </LinearLayout>
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/patchFileCardView"
             style="@style/Card.Clickable">
 
@@ -156,7 +156,7 @@
                         android:textSize="20sp"/>
                 </LinearLayout>
             </LinearLayout>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 </ScrollView>

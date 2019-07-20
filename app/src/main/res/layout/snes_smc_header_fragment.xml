@@ -9,7 +9,7 @@
     <LinearLayout
         style="@style/CardsHolder">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/romCardView"
             style="@style/Card.Clickable">
 
@@ -58,9 +58,9 @@
                 </LinearLayout>
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/helpCardView"
             style="@style/Card">
 
@@ -72,9 +72,9 @@
                 android:text="@string/snes_smc_header_help"
                 android:textSize="16sp"/>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/headerCardView"
             style="@style/Card.Clickable"
             android:visibility="gone">
@@ -124,7 +124,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 </ScrollView>
