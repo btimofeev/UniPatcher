@@ -82,27 +82,10 @@ public class CreatePatchFragment extends ActionFragment implements View.OnClickL
 
         restoreState(savedInstanceState);
 
-        setFonts(view);
-
         // Set action bar title
         getActivity().setTitle(R.string.nav_create_patch);
 
         return view;
-    }
-
-    private void setFonts(View view) {
-        TextView sourceLabel = (TextView) view.findViewById(R.id.sourceFileLabel);
-        TextView modifiedLabel = (TextView) view.findViewById(R.id.modifiedFileLabel);
-        TextView patchLabel = (TextView) view.findViewById(R.id.patchFileLabel);
-
-        Typeface roboto_light = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Light.ttf");
-
-        sourceLabel.setTypeface(roboto_light);
-        modifiedLabel.setTypeface(roboto_light);
-        patchLabel.setTypeface(roboto_light);
-        sourceNameTextView.setTypeface(roboto_light);
-        modifiedNameTextView.setTypeface(roboto_light);
-        patchNameTextView.setTypeface(roboto_light);
     }
 
     private void restoreState(Bundle savedInstanceState) {

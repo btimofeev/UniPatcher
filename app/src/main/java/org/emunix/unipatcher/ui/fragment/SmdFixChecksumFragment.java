@@ -68,22 +68,10 @@ public class SmdFixChecksumFragment extends ActionFragment implements View.OnCli
 
         restoreState(savedInstanceState);
 
-        setFonts(view);
-
         // Set action bar title
         getActivity().setTitle(R.string.nav_smd_fix_checksum);
 
         return view;
-    }
-
-    private void setFonts(View view) {
-        TextView romLabel = (TextView) view.findViewById(R.id.romLabel);
-
-        Typeface roboto_light = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Light.ttf");
-
-        romLabel.setTypeface(roboto_light);
-        romNameTextView.setTypeface(roboto_light);
-        fixChecksumInfoTextview.setTypeface((roboto_light));
     }
 
     private void restoreState(Bundle savedInstanceState) {

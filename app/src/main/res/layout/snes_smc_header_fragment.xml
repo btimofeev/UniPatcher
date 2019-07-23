@@ -26,6 +26,7 @@
                     android:padding="8dp"
                     android:text="@string/main_activity_rom_file"
                     android:textColor="@color/colorCardHeaderText"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="24sp"/>
 
                 <View
@@ -54,6 +55,7 @@
                         android:layout_height="wrap_content"
                         android:padding="8dp"
                         android:text="@string/main_activity_tap_to_select"
+                        android:fontFamily="sans-serif-light"
                         android:textSize="20sp"/>
                 </LinearLayout>
             </LinearLayout>
@@ -70,6 +72,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/card_padding"
                 android:text="@string/snes_smc_header_help"
+                android:fontFamily="sans-serif-light"
                 android:textSize="16sp"/>
 
         </androidx.cardview.widget.CardView>
@@ -92,6 +95,7 @@
                     android:padding="8dp"
                     android:text="@string/main_activity_header_file"
                     android:textColor="@color/colorCardHeaderText"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="24sp"/>
 
                 <View
@@ -120,6 +124,7 @@
                         android:layout_height="wrap_content"
                         android:padding="8dp"
                         android:text="@string/main_activity_tap_to_select"
+                        android:fontFamily="sans-serif-light"
                         android:textSize="20sp"/>
                 </LinearLayout>
             </LinearLayout>

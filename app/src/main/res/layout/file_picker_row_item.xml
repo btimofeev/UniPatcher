@@ -31,6 +31,7 @@
             android:layout_marginLeft="@dimen/keyline_two"
             android:layout_marginRight="@dimen/keyline_one"
             android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-light"
             android:textSize="20sp">
         </TextView>
 

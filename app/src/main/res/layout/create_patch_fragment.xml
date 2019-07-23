@@ -26,6 +26,7 @@
                     android:padding="8dp"
                     android:text="@string/create_patch_fragment_source_file"
                     android:textColor="@color/colorCardHeaderText"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="24sp"/>
 
                 <View
@@ -53,6 +54,7 @@
                         android:layout_height="wrap_content"
                         android:padding="8dp"
                         android:text="@string/main_activity_tap_to_select"
+                        android:fontFamily="sans-serif-light"
                         android:textSize="20sp"/>
                 </LinearLayout>
             </LinearLayout>
@@ -76,6 +78,7 @@
                     android:padding="8dp"
                     android:text="@string/create_patch_fragment_modified_file"
                     android:textColor="@color/colorCardHeaderText"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="24sp"/>
 
                 <View
@@ -103,6 +106,7 @@
                         android:layout_height="wrap_content"
                         android:padding="8dp"
                         android:text="@string/main_activity_tap_to_select"
+                        android:fontFamily="sans-serif-light"
                         android:textSize="20sp"/>
                 </LinearLayout>
             </LinearLayout>
@@ -126,6 +130,7 @@
                     android:padding="8dp"
                     android:text="@string/create_patch_fragment_patch_file"
                     android:textColor="@color/colorCardHeaderText"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="24sp"/>
 
                 <View
@@ -153,6 +158,7 @@
                         android:layout_height="wrap_content"
                         android:padding="8dp"
                         android:text="@string/main_activity_tap_to_rename"
+                        android:fontFamily="sans-serif-light"
                         android:textSize="20sp"/>
                 </LinearLayout>
             </LinearLayout>

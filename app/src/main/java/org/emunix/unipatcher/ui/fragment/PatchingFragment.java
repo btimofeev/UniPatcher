@@ -83,8 +83,6 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
 
         restoreState(savedInstanceState);
 
-        setFonts(view);
-
         // Set action bar title
         getActivity().setTitle(R.string.nav_apply_patch);
 
@@ -105,21 +103,6 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
         if (patchPath != null) {
             patchNameTextView.setText(new File(patchPath).getName());
         }
-    }
-
-    private void setFonts(View view) {
-        TextView patchLabel = (TextView) view.findViewById(R.id.patchLabel);
-        TextView romLabel = (TextView) view.findViewById(R.id.romLabel);
-        TextView outputLabel = (TextView) view.findViewById(R.id.outputLabel);
-
-        Typeface roboto_light = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Light.ttf");
-
-        patchLabel.setTypeface(roboto_light);
-        romLabel.setTypeface(roboto_light);
-        outputLabel.setTypeface(roboto_light);
-        patchNameTextView.setTypeface(roboto_light);
-        romNameTextView.setTypeface(roboto_light);
-        outputNameTextView.setTypeface(roboto_light);
     }
 
     private void restoreState(Bundle savedInstanceState) {

@@ -76,25 +76,10 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
 
         restoreState(savedInstanceState);
 
-        setFonts(view);
-
         // Set action bar title
         getActivity().setTitle(R.string.nav_snes_add_del_smc_header);
 
         return view;
-    }
-
-    private void setFonts(View view) {
-        TextView romLabel = (TextView) view.findViewById(R.id.romLabel);
-        TextView headerLabel = (TextView) view.findViewById(R.id.headerLabel);
-
-        Typeface roboto_light = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Light.ttf");
-
-        romLabel.setTypeface(roboto_light);
-        romNameTextView.setTypeface(roboto_light);
-        headerLabel.setTypeface(roboto_light);
-        headerNameTextView.setTypeface(roboto_light);
-        headerInfoTextView.setTypeface(roboto_light);
     }
 
     private void restoreState(Bundle savedInstanceState) {

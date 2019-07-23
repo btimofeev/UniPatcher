@@ -70,9 +70,6 @@ public class FilePickerAdapter extends RecyclerView.Adapter<FilePickerAdapter.Vi
                     return true;
                 }
             });
-
-            Typeface roboto_light = Typeface.createFromAsset(name.getContext().getAssets(), "fonts/Roboto-Light.ttf");
-            name.setTypeface(roboto_light);
         }
     }
 
