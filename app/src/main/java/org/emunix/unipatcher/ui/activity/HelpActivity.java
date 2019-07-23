@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016 Boris Timofeev
+Copyright (C) 2016, 2019 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -46,7 +46,6 @@ public class HelpActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.help_activity_faq_tab_title)));
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.help_activity_changelog_tab_title)));
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.help_activity_about_tab_title)));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
@@ -90,6 +89,10 @@ public class HelpActivity extends AppCompatActivity {
             case R.id.action_visit_website:
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_site)));
                 startActivity(browserIntent);
+                return true;
+            case R.id.action_changelog:
+                Intent changelogIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/btimofeev/UniPatcher/blob/master/Changelog.md"));
+                startActivity(changelogIntent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

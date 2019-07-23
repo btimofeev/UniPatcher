@@ -20,12 +20,6 @@ source_file = app/src/main/res/raw/faq.md
 source_lang = en
 type = TXT
 
-[unipatcher.changelog_md]
-file_filter = app/src/main/res/raw-<lang>/changelog.md
-source_file = app/src/main/res/raw/changelog.md
-source_lang = en
-type = TXT
-
 [unipatcher.google-play_txt]
 file_filter = google-play/<lang>/google-play.txt
 source_file = google-play/en/google-play.txt

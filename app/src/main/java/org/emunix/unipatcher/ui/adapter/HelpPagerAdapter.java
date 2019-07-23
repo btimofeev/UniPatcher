@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016 Boris Timofeev
+Copyright (C) 2016, 2019 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -24,7 +24,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import org.emunix.unipatcher.ui.fragment.AboutFragment;
-import org.emunix.unipatcher.ui.fragment.ChangelogFragment;
 import org.emunix.unipatcher.ui.fragment.FaqFragment;
 
 public class HelpPagerAdapter extends FragmentStatePagerAdapter {
@@ -41,8 +40,6 @@ public class HelpPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new FaqFragment();
             case 1:
-                return new ChangelogFragment();
-            case 2:
                 return new AboutFragment();
             default:
                 return null;

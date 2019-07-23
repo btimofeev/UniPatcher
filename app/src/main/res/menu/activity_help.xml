@@ -16,4 +16,9 @@
         android:title="@string/help_activity_action_visit_site"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/action_changelog"
+        android:orderInCategory="300"
+        android:title="@string/help_activity_action_changelog"
+        app:showAsAction="never"/>
 </menu>
