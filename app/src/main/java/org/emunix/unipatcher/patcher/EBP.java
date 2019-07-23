@@ -72,7 +72,7 @@ public class EBP extends Patcher {
         File cleanRom = File.createTempFile("rom", null, context.getCacheDir());
         File ipsPatch = File.createTempFile("patch", null, context.getCacheDir());
         try {
-            Utils.copyFile(context, romFile, cleanRom);
+            Utils.INSTANCE.copyFile(context, romFile, cleanRom);
             prepareCleanRom(cleanRom, ignoreChecksum);
 
             EBPtoIPS(patchFile, ipsPatch);
@@ -185,7 +185,7 @@ public class EBP extends Patcher {
         try {
             MessageDigest md5Digest = MessageDigest.getInstance("MD5");
             md5Digest.update(array);
-            String md5 = Utils.bytesToHexString(md5Digest.digest());
+            String md5 = Utils.INSTANCE.bytesToHexString(md5Digest.digest());
             return md5.equals(EB_CLEAN_MD5);
         } catch (NoSuchAlgorithmException e) {
             throw new IOException(e.getMessage());
@@ -206,7 +206,7 @@ public class EBP extends Patcher {
             int count;
             while ((count = f.read(byteArray)) != -1)
                 md5Digest.update(byteArray, 0, count);
-            return Utils.bytesToHexString(md5Digest.digest());
+            return Utils.INSTANCE.bytesToHexString(md5Digest.digest());
         } catch (NoSuchAlgorithmException e) {
             throw new IOException(e.getMessage());
         } finally {

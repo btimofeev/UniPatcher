@@ -43,7 +43,7 @@ public class AboutFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_about, container, false);
 
         TextView versionText = (TextView) view.findViewById(R.id.versionText);
-        versionText.setText(getString(R.string.help_activity_about_tab_version, Utils.getAppVersion(getActivity())));
+        versionText.setText(getString(R.string.help_activity_about_tab_version, Utils.INSTANCE.getAppVersion(getActivity())));
         HtmlTextView aboutText = (HtmlTextView) view.findViewById(R.id.aboutText);
         try {
             String html = new Markdown4jProcessor().process(

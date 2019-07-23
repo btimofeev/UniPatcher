@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013-2017 Boris Timofeev
+Copyright (C) 2013-2017, 2019 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -42,7 +42,6 @@ import android.view.View;
 import org.emunix.unipatcher.BuildConfig;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.Settings;
-import org.emunix.unipatcher.UniPatcher;
 import org.emunix.unipatcher.ui.fragment.ActionFragment;
 import org.emunix.unipatcher.ui.fragment.CreatePatchFragment;
 import org.emunix.unipatcher.ui.fragment.PatchingFragment;
@@ -57,6 +56,8 @@ import static androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public String arg = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,8 +171,7 @@ public class MainActivity extends AppCompatActivity
 
     private void parseArgument() {
         try {
-            String arg = getIntent().getData().getPath();
-            UniPatcher.setAppArgument(arg);
+            arg = getIntent().getData().getPath();
         } catch (NullPointerException e) {
             // The application is not opened from the file manager
         }
@@ -179,13 +179,13 @@ public class MainActivity extends AppCompatActivity
 
     private void showDonateSnackbar() {
         // don't show snackbar if the user did not patch the file successfully
-        if (!Settings.getPatchingSuccessful(this))
+        if (!Settings.INSTANCE.getPatchingSuccessful(this))
             return;
 
         // don't show snackbar some time if the user swiped off it before
-        int count = Settings.getDontShowDonateSnackbarCount(this);
+        int count = Settings.INSTANCE.getDontShowDonateSnackbarCount(this);
         if (count != 0) {
-            Settings.setDontShowDonateSnackbarCount(this, --count);
+            Settings.INSTANCE.setDontShowDonateSnackbarCount(this, --count);
             return;
         }
 
@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity
                         @Override
                         public void onDismissed(Snackbar snackbar, int event) {
                             if (event == Snackbar.Callback.DISMISS_EVENT_SWIPE) {
-                                Settings.setDontShowDonateSnackbarCount(getApplicationContext(), 30);
+                                Settings.INSTANCE.setDontShowDonateSnackbarCount(getApplicationContext(), 30);
                             }
                         }
                     }

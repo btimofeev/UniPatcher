@@ -106,7 +106,7 @@ public class UPS extends Patcher {
                 offset += p.getValue();
                 patchPos += p.getSize();
                 if (offset > ySize) continue;
-                Utils.copy(romStream, outputStream, offset - outPos);
+                Utils.INSTANCE.copy(romStream, outputStream, offset - outPos);
                 outPos += offset - outPos;
                 for (long i = offset; i < ySize; i++) {
                     x = patchStream.read();
@@ -119,7 +119,7 @@ public class UPS extends Patcher {
                 }
             }
             // write rom tail and trim
-            Utils.copy(romStream, outputStream, ySize - outPos);
+            Utils.INSTANCE.copy(romStream, outputStream, ySize - outPos);
 
         } finally {
             IOUtils.closeQuietly(patchStream);

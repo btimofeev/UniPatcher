@@ -130,7 +130,7 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
         switch (view.getId()) {
             case R.id.romCardView:
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_rom));
-                intent.putExtra("directory", Settings.getRomDir(getActivity()));
+                intent.putExtra("directory", Settings.INSTANCE.getRomDir(getActivity()));
                 startActivityForResult(intent, Action.SELECT_ROM_FILE);
                 break;
             case R.id.headerCardView:
@@ -146,7 +146,7 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
         if (resultCode == Activity.RESULT_OK) {
             String path = data.getStringExtra("path");
 
-            if (Utils.isArchive(path)) {
+            if (Utils.INSTANCE.isArchive(path)) {
                 Toast.makeText(getActivity(), R.string.main_activity_toast_archives_not_supported, Toast.LENGTH_LONG).show();
             }
 
@@ -155,7 +155,7 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
                     romPath = path;
                     romNameTextView.setVisibility(View.VISIBLE);
                     romNameTextView.setText(new File(path).getName());
-                    Settings.setLastRomDir(getActivity(), new File(path).getParent());
+                    Settings.INSTANCE.setLastRomDir(getActivity(), new File(path).getParent());
                     SnesSmcHeader checker = new SnesSmcHeader();
                     if (checker.isHasSmcHeader(new File(path))) {
                         action = Action.SNES_DELETE_SMC_HEADER;
@@ -188,7 +188,7 @@ public class SnesSmcHeaderFragment extends ActionFragment implements View.OnClic
         intent.putExtra("action", action);
         intent.putExtra("romPath", romPath);
         intent.putExtra("headerPath", headerPath);
-        Utils.startForegroundService(getActivity(), intent);
+        Utils.INSTANCE.startForegroundService(getActivity(), intent);
 
         if (action == Action.SNES_ADD_SMC_HEADER) {
             Toast.makeText(getActivity(), R.string.notify_snes_add_smc_header_stared_check_noify, Toast.LENGTH_SHORT).show();

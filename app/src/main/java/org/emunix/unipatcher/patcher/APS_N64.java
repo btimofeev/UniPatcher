@@ -124,20 +124,20 @@ public class APS_N64 extends Patcher {
                 if (offset <= romSize) {
                     if (outPos < offset) {
                         size = offset - outPos;
-                        Utils.copy(romStream, outputStream, size);
+                        Utils.INSTANCE.copy(romStream, outputStream, size);
                         romPos += size;
                         outPos += size;
                     }
                 } else {
                     if (outPos < romSize) {
                         size = (int) romSize - outPos;
-                        Utils.copy(romStream, outputStream, size);
+                        Utils.INSTANCE.copy(romStream, outputStream, size);
                         romPos += size;
                         outPos += size;
                     }
                     if (outPos < offset) {
                         size = offset - outPos;
-                        Utils.copy(size, (byte) 0x0, outputStream);
+                        Utils.INSTANCE.copy(size, (byte) 0x0, outputStream);
                         outPos += size;
                     }
                 }
@@ -173,7 +173,7 @@ public class APS_N64 extends Patcher {
                 }
             }
             // write rom tail and trim
-            Utils.copy(romStream, outputStream, outSize - outPos);
+            Utils.INSTANCE.copy(romStream, outputStream, outSize - outPos);
         } finally {
             IOUtils.closeQuietly(romStream);
             IOUtils.closeQuietly(patchStream);

@@ -133,12 +133,12 @@ public class CreatePatchFragment extends ActionFragment implements View.OnClickL
         switch (view.getId()) {
             case R.id.sourceFileCardView:
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_source_file));
-                intent.putExtra("directory", Settings.getRomDir(getActivity()));
+                intent.putExtra("directory", Settings.INSTANCE.getRomDir(getActivity()));
                 startActivityForResult(intent, Action.SELECT_SOURCE_FILE);
                 break;
             case R.id.modifiedFileCardView:
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_modified_file));
-                intent.putExtra("directory", Settings.getRomDir(getActivity()));
+                intent.putExtra("directory", Settings.INSTANCE.getRomDir(getActivity()));
                 startActivityForResult(intent, Action.SELECT_MODIFIED_FILE);
                 break;
             case R.id.patchFileCardView:
@@ -159,13 +159,13 @@ public class CreatePatchFragment extends ActionFragment implements View.OnClickL
                     sourcePath = path;
                     sourceNameTextView.setVisibility(View.VISIBLE);
                     sourceNameTextView.setText(fpath.getName());
-                    Settings.setLastRomDir(getActivity(), fpath.getParent());
+                    Settings.INSTANCE.setLastRomDir(getActivity(), fpath.getParent());
                     break;
                 case Action.SELECT_MODIFIED_FILE:
                     modifiedPath = path;
                     modifiedNameTextView.setVisibility(View.VISIBLE);
                     modifiedNameTextView.setText(fpath.getName());
-                    Settings.setLastRomDir(getActivity(), fpath.getParent());
+                    Settings.INSTANCE.setLastRomDir(getActivity(), fpath.getParent());
                     patchPath = makeOutputPath(path);
                     patchNameTextView.setText(new File(patchPath).getName());
                     break;
@@ -175,7 +175,7 @@ public class CreatePatchFragment extends ActionFragment implements View.OnClickL
     }
 
     private String makeOutputPath(String fullname) {
-        String dir = Settings.getOutputDir(getActivity());
+        String dir = Settings.INSTANCE.getOutputDir(getActivity());
         if (dir.equals("")) { // get ROM directory
             dir = FilenameUtils.getFullPath(fullname);
         }
@@ -200,7 +200,7 @@ public class CreatePatchFragment extends ActionFragment implements View.OnClickL
         intent.putExtra("sourcePath", sourcePath);
         intent.putExtra("modifiedPath", modifiedPath);
         intent.putExtra("patchPath", patchPath);
-        Utils.startForegroundService(getActivity(), intent);
+        Utils.INSTANCE.startForegroundService(getActivity(), intent);
 
         Toast.makeText(getActivity(), R.string.toast_create_patch_started_check_notify, Toast.LENGTH_SHORT).show();
         return true;
@@ -220,7 +220,7 @@ public class CreatePatchFragment extends ActionFragment implements View.OnClickL
         // add left and right margins to EditText.
         FrameLayout container = new FrameLayout(getActivity());
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        int dp_24 = Utils.dpToPx(getActivity(), 24);
+        int dp_24 = Utils.INSTANCE.dpToPx(getActivity(), 24);
         params.setMargins(dp_24, 0, dp_24, 0);
         input.setLayoutParams(params);
         container.addView(input);

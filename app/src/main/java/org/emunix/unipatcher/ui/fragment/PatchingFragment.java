@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014, 2016, 2017 Boris Timofeev
+Copyright (C) 2014, 2016, 2017, 2019 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -43,6 +43,7 @@ import org.emunix.unipatcher.UniPatcher;
 import org.emunix.unipatcher.Utils;
 import org.emunix.unipatcher.WorkerService;
 import org.emunix.unipatcher.ui.activity.FilePickerActivity;
+import org.emunix.unipatcher.ui.activity.MainActivity;
 
 import java.io.File;
 
@@ -96,7 +97,11 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
     }
 
     private void parseArgument() {
-        patchPath = UniPatcher.getAppArgument();
+        try {
+            patchPath = ((MainActivity) getActivity()).arg;
+        } catch (NullPointerException e) {
+            patchPath = null;
+        }
         if (patchPath != null) {
             patchNameTextView.setText(new File(patchPath).getName());
         }
@@ -145,12 +150,12 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
         switch (view.getId()) {
             case R.id.patchCardView:
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_patch));
-                intent.putExtra("directory", Settings.getPatchDir(getActivity()));
+                intent.putExtra("directory", Settings.INSTANCE.getPatchDir(getActivity()));
                 startActivityForResult(intent, Action.SELECT_PATCH_FILE);
                 break;
             case R.id.romCardView:
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_rom));
-                intent.putExtra("directory", Settings.getRomDir(getActivity()));
+                intent.putExtra("directory", Settings.INSTANCE.getRomDir(getActivity()));
                 startActivityForResult(intent, Action.SELECT_ROM_FILE);
                 break;
             case R.id.outputCardView:
@@ -166,7 +171,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
             String path = data.getStringExtra("path");
             File fpath = new File(path);
 
-            if (Utils.isArchive(path)) {
+            if (Utils.INSTANCE.isArchive(path)) {
                 Toast.makeText(getActivity(), R.string.main_activity_toast_archives_not_supported, Toast.LENGTH_LONG).show();
             }
 
@@ -175,7 +180,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
                     romPath = path;
                     romNameTextView.setVisibility(View.VISIBLE);
                     romNameTextView.setText(fpath.getName());
-                    Settings.setLastRomDir(getActivity(), fpath.getParent());
+                    Settings.INSTANCE.setLastRomDir(getActivity(), fpath.getParent());
                     outputPath = makeOutputPath(path);
                     outputNameTextView.setText(new File(outputPath).getName());
                     break;
@@ -183,7 +188,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
                     patchPath = path;
                     patchNameTextView.setVisibility(View.VISIBLE);
                     patchNameTextView.setText(fpath.getName());
-                    Settings.setLastPatchDir(getActivity(), fpath.getParent());
+                    Settings.INSTANCE.setLastPatchDir(getActivity(), fpath.getParent());
                     break;
             }
         }
@@ -191,7 +196,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
     }
 
     private String makeOutputPath(String fullname) {
-        String dir = Settings.getOutputDir(getActivity());
+        String dir = Settings.INSTANCE.getOutputDir(getActivity());
         if (dir.equals("")) { // get ROM directory
             dir = FilenameUtils.getFullPath(fullname);
         }
@@ -217,7 +222,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
         intent.putExtra("romPath", romPath);
         intent.putExtra("patchPath", patchPath);
         intent.putExtra("outputPath", outputPath);
-        Utils.startForegroundService(getActivity(), intent);
+        Utils.INSTANCE.startForegroundService(getActivity(), intent);
 
         Toast.makeText(getActivity(), R.string.toast_patching_started_check_notify, Toast.LENGTH_SHORT).show();
         return true;
@@ -237,7 +242,7 @@ public class PatchingFragment extends ActionFragment implements View.OnClickList
         // add left and right margins to EditText.
         FrameLayout container = new FrameLayout(getActivity());
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        int dp_24 = Utils.dpToPx(getActivity(), 24);
+        int dp_24 = Utils.INSTANCE.dpToPx(getActivity(), 24);
         params.setMargins(dp_24, 0, dp_24, 0);
         input.setLayoutParams(params);
         container.addView(input);

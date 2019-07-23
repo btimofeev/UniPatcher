@@ -89,7 +89,7 @@ public class APS_GBA extends Patcher {
         BufferedInputStream patchStream = null;
         RandomAccessFile output = null;
 
-        Utils.copyFile(context, romFile, outputFile);
+        Utils.INSTANCE.copyFile(context, romFile, outputFile);
 
         try {
             patchStream = new BufferedInputStream(new FileInputStream(patchFile));
@@ -153,9 +153,9 @@ public class APS_GBA extends Patcher {
         }
 
         if (isOriginal) {
-            Utils.truncateFile(outputFile, fileSize2);
+            Utils.INSTANCE.truncateFile(outputFile, fileSize2);
         } else if (isModified) {
-            Utils.truncateFile(outputFile, fileSize1);
+            Utils.INSTANCE.truncateFile(outputFile, fileSize1);
         }
     }
 

@@ -97,7 +97,7 @@ public class IPS extends Patcher {
                         } else {
                             size = romSize - romPos;
                         }
-                        Utils.copy(romStream, outputStream, size);
+                        Utils.INSTANCE.copy(romStream, outputStream, size);
                     }
                     break;
                 }
@@ -105,20 +105,20 @@ public class IPS extends Patcher {
                 if (offset <= romSize) {
                     if (outPos < offset) {
                         size = offset - outPos;
-                        Utils.copy(romStream, outputStream, size);
+                        Utils.INSTANCE.copy(romStream, outputStream, size);
                         romPos += size;
                         outPos += size;
                     }
                 } else {
                     if (outPos < romSize) {
                         size = romSize - outPos;
-                        Utils.copy(romStream, outputStream, size);
+                        Utils.INSTANCE.copy(romStream, outputStream, size);
                         romPos += size;
                         outPos += size;
                     }
                     if (outPos < offset) {
                         size = offset - outPos;
-                        Utils.copy(size, (byte) 0x0, outputStream);
+                        Utils.INSTANCE.copy(size, (byte) 0x0, outputStream);
                         outPos += size;
                     }
                 }

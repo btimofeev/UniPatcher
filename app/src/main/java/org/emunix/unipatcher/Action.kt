@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017 Boris Timofeev
+ Copyright (c) 2017, 2019 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -18,18 +18,18 @@
 
  */
 
-package org.emunix.unipatcher;
+package org.emunix.unipatcher
 
-public class Action {
-    public static final int SELECT_ROM_FILE = 1;
-    public static final int SELECT_PATCH_FILE = 2;
-    public static final int SELECT_SOURCE_FILE = 3;
-    public static final int SELECT_MODIFIED_FILE = 4;
-    public static final int SELECT_HEADER_FILE = 5;
+object Action {
+    const val SELECT_ROM_FILE = 1
+    const val SELECT_PATCH_FILE = 2
+    const val SELECT_SOURCE_FILE = 3
+    const val SELECT_MODIFIED_FILE = 4
+    const val SELECT_HEADER_FILE = 5
 
-    public static final int APPLY_PATCH = 101;
-    public static final int CREATE_PATCH = 102;
-    public static final int SMD_FIX_CHECKSUM = 103;
-    public static final int SNES_ADD_SMC_HEADER = 104;
-    public static final int SNES_DELETE_SMC_HEADER = 105;
+    const val APPLY_PATCH = 101
+    const val CREATE_PATCH = 102
+    const val SMD_FIX_CHECKSUM = 103
+    const val SNES_ADD_SMC_HEADER = 104
+    const val SNES_DELETE_SMC_HEADER = 105
 }

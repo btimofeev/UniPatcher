@@ -219,7 +219,7 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
                 fileList.add(entry);
             } else {
                 entry = new FileEntry();
-                if (Utils.isPatch(file)) {
+                if (Utils.INSTANCE.isPatch(file)) {
                     entry.setIcon(R.drawable.healing);
                 } else {
                     entry.setIcon(R.drawable.file);
@@ -246,12 +246,12 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
-        if (Utils.hasStoragePermission(this))
+        if (Utils.INSTANCE.hasStoragePermission(this))
             savedInstanceState.putString("currentDirectory", currentDir.getAbsolutePath());
     }
 
     private void requestStoragePermission() {
-        if (!Utils.hasStoragePermission(this)) {
+        if (!Utils.INSTANCE.hasStoragePermission(this)) {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     REQUEST_PERMISSION_WRITE_STORAGE);
@@ -382,8 +382,8 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
             fis.close();
 
             String crc32 = Long.toHexString(crc32Digest.getValue());
-            String md5 = Utils.bytesToHexString(md5Digest.digest());
-            String sha1 = Utils.bytesToHexString(sha1Digest.digest());
+            String md5 = Utils.INSTANCE.bytesToHexString(md5Digest.digest());
+            String sha1 = Utils.INSTANCE.bytesToHexString(sha1Digest.digest());
 
             HashMap<String, String> checksum = new HashMap<>();
             checksum.put(CRC32, crc32);

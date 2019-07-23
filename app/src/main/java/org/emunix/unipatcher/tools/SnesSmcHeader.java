@@ -76,7 +76,7 @@ public class SnesSmcHeader {
             IOUtils.closeQuietly(outputHeader);
         }
 
-        Utils.moveFile(context, tmpfile, romfile);
+        Utils.INSTANCE.moveFile(context, tmpfile, romfile);
     }
 
     public void addSnesSmcHeader(Context context, File romfile, File headerfile) throws IOException, RomException {
@@ -118,7 +118,7 @@ public class SnesSmcHeader {
             IOUtils.closeQuietly(outputRom);
         }
 
-        Utils.moveFile(context, tmpfile, romfile);
+        Utils.INSTANCE.moveFile(context, tmpfile, romfile);
     }
 
     public void addSnesSmcHeader(Context context, File romfile) throws IOException, RomException {
