@@ -36,6 +36,10 @@ android {
             proguardFile './proguard-android.txt'
             signingConfig signingConfigs.release
         }
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix '-DEBUG'
+        }
     }
 
     flavorDimensions "default"
