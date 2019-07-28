@@ -117,11 +117,9 @@
     <string name="settings_activity_title">Innstillinger</string>
     <string name="settings_interface_header">Brukergrensesnitt</string>
     <string name="settings_theme">Drakt</string>
-    <string name="settings_theme_description">Endre fargepaletten. DagNatt-drakten lar deg bytte mellom lys og mørk drakt avhengig av døgnets forløp.</string>
     <string name="settings_theme_dialog_title">Velg drakt</string>
     <string name="settings_theme_name_light">Lys</string>
     <string name="settings_theme_name_dark">Mørk</string>
-    <string name="settings_theme_name_daynight">DagNatt</string>
     <string name="settings_theme_message_restart_app">Start programmet på ny</string>
     <string name="settings_directories_header">Mapper</string>
     <string name="settings_remember_last_directories">Husk sist åpnede mapper</string>

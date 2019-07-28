@@ -117,11 +117,9 @@
     <string name="settings_activity_title">設定</string>
     <string name="settings_interface_header">ユーザーインターフェース</string>
     <string name="settings_theme">テーマ</string>
-    <string name="settings_theme_description">カラーパレットを変更します。 デイナイトテーマでは、時刻に基づいてライトとダークテーマを切り替えることができます。</string>
     <string name="settings_theme_dialog_title">テーマを選択</string>
     <string name="settings_theme_name_light">ライト</string>
     <string name="settings_theme_name_dark">ダーク</string>
-    <string name="settings_theme_name_daynight">デイナイト</string>
     <string name="settings_theme_message_restart_app">アプリケーションを再起動してください</string>
     <string name="settings_directories_header">ディレクトリ</string>
     <string name="settings_remember_last_directories">前回開いたディレクトリを記憶する</string>

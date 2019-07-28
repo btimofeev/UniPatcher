@@ -114,11 +114,9 @@
     <string name="settings_activity_title">설정</string>
     <string name="settings_interface_header">사용자 인터페이스</string>
     <string name="settings_theme">테마</string>
-    <string name="settings_theme_description">색상표를 변경합니다. 주야 테마를 사용하면 하루 중 시간대에 따라 밝은 테마와 어두운 테마를 전환할 수 있습니다.</string>
     <string name="settings_theme_dialog_title">테마 선택</string>
     <string name="settings_theme_name_light">밝게</string>
     <string name="settings_theme_name_dark">어둡게</string>
-    <string name="settings_theme_name_daynight">주야</string>
     <string name="settings_theme_message_restart_app">애플리케이션을 다시 시작해 주십시오.</string>
     <string name="settings_directories_header">디렉터리</string>
     <string name="settings_remember_last_directories">마지막으로 연 디렉터리 기억</string>
