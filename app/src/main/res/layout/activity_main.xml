@@ -6,6 +6,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorActivityBackground"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
@@ -32,10 +33,13 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
+            app:backgroundTint="@color/colorAccent"
+            app:tint="@android:color/white"
             app:srcCompat="@drawable/content_save"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

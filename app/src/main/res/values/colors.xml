@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#795548</color>
-    <color name="colorPrimaryDark">#5d4037</color>
-    <color name="colorAccent">#f44336</color>
+    <color name="colorPrimaryDark">#6B6B6B</color>
+    <color name="colorAccent">#ff5252</color>
 
-    <color name="colorCardHeaderText">@color/colorPrimary</color>
+    <color name="colorActivityBackground">@android:color/white</color>
+
+    <color name="colorCardHeaderText">#795548</color>
     <color name="colorCardLine">#e8e8e8</color>
-    <color name="colorCardBackground">#ffffff</color>
-    <color name="colorAdBackground">#b6b6b6</color>
+    <color name="colorCardBackground">@android:color/white</color>
 
     <color name="colorDrawerText">#8a000000</color>
 
     <color name="colorIcon">#757575</color>
+
+    <color name="colorToolbarBackground">@android:color/white</color>
+    <color name="colorToolbarText">@android:color/black</color>
+    <color name="colorToolbarBackArrow">@android:color/black</color>
+
+    <color name="tabSelectedText">#ff5252</color>
+    <color name="tabIndicatorColor">#ff5252</color>
 </resources>
