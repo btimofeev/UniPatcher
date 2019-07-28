@@ -133,7 +133,6 @@
     <!-- Help activity -->
     <string name="help_activity_title">도움말</string>
     <string name="help_activity_faq_tab_title">자주 묻는 질문</string>
-    <string name="help_activity_changelog_tab_title">변경 이력</string>
     <string name="help_activity_about_tab_title">정보</string>
     <string name="help_activity_about_tab_version">버전 %1$s</string>
     <string name="help_activity_about_tab_license">라이선스: GNU GPLv3</string>

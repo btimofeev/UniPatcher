@@ -127,7 +127,6 @@
     <!-- Help activity -->
     <string name="help_activity_title">Pomoc</string>
     <string name="help_activity_faq_tab_title">FAQ</string>
-    <string name="help_activity_changelog_tab_title">Dziennik zmian</string>
     <string name="help_activity_about_tab_title">O aplikacji</string>
     <string name="help_activity_about_tab_version">Wersja %1$s</string>
     <string name="help_activity_about_tab_license">Licencja: GNU GPLv3</string>
