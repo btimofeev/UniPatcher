@@ -136,7 +136,6 @@
     <!-- Help activity -->
     <string name="help_activity_title">ヘルプ</string>
     <string name="help_activity_faq_tab_title">FAQ</string>
-    <string name="help_activity_changelog_tab_title">変更履歴</string>
     <string name="help_activity_about_tab_title">アプリについて</string>
     <string name="help_activity_about_tab_version">バージョン %1$s</string>
     <string name="help_activity_about_tab_license">ライセンス: GNU GPLv3</string>

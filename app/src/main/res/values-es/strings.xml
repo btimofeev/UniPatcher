@@ -136,7 +136,6 @@
     <!-- Help activity -->
     <string name="help_activity_title">Ayuda</string>
     <string name="help_activity_faq_tab_title">Preguntas frecuentes</string>
-    <string name="help_activity_changelog_tab_title">Registro de cambios</string>
     <string name="help_activity_about_tab_title">Acerca de</string>
     <string name="help_activity_about_tab_version">Versión %1$s</string>
     <string name="help_activity_about_tab_license">Licencia: GNU GPLv3</string>

@@ -136,7 +136,6 @@
     <!-- Help activity -->
     <string name="help_activity_title">Помощь</string>
     <string name="help_activity_faq_tab_title">ЧАВО</string>
-    <string name="help_activity_changelog_tab_title">Изменения</string>
     <string name="help_activity_about_tab_title">О программе</string>
     <string name="help_activity_about_tab_version">Версия %1$s</string>
     <string name="help_activity_about_tab_license">Лицензия: GNU GPLv3</string>

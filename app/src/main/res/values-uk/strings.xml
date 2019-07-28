@@ -133,7 +133,6 @@
     <!-- Help activity -->
     <string name="help_activity_title">Допомога</string>
     <string name="help_activity_faq_tab_title">Питання та Відповіді</string>
-    <string name="help_activity_changelog_tab_title">Зміни</string>
     <string name="help_activity_about_tab_title">Про додаток</string>
     <string name="help_activity_about_tab_version">Версія %1$s</string>
     <string name="help_activity_about_tab_license">Ліцензія: GNU GPLv3</string>

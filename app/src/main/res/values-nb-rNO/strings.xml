@@ -136,7 +136,6 @@
     <!-- Help activity -->
     <string name="help_activity_title">Hjelp</string>
     <string name="help_activity_faq_tab_title">O-S-S</string>
-    <string name="help_activity_changelog_tab_title">Endringslogg</string>
     <string name="help_activity_about_tab_title">Om</string>
     <string name="help_activity_about_tab_version">Versjon %1$s</string>
     <string name="help_activity_about_tab_license">Lisense: GNU GPLv3</string>
