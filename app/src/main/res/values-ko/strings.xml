@@ -139,6 +139,7 @@
     <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2018</string>
     <string name="help_activity_action_send_feedback">의견 보내기</string>
     <string name="help_activity_action_visit_site">웹사이트 방문</string>
+    <string name="help_activity_action_changelog">변경 이력</string>
 
     <string name="donate_activity_title">기부</string>
 

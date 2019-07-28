@@ -139,6 +139,7 @@
     <string name="help_activity_about_tab_copyright">&#169; Борис Тимофеев, 2013&#8211;2018</string>
     <string name="help_activity_action_send_feedback">Надіслати відгук</string>
     <string name="help_activity_action_visit_site">Відвідати веб-сайт</string>
+    <string name="help_activity_action_changelog">Зміни</string>
 
     <string name="donate_activity_title">Пожертвування</string>
 
