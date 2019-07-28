@@ -40,8 +40,8 @@
             android:id="@+id/card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/file_browser_content_left_margin"
-            android:layout_marginRight="@dimen/file_browser_content_right_margin"
+            android:layout_marginStart="@dimen/file_browser_content_left_margin"
+            android:layout_marginEnd="@dimen/file_browser_content_right_margin"
             android:layout_below="@id/appbar"
             card_view:cardBackgroundColor="@color/colorCardBackground">
 

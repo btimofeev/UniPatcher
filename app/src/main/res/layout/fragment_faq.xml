@@ -9,8 +9,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/content_left_margin"
-        android:layout_marginRight="@dimen/content_right_margin"
+        android:layout_marginStart="@dimen/content_left_margin"
+        android:layout_marginEnd="@dimen/content_right_margin"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
