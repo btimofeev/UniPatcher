@@ -8,14 +8,14 @@ UniPatcher 是一个 ROM 补丁工具，它的支持格式为 IPS、IPS32、UPS�
 
 ##### 译者:
 
-- **Chinese**: Nabarl Wang
+- **中文**: Nabarl Wang
 - **法语**: Thibaut Panis
 - **意大利语**: Matteo Sechi
 - **日语**: Naofumi Fukue
 - **朝鲜语**: Minseo Lee
 - **书面挪威语**: Allan Nordhøy
 - **波兰语**: Michal Bychowski
-- **Portuguese**: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso
+- **葡萄牙语**：Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso
 - **俄语**: Борис Тимофеев
 - **西班牙语**: Carlos Sánchez
 - **乌克兰语**: Володимир Шевчук

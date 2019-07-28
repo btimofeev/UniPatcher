@@ -142,6 +142,7 @@
     <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2018</string>
     <string name="help_activity_action_send_feedback">Send tilbakemelding</string>
     <string name="help_activity_action_visit_site">Besøk nettside</string>
+    <string name="help_activity_action_changelog">Endringslogg</string>
 
     <string name="donate_activity_title">Doner</string>
 
