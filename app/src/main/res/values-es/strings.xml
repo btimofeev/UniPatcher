@@ -117,11 +117,9 @@
     <string name="settings_activity_title">Ajustes</string>
     <string name="settings_interface_header">Interfaz de usuario</string>
     <string name="settings_theme">Tema</string>
-    <string name="settings_theme_description">Cambiar la paleta de colores. El tema Día y Noche permite cambiar entre temas Claro y Oscuro basados durante la hora del día.</string>
     <string name="settings_theme_dialog_title">Seleccionar tema</string>
     <string name="settings_theme_name_light">Claro</string>
     <string name="settings_theme_name_dark">Oscuro</string>
-    <string name="settings_theme_name_daynight">Día Noche</string>
     <string name="settings_theme_message_restart_app">Por favor reinicie la aplicación</string>
     <string name="settings_directories_header">Directorios</string>
     <string name="settings_remember_last_directories">Recordar últimos directorios abiertos</string>

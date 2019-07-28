@@ -117,11 +117,9 @@
     <string name="settings_activity_title">设置</string>
     <string name="settings_interface_header">用户界面</string>
     <string name="settings_theme">主题</string>
-    <string name="settings_theme_description">更改配色，昼夜主题会根据现实时间切换明亮和黑暗主题。</string>
     <string name="settings_theme_dialog_title">选择主题</string>
     <string name="settings_theme_name_light">明亮</string>
     <string name="settings_theme_name_dark">黑暗</string>
-    <string name="settings_theme_name_daynight">昼夜</string>
     <string name="settings_theme_message_restart_app">请重启应用</string>
     <string name="settings_directories_header">目录</string>
     <string name="settings_remember_last_directories">记住最近打开的目录</string>

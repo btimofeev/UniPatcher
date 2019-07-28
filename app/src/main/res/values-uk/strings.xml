@@ -114,11 +114,9 @@
     <string name="settings_activity_title">Налаштування</string>
     <string name="settings_interface_header">Інтерфейс користувача</string>
     <string name="settings_theme">Тема</string>
-    <string name="settings_theme_description">Змінити палітру кольорів. Світло-темна тема базується на автоматичному перемиканні між світлою та темною темами, на основі часу доби.</string>
     <string name="settings_theme_dialog_title">Оберіть тему</string>
     <string name="settings_theme_name_light">Світла</string>
     <string name="settings_theme_name_dark">Темна</string>
-    <string name="settings_theme_name_daynight">Світло-темна</string>
     <string name="settings_theme_message_restart_app">Будь-ласка перезапустіть додаток</string>
     <string name="settings_directories_header">Папки</string>
     <string name="settings_remember_last_directories">Запам\'ятати востаннє відкриту папку</string>

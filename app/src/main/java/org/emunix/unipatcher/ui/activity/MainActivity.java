@@ -50,10 +50,6 @@ import org.emunix.unipatcher.ui.fragment.SnesSmcHeaderFragment;
 
 import java.util.Random;
 
-import static androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_AUTO;
-import static androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO;
-import static androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -98,17 +94,30 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void setTheme() {
+        String defaultTheme;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P){
+            defaultTheme = "follow_system";
+        } else{
+            defaultTheme = "auto_battery";
+        }
+
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        String theme = sp.getString("theme", "light");
+        String theme = sp.getString("theme", defaultTheme);
         switch (theme) {
             case "light":
-                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO);
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 break;
             case "dark":
-                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES);
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 break;
-            case "daynight":
-                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_AUTO);
+            case "auto_battery":
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
+                break;
+            case "follow_system":
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                break;
+            default: // for compatibility with earlier versions ("daynight" string)
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
                 break;
         }
     }

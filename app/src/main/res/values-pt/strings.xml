@@ -117,11 +117,9 @@
     <string name="settings_activity_title">Ajustes</string>
     <string name="settings_interface_header">Interface de usuário</string>
     <string name="settings_theme">Tema</string>
-    <string name="settings_theme_description">Mude a paleta de cores. O tema Errante permite a troca entre os temas Claro e Escuro baseando-se na hora atual.</string>
     <string name="settings_theme_dialog_title">Selecionar tema</string>
     <string name="settings_theme_name_light">Claro</string>
     <string name="settings_theme_name_dark">Escuro</string>
-    <string name="settings_theme_name_daynight">Errante</string>
     <string name="settings_theme_message_restart_app">Por favor, reinicie a aplicação para a mudança ser efetuada</string>
     <string name="settings_directories_header">Diretórios</string>
     <string name="settings_remember_last_directories">Lembrar os diretórios abertos recentemente</string>

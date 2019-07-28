@@ -112,11 +112,9 @@
     <string name="settings_activity_title">Ustawienia</string>
     <string name="settings_interface_header">Interfejs użytkownika</string>
     <string name="settings_theme">Motyw</string>
-    <string name="settings_theme_description">Zmienia kolor palety. Motyw DzieńNoc zmienia między jasnym, a ciemnym motywem w zależności od pory dnia.</string>
     <string name="settings_theme_dialog_title">Wybierz motyw</string>
     <string name="settings_theme_name_light">Jasny</string>
     <string name="settings_theme_name_dark">Ciemny</string>
-    <string name="settings_theme_name_daynight">DayNight</string>
     <string name="settings_theme_message_restart_app">Proszę zrestartować aplikację</string>
     <string name="settings_directories_header">Ścieżki</string>
     <string name="settings_remember_last_directories">Zapamiętaj ostatnią otworzoną ścieżkę</string>
