@@ -9,6 +9,6 @@
     <string-array name="theme_values">
         <item>light</item>
         <item>dark</item>
-        <item>auto_battery</item>
+        <item>default</item>
     </string-array>
 </resources>
