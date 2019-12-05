@@ -48,7 +48,7 @@ public class AboutFragment extends Fragment {
         try {
             String html = new Markdown4jProcessor().process(
                     getActivity().getResources().openRawResource(R.raw.about));
-            aboutText.setHtml(html, new HtmlResImageGetter(aboutText));
+            aboutText.setHtml(html, new HtmlResImageGetter(getActivity()));
         } catch (IOException e) {
             Log.e("UniPatcher", "IOException", e);
         }

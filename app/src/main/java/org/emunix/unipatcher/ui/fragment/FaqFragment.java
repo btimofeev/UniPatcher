@@ -43,7 +43,7 @@ public class FaqFragment extends Fragment {
         try {
             String html = new Markdown4jProcessor().process(
                     getActivity().getResources().openRawResource(R.raw.faq));
-            faqText.setHtml(html, new HtmlResImageGetter(faqText));
+            faqText.setHtml(html, new HtmlResImageGetter(getActivity()));
         } catch (IOException e) {
             Log.e("UniPatcher", "IOException", e);
         }
