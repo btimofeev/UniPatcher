@@ -26,12 +26,15 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
+import androidx.preference.PreferenceManager
+import org.emunix.unipatcher.helpers.ThemeHelper
 
 class UniPatcher : Application() {
 
     override fun onCreate() {
         super.onCreate()
         initNotificationChannel()
+        setTheme()
     }
 
     @TargetApi(26)
@@ -44,6 +47,12 @@ class UniPatcher : Application() {
                 getString(R.string.notification_channel_name),
                 NotificationManager.IMPORTANCE_DEFAULT)
         manager.createNotificationChannel(channel)
+    }
+
+    fun setTheme() {
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val themePref = sharedPreferences?.getString("theme", ThemeHelper.DEFAULT_MODE) ?: ThemeHelper.DEFAULT_MODE
+        ThemeHelper.applyTheme(themePref)
     }
 
     companion object {

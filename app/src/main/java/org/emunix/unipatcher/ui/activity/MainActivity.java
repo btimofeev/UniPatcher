@@ -33,9 +33,9 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.preference.PreferenceManager;
 import androidx.appcompat.widget.Toolbar;
+import androidx.preference.PreferenceManager;
+
 import android.view.MenuItem;
 import android.view.View;
 
@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -91,35 +90,6 @@ public class MainActivity extends AppCompatActivity
 
         parseArgument();
         showDonateSnackbar();
-    }
-
-    private void setTheme() {
-        String defaultTheme;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P){
-            defaultTheme = "follow_system";
-        } else{
-            defaultTheme = "auto_battery";
-        }
-
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        String theme = sp.getString("theme", defaultTheme);
-        switch (theme) {
-            case "light":
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                break;
-            case "dark":
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                break;
-            case "auto_battery":
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
-                break;
-            case "follow_system":
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                break;
-            default: // for compatibility with earlier versions ("daynight" string)
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
-                break;
-        }
     }
 
     @Override

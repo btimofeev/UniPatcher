@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016-2017 Boris Timofeev
+Copyright (C) 2016-2017, 2019 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -21,10 +21,13 @@ package org.emunix.unipatcher.ui.fragment;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+
+import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragmentCompat;
 import android.widget.Toast;
 
 import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.helpers.ThemeHelper;
 
 public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -36,8 +39,16 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
                                           String key) {
-        if (key.equals("theme") || key.equals("output_directory")) {
-            Toast.makeText(getActivity(), R.string.settings_theme_message_restart_app, Toast.LENGTH_SHORT).show();
+        switch (key) {
+            case "output_directory": {
+                Toast.makeText(getActivity(), R.string.settings_theme_message_restart_app, Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case "theme": {
+                ListPreference theme = findPreference("theme");
+                ThemeHelper.INSTANCE.applyTheme(theme.getValue());
+                break;
+            }
         }
     }
 
