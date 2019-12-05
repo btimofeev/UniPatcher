@@ -83,7 +83,9 @@ object Utils {
 
     @Throws(IOException::class)
     fun copyFile(context: Context, from: File, to: File) {
-        if (getFreeSpace(to.parentFile) < from.length()) {
+        val dir = to.parentFile ?: throw IllegalArgumentException("Couldn't find parent file: $to")
+
+        if (getFreeSpace(dir) < from.length()) {
             throw IOException(context.getString(R.string.notify_error_not_enough_space))
         }
 
@@ -132,8 +134,8 @@ object Utils {
     }
 
     @Throws(IOException::class)
-    fun copy(count: Long, b: Byte, to: OutputStream) {
-        var count = count
+    fun copy(number: Long, b: Byte, to: OutputStream) {
+        var count = number
         val buffer = ByteArray(BUFFER_SIZE)
         Arrays.fill(buffer, b)
         while (count > 0) {

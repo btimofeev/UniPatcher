@@ -66,7 +66,7 @@ object Settings {
 
     fun getOutputDir(context: Context): String {
         val prefs = PreferenceManager.getDefaultSharedPreferences(context)
-        return prefs.getString("output_directory", "")
+        return prefs?.getString("output_directory", "") ?: ""
     }
 
     fun getIgnoreChecksum(context: Context): Boolean {
