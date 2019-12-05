@@ -20,24 +20,14 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.activity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.preference.PreferenceManager;
-
-import android.view.MenuItem;
-import android.view.View;
 
 import org.emunix.unipatcher.BuildConfig;
 import org.emunix.unipatcher.R;
@@ -49,6 +39,15 @@ import org.emunix.unipatcher.ui.fragment.SmdFixChecksumFragment;
 import org.emunix.unipatcher.ui.fragment.SnesSmcHeaderFragment;
 
 import java.util.Random;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
