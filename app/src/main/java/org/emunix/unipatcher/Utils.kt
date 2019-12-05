@@ -25,21 +25,14 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.StatFs
-import androidx.core.content.ContextCompat
 import android.util.DisplayMetrics
 import android.util.Log
-
+import androidx.core.content.ContextCompat
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
 import org.apache.commons.io.IOUtils
-
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
-import java.io.InputStream
-import java.io.OutputStream
-import java.util.Arrays
-import java.util.Locale
+import java.io.*
+import java.util.*
 import kotlin.math.roundToInt
 
 object Utils {
