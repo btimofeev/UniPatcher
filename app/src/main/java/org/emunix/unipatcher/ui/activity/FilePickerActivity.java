@@ -158,14 +158,14 @@ public class FilePickerActivity extends AppCompatActivity implements FilePickerA
         browseTo(currentDir);
     }
 
-    private File getExternalOrRoot() {
-        Boolean isSDPresent = Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
-        if (isSDPresent) {
-            return Environment.getExternalStorageDirectory().getAbsoluteFile();
-        } else {
-            return new File("/");
-        }
-    }
+    private static File getExternalOrRoot() {
+		Boolean isSDPresent = Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+		if (isSDPresent) {
+			return Environment.getExternalStorageDirectory().getAbsoluteFile();
+		} else {
+			return new File("/");
+		}
+	}
 
     private static File[] sortFiles(File[] files) {
         Comparator<File> comp = new Comparator<File>() {
