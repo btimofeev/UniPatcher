@@ -16,6 +16,7 @@
     <string name="main_activity_toast_rom_not_selected">No ROM file selected</string>
     <string name="main_activity_toast_patch_not_selected">No patch file selected</string>
     <string name="main_activity_toast_archives_not_supported">Archive should be unpacked in an external program</string>
+    <string name="main_activity_toast_file_manager_did_not_return_file_path">Error: file manager did not return file path</string>
     <string name="main_activity_donate_snackbar_text">Support the development of UniPatcher by making a donation</string>
     <string name="main_activity_donate_snackbar_button">Donate</string>
 
