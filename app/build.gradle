@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion '29.0.2'
+    buildToolsVersion '29.0.3'
 
     signingConfigs {
         release
@@ -27,6 +27,8 @@ android {
             }
         }
     }
+
+    ndkVersion "21.0.6113669"
 
     buildTypes {
         release {
@@ -99,21 +101,21 @@ if (propFile.canRead()) {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.mockito:mockito-core:2.12.0'
+    testImplementation 'junit:junit:4.13'
+    testImplementation 'org.mockito:mockito-core:3.3.0'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation 'androidx.core:core:1.1.0'
+    implementation 'androidx.core:core:1.2.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.preference:preference:1.1.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'com.google.android.material:material:1.1.0-beta02'
+    implementation 'com.google.android.material:material:1.1.0'
 
     implementation 'commons-io:commons-io:2.5' // 2.6 crashes the application on Android below 8, because java.nio.file is not available in these versions
 
     implementation 'org.sufficientlysecure:donations:2.6'
-    implementation 'org.sufficientlysecure:html-textview:3.8'
+    implementation 'org.sufficientlysecure:html-textview:3.9'
 
     implementation 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.1'
 
