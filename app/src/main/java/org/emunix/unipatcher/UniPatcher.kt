@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, 2019 Boris Timofeev
+ Copyright (c) 2017, 2019-2020 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -28,13 +28,22 @@ import android.content.Context
 import android.os.Build
 import androidx.preference.PreferenceManager
 import org.emunix.unipatcher.helpers.ThemeHelper
+import timber.log.Timber
+
 
 class UniPatcher : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        initLogger()
         initNotificationChannel()
         setTheme()
+    }
+
+    private fun initLogger() {
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
     }
 
     @TargetApi(26)

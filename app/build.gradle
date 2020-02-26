@@ -122,6 +122,8 @@ dependencies {
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 }
 repositories {
     mavenCentral()
