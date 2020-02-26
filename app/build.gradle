@@ -54,8 +54,8 @@ android {
             buildConfigField "String", "BITCOIN_ADDRESS", "\"16coztryz7xbNNDNhhf98wuHmi3hEintsW\""
         }
         google {
-            buildConfigField "String", "RATE_URL", "\"market://details?id=org.eminix.unipatcher\""
-            buildConfigField "String", "SHARE_URL", "\"https://play.google.com/store/apps/details?id=org.eminix.unipatcher\""
+            buildConfigField "String", "RATE_URL", "\"market://details?id=org.emunix.unipatcher\""
+            buildConfigField "String", "SHARE_URL", "\"https://play.google.com/store/apps/details?id=org.emunix.unipatcher\""
             buildConfigField "String", "GOOGLE_PLAY_PUBKEY", "\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA384jTCBEuJ8nCWaC4S6AFrnMQN4mBlmkOXHV3Xg5hlFOl8TkVwiCfqz8r20yJpEy0IJ1+3QRnlq59zadUxbkD+PacJlGB/r2b3mbKfu+m0K+e/0aL6eWupjMSIyPgpnbN3uswiBEGUb4ytzYF53ZKTbLARnruQdMnjV6+VyfwMgpor/48anVQawDARBj/AIAj6VGtRHLmg6DmKDyOGQ7uCgXSv+ysnBKJjtIX/L/5nQgL8Q+9jsr2knuWY7j9BmrtpUXaDH3Kb50M1TOCKiqxPGa8lInOOIndABWxcpqmSMXP06SPYOanUlEH7lT0jjqpHpFNx8hRTT9xf652rgMJwIDAQAB\""
         }
     }
@@ -76,7 +76,7 @@ android {
     }
 }
 
-def Properties props = new Properties()
+Properties props = new Properties()
 def propFile = file('../../signing.properties')
 if (propFile.canRead()) {
     props.load(new FileInputStream(propFile))
