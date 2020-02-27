@@ -30,5 +30,12 @@ These are discussed on the GitHub [Issue Tracker](https://github.com/btimofeev/U
 #### Translations
 Help translate UniPatcher into another language on the [Transifex project page](https://www.transifex.com/unipatcher/unipatcher/). 
 
+#### Building application from source code
+```
+./gradlew downloadDependencies
+./gradlew assembleFreeDebug
+./gradlew installFreeDebug
+```
+
 ### License
 UniPatcher is licensed under the GPL version 3. You can find the license text in the COPYING file.
