@@ -34,3 +34,6 @@ build
 *.ipr
 *~
 *.swp
+
+# Dependencies
+app/src/main/cpp/xdelta/

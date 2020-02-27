@@ -27,8 +27,8 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 #define SIZEOF_SIZE_T 4
 #define SIZEOF_UNSIGNED_LONG_LONG 8
 
-#include "xdelta3/xdelta3/xdelta3.h"
-#include "xdelta3/xdelta3/xdelta3.c"
+#include "xdelta/xdelta3/xdelta3.h"
+#include "xdelta/xdelta3/xdelta3.c"
 
 int code(int encode, FILE *in, FILE *src, FILE *out, int ignoreChecksum);
 
