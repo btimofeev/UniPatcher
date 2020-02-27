@@ -25,7 +25,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.smd_fix_checksum_fragment.*
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings.getRomDir
@@ -33,6 +32,7 @@ import org.emunix.unipatcher.Settings.setLastRomDir
 import org.emunix.unipatcher.Utils.isArchive
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.WorkerService
+import org.emunix.unipatcher.databinding.SmdFixChecksumFragmentBinding
 import org.emunix.unipatcher.ui.activity.FilePickerActivity
 import timber.log.Timber
 import java.io.File
@@ -41,14 +41,23 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
 
     private var romPath: String = ""
 
+    private var _binding: SmdFixChecksumFragmentBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.smd_fix_checksum_fragment, container, false)
+        _binding = SmdFixChecksumFragmentBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         activity?.setTitle(R.string.nav_smd_fix_checksum)
-        romCardView.setOnClickListener(this)
+        binding.romCardView.setOnClickListener(this)
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
@@ -56,7 +65,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
         if (savedInstanceState != null) {
             romPath = savedInstanceState.getString("romPath") ?: ""
             if (romPath.isNotEmpty())
-                romNameTextView.text = File(romPath).name
+                binding.romNameTextView.text = File(romPath).name
         }
     }
 
@@ -91,8 +100,8 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
             when (requestCode) {
                 Action.SELECT_ROM_FILE -> {
                     romPath = path
-                    romNameTextView.visibility = View.VISIBLE
-                    romNameTextView.text = File(path).name
+                    binding.romNameTextView.visibility = View.VISIBLE
+                    binding.romNameTextView.text = File(path).name
                     val dir = File(path).parent
                     if (dir != null) {
                         setLastRomDir(activity!!, dir)

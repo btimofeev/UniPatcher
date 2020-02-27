@@ -25,7 +25,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.snes_smc_header_fragment.*
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings.getRomDir
@@ -33,6 +32,7 @@ import org.emunix.unipatcher.Settings.setLastRomDir
 import org.emunix.unipatcher.Utils.isArchive
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.WorkerService
+import org.emunix.unipatcher.databinding.SnesSmcHeaderFragmentBinding
 import org.emunix.unipatcher.tools.SnesSmcHeader
 import org.emunix.unipatcher.ui.activity.FilePickerActivity
 import timber.log.Timber
@@ -44,15 +44,24 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
     private var headerPath: String = ""
     private var action = 0
 
+    private var _binding: SnesSmcHeaderFragmentBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.snes_smc_header_fragment, container, false)
+        _binding = SnesSmcHeaderFragmentBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         activity?.setTitle(R.string.nav_snes_add_del_smc_header)
-        romCardView.setOnClickListener(this)
-        headerCardView.setOnClickListener(this)
+        binding.romCardView.setOnClickListener(this)
+        binding.headerCardView.setOnClickListener(this)
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
@@ -63,16 +72,16 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
             action = savedInstanceState.getInt("action")
             when (action) {
                 Action.SNES_ADD_SMC_HEADER -> {
-                    headerInfoTextView.setText(R.string.snes_smc_header_will_be_added)
-                    headerCardView.visibility = View.VISIBLE
+                    binding.headerInfoTextView.setText(R.string.snes_smc_header_will_be_added)
+                    binding.headerCardView.visibility = View.VISIBLE
                 }
                 Action.SNES_DELETE_SMC_HEADER -> {
-                    headerInfoTextView.setText(R.string.snes_smc_header_will_be_removed)
-                    headerCardView.visibility = View.GONE
+                    binding.headerInfoTextView.setText(R.string.snes_smc_header_will_be_removed)
+                    binding.headerCardView.visibility = View.GONE
                 }
             }
-            if (romPath.isNotEmpty()) romNameTextView.text = File(romPath).name
-            if (headerPath.isNotEmpty()) headerNameTextView.text = File(headerPath).name
+            if (romPath.isNotEmpty()) binding.romNameTextView.text = File(romPath).name
+            if (headerPath.isNotEmpty()) binding.headerNameTextView.text = File(headerPath).name
         }
     }
 
@@ -112,8 +121,8 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
             when (requestCode) {
                 Action.SELECT_ROM_FILE -> {
                     romPath = path
-                    romNameTextView.visibility = View.VISIBLE
-                    romNameTextView.text = File(path).name
+                    binding.romNameTextView.visibility = View.VISIBLE
+                    binding.romNameTextView.text = File(path).name
                     val dir = File(path).parent
                     if (dir != null) {
                         setLastRomDir(activity!!, dir)
@@ -121,19 +130,19 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
                     val checker = SnesSmcHeader()
                     if (checker.isHasSmcHeader(File(path))) {
                         action = Action.SNES_DELETE_SMC_HEADER
-                        headerCardView.visibility = View.GONE
-                        headerInfoTextView.setText(R.string.snes_smc_header_will_be_removed)
+                        binding.headerCardView.visibility = View.GONE
+                        binding.headerInfoTextView.setText(R.string.snes_smc_header_will_be_removed)
                     } else {
                         action = Action.SNES_ADD_SMC_HEADER
-                        headerCardView.visibility = View.VISIBLE
-                        headerInfoTextView.setText(R.string.snes_smc_header_will_be_added)
+                        binding.headerCardView.visibility = View.VISIBLE
+                        binding.headerInfoTextView.setText(R.string.snes_smc_header_will_be_added)
                     }
                     headerPath = ""
-                    headerNameTextView.setText(R.string.main_activity_tap_to_select)
+                    binding.headerNameTextView.setText(R.string.main_activity_tap_to_select)
                 }
                 Action.SELECT_HEADER_FILE -> {
                     headerPath = path
-                    headerNameTextView.text = File(path).name
+                    binding.headerNameTextView.text = File(path).name
                 }
             }
         }

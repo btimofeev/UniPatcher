@@ -30,25 +30,26 @@ import androidx.viewpager.widget.PagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
-import kotlinx.android.synthetic.main.activity_help.*
 import org.emunix.unipatcher.R
+import org.emunix.unipatcher.databinding.ActivityHelpBinding
 import org.emunix.unipatcher.ui.adapter.HelpPagerAdapter
 
 class HelpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_help)
-        setSupportActionBar(toolbar)
+        val binding = ActivityHelpBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.help_activity_faq_tab_title)))
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.help_activity_about_tab_title)))
-        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
-        val adapter: PagerAdapter = HelpPagerAdapter(supportFragmentManager, tabLayout.tabCount)
-        pager.adapter = adapter
-        pager.addOnPageChangeListener(TabLayoutOnPageChangeListener(tabLayout))
-        tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
+        binding.tabLayout.addTab(binding.tabLayout.newTab().setText(getString(R.string.help_activity_faq_tab_title)))
+        binding.tabLayout.addTab(binding.tabLayout.newTab().setText(getString(R.string.help_activity_about_tab_title)))
+        binding.tabLayout.tabGravity = TabLayout.GRAVITY_FILL
+        val adapter: PagerAdapter = HelpPagerAdapter(supportFragmentManager, binding.tabLayout.tabCount)
+        binding.pager.adapter = adapter
+        binding.pager.addOnPageChangeListener(TabLayoutOnPageChangeListener(binding.tabLayout))
+        binding.tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-                pager.currentItem = tab.position
+                binding.pager.currentItem = tab.position
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {}
