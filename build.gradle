@@ -10,6 +10,10 @@ buildscript {
     }
 }
 
+plugins {
+    id "de.undercouch.download" version "4.0.0"
+}
+
 allprojects {
     repositories {
         jcenter()

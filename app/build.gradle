@@ -139,3 +139,24 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+task deleteDependencies(type: Delete) {
+    delete 'src/main/cpp/xdelta'
+}
+
+task downloadDependencies(dependsOn: deleteDependencies) {
+    def XDelta = '3.1.0'
+
+    doLast {
+        download {
+            src "https://github.com/jmacd/xdelta/archive/v${XDelta}.tar.gz"
+            dest new File(buildDir, "xdelta-${XDelta}.tar.gz")
+        }
+        copy {
+            from tarTree(resources.gzip("${buildDir}/xdelta-${XDelta}.tar.gz"))
+            into 'src/main/cpp/'
+        }
+        file("src/main/cpp/xdelta-${XDelta}").renameTo(file('src/main/cpp/xdelta'))
+        delete("src/main/cpp/pax_global_header")
+    }
+}

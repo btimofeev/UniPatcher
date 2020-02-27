@@ -1,3 +1,0 @@
-[submodule "app/src/main/cpp/xdelta3"]
-	path = app/src/main/cpp/xdelta3
-	url = https://github.com/jmacd/xdelta
