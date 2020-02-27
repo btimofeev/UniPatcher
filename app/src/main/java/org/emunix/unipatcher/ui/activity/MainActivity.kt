@@ -22,14 +22,10 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import org.emunix.unipatcher.BuildConfig
@@ -37,6 +33,7 @@ import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings.getDontShowDonateSnackbarCount
 import org.emunix.unipatcher.Settings.getPatchingSuccessful
 import org.emunix.unipatcher.Settings.setDontShowDonateSnackbarCount
+import org.emunix.unipatcher.databinding.ActivityMainBinding
 import org.emunix.unipatcher.ui.fragment.*
 import timber.log.Timber
 import java.util.*
@@ -45,26 +42,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     @JvmField
     var arg: String? = null
 
+    private lateinit var _binding: ActivityMainBinding
+    private val binding get() = _binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-        setSupportActionBar(toolbar)
-        val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.includes.toolbar)
         val toggle = ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.nav_drawer_open, R.string.nav_drawer_close)
-        drawer.addDrawerListener(toggle)
+                this, binding.drawerLayout, binding.includes.toolbar, R.string.nav_drawer_open, R.string.nav_drawer_close)
+        binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-        val fab = findViewById<View>(R.id.fab) as FloatingActionButton
-        fab.setOnClickListener {
+        binding.fab.setOnClickListener {
             val fragmentManager = supportFragmentManager
             val fragment = fragmentManager.findFragmentById(R.id.content_frame) as ActionFragment?
             if (fragment != null) {
                 val ret = fragment.runAction()
             }
         }
-        val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
-        navigationView.setNavigationItemSelectedListener(this)
+        binding.navigationView.setNavigationItemSelectedListener(this)
         if (savedInstanceState == null) {
             selectDrawerItem(0)
         }
@@ -90,8 +87,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(helpIntent)
             }
         }
-        val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
-        drawer.closeDrawer(GravityCompat.START)
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 
@@ -122,7 +118,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         // don't show snackbar each time you open the application
         if (Random().nextInt(6) != 0) return
-        Snackbar.make(findViewById(R.id.content_frame), R.string.main_activity_donate_snackbar_text, Snackbar.LENGTH_INDEFINITE)
+        Snackbar.make(binding.contentFrame, R.string.main_activity_donate_snackbar_text, Snackbar.LENGTH_INDEFINITE)
                 .setAction(R.string.main_activity_donate_snackbar_button) { showDonateActivity() }
                 .addCallback(object : Snackbar.Callback() {
                     override fun onDismissed(snackbar: Snackbar, event: Int) {

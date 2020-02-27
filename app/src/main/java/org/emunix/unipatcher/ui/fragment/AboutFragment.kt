@@ -24,25 +24,35 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_about.*
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Utils
+import org.emunix.unipatcher.databinding.FragmentAboutBinding
 import org.markdown4j.Markdown4jProcessor
 import org.sufficientlysecure.htmltextview.HtmlResImageGetter
 
 class AboutFragment : Fragment() {
+
+    private var _binding: FragmentAboutBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_about, container, false)
+        _binding = FragmentAboutBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        versionText.text = getString(R.string.help_activity_about_tab_version, Utils.getAppVersion(activity!!))
+        binding.versionText.text = getString(R.string.help_activity_about_tab_version, Utils.getAppVersion(activity!!))
         try {
             val html = Markdown4jProcessor().process(
                     activity!!.resources.openRawResource(R.raw.about))
-            aboutText.setHtml(html, HtmlResImageGetter(activity!!))
+            binding.aboutText.setHtml(html, HtmlResImageGetter(activity!!))
         } catch (e: Exception) {
             Toast.makeText(activity, R.string.help_activity_error_cannot_load_text, Toast.LENGTH_LONG).show()
         }

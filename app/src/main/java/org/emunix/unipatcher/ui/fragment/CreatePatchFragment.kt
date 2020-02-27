@@ -30,7 +30,6 @@ import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import kotlinx.android.synthetic.main.create_patch_fragment.*
 import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
@@ -40,6 +39,7 @@ import org.emunix.unipatcher.Settings.setLastRomDir
 import org.emunix.unipatcher.Utils.dpToPx
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.WorkerService
+import org.emunix.unipatcher.databinding.CreatePatchFragmentBinding
 import org.emunix.unipatcher.ui.activity.FilePickerActivity
 import timber.log.Timber
 import java.io.File
@@ -50,16 +50,25 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
     private var modifiedPath: String = ""
     private var patchPath: String = ""
 
+    private var _binding: CreatePatchFragmentBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.create_patch_fragment, container, false)
+        _binding = CreatePatchFragmentBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         activity?.setTitle(R.string.nav_create_patch)
-        sourceFileCardView.setOnClickListener(this)
-        modifiedFileCardView.setOnClickListener(this)
-        patchFileCardView.setOnClickListener(this)
+        binding.sourceFileCardView.setOnClickListener(this)
+        binding.modifiedFileCardView.setOnClickListener(this)
+        binding.patchFileCardView.setOnClickListener(this)
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
@@ -68,9 +77,9 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
             sourcePath = savedInstanceState.getString("sourcePath") ?: ""
             modifiedPath = savedInstanceState.getString("modifiedPath") ?: ""
             patchPath = savedInstanceState.getString("patchPath") ?: ""
-            if (sourcePath.isNotEmpty()) sourceFileNameTextView.text = File(sourcePath).name
-            if (modifiedPath.isNotEmpty()) modifiedFileNameTextView.text = File(modifiedPath).name
-            if (patchPath.isNotEmpty()) patchFileNameTextView.text = File(patchPath).name
+            if (sourcePath.isNotEmpty()) binding.sourceFileNameTextView.text = File(sourcePath).name
+            if (modifiedPath.isNotEmpty()) binding.modifiedFileNameTextView.text = File(modifiedPath).name
+            if (patchPath.isNotEmpty()) binding.patchFileNameTextView.text = File(patchPath).name
         }
     }
 
@@ -111,21 +120,21 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
             when (requestCode) {
                 Action.SELECT_SOURCE_FILE -> {
                     sourcePath = path
-                    sourceFileNameTextView.visibility = View.VISIBLE
-                    sourceFileNameTextView.text = filePath.name
+                    binding.sourceFileNameTextView.visibility = View.VISIBLE
+                    binding.sourceFileNameTextView.text = filePath.name
                     if (dir != null) {
                         setLastRomDir(activity!!, dir)
                     }
                 }
                 Action.SELECT_MODIFIED_FILE -> {
                     modifiedPath = path
-                    modifiedFileNameTextView.visibility = View.VISIBLE
-                    modifiedFileNameTextView.text = filePath.name
+                    binding.modifiedFileNameTextView.visibility = View.VISIBLE
+                    binding.modifiedFileNameTextView.text = filePath.name
                     if (dir != null) {
                         setLastRomDir(activity!!, dir)
                     }
                     patchPath = makeOutputPath(path)
-                    patchFileNameTextView!!.text = File(patchPath).name
+                    binding.patchFileNameTextView!!.text = File(patchPath).name
                 }
             }
         }
@@ -176,7 +185,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
         val renameDialog = AlertDialog.Builder(activity!!)
         renameDialog.setTitle(R.string.dialog_rename_title)
         val input = EditText(activity)
-        input.setText(patchFileNameTextView!!.text)
+        input.setText(binding.patchFileNameTextView.text)
         // add left and right margins to EditText.
         val container = FrameLayout(activity!!)
         val params = FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -200,7 +209,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                 Toast.makeText(activity, R.string.dialog_rename_error_same_name, Toast.LENGTH_LONG).show()
                 return@OnClickListener
             }
-            patchFileNameTextView.text = newName
+            binding.patchFileNameTextView.text = newName
             patchPath = newPath
         })
         renameDialog.setNegativeButton(R.string.dialog_rename_cancel) { dialog, _ -> dialog.cancel() }

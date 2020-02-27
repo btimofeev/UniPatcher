@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <include layout="@layout/toolbar"/>
+            <include android:id="@+id/includes" layout="@layout/toolbar"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -45,7 +45,7 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"

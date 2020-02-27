@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -30,6 +30,13 @@ android {
     }
 
     ndkVersion "21.0.6113669"
+
+    dataBinding {
+        enabled = true
+    }
+    viewBinding {
+        enabled = true
+    }
 
     buildTypes {
         release {
@@ -125,7 +132,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    kapt 'com.android.databinding:compiler:3.1.4'
 }
+
 repositories {
     mavenCentral()
 }

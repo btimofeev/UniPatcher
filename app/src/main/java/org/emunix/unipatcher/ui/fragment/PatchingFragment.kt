@@ -29,7 +29,6 @@ import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import kotlinx.android.synthetic.main.patching_fragment.*
 import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
@@ -42,6 +41,7 @@ import org.emunix.unipatcher.Utils.dpToPx
 import org.emunix.unipatcher.Utils.isArchive
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.WorkerService
+import org.emunix.unipatcher.databinding.PatchingFragmentBinding
 import org.emunix.unipatcher.ui.activity.FilePickerActivity
 import org.emunix.unipatcher.ui.activity.MainActivity
 import timber.log.Timber
@@ -53,16 +53,25 @@ class PatchingFragment : ActionFragment(), View.OnClickListener {
     private var patchPath: String = ""
     private var outputPath: String = ""
 
+    private var _binding: PatchingFragmentBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.patching_fragment, container, false)
+        _binding = PatchingFragmentBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         activity?.setTitle(R.string.nav_apply_patch)
-        patchCardView.setOnClickListener(this)
-        romCardView.setOnClickListener(this)
-        outputCardView.setOnClickListener(this)
+        binding.patchCardView.setOnClickListener(this)
+        binding.romCardView.setOnClickListener(this)
+        binding.outputCardView.setOnClickListener(this)
         parseArgument()
     }
 
@@ -73,18 +82,18 @@ class PatchingFragment : ActionFragment(), View.OnClickListener {
             patchPath = savedInstanceState.getString("patchPath") ?: ""
             outputPath = savedInstanceState.getString("outputPath") ?: ""
             if (romPath.isNotEmpty())
-                romNameTextView.text = File(romPath).name
+                binding.romNameTextView.text = File(romPath).name
             if (patchPath.isNotEmpty())
-                patchNameTextView.text = File(patchPath).name
+                binding.patchNameTextView.text = File(patchPath).name
             if (outputPath.isNotEmpty())
-                outputNameTextView.text = File(outputPath).name
+                binding.outputNameTextView.text = File(outputPath).name
         }
     }
 
     private fun parseArgument() {
         patchPath = (activity as MainActivity?)?.arg ?: ""
         if (patchPath != "") {
-            patchNameTextView.text = File(patchPath).name
+            binding.patchNameTextView.text = File(patchPath).name
         }
     }
 
@@ -128,18 +137,18 @@ class PatchingFragment : ActionFragment(), View.OnClickListener {
             when (requestCode) {
                 Action.SELECT_ROM_FILE -> {
                     romPath = path
-                    romNameTextView.visibility = View.VISIBLE
-                    romNameTextView.text = filePath.name
+                    binding.romNameTextView.visibility = View.VISIBLE
+                    binding.romNameTextView.text = filePath.name
                     if(dir != null) {
                         setLastRomDir(activity!!, dir)
                     }
                     outputPath = makeOutputPath(path)
-                    outputNameTextView.text = File(outputPath).name
+                    binding.outputNameTextView.text = File(outputPath).name
                 }
                 Action.SELECT_PATCH_FILE -> {
                     patchPath = path
-                    patchNameTextView.visibility = View.VISIBLE
-                    patchNameTextView.text = filePath.name
+                    binding.patchNameTextView.visibility = View.VISIBLE
+                    binding.patchNameTextView.text = filePath.name
                     if(dir != null) {
                         setLastPatchDir(activity!!, dir)
                     }
@@ -194,7 +203,7 @@ class PatchingFragment : ActionFragment(), View.OnClickListener {
         val renameDialog = AlertDialog.Builder(activity!!)
         renameDialog.setTitle(R.string.dialog_rename_title)
         val input = EditText(activity)
-        input.setText(outputNameTextView.text)
+        input.setText(binding.outputNameTextView.text)
         // add left and right margins to EditText.
         val container = FrameLayout(activity!!)
         val params = FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -218,7 +227,7 @@ class PatchingFragment : ActionFragment(), View.OnClickListener {
                 Toast.makeText(activity, R.string.dialog_rename_error_same_name, Toast.LENGTH_LONG).show()
                 return@OnClickListener
             }
-            outputNameTextView.text = newName
+            binding.outputNameTextView.text = newName
             outputPath = newPath
         })
         renameDialog.setNegativeButton(R.string.dialog_rename_cancel) { dialog, _ -> dialog.cancel() }

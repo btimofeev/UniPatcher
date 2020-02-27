@@ -20,18 +20,17 @@ package org.emunix.unipatcher.ui.activity
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import org.emunix.unipatcher.R
+import org.emunix.unipatcher.databinding.ActivitySettingsBinding
 import org.emunix.unipatcher.ui.fragment.SettingsFragment
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-        setSupportActionBar(toolbar)
+        val binding = ActivitySettingsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.includes.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportFragmentManager.beginTransaction()
                 .replace(R.id.content, SettingsFragment())

@@ -24,16 +24,26 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_faq.*
 import org.emunix.unipatcher.R
+import org.emunix.unipatcher.databinding.FragmentFaqBinding
 import org.markdown4j.Markdown4jProcessor
 import org.sufficientlysecure.htmltextview.HtmlResImageGetter
 import java.io.IOException
 
 class FaqFragment : Fragment() {
+
+    private var _binding: FragmentFaqBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_faq, container, false)
+        _binding = FragmentFaqBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -41,7 +51,7 @@ class FaqFragment : Fragment() {
         try {
             val html = Markdown4jProcessor().process(
                     activity!!.resources.openRawResource(R.raw.faq))
-            faqText.setHtml(html, HtmlResImageGetter(activity!!))
+            binding.faqText.setHtml(html, HtmlResImageGetter(activity!!))
         } catch (e: IOException) {
             Toast.makeText(activity, R.string.help_activity_error_cannot_load_text, Toast.LENGTH_LONG).show()
         }
