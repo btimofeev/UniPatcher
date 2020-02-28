@@ -36,4 +36,5 @@ build
 *.swp
 
 # Dependencies
-app/src/main/cpp/xdelta/
+app/src/main/cpp/xdelta/xdelta/
+app/src/main/cpp/xz/xz/

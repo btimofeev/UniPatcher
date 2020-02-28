@@ -70,7 +70,7 @@ android {
 
     externalNativeBuild {
         cmake {
-            path "CMakeLists.txt"
+            path "src/main/cpp/CMakeLists.txt"
         }
     }
 
@@ -141,11 +141,13 @@ repositories {
 }
 
 task deleteDependencies(type: Delete) {
-    delete 'src/main/cpp/xdelta'
+    delete 'src/main/cpp/xdelta/xdelta'
+    delete 'src/main/cpp/xz/xz'
 }
 
 task downloadDependencies(dependsOn: deleteDependencies) {
     def XDelta = '3.1.0'
+    def xz = '5.2.4'
 
     doLast {
         download {
@@ -154,9 +156,19 @@ task downloadDependencies(dependsOn: deleteDependencies) {
         }
         copy {
             from tarTree(resources.gzip("${buildDir}/xdelta-${XDelta}.tar.gz"))
-            into 'src/main/cpp/'
+            into 'src/main/cpp/xdelta/'
         }
-        file("src/main/cpp/xdelta-${XDelta}").renameTo(file('src/main/cpp/xdelta'))
-        delete("src/main/cpp/pax_global_header")
+        file("src/main/cpp/xdelta/xdelta-${XDelta}").renameTo(file('src/main/cpp/xdelta/xdelta'))
+        delete("src/main/cpp/xdelta/pax_global_header")
+
+        download {
+            src "https://sourceforge.net/projects/lzmautils/files/xz-${xz}.tar.gz/download"
+            dest new File(buildDir, "xz-${xz}.tar.gz")
+        }
+        copy {
+            from tarTree(resources.gzip("${buildDir}/xz-${xz}.tar.gz"))
+            into 'src/main/cpp/xz/'
+        }
+        file("src/main/cpp/xz/xz-${xz}").renameTo(file('src/main/cpp/xz/xz'))
     }
 }
