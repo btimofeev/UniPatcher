@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun replaceFragment(selected: NavigateTo) {
         val fragment: Fragment = when (selected) {
-            NavigateTo.APPLY_PATCH -> PatchingFragment()
+            NavigateTo.APPLY_PATCH -> ApplyPatchFragment()
             NavigateTo.CREATE_PATCH -> CreatePatchFragment()
             NavigateTo.SMD_FIX_CHECKSUM -> SmdFixChecksumFragment()
             NavigateTo.SNES_SMC_HEADER -> SnesSmcHeaderFragment()

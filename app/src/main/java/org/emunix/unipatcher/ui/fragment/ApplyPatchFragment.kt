@@ -41,23 +41,23 @@ import org.emunix.unipatcher.Utils.dpToPx
 import org.emunix.unipatcher.Utils.isArchive
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.WorkerService
-import org.emunix.unipatcher.databinding.PatchingFragmentBinding
+import org.emunix.unipatcher.databinding.ApplyPatchFragmentBinding
 import org.emunix.unipatcher.ui.activity.FilePickerActivity
 import org.emunix.unipatcher.ui.activity.MainActivity
 import timber.log.Timber
 import java.io.File
 
-class PatchingFragment : ActionFragment(), View.OnClickListener {
+class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
 
     private var romPath: String = ""
     private var patchPath: String = ""
     private var outputPath: String = ""
 
-    private var _binding: PatchingFragmentBinding? = null
+    private var _binding: ApplyPatchFragmentBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = PatchingFragmentBinding.inflate(inflater, container, false)
+        _binding = ApplyPatchFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
