@@ -39,6 +39,11 @@ import timber.log.Timber
 import java.util.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    enum class NavigateTo {
+        APPLY_PATCH, CREATE_PATCH, SMD_FIX_CHECKSUM, SNES_SMC_HEADER
+    }
+
     @JvmField
     var arg: String? = null
 
@@ -63,7 +68,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         binding.navigationView.setNavigationItemSelectedListener(this)
         if (savedInstanceState == null) {
-            selectDrawerItem(0)
+            replaceFragment(NavigateTo.APPLY_PATCH)
         }
         parseArgument()
         showDonateSnackbar()
@@ -71,10 +76,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_apply_patch -> selectDrawerItem(0)
-            R.id.nav_create_patch -> selectDrawerItem(1)
-            R.id.nav_smd_fix_checksum -> selectDrawerItem(2)
-            R.id.nav_snes_add_del_smc_header -> selectDrawerItem(3)
+            R.id.nav_apply_patch -> replaceFragment(NavigateTo.APPLY_PATCH)
+            R.id.nav_create_patch -> replaceFragment(NavigateTo.CREATE_PATCH)
+            R.id.nav_smd_fix_checksum -> replaceFragment(NavigateTo.SMD_FIX_CHECKSUM)
+            R.id.nav_snes_add_del_smc_header -> replaceFragment(NavigateTo.SNES_SMC_HEADER)
             R.id.nav_settings -> {
                 val settingsIntent = Intent(this, SettingsActivity::class.java)
                 startActivity(settingsIntent)
@@ -91,12 +96,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    private fun selectDrawerItem(position: Int) { // update the main content by replacing fragments
-        val fragment: Fragment = when (position) {
-            1 -> CreatePatchFragment()
-            2 -> SmdFixChecksumFragment()
-            3 -> SnesSmcHeaderFragment()
-            else -> PatchingFragment()
+    private fun replaceFragment(selected: NavigateTo) {
+        val fragment: Fragment = when (selected) {
+            NavigateTo.APPLY_PATCH -> PatchingFragment()
+            NavigateTo.CREATE_PATCH -> CreatePatchFragment()
+            NavigateTo.SMD_FIX_CHECKSUM -> SmdFixChecksumFragment()
+            NavigateTo.SNES_SMC_HEADER -> SnesSmcHeaderFragment()
         }
         val ft = supportFragmentManager.beginTransaction()
         ft.setCustomAnimations(R.anim.slide_from_bottom, android.R.anim.fade_out)
