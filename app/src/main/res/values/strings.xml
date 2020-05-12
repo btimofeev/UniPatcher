@@ -87,6 +87,7 @@
     <string name="notify_error_not_ebp_patch">Not a valid EBP patch</string>
     <string name="notify_error_not_dps_patch">Not a valid DPS patch</string>
     <string name="notify_error_not_xdelta3_patch">Not a valid XDelta3 patch</string>
+    <string name="notify_error_xdelta3_internal_error">XDelta3 internal error</string>
     <string name="notify_error_xdelta1_unsupported">I am not able to work with XDelta1 patches</string>
     <string name="notify_error_unable_open_file">Unable open file</string>
     <string name="notify_error_unknown_patch_format">Unknown patch format</string>

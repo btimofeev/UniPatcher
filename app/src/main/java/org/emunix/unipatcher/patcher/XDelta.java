@@ -29,6 +29,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
+import timber.log.Timber;
+
 public class XDelta extends Patcher {
 
     private static final int NO_ERROR = 0;
@@ -38,6 +40,7 @@ public class XDelta extends Patcher {
     private static final int ERR_UNABLE_OPEN_SOURCE = -5004;
     private static final int ERR_UNABLE_OPEN_MODIFIED = -5005;
     private static final int ERR_WRONG_CHECKSUM = -5010;
+    private static final int ERR_INTERNAL = -17710;
     private static final int ERR_INVALID_INPUT = -17712;
 
     public static native int xdelta3apply(String patchPath, String romPath, String outputPath, boolean ignoreChecksum);
@@ -59,6 +62,7 @@ public class XDelta extends Patcher {
         }
 
         int ret = xdelta3apply(patchFile.getPath(), romFile.getPath(), outputFile.getPath(), ignoreChecksum);
+        Timber.d("XDelta3 return code: %s", ret);
 
         switch (ret) {
             case NO_ERROR:
@@ -74,6 +78,8 @@ public class XDelta extends Patcher {
                         .concat(" ").concat(outputFile.getName()));
             case ERR_WRONG_CHECKSUM:
                 throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+            case ERR_INTERNAL:
+                throw new PatchException(context.getString(R.string.notify_error_xdelta3_internal_error));
             case ERR_INVALID_INPUT:
                 throw new PatchException(context.getString(R.string.notify_error_not_xdelta3_patch));
             default:
