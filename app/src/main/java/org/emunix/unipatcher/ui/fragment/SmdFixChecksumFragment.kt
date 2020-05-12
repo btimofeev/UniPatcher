@@ -79,7 +79,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
         when (view.id) {
             R.id.romCardView -> {
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_rom))
-                intent.putExtra("directory", getRomDir(activity!!))
+                intent.putExtra("directory", getRomDir(requireActivity()))
                 startActivityForResult(intent, Action.SELECT_ROM_FILE)
             }
         }
@@ -104,7 +104,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
                     binding.romNameTextView.text = File(path).name
                     val dir = File(path).parent
                     if (dir != null) {
-                        setLastRomDir(activity!!, dir)
+                        setLastRomDir(requireActivity(), dir)
                     }
                 }
             }
@@ -119,7 +119,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
         val intent = Intent(activity, WorkerService::class.java)
         intent.putExtra("romPath", romPath)
         intent.putExtra("action", Action.SMD_FIX_CHECKSUM)
-        startForegroundService(activity!!, intent)
+        startForegroundService(requireActivity(), intent)
         Toast.makeText(activity, R.string.notify_smd_fix_checksum_started_check_notify, Toast.LENGTH_SHORT).show()
         return true
     }

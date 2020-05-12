@@ -50,8 +50,8 @@ class FaqFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         try {
             val html = Markdown4jProcessor().process(
-                    activity!!.resources.openRawResource(R.raw.faq))
-            binding.faqText.setHtml(html, HtmlResImageGetter(activity!!))
+                    requireActivity().resources.openRawResource(R.raw.faq))
+            binding.faqText.setHtml(html, HtmlResImageGetter(requireActivity()))
         } catch (e: IOException) {
             Toast.makeText(activity, R.string.help_activity_error_cannot_load_text, Toast.LENGTH_LONG).show()
         }

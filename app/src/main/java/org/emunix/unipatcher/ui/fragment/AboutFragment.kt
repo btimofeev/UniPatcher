@@ -48,11 +48,11 @@ class AboutFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        binding.versionText.text = getString(R.string.help_activity_about_tab_version, Utils.getAppVersion(activity!!))
+        binding.versionText.text = getString(R.string.help_activity_about_tab_version, Utils.getAppVersion(requireActivity()))
         try {
             val html = Markdown4jProcessor().process(
-                    activity!!.resources.openRawResource(R.raw.about))
-            binding.aboutText.setHtml(html, HtmlResImageGetter(activity!!))
+                    requireActivity().resources.openRawResource(R.raw.about))
+            binding.aboutText.setHtml(html, HtmlResImageGetter(requireActivity()))
         } catch (e: Exception) {
             Toast.makeText(activity, R.string.help_activity_error_cannot_load_text, Toast.LENGTH_LONG).show()
         }
