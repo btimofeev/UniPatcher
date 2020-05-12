@@ -95,12 +95,12 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
         when (view.id) {
             R.id.sourceFileCardView -> {
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_source_file))
-                intent.putExtra("directory", getRomDir(activity!!))
+                intent.putExtra("directory", getRomDir(requireActivity()))
                 startActivityForResult(intent, Action.SELECT_SOURCE_FILE)
             }
             R.id.modifiedFileCardView -> {
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_modified_file))
-                intent.putExtra("directory", getRomDir(activity!!))
+                intent.putExtra("directory", getRomDir(requireActivity()))
                 startActivityForResult(intent, Action.SELECT_MODIFIED_FILE)
             }
             R.id.patchFileCardView -> renamePatchFile()
@@ -123,7 +123,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                     binding.sourceFileNameTextView.visibility = View.VISIBLE
                     binding.sourceFileNameTextView.text = filePath.name
                     if (dir != null) {
-                        setLastRomDir(activity!!, dir)
+                        setLastRomDir(requireActivity(), dir)
                     }
                 }
                 Action.SELECT_MODIFIED_FILE -> {
@@ -131,10 +131,10 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                     binding.modifiedFileNameTextView.visibility = View.VISIBLE
                     binding.modifiedFileNameTextView.text = filePath.name
                     if (dir != null) {
-                        setLastRomDir(activity!!, dir)
+                        setLastRomDir(requireActivity(), dir)
                     }
                     patchPath = makeOutputPath(path)
-                    binding.patchFileNameTextView!!.text = File(patchPath).name
+                    binding.patchFileNameTextView.text = File(patchPath).name
                 }
             }
         }
@@ -142,7 +142,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
     }
 
     private fun makeOutputPath(fullname: String): String {
-        var dir = getOutputDir(activity!!)
+        var dir = getOutputDir(requireActivity())
         if (dir == "") { // get ROM directory
             dir = FilenameUtils.getFullPath(fullname)
         }
@@ -170,7 +170,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                 intent.putExtra("sourcePath", sourcePath)
                 intent.putExtra("modifiedPath", modifiedPath)
                 intent.putExtra("patchPath", patchPath)
-                startForegroundService(activity!!, intent)
+                startForegroundService(requireActivity(), intent)
                 Toast.makeText(activity, R.string.toast_create_patch_started_check_notify, Toast.LENGTH_SHORT).show()
                 return true
             }
@@ -182,14 +182,14 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
             Toast.makeText(activity, getString(R.string.create_patch_fragment_toast_modified_not_selected), Toast.LENGTH_LONG).show()
             return
         }
-        val renameDialog = AlertDialog.Builder(activity!!)
+        val renameDialog = AlertDialog.Builder(requireActivity())
         renameDialog.setTitle(R.string.dialog_rename_title)
         val input = EditText(activity)
         input.setText(binding.patchFileNameTextView.text)
         // add left and right margins to EditText.
-        val container = FrameLayout(activity!!)
+        val container = FrameLayout(requireActivity())
         val params = FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        val dp24 = dpToPx(activity!!, 24)
+        val dp24 = dpToPx(requireActivity(), 24)
         params.setMargins(dp24, 0, dp24, 0)
         input.layoutParams = params
         container.addView(input)

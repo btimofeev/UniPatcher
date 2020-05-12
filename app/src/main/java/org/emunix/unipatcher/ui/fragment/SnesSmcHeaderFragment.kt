@@ -97,7 +97,7 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
         when (view.id) {
             R.id.romCardView -> {
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_rom))
-                intent.putExtra("directory", getRomDir(activity!!))
+                intent.putExtra("directory", getRomDir(requireActivity()))
                 startActivityForResult(intent, Action.SELECT_ROM_FILE)
             }
             R.id.headerCardView -> {
@@ -125,7 +125,7 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
                     binding.romNameTextView.text = File(path).name
                     val dir = File(path).parent
                     if (dir != null) {
-                        setLastRomDir(activity!!, dir)
+                        setLastRomDir(requireActivity(), dir)
                     }
                     val checker = SnesSmcHeader()
                     if (checker.isHasSmcHeader(File(path))) {
@@ -158,7 +158,7 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
         intent.putExtra("action", action)
         intent.putExtra("romPath", romPath)
         intent.putExtra("headerPath", headerPath)
-        startForegroundService(activity!!, intent)
+        startForegroundService(requireActivity(), intent)
         if (action == Action.SNES_ADD_SMC_HEADER) {
             Toast.makeText(activity, R.string.notify_snes_add_smc_header_stared_check_noify, Toast.LENGTH_SHORT).show()
         } else {
