@@ -31,11 +31,9 @@ android {
 
     ndkVersion "21.0.6113669"
 
-    dataBinding {
-        enabled = true
-    }
-    viewBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
     }
 
     buildTypes {
