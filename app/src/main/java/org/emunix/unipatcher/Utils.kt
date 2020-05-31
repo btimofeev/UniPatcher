@@ -26,17 +26,16 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.StatFs
 import android.util.DisplayMetrics
-import android.util.Log
 import androidx.core.content.ContextCompat
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
 import org.apache.commons.io.IOUtils
+import timber.log.Timber
 import java.io.*
 import java.util.*
 import kotlin.math.roundToInt
 
 object Utils {
-    private const val LOG_TAG = "Utils"
 
     private const val BUFFER_SIZE = 10240 // 10 Kb
 
@@ -54,7 +53,7 @@ object Utils {
             val pinfo = context.packageManager.getPackageInfo(context.packageName, 0)
             versionName = pinfo.versionName
         } catch (e: Exception) {
-            Log.e(LOG_TAG, "App version is not available")
+            Timber.e("App version is not available")
         }
 
         return versionName
