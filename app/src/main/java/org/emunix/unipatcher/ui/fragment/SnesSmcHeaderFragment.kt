@@ -27,8 +27,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.Settings.getRomDir
-import org.emunix.unipatcher.Settings.setLastRomDir
+import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.Utils.isArchive
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.WorkerService
@@ -97,7 +96,7 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
         when (view.id) {
             R.id.romCardView -> {
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_rom))
-                intent.putExtra("directory", getRomDir(requireActivity()))
+                intent.putExtra("directory", Settings.getRomDir())
                 startActivityForResult(intent, Action.SELECT_ROM_FILE)
             }
             R.id.headerCardView -> {
@@ -125,7 +124,7 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
                     binding.romNameTextView.text = File(path).name
                     val dir = File(path).parent
                     if (dir != null) {
-                        setLastRomDir(requireActivity(), dir)
+                        Settings.setLastRomDir(dir)
                     }
                     val checker = SnesSmcHeader()
                     if (checker.isHasSmcHeader(File(path))) {

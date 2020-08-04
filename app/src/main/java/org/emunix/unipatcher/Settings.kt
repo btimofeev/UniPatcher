@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016, 2017, 2019 Boris Timofeev
+Copyright (C) 2016, 2017, 2019, 2020 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -19,82 +19,70 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher
 
-import android.content.Context
-import androidx.preference.PreferenceManager
 
 object Settings {
 
-    fun getLastRomDir(context: Context): String? {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    private val prefs = UniPatcher.appComponent.sharedPreferences()
+
+    fun getLastRomDir(): String? {
         return prefs.getString("last_rom_directory", null)
     }
 
-    fun setLastRomDir(context: Context, directory: String) {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    fun setLastRomDir(directory: String) {
         val editor = prefs.edit()
         editor.putString("last_rom_directory", directory)
         editor.apply()
     }
 
-    fun getLastPatchDir(context: Context): String? {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    fun getLastPatchDir(): String? {
         return prefs.getString("last_patch_directory", null)
     }
 
-    fun setLastPatchDir(context: Context, directory: String) {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    fun setLastPatchDir(directory: String) {
         val editor = prefs.edit()
         editor.putString("last_patch_directory", directory)
         editor.apply()
     }
 
-    fun getRomDir(context: Context): String? {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    fun getRomDir(): String? {
         return if (prefs.getBoolean("remember_last_directories", true)) {
-            getLastRomDir(context)
+            getLastRomDir()
         } else
             prefs.getString("rom_directory", "/")
     }
 
-    fun getPatchDir(context: Context): String? {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    fun getPatchDir(): String? {
         return if (prefs.getBoolean("remember_last_directories", true)) {
-            getLastPatchDir(context)
+            getLastPatchDir()
         } else
             prefs.getString("patch_directory", "/")
     }
 
-    fun getOutputDir(context: Context): String {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
-        return prefs?.getString("output_directory", "") ?: ""
+    fun getOutputDir(): String {
+        return prefs.getString("output_directory", "") ?: ""
     }
 
-    fun getIgnoreChecksum(context: Context): Boolean {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    fun getIgnoreChecksum(): Boolean {
         return prefs.getBoolean("ignore_checksum", false)
     }
 
-    fun setPatchingSuccessful(context: Context, isSuccessful: Boolean?) {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    fun setPatchingSuccessful(isSuccessful: Boolean?) {
         val editor = prefs.edit()
         editor.putBoolean("patching_successful", isSuccessful!!)
         editor.apply()
     }
 
-    fun getPatchingSuccessful(context: Context): Boolean {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    fun getPatchingSuccessful(): Boolean {
         return prefs.getBoolean("patching_successful", false)
     }
 
-    fun setDontShowDonateSnackbarCount(context: Context, count: Int) {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    fun setDontShowDonateSnackbarCount(count: Int) {
         val editor = prefs.edit()
         editor.putInt("dont_show_donate_snackbar", count)
         editor.apply()
     }
 
-    fun getDontShowDonateSnackbarCount(context: Context): Int {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    fun getDontShowDonateSnackbarCount(): Int {
         return prefs.getInt("dont_show_donate_snackbar", 0)
     }
 }

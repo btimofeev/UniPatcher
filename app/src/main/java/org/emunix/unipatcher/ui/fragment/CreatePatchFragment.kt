@@ -33,9 +33,7 @@ import androidx.appcompat.app.AlertDialog
 import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.Settings.getOutputDir
-import org.emunix.unipatcher.Settings.getRomDir
-import org.emunix.unipatcher.Settings.setLastRomDir
+import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.Utils.dpToPx
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.WorkerService
@@ -95,12 +93,12 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
         when (view.id) {
             R.id.sourceFileCardView -> {
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_source_file))
-                intent.putExtra("directory", getRomDir(requireActivity()))
+                intent.putExtra("directory", Settings.getRomDir())
                 startActivityForResult(intent, Action.SELECT_SOURCE_FILE)
             }
             R.id.modifiedFileCardView -> {
                 intent.putExtra("title", getString(R.string.file_picker_activity_title_select_modified_file))
-                intent.putExtra("directory", getRomDir(requireActivity()))
+                intent.putExtra("directory", Settings.getRomDir())
                 startActivityForResult(intent, Action.SELECT_MODIFIED_FILE)
             }
             R.id.patchFileCardView -> renamePatchFile()
@@ -123,7 +121,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                     binding.sourceFileNameTextView.visibility = View.VISIBLE
                     binding.sourceFileNameTextView.text = filePath.name
                     if (dir != null) {
-                        setLastRomDir(requireActivity(), dir)
+                        Settings.setLastRomDir(dir)
                     }
                 }
                 Action.SELECT_MODIFIED_FILE -> {
@@ -131,7 +129,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                     binding.modifiedFileNameTextView.visibility = View.VISIBLE
                     binding.modifiedFileNameTextView.text = filePath.name
                     if (dir != null) {
-                        setLastRomDir(requireActivity(), dir)
+                        Settings.setLastRomDir(dir)
                     }
                     patchPath = makeOutputPath(path)
                     binding.patchFileNameTextView.text = File(patchPath).name
@@ -142,7 +140,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
     }
 
     private fun makeOutputPath(fullname: String): String {
-        var dir = getOutputDir(requireActivity())
+        var dir = Settings.getOutputDir()
         if (dir == "") { // get ROM directory
             dir = FilenameUtils.getFullPath(fullname)
         }
