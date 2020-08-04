@@ -27,6 +27,9 @@ import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import androidx.preference.PreferenceManager
+import org.emunix.unipatcher.di.AppComponent
+import org.emunix.unipatcher.di.AppModule
+import org.emunix.unipatcher.di.DaggerAppComponent
 import org.emunix.unipatcher.helpers.ThemeHelper
 import timber.log.Timber
 
@@ -35,6 +38,11 @@ class UniPatcher : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        appComponent = DaggerAppComponent.builder()
+                .appModule(AppModule(this))
+                .build()
+
         initLogger()
         initNotificationChannel()
         setTheme()
@@ -66,5 +74,8 @@ class UniPatcher : Application() {
 
     companion object {
         const val NOTIFICATION_CHANNEL_ID = "notifications"
+
+        lateinit var appComponent: AppComponent
+        private set
     }
 }

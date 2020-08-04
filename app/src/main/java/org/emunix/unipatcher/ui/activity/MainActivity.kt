@@ -19,7 +19,6 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.activity
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -28,15 +27,17 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
-import org.emunix.unipatcher.BuildConfig
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings.getDontShowDonateSnackbarCount
 import org.emunix.unipatcher.Settings.getPatchingSuccessful
 import org.emunix.unipatcher.Settings.setDontShowDonateSnackbarCount
+import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.databinding.ActivityMainBinding
+import org.emunix.unipatcher.helpers.SocialHelper
 import org.emunix.unipatcher.ui.fragment.*
 import timber.log.Timber
 import java.util.*
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -50,8 +51,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var _binding: ActivityMainBinding
     private val binding get() = _binding
 
+    @Inject lateinit var social: SocialHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        UniPatcher.appComponent.inject(this)
+
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.includes.toolbar)
@@ -84,9 +90,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val settingsIntent = Intent(this, SettingsActivity::class.java)
                 startActivity(settingsIntent)
             }
-            R.id.nav_rate -> rateApp()
+            R.id.nav_rate -> social.rateApp()
             R.id.nav_donate -> showDonateActivity()
-            R.id.nav_share -> shareApp()
+            R.id.nav_share -> social.shareApp()
             R.id.nav_help -> {
                 val helpIntent = Intent(this, HelpActivity::class.java)
                 startActivity(helpIntent)
@@ -138,22 +144,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun showDonateActivity() {
         val donateIntent = Intent(this, DonateActivity::class.java)
         startActivity(donateIntent)
-    }
-
-    private fun shareApp() {
-        val shareIntent = Intent(Intent.ACTION_SEND)
-        shareIntent.type = "text/plain"
-        shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name))
-        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text) + BuildConfig.SHARE_URL)
-        startActivity(Intent.createChooser(shareIntent, getString(R.string.share_dialog_title)))
-    }
-
-    private fun rateApp() {
-        val rateAppIntent = Intent(Intent.ACTION_VIEW)
-        rateAppIntent.data = Uri.parse(BuildConfig.RATE_URL)
-        if (packageManager.queryIntentActivities(rateAppIntent, 0).size == 0) { // Market app is not installed. Open web browser
-            rateAppIntent.data = Uri.parse(BuildConfig.SHARE_URL)
-        }
-        startActivity(rateAppIntent)
     }
 }
