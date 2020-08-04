@@ -20,16 +20,18 @@
 
 package org.emunix.unipatcher.di
 
+import android.content.Context
 import android.content.SharedPreferences
-import dagger.Component
-import org.emunix.unipatcher.ui.activity.MainActivity
+import androidx.preference.PreferenceManager
+import dagger.Module
+import dagger.Provides
 import javax.inject.Singleton
 
-@Singleton
-@Component(modules = [AppModule::class, PreferenceModule::class])
-interface AppComponent {
+@Module
+class PreferenceModule {
 
-    fun inject(activity: MainActivity)
+    @Provides
+    @Singleton
+    fun provideSharedPreferences(context: Context): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
-    fun sharedPreferences(): SharedPreferences
 }

@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013-2017, 2019 Boris Timofeev
+Copyright (C) 2013-2017, 2019-2020 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -126,8 +126,8 @@ class WorkerService : IntentService("WorkerService") {
         try {
             if ("ppf" == ext)
                 Utils.copyFile(this, romFile, outputFile) // todo move this to ppf code
-            patcher.apply(Settings.getIgnoreChecksum(this))
-            Settings.setPatchingSuccessful(this, true)
+            patcher.apply(Settings.getIgnoreChecksum())
+            Settings.setPatchingSuccessful(true)
         } catch (e: Exception) {
             errorMsg = if (Utils.getFreeSpace(outputFile.parentFile) == 0L) {
                 getString(R.string.notify_error_not_enough_space)
@@ -188,7 +188,7 @@ class WorkerService : IntentService("WorkerService") {
 
         try {
             patcher.create()
-            Settings.setPatchingSuccessful(this, true)
+            Settings.setPatchingSuccessful(true)
         } catch (e: Exception) {
             errorMsg = if (Utils.getFreeSpace(patchFile.parentFile) == 0L) {
                 getString(R.string.notify_error_not_enough_space)

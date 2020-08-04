@@ -28,9 +28,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.Settings.getDontShowDonateSnackbarCount
-import org.emunix.unipatcher.Settings.getPatchingSuccessful
-import org.emunix.unipatcher.Settings.setDontShowDonateSnackbarCount
+import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.databinding.ActivityMainBinding
 import org.emunix.unipatcher.helpers.SocialHelper
@@ -120,11 +118,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun showDonateSnackbar() { // don't show snackbar if the user did not patch the file successfully
-        if (!getPatchingSuccessful(this)) return
+        if (!Settings.getPatchingSuccessful()) return
         // don't show snackbar some time if the user swiped off it before
-        var count = getDontShowDonateSnackbarCount(this)
+        var count = Settings.getDontShowDonateSnackbarCount()
         if (count != 0) {
-            setDontShowDonateSnackbarCount(this, --count)
+            Settings.setDontShowDonateSnackbarCount(--count)
             return
         }
         // don't show snackbar each time you open the application
@@ -134,7 +132,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .addCallback(object : Snackbar.Callback() {
                     override fun onDismissed(snackbar: Snackbar, event: Int) {
                         if (event == DISMISS_EVENT_SWIPE) {
-                            setDontShowDonateSnackbarCount(applicationContext, 30)
+                            Settings.setDontShowDonateSnackbarCount(30)
                         }
                     }
                 }
