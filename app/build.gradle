@@ -111,7 +111,7 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:3.3.0'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation 'androidx.core:core:1.3.0'
+    implementation 'androidx.core:core:1.3.1'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.preference:preference:1.1.1'
@@ -128,6 +128,10 @@ dependencies {
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    // DI
+    implementation 'com.google.dagger:dagger:2.28'
+    kapt 'com.google.dagger:dagger-compiler:2.28'
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
