@@ -124,8 +124,6 @@ class WorkerService : IntentService("WorkerService") {
         startForeground(notify.id, notify.notifyBuilder.build())
 
         try {
-            if ("ppf" == ext)
-                Utils.copyFile(this, romFile, outputFile) // todo move this to ppf code
             patcher.apply(Settings.getIgnoreChecksum())
             Settings.setPatchingSuccessful(true)
         } catch (e: Exception) {
