@@ -23,6 +23,7 @@ import android.content.Context;
 
 import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.Utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -72,6 +73,8 @@ public class PPF extends Patcher {
         if (patchFile.length() < 61) {
             throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
         }
+
+        Utils.INSTANCE.copyFile(context, romFile, outputFile);
 
         switch (getPPFVersion(patchFile)) {
             case 1:

@@ -75,7 +75,7 @@ object Utils {
 
     @Throws(IOException::class)
     fun copyFile(context: Context, from: File, to: File) {
-        val dir = to.parentFile ?: throw IllegalArgumentException("Couldn't find parent file: $to")
+        val dir = to.parentFile ?: throw IOException("Couldn't find parent file: $to")
 
         if (getFreeSpace(dir) < from.length()) {
             throw IOException(context.getString(R.string.notify_error_not_enough_space))
