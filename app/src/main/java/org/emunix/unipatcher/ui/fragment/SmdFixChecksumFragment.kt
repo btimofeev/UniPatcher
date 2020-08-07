@@ -20,6 +20,7 @@ package org.emunix.unipatcher.ui.fragment
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,21 +28,22 @@ import android.view.ViewGroup
 import android.widget.Toast
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.Settings
-import org.emunix.unipatcher.Utils.isArchive
+import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.WorkerService
 import org.emunix.unipatcher.databinding.SmdFixChecksumFragmentBinding
-import org.emunix.unipatcher.ui.activity.FilePickerActivity
+import org.emunix.unipatcher.helpers.UriParser
 import timber.log.Timber
-import java.io.File
+import javax.inject.Inject
 
 class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
 
-    private var romPath: String = ""
+    private var romPath: String = ""  // String representation of Uri, example "content://com.app.name/path_to_file"
 
     private var _binding: SmdFixChecksumFragmentBinding? = null
     private val binding get() = _binding!!
+
+    @Inject lateinit var uriParser: UriParser
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = SmdFixChecksumFragmentBinding.inflate(inflater, container, false)
@@ -55,6 +57,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        UniPatcher.appComponent.inject(this)
         activity?.setTitle(R.string.nav_smd_fix_checksum)
         binding.romCardView.setOnClickListener(this)
     }
@@ -64,7 +67,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
         if (savedInstanceState != null) {
             romPath = savedInstanceState.getString("romPath") ?: ""
             if (romPath.isNotEmpty())
-                binding.romNameTextView.text = File(romPath).name
+                binding.romNameTextView.text = uriParser.getFileName(Uri.parse(romPath))
         }
     }
 
@@ -74,37 +77,24 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
     }
 
     override fun onClick(view: View) {
-        val intent = Intent(activity, FilePickerActivity::class.java)
-        when (view.id) {
-            R.id.romCardView -> {
-                intent.putExtra("title", getString(R.string.file_picker_activity_title_select_rom))
-                intent.putExtra("directory", Settings.getRomDir())
-                startActivityForResult(intent, Action.SELECT_ROM_FILE)
-            }
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = "application/octet-stream"
         }
+
+        startActivityForResult(intent, Action.SELECT_ROM_FILE)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        Timber.d("onActivityResult($requestCode, $resultCode, $data)")
-        if (resultCode == Activity.RESULT_OK) {
-            val path = data?.getStringExtra("path") ?: ""
-            if (path == "") {
-                Toast.makeText(activity, R.string.main_activity_toast_file_manager_did_not_return_file_path, Toast.LENGTH_LONG).show()
-                return
-            }
-            if (isArchive(path)) {
-                Toast.makeText(activity, R.string.main_activity_toast_archives_not_supported, Toast.LENGTH_LONG).show()
-            }
-            when (requestCode) {
-                Action.SELECT_ROM_FILE -> {
-                    romPath = path
+    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
+        super.onActivityResult(requestCode, resultCode, resultData)
+        Timber.d("onActivityResult($requestCode, $resultCode, $resultData)")
+        if (requestCode == Action.SELECT_ROM_FILE && resultCode == Activity.RESULT_OK && resultData != null) {
+            resultData.data?.let { uri ->
+                Timber.d(uri.toString())
+                uriParser.getFileName(uri)?.let { fileName ->
+                    romPath = uri.toString()
                     binding.romNameTextView.visibility = View.VISIBLE
-                    binding.romNameTextView.text = File(path).name
-                    val dir = File(path).parent
-                    if (dir != null) {
-                        Settings.setLastRomDir(dir)
-                    }
+                    binding.romNameTextView.text = fileName
                 }
             }
         }
