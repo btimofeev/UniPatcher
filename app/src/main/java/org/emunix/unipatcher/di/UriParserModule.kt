@@ -20,20 +20,17 @@
 
 package org.emunix.unipatcher.di
 
-import android.content.SharedPreferences
-import dagger.Component
-import org.emunix.unipatcher.WorkerService
-import org.emunix.unipatcher.ui.activity.MainActivity
-import org.emunix.unipatcher.ui.fragment.SmdFixChecksumFragment
+import android.content.Context
+import dagger.Module
+import dagger.Provides
+import org.emunix.unipatcher.helpers.UriParser
+import org.emunix.unipatcher.helpers.UriParserImpl
 import javax.inject.Singleton
 
-@Singleton
-@Component(modules = [AppModule::class, PreferenceModule::class, UriParserModule::class])
-interface AppComponent {
+@Module
+class UriParserModule {
 
-    fun inject(activity: MainActivity)
-    fun inject(fragment: SmdFixChecksumFragment)
-    fun inject(service: WorkerService)
-
-    fun sharedPreferences(): SharedPreferences
+    @Provides
+    @Singleton
+    fun provideUriParser(context: Context): UriParser = UriParserImpl(context)
 }

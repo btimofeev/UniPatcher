@@ -18,22 +18,12 @@
 
  */
 
-package org.emunix.unipatcher.di
+package org.emunix.unipatcher.helpers
 
-import android.content.SharedPreferences
-import dagger.Component
-import org.emunix.unipatcher.WorkerService
-import org.emunix.unipatcher.ui.activity.MainActivity
-import org.emunix.unipatcher.ui.fragment.SmdFixChecksumFragment
-import javax.inject.Singleton
+import android.net.Uri
 
-@Singleton
-@Component(modules = [AppModule::class, PreferenceModule::class, UriParserModule::class])
-interface AppComponent {
 
-    fun inject(activity: MainActivity)
-    fun inject(fragment: SmdFixChecksumFragment)
-    fun inject(service: WorkerService)
-
-    fun sharedPreferences(): SharedPreferences
+interface UriParser {
+    fun getFileName(uri: Uri): String?
+    fun getFileSize(uri: Uri): Long
 }

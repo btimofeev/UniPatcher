@@ -24,11 +24,13 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.PowerManager
 import androidx.core.app.NotificationCompat
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
+import org.emunix.unipatcher.helpers.UriParser
 import org.emunix.unipatcher.patcher.*
 import org.emunix.unipatcher.tools.SmdFixChecksum
 import org.emunix.unipatcher.tools.SnesSmcHeader
@@ -36,11 +38,17 @@ import org.emunix.unipatcher.ui.activity.MainActivity
 import org.emunix.unipatcher.ui.notify.*
 import java.io.File
 import java.io.IOException
+import java.lang.IllegalArgumentException
 import java.util.*
+import javax.inject.Inject
 
 class WorkerService : IntentService("WorkerService") {
 
+    @Inject lateinit var uriParser: UriParser
+
     override fun onHandleIntent(intent: Intent?) {
+        UniPatcher.appComponent.inject(this)
+
         // if user deny write storage permission
         if (!Utils.hasStoragePermission(this)) {
             showErrorNotification(getString(R.string.permissions_storage_error_notify_access_denied))
@@ -202,18 +210,20 @@ class WorkerService : IntentService("WorkerService") {
 
     private fun actionSmdFixChecksum(intent: Intent) {
         var errorMsg: String? = null
-        val romFile = File(intent.getStringExtra("romPath"))
 
-        if (!fileExists(romFile))
-            return
+        val romPath = intent.getStringExtra("romPath")
+        require(romPath != null) { "romPath is null" }
 
-        val worker = SmdFixChecksum(this, romFile)
+        val romUri = Uri.parse(romPath)
+        val worker = SmdFixChecksum(this, romUri, uriParser)
 
-        val notify = SmdFixChecksumNotify(this, romFile.name)
+        val notify = SmdFixChecksumNotify(this, uriParser.getFileName(romUri) ?: "")
         startForeground(notify.id, notify.notifyBuilder.build())
 
         try {
             worker.fixChecksum()
+        } catch (e: IllegalArgumentException) {
+            errorMsg = "Illegal argument of method: ${e.message}"
         } catch (e: Exception) {
             errorMsg = e.message
         } finally {
