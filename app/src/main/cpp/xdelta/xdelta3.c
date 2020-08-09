@@ -2,7 +2,7 @@
 This file based on encode_decode_test.c from XDelta3 sources.
 
 Copyright (C) 2007 Ralf Junker
-Copyright (C) 2016-2017 Boris Timofeev
+Copyright (C) 2016-2017, 2020 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -81,7 +81,7 @@ int Java_org_emunix_unipatcher_patcher_XDelta_xdelta3apply(JNIEnv *env,
     return ret;
 }
 
-int Java_org_emunix_unipatcher_patcher_XDelta_xdelta3create(JNIEnv *env,
+int Java_org_emunix_unipatcher_tools_CreateXDelta3_xdelta3create(JNIEnv *env,
                                                            jobject this,
                                                            jstring patchPath,
                                                            jstring sourcePath,

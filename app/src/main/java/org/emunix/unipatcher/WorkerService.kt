@@ -32,6 +32,7 @@ import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.helpers.UriParser
 import org.emunix.unipatcher.patcher.*
+import org.emunix.unipatcher.tools.CreateXDelta3
 import org.emunix.unipatcher.tools.SmdFixChecksum
 import org.emunix.unipatcher.tools.SnesSmcHeader
 import org.emunix.unipatcher.ui.activity.MainActivity
@@ -186,14 +187,14 @@ class WorkerService : IntentService("WorkerService") {
             return
         }
 
-        val patcher = XDelta(this, patchFile, sourceFile, modifiedFile)
+        val patchMaker = CreateXDelta3(this, patchFile, sourceFile, modifiedFile)
 
         val notify = CreatePatchNotify(this, patchFile.name)
 
         startForeground(notify.id, notify.notifyBuilder.build())
 
         try {
-            patcher.create()
+            patchMaker.create()
             Settings.setPatchingSuccessful(true)
         } catch (e: Exception) {
             errorMsg = if (Utils.getFreeSpace(patchFile.parentFile) == 0L) {
