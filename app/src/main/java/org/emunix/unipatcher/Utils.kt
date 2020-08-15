@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013-2017, 2019 Boris Timofeev
+Copyright (C) 2013-2017, 2019-2020 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -23,6 +23,7 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.StatFs
 import android.util.DisplayMetrics
@@ -57,6 +58,10 @@ object Utils {
         }
 
         return versionName
+    }
+
+    fun getTempDir(context: Context): File {
+        return context.externalCacheDir ?: context.cacheDir
     }
 
     fun hasStoragePermission(context: Context): Boolean {
@@ -138,6 +143,41 @@ object Utils {
                 to.write(buffer, 0, count.toInt())
                 count = 0
             }
+        }
+    }
+
+    @Throws(IOException::class)
+    fun copyToTempFile(inputStream: InputStream, context: Context): File {
+        val tmpDir = getTempDir(context)
+        val tmpFile = File.createTempFile("file", ".tmp", tmpDir)
+        val outputStream = tmpFile.outputStream()
+        outputStream.use {
+            IOUtils.copy(inputStream, it)
+        }
+        return tmpFile
+    }
+
+    @Throws(IOException::class)
+    fun copyToTempFile(uri: Uri, context: Context): File {
+        val stream: InputStream = context.contentResolver.openInputStream(uri)
+                ?: throw IOException("Unable to open ${uri}: content resolver returned null")
+        try {
+            return copyToTempFile(stream, context)
+        } finally {
+            IOUtils.closeQuietly(stream)
+        }
+    }
+
+    @Throws(IOException::class)
+    fun copy(from: File, to: Uri, context: Context) {
+        val inputStream = from.inputStream()
+        val outputStream = context.contentResolver.openOutputStream(to)
+                ?: throw IOException("Unable to open ${to}: content resolver returned null")
+        try {
+            IOUtils.copy(inputStream, outputStream)
+        } finally {
+            IOUtils.closeQuietly(inputStream)
+            IOUtils.closeQuietly(outputStream)
         }
     }
 

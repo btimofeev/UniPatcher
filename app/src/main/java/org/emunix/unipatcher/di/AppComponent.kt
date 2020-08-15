@@ -24,6 +24,7 @@ import android.content.SharedPreferences
 import dagger.Component
 import org.emunix.unipatcher.WorkerService
 import org.emunix.unipatcher.ui.activity.MainActivity
+import org.emunix.unipatcher.ui.fragment.CreatePatchFragment
 import org.emunix.unipatcher.ui.fragment.SmdFixChecksumFragment
 import javax.inject.Singleton
 
@@ -33,6 +34,7 @@ interface AppComponent {
 
     fun inject(activity: MainActivity)
     fun inject(fragment: SmdFixChecksumFragment)
+    fun inject(fragment: CreatePatchFragment)
     fun inject(service: WorkerService)
 
     fun sharedPreferences(): SharedPreferences

@@ -12,6 +12,7 @@
     <string name="main_activity_header_file">Header file</string>
     <string name="main_activity_tap_to_select">tap to select</string>
     <string name="main_activity_tap_to_rename">tap to rename</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">tap to select where to save the patch</string>
     <string name="main_activity_toast_rom_and_patch_not_selected">The ROM and the patch files is not selected</string>
     <string name="main_activity_toast_rom_not_selected">No ROM file selected</string>
     <string name="main_activity_toast_patch_not_selected">No patch file selected</string>
@@ -35,6 +36,7 @@
     <string name="create_patch_fragment_toast_source_and_modified_not_selected">The source and modified files is not selected</string>
     <string name="create_patch_fragment_toast_source_not_selected">The source file is not selected</string>
     <string name="create_patch_fragment_toast_modified_not_selected">The modified file is not selected</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">The patch file is not selected</string>
 
     <!-- Info for SNES SMC header -->
     <string name="snes_smc_header_help">This feature is only for Super Nintendo ROMs.\n\nIf the ROM contains the SMC header - it will be removed. Otherwise, it will be added.\n\nWarning: This function does not create a backup.</string>
