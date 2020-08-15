@@ -27,6 +27,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.PowerManager
+import android.provider.DocumentsContract
 import androidx.core.app.NotificationCompat
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
@@ -152,57 +153,28 @@ class WorkerService : IntentService("WorkerService") {
 
     private fun actionCreatePatch(intent: Intent) {
         var errorMsg: String? = null
-        val sourceFile = File(intent.getStringExtra("sourcePath"))
-        val modifiedFile = File(intent.getStringExtra("modifiedPath"))
-        val patchFile = File(intent.getStringExtra("patchPath"))
+        val sourcePath = intent.getStringExtra("sourcePath")
+        val modifiedPath = intent.getStringExtra("modifiedPath")
+        val patchPath = intent.getStringExtra("patchPath")
+        require(sourcePath != null) { "sourcePath is null" }
+        require(modifiedPath != null) { "modifiedPath is null" }
+        require(patchPath != null) { "patchPath is null" }
 
-        if (!fileExists(sourceFile) || !fileExists(modifiedFile))
-            return
+        val sourceUri = Uri.parse(sourcePath)
+        val modifiedUri = Uri.parse(modifiedPath)
+        val patchUri = Uri.parse(patchPath)
 
-        // create output dir
-        try {
-            if (!patchFile.parentFile.exists()) {
-                FileUtils.forceMkdirParent(patchFile)
-            }
-        } catch (e: IOException) {
-            val text = getString(R.string.notify_error_unable_to_create_directory, patchFile.parent)
-            showErrorNotification(text)
-            return
-        } catch (e: SecurityException) {
-            val text = getString(R.string.notify_error_unable_to_create_directory, patchFile.parent)
-            showErrorNotification(text)
-            return
-        }
-
-        // check access to output dir
-        try {
-            if (!patchFile.parentFile.canWrite()) {
-                val text = getString(R.string.notify_error_unable_to_write_to_directory, patchFile.parent)
-                showErrorNotification(text)
-                return
-            }
-        } catch (e: SecurityException) {
-            val text = getString(R.string.notify_error_unable_to_write_to_directory, patchFile.parent)
-            showErrorNotification(text)
-            return
-        }
-
-        val patchMaker = CreateXDelta3(this, patchFile, sourceFile, modifiedFile)
-
-        val notify = CreatePatchNotify(this, patchFile.name)
-
+        val notify = CreatePatchNotify(this, uriParser.getFileName(patchUri))
         startForeground(notify.id, notify.notifyBuilder.build())
+
+        val patchMaker = CreateXDelta3(this, patchUri, sourceUri, modifiedUri, uriParser)
 
         try {
             patchMaker.create()
             Settings.setPatchingSuccessful(true)
         } catch (e: Exception) {
-            errorMsg = if (Utils.getFreeSpace(patchFile.parentFile) == 0L) {
-                getString(R.string.notify_error_not_enough_space)
-            } else {
-                e.message
-            }
-            FileUtils.deleteQuietly(patchFile)
+            errorMsg = e.message
+            DocumentsContract.deleteDocument(contentResolver, patchUri)
         } finally {
             stopForeground(true)
         }

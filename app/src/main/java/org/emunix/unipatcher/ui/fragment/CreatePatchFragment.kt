@@ -20,36 +20,31 @@
 package org.emunix.unipatcher.ui.fragment
 
 import android.app.Activity
-import android.content.DialogInterface
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.FrameLayout
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import org.apache.commons.io.FilenameUtils
-import org.emunix.unipatcher.Action
-import org.emunix.unipatcher.R
-import org.emunix.unipatcher.Settings
-import org.emunix.unipatcher.Utils.dpToPx
+import org.emunix.unipatcher.*
 import org.emunix.unipatcher.Utils.startForegroundService
-import org.emunix.unipatcher.WorkerService
 import org.emunix.unipatcher.databinding.CreatePatchFragmentBinding
-import org.emunix.unipatcher.ui.activity.FilePickerActivity
+import org.emunix.unipatcher.helpers.UriParser
 import timber.log.Timber
-import java.io.File
+import javax.inject.Inject
 
 class CreatePatchFragment : ActionFragment(), View.OnClickListener {
 
-    private var sourcePath: String = ""
-    private var modifiedPath: String = ""
-    private var patchPath: String = ""
+    private var sourcePath: String = ""   //
+    private var modifiedPath: String = "" // String representation of Uri, example "content://com.app.name/path_to_file
+    private var patchPath: String = ""    //
 
     private var _binding: CreatePatchFragmentBinding? = null
     private val binding get() = _binding!!
+
+    @Inject
+    lateinit var uriParser: UriParser
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = CreatePatchFragmentBinding.inflate(inflater, container, false)
@@ -63,6 +58,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        UniPatcher.appComponent.inject(this)
         activity?.setTitle(R.string.nav_create_patch)
         binding.sourceFileCardView.setOnClickListener(this)
         binding.modifiedFileCardView.setOnClickListener(this)
@@ -75,9 +71,9 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
             sourcePath = savedInstanceState.getString("sourcePath") ?: ""
             modifiedPath = savedInstanceState.getString("modifiedPath") ?: ""
             patchPath = savedInstanceState.getString("patchPath") ?: ""
-            if (sourcePath.isNotEmpty()) binding.sourceFileNameTextView.text = File(sourcePath).name
-            if (modifiedPath.isNotEmpty()) binding.modifiedFileNameTextView.text = File(modifiedPath).name
-            if (patchPath.isNotEmpty()) binding.patchFileNameTextView.text = File(patchPath).name
+            if (sourcePath.isNotEmpty()) binding.sourceFileNameTextView.text = uriParser.getFileName(Uri.parse(sourcePath))
+            if (modifiedPath.isNotEmpty()) binding.modifiedFileNameTextView.text = uriParser.getFileName(Uri.parse(modifiedPath))
+            if (patchPath.isNotEmpty()) binding.patchFileNameTextView.text = uriParser.getFileName(Uri.parse(patchPath))
         }
     }
 
@@ -89,77 +85,74 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
     }
 
     override fun onClick(view: View) {
-        val intent = Intent(activity, FilePickerActivity::class.java)
         when (view.id) {
             R.id.sourceFileCardView -> {
-                intent.putExtra("title", getString(R.string.file_picker_activity_title_select_source_file))
-                intent.putExtra("directory", Settings.getRomDir())
+                val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                    addCategory(Intent.CATEGORY_OPENABLE)
+                    type = "*/*"
+                }
                 startActivityForResult(intent, Action.SELECT_SOURCE_FILE)
             }
             R.id.modifiedFileCardView -> {
-                intent.putExtra("title", getString(R.string.file_picker_activity_title_select_modified_file))
-                intent.putExtra("directory", Settings.getRomDir())
+                val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                    addCategory(Intent.CATEGORY_OPENABLE)
+                    type = "*/*"
+                }
                 startActivityForResult(intent, Action.SELECT_MODIFIED_FILE)
             }
-            R.id.patchFileCardView -> renamePatchFile()
+            R.id.patchFileCardView -> {
+                val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                    addCategory(Intent.CATEGORY_OPENABLE)
+                    type = "application/octet-stream"
+                    putExtra(Intent.EXTRA_TITLE, "patch.xdelta")
+                }
+                startActivityForResult(intent, Action.SELECT_PATCH_FILE)
+            }
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        Timber.d("onActivityResult($requestCode, $resultCode, $data)")
-        if (resultCode == Activity.RESULT_OK) {
-            val path = data?.getStringExtra("path") ?: ""
-            if (path.isBlank()) {
-                Toast.makeText(activity, R.string.main_activity_toast_file_manager_did_not_return_file_path, Toast.LENGTH_LONG).show()
-                return
-            }
-            val filePath = File(path)
-            val dir = filePath.parent
-            when (requestCode) {
-                Action.SELECT_SOURCE_FILE -> {
-                    sourcePath = path
-                    binding.sourceFileNameTextView.visibility = View.VISIBLE
-                    binding.sourceFileNameTextView.text = filePath.name
-                    if (dir != null) {
-                        Settings.setLastRomDir(dir)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
+        Timber.d("onActivityResult($requestCode, $resultCode, $resultData)")
+        if (resultCode == Activity.RESULT_OK && resultData != null && (requestCode == Action.SELECT_SOURCE_FILE || requestCode == Action.SELECT_MODIFIED_FILE || requestCode == Action.SELECT_PATCH_FILE)) {
+            resultData.data?.let { uri ->
+                Timber.d(uri.toString())
+                requireContext().contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+                uriParser.getFileName(uri)?.let { fileName ->
+                    when (requestCode) {
+                        Action.SELECT_SOURCE_FILE -> {
+                            sourcePath = uri.toString()
+                            binding.sourceFileNameTextView.visibility = View.VISIBLE
+                            binding.sourceFileNameTextView.text = fileName
+                        }
+                        Action.SELECT_MODIFIED_FILE -> {
+                            modifiedPath = uri.toString()
+                            binding.modifiedFileNameTextView.visibility = View.VISIBLE
+                            binding.modifiedFileNameTextView.text = fileName
+                        }
+                        Action.SELECT_PATCH_FILE -> {
+                            patchPath = uri.toString()
+                            binding.patchFileNameTextView.visibility = View.VISIBLE
+                            binding.patchFileNameTextView.text = fileName
+                        }
                     }
-                }
-                Action.SELECT_MODIFIED_FILE -> {
-                    modifiedPath = path
-                    binding.modifiedFileNameTextView.visibility = View.VISIBLE
-                    binding.modifiedFileNameTextView.text = filePath.name
-                    if (dir != null) {
-                        Settings.setLastRomDir(dir)
-                    }
-                    patchPath = makeOutputPath(path)
-                    binding.patchFileNameTextView.text = File(patchPath).name
                 }
             }
         }
-        super.onActivityResult(requestCode, resultCode, data)
-    }
-
-    private fun makeOutputPath(fullname: String): String {
-        var dir = Settings.getOutputDir()
-        if (dir == "") { // get ROM directory
-            dir = FilenameUtils.getFullPath(fullname)
-        }
-        val baseName = FilenameUtils.getBaseName(fullname)
-        return FilenameUtils.concat(dir, "$baseName.xdelta")
+        super.onActivityResult(requestCode, resultCode, resultData)
     }
 
     override fun runAction(): Boolean {
         when {
-            sourcePath.isEmpty() && modifiedPath.isEmpty() -> {
-                Toast.makeText(activity, getString(R.string.create_patch_fragment_toast_source_and_modified_not_selected), Toast.LENGTH_LONG).show()
-                return false
-            }
             sourcePath.isEmpty() -> {
                 Toast.makeText(activity, getString(R.string.create_patch_fragment_toast_source_not_selected), Toast.LENGTH_LONG).show()
                 return false
             }
             modifiedPath.isEmpty() -> {
                 Toast.makeText(activity, getString(R.string.create_patch_fragment_toast_modified_not_selected), Toast.LENGTH_LONG).show()
+                return false
+            }
+            patchPath.isEmpty() -> {
+                Toast.makeText(activity, getString(R.string.create_patch_fragment_toast_patch_not_selected), Toast.LENGTH_LONG).show()
                 return false
             }
             else -> {
@@ -173,44 +166,5 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                 return true
             }
         }
-    }
-
-    private fun renamePatchFile() {
-        if (modifiedPath.isEmpty()) {
-            Toast.makeText(activity, getString(R.string.create_patch_fragment_toast_modified_not_selected), Toast.LENGTH_LONG).show()
-            return
-        }
-        val renameDialog = AlertDialog.Builder(requireActivity())
-        renameDialog.setTitle(R.string.dialog_rename_title)
-        val input = EditText(activity)
-        input.setText(binding.patchFileNameTextView.text)
-        // add left and right margins to EditText.
-        val container = FrameLayout(requireActivity())
-        val params = FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        val dp24 = dpToPx(requireActivity(), 24)
-        params.setMargins(dp24, 0, dp24, 0)
-        input.layoutParams = params
-        container.addView(input)
-        renameDialog.setView(container)
-        renameDialog.setPositiveButton(R.string.dialog_rename_ok, DialogInterface.OnClickListener { _, _ ->
-            var newName = input.text.toString()
-            if (newName == "") {
-                Toast.makeText(activity, R.string.dialog_rename_error_empty_name, Toast.LENGTH_LONG).show()
-                return@OnClickListener
-            }
-            if (newName.contains("/")) {
-                newName = newName.replace("/".toRegex(), "_")
-                Toast.makeText(activity, R.string.dialog_rename_error_invalid_chars, Toast.LENGTH_LONG).show()
-            }
-            val newPath = File(patchPath).parent + File.separator + newName
-            if (FilenameUtils.equals(newPath, sourcePath) || FilenameUtils.equals(newPath, modifiedPath)) {
-                Toast.makeText(activity, R.string.dialog_rename_error_same_name, Toast.LENGTH_LONG).show()
-                return@OnClickListener
-            }
-            binding.patchFileNameTextView.text = newName
-            patchPath = newPath
-        })
-        renameDialog.setNegativeButton(R.string.dialog_rename_cancel) { dialog, _ -> dialog.cancel() }
-        renameDialog.show()
     }
 }

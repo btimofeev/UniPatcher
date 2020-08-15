@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentTop="true">
@@ -122,11 +121,11 @@
                     android:id="@+id/patchFileNameTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/pencil"
+                    android:drawableStart="@drawable/folder"
                     android:drawablePadding="8dp"
                     android:fontFamily="sans-serif-light"
                     android:padding="8dp"
-                    android:text="@string/main_activity_tap_to_rename"
+                    android:text="@string/main_activity_tap_to_select_where_to_save_patch"
                     android:textSize="20sp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

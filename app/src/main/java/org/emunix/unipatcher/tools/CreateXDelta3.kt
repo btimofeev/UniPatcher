@@ -21,12 +21,20 @@
 package org.emunix.unipatcher.tools
 
 import android.content.Context
+import android.net.Uri
+import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
+import org.emunix.unipatcher.Utils
+import org.emunix.unipatcher.helpers.UriParser
 import org.emunix.unipatcher.patcher.PatchException
 import java.io.File
 import java.io.IOException
 
-class CreateXDelta3(private val context: Context, private val patchFile: File, private val romFile: File, private val outputFile: File) {
+class CreateXDelta3(private val context: Context,
+                    private val patchUri: Uri,
+                    private val sourceUri: Uri,
+                    private val modifiedUri: Uri,
+                    private val uriParser: UriParser) {
 
     private external fun xdelta3create(patchPath: String, sourcePath: String, modifiedPath: String): Int
 
@@ -38,15 +46,27 @@ class CreateXDelta3(private val context: Context, private val patchFile: File, p
             throw PatchException(context.getString(R.string.notify_error_failed_load_lib_xdelta3))
         }
 
-        when (xdelta3create(patchFile.path, romFile.path, outputFile.path)) {
-            NO_ERROR -> return
-            ERR_UNABLE_OPEN_PATCH -> throw PatchException(context.getString(R.string.notify_error_unable_open_file)
-                    + " " + patchFile.name)
-            ERR_UNABLE_OPEN_SOURCE -> throw PatchException(context.getString(R.string.notify_error_unable_open_file)
-                    + " " + romFile.name)
-            ERR_UNABLE_OPEN_MODIFIED -> throw PatchException(context.getString(R.string.notify_error_unable_open_file)
-                    + " " + outputFile.name)
-            else -> throw PatchException(context.getString(R.string.notify_error_unknown))
+        val tmpSourceFile = Utils.copyToTempFile(sourceUri, context)
+        val tmpModifiedFile = Utils.copyToTempFile(modifiedUri, context)
+        val tmpPatchFile = File.createTempFile("patch", ".xdelta", Utils.getTempDir(context))
+
+        try {
+            when (val ret = xdelta3create(tmpPatchFile.path, tmpSourceFile.path, tmpModifiedFile.path)) {
+                NO_ERROR ->
+                    Utils.copy(tmpPatchFile, patchUri, context)
+                ERR_UNABLE_OPEN_PATCH ->
+                    throw PatchException("${context.getString(R.string.notify_error_unable_open_file)} ${uriParser.getFileName(patchUri)}")
+                ERR_UNABLE_OPEN_SOURCE ->
+                    throw PatchException("${context.getString(R.string.notify_error_unable_open_file)} ${uriParser.getFileName(sourceUri)}")
+                ERR_UNABLE_OPEN_MODIFIED ->
+                    throw PatchException("${context.getString(R.string.notify_error_unable_open_file)} ${uriParser.getFileName(modifiedUri)}")
+                else ->
+                    throw PatchException("${context.getString(R.string.notify_error_unknown)}: $ret")
+            }
+        } finally {
+            FileUtils.deleteQuietly(tmpSourceFile)
+            FileUtils.deleteQuietly(tmpModifiedFile)
+            FileUtils.deleteQuietly(tmpPatchFile)
         }
     }
 
