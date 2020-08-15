@@ -91,6 +91,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
         if (requestCode == Action.SELECT_ROM_FILE && resultCode == Activity.RESULT_OK && resultData != null) {
             resultData.data?.let { uri ->
                 Timber.d(uri.toString())
+                requireContext().contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
                 uriParser.getFileName(uri)?.let { fileName ->
                     romPath = uri.toString()
                     binding.romNameTextView.visibility = View.VISIBLE
