@@ -23,6 +23,7 @@ package org.emunix.unipatcher.helpers
 import android.content.ContentResolver
 import android.content.Context
 import android.net.Uri
+import android.provider.BaseColumns
 import android.provider.OpenableColumns
 import javax.inject.Inject
 
@@ -58,5 +59,13 @@ class UriParserImpl @Inject constructor(val context: Context) : UriParser {
                 result = cursor.getLong(0)
         }
         return result
+    }
+
+    override fun isExist(uri: Uri): Boolean {
+        require(uri.scheme == ContentResolver.SCHEME_CONTENT) { "uri is not contain content:// scheme" }
+        val cursor = context.contentResolver.query(uri, arrayOf(BaseColumns._ID), null, null, null, null)
+        cursor.use {
+            return it != null && it.moveToFirst()
+        }
     }
 }

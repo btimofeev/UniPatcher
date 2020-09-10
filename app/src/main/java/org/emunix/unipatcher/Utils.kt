@@ -94,15 +94,6 @@ object Utils {
     }
 
     @Throws(IOException::class)
-    fun moveFile(context: Context, from: File, to: File) {
-        FileUtils.deleteQuietly(to)
-        if (!from.renameTo(to)) {
-            copyFile(context, from, to)
-            FileUtils.deleteQuietly(from)
-        }
-    }
-
-    @Throws(IOException::class)
     fun truncateFile(f: File, size: Long) {
         val channel = FileOutputStream(f, true).channel
         channel.truncate(size)
@@ -157,7 +148,7 @@ object Utils {
         return tmpFile
     }
 
-    @Throws(IOException::class)
+    @Throws(IOException::class, FileNotFoundException::class)
     fun copyToTempFile(uri: Uri, context: Context): File {
         val stream: InputStream = context.contentResolver.openInputStream(uri)
                 ?: throw IOException("Unable to open ${uri}: content resolver returned null")

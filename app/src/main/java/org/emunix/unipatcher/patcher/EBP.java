@@ -1,7 +1,7 @@
 /*
 This file based on source code of EBPatcher by Marc Gagné (https://github.com/Lyrositor/EBPatcher)
 
-Copyright (C) 2016 Boris Timofeev
+Copyright (C) 2016, 2020 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -87,9 +87,8 @@ public class EBP extends Patcher {
 
     private void prepareCleanRom(File file, boolean ignoreChecksum) throws IOException, PatchException {
         // delete smc header
-        SnesSmcHeader smc = new SnesSmcHeader();
         try {
-            smc.deleteSnesSmcHeader(context, file, false);
+            new SnesSmcHeader().deleteSnesSmcHeader(context, romFile, file);
         } catch (RomException e) {
             // no header
         }

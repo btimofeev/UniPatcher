@@ -26,4 +26,5 @@ import android.net.Uri
 interface UriParser {
     fun getFileName(uri: Uri): String?
     fun getFileSize(uri: Uri): Long
+    fun isExist(uri: Uri): Boolean
 }
