@@ -4,7 +4,7 @@ Ytterligere funksjoner:
 
 - Opprettelse av XDelta3-programfikser
 - Fiks sjekksum i Sega Mega Drive ROM-filer
-- Legg til/slett SMC-hode i Super Nintendo ROM-filer
+- Removing SMC headers in Super Nintendo ROMs
 
 ##### Oversettere:
 

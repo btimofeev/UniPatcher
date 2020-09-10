@@ -4,7 +4,7 @@ UniPatcher 是一个 ROM 补丁工具，它的支持格式为 IPS、IPS32、UPS�
 
 - 创建 XDelta3 补丁
 - 修正世嘉 Mega Drive 的 ROM 的校验和
-- 为超级任天堂的 ROM 增加/删除 SMC 标头
+- Removing SMC headers in Super Nintendo ROMs
 
 ##### 译者:
 

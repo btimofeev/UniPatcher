@@ -10,7 +10,7 @@
 &bull; サポートするパッチ形式: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
 &bull; XDelta パッチの作成
 &bull; Sega Mega Drive ROM のチェックサムを修正
-&bull; Super Nintendo ROM の SMC ヘッダーを追加/削除
+&bull; Removing SMC headers in Super Nintendo ROMs
 &bull; 広告なし
 &bull; 自由ソフトウェアです。そーそコードは https://github.com/btimofeev/UniPatcher で利用可能です
 

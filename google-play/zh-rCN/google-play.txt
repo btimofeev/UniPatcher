@@ -10,7 +10,7 @@
 &bull; 支持的补丁格式: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
 &bull; 创建 XDelta 补丁
 &bull; 修正世嘉 Mega Drive ROM 的校验和
-&bull; 添加/删除 超级任天堂 ROM 中的标头
+&bull; Removing SMC headers in Super Nintendo ROMs
 &bull; 无广告
 &bull; 本软件属于自由软件，源码: https://github.com/btimofeev/UniPatcher
 

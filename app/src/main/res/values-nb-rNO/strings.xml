@@ -9,7 +9,6 @@
     <string name="main_activity_rom_file">ROM-fil</string>
     <string name="main_activity_patch_file">Programfiks-fil</string>
     <string name="main_activity_output_file">Utdata-fil</string>
-    <string name="main_activity_header_file">Hode-fil</string>
     <string name="main_activity_tap_to_select">trykk for å velge</string>
     <string name="main_activity_tap_to_rename">trykk for å gi nytt navn</string>
     <string name="main_activity_toast_rom_and_patch_not_selected">ROM- og programfiks -filene er ikke valgt</string>
@@ -34,12 +33,7 @@
     <string name="create_patch_fragment_toast_source_and_modified_not_selected">Kilde- og modifisert -fil er ikke valgt</string>
     <string name="create_patch_fragment_toast_source_not_selected">Kildefila er ikke valgt</string>
     <string name="create_patch_fragment_toast_modified_not_selected">Den modifiserte fila er ikke valgt</string>
-
-    <!-- Info for SNES SMC header -->
-    <string name="snes_smc_header_help">Denne funksjonen er bare for Super Nintendo ROM-filer.\n\nHvis ROM-fila inneholder et SMC-hode - vil den bli fjernet. Ellers, vil den bli lagt til.\n\nAdvarsel: Denne funksjonen tar ikke noen sikkerhetskopi.</string>
     <string name="snes_smc_header_will_be_removed">Denne ROM-fila har et SMC-hode. Den vil bli fjernet.</string>
-    <string name="snes_smc_header_will_be_added">Denne ROM-fila har ikke et SMC-hode. Det vil bli lagt til. Du kan velge ditt eget hode i steden for det forvalgte hodet.</string>
-
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">Denne funksjonen er bare for Sega Mega Drive (Sega Genesis) ROM-filer.\n\nDen fikser \"rød dødsskjerm\".\n\nAdvarsel: Denne funksjonen tar ikke noen sikkerhetskopi.</string>
 
@@ -101,10 +95,6 @@
     <string name="notify_smd_fix_checksum_complete">Sjekksum fikset</string>
     <string name="notify_smd_fix_checksum_started_check_notify">Fiksing av sjekksum startet. Sjekk merknadsområdet</string>
 
-    <string name="notify_snes_add_smc_header_in_progress">Tillegg av SMC-hode</string>
-    <string name="notify_snes_add_smc_header_complete">Tillegg av SMC-hode fullført</string>
-    <string name="notify_snes_add_smc_header_stared_check_noify">Tillegg av SMC-hode startet. Sjekk merknadsområdet</string>
-
     <string name="notify_snes_delete_smc_header_in_progress">Slett SMC-hode</string>
     <string name="notify_snes_delete_smc_header_complete">SMC-hode slettet</string>
     <string name="notify_snes_delete_smc_header_stared_check_noify">Sletting av SMC-hode startet. Sjekk merknadsområdet</string>
@@ -141,7 +131,6 @@
     <string name="help_activity_action_send_feedback">Send tilbakemelding</string>
     <string name="help_activity_action_visit_site">Besøk nettside</string>
     <string name="help_activity_action_changelog">Endringslogg</string>
-
     <string name="donate_activity_title">Doner</string>
 
     <string name="send_feedback_dialog_title">Send e-post</string>
@@ -154,7 +143,6 @@
     <string name="nav_apply_patch">Legg til programfiks</string>
     <string name="nav_create_patch">Opprett programfiks</string>
     <string name="nav_smd_fix_checksum">Fiks sjekksum (SMD)</string>
-    <string name="nav_snes_add_del_smc_header">Legg til/Slett SMC-hode (SNES)</string>
     <string name="nav_settings">Innstillinger</string>
     <string name="nav_rate">Vurder dette programmet</string>
     <string name="nav_donate">Doner</string>

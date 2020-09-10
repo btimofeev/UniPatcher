@@ -83,7 +83,7 @@ Ja. UniPatcher kan:
 
 - Opprett XDelta3-programfikser.
 - Fiks sjekksum for Sega Mega Drive / Sega Genesis -spill
-- Legg til eller fjern SMC-hode for Super Nintendo-spill.
+- Remove SMC header in Super Nintendo games.
 
 #### Hvorfor må jeg fikse sjekksum for Sega Mega Drive-spill?
 
@@ -91,11 +91,9 @@ Sega Mega Drive (Genesis)-spill har sjekksummen sin skrevet inn i ROM-fila. Hvis
 
 **Advarsel:** Denne funksjonen lager ikke en sikkerhetskopi-ROM.
 
-#### Hvorfor må man noen ganger legge til eller fjerne SMC-hode fra Super Nintendo-spill?
+#### Why is it sometimes necessary to remove SMC headers from Super Nintendo games?
 
-Et SMC-hode er 512 Byte i starten på noen SNES-ROM-avbildninger. Disse Bytene har ingen funksjon, men de endrer plasseringen for etterfølgende data. Fjerning eller tillegg av hode brukes noen ganger for å legge til en programfiks på rett vis.
-
-**Advarsel:** Denne funksjonen lager ikke en sikkerhetskopi-ROM.
+An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing a header is sometimes used for the purpose of correctly applying a patch.
 
 #### Hvordan oversette programmet?
 

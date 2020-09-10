@@ -83,7 +83,7 @@ There are several ways to solve this problem:
 
 - створювати патчі у форматі XDelta3.
 - Виправляти контрольну суму для ігор Sega Mega Drive.
-- Додавати або видаляти SMC назви для ігор Super Nintendo.
+- Remove SMC header in Super Nintendo games.
 
 #### Навіщо виправляти контрольну суму для ігор Sega Mega Drive?
 
@@ -91,11 +91,9 @@ Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you
 
 **Попередження:** ця функція не створює резервної копії ROM'у.
 
-#### Навіщо додавати або видаляти SMC заголовки в іграх Super Nintendo?
+#### Why is it sometimes necessary to remove SMC headers from Super Nintendo games?
 
-SMC заголовок це 512 байт які знаходяться на початку деяких SNES ROM'ів. Ці байти не мають значення, але вони міняють розташування даних. Видаляння або додавання заголовку іноді використовується із ціллю правильного накладання патчів.
-
-**Попередження:** ця функція не створює резервної копії ROM'у.
+An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing a header is sometimes used for the purpose of correctly applying a patch.
 
 #### Як перекласти додаток на іншу мову?
 

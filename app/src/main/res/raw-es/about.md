@@ -4,7 +4,7 @@ Características adicionales:
 
 - Creación de parches XDelta3
 - Fijar suma de chequeo en ROMs de Sega Mega Drive
-- Añadir/Eliminar cabecera SMC en ROMs de Super Nintendo
+- Removing SMC headers in Super Nintendo ROMs
 
 ##### Traductores:
 

@@ -83,7 +83,7 @@ Si. UniPatcher può:
 
 - Create XDelta3 patches.
 - Risolvere checksum per un gioco Sega Mega Drive / Sega Genesis.
-- Aggiungere o rimuovere l'intestazione SMC per un gioco Super Nintendo.
+- Remove SMC header in Super Nintendo games.
 
 #### Perchè devo risolvere il checksum per i giochi del Sega Mega Drive?
 
@@ -91,11 +91,9 @@ Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you
 
 **Attenzione:** Questa funzione non crea una ROM di backup.
 
-#### Perchè è necessario a volte aggiungere o rimuovere l'intestazione SMC dai giochi del Super Nintendo?
+#### Why is it sometimes necessary to remove SMC headers from Super Nintendo games?
 
-Un'intestazione SMC sono 512 byte che si trova all'inizio di alcune immagini ROM del SNES. Questi byte non hanno uno scopo, ma cambiano la locazione dei dati rimanenti. La rimozione o l'aggiunta dell'intestazione è usata a volte con lo scopo di applicare correttamente la patch.
-
-**Attenzione:** Questa funzione non crea una ROM di backup.
+An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing a header is sometimes used for the purpose of correctly applying a patch.
 
 #### Come tradurre l'app?
 

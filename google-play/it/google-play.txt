@@ -10,7 +10,7 @@ Utility to apply patches to game ROM-files.
 &bull; Supported formats of patches: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
 &bull; Creating XDelta patches
 &bull; Risolvi checksum nei ROM del Sega Mega Drive
-&bull; Aggiungi/Elimina intestazione SMC nei ROM del Super Nintendo
+&bull; Removing SMC headers in Super Nintendo ROMs
 &bull; No ads
 &bull; Libre software. Source code available at https://github.com/btimofeev/UniPatcher
 

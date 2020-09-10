@@ -10,7 +10,7 @@ Utilidad para parchear los ROM.
 &bull; Formatos de parches soportados: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
 &bull; Creando parches XDelta
 &bull; Fijar checksum en ROMs Sega Mega Drive
-&bull; Añadir/Eliminar cabezera SMC en ROMs Super Nintendo
+&bull; Removing SMC headers in Super Nintendo ROMs
 &bull; Sin anuncios
 &bull; Libre software. Se encuentra el código fuente en https://github.com/btimofeev/UniPatcher
 

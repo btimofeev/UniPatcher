@@ -4,7 +4,7 @@ UniPatcher は IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP およ�
 
 - XDelta3 パッチの作成
 - Sega Mega Drive ROM のチェックサムを修正
-- Super Nintendo ROM の SMC ヘッダーを追加/削除
+- Removing SMC headers in Super Nintendo ROMs
 
 ##### 翻訳:
 

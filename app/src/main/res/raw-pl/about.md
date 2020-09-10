@@ -4,7 +4,7 @@ Dodatkowe funkcje:
 
 -Tworzenie łatek XDelta3
 - Napraw sumę kontrolną dla ROM-ów Sega Mega Drive
-- Dodaj/Usuń nagłówek dla Super Nintendo
+- Removing SMC headers in Super Nintendo ROMs
 
 ##### Tłumaczenia:
 
