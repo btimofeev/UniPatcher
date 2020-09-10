@@ -24,7 +24,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:padding="8dp"
-                    android:text="@string/main_activity_rom_file"
+                    android:text="@string/main_activity_rom_with_smc_file"
                     android:textColor="@color/colorCardHeaderText"
                     android:textSize="24sp"/>
 
@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:padding="8dp"
-                    android:text="@string/main_activity_output_file"
+                    android:text="@string/main_activity_rom_without_smc_file"
                     android:textColor="@color/colorCardHeaderText"
                     android:textSize="24sp"/>
 
@@ -86,7 +86,7 @@
                     android:drawablePadding="8dp"
                     android:fontFamily="sans-serif-light"
                     android:padding="8dp"
-                    android:text="@string/main_activity_tap_to_select"
+                    android:text="@string/main_activity_tap_to_select_where_to_save_rom"
                     android:textSize="20sp"/>
             </LinearLayout>
 

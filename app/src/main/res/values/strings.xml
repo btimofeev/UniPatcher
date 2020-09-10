@@ -9,10 +9,12 @@
     <string name="main_activity_rom_file">ROM file</string>
     <string name="main_activity_patch_file">Patch file</string>
     <string name="main_activity_output_file">Output file</string>
-    <string name="main_activity_header_file">Header file</string>
+    <string name="main_activity_rom_with_smc_file">ROM file with SMC header</string>
+    <string name="main_activity_rom_without_smc_file">Output headerless ROM file</string>
     <string name="main_activity_tap_to_select">tap to select</string>
     <string name="main_activity_tap_to_rename">tap to rename</string>
     <string name="main_activity_tap_to_select_where_to_save_patch">tap to select where to save the patch</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">tap to select where to save ROM</string>
     <string name="main_activity_toast_rom_and_patch_not_selected">The ROM and the patch files is not selected</string>
     <string name="main_activity_toast_rom_not_selected">No ROM file selected</string>
     <string name="main_activity_toast_patch_not_selected">No patch file selected</string>
