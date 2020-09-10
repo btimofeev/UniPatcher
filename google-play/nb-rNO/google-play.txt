@@ -10,7 +10,7 @@ Verktøy for å legge programfikser til spill-ROM-filer.
 &bull; Støttede programfiks-formater: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP og XDelta3
 &bull; Opprettelse av XDelta-programfikser
 &bull; Fiks sjekksum i Sega Mega Drive ROM-filer
-&bull; Legg til/Slett SMC-hode i Super Nintendo ROM-filer
+&bull; Removing SMC headers in Super Nintendo ROMs
 &bull; Ingen reklame
 &bull; Fri programvare. Kildekode tilgjengelig på https://github.com/btimofeev/UniPatcher
 

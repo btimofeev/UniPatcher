@@ -48,7 +48,7 @@
 
 롬 해커는 종종 첨부된 롬 파일의 체크섬을 게시합니다 (웹페이지 또는 README 파일에 있음). 당신이 가지고 있는 것과 그것을 비교하십시오. 파일 관리자에서 파일을 길게 누르면 CRC32, SHA1 및 MD5와 같은 세 줄이 표시됩니다. 그 숫자 중 하나가 같으면 패치가 작성된 롬이 있는 것입니다. 그렇지 않다면 다른 롬이 필요합니다.
 
-In the worst case, if you can not find the correct ROM file, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
+최악의 경우에는, 만약 여러분이 재대로된 롬 파일을 찿을수 없다면, 여러분은 설정에서 "체크섬 무시" 를 선택할수 있습니다. 하지만 명심하세요! 이 경우에는 게임이 버그를 일으킬수 있거나 완전히 맛이 갈수도 있습니다.
 
 #### 게임 "포켓몬스터 에메랄드"에 맞는 롬을 찾을 수 없습니다.
 
@@ -64,13 +64,13 @@ ECM은 디스크 이미지를 위해 특별히 고안된 데이터 압축 형식
 
 #### 앱에 오류가 표시됩니다: "파일을 복사할 수 없음".
 
-The error occurs on some devices with Android 4.4+ having an external SD card. Android does not allow applications to write data to a SD card on these devices (a detailed description of the problem [here](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
+외장 SD카드가 있는 안드로이드 4.4이상의 일부 기종에서 오류가 발생합니다. 안드로이드는 이러한 기종에서 SD카드에 데이터 쓰기를 허용하기 않습니다.(이 문제에 대해 자세한 설명을 보려면[여기](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/))
 
-There are several ways to solve this problem:
+이 문제를 해결하는데 몇가지 방법이 있습니다
 
-- Do not apply patches to the ROM file located on the external SD card. Just move the ROM file into the internal memory of the device.
-- Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
-- Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
+외장 SD카드에 있는 롬 파일을 패치하지 마세요! 그냥 내부 저장소로 옮기세요.
+(설정에서)장치의 내부 메모리에 있는 디렉터리의 경로를 출력 디렉터리로 지정하십시오.
+(설정에서) 내보낼 경로를 내부 저장소에 있는 아무 경로로 지정해 주세요.외부 SD 카드의 **Android/data/org.munipatcher/* 디렉토리에 대한 경로를 출력 디렉토리로 지정하십시오.
 - [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) 애플리케이션을 설치하십시오 (루트 권한 필요).
 
 #### 앱에 오류가 표시됩니다: "파일이 패치된 후 체크섬이 잘못되었습니다".
@@ -83,19 +83,17 @@ There are several ways to solve this problem:
 
 - XDelta3 패치 생성.
 - 세가 메가 드라이브/세가 제네시스 게임 체크섬 수정.
-- 닌텐도 슈퍼 패미컴 게임 SMC 헤더 추가 또는 제거.
+- Remove SMC header in Super Nintendo games.
 
 #### 세가 메가 드라이브 게임의 체크섬을 수정해야 하는 이유는 무엇입니까?
 
-Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you only change any part of the game, they will not match, failing to run as a result. What this does is calculate the correct checksum of the change and write it to the modified ROM-file."
+세가 메가 드라이브(제네시스)게임들은 그들의 체크섬을 롬에 기록한다. 만역 너가 게임의 일부를 수정하고 싶다면, 그것들은 매칭이 않될것이고 결국 실행에 실패할 것이다. 이것은 변경사항의 정확한 체크섬을 계산하여 수정된 ROM 파일에 쓸 것이다."
 
 **경고:** 이 기능은 백업을 생성하지 않습니다.
 
-#### 때때로 닌텐도 슈퍼 패미컴 게임에서 SMC 헤더를 추가하거나 제거해야 하는 이유는 무엇입니까?
+#### Why is it sometimes necessary to remove SMC headers from Super Nintendo games?
 
-SMC 헤더는 일부 SNES 롬 이미지의 시작 부분에 있는 512 바이트를 말합니다. 이 바이트의 목적은 없지만 나머지 데이터의 위치를 ​​변경합니다. 헤더를 제거하거나 추가하는 것은 때때로 패치를 올바르게 적용하기 위해 사용됩니다.
-
-**경고:** 이 기능은 백업을 생성하지 않습니다.
+An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing a header is sometimes used for the purpose of correctly applying a patch.
 
 #### 앱을 번역하는 방법은 무엇입니까?
 

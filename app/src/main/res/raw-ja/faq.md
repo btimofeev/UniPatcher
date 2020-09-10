@@ -83,7 +83,7 @@ ECM は、ディスクイメージ専用に設計されたデータ圧縮形式�
 
 - XDelta3 パッチの作成。
 - Sega Mega Drive / Sega Genesis ゲームのチェックサムの修正。
-- Super Nintendo ゲームの SMC ヘッダーの追加または削除。
+- Remove SMC header in Super Nintendo games.
 
 #### なぜ Sega Mega Drive ゲームのチェックサムを修正する必要があるのですか?
 
@@ -91,11 +91,9 @@ Sega Mega Drive (Genesis) のゲームは、チェックサムが ROM に書き�
 
 **警告:** この機能はバックアップ ROM を作成しません。
 
-#### Super Nintendo ゲームから SMC ヘッダーを追加または削除する必要があるのはなぜですか?
+#### Why is it sometimes necessary to remove SMC headers from Super Nintendo games?
 
-SMC ヘッダーは、一部の SNES ROM イメージの先頭に 512 バイトあります。 これらのデータに目的はありませんが、残りのデータの位置は変更されます。 ヘッダーの削除や追加は、パッチを正しく適用するために使用されることがあります。
-
-**警告:** この機能はバックアップ ROM を作成しません。
+An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing a header is sometimes used for the purpose of correctly applying a patch.
 
 #### アプリを翻訳する方法は?
 

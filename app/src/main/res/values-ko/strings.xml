@@ -9,13 +9,15 @@
     <string name="main_activity_rom_file">롬 파일</string>
     <string name="main_activity_patch_file">패치 파일</string>
     <string name="main_activity_output_file">출력 파일</string>
-    <string name="main_activity_header_file">헤더 파일</string>
     <string name="main_activity_tap_to_select">탭하여 선택</string>
     <string name="main_activity_tap_to_rename">탭하여 이름 바꾸기</string>
     <string name="main_activity_toast_rom_and_patch_not_selected">롬 및 패치 파일이 선택되지 않음</string>
     <string name="main_activity_toast_rom_not_selected">롬 파일이 선택되지 않음</string>
     <string name="main_activity_toast_patch_not_selected">패치 파일이 선택되지 않음</string>
     <string name="main_activity_toast_archives_not_supported">압축 파일은 외부 프로그램에서 압축을 풀어야 합니다.</string>
+    <string name="main_activity_donate_snackbar_text">기부를 해주셔서 저희 유니패쳐 개발팀을 지원해주세요</string>
+    <string name="main_activity_donate_snackbar_button">기부하기</string>
+
     <!-- Rename dialog -->
     <string name="dialog_rename_title">이름 바꾸기</string>
     <string name="dialog_rename_ok">확인</string>
@@ -31,12 +33,7 @@
     <string name="create_patch_fragment_toast_source_and_modified_not_selected">원본 및 수정된 파일이 선택되지 않음</string>
     <string name="create_patch_fragment_toast_source_not_selected">원본 파일이 선택되지 않음</string>
     <string name="create_patch_fragment_toast_modified_not_selected">수정된 파일이 선택되지 않음</string>
-
-    <!-- Info for SNES SMC header -->
-    <string name="snes_smc_header_help">이 기능은 닌텐도 슈퍼 패미컴 롬만을 위한 것입니다.\n\n롬에 SMC 헤더가 있다면 제거되며 그렇지 않다면 추가됩니다.\n\n경고: 이 기능은 백업을 생성하지 않습니다.</string>
     <string name="snes_smc_header_will_be_removed">이 롬은 SMC 헤더를 가지고 있습니다. 제거됩니다.</string>
-    <string name="snes_smc_header_will_be_added">이 롬은 SMC 헤더를 가지고 있지 않습니다. 추가됩니다. 기본 헤더 대신 자신의 헤더를 선택할 수 있습니다.</string>
-
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">이 기능은 세가 메가 드라이브 (세가 제네시스) 롬만을 위한 것입니다.\n\n이는 \"죽음의 레드 스크린\"을 해결합니다.\n\n경고: 이 기능은 백업을 생성하지 않습니다.</string>
 
@@ -98,10 +95,6 @@
     <string name="notify_smd_fix_checksum_complete">체크섬 수정됨</string>
     <string name="notify_smd_fix_checksum_started_check_notify">체크섬 수정이 시작되었습니다. 알림 영역을 확인하십시오.</string>
 
-    <string name="notify_snes_add_smc_header_in_progress">SMC 헤더 추가 중</string>
-    <string name="notify_snes_add_smc_header_complete">SMC 헤더 추가됨</string>
-    <string name="notify_snes_add_smc_header_stared_check_noify">SMC 헤더 추가가 시작되었습니다. 알림 영역을 확인하십시오.</string>
-
     <string name="notify_snes_delete_smc_header_in_progress">SMC 헤더 제거 중</string>
     <string name="notify_snes_delete_smc_header_complete">SMC 헤더 제거됨</string>
     <string name="notify_snes_delete_smc_header_stared_check_noify">SMC 헤더 제거가 시작되었습니다. 알림 영역을 확인하십시오.</string>
@@ -117,6 +110,8 @@
     <string name="settings_theme_dialog_title">테마 선택</string>
     <string name="settings_theme_name_light">밝게</string>
     <string name="settings_theme_name_dark">어둡게</string>
+    <string name="settings_theme_name_auto_battery">베터리 세이버 설정</string>
+    <string name="settings_theme_name_follow_system">시스템 기본값 사용</string>
     <string name="settings_theme_message_restart_app">애플리케이션을 다시 시작해 주십시오.</string>
     <string name="settings_directories_header">디렉터리</string>
     <string name="settings_remember_last_directories">마지막으로 연 디렉터리 기억</string>
@@ -138,7 +133,6 @@
     <string name="help_activity_action_send_feedback">의견 보내기</string>
     <string name="help_activity_action_visit_site">웹사이트 방문</string>
     <string name="help_activity_action_changelog">변경 이력</string>
-
     <string name="donate_activity_title">기부</string>
 
     <string name="send_feedback_dialog_title">메일 보내기</string>
@@ -151,7 +145,6 @@
     <string name="nav_apply_patch">패치 적용</string>
     <string name="nav_create_patch">패치 생성</string>
     <string name="nav_smd_fix_checksum">체크섬 수정 (SMD)</string>
-    <string name="nav_snes_add_del_smc_header">SMC 헤더 추가/제거 (SNES)</string>
     <string name="nav_settings">설정</string>
     <string name="nav_rate">앱 평가하기</string>
     <string name="nav_donate">기부</string>
@@ -162,5 +155,7 @@
 
     <string name="donation">기부</string>
     <string name="icon">아이콘</string>
-    </resources>
+    <string name="notification_channel_name">알림</string>
+
+</resources>
 

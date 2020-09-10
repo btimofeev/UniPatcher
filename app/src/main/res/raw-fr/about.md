@@ -4,7 +4,7 @@ Fonctionnalités supplémentaires :
 
 - Création de patchs XDelta3
 - Réparation du checksum des ROMs Sega Mega Drive
-- Ajout/Suppression des en-têtes SMC des ROMs Super Nintendo
+- Removing SMC headers in Super Nintendo ROMs
 
 ##### Traducteurs :
 

@@ -9,13 +9,18 @@
     <string name="main_activity_rom_file">ROM-файл</string>
     <string name="main_activity_patch_file">Патч</string>
     <string name="main_activity_output_file">Пропатченный ROM</string>
-    <string name="main_activity_header_file">Файл заголовка</string>
+    <string name="main_activity_rom_with_smc_file">ROM с SMC заголовком</string>
+    <string name="main_activity_rom_without_smc_file">Сохраняемый ROM без заголовка</string>
     <string name="main_activity_tap_to_select">нажмите, чтобы выбрать</string>
     <string name="main_activity_tap_to_rename">нажмите, чтобы переименовать</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">нажмите, чтобы выбрать где сохранить патч</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">нажмите чтобы выбрать куда сохранить ROM</string>
     <string name="main_activity_toast_rom_and_patch_not_selected">Сначала выберите патч и ROM</string>
     <string name="main_activity_toast_rom_not_selected">Сначала выберите ROM файл</string>
     <string name="main_activity_toast_patch_not_selected">Сначала выберите патч</string>
+    <string name="main_activity_toast_output_not_selected">Сначала выберите файл для сохранения</string>
     <string name="main_activity_toast_archives_not_supported">Архив необходимо распаковать во внешней программе</string>
+    <string name="main_activity_toast_file_manager_did_not_return_file_path">Ошибка: файловый менеджер не передал путь к файлу</string>
     <string name="main_activity_donate_snackbar_text">Поддержите разработку этого приложения</string>
     <string name="main_activity_donate_snackbar_button">Пожертвовать</string>
 
@@ -34,11 +39,12 @@
     <string name="create_patch_fragment_toast_source_and_modified_not_selected">Сначала выберите исходный и изменённый файлы</string>
     <string name="create_patch_fragment_toast_source_not_selected">Сначала выберите исходный файл</string>
     <string name="create_patch_fragment_toast_modified_not_selected">Сначала выберите изменённый файл</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">Сначала выберите где сохранить патч</string>
 
     <!-- Info for SNES SMC header -->
-    <string name="snes_smc_header_help">Эта функция только для ROM\'ов Super Nintendo.\n\nЕсли ROM содержит SMC заголовок - он будет удалён. Иначе он будет добавлен.\n\nПредупреждение: эта функция не создаёт резервную копию.</string>
+    <string name="snes_smc_header_help">Эта функция только для ROM\'ов Super Nintendo.\n\nНекоторые патчи требуют, чтобы в ROMе не было SMC заголовка. Данная функция поможет удалить его.</string>
     <string name="snes_smc_header_will_be_removed">У этого ROM\'а есть SMC заголовок. Он будет удалён.</string>
-    <string name="snes_smc_header_will_be_added">У этого ROM\'а нет SMC заголовка. Он будет добавлен. Вы можете выбрать свой собственный заголовок, вместо заголовка по-умолчанию.</string>
+    <string name="snes_rom_has_no_smc_header">Этот ROM не содержит SMC заголовка. Удалять ничего не нужно.</string>
 
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">Эта функция только для игр Sega Mega Drive.\n\nОна исправляет \"красный экран смерти\".\n\nПредупреждение: эта функция не создаёт резервную копию.</string>
@@ -86,6 +92,7 @@
     <string name="notify_error_not_ebp_patch">Некорректный EBP патч</string>
     <string name="notify_error_not_dps_patch">Некорректный DPS патч</string>
     <string name="notify_error_not_xdelta3_patch">Некорректный XDelta3 патч</string>
+    <string name="notify_error_xdelta3_internal_error">внутренняя ошибка XDelta3</string>
     <string name="notify_error_xdelta1_unsupported">Не умею работать с XDelta1 патчами</string>
     <string name="notify_error_unable_open_file">Не удалось открыть файл</string>
     <string name="notify_error_unknown_patch_format">Неизвестный формат патча</string>
@@ -100,10 +107,6 @@
     <string name="notify_smd_fix_checksum_in_progress">Исправляю контрольную сумму</string>
     <string name="notify_smd_fix_checksum_complete">Контр. сумма исправлена</string>
     <string name="notify_smd_fix_checksum_started_check_notify">Исправляю контрольную сумму. Проверьте область уведомлений</string>
-
-    <string name="notify_snes_add_smc_header_in_progress">Добавляю SMC заголовок</string>
-    <string name="notify_snes_add_smc_header_complete">SMC заголовок добавлен</string>
-    <string name="notify_snes_add_smc_header_stared_check_noify">Добавляю SMC заголовок. Проверьте область уведомлений</string>
 
     <string name="notify_snes_delete_smc_header_in_progress">Удаляю SMC заголовок</string>
     <string name="notify_snes_delete_smc_header_complete">SMC заголовок удалён</string>
@@ -120,6 +123,8 @@
     <string name="settings_theme_dialog_title">Выберите тему</string>
     <string name="settings_theme_name_light">Светлая</string>
     <string name="settings_theme_name_dark">Тёмная</string>
+    <string name="settings_theme_name_auto_battery">На основе режима энергосбережения</string>
+    <string name="settings_theme_name_follow_system">Использовать системные настройки</string>
     <string name="settings_theme_message_restart_app">Пожалуйста, перезапустите приложение</string>
     <string name="settings_directories_header">Директории</string>
     <string name="settings_remember_last_directories">Запоминать последнюю открытую директорию</string>
@@ -141,6 +146,7 @@
     <string name="help_activity_action_send_feedback">Написать письмо автору</string>
     <string name="help_activity_action_visit_site">Посетить веб-сайт</string>
     <string name="help_activity_action_changelog">История изменений</string>
+    <string name="help_activity_error_cannot_load_text">Ошибка: не могу загрузить текст</string>
 
     <string name="donate_activity_title">Пожертвование</string>
 

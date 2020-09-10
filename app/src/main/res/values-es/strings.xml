@@ -9,7 +9,6 @@
     <string name="main_activity_rom_file">Archivo de ROM</string>
     <string name="main_activity_patch_file">Archivo de parche</string>
     <string name="main_activity_output_file">Archivo de salida</string>
-    <string name="main_activity_header_file">Archivo de cabecera</string>
     <string name="main_activity_tap_to_select">Pulse para seleccionar</string>
     <string name="main_activity_tap_to_rename">Pulse para renombrar</string>
     <string name="main_activity_toast_rom_and_patch_not_selected">La ROM y los archivos de parche no están seleccionados</string>
@@ -34,12 +33,7 @@
     <string name="create_patch_fragment_toast_source_and_modified_not_selected">El origen y los archivos modificados no están seleccionados</string>
     <string name="create_patch_fragment_toast_source_not_selected">El archivo de origen no está seleccionado</string>
     <string name="create_patch_fragment_toast_modified_not_selected">El archivo modificado no está seleccionado</string>
-
-    <!-- Info for SNES SMC header -->
-    <string name="snes_smc_header_help">Esta función es sólo para ROMs de Super Nintendo\n\nSi la ROM contiene la cabecera SMC - se quitará. De lo contrario, se añadirá.\n\nAdvertencia: Esta función no crea un respaldo.</string>
     <string name="snes_smc_header_will_be_removed">Esta ROM tiene la cabecera SMC. Se quitará.</string>
-    <string name="snes_smc_header_will_be_added">Esta ROM no tiene cabecera SMC. Se agregará. Puede elegir su propia cabecera en lugar de la cabecera por defecto.</string>
-
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">Esta función es sólo para ROMs Sega Mega Drive (Sega Genesis).\n\nArregla \"la pantalla roja de la muerte\".\n\nAdvertencia: esta función no crea un respaldo.</string>
 
@@ -101,10 +95,6 @@
     <string name="notify_smd_fix_checksum_complete">Checksum fijado</string>
     <string name="notify_smd_fix_checksum_started_check_notify">Fijación de checksum iniciada. Compruebe el área de notificación</string>
 
-    <string name="notify_snes_add_smc_header_in_progress">Añadiendo cabecera SMC</string>
-    <string name="notify_snes_add_smc_header_complete">Añadir encabezado SMC completo</string>
-    <string name="notify_snes_add_smc_header_stared_check_noify">Añadir cabecera SMC iniciado. Compruebe el área de notificación</string>
-
     <string name="notify_snes_delete_smc_header_in_progress">Eliminar cabecera SMC</string>
     <string name="notify_snes_delete_smc_header_complete">Eliminación de cabecera SMC completado</string>
     <string name="notify_snes_delete_smc_header_stared_check_noify">Eliminar cabecera SMC iniciado. Compruebe el área de notificación</string>
@@ -141,7 +131,6 @@
     <string name="help_activity_action_send_feedback">Enviar comentarios</string>
     <string name="help_activity_action_visit_site">Visitar sitio web</string>
     <string name="help_activity_action_changelog">Registro de cambios</string>
-
     <string name="donate_activity_title">Donar</string>
 
     <string name="send_feedback_dialog_title">Enviar correo electrónico</string>
@@ -154,7 +143,6 @@
     <string name="nav_apply_patch">Aplicar parche</string>
     <string name="nav_create_patch">Crear parche</string>
     <string name="nav_smd_fix_checksum">Fijar checksum (SMD)</string>
-    <string name="nav_snes_add_del_smc_header">Añadir/Eliminar cabecera SCM (SNES)</string>
     <string name="nav_settings">Ajustes</string>
     <string name="nav_rate">Calificar esta aplicación</string>
     <string name="nav_donate">Donar</string>

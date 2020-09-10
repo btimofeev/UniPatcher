@@ -83,7 +83,7 @@ Tak. UniPatcher może:
 
 - Create XDelta3 patches.
 - Naprawiać sumę kontrolną w grach z konsol Sega Mega Drive/Sega Genesis
-- Dodawać bądź usuwać nagłówek SMC dla gier z konsoli Super Nintendo Entertaiment System (SNES).
+- Remove SMC header in Super Nintendo games.
 
 #### Po co mam naprawiać sumę kontrolną w grach z Sega Mega Drive/Genesis?
 
@@ -91,11 +91,9 @@ Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you
 
 **Uwaga:** Ta funkcja nie tworzy kopii zapasowe ROM-u.
 
-#### Dlaczego jest to czasami wymagane aby dodać albo usunąć nagłówek SMC z gier Super Nintendo?
+#### Why is it sometimes necessary to remove SMC headers from Super Nintendo games?
 
-Nagłówek SMC jest pierwszymi 512 bitami znajdowanymi na początku niektórych SNES-owych ROM image-ów. Te bity nie mają celu, ale one zmieniają lokalizację danych. Usuwanie bądź dodawanie nagłówków jest używane w celach poprawnego zaaplikowania łatki.
-
-**Uwaga:** Ta funkcja nie tworzy kopii zapasowe ROM-u.
+An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing a header is sometimes used for the purpose of correctly applying a patch.
 
 #### Jak przetłumaczyć aplikację?
 

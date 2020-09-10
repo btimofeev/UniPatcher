@@ -83,7 +83,7 @@ ECM 是一种为光盘特制的数据压缩格式，你可以用 [ZArchiver](htt
 
 - 创建 XDelta3 补丁。
 - 为世嘉 Mega Drive / Genesis 游戏修正校验和。
-- 为超级任天堂游戏添加或移除 SMC 标头。
+- Remove SMC header in Super Nintendo games.
 
 #### 为什么我必须修正世嘉 Mega Drive 游戏的校验和？
 
@@ -91,11 +91,9 @@ ECM 是一种为光盘特制的数据压缩格式，你可以用 [ZArchiver](htt
 
 **警告:** 此功能不会创建备份 ROM。
 
-#### 为什么有时需要给超级任天堂游戏增删 SMC 标头。
+#### Why is it sometimes necessary to remove SMC headers from Super Nintendo games?
 
-在有些超级任天堂 ROM 映像的开头会有一个512字节的 SMC 标头，这些字节没有意义，但他们会改变剩余数据的位置。移除或添加标头有时被用来起到正确应用补丁的作用。
-
-**警告:** 此功能不会创建备份 ROM。
+An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing a header is sometimes used for the purpose of correctly applying a patch.
 
 #### 怎么翻译此应用？
 

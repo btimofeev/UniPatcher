@@ -4,7 +4,7 @@ Recursos adicionais:
 
 - Criação de patches XDelta3
 - Corrigir soma de verificação (checksum) em ROMs de Sega Mega Drive
-- Adicionar/Deletar arquivo SMC header em ROMs de Super Nintendo
+- Removing SMC headers in Super Nintendo ROMs
 
 ##### Tradutores:
 

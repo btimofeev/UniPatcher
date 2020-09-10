@@ -10,7 +10,7 @@
 &bull; Поддержка множества форматов патчей: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
 &bull; Создание патчей в формате XDelta
 &bull; Исправление контрольной суммы для игр Sega Mega Drive
-&bull; Удаление/добавление SMC заголовка для игр Super Nintendo
+&bull; Удаление SMC заголовков в играх Super Nintendo
 &bull; Не имеет рекламы
 &bull; Бесплатное приложение с открытым исходным кодом. Исходный код доступен на сайте https://github.com/btimofeev/UniPatcher
 

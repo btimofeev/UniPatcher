@@ -4,7 +4,7 @@ Funzioni aggiuntive:
 
 - Creating XDelta3 patches
 - Risolvi checksum nei ROM del Sega Mega Drive
-- Aggiungi/Elimina intestazione SMC nei ROM del Super Nintendo
+- Removing SMC headers in Super Nintendo ROMs
 
 ##### Traduttori:
 

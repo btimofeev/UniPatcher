@@ -10,7 +10,7 @@
 &bull; 모든 형식의 패치 지원: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
 &bull; XDelta 패치 생성
 &bull; 세가 메가 드라이브 롬 체크섬 수정
-&bull; 닌텐도 슈퍼 패미컴 롬 SMC 헤더 추가/제거
+&bull; Removing SMC headers in Super Nintendo ROMs
 &bull; 광고 없음
 &bull; 무료 및 오픈소스 소프트웨어. https://github.com/btimofeev/UniPatcher 에서 소스 코드 사용 가능.
 

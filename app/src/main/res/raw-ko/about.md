@@ -4,7 +4,7 @@
 
 - XDelta3 패치 생성
 - 세가 메가 드라이브 롬 체크섬 수정
-- 닌텐도 슈퍼 패미컴 롬 SMC 헤더 추가/제거
+- Removing SMC headers in Super Nintendo ROMs
 
 ##### 번역가:
 
