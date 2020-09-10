@@ -66,7 +66,6 @@ class WorkerService : IntentService("WorkerService") {
                 Action.APPLY_PATCH -> actionPatching(intent)
                 Action.CREATE_PATCH -> actionCreatePatch(intent)
                 Action.SMD_FIX_CHECKSUM -> actionSmdFixChecksum(intent)
-                Action.SNES_ADD_SMC_HEADER -> actionSnesAddSmcHeader(intent)
                 Action.SNES_DELETE_SMC_HEADER -> actionSnesDeleteSmcHeader(intent)
             }
         } finally {
@@ -205,59 +204,34 @@ class WorkerService : IntentService("WorkerService") {
         notify.showResult(errorMsg)
     }
 
-    private fun actionSnesAddSmcHeader(intent: Intent) {
-        var errorMsg: String? = null
-
-        val romFile = File(intent.getStringExtra("romPath"))
-        val headerPath = intent.getStringExtra("headerPath")
-
-        if (!fileExists(romFile))
-            return
-
-        val worker = SnesSmcHeader()
-
-        val notify = SnesAddSmcHeaderNotify(this, romFile.name)
-        startForeground(notify.id, notify.notifyBuilder.build())
-
-        try {
-            if (headerPath == null)
-                worker.addSnesSmcHeader(this, romFile)
-            else
-                worker.addSnesSmcHeader(this, romFile, File(headerPath))
-        } catch (e: Exception) {
-            errorMsg = if (Utils.getFreeSpace(romFile.parentFile) == 0L) {
-                getString(R.string.notify_error_not_enough_space)
-            } else {
-                e.message
-            }
-        } finally {
-            stopForeground(true)
-        }
-        notify.showResult(errorMsg)
-    }
-
     private fun actionSnesDeleteSmcHeader(intent: Intent) {
         var errorMsg: String? = null
 
-        val romFile = File(intent.getStringExtra("romPath"))
+        val romPath = intent.getStringExtra("romPath")
+        val outputPath = intent.getStringExtra("outputPath")
+        require(romPath != null) { "romPath is null" }
+        require(outputPath != null) { "outputPath is null" }
+        val romUri = Uri.parse(romPath)
+        val outputUri = Uri.parse(outputPath)
 
-        if (!fileExists(romFile))
-            return
-
-        val worker = SnesSmcHeader()
-
-        val notify = SnesDeleteSmcHeaderNotify(this, romFile.name)
+        val notify = SnesDeleteSmcHeaderNotify(this, uriParser.getFileName(romUri) ?: "")
         startForeground(notify.id, notify.notifyBuilder.build())
 
+        var romFile: File? = null
+        var outputFile: File? = null
+
         try {
-            worker.deleteSnesSmcHeader(this, romFile, true)
+            romFile = Utils.copyToTempFile(romUri, this)
+            outputFile = Utils.copyToTempFile(outputUri, this)
+            SnesSmcHeader().deleteSnesSmcHeader(this, romFile, outputFile)
+            Utils.copy(outputFile, outputUri, this)
         } catch (e: Exception) {
-            errorMsg = if (Utils.getFreeSpace(romFile.parentFile) == 0L) {
-                getString(R.string.notify_error_not_enough_space)
-            } else {
-                e.message
-            }
+            errorMsg = e.message
+            if (uriParser.isExist(outputUri))
+                DocumentsContract.deleteDocument(contentResolver, outputUri)
         } finally {
+            FileUtils.deleteQuietly(outputFile)
+            FileUtils.deleteQuietly(romFile)
             stopForeground(true)
         }
         notify.showResult(errorMsg)

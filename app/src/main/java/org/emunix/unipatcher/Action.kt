@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, 2019 Boris Timofeev
+ Copyright (c) 2017, 2019-2020 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -25,7 +25,7 @@ object Action {
     const val SELECT_PATCH_FILE = 2
     const val SELECT_SOURCE_FILE = 3
     const val SELECT_MODIFIED_FILE = 4
-    const val SELECT_HEADER_FILE = 5
+    const val SELECT_OUTPUT_FILE = 5
 
     const val APPLY_PATCH = 101
     const val CREATE_PATCH = 102

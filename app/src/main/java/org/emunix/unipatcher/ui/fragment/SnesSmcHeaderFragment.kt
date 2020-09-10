@@ -20,31 +20,30 @@ package org.emunix.unipatcher.ui.fragment
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import org.emunix.unipatcher.Action
-import org.emunix.unipatcher.R
-import org.emunix.unipatcher.Settings
-import org.emunix.unipatcher.Utils.isArchive
+import org.emunix.unipatcher.*
 import org.emunix.unipatcher.Utils.startForegroundService
-import org.emunix.unipatcher.WorkerService
 import org.emunix.unipatcher.databinding.SnesSmcHeaderFragmentBinding
+import org.emunix.unipatcher.helpers.UriParser
 import org.emunix.unipatcher.tools.SnesSmcHeader
-import org.emunix.unipatcher.ui.activity.FilePickerActivity
 import timber.log.Timber
-import java.io.File
+import javax.inject.Inject
 
 class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
 
-    private var romPath: String = ""
-    private var headerPath: String = ""
-    private var action = 0
+    private var romPath: String = ""     //
+    private var outputPath: String = ""  // String representation of Uri, example "content://com.app.name/path_to_file
 
     private var _binding: SnesSmcHeaderFragmentBinding? = null
     private val binding get() = _binding!!
+
+    @Inject
+    lateinit var uriParser: UriParser
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = SnesSmcHeaderFragmentBinding.inflate(inflater, container, false)
@@ -58,94 +57,83 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        UniPatcher.appComponent.inject(this)
         activity?.setTitle(R.string.nav_snes_add_del_smc_header)
         binding.romCardView.setOnClickListener(this)
-        binding.headerCardView.setOnClickListener(this)
+        binding.outputCardView.setOnClickListener(this)
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
         if (savedInstanceState != null) {
             romPath = savedInstanceState.getString("romPath") ?: ""
-            headerPath = savedInstanceState.getString("headerPath") ?: ""
-            action = savedInstanceState.getInt("action")
-            when (action) {
-                Action.SNES_ADD_SMC_HEADER -> {
-                    binding.headerInfoTextView.setText(R.string.snes_smc_header_will_be_added)
-                    binding.headerCardView.visibility = View.VISIBLE
-                }
-                Action.SNES_DELETE_SMC_HEADER -> {
-                    binding.headerInfoTextView.setText(R.string.snes_smc_header_will_be_removed)
-                    binding.headerCardView.visibility = View.GONE
-                }
+            outputPath = savedInstanceState.getString("outputPath") ?: ""
+            if (romPath.isNotEmpty()) {
+                val uri = Uri.parse(romPath)
+                binding.romNameTextView.text = uriParser.getFileName(uri)
+                checkSmc(uri)
             }
-            if (romPath.isNotEmpty()) binding.romNameTextView.text = File(romPath).name
-            if (headerPath.isNotEmpty()) binding.headerNameTextView.text = File(headerPath).name
+            if (outputPath.isNotEmpty()) binding.outputNameTextView.text = uriParser.getFileName(Uri.parse(outputPath))
         }
     }
 
     override fun onSaveInstanceState(savedInstanceState: Bundle) {
         super.onSaveInstanceState(savedInstanceState)
         savedInstanceState.putString("romPath", romPath)
-        savedInstanceState.putString("headerPath", headerPath)
-        savedInstanceState.putInt("action", action)
+        savedInstanceState.putString("outputPath", outputPath)
     }
 
     override fun onClick(view: View) {
-        val intent = Intent(activity, FilePickerActivity::class.java)
         when (view.id) {
             R.id.romCardView -> {
-                intent.putExtra("title", getString(R.string.file_picker_activity_title_select_rom))
-                intent.putExtra("directory", Settings.getRomDir())
+                val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                    addCategory(Intent.CATEGORY_OPENABLE)
+                    type = "application/octet-stream"
+                }
                 startActivityForResult(intent, Action.SELECT_ROM_FILE)
             }
-            R.id.headerCardView -> {
-                intent.putExtra("title", getString(R.string.file_picker_activity_title_select_header))
-                startActivityForResult(intent, Action.SELECT_HEADER_FILE)
+            R.id.outputCardView -> {
+                val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                    addCategory(Intent.CATEGORY_OPENABLE)
+                    type = "application/octet-stream"
+                    putExtra(Intent.EXTRA_TITLE, "headerless_rom.smc")
+                }
+                startActivityForResult(intent, Action.SELECT_OUTPUT_FILE)
             }
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        Timber.d("onActivityResult($requestCode, $resultCode, $data)")
-        if (resultCode == Activity.RESULT_OK) {
-            val path = data?.getStringExtra("path") ?: ""
-            if (path.isBlank()) {
-                Toast.makeText(activity, R.string.main_activity_toast_file_manager_did_not_return_file_path, Toast.LENGTH_LONG).show()
-                return
-            }
-            if (isArchive(path)) {
-                Toast.makeText(activity, R.string.main_activity_toast_archives_not_supported, Toast.LENGTH_LONG).show()
-            }
-            when (requestCode) {
-                Action.SELECT_ROM_FILE -> {
-                    romPath = path
-                    binding.romNameTextView.visibility = View.VISIBLE
-                    binding.romNameTextView.text = File(path).name
-                    val dir = File(path).parent
-                    if (dir != null) {
-                        Settings.setLastRomDir(dir)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
+        Timber.d("onActivityResult($requestCode, $resultCode, $resultData)")
+        if (resultCode == Activity.RESULT_OK && resultData != null && (requestCode == Action.SELECT_ROM_FILE || requestCode == Action.SELECT_OUTPUT_FILE)) {
+            resultData.data?.let { uri ->
+                Timber.d(uri.toString())
+                requireContext().contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+                when (requestCode) {
+                    Action.SELECT_ROM_FILE -> {
+                        romPath = uri.toString()
+                        binding.romNameTextView.visibility = View.VISIBLE
+                        binding.romNameTextView.text = uriParser.getFileName(uri)
+                        checkSmc(uri)
                     }
-                    val checker = SnesSmcHeader()
-                    if (checker.isHasSmcHeader(File(path))) {
-                        action = Action.SNES_DELETE_SMC_HEADER
-                        binding.headerCardView.visibility = View.GONE
-                        binding.headerInfoTextView.setText(R.string.snes_smc_header_will_be_removed)
-                    } else {
-                        action = Action.SNES_ADD_SMC_HEADER
-                        binding.headerCardView.visibility = View.VISIBLE
-                        binding.headerInfoTextView.setText(R.string.snes_smc_header_will_be_added)
+                    Action.SELECT_OUTPUT_FILE -> {
+                        outputPath = uri.toString()
+                        binding.outputNameTextView.visibility = View.VISIBLE
+                        binding.outputNameTextView.text = uriParser.getFileName(uri)
                     }
-                    headerPath = ""
-                    binding.headerNameTextView.setText(R.string.main_activity_tap_to_select)
-                }
-                Action.SELECT_HEADER_FILE -> {
-                    headerPath = path
-                    binding.headerNameTextView.text = File(path).name
                 }
             }
         }
-        super.onActivityResult(requestCode, resultCode, data)
+        super.onActivityResult(requestCode, resultCode, resultData)
+    }
+
+    fun checkSmc(uri: Uri) {
+        val checker = SnesSmcHeader()
+        if (checker.isRomHasSmcHeader(uriParser.getFileSize(uri))) {
+            binding.headerInfoTextView.setText(R.string.snes_smc_header_will_be_removed)
+        } else {
+            binding.headerInfoTextView.setText(R.string.snes_rom_has_no_smc_header)
+        }
     }
 
     override fun runAction(): Boolean {
@@ -153,16 +141,16 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
             Toast.makeText(activity, getString(R.string.main_activity_toast_rom_not_selected), Toast.LENGTH_LONG).show()
             return false
         }
-        val intent = Intent(activity, WorkerService::class.java)
-        intent.putExtra("action", action)
-        intent.putExtra("romPath", romPath)
-        intent.putExtra("headerPath", headerPath)
-        startForegroundService(requireActivity(), intent)
-        if (action == Action.SNES_ADD_SMC_HEADER) {
-            Toast.makeText(activity, R.string.notify_snes_add_smc_header_stared_check_noify, Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(activity, R.string.notify_snes_delete_smc_header_stared_check_noify, Toast.LENGTH_SHORT).show()
+        if (outputPath.isEmpty()) {
+            Toast.makeText(activity, getString(R.string.main_activity_toast_output_not_selected), Toast.LENGTH_LONG).show()
+            return false
         }
+        val intent = Intent(activity, WorkerService::class.java)
+        intent.putExtra("action", Action.SNES_DELETE_SMC_HEADER)
+        intent.putExtra("romPath", romPath)
+        intent.putExtra("outputPath", outputPath)
+        startForegroundService(requireActivity(), intent)
+        Toast.makeText(activity, R.string.notify_snes_delete_smc_header_stared_check_noify, Toast.LENGTH_SHORT).show()
         return true
     }
 }

@@ -4,7 +4,7 @@ Additional features:
 
 - Creating XDelta3 patches
 - Fix checksum in Sega Mega Drive ROMs
-- Add/Delete SMC header in Super Nintendo ROMs
+- Removing SMC headers in Super Nintendo ROMs
 
 ##### Translators:
 

@@ -16,6 +16,7 @@
     <string name="main_activity_toast_rom_and_patch_not_selected">The ROM and the patch files is not selected</string>
     <string name="main_activity_toast_rom_not_selected">No ROM file selected</string>
     <string name="main_activity_toast_patch_not_selected">No patch file selected</string>
+    <string name="main_activity_toast_output_not_selected">No output file selected</string>
     <string name="main_activity_toast_archives_not_supported">Archive should be unpacked in an external program</string>
     <string name="main_activity_toast_file_manager_did_not_return_file_path">Error: file manager did not return file path</string>
     <string name="main_activity_donate_snackbar_text">Support the development of UniPatcher by making a donation</string>
@@ -39,9 +40,9 @@
     <string name="create_patch_fragment_toast_patch_not_selected">The patch file is not selected</string>
 
     <!-- Info for SNES SMC header -->
-    <string name="snes_smc_header_help">This feature is only for Super Nintendo ROMs.\n\nIf the ROM contains the SMC header - it will be removed. Otherwise, it will be added.\n\nWarning: This function does not create a backup.</string>
+    <string name="snes_smc_header_help">This feature is only for Super Nintendo ROMs.\n\nSome patches require the ROM to have no SMC header. This function will help you remove it.</string>
     <string name="snes_smc_header_will_be_removed">This ROM has the SMC header. It will be removed.</string>
-    <string name="snes_smc_header_will_be_added">This ROM does not have the SMC header. It will be added. You can choose your own header instead of the default header.</string>
+    <string name="snes_rom_has_no_smc_header">This ROM has no SMC header. You don\'t need to delete anything.</string>
 
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">This feature is only for Sega Mega Drive (Sega Genesis) ROMs.\n\nIt fixes \"the red screen of death\".\n\nWarning: This function does not create a backup.</string>
@@ -105,10 +106,6 @@
     <string name="notify_smd_fix_checksum_complete">Checksum fixed</string>
     <string name="notify_smd_fix_checksum_started_check_notify">Fixing checksum started. Check the notification area</string>
 
-    <string name="notify_snes_add_smc_header_in_progress">Adding SMC header</string>
-    <string name="notify_snes_add_smc_header_complete">SMC header added</string>
-    <string name="notify_snes_add_smc_header_stared_check_noify">Adding SMC header started. Check the notification area</string>
-
     <string name="notify_snes_delete_smc_header_in_progress">Delete SMC header</string>
     <string name="notify_snes_delete_smc_header_complete">SMC header deleted</string>
     <string name="notify_snes_delete_smc_header_stared_check_noify">Deleting SMC header started. Check the notification area</string>
@@ -161,7 +158,7 @@
     <string name="nav_apply_patch">Apply patch</string>
     <string name="nav_create_patch">Create patch</string>
     <string name="nav_smd_fix_checksum">Fix checksum (SMD)</string>
-    <string name="nav_snes_add_del_smc_header">Add/Del SMC header (SNES)</string>
+    <string name="nav_snes_add_del_smc_header">Remove SMC header (SNES)</string>
     <string name="nav_settings">Settings</string>
     <string name="nav_rate">Rate this App</string>
     <string name="nav_donate">Donate</string>

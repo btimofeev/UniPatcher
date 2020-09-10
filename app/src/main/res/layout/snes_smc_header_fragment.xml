@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentTop="true">
@@ -52,6 +51,48 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/outputCardView"
+            style="@style/Card.Clickable">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:id="@+id/outputLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:padding="8dp"
+                    android:text="@string/main_activity_output_file"
+                    android:textColor="@color/colorCardHeaderText"
+                    android:textSize="24sp"/>
+
+                <View
+                    android:id="@+id/outputLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/card_line_height"
+                    android:layout_marginTop="@dimen/card_line_margin"
+                    android:layout_marginBottom="@dimen/card_line_margin"
+                    android:background="@color/colorCardLine"/>
+
+                <TextView
+                    android:id="@+id/outputNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/folder"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:padding="8dp"
+                    android:text="@string/main_activity_tap_to_select"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/helpCardView"
             style="@style/Card">
 
@@ -63,49 +104,6 @@
                 android:padding="@dimen/card_padding"
                 android:text="@string/snes_smc_header_help"
                 android:textSize="16sp"/>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/headerCardView"
-            style="@style/Card.Clickable"
-            android:visibility="gone">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="@dimen/card_padding">
-
-                <TextView
-                    android:id="@+id/headerLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:padding="8dp"
-                    android:text="@string/main_activity_header_file"
-                    android:textColor="@color/colorCardHeaderText"
-                    android:textSize="24sp"/>
-
-                <View
-                    android:id="@+id/headerLine"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_line_height"
-                    android:layout_marginTop="@dimen/card_line_margin"
-                    android:layout_marginBottom="@dimen/card_line_margin"
-                    android:background="@color/colorCardLine"/>
-
-                <TextView
-                    android:id="@+id/headerNameTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/folder"
-                    android:drawablePadding="8dp"
-                    android:fontFamily="sans-serif-light"
-                    android:padding="8dp"
-                    android:text="@string/main_activity_tap_to_select"
-                    android:textSize="20sp"/>
-            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
