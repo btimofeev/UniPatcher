@@ -138,22 +138,22 @@ class WorkerService : IntentService("WorkerService") {
 
     private fun actionSmdFixChecksum(intent: Intent) {
         var errorMsg: String? = null
-
         val romPath = intent.getStringExtra("romPath")
         require(romPath != null) { "romPath is null" }
-
         val romUri = Uri.parse(romPath)
-        val worker = SmdFixChecksum(this, romUri, uriParser)
 
         val notify = SmdFixChecksumNotify(this, uriParser.getFileName(romUri) ?: "")
         startForeground(notify.id, notify.notifyBuilder.build())
 
+        var tmpFile: File? = null
         try {
+            tmpFile = Utils.copyToTempFile(this, romUri)
+            val worker = SmdFixChecksum(this, tmpFile)
             worker.fixChecksum()
-        } catch (e: IllegalArgumentException) {
-            errorMsg = "Illegal argument of method: ${e.message}"
+            Utils.copy(tmpFile, romUri, this)
         } catch (e: Exception) {
             errorMsg = e.message
+            FileUtils.deleteQuietly(tmpFile)
         } finally {
             stopForeground(true)
         }

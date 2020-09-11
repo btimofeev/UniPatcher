@@ -19,26 +19,24 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.tools
 
 import android.content.Context
-import android.net.Uri
 import org.apache.commons.io.IOUtils
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.helpers.FileDescriptorIO
-import org.emunix.unipatcher.helpers.UriParser
 import timber.log.Timber
 import java.io.BufferedInputStream
+import java.io.File
 import java.io.IOException
+import java.io.RandomAccessFile
 
-class SmdFixChecksum(private val context: Context, private val smdUri: Uri, private val uriParser: UriParser) {
+class SmdFixChecksum(private val context: Context, private val smdFile: File) {
 
     @Throws(RomException::class, IOException::class)
     private fun calculateChecksum(): Int {
-        val length = uriParser.getFileSize(smdUri)
+        val length = smdFile.length()
         if (length < 514) {
             throw RomException(context.getString(R.string.notify_error_not_smd_rom))
         }
         var sum: Long = 0
-        val stream = context.contentResolver.openInputStream(smdUri)
-                ?: throw IOException("Unable to open file: content resolver returned null")
+        val stream = smdFile.inputStream()
         val smdStream = BufferedInputStream(stream)
         try {
             var c = IOUtils.skip(smdStream, 512)
@@ -62,15 +60,13 @@ class SmdFixChecksum(private val context: Context, private val smdUri: Uri, priv
     @Throws(IOException::class)
     private fun writeChecksum(sum: Int) {
         val data = byteArrayOf((sum shr 8 and 0xff).toByte(), (sum and 0xff).toByte())
-        val pfd = context.contentResolver.openFileDescriptor(smdUri, "rw")
-                ?: throw IOException("Unable to open file descriptor")
-        val fd = pfd.fileDescriptor
-        val rom = FileDescriptorIO(fd)
+
+        val smdStream = RandomAccessFile(smdFile, "rw")
         try {
-            rom.seek(CHECKSUM_OFFSET.toLong())
-            rom.write(data, 0, 2)
+            smdStream.seek(CHECKSUM_OFFSET.toLong())
+            smdStream.write(data)
         } finally {
-            rom.close()
+            IOUtils.closeQuietly(smdStream)
         }
     }
 
