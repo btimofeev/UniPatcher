@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014, 2016 Boris Timofeev
+Copyright (C) 2014, 2016, 2020 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -16,13 +16,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
+package org.emunix.unipatcher.ui.fragment
 
-package org.emunix.unipatcher.ui.fragment;
+import androidx.fragment.app.Fragment
 
-import androidx.fragment.app.Fragment;
-
-public abstract class ActionFragment extends Fragment {
-
-    public abstract boolean runAction();
+abstract class ActionFragment : Fragment() {
+    abstract fun runAction(): Boolean
 }
-
