@@ -19,14 +19,11 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher
 
-import android.Manifest
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.StatFs
-import androidx.core.content.ContextCompat
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
 import org.apache.commons.io.IOUtils
@@ -60,10 +57,6 @@ object Utils {
 
     fun getTempDir(context: Context): File {
         return context.externalCacheDir ?: context.cacheDir
-    }
-
-    fun hasStoragePermission(context: Context): Boolean {
-        return ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
     }
 
     fun getFreeSpace(file: File): Long {
@@ -171,15 +164,6 @@ object Utils {
             sb.append("%x".format(bytes[i]))
         }
         return sb.toString()
-    }
-
-    fun isPatch(file: File): Boolean {
-        val patches = arrayOf("ips", "ups", "bps", "aps", "ppf", "dps", "ebp", "xdelta", "xdelta3", "xd", "vcdiff")
-        val ext = FilenameUtils.getExtension(file.name).toLowerCase(Locale.getDefault())
-        for (patch in patches) {
-            if (ext == patch) return true
-        }
-        return false
     }
 
     fun isArchive(path: String): Boolean {

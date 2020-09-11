@@ -21,19 +21,10 @@
     <string name="main_activity_donate_snackbar_text">Support the development of UniPatcher by making a donation</string>
     <string name="main_activity_donate_snackbar_button">Donate</string>
 
-    <!-- Rename dialog -->
-    <string name="dialog_rename_title">Rename</string>
-    <string name="dialog_rename_ok">OK</string>
-    <string name="dialog_rename_cancel">Cancel</string>
-    <string name="dialog_rename_error_same_name">The input and output file names must be different</string>
-    <string name="dialog_rename_error_invalid_chars">Invalid symbol /</string>
-    <string name="dialog_rename_error_empty_name">File name can not be empty</string>
-
     <!-- Create patch fragment -->
     <string name="create_patch_fragment_source_file">Source file</string>
     <string name="create_patch_fragment_modified_file">Modified file</string>
     <string name="create_patch_fragment_patch_file">Patch file</string>
-    <string name="create_patch_fragment_toast_source_and_modified_not_selected">The source and modified files is not selected</string>
     <string name="create_patch_fragment_toast_source_not_selected">The source file is not selected</string>
     <string name="create_patch_fragment_toast_modified_not_selected">The modified file is not selected</string>
     <string name="create_patch_fragment_toast_patch_not_selected">The patch file is not selected</string>
@@ -45,27 +36,6 @@
 
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">This feature is only for Sega Mega Drive (Sega Genesis) ROMs.\n\nIt fixes \"the red screen of death\".\n\nWarning: This function does not create a backup.</string>
-
-    <!-- File picker title -->
-    <string name="file_picker_activity_title">Select file</string>
-    <string name="file_picker_activity_title_select_rom">Select the ROM file</string>
-    <string name="file_picker_activity_title_select_patch">Select the patch file</string>
-    <string name="file_picker_activity_title_select_source_file">Select the source file</string>
-    <string name="file_picker_activity_title_select_modified_file">Select the modified file</string>
-    <string name="file_picker_activity_title_select_header">Select the header file</string>
-    <string name="file_picker_activity_error_unable_read_dir">Unable to read directory %1$s</string>
-
-    <!-- File properties dialog -->
-    <string name="file_properties_dialog_title">Properties</string>
-    <string name="file_properties_dialog_name">Name:</string>
-    <string name="file_properties_dialog_path">Path:</string>
-    <string name="file_properties_dialog_size">Size:</string>
-    <string name="file_properties_dialog_size_value">%1$s (%2$d bytes)</string>
-    <string name="file_properties_dialog_crc32">CRC32:</string>
-    <string name="file_properties_dialog_sha1">SHA1:</string>
-    <string name="file_properties_dialog_md5">MD5:</string>
-    <string name="file_properties_dialog_close_button">Close</string>
-    <string name="file_properties_dialog_wait_message">Please wait&#8230;</string>
 
     <!-- Notifications -->
     <string name="notify_applying_patch">Applying patch</string>
@@ -106,10 +76,6 @@
     <string name="notify_snes_delete_smc_header_in_progress">Delete SMC header</string>
     <string name="notify_snes_delete_smc_header_complete">SMC header deleted</string>
     <string name="notify_snes_delete_smc_header_stared_check_noify">Deleting SMC header started. Check the notification area</string>
-
-    <!-- Permissions -->
-    <string name="permissions_storage_error_info">App has not been granted permission to read/write files. Without this permission UniPatcher will not function correctly.</string>
-    <string name="permissions_storage_error_notify_access_denied">File access denied</string>
 
     <!-- Settings -->
     <string name="settings_activity_title">Settings</string>
