@@ -33,7 +33,6 @@ import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.databinding.ActivityMainBinding
 import org.emunix.unipatcher.helpers.SocialHelper
 import org.emunix.unipatcher.ui.fragment.*
-import timber.log.Timber
 import java.util.*
 import javax.inject.Inject
 
@@ -42,9 +41,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     enum class NavigateTo {
         APPLY_PATCH, CREATE_PATCH, SMD_FIX_CHECKSUM, SNES_SMC_HEADER
     }
-
-    @JvmField
-    var arg: String? = null
 
     private lateinit var _binding: ActivityMainBinding
     private val binding get() = _binding
@@ -74,7 +70,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (savedInstanceState == null) {
             replaceFragment(NavigateTo.APPLY_PATCH)
         }
-        parseArgument()
         showDonateSnackbar()
     }
 
@@ -110,11 +105,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val ft = supportFragmentManager.beginTransaction()
         ft.setCustomAnimations(R.anim.slide_from_bottom, android.R.anim.fade_out)
         ft.replace(R.id.content_frame, fragment).commit()
-    }
-
-    private fun parseArgument() {
-        arg = intent?.data?.path
-        Timber.d("Path to file from intent that started this activity: %s", arg)
     }
 
     private fun showDonateSnackbar() { // don't show snackbar if the user did not patch the file successfully

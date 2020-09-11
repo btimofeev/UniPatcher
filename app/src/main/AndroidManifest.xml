@@ -24,29 +24,7 @@
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-
-                <data android:scheme="file"/>
-                <data android:mimeType="*/*"/>
-                <data android:pathPattern="/.*\\.aps"/>
-                <data android:pathPattern="/.*\\.ips"/>
-                <data android:pathPattern="/.*\\.ups"/>
-                <data android:pathPattern="/.*\\.bps"/>
-                <data android:pathPattern="/.*\\.ppf"/>
-                <data android:pathPattern="/.*\\.ebp"/>
-                <data android:pathPattern="/.*\\.dps"/>
-                <data android:pathPattern="/.*\\.xdelta"/>
-                <data android:pathPattern="/.*\\.xdelta3"/>
-                <data android:pathPattern="/.*\\.xd"/>
-                <data android:pathPattern="/.*\\.vcdiff"/>
-                <data android:host="*"/>
             </intent-filter>
         </activity>
 

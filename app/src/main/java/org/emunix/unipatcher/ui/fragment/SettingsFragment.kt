@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016-2017, 2019 Boris Timofeev
+Copyright (C) 2016-2017, 2019-2020 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -21,7 +21,6 @@ package org.emunix.unipatcher.ui.fragment
 import android.content.SharedPreferences
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.os.Bundle
-import android.widget.Toast
 import androidx.preference.ListPreference
 import androidx.preference.PreferenceFragmentCompat
 import org.emunix.unipatcher.R
@@ -35,9 +34,6 @@ class SettingsFragment : PreferenceFragmentCompat(), OnSharedPreferenceChangeLis
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences,
                                            key: String) {
         when (key) {
-            "output_directory" -> {
-                Toast.makeText(activity, R.string.settings_theme_message_restart_app, Toast.LENGTH_SHORT).show()
-            }
             "theme" -> {
                 val theme = findPreference<ListPreference>("theme")
                 if (theme?.value != null)

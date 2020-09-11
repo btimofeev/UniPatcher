@@ -30,18 +30,17 @@ import android.os.PowerManager
 import android.provider.DocumentsContract
 import androidx.core.app.NotificationCompat
 import org.apache.commons.io.FileUtils
-import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.helpers.UriParser
 import org.emunix.unipatcher.patcher.*
 import org.emunix.unipatcher.tools.CreateXDelta3
 import org.emunix.unipatcher.tools.SmdFixChecksum
 import org.emunix.unipatcher.tools.SnesSmcHeader
 import org.emunix.unipatcher.ui.activity.MainActivity
-import org.emunix.unipatcher.ui.notify.*
+import org.emunix.unipatcher.ui.notify.CreatePatchNotify
+import org.emunix.unipatcher.ui.notify.PatchingNotify
+import org.emunix.unipatcher.ui.notify.SmdFixChecksumNotify
+import org.emunix.unipatcher.ui.notify.SnesDeleteSmcHeaderNotify
 import java.io.File
-import java.io.IOException
-import java.lang.IllegalArgumentException
-import java.util.*
 import javax.inject.Inject
 
 class WorkerService : IntentService("WorkerService") {
@@ -75,76 +74,39 @@ class WorkerService : IntentService("WorkerService") {
 
     private fun actionPatching(intent: Intent) {
         var errorMsg: String? = null
-        val romFile = File(intent.getStringExtra("romPath"))
-        val patchFile = File(intent.getStringExtra("patchPath"))
-        val outputFile = File(intent.getStringExtra("outputPath"))
-        val patcher: Patcher?
+        val romPath = intent.getStringExtra("romPath")
+        val patchPath = intent.getStringExtra("patchPath")
+        val outputPath = intent.getStringExtra("outputPath")
+        require(romPath != null) { "romPath is null" }
+        require(patchPath != null) { "patchPath is null" }
+        require(outputPath != null) { "outputPath is null" }
+        val romUri = Uri.parse(romPath)
+        val patchUri = Uri.parse(patchPath)
+        val outputUri = Uri.parse(outputPath)
 
-        if (!fileExists(patchFile) || !fileExists(romFile))
-            return
-
-        // create output dir
-        try {
-            if (!outputFile.parentFile.exists()) {
-                FileUtils.forceMkdirParent(outputFile)
-            }
-        } catch (e: IOException) {
-            val text = getString(R.string.notify_error_unable_to_create_directory, outputFile.parent)
-            showErrorNotification(text)
-            return
-        } catch (e: SecurityException) {
-            val text = getString(R.string.notify_error_unable_to_create_directory, outputFile.parent)
-            showErrorNotification(text)
-            return
-        }
-
-        // check access to output dir
-        try {
-            if (!outputFile.parentFile.canWrite()) {
-                val text = getString(R.string.notify_error_unable_to_write_to_directory, outputFile.parent)
-                showErrorNotification(text)
-                return
-            }
-        } catch (e: SecurityException) {
-            val text = getString(R.string.notify_error_unable_to_write_to_directory, outputFile.parent)
-            showErrorNotification(text)
-            return
-        }
-
-        val ext = FilenameUtils.getExtension(patchFile.name).toLowerCase(Locale.getDefault())
-        patcher = when (ext) {
-            "ips" -> IPS(this, patchFile, romFile, outputFile)
-            "ups" -> UPS(this, patchFile, romFile, outputFile)
-            "bps" -> BPS(this, patchFile, romFile, outputFile)
-            "ppf" -> PPF(this, patchFile, romFile, outputFile)
-            "aps" -> APS(this, patchFile, romFile, outputFile)
-            "ebp" -> EBP(this, patchFile, romFile, outputFile)
-            "dps" -> DPS(this, patchFile, romFile, outputFile)
-            "xdelta", "xdelta3", "xd", "vcdiff" -> XDelta(this, patchFile, romFile, outputFile)
-            else -> null
-        }
-
-        if (patcher == null) {
-            showErrorNotification(getString(R.string.notify_error_unknown_patch_format))
-            return
-        }
-
-        val notify = PatchingNotify(this, outputFile.name)
+        val notify = PatchingNotify(this, uriParser.getFileName(romUri) ?: "")
         startForeground(notify.id, notify.notifyBuilder.build())
 
+        var romFile: File? = null
+        var patchFile: File? = null
+        var outputFile: File? = null
+
         try {
+            romFile = Utils.copyToTempFile(this, romUri)
+            patchFile = Utils.copyToTempFile(this, patchUri, uriParser.getFileName(patchUri) ?: "undefined")
+            outputFile = File.createTempFile("output", ".rom", Utils.getTempDir(this))
+            val patcher = PatcherFactory.createPatcher(this, patchFile, romFile, outputFile)
             patcher.apply(Settings.getIgnoreChecksum())
+            Utils.copy(outputFile, outputUri, this)
             Settings.setPatchingSuccessful(true)
         } catch (e: Exception) {
-            errorMsg = if (Utils.getFreeSpace(outputFile.parentFile) == 0L) {
-                getString(R.string.notify_error_not_enough_space)
-            } else {
-                e.message
-            }
-            if (outputFile.isFile) {
-                FileUtils.deleteQuietly(outputFile)
-            }
+            errorMsg = e.message
+            if (uriParser.isExist(outputUri))
+                DocumentsContract.deleteDocument(contentResolver, outputUri)
         } finally {
+            FileUtils.deleteQuietly(outputFile)
+            FileUtils.deleteQuietly(romFile)
+            FileUtils.deleteQuietly(patchFile)
             stopForeground(true)
         }
         notify.showResult(errorMsg)
@@ -221,8 +183,8 @@ class WorkerService : IntentService("WorkerService") {
         var outputFile: File? = null
 
         try {
-            romFile = Utils.copyToTempFile(romUri, this)
-            outputFile = Utils.copyToTempFile(outputUri, this)
+            romFile = Utils.copyToTempFile(this, romUri)
+            outputFile = Utils.copyToTempFile(this, outputUri)
             SnesSmcHeader().deleteSnesSmcHeader(this, romFile, outputFile)
             Utils.copy(outputFile, outputUri, this)
         } catch (e: Exception) {
@@ -235,15 +197,6 @@ class WorkerService : IntentService("WorkerService") {
             stopForeground(true)
         }
         notify.showResult(errorMsg)
-    }
-
-    private fun fileExists(f: File): Boolean {
-        if (!f.exists() || f.isDirectory) {
-            val text = getString(R.string.notify_error_file_not_found) + ": " + f.name
-            showErrorNotification(text)
-            return false
-        }
-        return true
     }
 
     private fun showErrorNotification(text: String) {

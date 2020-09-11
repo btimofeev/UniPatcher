@@ -46,8 +46,8 @@ class CreateXDelta3(private val context: Context,
             throw PatchException(context.getString(R.string.notify_error_failed_load_lib_xdelta3))
         }
 
-        val tmpSourceFile = Utils.copyToTempFile(sourceUri, context)
-        val tmpModifiedFile = Utils.copyToTempFile(modifiedUri, context)
+        val tmpSourceFile = Utils.copyToTempFile(context, sourceUri)
+        val tmpModifiedFile = Utils.copyToTempFile(context, modifiedUri)
         val tmpPatchFile = File.createTempFile("patch", ".xdelta", Utils.getTempDir(context))
 
         try {
