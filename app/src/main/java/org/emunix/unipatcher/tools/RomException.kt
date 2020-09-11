@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014 Boris Timofeev
+Copyright (C) 2014, 2020 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -16,16 +16,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
+package org.emunix.unipatcher.tools
 
-package org.emunix.unipatcher.tools;
-
-public class RomException extends Exception {
-
-    public RomException() {
-        super();
-    }
-
-    public RomException(String message) {
-        super(message);
-    }
+class RomException(message: String?) : Exception(message) {
 }
