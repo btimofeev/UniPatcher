@@ -26,6 +26,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.*
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.databinding.SnesSmcHeaderFragmentBinding
@@ -93,10 +94,16 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
                 startActivityForResult(intent, Action.SELECT_ROM_FILE)
             }
             R.id.outputCardView -> {
+                var title = "headerless_rom.smc"
+                if (romPath.isNotBlank()) {
+                    val romName = uriParser.getFileName(Uri.parse(romPath))
+                    if (romName != null)
+                        title = makeOutputTitle(romName)
+                }
                 val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
                     type = "application/octet-stream"
-                    putExtra(Intent.EXTRA_TITLE, "headerless_rom.smc")
+                    putExtra(Intent.EXTRA_TITLE, title)
                 }
                 startActivityForResult(intent, Action.SELECT_OUTPUT_FILE)
             }
@@ -134,6 +141,12 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
         } else {
             binding.headerInfoTextView.setText(R.string.snes_rom_has_no_smc_header)
         }
+    }
+
+    private fun makeOutputTitle(romName: String): String {
+        val baseName = FilenameUtils.getBaseName(romName)
+        val ext = FilenameUtils.getExtension(romName)
+        return "$baseName [headerless].$ext"
     }
 
     override fun runAction(): Boolean {
