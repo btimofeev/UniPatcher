@@ -126,7 +126,7 @@
                     android:drawablePadding="8dp"
                     android:fontFamily="sans-serif-light"
                     android:padding="8dp"
-                    android:text="@string/main_activity_tap_to_rename"
+                    android:text="@string/main_activity_tap_to_select_where_to_save_rom"
                     android:textSize="20sp"/>
 
 

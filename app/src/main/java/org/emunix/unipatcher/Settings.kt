@@ -24,44 +24,6 @@ object Settings {
 
     private val prefs = UniPatcher.appComponent.sharedPreferences()
 
-    fun getLastRomDir(): String? {
-        return prefs.getString("last_rom_directory", null)
-    }
-
-    fun setLastRomDir(directory: String) {
-        val editor = prefs.edit()
-        editor.putString("last_rom_directory", directory)
-        editor.apply()
-    }
-
-    fun getLastPatchDir(): String? {
-        return prefs.getString("last_patch_directory", null)
-    }
-
-    fun setLastPatchDir(directory: String) {
-        val editor = prefs.edit()
-        editor.putString("last_patch_directory", directory)
-        editor.apply()
-    }
-
-    fun getRomDir(): String? {
-        return if (prefs.getBoolean("remember_last_directories", true)) {
-            getLastRomDir()
-        } else
-            prefs.getString("rom_directory", "/")
-    }
-
-    fun getPatchDir(): String? {
-        return if (prefs.getBoolean("remember_last_directories", true)) {
-            getLastPatchDir()
-        } else
-            prefs.getString("patch_directory", "/")
-    }
-
-    fun getOutputDir(): String {
-        return prefs.getString("output_directory", "") ?: ""
-    }
-
     fun getIgnoreChecksum(): Boolean {
         return prefs.getBoolean("ignore_checksum", false)
     }

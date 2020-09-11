@@ -26,7 +26,6 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.StatFs
-import android.util.DisplayMetrics
 import androidx.core.content.ContextCompat
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
@@ -34,7 +33,6 @@ import org.apache.commons.io.IOUtils
 import timber.log.Timber
 import java.io.*
 import java.util.*
-import kotlin.math.roundToInt
 
 object Utils {
 
@@ -66,11 +64,6 @@ object Utils {
 
     fun hasStoragePermission(context: Context): Boolean {
         return ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-    }
-
-    fun dpToPx(context: Context, dp: Int): Int {
-        val displayMetrics = context.resources.displayMetrics
-        return (dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT)).roundToInt()
     }
 
     fun getFreeSpace(file: File): Long {
@@ -138,9 +131,9 @@ object Utils {
     }
 
     @Throws(IOException::class)
-    fun copyToTempFile(inputStream: InputStream, context: Context): File {
+    fun copyToTempFile(context: Context, inputStream: InputStream, ext: String = ".tmp"): File {
         val tmpDir = getTempDir(context)
-        val tmpFile = File.createTempFile("file", ".tmp", tmpDir)
+        val tmpFile = File.createTempFile("file", ext, tmpDir)
         val outputStream = tmpFile.outputStream()
         outputStream.use {
             IOUtils.copy(inputStream, it)
@@ -149,11 +142,11 @@ object Utils {
     }
 
     @Throws(IOException::class, FileNotFoundException::class)
-    fun copyToTempFile(uri: Uri, context: Context): File {
+    fun copyToTempFile(context: Context, uri: Uri, ext: String = ".tmp"): File {
         val stream: InputStream = context.contentResolver.openInputStream(uri)
                 ?: throw IOException("Unable to open ${uri}: content resolver returned null")
         try {
-            return copyToTempFile(stream, context)
+            return copyToTempFile(context, stream, ext)
         } finally {
             IOUtils.closeQuietly(stream)
         }

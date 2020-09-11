@@ -62,17 +62,6 @@ IPS format patches do not contain a checksum. Therefore, the patch will apply to
 
 ECM is a data compression format designed specifically for disc images. You can decompress the file using [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver) program.
 
-#### The app shows the error: "Could not copy file".
-
-The error occurs on some devices with Android 4.4+ having an external SD card. Android does not allow applications to write data to a SD card on these devices (a detailed description of the problem [here](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
-
-There are several ways to solve this problem:
-
-- Do not apply patches to the ROM file located on the external SD card. Just move the ROM file into the internal memory of the device.
-- Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
-- Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
-- Install [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) application (requires ROOT access).
-
 #### The app shows the error: "File have the wrong checksum after it was patched".
 
 Maybe it's a bug in my program. Please contact me at [e-mail](mailto:unipatcher@gmail.com) and attach the patch to the letter.

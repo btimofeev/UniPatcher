@@ -12,15 +12,12 @@
     <string name="main_activity_rom_with_smc_file">ROM file with SMC header</string>
     <string name="main_activity_rom_without_smc_file">Output headerless ROM file</string>
     <string name="main_activity_tap_to_select">tap to select</string>
-    <string name="main_activity_tap_to_rename">tap to rename</string>
     <string name="main_activity_tap_to_select_where_to_save_patch">tap to select where to save the patch</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">tap to select where to save ROM</string>
-    <string name="main_activity_toast_rom_and_patch_not_selected">The ROM and the patch files is not selected</string>
     <string name="main_activity_toast_rom_not_selected">No ROM file selected</string>
     <string name="main_activity_toast_patch_not_selected">No patch file selected</string>
     <string name="main_activity_toast_output_not_selected">No output file selected</string>
     <string name="main_activity_toast_archives_not_supported">Archive should be unpacked in an external program</string>
-    <string name="main_activity_toast_file_manager_did_not_return_file_path">Error: file manager did not return file path</string>
     <string name="main_activity_donate_snackbar_text">Support the development of UniPatcher by making a donation</string>
     <string name="main_activity_donate_snackbar_button">Donate</string>
 
@@ -82,8 +79,6 @@
     <string name="notify_error_could_not_copy_file">Could not copy file</string>
     <string name="notify_error_file_not_found">File not found</string>
     <string name="notify_error_not_enough_space">Not enough space on the disk</string>
-    <string name="notify_error_unable_to_create_directory">Unable to create directory %1$s</string>
-    <string name="notify_error_unable_to_write_to_directory">Unable to write to directory %1$s</string>
     <string name="notify_error_not_ips_patch">Not a valid IPS patch</string>
     <string name="notify_error_not_ups_patch">Not a valid UPS patch</string>
     <string name="notify_error_not_bps_patch">Not a valid BPS patch</string>
@@ -125,13 +120,6 @@
     <string name="settings_theme_name_dark">Dark</string>
     <string name="settings_theme_name_auto_battery">Set by Battery Saver</string>
     <string name="settings_theme_name_follow_system">Use system default</string>
-    <string name="settings_theme_message_restart_app">Please restart the application</string>
-    <string name="settings_directories_header">Directories</string>
-    <string name="settings_remember_last_directories">Remember last opened directories</string>
-    <string name="settings_rom_directory">Specify ROM\'s directory</string>
-    <string name="settings_patch_directory">Specify patches directory</string>
-    <string name="settings_output_directory">Specify output directory</string>
-    <string name="settings_output_directory_description">Otherwise ROM will be stored in the ROM directory</string>
     <string name="settings_patching_header">Patching</string>
     <string name="settings_ignore_checksum">Ignore checksums</string>
     <string name="settings_ignore_checksum_description">Do not interrupt patching if you use the wrong ROM. Use caution: This option can break your game.</string>
