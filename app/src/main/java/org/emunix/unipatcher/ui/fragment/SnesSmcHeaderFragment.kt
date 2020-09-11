@@ -146,7 +146,7 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
             return false
         }
         val intent = Intent(activity, WorkerService::class.java)
-        intent.putExtra("action", Action.SNES_DELETE_SMC_HEADER)
+        intent.putExtra("action", Action.SNES_REMOVE_SMC_HEADER)
         intent.putExtra("romPath", romPath)
         intent.putExtra("outputPath", outputPath)
         startForegroundService(requireActivity(), intent)

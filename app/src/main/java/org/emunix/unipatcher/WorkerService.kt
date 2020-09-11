@@ -66,7 +66,7 @@ class WorkerService : IntentService("WorkerService") {
                 Action.APPLY_PATCH -> actionPatching(intent)
                 Action.CREATE_PATCH -> actionCreatePatch(intent)
                 Action.SMD_FIX_CHECKSUM -> actionSmdFixChecksum(intent)
-                Action.SNES_DELETE_SMC_HEADER -> actionSnesDeleteSmcHeader(intent)
+                Action.SNES_REMOVE_SMC_HEADER -> actionSnesDeleteSmcHeader(intent)
             }
         } finally {
             wakeLock.release()

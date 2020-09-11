@@ -30,6 +30,5 @@ object Action {
     const val APPLY_PATCH = 101
     const val CREATE_PATCH = 102
     const val SMD_FIX_CHECKSUM = 103
-    const val SNES_ADD_SMC_HEADER = 104
-    const val SNES_DELETE_SMC_HEADER = 105
+    const val SNES_REMOVE_SMC_HEADER = 104
 }
