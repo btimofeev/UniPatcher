@@ -7,7 +7,8 @@
             android:entries="@array/theme_names"
             android:entryValues="@array/theme_values"
             android:key="theme"
-            android:title="@string/settings_theme"/>
+            android:title="@string/settings_theme"
+            android:icon="@drawable/theme_light_dark_24dp"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/settings_patching_header">
@@ -15,6 +16,7 @@
             android:defaultValue="false"
             android:key="ignore_checksum"
             android:title="@string/settings_ignore_checksum"
-            android:summary="@string/settings_ignore_checksum_description"/>
+            android:summary="@string/settings_ignore_checksum_description"
+            android:icon="@drawable/fingerprint"/>
     </PreferenceCategory>
 </PreferenceScreen>
