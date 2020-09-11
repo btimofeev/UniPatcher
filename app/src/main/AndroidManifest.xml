@@ -4,8 +4,6 @@
           android:installLocation="auto">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application
@@ -27,10 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".ui.activity.FilePickerActivity"
-            android:label="@string/file_picker_activity_title"/>
 
         <activity
             android:name=".ui.activity.SettingsActivity"

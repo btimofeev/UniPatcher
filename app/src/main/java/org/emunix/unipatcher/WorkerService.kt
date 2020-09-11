@@ -50,12 +50,6 @@ class WorkerService : IntentService("WorkerService") {
     override fun onHandleIntent(intent: Intent?) {
         UniPatcher.appComponent.inject(this)
 
-        // if user deny write storage permission
-        if (!Utils.hasStoragePermission(this)) {
-            showErrorNotification(getString(R.string.permissions_storage_error_notify_access_denied))
-            return
-        }
-
         val powerManager = getSystemService(Context.POWER_SERVICE) as PowerManager
         val wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "UniPatcher:service")
         wakeLock.acquire()
