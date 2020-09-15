@@ -122,7 +122,7 @@
                     android:id="@+id/outputNameTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/pencil"
+                    android:drawableStart="@drawable/folder"
                     android:drawablePadding="8dp"
                     android:fontFamily="sans-serif-light"
                     android:padding="8dp"
