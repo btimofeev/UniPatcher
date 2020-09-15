@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2016, 2018 Boris Timofeev
+ Copyright (c) 2016, 2018, 2020 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -65,6 +65,8 @@ class BPS(context: Context, patch: File, rom: File, output: File) : Patcher(cont
         val outputSize = decoded.component1()
         if (outputSize > Int.MAX_VALUE)
             throw PatchException("The output file is too large.")
+        if (outputSize < 0)
+            throw PatchException(context.getString(R.string.notify_error_patch_corrupted))
         patchPos = decoded.component2()
         val output = ByteArray(outputSize)
         var outputPos = 0
@@ -127,6 +129,8 @@ class BPS(context: Context, patch: File, rom: File, output: File) : Patcher(cont
     }
 
     private fun decode(array: ByteArray, pos: Int): Pair<Int, Int> {
+        if (pos < 0)
+            throw PatchException(context.getString(R.string.notify_error_patch_corrupted))
         var newPos = pos
         var offset = 0
         var shift = 1
@@ -148,6 +152,8 @@ class BPS(context: Context, patch: File, rom: File, output: File) : Patcher(cont
         val realPatchCrc = crc.value
 
         var index = array.size - 12
+        if (index < 0)
+            throw PatchException(context.getString(R.string.notify_error_patch_corrupted))
 
         var inputCrc: Long = 0
         for (i in 0..3) {

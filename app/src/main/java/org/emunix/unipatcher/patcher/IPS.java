@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013, 2016, 2017 Boris Timofeev
+Copyright (C) 2013, 2016, 2017, 2020 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -125,12 +125,14 @@ public class IPS extends Patcher {
 
                 size = (patchStream.read() << 8) + patchStream.read();
                 if (size != 0) {
+                    if (size < 0) throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
                     byte[] data = new byte[(int)size];
                     patchStream.read(data);
                     outputStream.write(data);
                     outPos += size;
                 } else { // RLE
                     size = (patchStream.read() << 8) + patchStream.read();
+                    if (size < 0) throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
                     byte val = (byte) patchStream.read();
                     byte[] data = new byte[(int)size];
                     Arrays.fill(data, val);
@@ -142,6 +144,7 @@ public class IPS extends Patcher {
                     if (romPos + size > romSize) {
                         romPos = romSize;
                     } else {
+                        if (size < 0) throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
                         byte[] buf = new byte[(int)size];
                         romStream.read(buf);
                         romPos += size;
