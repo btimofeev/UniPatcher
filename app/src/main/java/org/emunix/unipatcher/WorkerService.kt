@@ -20,26 +20,19 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher
 
 import android.app.IntentService
-import android.app.NotificationManager
-import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.PowerManager
 import android.provider.DocumentsContract
-import androidx.core.app.NotificationCompat
 import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.helpers.UriParser
 import org.emunix.unipatcher.patcher.*
 import org.emunix.unipatcher.tools.CreateXDelta3
 import org.emunix.unipatcher.tools.SmdFixChecksum
 import org.emunix.unipatcher.tools.SnesSmcHeader
-import org.emunix.unipatcher.ui.activity.MainActivity
-import org.emunix.unipatcher.ui.notify.CreatePatchNotify
-import org.emunix.unipatcher.ui.notify.PatchingNotify
-import org.emunix.unipatcher.ui.notify.SmdFixChecksumNotify
-import org.emunix.unipatcher.ui.notify.SnesDeleteSmcHeaderNotify
+import org.emunix.unipatcher.ui.notify.*
 import java.io.File
 import javax.inject.Inject
 
@@ -101,7 +94,7 @@ class WorkerService : IntentService("WorkerService") {
             FileUtils.deleteQuietly(outputFile)
             FileUtils.deleteQuietly(romFile)
             FileUtils.deleteQuietly(patchFile)
-            stopForeground(true)
+            stopForeground(notify)
         }
         notify.showResult(errorMsg)
     }
@@ -131,7 +124,7 @@ class WorkerService : IntentService("WorkerService") {
             errorMsg = e.message
             DocumentsContract.deleteDocument(contentResolver, patchUri)
         } finally {
-            stopForeground(true)
+            stopForeground(notify)
         }
         notify.showResult(errorMsg)
     }
@@ -155,7 +148,7 @@ class WorkerService : IntentService("WorkerService") {
             errorMsg = e.message
             FileUtils.deleteQuietly(tmpFile)
         } finally {
-            stopForeground(true)
+            stopForeground(notify)
         }
         notify.showResult(errorMsg)
     }
@@ -188,28 +181,17 @@ class WorkerService : IntentService("WorkerService") {
         } finally {
             FileUtils.deleteQuietly(outputFile)
             FileUtils.deleteQuietly(romFile)
-            stopForeground(true)
+            stopForeground(notify)
         }
         notify.showResult(errorMsg)
     }
 
-    private fun showErrorNotification(text: String) {
-        val notificationIntent = Intent(this, MainActivity::class.java)
-        val nm = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val notify = NotificationCompat.Builder(this, UniPatcher.NOTIFICATION_CHANNEL_ID)
-                .setContentTitle(getString(R.string.notify_error))
-                .setContentText(text)
-                .setSmallIcon(R.drawable.ic_gamepad_variant_white_24dp)
-                .setContentIntent(PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT))
-                .setAutoCancel(true)
-                .setStyle(NotificationCompat.BigTextStyle()
-                        .bigText(text))
-                .build()
-
+    private fun stopForeground(notify: Notify) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-            nm.notify(32768, notify)
+            stopForeground(true)
+            notify.setSticked(false)
+            notify.show()
         } else {
-            startForeground(32768, notify)
             stopForeground(STOP_FOREGROUND_DETACH)
         }
     }
