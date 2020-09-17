@@ -11,8 +11,8 @@
     <color name="colorCardBackground">@android:color/white</color>
 
     <color name="colorDrawerText">#8a000000</color>
-
-    <color name="colorIcon">#757575</color>
+    <color name="colorDrawerSelectedText">#f2777a</color>
+    <color name="colorDrawerSelector">#FFEBEE</color>
 
     <color name="colorToolbarBackground">@android:color/white</color>
     <color name="colorToolbarText">@android:color/black</color>

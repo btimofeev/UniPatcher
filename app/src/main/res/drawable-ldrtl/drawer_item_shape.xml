@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:left="8dp">
+        <shape
+            android:shape="rectangle"
+            android:tint="@color/colorDrawerSelector">
+            <corners
+                android:bottomLeftRadius="32dp"
+                android:topLeftRadius="32dp" />
+        </shape>
+    </item>
+</layer-list>
