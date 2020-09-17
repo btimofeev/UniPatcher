@@ -50,6 +50,10 @@ ROM hackers often publish checksum of the accompanying ROM file (on a web page o
 
 In the worst case, if you can not find the correct ROM file, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
 
+#### I can't patch "Super Mario World (U) [!].smc"
+
+This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.
+
 #### I can not find the correct ROM for the game "Pokémon Emerald".
 
 Most of the patches of the game work with ROM "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
@@ -61,10 +65,6 @@ IPS format patches do not contain a checksum. Therefore, the patch will apply to
 #### What can I do with .ECM file type?
 
 ECM is a data compression format designed specifically for disc images. You can decompress the file using [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver) program.
-
-#### The app shows the error: "File have the wrong checksum after it was patched".
-
-Maybe it's a bug in my program. Please contact me at [e-mail](mailto:unipatcher@gmail.com) and attach the patch to the letter.
 
 #### Has UniPatcher some additional features?
 
