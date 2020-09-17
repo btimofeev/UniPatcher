@@ -24,6 +24,10 @@ object Settings {
 
     private val prefs = UniPatcher.appComponent.sharedPreferences()
 
+    fun getShowHelpButton(): Boolean {
+        return prefs.getBoolean("show_how_to_use_app_button", true)
+    }
+
     fun getIgnoreChecksum(): Boolean {
         return prefs.getBoolean("ignore_checksum", false)
     }

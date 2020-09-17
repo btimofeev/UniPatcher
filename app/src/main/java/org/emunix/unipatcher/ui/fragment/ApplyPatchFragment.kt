@@ -31,6 +31,7 @@ import org.emunix.unipatcher.*
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.databinding.ApplyPatchFragmentBinding
 import org.emunix.unipatcher.helpers.UriParser
+import org.emunix.unipatcher.ui.activity.HelpActivity
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -63,6 +64,13 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
         binding.patchCardView.setOnClickListener(this)
         binding.romCardView.setOnClickListener(this)
         binding.outputCardView.setOnClickListener(this)
+        binding.howToUseAppButton.setOnClickListener(this)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!Settings.getShowHelpButton())
+            binding.howToUseAppButton.visibility = View.GONE
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
@@ -116,6 +124,10 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
                     putExtra(Intent.EXTRA_TITLE, title)
                 }
                 startActivityForResult(intent, Action.SELECT_OUTPUT_FILE)
+            }
+            R.id.howToUseAppButton -> {
+                val helpIntent = Intent(requireContext(), HelpActivity::class.java)
+                startActivity(helpIntent)
             }
         }
     }

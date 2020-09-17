@@ -134,5 +134,19 @@
 
         </androidx.cardview.widget.CardView>
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/howToUseAppButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:padding="16dp"
+            android:text="@string/main_activity_button_how_to_use_app"
+            android:textColor="@color/colorCardHeaderText"
+            android:layout_gravity="center_horizontal"
+            app:icon="@drawable/book"
+            app:iconTint="@color/colorCardHeaderText"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
     </LinearLayout>
 </ScrollView>
