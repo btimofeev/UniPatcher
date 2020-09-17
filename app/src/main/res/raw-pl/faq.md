@@ -50,6 +50,10 @@ ROM hackers often publish checksum of the accompanying ROM file (on a web page o
 
 In the worst case, if you can not find the correct ROM file, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
 
+#### I can't patch "Super Mario World (U) [!].smc"
+
+This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.
+
 #### I can not find the correct ROM for the game "Pokémon Emerald".
 
 Większość łatek do gry "Pokémon - Emerald Version" działa z ROM-em "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
@@ -61,21 +65,6 @@ IPS format patches do not contain a checksum. Therefore, the patch will apply to
 #### Co mogę zrobić z typem pliku .ECM?
 
 ECM jest formatem skompresowanego pliku specyficznego dla image-ów z dysku. Możesz go zdekompresować używając [ZArchiver] (http://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
-
-#### Aplikacja wyświetla błąd: "Nie można skopiować pliku".
-
-The error occurs on some devices with Android 4.4+ having an external SD card. Android does not allow applications to write data to a SD card on these devices (a detailed description of the problem [here](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
-
-There are several ways to solve this problem:
-
-- Do not apply patches to the ROM file located on the external SD card. Just move the ROM file into the internal memory of the device.
-- Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
-- Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
-- Zainstaluj [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) aplikację [Wymaga dostępu do ROOT (Jeżeli nie wiesz co to ROOT, albo nie wiesz ja zrootować swoję urządzenie sprawdź https://www.xda-developers.com)].
-
-#### Aplikacja wyświetla błąd: "Plik ma złą sumę kontrolną po złatkowaniu".
-
-Może jest to bug w moim programie. Proszę skontaktuj się ze mną przez [e-mail] (mailto:unipatcher@gmail.com) i załącz łatkę w liście.
 
 #### Czy UniPatcher ma dodatkowe funkcje?
 

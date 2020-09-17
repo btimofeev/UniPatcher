@@ -50,6 +50,10 @@ ROM 修改者经常随 ROM 文件同时公开校验和 (在网页或 README 文�
 
 最坏的情况，如果你不能找到正确的 ROM 文件，那你可以在设置里开启选项“无视校验和”，但请记住在这种情况下游戏可能会含有 bug，甚至根本不能玩。
 
+#### I can't patch "Super Mario World (U) [!].smc"
+
+This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.
+
 #### 我不能为游戏“口袋妖怪 翡翠”找到正确的 ROM。
 
 Most of the patches of the game work with ROM "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
@@ -61,21 +65,6 @@ IPS 格式的补丁不含校验和，因此，它可以应用到任何 ROM 文�
 #### 我该怎么处理 .ECM 文件类型？
 
 ECM 是一种为光盘特制的数据压缩格式，你可以用 [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver) 解压它。
-
-#### 应用告知错误：“不能复制文件”。
-
-该错误在某些安装了 Android 4.4 以上且有外部 SD 卡的设备上出现。对这些设备，Android 不允许应用将数据写入到 SD 卡中（对于此问题的详细说明 [在此](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)）
-
-解决此问题的办法有：
-
-- 不要对外部 SD 卡中的 ROM 文件应用补丁，将 ROM 文件移动到设备的内存中。
-- 在设置中指定输出目录为设备内存的任一目录。
-- 在设置中指定路径到外部 SD 卡目录 **Android/data/org.emunix.unipatcher/** 作为输出目录。
-- 安装 [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) 应用（需要 ROOT 权限）。
-
-#### 应用告知错误：“集成补丁后的文件校验和错误”。
-
-可能是程序中的 bug，请联系我 [e-mail](mailto:unipatcher@gmail.com) 并在邮件里附上补丁。
 
 #### UniPatcher 有什么附加功能吗？
 

@@ -50,6 +50,10 @@ Les hackers de ROMs publient souvent le checksum de la ROM qui va avec (sur une 
 
 Dans le pire des cas si vous ne trouvez pas la ROM correcte, vous pouvez choisir l'option "Ignorer le checksum" dans les paramètres. Mais gardez à l'esprit que dans ce cas, le jeu pourra contenir des bugs ou être totalement injouable.
 
+#### I can't patch "Super Mario World (U) [!].smc"
+
+This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.
+
 #### Je ne parviens pas à trouver la bonne ROM pour le jeu "Pokémon Emeraude".
 
 La majorité des patchs de ce jeu fonctionne avec la ROM "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba"
@@ -61,21 +65,6 @@ Les patchs au format IPS ne contiennent pas de checksum. De ce fait, le patch s'
 #### Que faire avec un fichier au format .ECM ?
 
 Le format ECM est un format de compression de données conçu exclusivement pour les images disque. Vous pouvez décompresser le fichier en utilisant l'appli [ZArchiver] (https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
-
-#### L'appli affiche ce message : "Impossible de copier le fichier".
-
-Cette erreur arrive avec certains appareils sous Android 4.4 ou ultérieur, possédant une carte SD externe. Android n'autorise pas les applications à créer des données sur une carte SD sous ces appareils (une présentation plus détaillée de ce problème [ici, en anglais] (http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
-
-Il y a plusieurs moyens de résoudre ce problème :
-
-- N'appliquez pas de patchs à une ROM qui se trouve sur une carte SD externe. Déplacez simplement la ROM vers la mémoire interne de l'appareil.
-- Le dossier où se trouvent les ROMs patchées (indiqué dans les paramètres) doit se trouver dans la mémoire interne de l'appareil.
-- Ou alors, le dossier des ROMs patchées doit, sur une carte SD externe, être **Android/data/org.emunix.unipatcher/** (à modifier dans les paramètres). 
-- Installez l'appli [SDFix] (https://play.google.com/store/apps/details?id=nextapp.sdfix) (Root nécessaire)
-
-#### L'appli affiche ce message : "Le fichier possède un mauvais checksum après avoir été patché".
-
-Il s'agit peut-être un bug dans mon programme. Envoyez-moi un [mail](mailto:unipatcher@gmail.com) avec votre patch en pièce jointe.
 
 #### Est-ce qu'UniPatcher a des fonctionnalités supplémentaires ?
 

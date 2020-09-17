@@ -50,6 +50,10 @@ ROM のハッカーは、付随する ROM ファイルのチェックサムを (
 
 最悪の場合、正しいROMファイルを見つけられない場合は、設定で "チェックサムを無視する" オプションを設定することができます。 しかし、この場合、ゲームにバグが含まれてたり、完全にはプレイできない可能性があることにご注意ください。
 
+#### I can't patch "Super Mario World (U) [!].smc"
+
+This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.
+
 #### ゲーム "ポケモンエメラルド" の正しい ROM を見つけることができません。
 
 ゲームのパッチのほとんどは、ROM "ポケモン - エメラルドバージョン (U) \[f1\] (Save Type).gba" で動作します。
@@ -61,21 +65,6 @@ IPS 形式のパッチにはチェックサムが含まれていません。 し
 #### .ECM ファイル形式で何ができますか?
 
 ECM は、ディスクイメージ専用に設計されたデータ圧縮形式です。 次のプログラムを使用してファイルを解凍することができます [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver) 。
-
-#### アプリがエラーを表示します: 「ファイルをコピーできませんでした」。
-
-このエラーは、一部の外部SDカードを搭載したAndroid 4.4以降のデバイスで発生します。 Androidは、アプリケーションでこれらのデバイスのSDカードにデータを書き込むことができません (詳細については [こちら](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/))。
-
-この問題を解決する方法はいくつかあります:
-
-- 外部SDカードにあるROMファイルにパッチを適用しない。 ROMファイルをデバイスの内部メモリに移動するだけです。
-- 出力ディレクトリとして、デバイスの内部メモリの任意のディレクトリへのパスを指定します (設定で)。
-- 出力ディレクトリとして外部SDカードの **Android/data/org.emunix.unipatcher/** ディレクトリへのパスを指定します (設定で)。
-- [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) アプリケーションをインストールします (ROOT アクセスが必要です)。
-
-#### アプリがエラーを表示します: 「ファイルにパッチを当てた後、チェックサムが間違っています」。
-
-プログラムのバグかもしれません。[e-mail](mailto:unipatcher@gmail.com) に連絡してください。 メールにパッチを添付してください。
 
 #### UniPatcher には追加機能がありますか?
 

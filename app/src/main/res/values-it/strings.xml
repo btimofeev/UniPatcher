@@ -10,39 +10,13 @@
     <string name="main_activity_patch_file">File patch</string>
     <string name="main_activity_output_file">File di Output</string>
     <string name="main_activity_tap_to_select">premi per selezionare</string>
-    <string name="main_activity_tap_to_rename">premi per rinominare</string>
-    <string name="main_activity_toast_rom_and_patch_not_selected">I file ROM e patch non sono selezionati</string>
     <string name="main_activity_toast_rom_not_selected">La ROM non è selezionata</string>
     <string name="main_activity_toast_patch_not_selected">La patch non è selezionata</string>
     <string name="main_activity_toast_archives_not_supported">L\'archivio dovrebbe essere decompresso in un programma esterno</string>
-    <!-- Rename dialog -->
-    <string name="dialog_rename_title">Rinomina</string>
-    <string name="dialog_rename_ok">OK</string>
-    <string name="dialog_rename_cancel">Cancella</string>
-    <string name="dialog_rename_error_invalid_chars">Simbolo non valido /</string>
     <string name="create_patch_fragment_patch_file">File patch</string>
     <string name="snes_smc_header_will_be_removed">Questa ROM ha l\'intestazione SMC. Verrà rimossa.</string>
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">Questa caratteristica è solo per le ROM del Sega Mega Drive (Sega Genesis).\n\nlt risolve \"lo schermo rosso della morte\".\n\nAttenzione: questa funzione non crea un backup.</string>
-
-    <!-- File picker title -->
-    <string name="file_picker_activity_title">Seleziona file</string>
-    <string name="file_picker_activity_title_select_rom">Seleziona il file ROM</string>
-    <string name="file_picker_activity_title_select_patch">Seleziona il file di patch</string>
-    <string name="file_picker_activity_title_select_header">Scegli il file di intestazione</string>
-    <string name="file_picker_activity_error_unable_read_dir">Impossibile leggere la cartella %1$s</string>
-
-    <!-- File properties dialog -->
-    <string name="file_properties_dialog_title">Proprietà</string>
-    <string name="file_properties_dialog_name">Nome:</string>
-    <string name="file_properties_dialog_path">Percorso:</string>
-    <string name="file_properties_dialog_size">Dimensione:</string>
-    <string name="file_properties_dialog_size_value">%1$s (%2$d bytes)</string>
-    <string name="file_properties_dialog_crc32">CRC32:</string>
-    <string name="file_properties_dialog_sha1">SHA1:</string>
-    <string name="file_properties_dialog_md5">MD5:</string>
-    <string name="file_properties_dialog_close_button">Chiudi:</string>
-    <string name="file_properties_dialog_wait_message">Attendi prego&#8230;</string>
 
     <!-- Notifications -->
     <string name="notify_applying_patch">Applicando la patch</string>
@@ -78,8 +52,6 @@
     <string name="notify_snes_delete_smc_header_in_progress">Elimina l\'intestazione SMC</string>
     <string name="notify_snes_delete_smc_header_stared_check_noify">Cancellazione intestazione SMC iniziata. Controlla l\'area di notifica</string>
 
-    <!-- Permissions -->
-    <string name="permissions_storage_error_info">L\'app non ha il permesso di leggere/scrivere file. Senza questo permesso UniPatcher non funziona correttamente.</string>
     <!-- Settings -->
     <string name="settings_activity_title">Impostazioni</string>
     <string name="settings_interface_header">Interfaccia utente</string>
@@ -87,18 +59,12 @@
     <string name="settings_theme_dialog_title">Seleziona tema</string>
     <string name="settings_theme_name_light">Chiaro</string>
     <string name="settings_theme_name_dark">Scuro</string>
-    <string name="settings_theme_message_restart_app">Per favore riavvia l\'applicazione</string>
-    <string name="settings_directories_header">Cartelle</string>
-    <string name="settings_remember_last_directories">Ricorda le ultime cartelle aperte</string>
-    <string name="settings_rom_directory">Specifica la cartella del ROM</string>
-    <string name="settings_patch_directory">Specifica le cartelle delle patch</string>
     <!-- Help activity -->
     <string name="help_activity_title">Aiuto</string>
     <string name="help_activity_faq_tab_title">FAQ</string>
     <string name="help_activity_about_tab_title">A proposito</string>
     <string name="help_activity_about_tab_version">Versione %1$s</string>
     <string name="help_activity_about_tab_license">Licensa: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2018</string>
     <string name="help_activity_action_send_feedback">Invia feedback</string>
     <string name="help_activity_action_visit_site">Visita sito web</string>
     <string name="help_activity_action_changelog">Registro delle modifiche</string>

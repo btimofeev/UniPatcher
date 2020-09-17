@@ -10,53 +10,20 @@
     <string name="main_activity_patch_file">Patch</string>
     <string name="main_activity_output_file">ROM patchée</string>
     <string name="main_activity_tap_to_select">Parcourir</string>
-    <string name="main_activity_tap_to_rename">Renommer le fichier</string>
-    <string name="main_activity_toast_rom_and_patch_not_selected">La ROM et le patch ne sont pas sélectionnés.</string>
     <string name="main_activity_toast_rom_not_selected">Aucune ROM n\'est sélectionnée.</string>
     <string name="main_activity_toast_patch_not_selected">Aucun patch n\'est sélectionné.</string>
     <string name="main_activity_toast_archives_not_supported">L\'archive devrait d\'abord être extraite à l\'aide d\'une autre appli.</string>
     <string name="main_activity_donate_snackbar_text">Soutenez le développement d\'UniPatcher en faisant un don</string>
     <string name="main_activity_donate_snackbar_button">Faire un don</string>
-
-    <!-- Rename dialog -->
-    <string name="dialog_rename_title">Renommer</string>
-    <string name="dialog_rename_ok">OK</string>
-    <string name="dialog_rename_cancel">Annuler</string>
-    <string name="dialog_rename_error_same_name">Le nom de la ROM patchée doit être différent de la ROM originale.</string>
-    <string name="dialog_rename_error_invalid_chars">Caractère interdit /</string>
-    <string name="dialog_rename_error_empty_name">Le nom du fichier ne peut pas être vide.</string>
-
     <!-- Create patch fragment -->
     <string name="create_patch_fragment_source_file">Fichier source</string>
     <string name="create_patch_fragment_modified_file">Fichier modifié</string>
     <string name="create_patch_fragment_patch_file">Patch</string>
-    <string name="create_patch_fragment_toast_source_and_modified_not_selected">Le fichier source et le fichier modifié ne sont pas sélectionnés.</string>
     <string name="create_patch_fragment_toast_source_not_selected">Le fichier source n\'est pas sélectionné.</string>
     <string name="create_patch_fragment_toast_modified_not_selected">Le fichier modifié n\'est pas sélectionné.</string>
     <string name="snes_smc_header_will_be_removed">Cette ROM a un en-tête SMC. Il sera supprimé.</string>
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">Cette fonctionnalité ne concerne que les ROMs Sega Mega Drive (Sega Genesis).\n\nIl permet de corriger le problème de \"l\'écran rouge\".\n\nAttention : cette fonctionnalité ne fait pas de backups.</string>
-
-    <!-- File picker title -->
-    <string name="file_picker_activity_title">Sélectionner un fichier</string>
-    <string name="file_picker_activity_title_select_rom">Sélectionner une ROM</string>
-    <string name="file_picker_activity_title_select_patch">Sélectionner un patch</string>
-    <string name="file_picker_activity_title_select_source_file">Sélectionner un fichier source</string>
-    <string name="file_picker_activity_title_select_modified_file">Sélectionner le fichier modifié</string>
-    <string name="file_picker_activity_title_select_header">Sélectionner l\'en-tête</string>
-    <string name="file_picker_activity_error_unable_read_dir">Impossible d\'accéder au dossier %1$s</string>
-
-    <!-- File properties dialog -->
-    <string name="file_properties_dialog_title">Propriétés</string>
-    <string name="file_properties_dialog_name">Nom :</string>
-    <string name="file_properties_dialog_path">Adresse :</string>
-    <string name="file_properties_dialog_size">Taille :</string>
-    <string name="file_properties_dialog_size_value">%1$s (%2$d octets)</string>
-    <string name="file_properties_dialog_crc32">CRC32 :</string>
-    <string name="file_properties_dialog_sha1">SHA1 :</string>
-    <string name="file_properties_dialog_md5">MD5 :</string>
-    <string name="file_properties_dialog_close_button">Fermer</string>
-    <string name="file_properties_dialog_wait_message">Veuillez patienter&#8230;</string>
 
     <!-- Notifications -->
     <string name="notify_applying_patch">Application du patch en cours...</string>
@@ -70,8 +37,6 @@
     <string name="notify_error_could_not_copy_file">Impossible de copier le fichier.</string>
     <string name="notify_error_file_not_found">Fichier introuvable.</string>
     <string name="notify_error_not_enough_space">Pas assez d\'espace sur le disque.</string>
-    <string name="notify_error_unable_to_create_directory">Impossible de créer le dossier %1$s</string>
-    <string name="notify_error_unable_to_write_to_directory">Impossible de modifier le dossier %1$s</string>
     <string name="notify_error_not_ips_patch">Fichier IPS invalide.</string>
     <string name="notify_error_not_ups_patch">Fichier UPS invalide.</string>
     <string name="notify_error_not_bps_patch">Fichier BPS invalide.</string>
@@ -99,10 +64,6 @@
     <string name="notify_snes_delete_smc_header_complete">En-tête SMC supprimé !</string>
     <string name="notify_snes_delete_smc_header_stared_check_noify">La suppression de l\'en-tête SMC a débuté. Surveillez la barre de notifications.</string>
 
-    <!-- Permissions -->
-    <string name="permissions_storage_error_info">L\'appli n\'est pas autorisée à lire et modifier les fichiers. Sans cette permission, UniPatcher ne pourra pas fonctionner correctement.</string>
-    <string name="permissions_storage_error_notify_access_denied">Accès au fichier refusé.</string>
-
     <!-- Settings -->
     <string name="settings_activity_title">Paramètres</string>
     <string name="settings_interface_header">Interface utilisateur</string>
@@ -110,13 +71,6 @@
     <string name="settings_theme_dialog_title">Sélectionner l\'apparence</string>
     <string name="settings_theme_name_light">Clair</string>
     <string name="settings_theme_name_dark">Sombre</string>
-    <string name="settings_theme_message_restart_app">Pensez à redémarrer l\'application.</string>
-    <string name="settings_directories_header">Dossiers</string>
-    <string name="settings_remember_last_directories">Se souvenir des derniers dossiers ouverts</string>
-    <string name="settings_rom_directory">Sélectionner le dossier contenant les ROMs</string>
-    <string name="settings_patch_directory">Sélectionner le dossier contenant les patchs</string>
-    <string name="settings_output_directory">Sélectionner le dossier des ROMs patchées</string>
-    <string name="settings_output_directory_description">Sinon, la ROM patchée sera au même endroit que la ROM originale</string>
     <string name="settings_patching_header">Patch</string>
     <string name="settings_ignore_checksum">Ignorer les checksums</string>
     <string name="settings_ignore_checksum_description">Le patch ne sera pas interrompu si vous utilisez une ROM incompatible. Attention : cette option peut rendre la ROM injouable.</string>
@@ -127,7 +81,6 @@
     <string name="help_activity_about_tab_title">À propos</string>
     <string name="help_activity_about_tab_version">Version %1$s</string>
     <string name="help_activity_about_tab_license">Licence : GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">&#169; Boris Timofeev, 2013&#8211;2018</string>
     <string name="help_activity_action_send_feedback">Envoyer un commentaire</string>
     <string name="help_activity_action_visit_site">Site Internet</string>
     <string name="help_activity_action_changelog">Nouveautés</string>
