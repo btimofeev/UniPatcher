@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding.navigationView.setNavigationItemSelectedListener(this)
         if (savedInstanceState == null) {
             replaceFragment(NavigateTo.APPLY_PATCH)
+            binding.navigationView.menu.getItem(0).isChecked = true
         }
         showDonateSnackbar()
     }
