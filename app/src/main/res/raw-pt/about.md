@@ -28,5 +28,4 @@ Recursos adicionais:
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) por John Casey, licenseado sob a licensa Apache 2.0.
 - [**Ícones Material Design**](https://github.com/google/material-design-icons) por Google, licenciado sob a licença Apache 2.0.
 - [**Ícones do material design**](https://materialdesignicons.com) por comunidade, licenseado sob a SIL Open Font License 1.1.
-- [**Material Dialogs**](https://github.com/afollestad/material-dialogs) por Aidan Follestad, licenseado sob a The MIT license.
 - [**XDelta versão 3**](https://github.com/jmacd/xdelta) por Joshua MacDonald, licenseado sob a licensa Apache 2.0.

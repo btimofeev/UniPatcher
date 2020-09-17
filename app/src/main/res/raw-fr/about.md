@@ -28,5 +28,4 @@ Fonctionnalités supplémentaires :
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) par John Casey, sous la licence Apache 2.0.
 - [**Design des icônes**](https://github.com/google/material-design-icons) par Google, sous la licence Apache 2.0.
 - [**Material design icons**](https://materialdesignicons.com) par la communauté, sous la SIL Open Font License 1.1.
-- [**Material Dialogs**](https://github.com/afollestad/material-dialogs) par Aidan Follestad, sous la licence The MIT.
 - [**XDelta version 3**](https://github.com/jmacd/xdelta) par Joshua MacDonald, sous la licence Apache 2.0.

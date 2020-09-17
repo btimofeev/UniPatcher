@@ -28,5 +28,4 @@
 - [**마크다운4J**](https://github.com/jdcasey/markdown4j) by John Casey, 아파치 2.0 라이선스에 의해 라이선스됨.
 - [**머티리얼 디자인 아이콘**](https://github.com/google/material-design-icons) by Google, 아파치 2.0 라이선스에 의해 라이선스됨.
 - [**머티리얼 디자인 아이콘**](https://materialdesignicons.com) by community, SIL 오픈 폰트 라이선스 1.1에 의해 라이선스됨.
-- [**머티리얼 대화 상자**](https://github.com/afollestad/material-dialogs) by Aidan Follestad, MIT 라이선스에 의해 라이선스됨.
 - [**XDelta 버전 3**](https://github.com/jmacd/xdelta) by Joshua MacDonald, 아파치 2.0 라이선스에 의해 라이선스됨.
