@@ -50,6 +50,10 @@ Los hackers de ROM suelen publicar el patch con la checksum del ROM adjunta (en 
 
 Si desafortunadamente no puedes encontrar el ROM correcto, puedes activar la opción “Ignorar checksums” en la configuración. Pero ten en cuenta que el juego patcheado puede contener fallos o ser completamente injugable.
 
+#### I can't patch "Super Mario World (U) [!].smc"
+
+This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.
+
 #### No puedo encontrar la ROM correcta para el juego "Pokémon Esmeralda".
 
 La mayoría de los parches del juego funcionan con la ROM "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
@@ -61,21 +65,6 @@ Los patches IPS format no tienen una checksum. Por lo tanto cualquier ROM (inclu
 #### ¿Qué puedo hacer con el tipo de archivo .ECM?
 
 ECM es un formato de compresión de datos diseñado específicamente para imágenes de disco. Puede descomprimir el archivo con el programa [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver)
-
-#### La aplicación muestra el error: "No se pudo copiar archivo".
-
-El error ocurre en algunos dispositivos de Android 4.4+ con una tarjeta SD externa. Android no permite que los aplicaciones escriban datos con una tarjeta SD en estos dispositivos (se puede encontrar [aquí](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/) una descripción detallada en inglés).
-
-Hay varias maneras de resolver este problema:
-
-- No patchees los archivos ROM ubicadas en la tarjeta SD externa. Mueve el ROM a la memoria interna del dispositivo.
-- Espicifica la ruta a cualquier directorio en la memoria interna de la carpeta de salida.
-- Espicifica la ruta de la carpeta de salida a **Android/data/org.emunix.unipatcher/** en la tarjeta SD externa (en la configuración).
-- Instalar la aplicación [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) (Requiere acceso a ROOT).
-
-#### La aplicación muestra el error: "El archivo tiene checksum incorrecto después de haber sido parcheado".
-
-Tal vez sea un error en mi programa. Por favor, póngase en contacto conmigo en [e-mail](mailto:unipatcher@gmail.com) y adjunte el parche en el mensaje.
 
 #### ¿Tiene UniPatcher algunas características adicionales?
 

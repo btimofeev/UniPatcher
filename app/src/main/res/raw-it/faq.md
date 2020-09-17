@@ -50,6 +50,10 @@ ROM hackers often publish checksum of the accompanying ROM file (on a web page o
 
 In the worst case, if you can not find the correct ROM file, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
 
+#### I can't patch "Super Mario World (U) [!].smc"
+
+This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.
+
 #### Non trovo la ROM corretta del gioco "Pokémon Emerald".
 
 La maggior parte del gioco funziona con la ROM "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
@@ -61,21 +65,6 @@ IPS format patches do not contain a checksum. Therefore, the patch will apply to
 #### Cosa posso fare con un file .ECM?
 
 ECM è un formato di compressione progettato specificamente per i dischi immagine. Puoi decomprimere il file usando il programma [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver).
-
-#### L'app mostra l'errore: "Non puoi copiare il file".
-
-The error occurs on some devices with Android 4.4+ having an external SD card. Android does not allow applications to write data to a SD card on these devices (a detailed description of the problem [here](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
-
-There are several ways to solve this problem:
-
-- Do not apply patches to the ROM file located on the external SD card. Just move the ROM file into the internal memory of the device.
-- Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
-- Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
-- Installa l'applicazione [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) (richiede permessi ROOT)
-
-#### L'app mostra l'errore: "Il file ha un checksum sbagliato dopo che è stato patchato".
-
-Forse c'è un bug nel mio programma. Ti prego di contattarmi alla [e-mail](mailto:unipatcher@gmail.com) e allega la patch alla mail.
 
 #### Ha UniPatcher qualche funzione aggiuntiva?
 

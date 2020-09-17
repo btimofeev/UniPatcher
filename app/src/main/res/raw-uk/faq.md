@@ -50,6 +50,10 @@ The app will show this error if the checksum stored in the patch does not match 
 
 In the worst case, if you can not find the correct ROM file, you can set the option "Ignore the checksum" in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.
 
+#### I can't patch "Super Mario World (U) [!].smc"
+
+This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.
+
 #### Не можу підібрати ROM для гри "Pokémon Emerald".
 
 Більшість патчів цієї гри працюють із ROM'ом "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
@@ -61,21 +65,6 @@ IPS format patches do not contain a checksum. Therefore, the patch will apply to
 #### Що можна зробити із файлом у форматі .ECM?
 
 ECM це формат стискання даних створений спеціально для образів дисків. Програма [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver) уміє розпаковувати такий формат.
-
-#### Додаток вибиває помилку "Не вдалося скопіювати файл".
-
-The error occurs on some devices with Android 4.4+ having an external SD card. Android does not allow applications to write data to a SD card on these devices (a detailed description of the problem [here](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
-
-There are several ways to solve this problem:
-
-- Do not apply patches to the ROM file located on the external SD card. Just move the ROM file into the internal memory of the device.
-- Specify the path to any directory in the internal memory of the device as the output directory (in the settings).
-- Specify the path to **Android/data/org.emunix.unipatcher/** directory on the external SD card as the output directory (in the settings).
-- Встановити програму [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) (необхідний ROOT).
-
-#### Додаток вибиває помилку "Контрольна сума пропатченого файлу неправильна".
-
-Можливий баг у моїй програмі. Будь-ласка, напишіть мені на [e-mail](mailto:unipatcher@gmail.com) та прикріпіть патч до листа.
 
 #### В UniPatcher'і є хоч якісь додаткові функції?
 

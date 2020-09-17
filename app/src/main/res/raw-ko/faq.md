@@ -50,6 +50,10 @@
 
 최악의 경우에는, 만약 여러분이 재대로된 롬 파일을 찿을수 없다면, 여러분은 설정에서 "체크섬 무시" 를 선택할수 있습니다. 하지만 명심하세요! 이 경우에는 게임이 버그를 일으킬수 있거나 완전히 맛이 갈수도 있습니다.
 
+#### I can't patch "Super Mario World (U) [!].smc"
+
+This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.
+
 #### 게임 "포켓몬스터 에메랄드"에 맞는 롬을 찾을 수 없습니다.
 
 게임 패치 대부분은 "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba"와 같은 롬에 작동합니다.
@@ -61,21 +65,6 @@ IPS 형식 패치에는 체크섬이 없습니다. 따라서 이 패치는 임�
 #### .ECM 파일 유형으로 무엇을 할 수 있습니까?
 
 ECM은 디스크 이미지를 위해 특별히 고안된 데이터 압축 형식입니다. [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver) 프로그램을 사용하여 파일의 압축을 풀 수 있습니다.
-
-#### 앱에 오류가 표시됩니다: "파일을 복사할 수 없음".
-
-외장 SD카드가 있는 안드로이드 4.4이상의 일부 기종에서 오류가 발생합니다. 안드로이드는 이러한 기종에서 SD카드에 데이터 쓰기를 허용하기 않습니다.(이 문제에 대해 자세한 설명을 보려면[여기](http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/))
-
-이 문제를 해결하는데 몇가지 방법이 있습니다
-
-외장 SD카드에 있는 롬 파일을 패치하지 마세요! 그냥 내부 저장소로 옮기세요.
-(설정에서)장치의 내부 메모리에 있는 디렉터리의 경로를 출력 디렉터리로 지정하십시오.
-(설정에서) 내보낼 경로를 내부 저장소에 있는 아무 경로로 지정해 주세요.외부 SD 카드의 **Android/data/org.munipatcher/* 디렉토리에 대한 경로를 출력 디렉토리로 지정하십시오.
-- [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix) 애플리케이션을 설치하십시오 (루트 권한 필요).
-
-#### 앱에 오류가 표시됩니다: "파일이 패치된 후 체크섬이 잘못되었습니다".
-
-어쩌면 프로그램의 버그일 수 있습니다. [이메일](mailto:unipatcher@gmail.com)로 메일에 패치를 첨부해 연락하십시오.
 
 #### 유니패처에 다른 추가 기능이 있습니까?
 

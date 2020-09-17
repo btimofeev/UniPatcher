@@ -50,6 +50,10 @@ ROM-hackere offentliggjør ofte sjekksummen av tilhørende ROM-fil (på en netts
 
 I verste fall, hvis du ikke finner rett ROM-fil, kan du sette valget "Ignorer sjekksum" i innstillingene. Husk at i dette tilfellet vil spillet kanskje inneholde feil eller være helt ubrukelig.
 
+#### I can't patch "Super Mario World (U) [!].smc"
+
+This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.
+
 #### Jeg kan ikke finne rett ROM-fil for spillet "Pokémon Emerald".
 
 De fleste programfiksene til spillet fungerer med ROM-fila "Pokemon - Emerald Version (U) \[f1\] (Save Type).gba".
@@ -61,21 +65,6 @@ Progamfikser i IPS-format inneholder ikke noen sjekksum. Derfor vil programfikse
 #### Hva kan jeg gjøre med filer av typen .ECM?
 
 ECM er et data-komprimeringsformat designet spesielt for diskavbildninger. Du kan pakke opp fila ved bruk av [ZArchiver](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver)-programmet.
-
-### Programmet viser feilen: "Kunne ikke kopiere fil".
-
-Feilen opptrer på noen enheter med Android 4.4+ som har eksternt SD-kort. Android tillater ikke programmer å skrive data til SD-kort på disse enhetene (en detaljert beskrivelse av problemet finnes [her] (http://www.androidpolice.com/2014/02/17/external-blues-google-has-brought-big-changes-to-sd-cards-in-kitkat-and-even-samsung-may-be-implementing-them/)).
-
-Det er flere måter å løse dette problemet på:
-
-- Ikke utfør programfikser for ROM-filer plassert på eksternt SD-kort. Bare flytt ROM-fila til det interne minnet på enheten.
-- Oppgi stien til ei mappe på internminne på enheten som utdatamappe (i innstillingene).
-- Oppgi stien til **Android/data/org.emunix.unipatcher/** mappen på eksternt SD-kort som utdatamappe (i innstillingene).
-- Installer [SDFix](https://play.google.com/store/apps/details?id=nextapp.sdfix)-programmet (krever ROOT-tilgang).
-
-#### Programmet viser feilmeldingen: "Fila har feil sjekksum etter at den ble programfikset".
-
-Kanskje det er en feil i programmet mitt. Kontakt meg på [e-post](mailto:unipatcher@gmail.com) og legg ved hele programfiksen.
 
 #### Har UniPatcher noen flere funksjoner?
 

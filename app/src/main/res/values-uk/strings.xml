@@ -10,50 +10,18 @@
     <string name="main_activity_patch_file">Патч файл</string>
     <string name="main_activity_output_file">Пропатчений Rom</string>
     <string name="main_activity_tap_to_select">Вибрати файл</string>
-    <string name="main_activity_tap_to_rename">Перейменувати</string>
-    <string name="main_activity_toast_rom_and_patch_not_selected">ROM та Патч файли не вибрано</string>
     <string name="main_activity_toast_rom_not_selected">Оберіть ROM</string>
     <string name="main_activity_toast_patch_not_selected">Оберіть Патч</string>
     <string name="main_activity_toast_archives_not_supported">Архів повинен бути розпакований в зовнішній програмі</string>
-    <!-- Rename dialog -->
-    <string name="dialog_rename_title">Перейменувати</string>
-    <string name="dialog_rename_ok">OK</string>
-    <string name="dialog_rename_cancel">Скасувати</string>
-    <string name="dialog_rename_error_same_name">Назви вхідного та вихідного ROM\'у не повинні відрізнятись</string>
-    <string name="dialog_rename_error_invalid_chars">Недійсний символ /</string>
-    <string name="dialog_rename_error_empty_name">Назва файлу не може бути порожня</string>
-
     <!-- Create patch fragment -->
     <string name="create_patch_fragment_source_file">Вихідний файл</string>
     <string name="create_patch_fragment_modified_file">Змінений файл</string>
     <string name="create_patch_fragment_patch_file">Патч</string>
-    <string name="create_patch_fragment_toast_source_and_modified_not_selected">Спочатку виберіть вихідний та змінений файли</string>
     <string name="create_patch_fragment_toast_source_not_selected">Спочатку виберіть вихідний файл</string>
     <string name="create_patch_fragment_toast_modified_not_selected">Спочатку виберіть змінений файл</string>
     <string name="snes_smc_header_will_be_removed">Цей ROM має SMC заголовок. Його буде перезаписано.</string>
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">Ця функція працює лише на Sega Mega Drive (Sega Genesis) ROM\'ах.\n\nIt виправляє \"червоний екран смерті\".\n\nУвага: ця функція не створює резервної копії.</string>
-
-    <!-- File picker title -->
-    <string name="file_picker_activity_title">Обрати файл</string>
-    <string name="file_picker_activity_title_select_rom">Обрати ROM файл</string>
-    <string name="file_picker_activity_title_select_patch">Обрати Патч файл</string>
-    <string name="file_picker_activity_title_select_source_file">Виберіть вихідний файл</string>
-    <string name="file_picker_activity_title_select_modified_file">Виберіть змінений файл</string>
-    <string name="file_picker_activity_title_select_header">Обрати файл заголовок</string>
-    <string name="file_picker_activity_error_unable_read_dir">Неможливо прочитати папку %1$s</string>
-
-    <!-- File properties dialog -->
-    <string name="file_properties_dialog_title">Властивості</string>
-    <string name="file_properties_dialog_name">Ім\'я:</string>
-    <string name="file_properties_dialog_path">Патч:</string>
-    <string name="file_properties_dialog_size">Розмір:</string>
-    <string name="file_properties_dialog_size_value">%1$s (%2$d байт)</string>
-    <string name="file_properties_dialog_crc32">CRC32:</string>
-    <string name="file_properties_dialog_sha1">SHA1:</string>
-    <string name="file_properties_dialog_md5">MD5:</string>
-    <string name="file_properties_dialog_close_button">Назад</string>
-    <string name="file_properties_dialog_wait_message">Будь-ласка зачекайте&#8230;</string>
 
     <!-- Notifications -->
     <string name="notify_applying_patch">Застосування патчу</string>
@@ -67,8 +35,6 @@
     <string name="notify_error_could_not_copy_file">Не вдалося скопіювати файл</string>
     <string name="notify_error_file_not_found">Файл не знайдено</string>
     <string name="notify_error_not_enough_space">Недостатньо місця</string>
-    <string name="notify_error_unable_to_create_directory">Неможливо створити папку %1$s</string>
-    <string name="notify_error_unable_to_write_to_directory">Неможливо записати у папку %1$s</string>
     <string name="notify_error_not_ips_patch">Не дійсний IPS Патч</string>
     <string name="notify_error_not_ups_patch">Не дійсний UPS Патч</string>
     <string name="notify_error_not_bps_patch">Не дійсний BPS Патч</string>
@@ -96,10 +62,6 @@
     <string name="notify_snes_delete_smc_header_complete">Видалення SMC заголовку закінчено</string>
     <string name="notify_snes_delete_smc_header_stared_check_noify">Видалення SMC заголовку почалось. Перевірте область повідомлень</string>
 
-    <!-- Permissions -->
-    <string name="permissions_storage_error_info">Для додатка був скасований дозвіл на читання/написання файлів. Без цього дозволу UniPatcher не зможе функціонувати правильно.</string>
-    <string name="permissions_storage_error_notify_access_denied">Доступ до файлів було скасовано</string>
-
     <!-- Settings -->
     <string name="settings_activity_title">Налаштування</string>
     <string name="settings_interface_header">Інтерфейс користувача</string>
@@ -107,13 +69,6 @@
     <string name="settings_theme_dialog_title">Оберіть тему</string>
     <string name="settings_theme_name_light">Світла</string>
     <string name="settings_theme_name_dark">Темна</string>
-    <string name="settings_theme_message_restart_app">Будь-ласка перезапустіть додаток</string>
-    <string name="settings_directories_header">Папки</string>
-    <string name="settings_remember_last_directories">Запам\'ятати востаннє відкриту папку</string>
-    <string name="settings_rom_directory">Вкажіть папку для ROMу\ів</string>
-    <string name="settings_patch_directory">Вкажіть папку для Патчу/ів</string>
-    <string name="settings_output_directory">Вкажіть вихідну папку</string>
-    <string name="settings_output_directory_description">Початково ROM\'и будуть зберігатись в папці ROM. Ви можете змінити шлях збережень</string>
     <string name="settings_patching_header">Застосування патчів</string>
     <string name="settings_ignore_checksum">Ігнорувати контрольну суму</string>
     <string name="settings_ignore_checksum_description">Не показувати помилку, якщо використовується ROM який не підходить. Використовуйте обережно: включивши цю опцію можна отримати зіпсований файл.</string>
@@ -124,7 +79,6 @@
     <string name="help_activity_about_tab_title">Про додаток</string>
     <string name="help_activity_about_tab_version">Версія %1$s</string>
     <string name="help_activity_about_tab_license">Ліцензія: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">&#169; Борис Тимофеев, 2013&#8211;2018</string>
     <string name="help_activity_action_send_feedback">Надіслати відгук</string>
     <string name="help_activity_action_visit_site">Відвідати веб-сайт</string>
     <string name="help_activity_action_changelog">Зміни</string>
