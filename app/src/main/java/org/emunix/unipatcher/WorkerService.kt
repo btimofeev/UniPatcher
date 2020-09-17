@@ -45,7 +45,7 @@ class WorkerService : IntentService("WorkerService") {
 
         val powerManager = getSystemService(Context.POWER_SERVICE) as PowerManager
         val wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "UniPatcher:service")
-        wakeLock.acquire()
+        wakeLock.acquire(30*60*1000L /*30 minutes*/)
 
         try {
             when (intent!!.getIntExtra("action", 0)) {
