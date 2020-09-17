@@ -20,6 +20,7 @@
     <string name="main_activity_toast_archives_not_supported">Archive should be unpacked in an external program</string>
     <string name="main_activity_donate_snackbar_text">Support the development of UniPatcher by making a donation</string>
     <string name="main_activity_donate_snackbar_button">Donate</string>
+    <string name="main_activity_button_how_to_use_app">How to use app</string>
 
     <!-- Create patch fragment -->
     <string name="create_patch_fragment_source_file">Source file</string>
@@ -86,6 +87,8 @@
     <string name="settings_theme_name_dark">Dark</string>
     <string name="settings_theme_name_auto_battery">Set by Battery Saver</string>
     <string name="settings_theme_name_follow_system">Use system default</string>
+    <string name="settings_show_button_how_to_use_app">Show help button</string>
+    <string name="settings_show_button_how_to_use_app_description">Show \"How to use app\" button on main screen</string>
     <string name="settings_patching_header">Patching</string>
     <string name="settings_ignore_checksum">Ignore checksums</string>
     <string name="settings_ignore_checksum_description">Do not interrupt patching if you use the wrong ROM. Use caution: This option can break your game.</string>
