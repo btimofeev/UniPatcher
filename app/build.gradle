@@ -3,8 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion '29.0.3'
+    compileSdkVersion 30
+    buildToolsVersion '30.0.2'
 
     signingConfigs {
         release
@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId "org.emunix.unipatcher"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 160100
         versionName "0.16.1"
         ndk {
@@ -29,7 +29,7 @@ android {
         }
     }
 
-    ndkVersion "21.2.6472646"
+    ndkVersion "21.3.6528147"
 
     buildFeatures {
         dataBinding = true
@@ -112,11 +112,11 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation 'androidx.core:core:1.3.1'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.preference:preference:1.1.1'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.google.android.material:material:1.2.1'
 
     implementation 'commons-io:commons-io:2.5' // 2.6 crashes the application on Android below 8, because java.nio.file is not available in these versions
 
@@ -124,8 +124,6 @@ dependencies {
     implementation 'org.sufficientlysecure:html-textview:3.9'
 
     implementation 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.1'
-
-    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
