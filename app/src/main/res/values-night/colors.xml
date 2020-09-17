@@ -11,8 +11,8 @@
     <color name="colorCardBackground">#393939</color>
 
     <color name="colorDrawerText">#cccccc</color>
-
-    <color name="colorIcon">#757575</color>
+    <color name="colorDrawerSelectedText">#E88E88</color>
+    <color name="colorDrawerSelector">#2CF3E5F5</color>
 
     <color name="colorToolbarBackground">#393939</color>
     <color name="colorToolbarText">#cccccc</color>
