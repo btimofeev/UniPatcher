@@ -69,7 +69,9 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
 
     override fun onResume() {
         super.onResume()
-        if (!Settings.getShowHelpButton())
+        if (Settings.getShowHelpButton())
+            binding.howToUseAppButton.visibility = View.VISIBLE
+        else
             binding.howToUseAppButton.visibility = View.GONE
     }
 
