@@ -28,5 +28,4 @@ Ytterligere funksjoner:
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) av John Casey Apache 2.0-lisens.
 - [**Ikoner i materielt design**](https://github.com/google/material-design-icons) av Google under Apache 2.0-lisens.
 - [**Ikoner i materielt design**](https://materialdesignicons.com) av gemenskapen, under SIL Open Font-lisens 1.1.
-- [**Materielle dialoger**](https://github.com/afollestad/material-dialogs) av Aidan Follestad, under MIT-lisens.
 - [**XDelta version 3**](https://github.com/jmacd/xdelta) av Joshua MacDonald under Apache 2.0-lisens.

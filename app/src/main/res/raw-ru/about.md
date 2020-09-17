@@ -28,5 +28,4 @@ UniPatcher это ROM патчер поддерживающий патчи в ф
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) от John Casey, распространяется под лицензией Apache 2.0.
 - [**Material design icons**](https://github.com/google/material-design-icons) от Google, распространяется под лицензией Apache 2.0.
 - [**Material design icons**](https://materialdesignicons.com) от сообщества, распространяется под лицензией SIL Open Font License 1.1.
-- [**Material Dialogs**](https://github.com/afollestad/material-dialogs) от Aidan Follestad, распространяется под лицензией MIT.
 - [**XDelta version 3**](https://github.com/jmacd/xdelta) от Joshua MacDonald, распространяется под лицензией Apache 2.0.
