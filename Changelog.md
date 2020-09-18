@@ -1,3 +1,11 @@
+#### 0.17 (September 18, 2020)
+- the built-in file manager has been replaced with the standard Storage Access Framework.  Now you can work with files on SD card and cloud hosting (eg Google Drive), but applying patches requires more time and free disk space. File checksum view temporarily removed.
+- added support for LZMA compression in XDelta3 patches
+- removed the ability to add SMC header to Snes ROMs (over the years I have never needed this function)
+- support for Android 10 and 11
+- fixed disappearing notifications
+- many small changes in the interface
+
 #### 0.16.1 (November 4, 2018)
 - Support Android 9 (Pie)
 - Changed gamepad image and added square launcher icon
