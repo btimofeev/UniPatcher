@@ -38,3 +38,6 @@ build
 # Dependencies
 app/src/main/cpp/xdelta/xdelta/
 app/src/main/cpp/xz/xz/
+
+# AppBundle
+/app/google/release/
