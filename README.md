@@ -11,7 +11,7 @@ UniPatcher is a ROM patcher for Android that supports IPS, IPS32, UPS, BPS, APS 
 
 * Creating XDelta3 patches
 * Fix checksum in Sega Mega Drive ROMs
-* Add/Delete SMC header in Super Nintendo ROMs
+* Remove SMC header in Super Nintendo ROMs
 
 ### Screenshots:
 
