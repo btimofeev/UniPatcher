@@ -116,7 +116,8 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
         if (resultCode == Activity.RESULT_OK && resultData != null && (requestCode == Action.SELECT_SOURCE_FILE || requestCode == Action.SELECT_MODIFIED_FILE || requestCode == Action.SELECT_PATCH_FILE)) {
             resultData.data?.let { uri ->
                 Timber.d(uri.toString())
-                requireContext().contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+                val takeFlags = resultData.flags and (Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+                requireContext().contentResolver.takePersistableUriPermission(uri, takeFlags)
                 uriParser.getFileName(uri)?.let { fileName ->
                     when (requestCode) {
                         Action.SELECT_SOURCE_FILE -> {
