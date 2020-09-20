@@ -134,6 +134,11 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
     kapt 'com.android.databinding:compiler:3.1.4'
+
+    // Crash reports
+    def acraVersion = '5.6.1'
+    implementation "ch.acra:acra-mail:$acraVersion"
+    implementation "ch.acra:acra-notification:$acraVersion"
 }
 
 repositories {

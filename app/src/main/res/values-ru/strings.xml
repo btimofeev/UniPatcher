@@ -105,6 +105,11 @@
     <string name="help_activity_action_changelog">История изменений</string>
     <string name="help_activity_error_cannot_load_text">Ошибка: не могу загрузить текст</string>
 
+    <string name="error_crash_title">Приложение остановлено</string>
+    <string name="error_crash_message">К сожалению, в приложении возникла критическая ошибка. Пожалуйста, отправьте отчет разработчику.</string>
+    <string name="error_crash_send_button">Отправить</string>
+    <string name="error_crash_discard_button">Отменить</string>
+
     <string name="donate_activity_title">Пожертвование</string>
 
     <string name="send_feedback_dialog_title">Отправить e-mail</string>
