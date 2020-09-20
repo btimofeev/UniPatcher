@@ -27,6 +27,11 @@ import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import androidx.preference.PreferenceManager
+import org.acra.ACRA
+import org.acra.annotation.AcraCore
+import org.acra.annotation.AcraMailSender
+import org.acra.annotation.AcraNotification
+import org.acra.data.StringFormat
 import org.emunix.unipatcher.di.AppComponent
 import org.emunix.unipatcher.di.AppModule
 import org.emunix.unipatcher.di.DaggerAppComponent
@@ -34,6 +39,15 @@ import org.emunix.unipatcher.helpers.ThemeHelper
 import timber.log.Timber
 
 
+@AcraCore(stopServicesOnCrash = true,
+        reportFormat = StringFormat.KEY_VALUE_LIST)
+@AcraMailSender(mailTo = "unipatcher@gmail.com",
+        reportFileName = "unipatcher_crash_report.txt")
+@AcraNotification(resText = R.string.error_crash_message,
+        resTitle = R.string.error_crash_title,
+        resSendButtonText = R.string.error_crash_send_button,
+        resDiscardButtonText = R.string.error_crash_discard_button,
+        resChannelName = R.string.notification_channel_name)
 class UniPatcher : Application() {
 
     override fun onCreate() {
@@ -52,6 +66,11 @@ class UniPatcher : Application() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
+    }
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        ACRA.init(this)
     }
 
     @TargetApi(26)
