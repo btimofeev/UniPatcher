@@ -115,7 +115,8 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
         if (resultCode == Activity.RESULT_OK && resultData != null && (requestCode == Action.SELECT_ROM_FILE || requestCode == Action.SELECT_OUTPUT_FILE)) {
             resultData.data?.let { uri ->
                 Timber.d(uri.toString())
-                requireContext().contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+                val takeFlags = resultData.flags and (Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+                requireContext().contentResolver.takePersistableUriPermission(uri, takeFlags)
                 when (requestCode) {
                     Action.SELECT_ROM_FILE -> {
                         romPath = uri.toString()
