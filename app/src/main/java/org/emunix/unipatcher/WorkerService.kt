@@ -27,18 +27,14 @@ import android.os.Build
 import android.os.PowerManager
 import android.provider.DocumentsContract
 import org.apache.commons.io.FileUtils
-import org.emunix.unipatcher.helpers.UriParser
 import org.emunix.unipatcher.patcher.*
 import org.emunix.unipatcher.tools.CreateXDelta3
 import org.emunix.unipatcher.tools.SmdFixChecksum
 import org.emunix.unipatcher.tools.SnesSmcHeader
 import org.emunix.unipatcher.ui.notify.*
 import java.io.File
-import javax.inject.Inject
 
 class WorkerService : IntentService("WorkerService") {
-
-    @Inject lateinit var uriParser: UriParser
 
     override fun onHandleIntent(intent: Intent?) {
         UniPatcher.appComponent.inject(this)
@@ -64,14 +60,18 @@ class WorkerService : IntentService("WorkerService") {
         val romPath = intent.getStringExtra("romPath")
         val patchPath = intent.getStringExtra("patchPath")
         val outputPath = intent.getStringExtra("outputPath")
+        val romName = intent.getStringExtra(("romName"))
+        val patchName = intent.getStringExtra(("patchName"))
         require(romPath != null) { "romPath is null" }
         require(patchPath != null) { "patchPath is null" }
         require(outputPath != null) { "outputPath is null" }
+        require(romName != null) { "romName is null" }
+        require(patchName != null) { "patchName is null" }
         val romUri = Uri.parse(romPath)
         val patchUri = Uri.parse(patchPath)
         val outputUri = Uri.parse(outputPath)
 
-        val notify = PatchingNotify(this, uriParser.getFileName(romUri) ?: "")
+        val notify = PatchingNotify(this, romName)
         startForeground(notify.id, notify.notifyBuilder.build())
 
         var romFile: File? = null
@@ -80,7 +80,7 @@ class WorkerService : IntentService("WorkerService") {
 
         try {
             romFile = Utils.copyToTempFile(this, romUri)
-            patchFile = Utils.copyToTempFile(this, patchUri, uriParser.getFileName(patchUri) ?: "undefined")
+            patchFile = Utils.copyToTempFile(this, patchUri, patchName)
             outputFile = File.createTempFile("output", ".rom", Utils.getTempDir(this))
             val patcher = PatcherFactory.createPatcher(this, patchFile, romFile, outputFile)
             patcher.apply(Settings.getIgnoreChecksum())
@@ -88,8 +88,6 @@ class WorkerService : IntentService("WorkerService") {
             Settings.setPatchingSuccessful(true)
         } catch (e: Exception) {
             errorMsg = e.message
-            if (uriParser.isExist(outputUri))
-                DocumentsContract.deleteDocument(contentResolver, outputUri)
         } finally {
             FileUtils.deleteQuietly(outputFile)
             FileUtils.deleteQuietly(romFile)
@@ -104,18 +102,20 @@ class WorkerService : IntentService("WorkerService") {
         val sourcePath = intent.getStringExtra("sourcePath")
         val modifiedPath = intent.getStringExtra("modifiedPath")
         val patchPath = intent.getStringExtra("patchPath")
+        val patchName = intent.getStringExtra("patchName")
         require(sourcePath != null) { "sourcePath is null" }
         require(modifiedPath != null) { "modifiedPath is null" }
         require(patchPath != null) { "patchPath is null" }
+        require(patchName != null) { "patchName is null" }
 
         val sourceUri = Uri.parse(sourcePath)
         val modifiedUri = Uri.parse(modifiedPath)
         val patchUri = Uri.parse(patchPath)
 
-        val notify = CreatePatchNotify(this, uriParser.getFileName(patchUri))
+        val notify = CreatePatchNotify(this, patchName)
         startForeground(notify.id, notify.notifyBuilder.build())
 
-        val patchMaker = CreateXDelta3(this, patchUri, sourceUri, modifiedUri, uriParser)
+        val patchMaker = CreateXDelta3(this, patchUri, sourceUri, modifiedUri)
 
         try {
             patchMaker.create()
@@ -132,10 +132,12 @@ class WorkerService : IntentService("WorkerService") {
     private fun actionSmdFixChecksum(intent: Intent) {
         var errorMsg: String? = null
         val romPath = intent.getStringExtra("romPath")
+        val romName = intent.getStringExtra("romName")
         require(romPath != null) { "romPath is null" }
+        require(romName != null) { "romName is null" }
         val romUri = Uri.parse(romPath)
 
-        val notify = SmdFixChecksumNotify(this, uriParser.getFileName(romUri) ?: "")
+        val notify = SmdFixChecksumNotify(this, romName)
         startForeground(notify.id, notify.notifyBuilder.build())
 
         var tmpFile: File? = null
@@ -158,12 +160,14 @@ class WorkerService : IntentService("WorkerService") {
 
         val romPath = intent.getStringExtra("romPath")
         val outputPath = intent.getStringExtra("outputPath")
+        val romName = intent.getStringExtra("romName")
         require(romPath != null) { "romPath is null" }
         require(outputPath != null) { "outputPath is null" }
+        require(romName != null) { "romName is null" }
         val romUri = Uri.parse(romPath)
         val outputUri = Uri.parse(outputPath)
 
-        val notify = SnesDeleteSmcHeaderNotify(this, uriParser.getFileName(romUri) ?: "")
+        val notify = SnesDeleteSmcHeaderNotify(this, romName)
         startForeground(notify.id, notify.notifyBuilder.build())
 
         var romFile: File? = null
@@ -176,8 +180,6 @@ class WorkerService : IntentService("WorkerService") {
             Utils.copy(outputFile, outputUri, this)
         } catch (e: Exception) {
             errorMsg = e.message
-            if (uriParser.isExist(outputUri))
-                DocumentsContract.deleteDocument(contentResolver, outputUri)
         } finally {
             FileUtils.deleteQuietly(outputFile)
             FileUtils.deleteQuietly(romFile)

@@ -31,7 +31,7 @@ import org.emunix.unipatcher.ui.fragment.SnesSmcHeaderFragment
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class, PreferenceModule::class, UriParserModule::class])
+@Component(modules = [AppModule::class, PreferenceModule::class])
 interface AppComponent {
 
     fun inject(activity: MainActivity)

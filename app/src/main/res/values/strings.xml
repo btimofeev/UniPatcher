@@ -34,6 +34,7 @@
     <string name="snes_smc_header_help">This feature is only for Super Nintendo ROMs.\n\nSome patches require the ROM to have no SMC header. This function will help you remove it.</string>
     <string name="snes_smc_header_will_be_removed">This ROM has the SMC header. It will be removed.</string>
     <string name="snes_rom_has_no_smc_header">This ROM has no SMC header. You don\'t need to delete anything.</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Error: unable to determine file size</string>
 
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">This feature is only for Sega Mega Drive (Sega Genesis) ROMs.\n\nIt fixes \"the red screen of death\".\n\nWarning: This function does not create a backup.</string>

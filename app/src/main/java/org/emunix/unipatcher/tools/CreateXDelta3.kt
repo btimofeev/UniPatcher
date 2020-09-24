@@ -22,10 +22,10 @@ package org.emunix.unipatcher.tools
 
 import android.content.Context
 import android.net.Uri
+import androidx.documentfile.provider.DocumentFile
 import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Utils
-import org.emunix.unipatcher.helpers.UriParser
 import org.emunix.unipatcher.patcher.PatchException
 import java.io.File
 import java.io.IOException
@@ -33,8 +33,7 @@ import java.io.IOException
 class CreateXDelta3(private val context: Context,
                     private val patchUri: Uri,
                     private val sourceUri: Uri,
-                    private val modifiedUri: Uri,
-                    private val uriParser: UriParser) {
+                    private val modifiedUri: Uri) {
 
     private external fun xdelta3create(patchPath: String, sourcePath: String, modifiedPath: String): Int
 
@@ -54,12 +53,18 @@ class CreateXDelta3(private val context: Context,
             when (val ret = xdelta3create(tmpPatchFile.path, tmpSourceFile.path, tmpModifiedFile.path)) {
                 NO_ERROR ->
                     Utils.copy(tmpPatchFile, patchUri, context)
-                ERR_UNABLE_OPEN_PATCH ->
-                    throw PatchException("${context.getString(R.string.notify_error_unable_open_file)} ${uriParser.getFileName(patchUri)}")
-                ERR_UNABLE_OPEN_SOURCE ->
-                    throw PatchException("${context.getString(R.string.notify_error_unable_open_file)} ${uriParser.getFileName(sourceUri)}")
-                ERR_UNABLE_OPEN_MODIFIED ->
-                    throw PatchException("${context.getString(R.string.notify_error_unable_open_file)} ${uriParser.getFileName(modifiedUri)}")
+                ERR_UNABLE_OPEN_PATCH -> {
+                    val file = DocumentFile.fromSingleUri(context, patchUri)
+                    throw PatchException("${context.getString(R.string.notify_error_unable_open_file)} ${file?.name ?: "- patch file"}")
+                }
+                ERR_UNABLE_OPEN_SOURCE -> {
+                    val file = DocumentFile.fromSingleUri(context, sourceUri)
+                    throw PatchException("${context.getString(R.string.notify_error_unable_open_file)} ${file?.name ?: "- source file"}")
+                }
+                ERR_UNABLE_OPEN_MODIFIED -> {
+                    val file = DocumentFile.fromSingleUri(context, modifiedUri)
+                    throw PatchException("${context.getString(R.string.notify_error_unable_open_file)} ${file?.name ?: "- output file"}")
+                }
                 else ->
                     throw PatchException("${context.getString(R.string.notify_error_unknown)}: $ret")
             }
