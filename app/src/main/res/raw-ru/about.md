@@ -22,10 +22,13 @@ UniPatcher это ROM патчер поддерживающий патчи в ф
 
 ##### Используемые библиотеки:
 
+- [**ACRA**](https://github.com/ACRA/acra) от команды ACRA, распространяется под лицензией Apache 2.0.
 - [**Android Donations**](https://github.com/penn5/donations) от SufficientlySecure и penn5, распространяется под лицензией Apache 2.0.
 - [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) от The Apache Software Foundation, распространяется под лицензией Apache 2.0.
+- [**Dagger**](https://github.com/google/dagger) от The Dagger Authors, распространяется под лицензией Apache 2.0.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) от SufficientlySecure, распространяется под лицензией Apache 2.0.
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) от John Casey, распространяется под лицензией Apache 2.0.
 - [**Material design icons**](https://github.com/google/material-design-icons) от Google, распространяется под лицензией Apache 2.0.
 - [**Material design icons**](https://materialdesignicons.com) от сообщества, распространяется под лицензией SIL Open Font License 1.1.
+- [**Timber**](https://github.com/JakeWharton/timber) от Jake Wharton, распространяется под лицензией Apache 2.0.
 - [**XDelta version 3**](https://github.com/jmacd/xdelta) от Joshua MacDonald, распространяется под лицензией Apache 2.0.

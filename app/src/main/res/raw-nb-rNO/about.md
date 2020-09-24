@@ -22,10 +22,13 @@ Ytterligere funksjoner:
 
 ##### Brukte bibliotek:
 
+- [**ACRA**](https://github.com/ACRA/acra) by ACRA team, licensed under the Apache 2.0 license.
 - [**Android Donations**](https://github.com/penn5/donations) by SufficientlySecure and penn5, licensed under the Apache 2.0 license.
 - [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) av The Apache Software Foundation, under Apache 2.0-lisens.
+- [**Dagger**](https://github.com/google/dagger) by The Dagger Authors, licensed under the Apache 2.0 license.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) av SufficientlySecure, under Apache 2.0-lisens.
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) av John Casey Apache 2.0-lisens.
 - [**Ikoner i materielt design**](https://github.com/google/material-design-icons) av Google under Apache 2.0-lisens.
 - [**Ikoner i materielt design**](https://materialdesignicons.com) av gemenskapen, under SIL Open Font-lisens 1.1.
+- [**Timber**](https://github.com/JakeWharton/timber) by Jake Wharton, licensed under the Apache 2.0 license.
 - [**XDelta version 3**](https://github.com/jmacd/xdelta) av Joshua MacDonald under Apache 2.0-lisens.
