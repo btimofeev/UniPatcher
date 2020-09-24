@@ -22,7 +22,7 @@
 
 ##### 사용된 라이브러리:
 
-- [**안드로이드 기부**](https://github.com/SufficientlySecure/donations) by SufficientlySecure, 아파치 2.0 라이선스에 의해 라이선스됨.
+- [**Android Donations**](https://github.com/penn5/donations) by SufficientlySecure and penn5, licensed under the Apache 2.0 license.
 - [**아파치 커먼즈 IO**](https://commons.apache.org/proper/commons-io/) by 아파치 소프트웨어 재단, 아파치 2.0 라이선스에 의해 라이선스됨.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) by SufficientlySecure, 아파치 2.0 라이선스에 의해 라이선스됨.
 - [**마크다운4J**](https://github.com/jdcasey/markdown4j) by John Casey, 아파치 2.0 라이선스에 의해 라이선스됨.

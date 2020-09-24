@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017 Boris Timofeev
+ Copyright (c) 2017, 2020 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -17,56 +17,45 @@
  along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
  */
+package org.emunix.unipatcher.ui.activity
 
-package org.emunix.unipatcher.ui.activity;
+import android.os.Bundle
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import org.emunix.unipatcher.BuildConfig
+import org.emunix.unipatcher.R
+import org.emunix.unipatcher.databinding.ActivityDonateBinding
+import org.sufficientlysecure.donations.DonationsFragment
 
-import android.os.Bundle;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import android.view.MenuItem;
 
-import org.emunix.unipatcher.BuildConfig;
-import org.emunix.unipatcher.R;
-import org.sufficientlysecure.donations.DonationsFragment;
+class DonateActivity : AppCompatActivity() {
 
-public class DonateActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donate);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        try {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        } catch (NullPointerException e) {
-            /* empty */
-        }
-        getSupportActionBar().setTitle(R.string.donate_activity_title);
-
-        DonationsFragment fragment = (DonationsFragment) getSupportFragmentManager().findFragmentByTag("donationsFragment");
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val binding = ActivityDonateBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setTitle(R.string.donate_activity_title)
+        var fragment = supportFragmentManager.findFragmentByTag("donationsFragment") as DonationsFragment?
         if (fragment == null) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            fragment = DonationsFragment.newInstance(BuildConfig.DEBUG,
+            val ft = supportFragmentManager.beginTransaction()
+            fragment = DonationsFragment.Companion.newInstance(BuildConfig.DEBUG,
                     false, null, null, null,
                     true, BuildConfig.PAYPAL_USER, BuildConfig.PAYPAL_CURRENCY_CODE, getString(R.string.donation),
-                    false, null, null,
-                    true, BuildConfig.BITCOIN_ADDRESS);
-
-            ft.replace(R.id.donate_fragment, fragment, "donationsFragment");
-            ft.commit();
+                    true, BuildConfig.BITCOIN_ADDRESS)
+            ft.replace(R.id.donate_fragment, fragment, "donationsFragment")
+            ft.commit()
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

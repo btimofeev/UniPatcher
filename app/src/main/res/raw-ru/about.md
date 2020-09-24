@@ -22,7 +22,7 @@ UniPatcher это ROM патчер поддерживающий патчи в ф
 
 ##### Используемые библиотеки:
 
-- [**Android Donations**](https://github.com/SufficientlySecure/donations) от SufficientlySecure, распространяется под лицензией Apache 2.0.
+- [**Android Donations**](https://github.com/penn5/donations) от SufficientlySecure и penn5, распространяется под лицензией Apache 2.0.
 - [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) от The Apache Software Foundation, распространяется под лицензией Apache 2.0.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) от SufficientlySecure, распространяется под лицензией Apache 2.0.
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) от John Casey, распространяется под лицензией Apache 2.0.

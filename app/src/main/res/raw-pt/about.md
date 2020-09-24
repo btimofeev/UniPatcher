@@ -22,7 +22,7 @@ Recursos adicionais:
 
 ##### Bibliotecas usadas:
 
--[**Doações Android**]https://github.com/SufficientlySecure/donations) por SufficientlySecure, licenseado sob a licensa Apache 2.0.
+- [**Android Donations**](https://github.com/penn5/donations) by SufficientlySecure and penn5, licensed under the Apache 2.0 license.
 - [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) por The Apache Software Foundation, licenseado sob a licensa Apache 2.0.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) por SufficientlySecure, licenseado sob a licensa Apache 2.0.
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) por John Casey, licenseado sob a licensa Apache 2.0.
