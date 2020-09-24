@@ -22,7 +22,7 @@ Ytterligere funksjoner:
 
 ##### Brukte bibliotek:
 
-- [**Android-donasjoner**](https://github.com/SufficientlySecure/donations) av SufficientlySecure, under Apache 2.0-lisens.
+- [**Android Donations**](https://github.com/penn5/donations) by SufficientlySecure and penn5, licensed under the Apache 2.0 license.
 - [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) av The Apache Software Foundation, under Apache 2.0-lisens.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) av SufficientlySecure, under Apache 2.0-lisens.
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) av John Casey Apache 2.0-lisens.

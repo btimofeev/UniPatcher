@@ -121,7 +121,7 @@ dependencies {
 
     implementation 'commons-io:commons-io:2.5' // 2.6 crashes the application on Android below 8, because java.nio.file is not available in these versions
 
-    implementation 'org.sufficientlysecure:donations:2.6'
+    implementation 'com.github.penn5:donations:3.4.5'
     implementation 'org.sufficientlysecure:html-textview:3.9'
 
     implementation 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.1'

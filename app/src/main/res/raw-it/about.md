@@ -22,7 +22,7 @@ Funzioni aggiuntive:
 
 ##### Librerie usate:
 
-- [**Android Donations**](https://github.com/SufficientlySecure/donations) by SufficientlySecure, licensed under the Apache 2.0 license.
+- [**Android Donations**](https://github.com/penn5/donations) by SufficientlySecure and penn5, licensed under the Apache 2.0 license.
 - [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) dalla The Apache Software Foundation, sotto licenza Apache 2.0.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) da SufficientlySecure, sotto licenza Apache 2.0
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) by John Casey, licensed under the Apache 2.0 license.
