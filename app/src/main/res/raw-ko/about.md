@@ -22,10 +22,13 @@
 
 ##### 사용된 라이브러리:
 
+- [**ACRA**](https://github.com/ACRA/acra) by ACRA team, licensed under the Apache 2.0 license.
 - [**Android Donations**](https://github.com/penn5/donations) by SufficientlySecure and penn5, licensed under the Apache 2.0 license.
 - [**아파치 커먼즈 IO**](https://commons.apache.org/proper/commons-io/) by 아파치 소프트웨어 재단, 아파치 2.0 라이선스에 의해 라이선스됨.
+- [**Dagger**](https://github.com/google/dagger) by The Dagger Authors, licensed under the Apache 2.0 license.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) by SufficientlySecure, 아파치 2.0 라이선스에 의해 라이선스됨.
 - [**마크다운4J**](https://github.com/jdcasey/markdown4j) by John Casey, 아파치 2.0 라이선스에 의해 라이선스됨.
 - [**머티리얼 디자인 아이콘**](https://github.com/google/material-design-icons) by Google, 아파치 2.0 라이선스에 의해 라이선스됨.
 - [**머티리얼 디자인 아이콘**](https://materialdesignicons.com) by community, SIL 오픈 폰트 라이선스 1.1에 의해 라이선스됨.
+- [**Timber**](https://github.com/JakeWharton/timber) by Jake Wharton, licensed under the Apache 2.0 license.
 - [**XDelta 버전 3**](https://github.com/jmacd/xdelta) by Joshua MacDonald, 아파치 2.0 라이선스에 의해 라이선스됨.

@@ -22,10 +22,13 @@ Funzioni aggiuntive:
 
 ##### Librerie usate:
 
+- [**ACRA**](https://github.com/ACRA/acra) by ACRA team, licensed under the Apache 2.0 license.
 - [**Android Donations**](https://github.com/penn5/donations) by SufficientlySecure and penn5, licensed under the Apache 2.0 license.
 - [**Apache Commons IO**](https://commons.apache.org/proper/commons-io/) dalla The Apache Software Foundation, sotto licenza Apache 2.0.
+- [**Dagger**](https://github.com/google/dagger) by The Dagger Authors, licensed under the Apache 2.0 license.
 - [**HtmlTextView**](https://github.com/SufficientlySecure/html-textview) da SufficientlySecure, sotto licenza Apache 2.0
 - [**Markdown4J**](https://github.com/jdcasey/markdown4j) by John Casey, licensed under the Apache 2.0 license.
 - [**Material design icons**](https://github.com/google/material-design-icons) by Google, licensed under the Apache 2.0 license.
 - [**Material design icons**](https://materialdesignicons.com) by community, licensed under SIL Open Font License 1.1.
+- [**Timber**](https://github.com/JakeWharton/timber) by Jake Wharton, licensed under the Apache 2.0 license.
 - [**XDelta versione 3**](https://github.com/jmacd/xdelta) da Joshua MacDonald, sotto licenza Apache 2.0
