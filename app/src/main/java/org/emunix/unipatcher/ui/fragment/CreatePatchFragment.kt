@@ -27,12 +27,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.documentfile.provider.DocumentFile
 import org.emunix.unipatcher.*
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.databinding.CreatePatchFragmentBinding
-import org.emunix.unipatcher.helpers.UriParser
 import timber.log.Timber
-import javax.inject.Inject
 
 class CreatePatchFragment : ActionFragment(), View.OnClickListener {
 
@@ -42,9 +41,6 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
 
     private var _binding: CreatePatchFragmentBinding? = null
     private val binding get() = _binding!!
-
-    @Inject
-    lateinit var uriParser: UriParser
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = CreatePatchFragmentBinding.inflate(inflater, container, false)
@@ -71,9 +67,12 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
             sourcePath = savedInstanceState.getString("sourcePath") ?: ""
             modifiedPath = savedInstanceState.getString("modifiedPath") ?: ""
             patchPath = savedInstanceState.getString("patchPath") ?: ""
-            if (sourcePath.isNotEmpty()) binding.sourceFileNameTextView.text = uriParser.getFileName(Uri.parse(sourcePath))
-            if (modifiedPath.isNotEmpty()) binding.modifiedFileNameTextView.text = uriParser.getFileName(Uri.parse(modifiedPath))
-            if (patchPath.isNotEmpty()) binding.patchFileNameTextView.text = uriParser.getFileName(Uri.parse(patchPath))
+            if (sourcePath.isNotEmpty())
+                binding.sourceFileNameTextView.text = DocumentFile.fromSingleUri(requireContext(), Uri.parse(sourcePath))?.name ?: "unknown"
+            if (modifiedPath.isNotEmpty())
+                binding.modifiedFileNameTextView.text = DocumentFile.fromSingleUri(requireContext(), Uri.parse(modifiedPath))?.name ?: "unknown"
+            if (patchPath.isNotEmpty())
+                binding.patchFileNameTextView.text = DocumentFile.fromSingleUri(requireContext(), Uri.parse(patchPath))?.name ?: "unknown"
         }
     }
 
@@ -118,7 +117,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                 Timber.d(uri.toString())
                 val takeFlags = resultData.flags and (Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
                 requireContext().contentResolver.takePersistableUriPermission(uri, takeFlags)
-                uriParser.getFileName(uri)?.let { fileName ->
+                DocumentFile.fromSingleUri(requireContext(), uri)?.name?.let { fileName ->
                     when (requestCode) {
                         Action.SELECT_SOURCE_FILE -> {
                             sourcePath = uri.toString()
@@ -157,11 +156,13 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                 return false
             }
             else -> {
+                val patchName = DocumentFile.fromSingleUri(requireContext(), Uri.parse(patchPath))?.name ?: ""
                 val intent = Intent(activity, WorkerService::class.java)
                 intent.putExtra("action", Action.CREATE_PATCH)
                 intent.putExtra("sourcePath", sourcePath)
                 intent.putExtra("modifiedPath", modifiedPath)
                 intent.putExtra("patchPath", patchPath)
+                intent.putExtra("patchName", patchName)
                 startForegroundService(requireActivity(), intent)
                 Toast.makeText(activity, R.string.toast_create_patch_started_check_notify, Toast.LENGTH_SHORT).show()
                 return true

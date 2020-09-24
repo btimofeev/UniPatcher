@@ -26,14 +26,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.documentfile.provider.DocumentFile
 import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.*
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.databinding.SnesSmcHeaderFragmentBinding
-import org.emunix.unipatcher.helpers.UriParser
 import org.emunix.unipatcher.tools.SnesSmcHeader
 import timber.log.Timber
-import javax.inject.Inject
 
 class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
 
@@ -42,9 +41,6 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
 
     private var _binding: SnesSmcHeaderFragmentBinding? = null
     private val binding get() = _binding!!
-
-    @Inject
-    lateinit var uriParser: UriParser
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = SnesSmcHeaderFragmentBinding.inflate(inflater, container, false)
@@ -71,10 +67,11 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
             outputPath = savedInstanceState.getString("outputPath") ?: ""
             if (romPath.isNotEmpty()) {
                 val uri = Uri.parse(romPath)
-                binding.romNameTextView.text = uriParser.getFileName(uri)
+                binding.romNameTextView.text = DocumentFile.fromSingleUri(requireContext(), uri)?.name ?: "unknown"
                 checkSmc(uri)
             }
-            if (outputPath.isNotEmpty()) binding.outputNameTextView.text = uriParser.getFileName(Uri.parse(outputPath))
+            if (outputPath.isNotEmpty())
+                binding.outputNameTextView.text = DocumentFile.fromSingleUri(requireContext(), Uri.parse(outputPath))?.name ?: "unknown"
         }
     }
 
@@ -96,7 +93,7 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
             R.id.outputCardView -> {
                 var title = "headerless_rom.smc"
                 if (romPath.isNotBlank()) {
-                    val romName = uriParser.getFileName(Uri.parse(romPath))
+                    val romName = DocumentFile.fromSingleUri(requireContext(), Uri.parse(romPath))?.name
                     if (romName != null)
                         title = makeOutputTitle(romName)
                 }
@@ -121,13 +118,13 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
                     Action.SELECT_ROM_FILE -> {
                         romPath = uri.toString()
                         binding.romNameTextView.visibility = View.VISIBLE
-                        binding.romNameTextView.text = uriParser.getFileName(uri)
+                        binding.romNameTextView.text = DocumentFile.fromSingleUri(requireContext(), uri)?.name ?: "unknown"
                         checkSmc(uri)
                     }
                     Action.SELECT_OUTPUT_FILE -> {
                         outputPath = uri.toString()
                         binding.outputNameTextView.visibility = View.VISIBLE
-                        binding.outputNameTextView.text = uriParser.getFileName(uri)
+                        binding.outputNameTextView.text = DocumentFile.fromSingleUri(requireContext(), uri)?.name ?: "unknown"
                     }
                 }
             }
@@ -136,8 +133,13 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
     }
 
     fun checkSmc(uri: Uri) {
+        val uriFileSize = DocumentFile.fromSingleUri(requireContext(), uri)?.length()
+        if (uriFileSize == null || uriFileSize == 0L) {
+            binding.headerInfoTextView.setText(R.string.snes_smc_error_unable_to_get_file_size)
+            return
+        }
         val checker = SnesSmcHeader()
-        if (checker.isRomHasSmcHeader(uriParser.getFileSize(uri))) {
+        if (checker.isRomHasSmcHeader(uriFileSize)) {
             binding.headerInfoTextView.setText(R.string.snes_smc_header_will_be_removed)
         } else {
             binding.headerInfoTextView.setText(R.string.snes_rom_has_no_smc_header)
@@ -159,10 +161,12 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
             Toast.makeText(activity, getString(R.string.main_activity_toast_output_not_selected), Toast.LENGTH_LONG).show()
             return false
         }
+        val rom = DocumentFile.fromSingleUri(requireContext(), Uri.parse(romPath))
         val intent = Intent(activity, WorkerService::class.java)
         intent.putExtra("action", Action.SNES_REMOVE_SMC_HEADER)
         intent.putExtra("romPath", romPath)
         intent.putExtra("outputPath", outputPath)
+        intent.putExtra("romName", rom?.name ?: "")
         startForegroundService(requireActivity(), intent)
         Toast.makeText(activity, R.string.notify_snes_delete_smc_header_stared_check_noify, Toast.LENGTH_SHORT).show()
         return true

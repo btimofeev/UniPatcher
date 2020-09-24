@@ -34,6 +34,7 @@
     <string name="snes_smc_header_help">Эта функция только для ROM\'ов Super Nintendo.\n\nНекоторые патчи требуют, чтобы в ROMе не было SMC заголовка. Данная функция поможет удалить его.</string>
     <string name="snes_smc_header_will_be_removed">У этого ROM\'а есть SMC заголовок. Он будет удалён.</string>
     <string name="snes_rom_has_no_smc_header">Этот ROM не содержит SMC заголовка. Удалять ничего не нужно.</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Ошибка; невозможно определить размер файла</string>
 
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">Эта функция только для игр Sega Mega Drive.\n\nОна исправляет \"красный экран смерти\".\n\nПредупреждение: эта функция не создаёт резервную копию.</string>

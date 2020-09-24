@@ -26,14 +26,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.documentfile.provider.DocumentFile
 import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.*
 import org.emunix.unipatcher.Utils.startForegroundService
 import org.emunix.unipatcher.databinding.ApplyPatchFragmentBinding
-import org.emunix.unipatcher.helpers.UriParser
 import org.emunix.unipatcher.ui.activity.HelpActivity
 import timber.log.Timber
-import javax.inject.Inject
 
 class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
 
@@ -43,9 +42,6 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
 
     private var _binding: ApplyPatchFragmentBinding? = null
     private val binding get() = _binding!!
-
-    @Inject
-    lateinit var uriParser: UriParser
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = ApplyPatchFragmentBinding.inflate(inflater, container, false)
@@ -82,11 +78,11 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
             patchPath = savedInstanceState.getString("patchPath") ?: ""
             outputPath = savedInstanceState.getString("outputPath") ?: ""
             if (romPath.isNotEmpty())
-                binding.romNameTextView.text = uriParser.getFileName(Uri.parse(romPath))
+                binding.romNameTextView.text = DocumentFile.fromSingleUri(requireContext(), Uri.parse(romPath))?.name ?: "unknown"
             if (patchPath.isNotEmpty())
-                binding.patchNameTextView.text = uriParser.getFileName(Uri.parse(patchPath))
+                binding.patchNameTextView.text = DocumentFile.fromSingleUri(requireContext(), Uri.parse(patchPath))?.name ?: "unknown"
             if (outputPath.isNotEmpty())
-                binding.outputNameTextView.text = uriParser.getFileName(Uri.parse(outputPath))
+                binding.outputNameTextView.text = DocumentFile.fromSingleUri(requireContext(), Uri.parse(outputPath))?.name ?: "unknown"
         }
     }
 
@@ -116,7 +112,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
             R.id.outputCardView -> {
                 var title = "specify_rom_name"
                 if (romPath.isNotBlank()) {
-                    val romName = uriParser.getFileName(Uri.parse(romPath))
+                    val romName = DocumentFile.fromSingleUri(requireContext(), Uri.parse(romPath))?.name
                     if (romName != null)
                         title = makeOutputTitle(romName)
                 }
@@ -141,7 +137,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
                 Timber.d(uri.toString())
                 val takeFlags = resultData.flags and (Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
                 requireContext().contentResolver.takePersistableUriPermission(uri, takeFlags)
-                uriParser.getFileName(uri)?.let { fileName ->
+                DocumentFile.fromSingleUri(requireContext(), uri)?.name?.let { fileName ->
                     when (requestCode) {
                         Action.SELECT_PATCH_FILE -> {
                             patchPath = uri.toString()
@@ -188,11 +184,15 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
                 return false
             }
             else -> {
+                val rom = DocumentFile.fromSingleUri(requireContext(), Uri.parse(romPath))
+                val patch = DocumentFile.fromSingleUri(requireContext(), Uri.parse(patchPath))
                 val intent = Intent(activity, WorkerService::class.java)
                 intent.putExtra("action", Action.APPLY_PATCH)
                 intent.putExtra("romPath", romPath)
                 intent.putExtra("patchPath", patchPath)
                 intent.putExtra("outputPath", outputPath)
+                intent.putExtra("romName", rom?.name ?: "")
+                intent.putExtra("patchName", patch?.name ?: "undefined")
                 startForegroundService(requireActivity(), intent)
                 Toast.makeText(activity, R.string.toast_patching_started_check_notify, Toast.LENGTH_SHORT).show()
                 return true
