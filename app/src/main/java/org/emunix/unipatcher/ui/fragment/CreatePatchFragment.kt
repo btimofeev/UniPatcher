@@ -20,6 +20,7 @@
 package org.emunix.unipatcher.ui.fragment
 
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -90,14 +91,22 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                     addCategory(Intent.CATEGORY_OPENABLE)
                     type = "*/*"
                 }
-                startActivityForResult(intent, Action.SELECT_SOURCE_FILE)
+                try {
+                    startActivityForResult(intent, Action.SELECT_SOURCE_FILE)
+                } catch (e: ActivityNotFoundException) {
+                    Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
+                }
             }
             R.id.modifiedFileCardView -> {
                 val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
                     type = "*/*"
                 }
-                startActivityForResult(intent, Action.SELECT_MODIFIED_FILE)
+                try {
+                    startActivityForResult(intent, Action.SELECT_MODIFIED_FILE)
+                } catch (e: ActivityNotFoundException) {
+                    Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
+                }
             }
             R.id.patchFileCardView -> {
                 val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
@@ -105,7 +114,11 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                     type = "application/octet-stream"
                     putExtra(Intent.EXTRA_TITLE, "patch.xdelta")
                 }
-                startActivityForResult(intent, Action.SELECT_PATCH_FILE)
+                try {
+                    startActivityForResult(intent, Action.SELECT_PATCH_FILE)
+                } catch (e: ActivityNotFoundException) {
+                    Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

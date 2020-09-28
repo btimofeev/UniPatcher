@@ -110,6 +110,7 @@
     <string name="error_crash_message">К сожалению, в приложении возникла критическая ошибка. Пожалуйста, отправьте отчет разработчику.</string>
     <string name="error_crash_send_button">Отправить</string>
     <string name="error_crash_discard_button">Отменить</string>
+    <string name="error_file_picker_app_is_no_installed">Ошибка: приложение Файлы не установлено</string>
 
     <string name="donate_activity_title">Пожертвование</string>
 

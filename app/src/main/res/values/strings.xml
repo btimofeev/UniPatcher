@@ -110,6 +110,7 @@
     <string name="error_crash_message">Sorry, the application crashed. Please send a report to the developers.</string>
     <string name="error_crash_send_button">Send</string>
     <string name="error_crash_discard_button">Discard</string>
+    <string name="error_file_picker_app_is_no_installed">Error: There are no File app installed</string>
 
     <string name="donate_activity_title">Donate</string>
 
