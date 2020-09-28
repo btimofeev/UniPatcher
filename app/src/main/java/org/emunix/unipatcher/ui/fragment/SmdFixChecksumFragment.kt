@@ -19,6 +19,7 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.fragment
 
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -78,8 +79,11 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
             addCategory(Intent.CATEGORY_OPENABLE)
             type = "application/octet-stream"
         }
-
-        startActivityForResult(intent, Action.SELECT_ROM_FILE)
+        try {
+            startActivityForResult(intent, Action.SELECT_ROM_FILE)
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
