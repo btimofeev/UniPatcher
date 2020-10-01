@@ -20,10 +20,10 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher
 
 import android.content.Context
-import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import android.os.StatFs
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
 import org.apache.commons.io.IOUtils
@@ -34,14 +34,6 @@ import java.util.*
 object Utils {
 
     private const val BUFFER_SIZE = 10240 // 10 Kb
-
-    fun startForegroundService(context: Context, intent: Intent) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-            context.startService(intent)
-        } else {
-            context.startForegroundService(intent)
-        }
-    }
 
     fun getAppVersion(context: Context): String {
         var versionName = "N/A"
@@ -124,22 +116,22 @@ object Utils {
     }
 
     @Throws(IOException::class)
-    fun copyToTempFile(context: Context, inputStream: InputStream, ext: String = ".tmp"): File {
+    suspend fun copyToTempFile(context: Context, inputStream: InputStream, ext: String = ".tmp"): File = withContext(Dispatchers.IO) {
         val tmpDir = getTempDir(context)
         val tmpFile = File.createTempFile("file", ext, tmpDir)
         val outputStream = tmpFile.outputStream()
         outputStream.use {
             IOUtils.copy(inputStream, it)
         }
-        return tmpFile
+        return@withContext tmpFile
     }
 
     @Throws(IOException::class, FileNotFoundException::class)
-    fun copyToTempFile(context: Context, uri: Uri, ext: String = ".tmp"): File {
-        val stream: InputStream = context.contentResolver.openInputStream(uri)
+    suspend fun copyToTempFile(context: Context, uri: Uri, ext: String = ".tmp"): File = withContext(Dispatchers.IO) {
+        val stream = context.contentResolver.openInputStream(uri)
                 ?: throw IOException("Unable to open ${uri}: content resolver returned null")
         try {
-            return copyToTempFile(context, stream, ext)
+            return@withContext copyToTempFile(context, stream, ext)
         } finally {
             IOUtils.closeQuietly(stream)
         }
@@ -166,9 +158,9 @@ object Utils {
         return sb.toString()
     }
 
-    fun isArchive(path: String): Boolean {
+    suspend fun isArchive(path: String): Boolean = withContext(Dispatchers.Default) {
         val ext = FilenameUtils.getExtension(path).toLowerCase(Locale.getDefault())
-        return (ext == "zip"
+        return@withContext (ext == "zip"
                 || ext == "rar"
                 || ext == "7z"
                 || ext == "gz"

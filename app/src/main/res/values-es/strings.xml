@@ -26,12 +26,8 @@
     <string name="smd_fix_checksum_help">Esta función es sólo para ROMs Sega Mega Drive (Sega Genesis).\n\nArregla \"la pantalla roja de la muerte\".\n\nAdvertencia: esta función no crea un respaldo.</string>
 
     <!-- Notifications -->
-    <string name="notify_applying_patch">Aplicando parche</string>
     <string name="notify_patching_complete">Parcheado completo</string>
-    <string name="notify_creating_patch">Creando parche</string>
     <string name="notify_create_patch_complete">Creación de parche completado</string>
-    <string name="toast_patching_started_check_notify">Parcheo iniciado. Compruebe el área de notificación</string>
-    <string name="toast_create_patch_started_check_notify">Creacion de parche iniciado. Compruebe el área de notificación</string>
 
     <string name="notify_error">Error</string>
     <string name="notify_error_could_not_copy_file">No se pudo copiar archivo</string>
@@ -56,13 +52,9 @@
     <string name="notify_error_unknown">Error desconocido</string>
 
     <string name="notify_error_not_smd_rom">No es una ROM de Sega Mega Drive</string>
-    <string name="notify_smd_fix_checksum_in_progress">Fijando checksum</string>
     <string name="notify_smd_fix_checksum_complete">Checksum fijado</string>
-    <string name="notify_smd_fix_checksum_started_check_notify">Fijación de checksum iniciada. Compruebe el área de notificación</string>
 
-    <string name="notify_snes_delete_smc_header_in_progress">Eliminar cabecera SMC</string>
     <string name="notify_snes_delete_smc_header_complete">Eliminación de cabecera SMC completado</string>
-    <string name="notify_snes_delete_smc_header_stared_check_noify">Eliminar cabecera SMC iniciado. Compruebe el área de notificación</string>
 
     <!-- Settings -->
     <string name="settings_activity_title">Ajustes</string>

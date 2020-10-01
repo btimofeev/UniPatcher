@@ -19,9 +19,7 @@
     <string name="smd_fix_checksum_help">Questa caratteristica è solo per le ROM del Sega Mega Drive (Sega Genesis).\n\nlt risolve \"lo schermo rosso della morte\".\n\nAttenzione: questa funzione non crea un backup.</string>
 
     <!-- Notifications -->
-    <string name="notify_applying_patch">Applicando la patch</string>
     <string name="notify_patching_complete">Patch completato</string>
-    <string name="toast_patching_started_check_notify">Patching iniziato. Controlla l\'area di notifica</string>
     <string name="notify_error">Errore</string>
     <string name="notify_error_could_not_copy_file">Non si può copiare il file</string>
     <string name="notify_error_file_not_found">File non trovato</string>
@@ -45,12 +43,7 @@
     <string name="notify_error_unknown">Errore sconosciuto</string>
 
     <string name="notify_error_not_smd_rom">ROM non del Sega Mega Drive</string>
-    <string name="notify_smd_fix_checksum_in_progress">Risoluzione checksum</string>
     <string name="notify_smd_fix_checksum_complete">Checksum risolto</string>
-    <string name="notify_smd_fix_checksum_started_check_notify">Risoluzione checksum iniziata. Controlla l\'area di notifica</string>
-
-    <string name="notify_snes_delete_smc_header_in_progress">Elimina l\'intestazione SMC</string>
-    <string name="notify_snes_delete_smc_header_stared_check_noify">Cancellazione intestazione SMC iniziata. Controlla l\'area di notifica</string>
 
     <!-- Settings -->
     <string name="settings_activity_title">Impostazioni</string>

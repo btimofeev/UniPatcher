@@ -21,24 +21,23 @@ package org.emunix.unipatcher.ui.fragment
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.documentfile.provider.DocumentFile
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.UniPatcher
-import org.emunix.unipatcher.Utils.startForegroundService
-import org.emunix.unipatcher.WorkerService
 import org.emunix.unipatcher.databinding.SmdFixChecksumFragmentBinding
+import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
+import org.emunix.unipatcher.viewmodels.SmdFixChecksumViewModel
 import timber.log.Timber
 
 class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
-
-    private var romPath: String = ""  // String representation of Uri, example "content://com.app.name/path_to_file"
+    private lateinit var viewModel: SmdFixChecksumViewModel
+    private lateinit var actionIsRunningViewModel: ActionIsRunningViewModel
 
     private var _binding: SmdFixChecksumFragmentBinding? = null
     private val binding get() = _binding!!
@@ -55,27 +54,32 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        UniPatcher.appComponent.inject(this)
         activity?.setTitle(R.string.nav_smd_fix_checksum)
+
+        actionIsRunningViewModel = ViewModelProvider(requireActivity()).get(ActionIsRunningViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(SmdFixChecksumViewModel::class.java)
+        viewModel.getRomName().observe(viewLifecycleOwner, Observer {
+            binding.romLabel.text = it
+        })
+        viewModel.getMessage().observe(viewLifecycleOwner, Observer { event ->
+            event.getContentIfNotHandled()?.let { message ->
+                Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+            }
+        })
+        viewModel.getActionIsRunning().observe(viewLifecycleOwner, Observer { isRunning ->
+            actionIsRunningViewModel.fixChecksum(isRunning)
+            if(isRunning) {
+                binding.progressBar.visibility = View.VISIBLE
+            } else {
+                binding.progressBar.visibility = View.INVISIBLE
+            }
+        })
+
         binding.romCardView.setOnClickListener(this)
     }
 
-    override fun onViewStateRestored(savedInstanceState: Bundle?) {
-        super.onViewStateRestored(savedInstanceState)
-        if (savedInstanceState != null) {
-            romPath = savedInstanceState.getString("romPath") ?: ""
-            if (romPath.isNotEmpty())
-                binding.romNameTextView.text = DocumentFile.fromSingleUri(requireContext(), Uri.parse(romPath))?.name ?: "unknown"
-        }
-    }
-
-    override fun onSaveInstanceState(savedInstanceState: Bundle) {
-        super.onSaveInstanceState(savedInstanceState)
-        savedInstanceState.putString("romPath", romPath)
-    }
-
     override fun onClick(view: View) {
-        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+        val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             type = "application/octet-stream"
         }
@@ -92,29 +96,12 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
         if (requestCode == Action.SELECT_ROM_FILE && resultCode == Activity.RESULT_OK && resultData != null) {
             resultData.data?.let { uri ->
                 Timber.d(uri.toString())
-                val takeFlags = resultData.flags and (Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
-                requireContext().contentResolver.takePersistableUriPermission(uri, takeFlags)
-                DocumentFile.fromSingleUri(requireContext(), uri)?.name?.let { fileName ->
-                    romPath = uri.toString()
-                    binding.romNameTextView.visibility = View.VISIBLE
-                    binding.romNameTextView.text = fileName
-                }
+                viewModel.romSelected(uri)
             }
         }
     }
 
-    override fun runAction(): Boolean {
-        if (romPath.isEmpty()) {
-            Toast.makeText(activity, getString(R.string.main_activity_toast_rom_not_selected), Toast.LENGTH_LONG).show()
-            return false
-        }
-        val rom = DocumentFile.fromSingleUri(requireContext(), Uri.parse(romPath))
-        val intent = Intent(activity, WorkerService::class.java)
-        intent.putExtra("romPath", romPath)
-        intent.putExtra("romName", rom?.name ?: "")
-        intent.putExtra("action", Action.SMD_FIX_CHECKSUM)
-        startForegroundService(requireActivity(), intent)
-        Toast.makeText(activity, R.string.notify_smd_fix_checksum_started_check_notify, Toast.LENGTH_SHORT).show()
-        return true
+    override fun runAction() {
+        viewModel.runActionClicked()
     }
 }

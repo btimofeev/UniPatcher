@@ -26,12 +26,8 @@
     <string name="smd_fix_checksum_help">Este recurso é apenas para ROMs do Sega Mega Drive (Sega Genesis).\n\nServe para consertar a \"tela vermelha da morte\".\n\nAtenção: Esta função não irá criar backups.</string>
 
     <!-- Notifications -->
-    <string name="notify_applying_patch">Aplicando patch</string>
     <string name="notify_patching_complete">Patch aplicado com sucesso</string>
-    <string name="notify_creating_patch">Criando patch</string>
     <string name="notify_create_patch_complete">Patch criado com sucesso</string>
-    <string name="toast_patching_started_check_notify">Processo iniciado. Cheque sua área de notificações</string>
-    <string name="toast_create_patch_started_check_notify">Criação do patch iniciada. Cheque a sua área de notificações</string>
 
     <string name="notify_error">Erro</string>
     <string name="notify_error_could_not_copy_file">Não foi possível copiar o arquivo</string>
@@ -56,13 +52,9 @@
     <string name="notify_error_unknown">Erro desconhecido</string>
 
     <string name="notify_error_not_smd_rom">Esta ROM não é de um Sega Mega Drive</string>
-    <string name="notify_smd_fix_checksum_in_progress">Consertando o checksum</string>
     <string name="notify_smd_fix_checksum_complete">Checksum corrigido com sucesso</string>
-    <string name="notify_smd_fix_checksum_started_check_notify">A correção do checksum foi iniciada. Cheque sua área de notificações</string>
 
-    <string name="notify_snes_delete_smc_header_in_progress">Apagando o header SMC</string>
     <string name="notify_snes_delete_smc_header_complete">Header SMC deletado com sucesso</string>
-    <string name="notify_snes_delete_smc_header_stared_check_noify">Processo iniciado. Cheque sua área de notificações</string>
 
     <!-- Settings -->
     <string name="settings_activity_title">Ajustes</string>

@@ -24,12 +24,8 @@
     <string name="smd_fix_checksum_help">Ця функція працює лише на Sega Mega Drive (Sega Genesis) ROM\'ах.\n\nIt виправляє \"червоний екран смерті\".\n\nУвага: ця функція не створює резервної копії.</string>
 
     <!-- Notifications -->
-    <string name="notify_applying_patch">Застосування патчу</string>
     <string name="notify_patching_complete">Патчинг завершено</string>
-    <string name="notify_creating_patch">Створюю патч</string>
     <string name="notify_create_patch_complete">Створення патчу закінчено</string>
-    <string name="toast_patching_started_check_notify">Патчинг почався. Перевірте область повідомлень</string>
-    <string name="toast_create_patch_started_check_notify">Створюю патч. Перевірте область сповіщень</string>
 
     <string name="notify_error">Помилка</string>
     <string name="notify_error_could_not_copy_file">Не вдалося скопіювати файл</string>
@@ -54,13 +50,9 @@
     <string name="notify_error_unknown">Невідома помилка</string>
 
     <string name="notify_error_not_smd_rom">Це не Sega Mega Drive ROM</string>
-    <string name="notify_smd_fix_checksum_in_progress">Фіксування контрольної суми</string>
     <string name="notify_smd_fix_checksum_complete">Контрольну суму фіксовано</string>
-    <string name="notify_smd_fix_checksum_started_check_notify">Фіксування контрольної суми розпочато. Перевірте область повідомлень</string>
 
-    <string name="notify_snes_delete_smc_header_in_progress">Видалення SMC заголовку</string>
     <string name="notify_snes_delete_smc_header_complete">Видалення SMC заголовку закінчено</string>
-    <string name="notify_snes_delete_smc_header_stared_check_noify">Видалення SMC заголовку почалось. Перевірте область повідомлень</string>
 
     <!-- Settings -->
     <string name="settings_activity_title">Налаштування</string>

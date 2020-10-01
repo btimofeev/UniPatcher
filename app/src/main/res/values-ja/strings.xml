@@ -26,12 +26,8 @@
     <string name="smd_fix_checksum_help">この機能は Sega Mega Drive (Sega Genesis) の ROM にのみ適用されます。\n\n\"死の赤い画面\" を修正します。\n\n警告: この機能はバックアップを作成しません。</string>
 
     <!-- Notifications -->
-    <string name="notify_applying_patch">パッチの適用中</string>
     <string name="notify_patching_complete">パッチ完了</string>
-    <string name="notify_creating_patch">パッチの作成中</string>
     <string name="notify_create_patch_complete">パッチの作成が完了しました</string>
-    <string name="toast_patching_started_check_notify">パッチを開始しました。通知領域を確認してください</string>
-    <string name="toast_create_patch_started_check_notify">パッチの作成を開始しました。通知領域を確認してください</string>
 
     <string name="notify_error">エラー</string>
     <string name="notify_error_could_not_copy_file">ファイルをコピーできません</string>
@@ -56,13 +52,9 @@
     <string name="notify_error_unknown">不明なエラー</string>
 
     <string name="notify_error_not_smd_rom">Sega Mega Drive ROM ではありません</string>
-    <string name="notify_smd_fix_checksum_in_progress">チェックサムの修正中</string>
     <string name="notify_smd_fix_checksum_complete">チェックサムを修正しました</string>
-    <string name="notify_smd_fix_checksum_started_check_notify">チェックサムの修正を開始しました。通知領域を確認してください</string>
 
-    <string name="notify_snes_delete_smc_header_in_progress">SMC ヘッダーを削除</string>
     <string name="notify_snes_delete_smc_header_complete">SMC ヘッダーの削除完了</string>
-    <string name="notify_snes_delete_smc_header_stared_check_noify">SMC ヘッダーの削除を開始しました。通知領域を確認してください</string>
 
     <!-- Settings -->
     <string name="settings_activity_title">設定</string>
