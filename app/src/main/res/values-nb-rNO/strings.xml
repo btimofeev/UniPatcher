@@ -26,12 +26,8 @@
     <string name="smd_fix_checksum_help">Denne funksjonen er bare for Sega Mega Drive (Sega Genesis) ROM-filer.\n\nDen fikser \"rød dødsskjerm\".\n\nAdvarsel: Denne funksjonen tar ikke noen sikkerhetskopi.</string>
 
     <!-- Notifications -->
-    <string name="notify_applying_patch">Legger til programfiks</string>
     <string name="notify_patching_complete">Programfiksing fullført</string>
-    <string name="notify_creating_patch">Oppretter programfiks</string>
     <string name="notify_create_patch_complete">Programfiks opprettet</string>
-    <string name="toast_patching_started_check_notify">Programfiksing startet. Sjekk merknadsområdet</string>
-    <string name="toast_create_patch_started_check_notify">Opprettelse av programfiks startet. Sjekk merknadsområdet</string>
 
     <string name="notify_error">Feil</string>
     <string name="notify_error_could_not_copy_file">Kunne ikke kopiere fil</string>
@@ -56,13 +52,9 @@
     <string name="notify_error_unknown">Ukjent feil</string>
 
     <string name="notify_error_not_smd_rom">Ikke en Sega Mega Drive ROM-fil</string>
-    <string name="notify_smd_fix_checksum_in_progress">Fikser sjekksum</string>
     <string name="notify_smd_fix_checksum_complete">Sjekksum fikset</string>
-    <string name="notify_smd_fix_checksum_started_check_notify">Fiksing av sjekksum startet. Sjekk merknadsområdet</string>
 
-    <string name="notify_snes_delete_smc_header_in_progress">Slett SMC-hode</string>
     <string name="notify_snes_delete_smc_header_complete">SMC-hode slettet</string>
-    <string name="notify_snes_delete_smc_header_stared_check_noify">Sletting av SMC-hode startet. Sjekk merknadsområdet</string>
 
     <!-- Settings -->
     <string name="settings_activity_title">Innstillinger</string>

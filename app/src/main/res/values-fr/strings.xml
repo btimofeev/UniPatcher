@@ -26,12 +26,8 @@
     <string name="smd_fix_checksum_help">Cette fonctionnalité ne concerne que les ROMs Sega Mega Drive (Sega Genesis).\n\nIl permet de corriger le problème de \"l\'écran rouge\".\n\nAttention : cette fonctionnalité ne fait pas de backups.</string>
 
     <!-- Notifications -->
-    <string name="notify_applying_patch">Application du patch en cours...</string>
     <string name="notify_patching_complete">Patch terminé !</string>
-    <string name="notify_creating_patch">Création du patch...</string>
     <string name="notify_create_patch_complete">Patch créé !</string>
-    <string name="toast_patching_started_check_notify">Le patch a débuté. Surveillez la barre de notifications.</string>
-    <string name="toast_create_patch_started_check_notify">La création du patch a débuté. Surveillez la barre de notifications.</string>
 
     <string name="notify_error">Erreur</string>
     <string name="notify_error_could_not_copy_file">Impossible de copier le fichier.</string>
@@ -56,13 +52,9 @@
     <string name="notify_error_unknown">Erreur inconnue.</string>
 
     <string name="notify_error_not_smd_rom">Ce n\'est pas une ROM Sega Mega Drive.</string>
-    <string name="notify_smd_fix_checksum_in_progress">Réparation du checksum...</string>
     <string name="notify_smd_fix_checksum_complete">Checksum réparé !</string>
-    <string name="notify_smd_fix_checksum_started_check_notify">La réparation du checksum a débuté. Surveillez la barre de notifications.</string>
 
-    <string name="notify_snes_delete_smc_header_in_progress">Supprimer l\'en-tête SMC</string>
     <string name="notify_snes_delete_smc_header_complete">En-tête SMC supprimé !</string>
-    <string name="notify_snes_delete_smc_header_stared_check_noify">La suppression de l\'en-tête SMC a débuté. Surveillez la barre de notifications.</string>
 
     <!-- Settings -->
     <string name="settings_activity_title">Paramètres</string>

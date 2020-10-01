@@ -26,12 +26,8 @@
     <string name="smd_fix_checksum_help">此功能仅限世嘉 Mega Drive (Sega Genesis) ROM 使用。\n\n它能修复“红屏死机”。\n\n警告：此功能不会创建备份。</string>
 
     <!-- Notifications -->
-    <string name="notify_applying_patch">应用补丁</string>
     <string name="notify_patching_complete">补丁集成完毕</string>
-    <string name="notify_creating_patch">正在创建补丁</string>
     <string name="notify_create_patch_complete">补丁已创建</string>
-    <string name="toast_patching_started_check_notify">已开始打补丁，请查看通知区域。</string>
-    <string name="toast_create_patch_started_check_notify">已开始创建补丁，请检查通知区域。</string>
 
     <string name="notify_error">错误</string>
     <string name="notify_error_could_not_copy_file">不能复制文件</string>
@@ -56,13 +52,9 @@
     <string name="notify_error_unknown">未知错误</string>
 
     <string name="notify_error_not_smd_rom">非世嘉 Mega Drive 的 ROM</string>
-    <string name="notify_smd_fix_checksum_in_progress">正在修正校验和</string>
     <string name="notify_smd_fix_checksum_complete">校验和已修正</string>
-    <string name="notify_smd_fix_checksum_started_check_notify">已开始修正校验和，请查看通知区域。</string>
 
-    <string name="notify_snes_delete_smc_header_in_progress">删除 SMC 标头</string>
     <string name="notify_snes_delete_smc_header_complete">SMC 标头已被删除</string>
-    <string name="notify_snes_delete_smc_header_stared_check_noify">已开始删除 SMC 标头，请查看通知区域。</string>
 
     <!-- Settings -->
     <string name="settings_activity_title">设置</string>

@@ -27,8 +27,5 @@ object Action {
     const val SELECT_MODIFIED_FILE = 4
     const val SELECT_OUTPUT_FILE = 5
 
-    const val APPLY_PATCH = 101
-    const val CREATE_PATCH = 102
-    const val SMD_FIX_CHECKSUM = 103
     const val SNES_REMOVE_SMC_HEADER = 104
 }

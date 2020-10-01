@@ -21,28 +21,31 @@ package org.emunix.unipatcher.ui.fragment
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.documentfile.provider.DocumentFile
-import org.apache.commons.io.FilenameUtils
-import org.emunix.unipatcher.*
-import org.emunix.unipatcher.Utils.startForegroundService
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import org.emunix.unipatcher.Action
+import org.emunix.unipatcher.R
+import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.databinding.ApplyPatchFragmentBinding
 import org.emunix.unipatcher.ui.activity.HelpActivity
+import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
+import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
 import timber.log.Timber
 
 class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
 
-    private var romPath: String = ""     //
-    private var patchPath: String = ""   // String representation of Uri, example "content://com.app.name/path_to_file
-    private var outputPath: String = ""  //
+    private lateinit var viewModel: ApplyPatchViewModel
+    private lateinit var actionIsRunningViewModel: ActionIsRunningViewModel
 
     private var _binding: ApplyPatchFragmentBinding? = null
     private val binding get() = _binding!!
+
+    private var suggestedOutputName: String = "specify_rom_name"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = ApplyPatchFragmentBinding.inflate(inflater, container, false)
@@ -56,8 +59,36 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        UniPatcher.appComponent.inject(this)
         activity?.setTitle(R.string.nav_apply_patch)
+
+        actionIsRunningViewModel = ViewModelProvider(requireActivity()).get(ActionIsRunningViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(ApplyPatchViewModel::class.java)
+        viewModel.getPatchName().observe(viewLifecycleOwner, Observer {
+            binding.patchLabel.text = it
+        })
+        viewModel.getRomName().observe(viewLifecycleOwner, Observer {
+            binding.romLabel.text = it
+        })
+        viewModel.getOutputName().observe(viewLifecycleOwner, Observer {
+            binding.outputLabel.text = it
+        })
+        viewModel.getSuggestedOutputName().observe(viewLifecycleOwner, Observer {
+            suggestedOutputName = it
+        })
+        viewModel.getMessage().observe(viewLifecycleOwner, Observer { event ->
+            event.getContentIfNotHandled()?.let { message ->
+                Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+            }
+        })
+        viewModel.getActionIsRunning().observe(viewLifecycleOwner, Observer { isRunning ->
+            actionIsRunningViewModel.applyPatch(isRunning)
+            if(isRunning) {
+                binding.progressBar.visibility = View.VISIBLE
+            } else {
+                binding.progressBar.visibility = View.INVISIBLE
+            }
+        })
+
         binding.patchCardView.setOnClickListener(this)
         binding.romCardView.setOnClickListener(this)
         binding.outputCardView.setOnClickListener(this)
@@ -72,32 +103,10 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
             binding.howToUseAppButton.visibility = View.GONE
     }
 
-    override fun onViewStateRestored(savedInstanceState: Bundle?) {
-        super.onViewStateRestored(savedInstanceState)
-        if (savedInstanceState != null) {
-            romPath = savedInstanceState.getString("romPath") ?: ""
-            patchPath = savedInstanceState.getString("patchPath") ?: ""
-            outputPath = savedInstanceState.getString("outputPath") ?: ""
-            if (romPath.isNotEmpty())
-                binding.romNameTextView.text = DocumentFile.fromSingleUri(requireContext(), Uri.parse(romPath))?.name ?: "unknown"
-            if (patchPath.isNotEmpty())
-                binding.patchNameTextView.text = DocumentFile.fromSingleUri(requireContext(), Uri.parse(patchPath))?.name ?: "unknown"
-            if (outputPath.isNotEmpty())
-                binding.outputNameTextView.text = DocumentFile.fromSingleUri(requireContext(), Uri.parse(outputPath))?.name ?: "unknown"
-        }
-    }
-
-    override fun onSaveInstanceState(savedInstanceState: Bundle) {
-        super.onSaveInstanceState(savedInstanceState)
-        savedInstanceState.putString("romPath", romPath)
-        savedInstanceState.putString("patchPath", patchPath)
-        savedInstanceState.putString("outputPath", outputPath)
-    }
-
     override fun onClick(view: View) {
         when (view.id) {
             R.id.patchCardView -> {
-                val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
                     type = "*/*"
                 }
@@ -108,7 +117,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
                 }
             }
             R.id.romCardView -> {
-                val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
                     type = "*/*"
                 }
@@ -119,16 +128,10 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
                 }
             }
             R.id.outputCardView -> {
-                var title = "specify_rom_name"
-                if (romPath.isNotBlank()) {
-                    val romName = DocumentFile.fromSingleUri(requireContext(), Uri.parse(romPath))?.name
-                    if (romName != null)
-                        title = makeOutputTitle(romName)
-                }
                 val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
                     type = "*/*"
-                    putExtra(Intent.EXTRA_TITLE, title)
+                    putExtra(Intent.EXTRA_TITLE, suggestedOutputName)
                 }
                 try {
                     startActivityForResult(intent, Action.SELECT_OUTPUT_FILE)
@@ -148,73 +151,24 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
         if (resultCode == Activity.RESULT_OK && resultData != null && (requestCode == Action.SELECT_PATCH_FILE || requestCode == Action.SELECT_ROM_FILE || requestCode == Action.SELECT_OUTPUT_FILE)) {
             resultData.data?.let { uri ->
                 Timber.d(uri.toString())
-                val takeFlags = resultData.flags and (Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
-                requireContext().contentResolver.takePersistableUriPermission(uri, takeFlags)
-                DocumentFile.fromSingleUri(requireContext(), uri)?.name?.let { fileName ->
-                    when (requestCode) {
-                        Action.SELECT_PATCH_FILE -> {
-                            patchPath = uri.toString()
-                            binding.patchNameTextView.visibility = View.VISIBLE
-                            binding.patchNameTextView.text = fileName
-                            checkArchive(fileName)
-                        }
-                        Action.SELECT_ROM_FILE -> {
-                            romPath = uri.toString()
-                            binding.romNameTextView.visibility = View.VISIBLE
-                            binding.romNameTextView.text = fileName
-                            checkArchive(fileName)
-                        }
-                        Action.SELECT_OUTPUT_FILE -> {
-                            outputPath = uri.toString()
-                            binding.outputNameTextView.visibility = View.VISIBLE
-                            binding.outputNameTextView.text = fileName
-                        }
+                when (requestCode) {
+                    Action.SELECT_PATCH_FILE -> {
+                        viewModel.patchSelected(uri)
                     }
+                    Action.SELECT_ROM_FILE -> {
+                        viewModel.romSelected(uri)
+                    }
+                    Action.SELECT_OUTPUT_FILE -> {
+                        viewModel.outputSelected(uri)
+                    }
+                    else -> IllegalStateException("RequestCode is not valid: $requestCode")
                 }
             }
             super.onActivityResult(requestCode, resultCode, resultData)
         }
     }
 
-    private fun makeOutputTitle(romName: String): String {
-        val baseName = FilenameUtils.getBaseName(romName)
-        val ext = FilenameUtils.getExtension(romName)
-        return "$baseName [patched].$ext"
-    }
-
-    override fun runAction(): Boolean {
-        when {
-            romPath.isEmpty() -> {
-                Toast.makeText(activity, getString(R.string.main_activity_toast_rom_not_selected), Toast.LENGTH_LONG).show()
-                return false
-            }
-            patchPath.isEmpty() -> {
-                Toast.makeText(activity, getString(R.string.main_activity_toast_patch_not_selected), Toast.LENGTH_LONG).show()
-                return false
-            }
-            outputPath.isEmpty() -> {
-                Toast.makeText(activity, getString(R.string.main_activity_toast_output_not_selected), Toast.LENGTH_LONG).show()
-                return false
-            }
-            else -> {
-                val rom = DocumentFile.fromSingleUri(requireContext(), Uri.parse(romPath))
-                val patch = DocumentFile.fromSingleUri(requireContext(), Uri.parse(patchPath))
-                val intent = Intent(activity, WorkerService::class.java)
-                intent.putExtra("action", Action.APPLY_PATCH)
-                intent.putExtra("romPath", romPath)
-                intent.putExtra("patchPath", patchPath)
-                intent.putExtra("outputPath", outputPath)
-                intent.putExtra("romName", rom?.name ?: "")
-                intent.putExtra("patchName", patch?.name ?: "undefined")
-                startForegroundService(requireActivity(), intent)
-                Toast.makeText(activity, R.string.toast_patching_started_check_notify, Toast.LENGTH_SHORT).show()
-                return true
-            }
-        }
-    }
-
-    private fun checkArchive(fileName: String) {
-        if (Utils.isArchive(fileName))
-            Toast.makeText(requireContext(), R.string.main_activity_toast_archives_not_supported, Toast.LENGTH_LONG).show()
+    override fun runAction() {
+        viewModel.runActionClicked()
     }
 }

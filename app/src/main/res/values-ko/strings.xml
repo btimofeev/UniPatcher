@@ -26,12 +26,8 @@
     <string name="smd_fix_checksum_help">이 기능은 세가 메가 드라이브 (세가 제네시스) 롬만을 위한 것입니다.\n\n이는 \"죽음의 레드 스크린\"을 해결합니다.\n\n경고: 이 기능은 백업을 생성하지 않습니다.</string>
 
     <!-- Notifications -->
-    <string name="notify_applying_patch">패치 적용 중</string>
     <string name="notify_patching_complete">패치 완료</string>
-    <string name="notify_creating_patch">패치 생성 중</string>
     <string name="notify_create_patch_complete">패치 생성됨</string>
-    <string name="toast_patching_started_check_notify">패치가 시작되었습니다. 알림 영역을 확인하십시오.</string>
-    <string name="toast_create_patch_started_check_notify">패치 생성이 시작되었습니다. 알림 영역을 확인하십시오.</string>
 
     <string name="notify_error">오류</string>
     <string name="notify_error_could_not_copy_file">파일을 복사할 수 없음</string>
@@ -56,13 +52,9 @@
     <string name="notify_error_unknown">알 수 없는 오류</string>
 
     <string name="notify_error_not_smd_rom">세가 메가 드라이브 롬이 아님</string>
-    <string name="notify_smd_fix_checksum_in_progress">체크섬 수정 중</string>
     <string name="notify_smd_fix_checksum_complete">체크섬 수정됨</string>
-    <string name="notify_smd_fix_checksum_started_check_notify">체크섬 수정이 시작되었습니다. 알림 영역을 확인하십시오.</string>
 
-    <string name="notify_snes_delete_smc_header_in_progress">SMC 헤더 제거 중</string>
     <string name="notify_snes_delete_smc_header_complete">SMC 헤더 제거됨</string>
-    <string name="notify_snes_delete_smc_header_stared_check_noify">SMC 헤더 제거가 시작되었습니다. 알림 영역을 확인하십시오.</string>
 
     <!-- Settings -->
     <string name="settings_activity_title">설정</string>

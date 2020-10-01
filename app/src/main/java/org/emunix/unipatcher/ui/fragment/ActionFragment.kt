@@ -21,5 +21,5 @@ package org.emunix.unipatcher.ui.fragment
 import androidx.fragment.app.Fragment
 
 abstract class ActionFragment : Fragment() {
-    abstract fun runAction(): Boolean
+    abstract fun runAction()
 }

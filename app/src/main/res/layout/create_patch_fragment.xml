@@ -1,134 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    android:layout_alignParentTop="true">
+    android:layout_width="match_parent">
 
-    <LinearLayout
-        style="@style/CardsHolder">
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateOnly="true"
+        android:translationZ="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/sourceFileCardView"
-            style="@style/Card.Clickable">
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="@dimen/card_padding">
+        <LinearLayout
+            style="@style/CardsHolder">
 
-                <TextView
-                    android:id="@+id/sourceFileLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:padding="8dp"
-                    android:text="@string/create_patch_fragment_source_file"
-                    android:textColor="@color/colorCardHeaderText"
-                    android:textSize="24sp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sourceFileCardView"
+                style="@style/Card.Clickable">
 
-                <View
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_line_height"
-                    android:layout_marginTop="@dimen/card_line_margin"
-                    android:layout_marginBottom="@dimen/card_line_margin"
-                    android:background="@color/colorCardLine"/>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/card_padding">
 
-                <TextView
-                    android:id="@+id/sourceFileNameTextView"
+                    <TextView
+                        android:id="@+id/sourceFileLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:padding="8dp"
+                        android:text="@string/create_patch_fragment_source_file"
+                        android:textColor="@color/colorCardHeaderText"
+                        android:textSize="24sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/card_line_height"
+                        android:layout_marginTop="@dimen/card_line_margin"
+                        android:layout_marginBottom="@dimen/card_line_margin"
+                        android:background="@color/colorCardLine"/>
+
+                    <TextView
+                        android:id="@+id/sourceFileNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="sans-serif-light"
+                        android:padding="8dp"
+                        android:text="@string/main_activity_tap_to_select"
+                        android:textSize="20sp"
+                        app:drawableStartCompat="@drawable/folder" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/modifiedFileCardView"
+                style="@style/Card.Clickable">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/folder"
-                    android:drawablePadding="8dp"
-                    android:fontFamily="sans-serif-light"
-                    android:padding="8dp"
-                    android:text="@string/main_activity_tap_to_select"
-                    android:textSize="20sp"/>
-            </LinearLayout>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/card_padding">
 
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/modifiedFileLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:padding="8dp"
+                        android:text="@string/create_patch_fragment_modified_file"
+                        android:textColor="@color/colorCardHeaderText"
+                        android:textSize="24sp"/>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/modifiedFileCardView"
-            style="@style/Card.Clickable">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/card_line_height"
+                        android:layout_marginTop="@dimen/card_line_margin"
+                        android:layout_marginBottom="@dimen/card_line_margin"
+                        android:background="@color/colorCardLine"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="@dimen/card_padding">
+                    <TextView
+                        android:id="@+id/modifiedFileNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="sans-serif-light"
+                        android:padding="8dp"
+                        android:text="@string/main_activity_tap_to_select"
+                        android:textSize="20sp"
+                        app:drawableStartCompat="@drawable/folder" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/modifiedFileLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:padding="8dp"
-                    android:text="@string/create_patch_fragment_modified_file"
-                    android:textColor="@color/colorCardHeaderText"
-                    android:textSize="24sp"/>
+            </androidx.cardview.widget.CardView>
 
-                <View
+            <androidx.cardview.widget.CardView
+                android:id="@+id/patchFileCardView"
+                style="@style/Card.Clickable">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_line_height"
-                    android:layout_marginTop="@dimen/card_line_margin"
-                    android:layout_marginBottom="@dimen/card_line_margin"
-                    android:background="@color/colorCardLine"/>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/card_padding">
 
-                <TextView
-                    android:id="@+id/modifiedFileNameTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/folder"
-                    android:drawablePadding="8dp"
-                    android:fontFamily="sans-serif-light"
-                    android:padding="8dp"
-                    android:text="@string/main_activity_tap_to_select"
-                    android:textSize="20sp"/>
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/patchFileLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:padding="8dp"
+                        android:text="@string/create_patch_fragment_patch_file"
+                        android:textColor="@color/colorCardHeaderText"
+                        android:textSize="24sp"/>
 
-        </androidx.cardview.widget.CardView>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/card_line_height"
+                        android:layout_marginTop="@dimen/card_line_margin"
+                        android:layout_marginBottom="@dimen/card_line_margin"
+                        android:background="@color/colorCardLine"/>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/patchFileCardView"
-            style="@style/Card.Clickable">
+                    <TextView
+                        android:id="@+id/patchFileNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="sans-serif-light"
+                        android:padding="8dp"
+                        android:text="@string/main_activity_tap_to_select_where_to_save_patch"
+                        android:textSize="20sp"
+                        app:drawableStartCompat="@drawable/folder" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="@dimen/card_padding">
-
-                <TextView
-                    android:id="@+id/patchFileLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:padding="8dp"
-                    android:text="@string/create_patch_fragment_patch_file"
-                    android:textColor="@color/colorCardHeaderText"
-                    android:textSize="24sp"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/card_line_height"
-                    android:layout_marginTop="@dimen/card_line_margin"
-                    android:layout_marginBottom="@dimen/card_line_margin"
-                    android:background="@color/colorCardLine"/>
-
-                <TextView
-                    android:id="@+id/patchFileNameTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/folder"
-                    android:drawablePadding="8dp"
-                    android:fontFamily="sans-serif-light"
-                    android:padding="8dp"
-                    android:text="@string/main_activity_tap_to_select_where_to_save_patch"
-                    android:textSize="20sp"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,6 +21,7 @@
     <string name="main_activity_donate_snackbar_text">Поддержите разработку этого приложения</string>
     <string name="main_activity_donate_snackbar_button">Пожертвовать</string>
     <string name="main_activity_button_how_to_use_app">Как пользоваться приложением</string>
+    <string name="main_activity_double_back_to_exit_message">Нажмите ещё раз НАЗАД, чтобы выйти. Это может прервать запущенные операции. </string>
 
     <!-- Create patch fragment -->
     <string name="create_patch_fragment_source_file">Исходный файл</string>
@@ -40,12 +41,8 @@
     <string name="smd_fix_checksum_help">Эта функция только для игр Sega Mega Drive.\n\nОна исправляет \"красный экран смерти\".\n\nПредупреждение: эта функция не создаёт резервную копию.</string>
 
     <!-- Notifications -->
-    <string name="notify_applying_patch">Применяю патч</string>
     <string name="notify_patching_complete">Применение патча завершено</string>
-    <string name="notify_creating_patch">Создаю патч</string>
     <string name="notify_create_patch_complete">Патч создан</string>
-    <string name="toast_patching_started_check_notify">Применяю патч. Проверьте область уведомлений</string>
-    <string name="toast_create_patch_started_check_notify">Создаю патч. Проверьте область уведомлений</string>
 
     <string name="notify_error">Ошибка</string>
     <string name="notify_error_could_not_copy_file">Не удалось скопировать файл</string>
@@ -62,6 +59,9 @@
     <string name="notify_error_xdelta3_internal_error">внутренняя ошибка XDelta3</string>
     <string name="notify_error_xdelta1_unsupported">Не умею работать с XDelta1 патчами</string>
     <string name="notify_error_unable_open_file">Не удалось открыть файл</string>
+    <string name="notify_error_unable_open_source_file">Не удалось открыть исходный файл</string>
+    <string name="notify_error_unable_open_modified_file">Не удалось открыть изменённый файл</string>
+    <string name="notify_error_unable_open_patch_file">Не удалось открыть патч</string>
     <string name="notify_error_unknown_patch_format">Неизвестный формат патча</string>
     <string name="notify_error_unexpected_end_of_file">Неожиданный конец файла</string>
     <string name="notify_error_patch_corrupted">Патч повреждён</string>
@@ -71,13 +71,9 @@
     <string name="notify_error_unknown">Неизвестная ошибка</string>
 
     <string name="notify_error_not_smd_rom">Это не ROM для Sega Mega Drive</string>
-    <string name="notify_smd_fix_checksum_in_progress">Исправляю контрольную сумму</string>
     <string name="notify_smd_fix_checksum_complete">Контр. сумма исправлена</string>
-    <string name="notify_smd_fix_checksum_started_check_notify">Исправляю контрольную сумму. Проверьте область уведомлений</string>
 
-    <string name="notify_snes_delete_smc_header_in_progress">Удаляю SMC заголовок</string>
     <string name="notify_snes_delete_smc_header_complete">SMC заголовок удалён</string>
-    <string name="notify_snes_delete_smc_header_stared_check_noify">Удаляю SMC заголовок. Проверьте область уведомлений</string>
 
     <!-- Settings -->
     <string name="settings_activity_title">Настройки</string>
