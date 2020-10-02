@@ -158,7 +158,7 @@ repositories {
 }
 
 task deleteDependencies(type: Delete) {
-    delete 'src/main/cpp/xdelta/xdelta'
+    delete 'src/main/cpp/xdelta3/xdelta'
     delete 'src/main/cpp/xz/xz'
 }
 
@@ -173,10 +173,10 @@ task downloadDependencies(dependsOn: deleteDependencies) {
         }
         copy {
             from tarTree(resources.gzip("${buildDir}/xdelta-${XDelta}.tar.gz"))
-            into 'src/main/cpp/xdelta/'
+            into 'src/main/cpp/xdelta3/'
         }
-        file("src/main/cpp/xdelta/xdelta-${XDelta}").renameTo(file('src/main/cpp/xdelta/xdelta'))
-        delete("src/main/cpp/xdelta/pax_global_header")
+        file("src/main/cpp/xdelta3/xdelta-${XDelta}").renameTo(file('src/main/cpp/xdelta3/xdelta'))
+        delete("src/main/cpp/xdelta3/pax_global_header")
 
         download {
             src "https://sourceforge.net/projects/lzmautils/files/xz-${xz}.tar.gz/download"
