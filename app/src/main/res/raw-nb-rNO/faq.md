@@ -32,9 +32,7 @@ Hacks og oversettelser bli i hovedsak distribuert som programfikser for å redus
 
 #### Hvordan legge en programfiks til ei ROM-fil?
 
-Du må først velge ROM-fila og deretter programfiksen, trykk så på den runde røde knappen.
-
-Som resultat får du ei programfikset ROM-fil, som er å finne i samme mappe, sammen med den opprinnelige ROM-fila.
+You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.
 
 #### Programmet viser en melding etter filvalg: "Akrivet bør utpakkes i et eksternt program".
 

@@ -32,9 +32,7 @@ ROM хакінг це процес модифікації ROM файла з ме
 
 #### Як накласти патч на гру?
 
-Необхідно вибрати ROM файл та Патч, а тоді натиснути на круглу червону кнопку
-
-У результаті ви отримаєте пропатчений ROM, який буде знаходитись в одній папці із оригінальним ROM'ом.
+You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.
 
 #### Коли я вибираю файл додаток пише "Архів необхідно розпакувати у зовнішній програмі".
 

@@ -32,9 +32,7 @@ Haki i tłumaczenia są generalnie wypuszczanie jako łatki aby zredukować wiel
 
 #### Jak zaaplikować łatkę do ROM-u?
 
-Musisz wybrać plik ROM, łatkę i nacisnąć okrągły czerwony przycisk.
-
-Jako wynik, dostajesz złatkowany ROM, który będzie zlokalizowany w tej samej ścieżce co oryginalny ROM
+You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.
 
 #### Aplikacja wyświetla wiadomość do wybraniu pliku: "Archiwa powinny być wypakowane w zewnętrznym programie"
 
