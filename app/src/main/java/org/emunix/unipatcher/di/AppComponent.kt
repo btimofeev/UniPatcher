@@ -22,6 +22,7 @@ package org.emunix.unipatcher.di
 
 import android.content.SharedPreferences
 import dagger.Component
+import org.emunix.unipatcher.ui.activity.HelpActivity
 import org.emunix.unipatcher.ui.activity.MainActivity
 import javax.inject.Singleton
 
@@ -30,6 +31,7 @@ import javax.inject.Singleton
 interface AppComponent {
 
     fun inject(activity: MainActivity)
+    fun inject(activity: HelpActivity)
 
     fun sharedPreferences(): SharedPreferences
 }
