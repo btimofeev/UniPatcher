@@ -20,8 +20,12 @@
 
 package org.emunix.unipatcher
 
+import android.annotation.TargetApi
 import android.app.Application
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
+import android.os.Build
 import androidx.preference.PreferenceManager
 import org.acra.ACRA
 import org.acra.annotation.AcraCore
@@ -54,7 +58,20 @@ class UniPatcher : Application() {
                 .build()
 
         initLogger()
+        initNotificationChannel()
         setTheme()
+    }
+
+    @TargetApi(26)
+    fun initNotificationChannel() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            return
+        }
+        val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val channel = NotificationChannel(NOTIFICATION_CHANNEL_ID,
+                getString(R.string.notification_channel_name),
+                NotificationManager.IMPORTANCE_DEFAULT)
+        manager.createNotificationChannel(channel)
     }
 
     private fun initLogger() {
@@ -75,6 +92,8 @@ class UniPatcher : Application() {
     }
 
     companion object {
+        const val NOTIFICATION_CHANNEL_ID = "notifications"
+
         lateinit var appComponent: AppComponent
         private set
     }
