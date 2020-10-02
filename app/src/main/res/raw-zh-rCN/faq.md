@@ -32,9 +32,7 @@ ROM 修改即修改 ROM 映像的数据，它可以是更改调整图像、关�
 
 #### 如何应用补丁到 ROM？
 
-你必须选择 ROM 文件和补丁文件，然后触摸红色圆按钮。
-
-在选择文件最后，你会得到一个集成了补丁的 ROM，它位于原始 ROM 的目录中。
+You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.
 
 #### 在选择文件后应用会显示一句消息：“压缩包应该由外部程序解压”。
 

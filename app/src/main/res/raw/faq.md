@@ -32,9 +32,7 @@ Hacks and translations are generally distributed as patches to reduce download s
 
 #### How to apply a patch to ROM?
 
-You must choose the ROM file and the patch, then tap on the red round button.
-
-As a result, you get a patched ROM, which will be located in the same directory with the original ROM.
+You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.
 
 #### App shows a message after file selection: "Archive should be unpacked in an external program".
 

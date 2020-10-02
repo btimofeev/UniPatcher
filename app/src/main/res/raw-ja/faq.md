@@ -32,9 +32,7 @@ ROM ハックは ROM イメージのデータを変更します。 これは、�
 
 #### ROM にパッチを適用する方法は?
 
-ROM ファイルとパッチを選択して、赤い丸のボタンをタップする必要があります。
-
-その結果、元の ROM と同じディレクトリーでパッチされた ROM を入手します。
+You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.
 
 #### ファイルを選択した後、アプリがメッセージを表示します: 「アーカイブは外部プログラムで解凍する必要があります」。
 

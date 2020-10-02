@@ -16,9 +16,7 @@ Utility to apply patches to game ROM-files.
 
 
 b>Come si usa?</b> Molto semplice:
-&bull; Scegli una patch
-&bull; Scegli un gioco
-&bull; Clicca "Salva"
+You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.
 <b><u>Very important:</u> if the game and patch is compressed (ZIP, RAR, 7z or other), they first need to be unzipped (I recommend the freeware (gratis) program ZArchiver).</b>
 
 

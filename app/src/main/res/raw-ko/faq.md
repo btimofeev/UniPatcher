@@ -32,9 +32,7 @@
 
 #### 롬에 패치를 적용하는 방법은 무엇입니까?
 
-롬 파일과 패치를 선택하고 붉은색 둥근 버튼을 탭하면 됩니다.
-
-결과적으로 원본 롬과 동일한 디렉터리에 패치된 롬이 생성됩니다.
+You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.
 
 #### 파일 선택 후 앱에 메시지가 표시됩니다: "압축 파일은 외부 프로그램에서 압축을 풀어야 합니다".
 
