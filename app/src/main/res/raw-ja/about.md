@@ -20,6 +20,8 @@ UniPatcher は IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP およ�
 - **スペイン語**: Carlos Sánchez
 - **ウクライナ語**: Володимир Шевчук
 
+[Help translate the app into your language.](https://www.transifex.com/unipatcher/unipatcher/dashboard/)
+
 ##### 使用ライブラリー:
 
 - [**ACRA**](https://github.com/ACRA/acra) by ACRA team, licensed under the Apache 2.0 license.

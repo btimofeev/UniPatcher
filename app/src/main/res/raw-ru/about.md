@@ -20,6 +20,8 @@ UniPatcher это ROM патчер поддерживающий патчи в ф
 - **Испанский**: Carlos Sánchez
 - **Украинский**: Володимир Шевчук
 
+[Помогите перевести приложение на ваш язык.](https://www.transifex.com/unipatcher/unipatcher/dashboard/)
+
 ##### Используемые библиотеки:
 
 - [**ACRA**](https://github.com/ACRA/acra) от команды ACRA, распространяется под лицензией Apache 2.0.

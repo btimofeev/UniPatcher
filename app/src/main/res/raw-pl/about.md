@@ -20,6 +20,8 @@ Dodatkowe funkcje:
 - **Hiszpański**: Carlos Sánchez
 - **Ukraiński**: Володимир Шевчук
 
+[Help translate the app into your language.](https://www.transifex.com/unipatcher/unipatcher/dashboard/)
+
 ##### Użyte biblioteki:
 
 - [**ACRA**](https://github.com/ACRA/acra) by ACRA team, licensed under the Apache 2.0 license.
