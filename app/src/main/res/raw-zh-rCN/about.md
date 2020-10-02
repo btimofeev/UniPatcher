@@ -20,6 +20,8 @@ UniPatcher 是一个 ROM 补丁工具，它的支持格式为 IPS、IPS32、UPS�
 - **西班牙语**: Carlos Sánchez
 - **乌克兰语**: Володимир Шевчук
 
+[Help translate the app into your language.](https://www.transifex.com/unipatcher/unipatcher/dashboard/)
+
 ##### 使用的库:
 
 - [**ACRA**](https://github.com/ACRA/acra) by ACRA team, licensed under the Apache 2.0 license.
