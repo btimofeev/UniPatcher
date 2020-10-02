@@ -24,13 +24,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import org.emunix.unipatcher.R
+import androidx.lifecycle.ViewModelProvider
 import org.emunix.unipatcher.databinding.FragmentFaqBinding
-import org.markdown4j.Markdown4jProcessor
+import org.emunix.unipatcher.viewmodels.HelpViewModel
 import org.sufficientlysecure.htmltextview.HtmlResImageGetter
-import java.io.IOException
 
 class FaqFragment : Fragment() {
+
+    private lateinit var viewModel: HelpViewModel
 
     private var _binding: FragmentFaqBinding? = null
     private val binding get() = _binding!!
@@ -48,12 +49,15 @@ class FaqFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        try {
-            val html = Markdown4jProcessor().process(
-                    requireActivity().resources.openRawResource(R.raw.faq))
+        viewModel = ViewModelProvider(requireActivity()).get(HelpViewModel::class.java)
+        viewModel.helpInit()
+        viewModel.getHelpText().observe(viewLifecycleOwner, { html ->
             binding.faqText.setHtml(html, HtmlResImageGetter(requireActivity()))
-        } catch (e: IOException) {
-            Toast.makeText(activity, R.string.help_activity_error_cannot_load_text, Toast.LENGTH_LONG).show()
-        }
+        })
+        viewModel.getMessage().observe(viewLifecycleOwner, { event ->
+            event.getContentIfNotHandled()?.let { message ->
+                Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+            }
+        })
     }
 }
