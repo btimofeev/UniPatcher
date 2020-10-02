@@ -18,25 +18,30 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 package org.emunix.unipatcher.ui.activity
 
-import android.content.ActivityNotFoundException
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.PagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
+import dagger.Lazy
 import org.emunix.unipatcher.R
+import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.databinding.ActivityHelpBinding
+import org.emunix.unipatcher.helpers.SocialHelper
 import org.emunix.unipatcher.ui.adapter.HelpPagerAdapter
+import javax.inject.Inject
 
 class HelpActivity : AppCompatActivity() {
+
+    @Inject lateinit var social: Lazy<SocialHelper>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        UniPatcher.appComponent.inject(this)
+
         val binding = ActivityHelpBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
@@ -69,32 +74,18 @@ class HelpActivity : AppCompatActivity() {
                 true
             }
             R.id.action_send_feedback -> {
-                sendFeedback()
+                social.get().sendFeedback()
                 true
             }
             R.id.action_visit_website -> {
-                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_site)))
-                startActivity(browserIntent)
+                social.get().openWebsite()
                 true
             }
             R.id.action_changelog -> {
-                val changelogIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/btimofeev/UniPatcher/blob/master/Changelog.md"))
-                startActivity(changelogIntent)
+                social.get().showChangelog()
                 true
             }
             else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    private fun sendFeedback() {
-        val feedbackIntent = Intent(Intent.ACTION_SEND)
-        feedbackIntent.type = "message/rfc822"
-        feedbackIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(getString(R.string.app_email)))
-        feedbackIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name))
-        try {
-            startActivity(Intent.createChooser(feedbackIntent, getString(R.string.send_feedback_dialog_title)))
-        } catch (ex: ActivityNotFoundException) {
-            Toast.makeText(this, R.string.send_feedback_error_no_email_apps, Toast.LENGTH_SHORT).show()
         }
     }
 }

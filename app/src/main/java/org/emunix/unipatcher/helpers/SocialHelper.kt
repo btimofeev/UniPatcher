@@ -20,9 +20,11 @@
 
 package org.emunix.unipatcher.helpers
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.widget.Toast
 import org.emunix.unipatcher.BuildConfig
 import org.emunix.unipatcher.R
 import javax.inject.Inject
@@ -51,4 +53,28 @@ class SocialHelper @Inject constructor(val context: Context) {
         context.startActivity(rateAppIntent)
     }
 
+    fun sendFeedback() {
+        val feedbackIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", context.getString(R.string.app_email), null)).apply {
+            putExtra(Intent.EXTRA_EMAIL, arrayOf(context.getString(R.string.app_email)))
+            putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.app_name))
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        }
+        try {
+            context.startActivity(feedbackIntent)
+        } catch (ex: ActivityNotFoundException) {
+            Toast.makeText(context, R.string.send_feedback_error_no_email_apps, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun openWebsite() {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.app_site)))
+        browserIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        context.startActivity(browserIntent)
+    }
+
+    fun showChangelog() {
+        val changelogIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/btimofeev/UniPatcher/blob/master/Changelog.md"))
+        changelogIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        context.startActivity(changelogIntent)
+    }
 }
