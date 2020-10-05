@@ -1,0 +1,12 @@
+UniPatcher lar deg utføre programfikser for ROM-filer tilhørende spillkonsoller fra Android.
+
+Hva er en programfiks?
+En programfiks er filen som inneholder endret data for et spill. For eksempel, et spill oversatt fra Japansk til Engelsk. Du kan laste ned programfiksen inneholdende oversettelsen. Den må legges til den Japanske versjonen for å få Engelsk versjon.
+
+Dette programmet lar deg hacke spill for Android. Det ble laget for gamle spillkonsoller (Super Nintendo, Sega Mega Drive, Game Boy Advance, Sony PlayStation, osv.)
+
+Funksjoner:
+* Støttede formater for programfikser: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta 3
+* Opprettelse av XDelta-programfikser
+* Fiks sjekksumer i Sega MegaDrive-ROM-filer
+* Fjern SMC-hoder fra Super Nintendo-ROM-filer
