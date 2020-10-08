@@ -8,6 +8,9 @@
 # Java class files
 *.class
 
+# .so files from ndk-build
+app/src/main/jniLibs
+
 # generated files
 bin/
 gen/
@@ -38,6 +41,7 @@ build
 # Dependencies
 app/src/main/cpp/xdelta3/xdelta/
 app/src/main/cpp/xz/xz/
+app/src/main/cpp/glib/
 
 # AppBundle
 /app/google/release/

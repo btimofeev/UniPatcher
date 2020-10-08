@@ -42,6 +42,7 @@ public class XDelta extends Patcher {
     private static final int ERR_INVALID_INPUT = -17712;
 
     public static native int xdelta3apply(String patchPath, String romPath, String outputPath, boolean ignoreChecksum);
+    public static native int xdelta1apply(String patchPath, String romPath, String outputPath);
 
     public XDelta(Context context, File patch, File rom, File output) {
         super(context, patch, rom, output);
@@ -49,8 +50,10 @@ public class XDelta extends Patcher {
 
     @Override
     public void apply(boolean ignoreChecksum) throws PatchException, IOException {
-        if (checkXDelta1(patchFile))
-            throw new PatchException(context.getString(R.string.notify_error_xdelta1_unsupported));
+        if (checkXDelta1(patchFile)) {
+            applyXDelta1();
+            return;
+        }
 
         try {
             System.loadLibrary("xdelta3");
@@ -101,5 +104,19 @@ public class XDelta extends Patcher {
             IOUtils.closeQuietly(stream);
         }
         return false;
+    }
+
+    public void applyXDelta1() throws PatchException {
+        try {
+            System.loadLibrary("xdelta1");
+        } catch (UnsatisfiedLinkError e) {
+            throw new PatchException(context.getString(R.string.notify_error_failed_load_lib_xdelta3));
+        }
+
+        int ret = xdelta1apply(patchFile.getPath(), romFile.getPath(), outputFile.getPath());
+        Timber.d("XDelta1 return code: %s", ret);
+
+        if (ret != 0)
+            throw new PatchException(context.getString(R.string.notify_error_unknown));
     }
 }

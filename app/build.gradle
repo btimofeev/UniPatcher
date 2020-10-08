@@ -189,3 +189,14 @@ task downloadDependencies(dependsOn: deleteDependencies) {
         file("src/main/cpp/xz/xz-${xz}").renameTo(file('src/main/cpp/xz/xz'))
     }
 }
+
+task build_xdelta1(type: Exec, description: 'Build xdelta1 source via ndkbuild') {
+    def ndkDir = android.ndkDirectory
+    executable = "$ndkDir/ndk-build"
+    args = ['NDK_PROJECT_PATH=build/intermediates/ndk',
+            'NDK_LIBS_OUT=src/main/jniLibs',
+            'APP_BUILD_SCRIPT=src/main/cpp/xdelta1/Android.mk',
+            'NDK_APPLICATION_MK=src/main/cpp/xdelta1/Application.mk']
+}
+
+preBuild.dependsOn build_xdelta1
