@@ -1,0 +1,12 @@
+UniPatcher, oyun ROM'larına yamalar uygulamanıza izin verir.
+
+Yama nedir?
+Oyunun değiştirilmiş verilerinin bulunduğu bir dosya. Örneğin, Japoncadan İngilizceye çevrilmiş bir oyun. Çeviriyi içeren yamayı indirirsiniz. İngilizce sürümünü oluşturmak için Japonca sürüme uygulanması gerekir.
+
+Bu program yerel Android oyunlarını değiştirmenize yardımcı olmayacaktır, eski konsol oyunları (Super Nintendo, Sega Mega Drive, Game Boy Advance, Sony PlayStation vb.) için oluşturulmuştur.
+
+Özellikler:
+* Desteklenen yama biçimleri: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
+* XDelta yamaları oluşturma
+* Sega Mega Drive ROM'larındaki sağlama toplamını düzeltme
+* Super Nintendo ROM'larından SMC başlığını kaldırma
