@@ -21,7 +21,7 @@ You have to select a ROM file, a patch and choose which file to save, then click
 
 
 <b>Contribuer à la traduction :</b>
-Vous pouvez traduire l'appli dans votre langue. Les traductions se font sur https://www.transifex.com/unipatcher/unipatcher
+Vous pouvez traduire l'appli dans votre langue. Les traductions se font sur https://hosted.weblate.org/projects/unipatcher/
 
 
 <b>Commentaires :</b>

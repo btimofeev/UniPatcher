@@ -21,7 +21,7 @@ You have to select a ROM file, a patch and choose which file to save, then click
 
 
 <b>帮助翻译：</b>
-你可以帮助将程序翻译成你的语言，在此管理翻译 https://www.transifex.com/unipatcher/unipatcher
+你可以帮助将程序翻译成你的语言，在此管理翻译 https://hosted.weblate.org/projects/unipatcher/
 
 
 <b>反馈：</b>

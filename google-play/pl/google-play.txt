@@ -21,7 +21,7 @@ You have to select a ROM file, a patch and choose which file to save, then click
 
 
 <b>Pomoc z tłumaczeniami</b>
-Możesz pomóc z tłumaczeniem UniPatcher-a na stronie https://www.transifex.com/unipatcher/unipatcher
+Możesz pomóc z tłumaczeniem UniPatcher-a na stronie https://hosted.weblate.org/projects/unipatcher/
 
 
 <b>Feedback:</b>

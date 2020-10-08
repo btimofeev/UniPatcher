@@ -21,7 +21,7 @@ You have to select a ROM file, a patch and choose which file to save, then click
 
 
 <b>Допоможіть з перекладом:</b>
-Ви можете допомогти з перекладом додатка на свою мову. Переклади керуються на https://www.transifex.com/unipatcher/unipatcher
+Ви можете допомогти з перекладом додатка на свою мову. Переклади керуються на https://hosted.weblate.org/projects/unipatcher/
 
 
 <b>Feedback:</b>
