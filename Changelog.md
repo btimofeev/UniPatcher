@@ -1,10 +1,15 @@
+#### 0.17.1 (October 9, 2020)
+- File operations are performed in an open application, and not in a background service as before.
+- Completed work is notified as a pop-up message, not in the notification area.
+- Translations are now managed on https://hosted.weblate.org/projects/unipatcher/
+
 #### 0.17 (September 18, 2020)
-- the built-in file manager has been replaced with the standard Storage Access Framework.  Now you can work with files on SD card and cloud hosting (eg Google Drive), but applying patches requires more time and free disk space. File checksum view temporarily removed.
-- added support for LZMA compression in XDelta3 patches
-- removed the ability to add SMC header to Snes ROMs (over the years I have never needed this function)
-- support for Android 10 and 11
-- fixed disappearing notifications
-- many small changes in the interface
+- Replaced the built-in file manager with the standard Storage Access Framework. Work with files on SD card and cloud hosting (e.g. Google Drive). Applying patches requires more time and free disk space. File checksum view temporarily removed.
+- Support for LZMA compression in XDelta3 patches
+- Removed ability to add SMC header to SNES ROMs (over the years I have never needed this function)
+- Support for Android 10 and 11
+- No disappearing notifications
+- Many small interface changes
 
 #### 0.16.1 (November 4, 2018)
 - Support Android 9 (Pie)
