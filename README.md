@@ -1,6 +1,7 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/btimofeev/unipatcher/total.svg?color=brightgreen&style=flat-square)
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat-square)](https://android-arsenal.com/api?level=21)
 [![GPL Licence](https://img.shields.io/github/license/btimofeev/unipatcher.svg?color=brightgreen&style=flat-square)](https://opensource.org/licenses/GPL-3.0/)
+[![Translation status](https://hosted.weblate.org/widgets/unipatcher/-/svg-badge.svg)](https://hosted.weblate.org/engage/unipatcher/)
 
 UniPatcher
 ----------
