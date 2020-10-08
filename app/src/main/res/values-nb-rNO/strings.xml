@@ -116,4 +116,52 @@
     <string name="notify_error_unable_open_modified_file">Kunne ikke åpne endret fil</string>
     <string name="main_activity_toast_output_not_selected">Ingen utdatafil valgt</string>
     <string name="main_activity_rom_with_smc_file">ROM-fil med SMC-hode</string>
+    <string name="help_feedback_body">Kontakt meg på e-post <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a>. Skriv på Engelsk eller Russisk. Hvis du har problemer med programfiksing, legg ved hele programfiksen og skriv navnet på ROM-fila di, det vil spare tid.</string>
+    <string name="help_feedback_title">Jeg har et spørsmål, en funksjonsforespørsel eller en feilrapport.</string>
+    <string name="help_how_to_translate_body">Hvis du vil oversette programmet til et annet språk eller forbedre en eksisterende oversettelse, kan du gjøre det på <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a>-siden.</string>
+    <string name="help_how_to_translate_title">Hvordan oversette programmet\?</string>
+    <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis)-spill har sjekksummen sin skrevet inn i ROM-fila. Hvis du bare endrer en del av spillet, vil de ikke samsvare, noe som medfører at den ikke kan kjøres. Hva dette gjør er å regne ut korrekt sjekksum av endringen, og skriver det til den modifiserte ROM-fila.\"
+\n
+\n<b>Advarsel:</b> Denne funksjonen lager ikke en sikkerhetskopi-ROM.</string>
+    <string name="help_sega_fix_checksum_title">Hvorfor må jeg fikse sjekksum for Sega Mega Drive-spill\?</string>
+    <string name="help_additional_features_body">Ja. UniPatcher kan:
+\n
+\n- Opprett XDelta3-programfikser.
+\n- Fiks sjekksum for Sega Mega Drive / Sega Genesis -spill.
+\n- Remove SMC header in Super Nintendo games.</string>
+    <string name="help_additional_features_title">Har UniPatcher noen flere funksjoner\?</string>
+    <string name="help_ecm_image_body">ECM er et data-komprimeringsformat designet spesielt for diskavbildninger. Du kan pakke opp fila ved bruk av <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>-programmet.</string>
+    <string name="help_ecm_image_title">Hva kan jeg gjøre med filer av typen .ECM\?</string>
+    <string name="help_ips_no_checksum_body">Progamfikser i IPS-format inneholder ikke noen sjekksum. Derfor vil programfiksen gå sammen med enhver (selv gale) ROM-filer. I sådant fall, må du se deg om etter en annen ROM-fil.</string>
+    <string name="help_ips_no_checksum_title">Jeg legger til IPS-programfiksen og så fungerer ikke spillet / inneholder grafiske artefakter. Hva gjør jeg galt\?</string>
+    <string name="help_find_rom_pokemon_emerald_body">De fleste programfiksene til spillet fungerer med ROM-fila “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
+    <string name="help_find_rom_pokemon_emerald_title">Jeg kan ikke finne rett ROM-fil for spillet “Pokémon Emerald”.</string>
+    <string name="help_rom_not_compatible_with_patch_body">Programmet viser denne feilen hvis sjekksummen lagret i programfiksen ikke samsvaren med sjekksummen tilhørende ROM-fila. Dette betyr at ROM-fila ikke er kompatibel med programfiksen. Du må velge en annen ROM-fil. Vanligvis er det flere ROM-filer for hvert spill (som versjonen for Europa, USA, Japan, bra eller dårlige dumper, osv.).
+\n
+\nROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. If the checksums matches you have the ROM the patch was written for. If not, you need a different ROM.
+\n
+\nI verste fall, hvis du ikke finner rett ROM-fil, kan du sette valget “Ignorer sjekksum” i innstillingene. Husk at i dette tilfellet vil spillet kanskje inneholde feil eller være helt ubrukelig.</string>
+    <string name="help_rom_not_compatible_with_patch_title">Programmet viser feilen: “Denne ROM-fila er ikke kompatibel med programfiksen”.</string>
+    <string name="help_archive_should_be_unpacked_body">Fila du har valgt er et arkiv. Akrivet inneholder mapper og filer i komprimert format.
+\n
+\nUniPatcher støtter for tiden ikke utpakking av arkiver, så du må pakke ut arkivet ditt med et annet program. Jeg anbefaler gratisprogrammet <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+    <string name="help_archive_should_be_unpacked_title">Programmet viser en melding etter filvalg: “Akrivet bør utpakkes i et eksternt program”.</string>
+    <string name="help_how_to_apply_patch_to_rom_title">Hvordan legge en programfiks til ei ROM-fil\?</string>
+    <string name="help_why_not_distribute_modified_games_body">Hacks og oversettelser bli i hovedsak distribuert som programfikser for å redusere nedlastingsstørrelse og for å unngå kopiretts-problematikk.</string>
+    <string name="help_why_not_distribute_modified_games_title">Hvorfor ROM-hackere ikke distribuerer modifiserte spill\?</string>
+    <string name="help_what_is_a_patch_body">En programfiks er ei fil som inneholder forskjellene mellom orginalversjonen av ei ROM-fil og den hackede versjonen
+\n
+\nProgramfiksen blir distribuert, og sluttbrukere legger den til en kopi av orginal-ROM-fila, som produserer en spillversjon av hack-en.</string>
+    <string name="help_what_is_a_patch_title">Hva er en programfiks\?</string>
+    <string name="help_what_is_rom_hacking_body">ROM-hacking er å modifisere dataene i ROM-avbildningen. Dette kan være å forandre grafikken, endre nivåene, endre vanskelighetsgraden, eller selv oversettelse til et annet språk der spillet aldri kom ut.</string>
+    <string name="help_what_is_rom_hacking_title">Hva er ROM-hacking\?</string>
+    <string name="help_what_is_rom_image_body">En ROM-avbildning er ei datafil som inneholder en kopi av dataen fra en videospillkasett. Uttrykket brukes i sammenheng med emulering, prosessen der gamle spill blir kopiert til ROM-filer, og kan, ved bruk av en type programvare som heter “emulator”, kjøres på en datamaskin eller telefon.</string>
+    <string name="help_what_is_rom_image_title">Hva er en ROM-avbildning\?</string>
+    <string name="help_can_i_hack_android_game_body">Nei. UniPatcher er ikke designet for å hacke Android-spill.</string>
+    <string name="help_can_i_hack_android_game_title">Kan jeg hacke eller cracke Android-spill med dette programmet\?</string>
+    <string name="help_what_patch_formats_are_supported_body">Programmet støtter IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP og XDelta3 -programfikstyper.</string>
+    <string name="help_what_patch_formats_are_supported_title">Hvilke programfiks-formater støttes\?</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher er et Android-verktøy for å legge programfikser til ROM-avbildninger tilhørende forskjellige spillkonsoller.</string>
+    <string name="help_what_is_unipatcher_title">Hva er UniPatcher\?</string>
+    <string name="help_title">Ofte Stilte Spørsmål:</string>
 </resources>
