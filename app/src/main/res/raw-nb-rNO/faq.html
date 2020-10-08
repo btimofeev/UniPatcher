@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+</head>
+<body>
+<h2>Ofte Stilte Spørsmål:</h2>
+<h4>Hva er UniPatcher?</h4>
+<p>UniPatcher er et Android-verktøy for å legge programfikser til ROM-avbildninger tilhørende forskjellige spillkonsoller.</p>
+<h4>Hvilke programfiks-formater støttes?</h4>
+<p>Programmet støtter IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP og XDelta3 -programfikstyper.</p>
+<h4>Kan jeg hacke eller cracke Android-spill med dette programmet?</h4>
+<p>Nei. UniPatcher er ikke designet for å hacke Android-spill.</p>
+<h4>Hva er en ROM-avbildning?</h4>
+<p>En ROM-avbildning er ei datafil som inneholder en kopi av dataen fra en videospillkasett. Uttrykket brukes i sammenheng med emulering, prosessen der gamle spill blir kopiert til ROM-filer, og kan, ved bruk av en type programvare som heter “emulator”, kjøres på en datamaskin eller telefon.</p>
+<h4>Hva er ROM-hacking?</h4>
+<p>ROM-hacking er å modifisere dataene i ROM-avbildningen. Dette kan være å forandre grafikken, endre nivåene, endre vanskelighetsgraden, eller selv oversettelse til et annet språk der spillet aldri kom ut.</p>
+<h4>Hva er en programfiks?</h4>
+<p>En programfiks er ei fil som inneholder forskjellene mellom orginalversjonen av ei ROM-fil og den hackede versjonen</p>
+<p>Programfiksen blir distribuert, og sluttbrukere legger den til en kopi av orginal-ROM-fila, som produserer en spillversjon av hack-en.</p>
+<h3>Hvorfor ROM-hackere ikke distribuerer modifiserte spill?</h3>
+<p>Hacks og oversettelser bli i hovedsak distribuert som programfikser for å redusere nedlastingsstørrelse og for å unngå kopiretts-problematikk.</p>
+<h4>Hvordan legge en programfiks til ei ROM-fil?</h4>
+<p>You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.</p>
+<h4>Programmet viser en melding etter filvalg: “Akrivet bør utpakkes i et eksternt program”.</h4>
+<p>Fila du har valgt er et arkiv. Akrivet inneholder mapper og filer i komprimert format.</p>
+<p>UniPatcher støtter for tiden ikke utpakking av arkiver, så du må pakke ut arkivet ditt med et annet program. Jeg anbefaler gratisprogrammet <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</p>
+<h4>Programmet viser feilen: “Denne ROM-fila er ikke kompatibel med programfiksen”.</h4>
+<p>Programmet viser denne feilen hvis sjekksummen lagret i programfiksen ikke samsvaren med sjekksummen tilhørende ROM-fila. Dette betyr at ROM-fila ikke er kompatibel med programfiksen. Du må velge en annen ROM-fil. Vanligvis er det flere ROM-filer for hvert spill (som versjonen for Europa, USA, Japan, bra eller dårlige dumper, osv.).</p>
+<p>ROM-hackere offentliggjør ofte sjekksummen av tilhørende ROM-fil (på en nettside eller README-fil). Du må sammenligne denne med den fra ROM-fila du har. Trykk lenge på filbehandleren og du vil disse tre linjene: CRC32, SHA1 og MD5. Du har rett ROM hvis én av disse linjene samsvarer med sjekksummen til programfiksen. Hvis sjekksummene ikke stemmer må du ha en annen ROM-fil.</p>
+<p>I verste fall, hvis du ikke finner rett ROM-fil, kan du sette valget “Ignorer sjekksum” i innstillingene. Husk at i dette tilfellet vil spillet kanskje inneholde feil eller være helt ubrukelig.</p>
+<h4>I can’t patch “Super Mario World (U) [!].smc”</h4>
+<p>This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.</p>
+<h4>Jeg kan ikke finne rett ROM-fil for spillet “Pokémon Emerald”.</h4>
+<p>De fleste programfiksene til spillet fungerer med ROM-fila “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</p>
+<h4>Jeg legger til IPS-programfiksen og så fungerer ikke spillet / inneholder grafiske artefakter. Hva gjør jeg galt?</h4>
+<p>Progamfikser i IPS-format inneholder ikke noen sjekksum. Derfor vil programfiksen gå sammen med enhver (selv gale) ROM-filer. I sådant fall, må du se deg om etter en annen ROM-fil.</p>
+<h4>Hva kan jeg gjøre med filer av typen .ECM?</h4>
+<p>ECM er et data-komprimeringsformat designet spesielt for diskavbildninger. Du kan pakke opp fila ved bruk av <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>-programmet.</p>
+<h4>Har UniPatcher noen flere funksjoner?</h4>
+<p>Ja. UniPatcher kan:</p>
+<ul>
+<li>Opprett XDelta3-programfikser.</li>
+<li>Fiks sjekksum for Sega Mega Drive / Sega Genesis -spill</li>
+<li>Remove SMC header in Super Nintendo games.</li>
+</ul>
+<h4>Hvorfor må jeg fikse sjekksum for Sega Mega Drive-spill?</h4>
+<p>Sega Mega Drive (Genesis)-spill har sjekksummen sin skrevet inn i ROM-fila. Hvis du bare endrer en del av spillet, vil de ikke samsvare, noe som medfører at den ikke kan kjøres. Hva dette gjør er å regne ut korrekt sjekksum av endringen, og skriver det til den modifiserte ROM-fila."</p>
+<p><strong>Advarsel:</strong> Denne funksjonen lager ikke en sikkerhetskopi-ROM.</p>
+<h4>Why is it sometimes necessary to remove SMC headers from Super Nintendo games?</h4>
+<p>An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing a header is sometimes used for the purpose of correctly applying a patch.</p>
+<h4>Hvordan oversette programmet?</h4>
+<p>Hvis du vil oversette programmet til et annet språk eller forbedre en eksisterende oversettelse, kan du gjøre det på <a href="https://www.transifex.com/unipatcher/unipatcher/dashboard/">Transifex</a>-siden.</p>
+<h4>Jeg har et spørsmål, en funksjonsforespørsel eller en feilrapport.</h4>
+<p>Kontakt meg på e-post <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a>. Skriv på Engelsk eller Russisk. Hvis du har problemer med programfiksing, legg ved hele programfiksen og skriv navnet på ROM-fila di, det vil spare tid.</p>
+</body>
+</html>
