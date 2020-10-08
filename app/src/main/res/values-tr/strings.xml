@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notify_error_unable_open_patch_file">Yama dosyası açılamıyor</string>
+    <string name="notify_error_unable_open_modified_file">Değiştirilmiş dosya açılamıyor</string>
+    <string name="notify_error_unable_open_source_file">Kaynak dosyası açılamıyor</string>
+    <string name="notify_error_unable_open_file">Dosya açılamıyor</string>
+    <string name="notification_channel_name">Bildirimler</string>
+    <string name="icon">simge</string>
+    <string name="donation">Bağış</string>
+    <string name="nav_drawer_close">Gezinme çekmecesini kapat</string>
+    <string name="nav_drawer_open">Gezinme çekmecesini aç</string>
+    <string name="nav_help">Yardım</string>
+    <string name="nav_share">Paylaş</string>
+    <string name="nav_donate">Bağış yap</string>
+    <string name="nav_rate">Uygulamaya puan ver</string>
+    <string name="nav_settings">Ayarlar</string>
+    <string name="nav_snes_add_del_smc_header">SMC başlığını kaldır (SNES)</string>
+    <string name="nav_smd_fix_checksum">Sağlama toplamını düzelt (SMD)</string>
+    <string name="nav_create_patch">Yama oluştur</string>
+    <string name="nav_apply_patch">Yama uygula</string>
+    <string name="share_text">Android için en iyi ROM yama aracını indirin. IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP ve XDelta3 yama türlerini destekliyor.
+\n
+\n</string>
+    <string name="share_dialog_title">UniPatcher\'ı paylaş</string>
+    <string name="send_feedback_error_no_email_apps">Kurulu e-posta istemcisi yok</string>
+    <string name="send_feedback_dialog_title">E-posta gönder</string>
+    <string name="donate_activity_title">Bağış yap</string>
+    <string name="error_file_picker_app_is_no_installed">Hata: Kurulu dosya yöneticisi uygulaması yok</string>
+    <string name="error_crash_discard_button">At</string>
+    <string name="error_crash_send_button">Gönder</string>
+    <string name="error_crash_message">Üzgünüm, uygulama çöktü. Lütfen geliştiricilere bir bildirim gönderin.</string>
+    <string name="error_crash_title">Çökme</string>
+    <string name="help_activity_error_cannot_load_text">Hata: metin yüklenemiyor</string>
+    <string name="help_activity_action_changelog">Değişiklikler</string>
+    <string name="help_activity_action_visit_site">Web sitesini ziyaret et</string>
+    <string name="help_activity_action_send_feedback">Geri bildirim gönder</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_license">Lisans: GNU GPLv3</string>
+    <string name="help_activity_about_tab_version">Sürüm %1$s</string>
+    <string name="help_activity_about_tab_title">Hakkında</string>
+    <string name="help_activity_faq_tab_title">S.S.S.</string>
+    <string name="help_activity_title">Yardım</string>
+    <string name="settings_ignore_checksum_description">Yanlış ROM\'u kullanıyorsanız yamayı yarıda kesme. Dikkatli olun: Bu seçenek oyununuzu bozabilir.</string>
+    <string name="settings_ignore_checksum">Sağlama toplamlarını yok say</string>
+    <string name="settings_patching_header">Yama</string>
+    <string name="settings_show_button_how_to_use_app_description">Ana ekranda \"Uygulama nasıl kullanılır\" düğmesini göster</string>
+    <string name="settings_show_button_how_to_use_app">Yardım düğmesini göster</string>
+    <string name="settings_theme_name_follow_system">Sistem öntanımlı değerini kullan</string>
+    <string name="settings_theme_name_auto_battery">Pil tasarrufu tarafından ayarlansın</string>
+    <string name="settings_theme_name_dark">Koyu</string>
+    <string name="settings_theme_name_light">Açık</string>
+    <string name="settings_theme_dialog_title">Tema seç</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_interface_header">Kullanıcı arayüzü</string>
+    <string name="settings_activity_title">Ayarlar</string>
+    <string name="notify_snes_delete_smc_header_complete">SMC başlığı silindi</string>
+    <string name="notify_smd_fix_checksum_complete">Sağlama toplamı düzeltildi</string>
+    <string name="notify_error_not_smd_rom">Sega Mega Drive ROM\'u değil</string>
+    <string name="notify_error_unknown">Bilinmeyen hata</string>
+    <string name="notify_error_failed_load_lib_xdelta3">libxdelta3.so kütüphanesini yükleme başarısız oldu</string>
+    <string name="notify_error_wrong_checksum_after_patching">Yama uygulandıktan sonra dosyanın yanlış sağlama toplamı var</string>
+    <string name="notify_error_rom_not_compatible_with_patch">Bu ROM, yama ile uyumlu değil</string>
+    <string name="notify_error_patch_corrupted">Yama dosyası bozulmuş</string>
+    <string name="notify_error_unexpected_end_of_file">Beklenmeyen dosya sonu</string>
+    <string name="notify_error_unknown_patch_format">Bilinmeyen yama biçimi</string>
+    <string name="create_patch_fragment_toast_source_not_selected">Kaynak dosyası seçilmedi</string>
+    <string name="notify_error_xdelta1_unsupported">XDelta1 yamalarıyla çalışamıyorum</string>
+    <string name="notify_error_xdelta3_internal_error">Dahili XDelta3 hatası</string>
+    <string name="notify_error_not_xdelta3_patch">Geçerli bir XDelta3 yaması değil</string>
+    <string name="notify_error_not_dps_patch">Geçerli bir DPS yaması değil</string>
+    <string name="notify_error_not_ebp_patch">Geçerli bir EBP yaması değil</string>
+    <string name="notify_error_not_aps_patch">Geçerli bir APS yaması değil</string>
+    <string name="notify_error_not_ppf_patch">Geçerli bir PPF yaması değil</string>
+    <string name="notify_error_not_bps_patch">Geçerli bir BPS yaması değil</string>
+    <string name="notify_error_not_ups_patch">Geçerli bir UPS yaması değil</string>
+    <string name="notify_error_not_ips_patch">Geçerli bir IPS yaması değil</string>
+    <string name="notify_error_not_enough_space">Diskte yeterli alan yok</string>
+    <string name="notify_error_file_not_found">Dosya bulunamadı</string>
+    <string name="notify_error_could_not_copy_file">Dosya kopyalanamadı</string>
+    <string name="notify_error">Hata</string>
+    <string name="notify_create_patch_complete">Yama oluşturuldu</string>
+    <string name="notify_patching_complete">Yama tamamlandı</string>
+    <string name="smd_fix_checksum_help">Bu özellik yalnızca Sega Mega Drive (Sega Genesis) ROM\'ları içindir.
+\n
+\n\"Kırmızı ölüm ekranını\" düzeltir.
+\n
+\nUyarı: Bu işlev bir yedekleme oluşturmaz.</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Hata: dosya boyutu belirlenemiyor</string>
+    <string name="snes_rom_has_no_smc_header">Bu ROM\'un SMC başlığı yok. Hiçbir şeyi silmeniz gerekmiyor.</string>
+    <string name="snes_smc_header_will_be_removed">Bu ROM\'un SMC başlığı var. Kaldırılacak.</string>
+    <string name="snes_smc_header_help">Bu özellik yalnızca Super Nintendo ROM\'ları içindir.
+\n
+\nBazı yamalar ROM\'un SMC başlığına sahip olmamasını gerektirir. Bu işlev, onu kaldırmanıza yardımcı olacaktır.</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">Yama dosyası seçilmedi</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">Değiştirilmiş dosya seçilmedi</string>
+    <string name="create_patch_fragment_patch_file">Yama dosyası</string>
+    <string name="create_patch_fragment_modified_file">Değiştirilmiş dosya</string>
+    <string name="create_patch_fragment_source_file">Kaynak dosyası</string>
+    <string name="main_activity_double_back_to_exit_message">Çıkmak için GERİ düğmesine tekrar basın. Bu, çalışan tüm işlemleri kesintiye uğratabilir</string>
+    <string name="main_activity_button_how_to_use_app">Uygulama nasıl kullanılır</string>
+    <string name="main_activity_donate_snackbar_button">Bağış yap</string>
+    <string name="main_activity_donate_snackbar_text">Bağış yaparak UniPatcher\'ın geliştirilmesini destekleyin</string>
+    <string name="main_activity_toast_archives_not_supported">Arşiv harici bir programda açılmalıdır</string>
+    <string name="main_activity_toast_output_not_selected">Çıktı dosyası seçilmedi</string>
+    <string name="main_activity_toast_patch_not_selected">Yama dosyası seçilmedi</string>
+    <string name="main_activity_toast_rom_not_selected">ROM dosyası seçilmedi</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">ROM\'un nereye kaydedileceğini seçmek için dokunun</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">yamanın nereye kaydedileceğini seçmek için dokunun</string>
+    <string name="main_activity_tap_to_select">seçmek için dokunun</string>
+    <string name="main_activity_rom_without_smc_file">Başlıksız ROM dosyası oluştur</string>
+    <string name="main_activity_rom_with_smc_file">SMC başlıklı ROM dosyası</string>
+    <string name="main_activity_output_file">Çıktı dosyası</string>
+    <string name="main_activity_patch_file">Yama dosyası</string>
+    <string name="main_activity_rom_file">ROM dosyası</string>
+    <string name="app_email">unipatcher@gmail.com</string>
+    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
+    <string name="app_name">UniPatcher</string>
+</resources>
