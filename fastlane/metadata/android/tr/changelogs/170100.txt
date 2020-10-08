@@ -1,3 +1,4 @@
 - Dosya işlemleri, daha önce olduğu gibi bir arka plan hizmetinde değil, açık bir uygulamada gerçekleştirilir.
 - Tamamlanan çalışma, bildirim alanında değil, bir açılır (pop-up) mesaj olarak bildirilir.
+- Türkçe dili eklendi (Oğuz Ersen'e teşekkürler).
 - Çeviriler artık https://hosted.weblate.org/projects/unipatcher/ adresinde yönetiliyor.
