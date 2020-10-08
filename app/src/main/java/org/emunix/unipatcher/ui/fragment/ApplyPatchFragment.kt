@@ -64,13 +64,13 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
         actionIsRunningViewModel = ViewModelProvider(requireActivity()).get(ActionIsRunningViewModel::class.java)
         viewModel = ViewModelProvider(requireActivity()).get(ApplyPatchViewModel::class.java)
         viewModel.getPatchName().observe(viewLifecycleOwner, Observer {
-            binding.patchLabel.text = it
+            binding.patchNameTextView.text = it
         })
         viewModel.getRomName().observe(viewLifecycleOwner, Observer {
-            binding.romLabel.text = it
+            binding.romNameTextView.text = it
         })
         viewModel.getOutputName().observe(viewLifecycleOwner, Observer {
-            binding.outputLabel.text = it
+            binding.outputNameTextView.text = it
         })
         viewModel.getSuggestedOutputName().observe(viewLifecycleOwner, Observer {
             suggestedOutputName = it

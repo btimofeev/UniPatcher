@@ -62,10 +62,10 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
         actionIsRunningViewModel = ViewModelProvider(requireActivity()).get(ActionIsRunningViewModel::class.java)
         viewModel = ViewModelProvider(requireActivity()).get(SnesSmcHeaderViewModel::class.java)
         viewModel.getRomName().observe(viewLifecycleOwner, Observer {
-            binding.romLabel.text = it
+            binding.romNameTextView.text = it
         })
         viewModel.getOutputName().observe(viewLifecycleOwner, Observer {
-            binding.outputLabel.text = it
+            binding.outputNameTextView.text = it
         })
         viewModel.getSuggestedOutputName().observe(viewLifecycleOwner, Observer {
             suggestedOutputName = it

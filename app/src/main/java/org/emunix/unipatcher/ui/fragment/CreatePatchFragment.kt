@@ -61,13 +61,13 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
         actionIsRunningViewModel = ViewModelProvider(requireActivity()).get(ActionIsRunningViewModel::class.java)
         viewModel = ViewModelProvider(requireActivity()).get(CreatePatchViewModel::class.java)
         viewModel.getSourceName().observe(viewLifecycleOwner, Observer {
-            binding.sourceFileLabel.text = it
+            binding.sourceFileNameTextView.text = it
         })
         viewModel.getModifiedName().observe(viewLifecycleOwner, Observer {
-            binding.modifiedFileLabel.text = it
+            binding.modifiedFileNameTextView.text = it
         })
         viewModel.getPatchName().observe(viewLifecycleOwner, Observer {
-            binding.patchFileLabel.text = it
+            binding.patchFileNameTextView.text = it
         })
         viewModel.getMessage().observe(viewLifecycleOwner, Observer { event ->
             event.getContentIfNotHandled()?.let { message ->
