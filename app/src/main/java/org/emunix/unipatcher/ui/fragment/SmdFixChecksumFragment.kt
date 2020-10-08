@@ -59,7 +59,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
         actionIsRunningViewModel = ViewModelProvider(requireActivity()).get(ActionIsRunningViewModel::class.java)
         viewModel = ViewModelProvider(requireActivity()).get(SmdFixChecksumViewModel::class.java)
         viewModel.getRomName().observe(viewLifecycleOwner, Observer {
-            binding.romLabel.text = it
+            binding.romNameTextView.text = it
         })
         viewModel.getMessage().observe(viewLifecycleOwner, Observer { event ->
             event.getContentIfNotHandled()?.let { message ->
