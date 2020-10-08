@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">UniPatcher</string>
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_email">unipatcher@gmail.com</string>
-
     <!-- Main activity -->
     <string name="main_activity_rom_file">Arquivo ROM</string>
     <string name="main_activity_patch_file">Arquivo de patch</string>
@@ -24,11 +22,9 @@
     <string name="snes_smc_header_will_be_removed">Esta ROM contém o header SMC. O mesmo será removido.</string>
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">Este recurso é apenas para ROMs do Sega Mega Drive (Sega Genesis).\n\nServe para consertar a \"tela vermelha da morte\".\n\nAtenção: Esta função não irá criar backups.</string>
-
     <!-- Notifications -->
     <string name="notify_patching_complete">Patch aplicado com sucesso</string>
     <string name="notify_create_patch_complete">Patch criado com sucesso</string>
-
     <string name="notify_error">Erro</string>
     <string name="notify_error_could_not_copy_file">Não foi possível copiar o arquivo</string>
     <string name="notify_error_file_not_found">Arquivo não encontrado</string>
@@ -50,12 +46,9 @@
     <string name="notify_error_wrong_checksum_after_patching">O arquivo adquiriu um checksum errado após o patch</string>
     <string name="notify_error_failed_load_lib_xdelta3">Falha ao carregar a biblioteca libxdelta3.so</string>
     <string name="notify_error_unknown">Erro desconhecido</string>
-
     <string name="notify_error_not_smd_rom">Esta ROM não é de um Sega Mega Drive</string>
     <string name="notify_smd_fix_checksum_complete">Checksum corrigido com sucesso</string>
-
     <string name="notify_snes_delete_smc_header_complete">Header SMC deletado com sucesso</string>
-
     <!-- Settings -->
     <string name="settings_activity_title">Ajustes</string>
     <string name="settings_interface_header">Interface de usuário</string>
@@ -66,7 +59,6 @@
     <string name="settings_patching_header">Patching</string>
     <string name="settings_ignore_checksum">Ignorar checksums</string>
     <string name="settings_ignore_checksum_description">Não interrompa o processo mesmo que você tenha usado a ROM errada. Tenha cuidado: Esta opção pode corromper o seu jogo.</string>
-
     <!-- Help activity -->
     <string name="help_activity_title">Ajuda</string>
     <string name="help_activity_faq_tab_title">F.A.Q</string>
@@ -77,13 +69,10 @@
     <string name="help_activity_action_visit_site">Visitar website</string>
     <string name="help_activity_action_changelog">Lista de mudanças</string>
     <string name="donate_activity_title">Doar</string>
-
     <string name="send_feedback_dialog_title">Enviar e-mail</string>
     <string name="send_feedback_error_no_email_apps">Não foi localizado nenhum cliente de e-mail em seu dispositivo</string>
-
     <string name="share_dialog_title">Compartilhar o UniPatcher</string>
     <string name="share_text">Baixe agora o melhor patcher de ROMs para Android. Suporte para os formatos IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.\n\n</string>
-
     <!-- Navigation list -->
     <string name="nav_apply_patch">Aplicar patch</string>
     <string name="nav_create_patch">Criar patch</string>
@@ -95,10 +84,51 @@
     <string name="nav_help">Ajuda</string>
     <string name="nav_drawer_open">Abrir o painel de navegação</string>
     <string name="nav_drawer_close">Fechar o painel de navegação</string>
-
     <string name="donation">Doação</string>
     <string name="icon">ícone</string>
     <string name="notification_channel_name">Notificações</string>
-
+    <string name="help_feedback_body">Me contate pelo e-mail <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a>. Por favor escreva em Inglês ou Russo se você tem problemas com patcheamento, anexe o patch no e-mail e escreva o nome da sua ROM, isso poupará nosso tempo.</string>
+    <string name="help_feedback_title">Tenho uma pergunta, um requerimento de função ou uma denúncia de bug.</string>
+    <string name="help_how_to_translate_body">Se você gostaria de traduzir o app para outro idioma ou melhorar uma tradução existente, você pode fazer isso no site <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a>.</string>
+    <string name="help_how_to_translate_title">Como traduzir o app\?</string>
+    <string name="help_snes_smc_title">Why is it sometimes necessary to remove SMC headers from Super Nintendo games\?</string>
+    <string name="help_sega_fix_checksum_body">Os jogos para Sega Mega Drive (Genesis) possuem o checksum escritas dentro da ROM. Se você modificar qualquer parte do jogo, eles não vão coincidir, ocasionando uma falha ao tentar executar. O que esta opção faz é calcular o checksum correto da mudança realizada e escrever o mesmo dentro da ROM modificada.
+\n
+\n<b>AVISO:</b> Esta função não cria uma ROM de backup.</string>
+    <string name="help_sega_fix_checksum_title">Por que tenho que corrigir checksum para jogos de Sega Mega Drive\?</string>
+    <string name="help_additional_features_body">Sim. UniPatcher pode:
+\n
+\n- Criar patches do tipo XDelta3
+\n- Corrigir checksum em jogos de Sega Mega Drive / Sega Genesis.
+\n- Remove SMC header in Super Nintendo games.</string>
+    <string name="help_additional_features_title">O UniPatcher tem alguma função adicional\?</string>
+    <string name="help_ecm_image_body">ECM é um formato de compressão de dados designado especificamente para imagens de disco. Você pode descomprimir o arquivo usando <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> program.</string>
+    <string name="help_ecm_image_title">O que eu posso fazer com arquivos do tipo ECM\?</string>
+    <string name="help_ips_no_checksum_title">Eu aplico o patch IPS e o jogo não está funcionando/ tem glitches gráficos. O quê estou fazendo de errado\?</string>
+    <string name="help_find_rom_pokemon_emerald_body">A maioria dos patches do jogo funciona com a ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
+    <string name="help_find_rom_pokemon_emerald_title">Não consigo achar a ROM correta para o jogo “Pokémon Emerald”.</string>
+    <string name="help_rom_not_compatible_with_patch_title">O aplicativo mostra o erro: “Esta ROM não é compatível com o patch”.</string>
+    <string name="help_archive_should_be_unpacked_body">O arquivo que você selecionou é um ficheiro. O ficheiro contém os diretórios e arquivos em um formato comprimido (Ex. .zip, .rar).
+\n
+\nAté este momento, o UniPatcher não pode extrair arquivos, então você precisará descompactar seu arquivo em uma aplicação diferente. Eu recomendo esta aqui, é gratuita: <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+    <string name="help_archive_should_be_unpacked_title">O aplicativo mostra uma mensagem após selecionar um arquivo: \" O arquivo deve ser decomprimido em um aplicativo externo\".</string>
+    <string name="help_how_to_apply_patch_to_rom_body">You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.</string>
+    <string name="help_how_to_apply_patch_to_rom_title">Como aplicar um patch em uma ROM\?</string>
+    <string name="help_why_not_distribute_modified_games_body">Hacks e traduções são geralmente distribuídos como patches para reduzir o tamanho de download e evitar problemas com direitos autorais.</string>
+    <string name="help_why_not_distribute_modified_games_title">Por quê ROM hackers não distribúem jogos modificados\?</string>
+    <string name="help_what_is_a_patch_body">Um patch é um arquivo que contém as diferenças entre a versão original de uma ROM e a versão hackeada.
+\n
+\nO patch é distribuído, e os usuários finais aplicam o patch em uma cópia da ROM original, cuja produz uma versão jogável da hack.</string>
+    <string name="help_what_is_a_patch_title">O que é um patch\?</string>
+    <string name="help_what_is_rom_hacking_body">Hackeamento de ROM é a modificação de dados em uma imagem ROM. Isto pode tomar a forma de alterar gráficos, mudar níveis do jogo, manipular fatores de dificuldade, ou mesmo a tradução para um idioma para o qual um jogo não foi originalmente feito disponível.</string>
+    <string name="help_what_is_rom_hacking_title">O que é hackeamento de ROM\?</string>
+    <string name="help_what_is_rom_image_body">Uma imagem ROM é um arquivo computacional que contém uma cópia de um jogo para console. Através do processo de emulação, você pode copiar este arquivo e rodá-lo usando uma aplicação chamada “emulador”, para aproveitar o jogo pelo seu dispositivo, seja um computador, um tablet ou smartphone.</string>
+    <string name="help_what_is_rom_image_title">O que é imagem ROM\?</string>
+    <string name="help_can_i_hack_android_game_body">Não. O UniPatcher não é desenvolvido para hackear jogos Android.</string>
+    <string name="help_can_i_hack_android_game_title">Posso hackear ou crackear jogos Android usando este aplicativo\?</string>
+    <string name="help_what_patch_formats_are_supported_body">O aplicativo suporta IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e patches XDelta3.</string>
+    <string name="help_what_patch_formats_are_supported_title">Quais são os formatos de patch suportados\?</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher é uma ferramenta Android para aplicar patches em imagens ROM de vários consoles de vídeo-game.</string>
+    <string name="help_what_is_unipatcher_title">O que é o UniPatcher\?</string>
+    <string name="help_title">Perguntas mais frequentes:</string>
 </resources>
-
