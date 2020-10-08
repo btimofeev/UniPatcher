@@ -115,4 +115,44 @@
     <string name="donation">Donation</string>
     <string name="icon">icon</string>
     <string name="notification_channel_name">Notifications</string>
+    
+    <string name="help_title">Frequently Asked Questions:</string>
+    <string name="help_what_is_unipatcher_title">What is UniPatcher?</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher is an Android tool for applying patches to ROM images of various video game consoles.</string>
+    <string name="help_what_patch_formats_are_supported_title">What patch formats are supported?</string>
+    <string name="help_what_patch_formats_are_supported_body">The app supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patches.</string>
+    <string name="help_can_i_hack_android_game_title">Can I hack or crack Android game using this app?</string>
+    <string name="help_can_i_hack_android_game_body">No. UniPatcher is not designed to hack the Android games.</string>
+    <string name="help_what_is_rom_image_title">What is ROM image?</string>
+    <string name="help_what_is_rom_image_body">A ROM image is a computer file containing a copy of video game cartridge. Through the process of emulation, you copy that file out, run it in a piece of software called an “emulator”, to enjoy the game on your computer or phone.</string>
+    <string name="help_what_is_rom_hacking_title">What is ROM hacking?</string>
+    <string name="help_what_is_rom_hacking_body">ROM hacking is modifying the data in a ROM image. This may take the form of altering graphics, changing game levels, tweaking difficulty factor, or even translation into a language for which a game was not originally made available.</string>
+    <string name="help_what_is_a_patch_title">What is a patch?</string>
+    <string name="help_what_is_a_patch_body">A patch is a file that contains the differences between the original version of a ROM and the hacked version.\n\nThe patch is distributed, and end users apply the patch to a copy of the original ROM, which produces a playable version of the hack.</string>
+    <string name="help_why_not_distribute_modified_games_title">Why ROM hackers do not distribute modified games?</string>
+    <string name="help_why_not_distribute_modified_games_body">Hacks and translations are generally distributed as patches to reduce download size and avoid copyright issues.</string>
+    <string name="help_how_to_apply_patch_to_rom_title">How to apply a patch to ROM?</string>
+    <string name="help_how_to_apply_patch_to_rom_body">You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.</string>
+    <string name="help_archive_should_be_unpacked_title">App shows a message after file selection: “Archive should be unpacked in an external program”.</string>
+    <string name="help_archive_should_be_unpacked_body">The file you have selected is an archive. The archive contains the directories and files in a compressed format.\n\nCurrently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+    <string name="help_rom_not_compatible_with_patch_title">The app shows the error: “This ROM is not compatible with the patch”.</string>
+    <string name="help_rom_not_compatible_with_patch_body">The app will show this error if the checksum stored in the patch does not match the checksum of the ROM. This means that the ROM file is not compatible with the patch. You need to choose a different ROM file. Usually there are several ROMs for each game (such as the version for Europe, USA, Japan, good or bad dumps, etc.).\n\nROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. If the checksum matches you have the ROM the patch was written for. If not, you need a different ROM.\n\nIn the worst case, if you can not find the correct ROM file, you can set the option “Ignore the checksum” in the settings. But bear in mind that in this case the game may contain bugs or be completely unplayable.</string>
+    <string name="help_i_cant_patch_smw_rom_title">I can’t patch “Super Mario World (U) [!].smc”</string>
+    <string name="help_i_cant_patch_smw_rom_body">This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.</string>
+    <string name="help_find_rom_pokemon_emerald_title">I can not find the correct ROM for the game “Pokémon Emerald”.</string>
+    <string name="help_find_rom_pokemon_emerald_body">Most of the patches of the game work with ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
+    <string name="help_ips_no_checksum_title">I apply the IPS patch and then the game is not working / contains graphic glitches. What am I doing wrong?</string>
+    <string name="help_ips_no_checksum_body">IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM file. In this case, you need to look for another ROM file.</string>
+    <string name="help_ecm_image_title">What can I do with .ECM file type?</string>
+    <string name="help_ecm_image_body">ECM is a data compression format designed specifically for disc images. You can decompress the file using <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> program.</string>
+    <string name="help_additional_features_title">Has UniPatcher some additional features?</string>
+    <string name="help_additional_features_body">Yes. UniPatcher can:\n\n- Create XDelta3 patches.\n- Fix checksum for a Sega Mega Drive / Sega Genesis games.\n- Remove SMC header in Super Nintendo games.</string>
+    <string name="help_sega_fix_checksum_title">Why do I have to fix checksum for the Sega Mega Drive games?</string>
+    <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you only change any part of the game, they will not match, failing to run as a result. What this does is calculate the correct checksum of the change and write it to the modified ROM-file.\n\n<b>Warning:</b> This function does not create a backup ROM.</string>
+    <string name="help_snes_smc_title">Why is it sometimes necessary to remove SMC headers from Super Nintendo games?</string>
+    <string name="help_snes_smc_body">An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing a header is sometimes used for the purpose of correctly applying a patch.</string>
+    <string name="help_how_to_translate_title">How to translate the app?</string>
+    <string name="help_how_to_translate_body">If you would like to translate the app into another language or improve an existing translation, you can do it on <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a> site.</string>
+    <string name="help_feedback_title">I have a question, a feature request or a bug report.</string>
+    <string name="help_feedback_body">Contact me at e-mail <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a>. Please write in English. If you have problems with patching, attach the patch to the letter and write the name of your ROM, it will save our time.</string>
 </resources>
