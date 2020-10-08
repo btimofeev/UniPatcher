@@ -1,0 +1,5 @@
+- Yerleşik dosya yöneticisi standart depolama erişim çerçevesi ile değiştirildi. SD kart ve bulut barındırma (örn. Google Drive) üzerindeki dosyalarla çalışın. Yamaların uygulanması daha fazla zaman ve boş disk alanı gerektirir. Dosya sağlama toplamı görünümü geçici olarak kaldırıldı.
+- XDelta3 yamalarında LZMA sıkıştırma desteği
+- SNES ROM'lara SMC başlığı ekleme yeteneği kaldırıldı (yıllar boyunca bu işleve hiç ihtiyacım olmadı)
+- Android 10 ve 11 desteği
+- Kaybolan bildirimler düzeltildi
