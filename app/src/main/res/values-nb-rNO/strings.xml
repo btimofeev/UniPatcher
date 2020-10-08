@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">UniPatcher</string>
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_email">unipatcher@gmail.com</string>
-
     <!-- Main activity -->
     <string name="main_activity_rom_file">ROM-fil</string>
     <string name="main_activity_patch_file">Programfiks-fil</string>
@@ -24,11 +22,9 @@
     <string name="snes_smc_header_will_be_removed">Denne ROM-fila har et SMC-hode. Den vil bli fjernet.</string>
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">Denne funksjonen er bare for Sega Mega Drive (Sega Genesis) ROM-filer.\n\nDen fikser \"rød dødsskjerm\".\n\nAdvarsel: Denne funksjonen tar ikke noen sikkerhetskopi.</string>
-
     <!-- Notifications -->
     <string name="notify_patching_complete">Programfiksing fullført</string>
     <string name="notify_create_patch_complete">Programfiks opprettet</string>
-
     <string name="notify_error">Feil</string>
     <string name="notify_error_could_not_copy_file">Kunne ikke kopiere fil</string>
     <string name="notify_error_file_not_found">Fil ikke funnet</string>
@@ -50,12 +46,9 @@
     <string name="notify_error_wrong_checksum_after_patching">Fila har feil sjekksum etter at den ble programfikset</string>
     <string name="notify_error_failed_load_lib_xdelta3">Klarte ikke å laste biblioteket libxdelta3.so</string>
     <string name="notify_error_unknown">Ukjent feil</string>
-
     <string name="notify_error_not_smd_rom">Ikke en Sega Mega Drive ROM-fil</string>
     <string name="notify_smd_fix_checksum_complete">Sjekksum fikset</string>
-
     <string name="notify_snes_delete_smc_header_complete">SMC-hode slettet</string>
-
     <!-- Settings -->
     <string name="settings_activity_title">Innstillinger</string>
     <string name="settings_interface_header">Brukergrensesnitt</string>
@@ -66,7 +59,6 @@
     <string name="settings_patching_header">Programfiksing</string>
     <string name="settings_ignore_checksum">Ignorer sjekksummer</string>
     <string name="settings_ignore_checksum_description">Ikke forstyrr programfiksing hvis du bruker feil ROM. Vær forsiktig: Dette valget kan ødelegge spillet ditt.</string>
-
     <!-- Help activity -->
     <string name="help_activity_title">Hjelp</string>
     <string name="help_activity_faq_tab_title">O-S-S</string>
@@ -77,13 +69,10 @@
     <string name="help_activity_action_visit_site">Besøk nettside</string>
     <string name="help_activity_action_changelog">Endringslogg</string>
     <string name="donate_activity_title">Doner</string>
-
     <string name="send_feedback_dialog_title">Send e-post</string>
     <string name="send_feedback_error_no_email_apps">Ingen e-postklienter installert</string>
-
     <string name="share_dialog_title">Del UniPatcher</string>
     <string name="share_text">Last ned den beste ROM-programfikseren for Android. Den støtter IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP og XDelta3 -programfikstyper.\n\n</string>
-
     <!-- Navigation list -->
     <string name="nav_apply_patch">Legg til programfiks</string>
     <string name="nav_create_patch">Opprett programfiks</string>
@@ -95,10 +84,36 @@
     <string name="nav_help">Hjelp</string>
     <string name="nav_drawer_open">Åpne navigasjonsskuff</string>
     <string name="nav_drawer_close">Lukk navigasjonsskuff</string>
-
     <string name="donation">Donasjon</string>
     <string name="icon">ikon</string>
     <string name="notification_channel_name">Merknader</string>
-
+    <string name="error_file_picker_app_is_no_installed">Feil: Ingen filutforsker installert</string>
+    <string name="error_crash_message">Programmet krasjet. Send feilrapport til utviklerne.</string>
+    <string name="settings_theme_name_auto_battery">Satt av batterisparer</string>
+    <string name="notify_error_unable_open_source_file">Kunne ikke åpne kildefil</string>
+    <string name="notify_error_xdelta3_internal_error">Intern XDelta3-feil</string>
+    <string name="notify_error_unable_open_patch_file">Kunne ikke åpne programfiks-fil</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">Programfiksen er ikke valgt</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">trykk for å velge hvor programfiksen skal lagres</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Feil: kunne ikke bestemme filstørrelse</string>
+    <string name="snes_rom_has_no_smc_header">Denne ROM-filen har ikke noe SMC-hode. Du trenger ikke å slette noe.</string>
+    <string name="snes_smc_header_help">Denne funksjonen er kun for ROM-filer for Super Nintendo.
+\n
+\nNoen feilfikser krever at ROM-filen ikke har noe SMC-hode. Denne funksjonen hjelper deg å fjerne det.</string>
+    <string name="main_activity_double_back_to_exit_message">Trykk \"Tilbake\" igjen for å avslutte. Dette kan forstyrre alle kjørende operasjoner.</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">trykk for å velge hvor ROM-fil skal lagres</string>
+    <string name="main_activity_rom_without_smc_file">Send ut hodeløs ROM-fil</string>
+    <string name="main_activity_button_how_to_use_app">Hvordan bruke programmet</string>
+    <string name="settings_show_button_how_to_use_app_description">Vis \"Hvordan bruke programmet\"-knappen på hovedskjermen</string>
+    <string name="settings_show_button_how_to_use_app">Vis \"Hjelp\"-knapp</string>
+    <string name="help_activity_error_cannot_load_text">Feil: kan ikke laste inn tekst</string>
+    <string name="nav_snes_add_del_smc_header">Fjern SMC-hode (SNES)</string>
+    <string name="error_crash_discard_button">Forkast</string>
+    <string name="error_crash_send_button">Send</string>
+    <string name="error_crash_title">Krasj</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="settings_theme_name_follow_system">Bruk systemforvalg</string>
+    <string name="notify_error_unable_open_modified_file">Kunne ikke åpne endret fil</string>
+    <string name="main_activity_toast_output_not_selected">Ingen utdatafil valgt</string>
+    <string name="main_activity_rom_with_smc_file">ROM-fil med SMC-hode</string>
 </resources>
-
