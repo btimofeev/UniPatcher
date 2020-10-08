@@ -6,7 +6,6 @@
     <application
         android:name=".UniPatcher"
         android:allowBackup="false"
-        android:extractNativeLibs="true"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
