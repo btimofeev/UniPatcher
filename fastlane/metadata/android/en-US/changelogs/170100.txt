@@ -1,3 +1,4 @@
 - File operations are performed in an open application, and not in a background service as before.
 - Completed work is notified as a pop-up message, not in the notification area.
+- Added Turkish language (thanks to Oğuz Ersen)
 - Translations are now managed on https://hosted.weblate.org/projects/unipatcher/
