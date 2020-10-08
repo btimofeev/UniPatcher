@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+</head>
+<body>
+<h2>よくある質問と答え</h2>
+<h4>UniPatcher とは?</h4>
+<p>UniPatcher は、さまざまなビデオゲームコンソールの ROM イメージにパッチを適用するための Android ツールです。</p>
+<h4>サポートされているパッチ形式は?</h4>
+<p>アプリは IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP および XDelta3 パッチ形式をサポートしています。</p>
+<h4>このアプリを使用して Android のゲームをハックまたはクラックすることはできますか?</h4>
+<p>いいえ、UniPatcher は Android のゲームをハックするようには設計されていません。</p>
+<h4>ROM イメージとは?</h4>
+<p>ROM イメージは、ビデオゲームカートリッジのコピーを含むコンピューターファイルです。 エミュレーションのプロセスを通して、そのファイルをコピーし、 “エミュレーター” と呼ばれるソフトウェアで実行して、コンピューターや電話でゲームを楽しむことができます。</p>
+<h4>ROM ハックとは?</h4>
+<p>ROM ハックは ROM イメージのデータを変更します。 これは、グラフィックスの変更、ゲームレベルの変更、難易度の調整、またはゲームがもともと利用できなかった言語への翻訳の形をとることがあります。</p>
+<h4>パッチとは?</h4>
+<p>パッチは、元のバージョンの ROM とハックしたバージョンの違いを含むファイルです。</p>
+<p>パッチが配布されると、エンドユーザーは元の ROM のコピーにパッチを適用し、プレー可能なバージョンのハックを生成します。</p>
+<h4>なぜ ROM のハッカーは変更されたゲームを配布しないのですか?</h4>
+<p>ダウンロードサイズを減らし、著作権の問題を避けるために、ハックや翻訳は一般にパッチとして配布されます。</p>
+<h4>ROM にパッチを適用する方法は?</h4>
+<p>You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.</p>
+<h4>ファイルを選択した後、アプリがメッセージを表示します: 「アーカイブは外部プログラムで解凍する必要があります」。</h4>
+<p>選択したファイルはアーカイブです。 アーカイブには、圧縮された形式のディレクトリーとファイルが含まれています。</p>
+<p>現在、UniPatcher はアーカイブを抽出できないため、別のプログラムでアーカイブを解凍する必要があります。 私は無償のプログラムをお勧めします <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>。</p>
+<h4>エラーが表示されます: 「この ROM はパッチと互換性がありません」。</h4>
+<p>パッチに保存されているチェックサムが ROM のチェックサムと一致しない場合に、このエラーが表示されます。 つまり、ROM のファイルがパッチと互換性がありません。 別の ROM ファイルを選択する必要があります。 通常、それぞれのゲームにはいくつかの ROM があります (ヨーロッパ、アメリカ、日本向けのバージョン、良いものや不良のダンプなど)。</p>
+<p>ROM のハッカーは、付随する ROM ファイルのチェックサムを (Web ページまたは README ファイルで) 公開することがよくあります。 それをお持ちのものと比較してください。 ファイルマネージャでファイルを長押しすると、CRC32、SHA1、MD5 の 3 行が表示されます。 それらの番号のうちの 1 つが同じ場合は、その ROM 用のパッチです。 そうでない場合は、別の ROM が必要です。</p>
+<p>最悪の場合、正しいROMファイルを見つけられない場合は、設定で “チェックサムを無視する” オプションを設定することができます。 しかし、この場合、ゲームにバグが含まれてたり、完全にはプレイできない可能性があることにご注意ください。</p>
+<h4>I can’t patch “Super Mario World (U) [!].smc”</h4>
+<p>This ROM contains an SMC header, while most patches for this game require the ROM to not have this header. You can remove SMC header by selecting the appropriate item in the menu on the left and then apply the patch to the resulting ROM.</p>
+<h4>ゲーム “ポケモンエメラルド” の正しい ROM を見つけることができません。</h4>
+<p>ゲームのパッチのほとんどは、ROM “ポケモン - エメラルドバージョン (U) [f1] (Save Type).gba” で動作します。</p>
+<h4>IPS パッチを適用した後、ゲームが動作しない / グラフィックの不具合があります。 何か間違っていますか?</h4>
+<p>IPS 形式のパッチにはチェックサムが含まれていません。 したがって、パッチはすべての (間違った) ROM ファイルにも適用されます。 この場合、別の ROM ファイルを探す必要があります。</p>
+<h4>.ECM ファイル形式で何ができますか?</h4>
+<p>ECM は、ディスクイメージ専用に設計されたデータ圧縮形式です。 次のプログラムを使用してファイルを解凍することができます <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> 。</p>
+<h4>UniPatcher には追加機能がありますか?</h4>
+<p>はい。 UniPatcher は次のことができます:</p>
+<ul>
+<li>XDelta3 パッチの作成。</li>
+<li>Sega Mega Drive / Sega Genesis ゲームのチェックサムの修正。</li>
+<li>Remove SMC header in Super Nintendo games.</li>
+</ul>
+<h4>なぜ Sega Mega Drive ゲームのチェックサムを修正する必要があるのですか?</h4>
+<p>Sega Mega Drive (Genesis) のゲームは、チェックサムが ROM に書き込まれています。 ゲームの一部を変更するだけでは一致しないため、結果として実行されません。 行うことは、変更の正しいチェックサムを計算し、それを修正された ROM ファイルに書き込むことです。"</p>
+<p><strong>警告:</strong> この機能はバックアップ ROM を作成しません。</p>
+<h4>Why is it sometimes necessary to remove SMC headers from Super Nintendo games?</h4>
+<p>An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing a header is sometimes used for the purpose of correctly applying a patch.</p>
+<h4>アプリを翻訳する方法は?</h4>
+<p>アプリを別の言語に翻訳したり、既存の翻訳を改善したい場合は <a href="https://www.transifex.com/unipatcher/unipatcher/dashboard/">Transifex</a> サイトで行うことができます。</p>
+<h4>質問、機能リクエスト、バグ報告があります。</h4>
+<p>メール <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a> に私に連絡してください。 英語またはロシア語で記入してください。 パッチに問題がある場合は、パッチをメールに添付して ROM の名前を書いてください。これで時間を節約できます。</p>
+</body>
+</html>

@@ -29,7 +29,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.helpers.ConsumableEvent
-import org.markdown4j.Markdown4jProcessor
+import java.io.BufferedReader
 import java.io.IOException
 
 class HelpViewModel(val app: Application): AndroidViewModel(app) {
@@ -43,7 +43,7 @@ class HelpViewModel(val app: Application): AndroidViewModel(app) {
 
     fun helpInit() = viewModelScope.launch(Dispatchers.IO) {
         try {
-            val html = Markdown4jProcessor().process(app.resources.openRawResource(R.raw.faq))
+            val html =  app.resources.openRawResource(R.raw.faq).bufferedReader().use(BufferedReader::readText)
             helpText.postValue(html)
         } catch (e: IOException) {
             message.postValue(ConsumableEvent(app.getString(R.string.help_activity_error_cannot_load_text)))
@@ -52,7 +52,7 @@ class HelpViewModel(val app: Application): AndroidViewModel(app) {
 
     fun aboutInit() = viewModelScope.launch(Dispatchers.IO) {
         try {
-            val html = Markdown4jProcessor().process(app.resources.openRawResource(R.raw.about))
+            val html = app.resources.openRawResource(R.raw.about).bufferedReader().use(BufferedReader::readText)
             aboutText.postValue(html)
         } catch (e: IOException) {
             message.postValue(ConsumableEvent(app.getString(R.string.help_activity_error_cannot_load_text)))
