@@ -8,6 +8,9 @@
 # Java class files
 *.class
 
+# .so files from ndk-build
+app/src/main/jniLibs
+
 # generated files
 bin/
 gen/

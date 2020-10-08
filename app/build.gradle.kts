@@ -34,7 +34,7 @@ android {
         versionName = "0.18"
 
         ndk {
-            abiFilters.addAll(setOf("arm64-v8a", "x86_64"))
+            abiFilters.addAll(setOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64"))
         }
 
         externalNativeBuild {
@@ -167,6 +167,22 @@ dependencies {
     // Testing
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
+}
+
+tasks.register("buildXDelta1", Exec::class) {
+    description = "Build xdelta1 source via ndk-build"
+    val ndkDir = android.ndkDirectory
+    executable = "$ndkDir/ndk-build"
+    args(
+        "NDK_PROJECT_PATH=build/intermediates/ndk",
+        "NDK_LIBS_OUT=src/main/jniLibs",
+        "APP_BUILD_SCRIPT=src/main/cpp/xdelta1/Android.mk",
+        "NDK_APPLICATION_MK=src/main/cpp/xdelta1/Application.mk"
+    )
+}
+
+tasks.named("preBuild") {
+    dependsOn("buildXDelta1")
 }
 
 val deleteDependencies by tasks.registering(Delete::class) {
