@@ -91,7 +91,7 @@
     <string name="notification_channel_name">알림</string>
     <string name="help_feedback_body">이메일 unipatcher@gmail.com 로 저에게 연락하십시오. 영어 또는 러시아어로 작성해 주십시오. 패치에 문제가 있는 경우 메일에 패치를 첨부하고 롬 이름을 쓰면 시간이 단축됩니다.</string>
     <string name="help_feedback_title">질문, 기능 요청 혹은 버그 보고를 하고 싶습니다.</string>
-    <string name="help_how_to_translate_body">앱을 다른 언어로 번역하거나 기존 번역을 개선하려면 Weblate https://hosted.weblate.org/projects/unipatcher/ 사이트에서 할 수 있습니다.</string>
+    <string name="help_how_to_translate_body">앱을 다른 언어로 번역하거나 기존 번역을 개선하려면 Weblate https://hosted.weblate.org/engage/unipatcher/ 사이트에서 할 수 있습니다.</string>
     <string name="help_how_to_translate_title">앱을 번역하는 방법은 무엇입니까\?</string>
     <string name="help_sega_fix_checksum_body">세가 메가 드라이브(제네시스)게임들은 그들의 체크섬을 롬에 기록한다. 만역 너가 게임의 일부를 수정하고 싶다면, 그것들은 매칭이 않될것이고 결국 실행에 실패할 것이다. 이것은 변경사항의 정확한 체크섬을 계산하여 수정된 ROM 파일에 쓸 것이다.\"
 \n

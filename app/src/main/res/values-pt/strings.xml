@@ -89,7 +89,7 @@
     <string name="notification_channel_name">Notificações</string>
     <string name="help_feedback_body">Me contate pelo e-mail unipatcher@gmail.com. Por favor escreva em Inglês ou Russo se você tem problemas com patcheamento, anexe o patch no e-mail e escreva o nome da sua ROM, isso poupará nosso tempo.</string>
     <string name="help_feedback_title">Tenho uma pergunta, um requerimento de função ou uma denúncia de bug.</string>
-    <string name="help_how_to_translate_body">Se você gostaria de traduzir o app para outro idioma ou melhorar uma tradução existente, você pode fazer isso no site Weblate https://hosted.weblate.org/projects/unipatcher/</string>
+    <string name="help_how_to_translate_body">Se você gostaria de traduzir o app para outro idioma ou melhorar uma tradução existente, você pode fazer isso no site Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Como traduzir o app\?</string>
     <string name="help_snes_smc_title">Why is it sometimes necessary to remove SMC headers from Super Nintendo games\?</string>
     <string name="help_sega_fix_checksum_body">Os jogos para Sega Mega Drive (Genesis) possuem o checksum escritas dentro da ROM. Se você modificar qualquer parte do jogo, eles não vão coincidir, ocasionando uma falha ao tentar executar. O que esta opção faz é calcular o checksum correto da mudança realizada e escrever o mesmo dentro da ROM modificada.

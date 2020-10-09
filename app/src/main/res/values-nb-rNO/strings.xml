@@ -118,7 +118,7 @@
     <string name="main_activity_rom_with_smc_file">ROM-fil med SMC-hode</string>
     <string name="help_feedback_body">Kontakt meg på e-post unipatcher@gmail.com. Skriv på Engelsk eller Russisk. Hvis du har problemer med programfiksing, legg ved hele programfiksen og skriv navnet på ROM-fila di, det vil spare tid.</string>
     <string name="help_feedback_title">Jeg har et spørsmål, en funksjonsforespørsel eller en feilrapport.</string>
-    <string name="help_how_to_translate_body">Hvis du vil oversette programmet til et annet språk eller forbedre en eksisterende oversettelse, kan du gjøre det på Weblate-siden https://hosted.weblate.org/projects/unipatcher/</string>
+    <string name="help_how_to_translate_body">Hvis du vil oversette programmet til et annet språk eller forbedre en eksisterende oversettelse, kan du gjøre det på Weblate-siden https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Hvordan oversette programmet\?</string>
     <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis)-spill har sjekksummen sin skrevet inn i ROM-fila. Hvis du bare endrer en del av spillet, vil de ikke samsvare, noe som medfører at den ikke kan kjøres. Hva dette gjør er å regne ut korrekt sjekksum av endringen, og skriver det til den modifiserte ROM-fila.\"
 \n

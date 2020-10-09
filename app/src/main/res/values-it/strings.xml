@@ -73,7 +73,7 @@
     <string name="icon">icona</string>
     <string name="help_feedback_body">Contattami alla e-mail unipatcher@gmail.com. Per favore, scrivi in inglese o in russo. Se hai qualche problema con il patch, allega la patch alla mail e scrivi il nome della tua ROM, ti farà risparmiare tempo.</string>
     <string name="help_feedback_title">Ho una domanda, la richiesta di una funzionalità o la segnalazione di un bug.</string>
-    <string name="help_how_to_translate_body">Se ti piacerebbe tradurre l’app in una lingua diversa o migliorare una traduzione esistente, puoi farlo sul Weblate sito https://hosted.weblate.org/projects/unipatcher/</string>
+    <string name="help_how_to_translate_body">Se ti piacerebbe tradurre l’app in una lingua diversa o migliorare una traduzione esistente, puoi farlo sul Weblate sito https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Come tradurre l’app\?</string>
     <string name="help_sega_fix_checksum_title">Perchè devo risolvere il checksum per i giochi del Sega Mega Drive\?</string>
     <string name="help_additional_features_body">Si. UniPatcher può:
