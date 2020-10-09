@@ -168,6 +168,30 @@
     <string name="help_what_is_unipatcher_body">UniPatcher, çeşitli video oyun konsollarının ROM kalıplarına yamalar uygulamak için bir Android aracıdır.</string>
     <string name="help_what_is_unipatcher_title">UniPatcher nedir\?</string>
     <string name="help_title">Sık Sorulan Sorular:</string>
-    <string name="about_translators"><h5>Çevirmenler:</h5> <ul> <li><b>Çince</b>: Nabarl Wang</li> <li><b>Fransızca</b>: Thibaut Panis</li> <li><b>İtalyanca</b>: Matteo Sechi</li> <li><b>Japonca</b>: Naofumi Fukue</li> <li><b>Korece</b>: Minseo Lee</li> <li><b>Bokmål Norveççe</b>: Allan Nordhøy</li> <li><b>Lehçe</b>: Michal Bychowski</li> <li><b>Portekizce</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso</li> <li><b>Rusça</b>: Борис Тимофеев</li> <li><b>İspanyolca</b>: Carlos Sánchez</li> <li><b>Türkçe</b>: Oğuz Ersen</li> <li><b>Ukraynaca</b>: Володимир Шевчук</li> </ul> <p>Uygulamanın dilinize çevrilmesine yardımcı olun: https://hosted.weblate.org/engage/unipatcher/</p></string>
-    <string name="about_used_libraries"><h5>Kullanılan kütüphaneler:</h5> <ul> <li>ACRA ekibi tarafından Apache 2.0 lisansı altında lisanslanan <b>ACRA</b>. https://github.com/ACRA/acra</li> <li>SufficientlySecure ve penn5 tarafından Apache 2.0 lisansı altında lisanslanan <b>Android Donations</b>. https://github.com/penn5/donations</li> <li>Apache Yazılım Vakfı tarafından Apache 2.0 lisansı altında lisanslanan <b>Apache Commons IO</b>. https://commons.apache.org/proper/commons-io/</li> <li>Dagger yazarları tarafından Apache 2.0 lisansı altında lisanslanan <b>Dagger</b>. https://github.com/google/dagger</li> <li>Google tarafından Apache 2.0 lisansı altında lisanslanan <b>Material tasarım simgeleri</b>. https://github.com/google/material-design-icons</li> <li>Topluluk tarafından SIL Açık Yazı Tipi Lisansı 1.1 altında lisanslanan <b>Material tasarım simgeleri</b>. https://materialdesignicons.com</li> <li>Jake Wharton tarafından Apache 2.0 lisansı altında lisanslanan <b>Timber</b>. https://github.com/JakeWharton/timber</li> <li>Joshua MacDonald tarafından Apache 2.0 lisansı altında lisanslanan <b>XDelta sürüm 3</b>. https://github.com/jmacd/xdelta</li> </ul></string>
+    <string name="about_translators"><b>Çevirmenler:</b>
+\n
+\n - <b>Çince</b>: Nabarl Wang
+\n - <b>Fransızca</b>: Thibaut Panis
+\n - <b>İtalyanca</b>: Matteo Sechi
+\n - <b>Japonca</b>: Naofumi Fukue
+\n - <b>Korece</b>: Minseo Lee
+\n - <b>Bokmål Norveççe</b>: Allan Nordhøy
+\n - <b>Lehçe</b>: Michal Bychowski
+\n - <b>Portekizce</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso
+\n - <b>Rusça</b>: Борис Тимофеев
+\n - <b>İspanyolca</b>: Carlos Sánchez
+\n - <b>Türkçe</b>: Oğuz Ersen
+\n - <b>Ukraynaca</b>: Володимир Шевчук
+\n
+\nUygulamanın dilinize çevrilmesine yardımcı olun: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="about_used_libraries"><b>Kullanılan kütüphaneler:</b>
+\n
+\n - ACRA ekibi tarafından Apache 2.0 lisansı altında lisanslanan <b>ACRA</b>. https://github.com/ACRA/acra
+\n - SufficientlySecure ve penn5 tarafından Apache 2.0 lisansı altında lisanslanan <b>Android Donations</b>. https://github.com/penn5/donations
+\n - Apache Yazılım Vakfı tarafından Apache 2.0 lisansı altında lisanslanan <b>Apache Commons IO</b>. https://commons.apache.org/proper/commons-io/
+\n - Dagger yazarları tarafından Apache 2.0 lisansı altında lisanslanan <b>Dagger</b>. https://github.com/google/dagger
+\n - Google tarafından Apache 2.0 lisansı altında lisanslanan <b>Material tasarım simgeleri</b>. https://github.com/google/material-design-icons
+\n - Topluluk tarafından SIL Açık Yazı Tipi Lisansı 1.1 altında lisanslanan <b>Material tasarım simgeleri</b>. https://materialdesignicons.com
+\n - Jake Wharton tarafından Apache 2.0 lisansı altında lisanslanan <b>Timber</b>. https://github.com/JakeWharton/timber
+\n - Joshua MacDonald tarafından Apache 2.0 lisansı altında lisanslanan <b>XDelta sürüm 3</b>. https://github.com/jmacd/xdelta</string>
 </resources>
