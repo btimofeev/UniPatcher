@@ -89,7 +89,7 @@
     <string name="notification_channel_name">通知</string>
     <string name="help_feedback_body">通过邮件 unipatcher@gmail.com 联系我，请用英语或俄语写信。如果你对打补丁有问题，把补丁用附件发送给我并注明你的 ROM 的名字，这样我和你都能省时省力。</string>
     <string name="help_feedback_title">我有问题，有功能请求或有 bug 汇报。</string>
-    <string name="help_how_to_translate_body">如果你想将本应用翻译为其他语言或想改进现有翻译，请在 Weblate https://hosted.weblate.org/projects/unipatcher/ 操作。</string>
+    <string name="help_how_to_translate_body">如果你想将本应用翻译为其他语言或想改进现有翻译，请在 Weblate https://hosted.weblate.org/engage/unipatcher/ 操作。</string>
     <string name="help_how_to_translate_title">怎么翻译此应用？</string>
     <string name="help_sega_fix_checksum_body">世嘉 Mega Drive (Genesis) 游戏在 ROM 中有自己的校验和。如果你只更改游戏的任何部分, 它们将不匹配, 因此无法运行。它所做的是计算更改的正确校验和并将其写入修改后的 ROM 文件。
 \n

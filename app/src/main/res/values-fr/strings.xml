@@ -89,7 +89,7 @@
     <string name="notification_channel_name">Notifications</string>
     <string name="help_feedback_body">Contactez-moi par mail unipatcher@gmail.com. Merci de m’écrire en Anglais ou en Russe. Si vous avez des problèmes pour patcher, attachez votre patch en pièce jointe et écrivez le nom de votre ROM, ce sera toujours un gain de temps.</string>
     <string name="help_feedback_title">J’ai une question, une proposition d’amélioration ou un rapport de bug à soumettre.</string>
-    <string name="help_how_to_translate_body">Si vous souhaitez traduire cette appli dans une autre langue ou améliorer une traduction existante, n’hésitez pas à visiter le site Weblate https://hosted.weblate.org/projects/unipatcher/</string>
+    <string name="help_how_to_translate_body">Si vous souhaitez traduire cette appli dans une autre langue ou améliorer une traduction existante, n’hésitez pas à visiter le site Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Comment traduire cette appli \?</string>
     <string name="help_sega_fix_checksum_body">Les checksums des jeux Sega Mega Drive (Genesis) sont directement insérés dans la ROM. Si vous changez une quelconque donnée du jeu, ils ne correspondront plus, et par conséquent feront crash le jeu. Cet utilitaire permet de recalculer correctement le checksum lié à la modification, et le réécrira sur le fichier ROM modifié.
 \n

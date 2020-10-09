@@ -83,7 +83,7 @@
     <string name="icon">ikona</string>
     <string name="help_feedback_body">Skontaktuj się ze mną przez e-mail unipatcher@gmail.com. Proszę pisz po Angielsku albo Rosyjsku. Jeżeli masz jakieś problemy z łatkowaniem, załącz łatkę do mail-a i napisz nazwę ROM-u, to oszczędzi nasz czas.</string>
     <string name="help_feedback_title">Mam pytanie, prośba o dodanie funkcji albo raport w sprawie błędu.</string>
-    <string name="help_how_to_translate_body">Jeżeli chciałbyś/chciałabyś przetłumaczyć aplikację na inny język, albo poprawić istniejące tłumaczenie, możesz to zrobić na stronie Weblate https://hosted.weblate.org/projects/unipatcher/</string>
+    <string name="help_how_to_translate_body">Jeżeli chciałbyś/chciałabyś przetłumaczyć aplikację na inny język, albo poprawić istniejące tłumaczenie, możesz to zrobić na stronie Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Jak przetłumaczyć aplikację\?</string>
     <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you only change any part of the game, they will not match, failing to run as a result. What this does is calculate the correct checksum of the change and write it to the modified ROM-file.\"
 \n

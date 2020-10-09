@@ -115,7 +115,6 @@
     <string name="donation">Donation</string>
     <string name="icon">icon</string>
     <string name="notification_channel_name">Notifications</string>
-    
     <string name="help_title">Frequently Asked Questions:</string>
     <string name="help_what_is_unipatcher_title">What is UniPatcher?</string>
     <string name="help_what_is_unipatcher_body">UniPatcher is an Android tool for applying patches to ROM images of various video game consoles.</string>
@@ -152,27 +151,10 @@
     <string name="help_snes_smc_title">Why is it sometimes necessary to remove SMC headers from Super Nintendo games?</string>
     <string name="help_snes_smc_body">An SMC header is 512 bytes found at the start of some SNES ROM images. These bytes have no purpose, but they change the location of the remaining data. Removing a header is sometimes used for the purpose of correctly applying a patch.</string>
     <string name="help_how_to_translate_title">How to translate the app?</string>
-    <string name="help_how_to_translate_body">If you would like to translate the app into another language or improve an existing translation, you can do it on Weblate site https://hosted.weblate.org/projects/unipatcher/</string>
+    <string name="help_how_to_translate_body">If you would like to translate the app into another language or improve an existing translation, you can do it on Weblate site https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_feedback_title">I have a question, a feature request or a bug report.</string>
     <string name="help_feedback_body">Contact me at e-mail unipatcher@gmail.com. Please write in English. If you have problems with patching, attach the patch to the letter and write the name of your ROM, it will save our time.</string>
-
-    <string name="about_translators"><![CDATA[<h5>Translators:</h5>
-<ul>
-<li><b>Chinese</b>: Nabarl Wang</li>
-<li><b>French</b>: Thibaut Panis</li>
-<li><b>Italian</b>: Matteo Sechi</li>
-<li><b>Japanese</b>: Naofumi Fukue</li>
-<li><b>Korean</b>: Minseo Lee</li>
-<li><b>Norwegian Bokmål</b>: Allan Nordhøy</li>
-<li><b>Polish</b>: Michal Bychowski</li>
-<li><b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso</li>
-<li><b>Russian</b>: Борис Тимофеев</li>
-<li><b>Spanish</b>: Carlos Sánchez</li>
-<li><b>Turkish</b>: Oğuz Ersen</li>
-<li><b>Ukrainian</b>: Володимир Шевчук</li>
-</ul>
-<p>Help translate the app into your language: https://hosted.weblate.org/projects/unipatcher/</p>]]></string>
-
+    <string name="about_translators"><h5>Translators:</h5> <ul> <li><b>Chinese</b>: Nabarl Wang</li> <li><b>French</b>: Thibaut Panis</li> <li><b>Italian</b>: Matteo Sechi</li> <li><b>Japanese</b>: Naofumi Fukue</li> <li><b>Korean</b>: Minseo Lee</li> <li><b>Norwegian Bokmål</b>: Allan Nordhøy</li> <li><b>Polish</b>: Michal Bychowski</li> <li><b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso</li> <li><b>Russian</b>: Борис Тимофеев</li> <li><b>Spanish</b>: Carlos Sánchez</li> <li><b>Turkish</b>: Oğuz Ersen</li> <li><b>Ukrainian</b>: Володимир Шевчук</li> </ul> <p>Help translate the app into your language: https://hosted.weblate.org/engage/unipatcher/</p></string>
     <string name="about_used_libraries"><![CDATA[<h5>Used libraries:</h5>
 <ul>
 <li><b>ACRA</b> by ACRA team, licensed under the Apache 2.0 license. https://github.com/ACRA/acra</li>
@@ -184,5 +166,4 @@
 <li><b>Timber</b> by Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber</li>
 <li><b>XDelta version 3</b> by Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta</li>
 </ul>]]></string>
-
 </resources>

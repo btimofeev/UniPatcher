@@ -91,7 +91,7 @@
     <string name="notification_channel_name">通知</string>
     <string name="help_feedback_body">メール unipatcher@gmail.com に私に連絡してください。 英語またはロシア語で記入してください。 パッチに問題がある場合は、パッチをメールに添付して ROM の名前を書いてください。これで時間を節約できます。</string>
     <string name="help_feedback_title">質問、機能リクエスト、バグ報告があります。</string>
-    <string name="help_how_to_translate_body">アプリを別の言語に翻訳したり、既存の翻訳を改善したい場合は Weblate https://hosted.weblate.org/projects/unipatcher/ サイトで行うことができます。</string>
+    <string name="help_how_to_translate_body">アプリを別の言語に翻訳したり、既存の翻訳を改善したい場合は Weblate https://hosted.weblate.org/engage/unipatcher/ サイトで行うことができます。</string>
     <string name="help_how_to_translate_title">アプリを翻訳する方法は\?</string>
     <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) のゲームは、チェックサムが ROM に書き込まれています。 ゲームの一部を変更するだけでは一致しないため、結果として実行されません。 行うことは、変更の正しいチェックサムを計算し、それを修正された ROM ファイルに書き込むことです。
 \n
