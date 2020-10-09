@@ -86,7 +86,7 @@
     <string name="icon">icon</string>
     <string name="help_feedback_body">Ви можете зв’язатися зі мною по електронній пошті, моя адреса unipatcher@gmail.com. Прошу писати англійською або російською. Якщо у вас проблема із накладанням патчу, то прикріпіть патч до листа та напишіть назву вашого ROM’у, це збереже наш час.</string>
     <string name="help_feedback_title">У мене є питання, ідея для нової функції або повідомлення про помилку.</string>
-    <string name="help_how_to_translate_body">Якщо ви хочете перекласти додаток на іншу мову або покращити існуючий переклад, ви можете зробити це на сайті Weblate https://hosted.weblate.org/projects/unipatcher/</string>
+    <string name="help_how_to_translate_body">Якщо ви хочете перекласти додаток на іншу мову або покращити існуючий переклад, ви можете зробити це на сайті Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Як перекласти додаток на іншу мову\?</string>
     <string name="help_sega_fix_checksum_title">Навіщо виправляти контрольну суму для ігор Sega Mega Drive\?</string>
     <string name="help_additional_features_body">Так. Додаток може:
