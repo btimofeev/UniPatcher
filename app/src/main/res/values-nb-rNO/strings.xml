@@ -116,9 +116,9 @@
     <string name="notify_error_unable_open_modified_file">Kunne ikke åpne endret fil</string>
     <string name="main_activity_toast_output_not_selected">Ingen utdatafil valgt</string>
     <string name="main_activity_rom_with_smc_file">ROM-fil med SMC-hode</string>
-    <string name="help_feedback_body">Kontakt meg på e-post <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a>. Skriv på Engelsk eller Russisk. Hvis du har problemer med programfiksing, legg ved hele programfiksen og skriv navnet på ROM-fila di, det vil spare tid.</string>
+    <string name="help_feedback_body">Kontakt meg på e-post unipatcher@gmail.com. Skriv på Engelsk eller Russisk. Hvis du har problemer med programfiksing, legg ved hele programfiksen og skriv navnet på ROM-fila di, det vil spare tid.</string>
     <string name="help_feedback_title">Jeg har et spørsmål, en funksjonsforespørsel eller en feilrapport.</string>
-    <string name="help_how_to_translate_body">Hvis du vil oversette programmet til et annet språk eller forbedre en eksisterende oversettelse, kan du gjøre det på <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a>-siden.</string>
+    <string name="help_how_to_translate_body">Hvis du vil oversette programmet til et annet språk eller forbedre en eksisterende oversettelse, kan du gjøre det på Weblate-siden https://hosted.weblate.org/projects/unipatcher/</string>
     <string name="help_how_to_translate_title">Hvordan oversette programmet\?</string>
     <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis)-spill har sjekksummen sin skrevet inn i ROM-fila. Hvis du bare endrer en del av spillet, vil de ikke samsvare, noe som medfører at den ikke kan kjøres. Hva dette gjør er å regne ut korrekt sjekksum av endringen, og skriver det til den modifiserte ROM-fila.\"
 \n
@@ -130,7 +130,7 @@
 \n- Fiks sjekksum for Sega Mega Drive / Sega Genesis -spill.
 \n- Remove SMC header in Super Nintendo games.</string>
     <string name="help_additional_features_title">Har UniPatcher noen flere funksjoner\?</string>
-    <string name="help_ecm_image_body">ECM er et data-komprimeringsformat designet spesielt for diskavbildninger. Du kan pakke opp fila ved bruk av <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>-programmet.</string>
+    <string name="help_ecm_image_body">ECM er et data-komprimeringsformat designet spesielt for diskavbildninger. Du kan pakke opp fila ved bruk av ZArchiver-programmet https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_ecm_image_title">Hva kan jeg gjøre med filer av typen .ECM\?</string>
     <string name="help_ips_no_checksum_body">Progamfikser i IPS-format inneholder ikke noen sjekksum. Derfor vil programfiksen gå sammen med enhver (selv gale) ROM-filer. I sådant fall, må du se deg om etter en annen ROM-fil.</string>
     <string name="help_ips_no_checksum_title">Jeg legger til IPS-programfiksen og så fungerer ikke spillet / inneholder grafiske artefakter. Hva gjør jeg galt\?</string>
@@ -144,7 +144,7 @@
     <string name="help_rom_not_compatible_with_patch_title">Programmet viser feilen: “Denne ROM-fila er ikke kompatibel med programfiksen”.</string>
     <string name="help_archive_should_be_unpacked_body">Fila du har valgt er et arkiv. Akrivet inneholder mapper og filer i komprimert format.
 \n
-\nUniPatcher støtter for tiden ikke utpakking av arkiver, så du må pakke ut arkivet ditt med et annet program. Jeg anbefaler gratisprogrammet <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+\nUniPatcher støtter for tiden ikke utpakking av arkiver, så du må pakke ut arkivet ditt med et annet program. Jeg anbefaler gratisprogrammet ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">Programmet viser en melding etter filvalg: “Akrivet bør utpakkes i et eksternt program”.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Hvordan legge en programfiks til ei ROM-fil\?</string>
     <string name="help_why_not_distribute_modified_games_body">Hacks og oversettelser bli i hovedsak distribuert som programfikser for å redusere nedlastingsstørrelse og for å unngå kopiretts-problematikk.</string>
