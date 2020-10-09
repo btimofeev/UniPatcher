@@ -115,9 +115,9 @@
     <string name="donation">Пожертвование</string>
     <string name="icon">иконка</string>
     <string name="notification_channel_name">Уведомления</string>
-    <string name="help_feedback_body">Вы можете связаться со мной по электронной почте, мой адрес <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a>. Прошу писать по-английски или по-русски. Если у вас проблема с наложением патча, то прикрепите патч к письму и напишите название вашего ROM’а, это сэкономит наше время.</string>
+    <string name="help_feedback_body">Вы можете связаться со мной по электронной почте, мой адрес unipatcher@gmail.com. Прошу писать по-английски или по-русски. Если у вас проблема с наложением патча, то прикрепите патч к письму и напишите название вашего ROM’а, это сэкономит наше время.</string>
     <string name="help_feedback_title">У меня есть вопрос, идея для новой функции или сообщение об ошибке.</string>
-    <string name="help_how_to_translate_body">Если вы хотите перевести приложение на другой язык или улучшить существующий перевод, вы можете сделать это на сайте <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a>.</string>
+    <string name="help_how_to_translate_body">Если вы хотите перевести приложение на другой язык или улучшить существующий перевод, вы можете сделать это на сайте Weblate https://hosted.weblate.org/projects/unipatcher/</string>
     <string name="help_how_to_translate_title">Как перевести приложение на другой язык\?</string>
     <string name="help_snes_smc_body">SMC заголовок это 512 байт находящиеся в начале некоторых SNES ROM’ов. Эти байты не имеют значения, но они меняют расположение данных. Удаление заголовка иногда используется с целью корректного наложения патча.</string>
     <string name="help_snes_smc_title">Зачем иногда необходимо удалять SMC заголовки в играх Super Nintendo\?</string>
@@ -131,7 +131,7 @@
 \n- Исправлять контрольную сумму для игр Sega Mega Drive.
 \n- Удалять SMC заголовки в играх Super Nintendo.</string>
     <string name="help_additional_features_title">Есть ли какие-то дополнительные функции\?</string>
-    <string name="help_ecm_image_body">ECM это формат сжатия данных созданный специально для образов дисков. Программа <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> умеет распаковывать этот формат.</string>
+    <string name="help_ecm_image_body">ECM это формат сжатия данных созданный специально для образов дисков. Программа ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver умеет распаковывать этот формат.</string>
     <string name="help_ecm_image_title">Что можно сделать с файлом в формате .ECM\?</string>
     <string name="help_ips_no_checksum_body">Патчи в формате IPS не содержат контрольной суммы. Поэтому, такой патч наложится на любой (даже неподходящий) ROM файл. В этом случае нужно использовать ROM другого региона.</string>
     <string name="help_ips_no_checksum_title">Я применяю патч формата IPS к игре и после этого игра не работает/содержит графические артефакты. Что я делаю неправильно\?</string>
@@ -147,7 +147,7 @@
     <string name="help_rom_not_compatible_with_patch_title">Приложение пишет ошибку: “Этот ROM не совместим с патчем”.</string>
     <string name="help_archive_should_be_unpacked_body">Файл который вы выбрали является архивом. Архив содержит в себе директории и файлы в сжатом виде.
 \n
-\nВ настоящее время UniPatcher не умеет распаковывать архивы, поэтому вам необходимо распаковать свой архив в другой программе. Я рекомендую бесплатную программу <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+\nВ настоящее время UniPatcher не умеет распаковывать архивы, поэтому вам необходимо распаковать свой архив в другой программе. Я рекомендую бесплатную программу ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">Когда я выбираю файл приложение пишет “Архив необходимо распаковать во внешней программе”.</string>
     <string name="help_how_to_apply_patch_to_rom_body">Вы должны выбрать ROM, патч и файл в который будет сохранен результат, затем нажать красную круглую кнопку. Файлы выбираются через стандартное приложение Файлы (или через один из установленных вами файловых менеджеров). Приложение покажет сообщение, когда файл будет пропатчен. Не закрывайте приложение до этого момента.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Как наложить патч на игру\?</string>
@@ -168,4 +168,6 @@
     <string name="help_what_is_unipatcher_body">Это приложение для Android предназначенное для наложения патчей на ROM файлы различных игровых видеоконсолей.</string>
     <string name="help_what_is_unipatcher_title">Что такое UniPatcher\?</string>
     <string name="help_title">Часто задаваемые вопросы:</string>
+    <string name="about_used_libraries"><h5>Использованные библиотеки:</h5> <ul> <li><b>ACRA</b> by ACRA team, licensed under the Apache 2.0 license. https://github.com/ACRA/acra</li> <li><b>Android Donations</b> by SufficientlySecure and penn5, licensed under the Apache 2.0 license. https://github.com/penn5/donations</li> <li><b>Apache Commons IO</b> by The Apache Software Foundation, licensed under the Apache 2.0 license. https://commons.apache.org/proper/commons-io/</li> <li><b>Dagger</b> by The Dagger Authors, licensed under the Apache 2.0 license. https://github.com/google/dagger</li> <li><b>Material design icons</b> by Google, licensed under the Apache 2.0 license. https://github.com/google/material-design-icons</li> <li><b>Material design icons</b> by community, licensed under SIL Open Font License 1.1. https://materialdesignicons.com</li> <li><b>Timber</b> by Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber</li> <li><b>XDelta version 3</b> by Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta</li> </ul></string>
+    <string name="about_translators"><h5>Переводчики:</h5> <ul> <li><b>Chinese</b>: Nabarl Wang</li> <li><b>French</b>: Thibaut Panis</li> <li><b>Italian</b>: Matteo Sechi</li> <li><b>Japanese</b>: Naofumi Fukue</li> <li><b>Korean</b>: Minseo Lee</li> <li><b>Norwegian Bokmål</b>: Allan Nordhøy</li> <li><b>Polish</b>: Michal Bychowski</li> <li><b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso</li> <li><b>Russian</b>: Борис Тимофеев</li> <li><b>Spanish</b>: Carlos Sánchez</li> <li><b>Turkish</b>: Oğuz Ersen</li> <li><b>Ukrainian</b>: Володимир Шевчук</li> </ul> <p>Помогите перевести приложение на ваш язык: https://hosted.weblate.org/projects/unipatcher/</p></string>
 </resources>
