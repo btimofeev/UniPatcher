@@ -19,7 +19,6 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.fragment
 
 import android.os.Bundle
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,14 +46,5 @@ class AboutFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.versionText.text = getString(R.string.help_activity_about_tab_version, Utils.getAppVersion(requireActivity()))
-
-        @Suppress("DEPRECATION")
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            binding.translators.text= Html.fromHtml(getString(R.string.about_translators), Html.FROM_HTML_SEPARATOR_LINE_BREAK_LIST_ITEM)
-            binding.usedLibraries.text = Html.fromHtml(getString(R.string.about_used_libraries), Html.FROM_HTML_SEPARATOR_LINE_BREAK_LIST_ITEM)
-        } else {
-            binding.translators.text= Html.fromHtml(getString(R.string.about_translators))
-            binding.usedLibraries.text = Html.fromHtml(getString(R.string.about_used_libraries))
-        }
     }
 }
