@@ -87,9 +87,9 @@
     <string name="donation">Don</string>
     <string name="icon">icône</string>
     <string name="notification_channel_name">Notifications</string>
-    <string name="help_feedback_body">Contactez-moi par mail <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a>. Merci de m’écrire en Anglais ou en Russe. Si vous avez des problèmes pour patcher, attachez votre patch en pièce jointe et écrivez le nom de votre ROM, ce sera toujours un gain de temps.</string>
+    <string name="help_feedback_body">Contactez-moi par mail unipatcher@gmail.com. Merci de m’écrire en Anglais ou en Russe. Si vous avez des problèmes pour patcher, attachez votre patch en pièce jointe et écrivez le nom de votre ROM, ce sera toujours un gain de temps.</string>
     <string name="help_feedback_title">J’ai une question, une proposition d’amélioration ou un rapport de bug à soumettre.</string>
-    <string name="help_how_to_translate_body">Si vous souhaitez traduire cette appli dans une autre langue ou améliorer une traduction existante, n’hésitez pas à visiter le site <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a>.</string>
+    <string name="help_how_to_translate_body">Si vous souhaitez traduire cette appli dans une autre langue ou améliorer une traduction existante, n’hésitez pas à visiter le site Weblate https://hosted.weblate.org/projects/unipatcher/</string>
     <string name="help_how_to_translate_title">Comment traduire cette appli \?</string>
     <string name="help_sega_fix_checksum_body">Les checksums des jeux Sega Mega Drive (Genesis) sont directement insérés dans la ROM. Si vous changez une quelconque donnée du jeu, ils ne correspondront plus, et par conséquent feront crash le jeu. Cet utilitaire permet de recalculer correctement le checksum lié à la modification, et le réécrira sur le fichier ROM modifié.
 \n
@@ -101,7 +101,7 @@
 \n- Réparer les checksums des jeux pour Sega Mega Drive &amp; Sega Genesis.
 \n- Remove SMC header in Super Nintendo games.</string>
     <string name="help_additional_features_title">Est-ce qu’UniPatcher a des fonctionnalités supplémentaires \?</string>
-    <string name="help_ecm_image_body">Le format ECM est un format de compression de données conçu exclusivement pour les images disque. Vous pouvez décompresser le fichier en utilisant l’appli <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+    <string name="help_ecm_image_body">Le format ECM est un format de compression de données conçu exclusivement pour les images disque. Vous pouvez décompresser le fichier en utilisant l’appli ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_ecm_image_title">Que faire avec un fichier au format .ECM \?</string>
     <string name="help_ips_no_checksum_body">Les patchs au format IPS ne contiennent pas de checksum. De ce fait, le patch s’appliquera à n’importe quelle ROM, même si elle est incompatible. Dans ce cas, vous devez rechercher une autre ROM.</string>
     <string name="help_ips_no_checksum_title">J’ai appliqué le patch IPS, mais le jeu ne fonctionne plus ou a beaucoup de bugs graphiques. Qu’est-ce que j’ai fait de mal \?</string>
@@ -115,7 +115,7 @@
     <string name="help_rom_not_compatible_with_patch_title">L’appli affiche ce message : “Cette ROM n’est pas compatible avec le patch”.</string>
     <string name="help_archive_should_be_unpacked_body">Le fichier que vous avez sélectionné est une archive. Une archive contient vos dossiers et fichiers dans un format compressé.
 \n
-\nActuellement UniPatcher ne peut pas extraire les archives, vous devez alors extraire votre archive à l’aide d’une autre appli. Je recommande pour cela l’appli gratuite <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+\nActuellement UniPatcher ne peut pas extraire les archives, vous devez alors extraire votre archive à l’aide d’une autre appli. Je recommande pour cela l’appli gratuite ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">L’appli affiche ce message après avoir sélectionné un fichier : “L’archive devrait d’abord être extraite à l’aide d’une autre appli”.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Comment appliquer un patch sur une ROM \?</string>
     <string name="help_why_not_distribute_modified_games_body">Les modifications et les traductions sont généralement distribuées sous forme de patchs afin de réduire la taille du téléchargement et d’éviter tout problème lié aux droits d’auteur.</string>

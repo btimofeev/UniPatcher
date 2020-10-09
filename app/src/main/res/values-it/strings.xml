@@ -71,9 +71,9 @@
     <string name="nav_drawer_open">Apri cassetto di navigazione</string>
     <string name="nav_drawer_close">Chiudi cassetto di navigazione</string>
     <string name="icon">icona</string>
-    <string name="help_feedback_body">Contattami alla e-mail <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a>. Per favore, scrivi in inglese o in russo. Se hai qualche problema con il patch, allega la patch alla mail e scrivi il nome della tua ROM, ti farà risparmiare tempo.</string>
+    <string name="help_feedback_body">Contattami alla e-mail unipatcher@gmail.com. Per favore, scrivi in inglese o in russo. Se hai qualche problema con il patch, allega la patch alla mail e scrivi il nome della tua ROM, ti farà risparmiare tempo.</string>
     <string name="help_feedback_title">Ho una domanda, la richiesta di una funzionalità o la segnalazione di un bug.</string>
-    <string name="help_how_to_translate_body">Se ti piacerebbe tradurre l’app in una lingua diversa o migliorare una traduzione esistente, puoi farlo sul <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a> sito.</string>
+    <string name="help_how_to_translate_body">Se ti piacerebbe tradurre l’app in una lingua diversa o migliorare una traduzione esistente, puoi farlo sul Weblate sito https://hosted.weblate.org/projects/unipatcher/</string>
     <string name="help_how_to_translate_title">Come tradurre l’app\?</string>
     <string name="help_sega_fix_checksum_title">Perchè devo risolvere il checksum per i giochi del Sega Mega Drive\?</string>
     <string name="help_additional_features_body">Si. UniPatcher può:
@@ -82,7 +82,7 @@
 \n- Risolvere checksum per un gioco Sega Mega Drive / Sega Genesis.
 \n- Remove SMC header in Super Nintendo games.</string>
     <string name="help_additional_features_title">Ha UniPatcher qualche funzione aggiuntiva\?</string>
-    <string name="help_ecm_image_body">ECM è un formato di compressione progettato specificamente per i dischi immagine. Puoi decomprimere il file usando il programma <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+    <string name="help_ecm_image_body">ECM è un formato di compressione progettato specificamente per i dischi immagine. Puoi decomprimere il file usando il programma ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_ecm_image_title">Cosa posso fare con un file .ECM\?</string>
     <string name="help_ips_no_checksum_title">Io applico la patch IPS e poi il gioco non funziona / contiene difetti grafici. Cosa sto sbagliando\?</string>
     <string name="help_find_rom_pokemon_emerald_body">La maggior parte del gioco funziona con la ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
@@ -90,7 +90,7 @@
     <string name="help_rom_not_compatible_with_patch_title">L’app mostra l’errore: “Questa ROM non è compatibile con la patch”.</string>
     <string name="help_archive_should_be_unpacked_body">Il file che hai selezionato è un archivio. L’archivio contiene le cartelle e i file in un file compresso.
 \n
-\nCurrently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+\nCurrently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">L’app mostra un messaggio dopo la selezione del file: “L’archivio dovrebbe essere spacchettato in un programma esterno”.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Come si applica una patch ad una ROM\?</string>
     <string name="help_why_not_distribute_modified_games_body">Gli hack e le traduzioni sono generalmente distribuiti come patch per ridurre la dimensione del download ed evitare problemi di copyright.</string>

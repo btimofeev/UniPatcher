@@ -87,9 +87,9 @@
     <string name="donation">Doação</string>
     <string name="icon">ícone</string>
     <string name="notification_channel_name">Notificações</string>
-    <string name="help_feedback_body">Me contate pelo e-mail <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a>. Por favor escreva em Inglês ou Russo se você tem problemas com patcheamento, anexe o patch no e-mail e escreva o nome da sua ROM, isso poupará nosso tempo.</string>
+    <string name="help_feedback_body">Me contate pelo e-mail unipatcher@gmail.com. Por favor escreva em Inglês ou Russo se você tem problemas com patcheamento, anexe o patch no e-mail e escreva o nome da sua ROM, isso poupará nosso tempo.</string>
     <string name="help_feedback_title">Tenho uma pergunta, um requerimento de função ou uma denúncia de bug.</string>
-    <string name="help_how_to_translate_body">Se você gostaria de traduzir o app para outro idioma ou melhorar uma tradução existente, você pode fazer isso no site <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a>.</string>
+    <string name="help_how_to_translate_body">Se você gostaria de traduzir o app para outro idioma ou melhorar uma tradução existente, você pode fazer isso no site Weblate https://hosted.weblate.org/projects/unipatcher/</string>
     <string name="help_how_to_translate_title">Como traduzir o app\?</string>
     <string name="help_snes_smc_title">Why is it sometimes necessary to remove SMC headers from Super Nintendo games\?</string>
     <string name="help_sega_fix_checksum_body">Os jogos para Sega Mega Drive (Genesis) possuem o checksum escritas dentro da ROM. Se você modificar qualquer parte do jogo, eles não vão coincidir, ocasionando uma falha ao tentar executar. O que esta opção faz é calcular o checksum correto da mudança realizada e escrever o mesmo dentro da ROM modificada.
@@ -102,7 +102,7 @@
 \n- Corrigir checksum em jogos de Sega Mega Drive / Sega Genesis.
 \n- Remove SMC header in Super Nintendo games.</string>
     <string name="help_additional_features_title">O UniPatcher tem alguma função adicional\?</string>
-    <string name="help_ecm_image_body">ECM é um formato de compressão de dados designado especificamente para imagens de disco. Você pode descomprimir o arquivo usando <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> program.</string>
+    <string name="help_ecm_image_body">ECM é um formato de compressão de dados designado especificamente para imagens de disco. Você pode descomprimir o arquivo usando ZArchiver program https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_ecm_image_title">O que eu posso fazer com arquivos do tipo ECM\?</string>
     <string name="help_ips_no_checksum_title">Eu aplico o patch IPS e o jogo não está funcionando/ tem glitches gráficos. O quê estou fazendo de errado\?</string>
     <string name="help_find_rom_pokemon_emerald_body">A maioria dos patches do jogo funciona com a ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
@@ -110,7 +110,7 @@
     <string name="help_rom_not_compatible_with_patch_title">O aplicativo mostra o erro: “Esta ROM não é compatível com o patch”.</string>
     <string name="help_archive_should_be_unpacked_body">O arquivo que você selecionou é um ficheiro. O ficheiro contém os diretórios e arquivos em um formato comprimido (Ex. .zip, .rar).
 \n
-\nAté este momento, o UniPatcher não pode extrair arquivos, então você precisará descompactar seu arquivo em uma aplicação diferente. Eu recomendo esta aqui, é gratuita: <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+\nAté este momento, o UniPatcher não pode extrair arquivos, então você precisará descompactar seu arquivo em uma aplicação diferente. Eu recomendo esta aqui, é gratuita: ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">O aplicativo mostra uma mensagem após selecionar um arquivo: \" O arquivo deve ser decomprimido em um aplicativo externo\".</string>
     <string name="help_how_to_apply_patch_to_rom_body">You have to select a ROM file, a patch and choose which file to save, then click on the red round button. Files are selected through the standard Files application (or through one of the file managers you have installed). The application will show a message when the file is patched. Do not close the application until the file is patched.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Como aplicar um patch em uma ROM\?</string>
