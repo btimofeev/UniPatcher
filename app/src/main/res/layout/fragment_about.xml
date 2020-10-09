@@ -65,21 +65,23 @@
             </LinearLayout>
         </LinearLayout>
 
-        <org.sufficientlysecure.htmltextview.HtmlTextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/translators"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="8dp"
+            android:autoLink="web"
             android:linksClickable="true"
-            android:autoLink="web"/>
+            android:textIsSelectable="true" />
 
-        <org.sufficientlysecure.htmltextview.HtmlTextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/usedLibraries"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:linksClickable="true"
-            android:autoLink="web"/>
+            android:autoLink="web"
+            android:textIsSelectable="true" />
 
     </LinearLayout>
 </ScrollView>
