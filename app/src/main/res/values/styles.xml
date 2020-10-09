@@ -44,7 +44,19 @@
         <item name="android:foreground">?attr/selectableItemBackground</item>
     </style>
 
+    <style name="HelpText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textIsSelectable">true</item>
+        <item name="android:autoLink">web|email</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Body1</item>
+    </style>
 
+    <style name="HelpText.Title" parent="HelpText">
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Title</item>
+    </style>
 
     <style name="ToolbarTextAppearance">
         <item name="android:fontFamily">sans-serif</item>
