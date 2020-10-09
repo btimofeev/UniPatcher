@@ -89,9 +89,9 @@
     <string name="donation">寄付する</string>
     <string name="icon">アイコン</string>
     <string name="notification_channel_name">通知</string>
-    <string name="help_feedback_body">メール <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a> に私に連絡してください。 英語またはロシア語で記入してください。 パッチに問題がある場合は、パッチをメールに添付して ROM の名前を書いてください。これで時間を節約できます。</string>
+    <string name="help_feedback_body">メール unipatcher@gmail.com に私に連絡してください。 英語またはロシア語で記入してください。 パッチに問題がある場合は、パッチをメールに添付して ROM の名前を書いてください。これで時間を節約できます。</string>
     <string name="help_feedback_title">質問、機能リクエスト、バグ報告があります。</string>
-    <string name="help_how_to_translate_body">アプリを別の言語に翻訳したり、既存の翻訳を改善したい場合は <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a> サイトで行うことができます。</string>
+    <string name="help_how_to_translate_body">アプリを別の言語に翻訳したり、既存の翻訳を改善したい場合は Weblate https://hosted.weblate.org/projects/unipatcher/ サイトで行うことができます。</string>
     <string name="help_how_to_translate_title">アプリを翻訳する方法は\?</string>
     <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) のゲームは、チェックサムが ROM に書き込まれています。 ゲームの一部を変更するだけでは一致しないため、結果として実行されません。 行うことは、変更の正しいチェックサムを計算し、それを修正された ROM ファイルに書き込むことです。
 \n
@@ -103,7 +103,7 @@
 \n- Sega Mega Drive / Sega Genesis ゲームのチェックサムの修正。
 \n- Remove SMC header in Super Nintendo games.</string>
     <string name="help_additional_features_title">UniPatcher には追加機能がありますか\?</string>
-    <string name="help_ecm_image_body">ECM は、ディスクイメージ専用に設計されたデータ圧縮形式です。 次のプログラムを使用してファイルを解凍することができます <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> 。</string>
+    <string name="help_ecm_image_body">ECM は、ディスクイメージ専用に設計されたデータ圧縮形式です。 次のプログラムを使用してファイルを解凍することができます ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_ecm_image_title">.ECM ファイル形式で何ができますか\?</string>
     <string name="help_ips_no_checksum_body">IPS 形式のパッチにはチェックサムが含まれていません。 したがって、パッチはすべての (間違った) ROM ファイルにも適用されます。 この場合、別の ROM ファイルを探す必要があります。</string>
     <string name="help_ips_no_checksum_title">IPS パッチを適用した後、ゲームが動作しない / グラフィックの不具合があります。 何か間違っていますか\?</string>
@@ -117,7 +117,7 @@
     <string name="help_rom_not_compatible_with_patch_title">エラーが表示されます: 「この ROM はパッチと互換性がありません」。</string>
     <string name="help_archive_should_be_unpacked_body">選択したファイルはアーカイブです。 アーカイブには、圧縮された形式のディレクトリーとファイルが含まれています。
 \n
-\n現在、UniPatcher はアーカイブを抽出できないため、別のプログラムでアーカイブを解凍する必要があります。 私は無償のプログラムをお勧めします <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>。</string>
+\n現在、UniPatcher はアーカイブを抽出できないため、別のプログラムでアーカイブを解凍する必要があります。 私は無償のプログラムをお勧めします ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">ファイルを選択した後、アプリがメッセージを表示します: 「アーカイブは外部プログラムで解凍する必要があります」。</string>
     <string name="help_how_to_apply_patch_to_rom_title">ROM にパッチを適用する方法は\?</string>
     <string name="help_why_not_distribute_modified_games_body">ダウンロードサイズを減らし、著作権の問題を避けるために、ハックや翻訳は一般にパッチとして配布されます。</string>
