@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">UniPatcher</string>
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_email">unipatcher@gmail.com</string>
-
     <!-- Main activity -->
     <string name="main_activity_rom_file">ROM ファイル</string>
     <string name="main_activity_patch_file">パッチファイル</string>
@@ -24,11 +22,9 @@
     <string name="snes_smc_header_will_be_removed">この ROM には SMC ヘッダーがあります。 これは削除されます。</string>
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">この機能は Sega Mega Drive (Sega Genesis) の ROM にのみ適用されます。\n\n\"死の赤い画面\" を修正します。\n\n警告: この機能はバックアップを作成しません。</string>
-
     <!-- Notifications -->
     <string name="notify_patching_complete">パッチ完了</string>
     <string name="notify_create_patch_complete">パッチの作成が完了しました</string>
-
     <string name="notify_error">エラー</string>
     <string name="notify_error_could_not_copy_file">ファイルをコピーできません</string>
     <string name="notify_error_file_not_found">ファイルが見つかりません</string>
@@ -50,12 +46,9 @@
     <string name="notify_error_wrong_checksum_after_patching">パッチを適用した後、ファイルのチェックサムが間違っています</string>
     <string name="notify_error_failed_load_lib_xdelta3">ライブラリー libxdelta3.so の読み込みに失敗しました</string>
     <string name="notify_error_unknown">不明なエラー</string>
-
     <string name="notify_error_not_smd_rom">Sega Mega Drive ROM ではありません</string>
     <string name="notify_smd_fix_checksum_complete">チェックサムを修正しました</string>
-
     <string name="notify_snes_delete_smc_header_complete">SMC ヘッダーの削除完了</string>
-
     <!-- Settings -->
     <string name="settings_activity_title">設定</string>
     <string name="settings_interface_header">ユーザーインターフェース</string>
@@ -68,7 +61,6 @@
     <string name="settings_patching_header">パッチ中</string>
     <string name="settings_ignore_checksum">チェックサムを無視する</string>
     <string name="settings_ignore_checksum_description">間違った ROM を使用した場合、パッチを中断しないでください。 注意: このオプションはゲームを破壊する可能性があります。</string>
-
     <!-- Help activity -->
     <string name="help_activity_title">ヘルプ</string>
     <string name="help_activity_faq_tab_title">FAQ</string>
@@ -79,13 +71,10 @@
     <string name="help_activity_action_visit_site">Web サイトを参照</string>
     <string name="help_activity_action_changelog">変更履歴</string>
     <string name="donate_activity_title">寄付する</string>
-
     <string name="send_feedback_dialog_title">メールを送る</string>
     <string name="send_feedback_error_no_email_apps">メールクライアントがインストールされていません</string>
-
     <string name="share_dialog_title">UniPatcher を共有</string>
     <string name="share_text">最高の Android 向け ROM パッチャーをダウンロードしましょう。 IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP および XDelta3 パッチ形式をサポートします。\n\n</string>
-
     <!-- Navigation list -->
     <string name="nav_apply_patch">パッチを適用</string>
     <string name="nav_create_patch">パッチを作成</string>
@@ -97,10 +86,55 @@
     <string name="nav_help">ヘルプ</string>
     <string name="nav_drawer_open">ナビゲーションドロワーを開く</string>
     <string name="nav_drawer_close">ナビゲーションドロワーを閉じる</string>
-
     <string name="donation">寄付する</string>
     <string name="icon">アイコン</string>
     <string name="notification_channel_name">通知</string>
-
+    <string name="help_feedback_body">メール <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a> に私に連絡してください。 英語またはロシア語で記入してください。 パッチに問題がある場合は、パッチをメールに添付して ROM の名前を書いてください。これで時間を節約できます。</string>
+    <string name="help_feedback_title">質問、機能リクエスト、バグ報告があります。</string>
+    <string name="help_how_to_translate_body">アプリを別の言語に翻訳したり、既存の翻訳を改善したい場合は <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a> サイトで行うことができます。</string>
+    <string name="help_how_to_translate_title">アプリを翻訳する方法は\?</string>
+    <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) のゲームは、チェックサムが ROM に書き込まれています。 ゲームの一部を変更するだけでは一致しないため、結果として実行されません。 行うことは、変更の正しいチェックサムを計算し、それを修正された ROM ファイルに書き込むことです。
+\n
+\n<b>警告:</b> この機能はバックアップ ROM を作成しません。</string>
+    <string name="help_sega_fix_checksum_title">なぜ Sega Mega Drive ゲームのチェックサムを修正する必要があるのですか\?</string>
+    <string name="help_additional_features_body">はい。 UniPatcher は次のことができます:
+\n
+\n- XDelta3 パッチの作成。
+\n- Sega Mega Drive / Sega Genesis ゲームのチェックサムの修正。
+\n- Remove SMC header in Super Nintendo games.</string>
+    <string name="help_additional_features_title">UniPatcher には追加機能がありますか\?</string>
+    <string name="help_ecm_image_body">ECM は、ディスクイメージ専用に設計されたデータ圧縮形式です。 次のプログラムを使用してファイルを解凍することができます <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> 。</string>
+    <string name="help_ecm_image_title">.ECM ファイル形式で何ができますか\?</string>
+    <string name="help_ips_no_checksum_body">IPS 形式のパッチにはチェックサムが含まれていません。 したがって、パッチはすべての (間違った) ROM ファイルにも適用されます。 この場合、別の ROM ファイルを探す必要があります。</string>
+    <string name="help_ips_no_checksum_title">IPS パッチを適用した後、ゲームが動作しない / グラフィックの不具合があります。 何か間違っていますか\?</string>
+    <string name="help_find_rom_pokemon_emerald_body">ゲームのパッチのほとんどは、ROM “ポケモン - エメラルドバージョン (U) [f1] (Save Type).gba” で動作します。</string>
+    <string name="help_find_rom_pokemon_emerald_title">ゲーム “ポケモンエメラルド” の正しい ROM を見つけることができません。</string>
+    <string name="help_rom_not_compatible_with_patch_body">パッチに保存されているチェックサムが ROM のチェックサムと一致しない場合に、このエラーが表示されます。 つまり、ROM のファイルがパッチと互換性がありません。 別の ROM ファイルを選択する必要があります。 通常、それぞれのゲームにはいくつかの ROM があります (ヨーロッパ、アメリカ、日本向けのバージョン、良いものや不良のダンプなど)。
+\n
+\nROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. If the checksums matches you have the ROM the patch was written for. If not, you need a different ROM.
+\n
+\n最悪の場合、正しいROMファイルを見つけられない場合は、設定で “チェックサムを無視する” オプションを設定することができます。 しかし、この場合、ゲームにバグが含まれてたり、完全にはプレイできない可能性があることにご注意ください。</string>
+    <string name="help_rom_not_compatible_with_patch_title">エラーが表示されます: 「この ROM はパッチと互換性がありません」。</string>
+    <string name="help_archive_should_be_unpacked_body">選択したファイルはアーカイブです。 アーカイブには、圧縮された形式のディレクトリーとファイルが含まれています。
+\n
+\n現在、UniPatcher はアーカイブを抽出できないため、別のプログラムでアーカイブを解凍する必要があります。 私は無償のプログラムをお勧めします <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>。</string>
+    <string name="help_archive_should_be_unpacked_title">ファイルを選択した後、アプリがメッセージを表示します: 「アーカイブは外部プログラムで解凍する必要があります」。</string>
+    <string name="help_how_to_apply_patch_to_rom_title">ROM にパッチを適用する方法は\?</string>
+    <string name="help_why_not_distribute_modified_games_body">ダウンロードサイズを減らし、著作権の問題を避けるために、ハックや翻訳は一般にパッチとして配布されます。</string>
+    <string name="help_why_not_distribute_modified_games_title">なぜ ROM のハッカーは変更されたゲームを配布しないのですか\?</string>
+    <string name="help_what_is_a_patch_body">パッチは、元のバージョンの ROM とハックしたバージョンの違いを含むファイルです。
+\n
+\nパッチが配布されると、エンドユーザーは元の ROM のコピーにパッチを適用し、プレー可能なバージョンのハックを生成します。</string>
+    <string name="help_what_is_a_patch_title">パッチとは\?</string>
+    <string name="help_what_is_rom_hacking_body">ROM ハックは ROM イメージのデータを変更します。 これは、グラフィックスの変更、ゲームレベルの変更、難易度の調整、またはゲームがもともと利用できなかった言語への翻訳の形をとることがあります。</string>
+    <string name="help_what_is_rom_hacking_title">ROM ハックとは\?</string>
+    <string name="help_what_is_rom_image_body">ROM イメージは、ビデオゲームカートリッジのコピーを含むコンピューターファイルです。 エミュレーションのプロセスを通して、そのファイルをコピーし、 “エミュレーター” と呼ばれるソフトウェアで実行して、コンピューターや電話でゲームを楽しむことができます。</string>
+    <string name="help_what_is_rom_image_title">ROM イメージとは\?</string>
+    <string name="help_can_i_hack_android_game_body">いいえ、UniPatcher は Android のゲームをハックするようには設計されていません。</string>
+    <string name="help_can_i_hack_android_game_title">このアプリを使用して Android のゲームをハックまたはクラックすることはできますか\?</string>
+    <string name="help_what_patch_formats_are_supported_body">アプリは IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP および XDelta3 パッチ形式をサポートしています。</string>
+    <string name="help_what_patch_formats_are_supported_title">サポートされているパッチ形式は\?</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher は、さまざまなビデオゲームコンソールの ROM イメージにパッチを適用するための Android ツールです。</string>
+    <string name="help_what_is_unipatcher_title">UniPatcher とは\?</string>
+    <string name="help_title">よくある質問と答え:</string>
 </resources>
-

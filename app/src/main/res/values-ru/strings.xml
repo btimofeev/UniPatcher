@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">UniPatcher</string>
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_email">unipatcher@gmail.com</string>
-
     <!-- Main activity -->
     <string name="main_activity_rom_file">ROM-файл</string>
     <string name="main_activity_patch_file">Патч</string>
@@ -22,7 +20,6 @@
     <string name="main_activity_donate_snackbar_button">Пожертвовать</string>
     <string name="main_activity_button_how_to_use_app">Как пользоваться приложением</string>
     <string name="main_activity_double_back_to_exit_message">Нажмите ещё раз НАЗАД, чтобы выйти. Это может прервать запущенные операции. </string>
-
     <!-- Create patch fragment -->
     <string name="create_patch_fragment_source_file">Исходный файл</string>
     <string name="create_patch_fragment_modified_file">Изменённый файл</string>
@@ -30,20 +27,16 @@
     <string name="create_patch_fragment_toast_source_not_selected">Сначала выберите исходный файл</string>
     <string name="create_patch_fragment_toast_modified_not_selected">Сначала выберите изменённый файл</string>
     <string name="create_patch_fragment_toast_patch_not_selected">Сначала выберите где сохранить патч</string>
-
     <!-- Info for SNES SMC header -->
     <string name="snes_smc_header_help">Эта функция только для ROM\'ов Super Nintendo.\n\nНекоторые патчи требуют, чтобы в ROMе не было SMC заголовка. Данная функция поможет удалить его.</string>
     <string name="snes_smc_header_will_be_removed">У этого ROM\'а есть SMC заголовок. Он будет удалён.</string>
     <string name="snes_rom_has_no_smc_header">Этот ROM не содержит SMC заголовка. Удалять ничего не нужно.</string>
     <string name="snes_smc_error_unable_to_get_file_size">Ошибка; невозможно определить размер файла</string>
-
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">Эта функция только для игр Sega Mega Drive.\n\nОна исправляет \"красный экран смерти\".\n\nПредупреждение: эта функция не создаёт резервную копию.</string>
-
     <!-- Notifications -->
     <string name="notify_patching_complete">Применение патча завершено</string>
     <string name="notify_create_patch_complete">Патч создан</string>
-
     <string name="notify_error">Ошибка</string>
     <string name="notify_error_could_not_copy_file">Не удалось скопировать файл</string>
     <string name="notify_error_file_not_found">Файл не найден</string>
@@ -69,12 +62,9 @@
     <string name="notify_error_wrong_checksum_after_patching">Контрольная сумма пропатченного файла неправильная</string>
     <string name="notify_error_failed_load_lib_xdelta3">Не удалось загрузить библиотеку libxdelta3.so</string>
     <string name="notify_error_unknown">Неизвестная ошибка</string>
-
     <string name="notify_error_not_smd_rom">Это не ROM для Sega Mega Drive</string>
     <string name="notify_smd_fix_checksum_complete">Контр. сумма исправлена</string>
-
     <string name="notify_snes_delete_smc_header_complete">SMC заголовок удалён</string>
-
     <!-- Settings -->
     <string name="settings_activity_title">Настройки</string>
     <string name="settings_interface_header">Внешний вид</string>
@@ -89,33 +79,27 @@
     <string name="settings_patching_header">Применение патчей</string>
     <string name="settings_ignore_checksum">Игнорировать контрольную сумму</string>
     <string name="settings_ignore_checksum_description">Не показывать ошибку, если используется неподходящий ROM. Используйте осторожно: включив эту опцию можно получить непроходимую игру.</string>
-
     <!-- Help activity -->
     <string name="help_activity_title">Помощь</string>
     <string name="help_activity_faq_tab_title">ЧАВО</string>
     <string name="help_activity_about_tab_title">О программе</string>
     <string name="help_activity_about_tab_version">Версия %1$s</string>
     <string name="help_activity_about_tab_license">Лицензия: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">&#169; Борис Тимофеев, 2013&#8211;2020</string>
+    <string name="help_activity_about_tab_copyright">© Борис Тимофеев, 2013–2020</string>
     <string name="help_activity_action_send_feedback">Написать письмо автору</string>
     <string name="help_activity_action_visit_site">Посетить веб-сайт</string>
     <string name="help_activity_action_changelog">История изменений</string>
     <string name="help_activity_error_cannot_load_text">Ошибка: не могу загрузить текст</string>
-
     <string name="error_crash_title">Приложение остановлено</string>
     <string name="error_crash_message">К сожалению, в приложении возникла критическая ошибка. Пожалуйста, отправьте отчет разработчику.</string>
     <string name="error_crash_send_button">Отправить</string>
     <string name="error_crash_discard_button">Отменить</string>
     <string name="error_file_picker_app_is_no_installed">Ошибка: приложение Файлы не установлено</string>
-
     <string name="donate_activity_title">Пожертвование</string>
-
     <string name="send_feedback_dialog_title">Отправить e-mail</string>
     <string name="send_feedback_error_no_email_apps">Не установлен e-mail клиент</string>
-
     <string name="share_dialog_title">Рассказать о UniPatcher</string>
     <string name="share_text">Скачай лучший ROM патчер для Android. Поддерживает патчи в форматах IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP и XDelta3.\n\n</string>
-
     <!-- Navigation list -->
     <string name="nav_apply_patch">Применить патч</string>
     <string name="nav_create_patch">Создать патч</string>
@@ -128,10 +112,60 @@
     <string name="nav_help">Помощь</string>
     <string name="nav_drawer_open">Открыть главное меню</string>
     <string name="nav_drawer_close">Закрыть главное меню</string>
-
     <string name="donation">Пожертвование</string>
     <string name="icon">иконка</string>
     <string name="notification_channel_name">Уведомления</string>
-
+    <string name="help_feedback_body">Вы можете связаться со мной по электронной почте, мой адрес <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a>. Прошу писать по-английски или по-русски. Если у вас проблема с наложением патча, то прикрепите патч к письму и напишите название вашего ROM’а, это сэкономит наше время.</string>
+    <string name="help_feedback_title">У меня есть вопрос, идея для новой функции или сообщение об ошибке.</string>
+    <string name="help_how_to_translate_body">Если вы хотите перевести приложение на другой язык или улучшить существующий перевод, вы можете сделать это на сайте <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a>.</string>
+    <string name="help_how_to_translate_title">Как перевести приложение на другой язык\?</string>
+    <string name="help_snes_smc_body">SMC заголовок это 512 байт находящиеся в начале некоторых SNES ROM’ов. Эти байты не имеют значения, но они меняют расположение данных. Удаление заголовка иногда используется с целью корректного наложения патча.</string>
+    <string name="help_snes_smc_title">Зачем иногда необходимо удалять SMC заголовки в играх Super Nintendo\?</string>
+    <string name="help_sega_fix_checksum_body">Некоторые игры Sega Mega Drive хранят внутри ROM’а контрольную сумму. Если вы измните любую часть игры, контрольные суммы не совпадут и игра не запустится (вы увидите красный экран вместо игры). Эта функция вычисляет и записывает корректную контрольную сумму в модифицированный ROM.
+\n
+\n<b>Предупреждение:</b> эта функция не создаёт резервной копии ROM’а.</string>
+    <string name="help_sega_fix_checksum_title">Зачем исправлять контрольную сумму для игр Sega Mega Drive\?</string>
+    <string name="help_additional_features_body">Да. Приложение может:
+\n
+\n- Создавать патчи в формате XDelta3.
+\n- Исправлять контрольную сумму для игр Sega Mega Drive.
+\n- Удалять SMC заголовки в играх Super Nintendo.</string>
+    <string name="help_additional_features_title">Есть ли какие-то дополнительные функции\?</string>
+    <string name="help_ecm_image_body">ECM это формат сжатия данных созданный специально для образов дисков. Программа <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> умеет распаковывать этот формат.</string>
+    <string name="help_ecm_image_title">Что можно сделать с файлом в формате .ECM\?</string>
+    <string name="help_ips_no_checksum_body">Патчи в формате IPS не содержат контрольной суммы. Поэтому, такой патч наложится на любой (даже неподходящий) ROM файл. В этом случае нужно использовать ROM другого региона.</string>
+    <string name="help_ips_no_checksum_title">Я применяю патч формата IPS к игре и после этого игра не работает/содержит графические артефакты. Что я делаю неправильно\?</string>
+    <string name="help_find_rom_pokemon_emerald_body">Большинство патчей этой игры работают с ROM’ом “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
+    <string name="help_find_rom_pokemon_emerald_title">Не могу подобрать ROM для игры “Pokémon Emerald”.</string>
+    <string name="help_i_cant_patch_smw_rom_body">Этот ROM содержит SMC заголовок, в то время как большинство патчей этой игры требуют, что бы заголовка не было. Вы можете удалить SMC заголовок выбрав соответствующий пункт в меню слева и после этого наложить патч на получившийся ROM.</string>
+    <string name="help_i_cant_patch_smw_rom_title">Я не могу наложить патч на ROM “Super Mario World (U) [!].smc”</string>
+    <string name="help_rom_not_compatible_with_patch_body">Эта ошибка появляется, когда контрольная сумма сохранённая в патче не совпадает с контрольной суммой ROM’а. Это означает, что данный ROM не совместим с патчем. Вам необходимо выбрать другой ROM. Обычно существует несколько версий ROM’а для каждой игры (например, версии для Европы, США, Японии, хорошие или плохие дампы и т.д.).
+\n
+\nROM-хакеры часто публикуют контрольную сумму необходимого ROM файла (на веб странице или в файле Readme). Вам необходимо сравнить её с вашим ROM’ом. Если контрольные суммы совпадают, то у вас подходящий ROM. Если же не совпадает, то вам нужно поискать дугой ROM.
+\n
+\nЕсли не удалось найти подходящий ROM, то в крайнем случае вы можете включить в настройках опцию “Игнорировать контрольную сумму”. Но имейте ввиду, что в этом случае игра может содержать ошибки или быть полностью непроходимой.</string>
+    <string name="help_rom_not_compatible_with_patch_title">Приложение пишет ошибку: “Этот ROM не совместим с патчем”.</string>
+    <string name="help_archive_should_be_unpacked_body">Файл который вы выбрали является архивом. Архив содержит в себе директории и файлы в сжатом виде.
+\n
+\nВ настоящее время UniPatcher не умеет распаковывать архивы, поэтому вам необходимо распаковать свой архив в другой программе. Я рекомендую бесплатную программу <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+    <string name="help_archive_should_be_unpacked_title">Когда я выбираю файл приложение пишет “Архив необходимо распаковать во внешней программе”.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">Вы должны выбрать ROM, патч и файл в который будет сохранен результат, затем нажать красную круглую кнопку. Файлы выбираются через стандартное приложение Файлы (или через один из установленных вами файловых менеджеров). Приложение покажет сообщение, когда файл будет пропатчен. Не закрывайте приложение до этого момента.</string>
+    <string name="help_how_to_apply_patch_to_rom_title">Как наложить патч на игру\?</string>
+    <string name="help_why_not_distribute_modified_games_body">Хаки и переводы распространяются в виде патчей для того, что бы уменьшить размер скачиваемых данных и не нарушать авторские права на игру.</string>
+    <string name="help_why_not_distribute_modified_games_title">Почему ROM хакеры не распространяют пропатченные ROM файлы\?</string>
+    <string name="help_what_is_a_patch_body">Патч это файл содержащий разницу между оригинальной и изменённой версиями ROM’а.
+\n
+\nРомхакеры распространяют патч, а пользователи применяют этот патч к оригинальной версии ROM’а, тем самым получая модифицированную версию.</string>
+    <string name="help_what_is_a_patch_title">Что такое патч\?</string>
+    <string name="help_what_is_rom_hacking_body">ROM хакинг это процесс модификации ROM файла с целью изменить графику, уровни, геймплей или язык игры.</string>
+    <string name="help_what_is_rom_hacking_title">Что такое ROM хакинг\?</string>
+    <string name="help_what_is_rom_image_body">ROM файл это компьютерный файл содержащий копию игрового картриджа. В процессе эмуляции вы запускаете этот файл с помощью программы эмулятора для того, чтобы наслаждаться игрой на вашем компьютере или телефоне.</string>
+    <string name="help_what_is_rom_image_title">Что такое ROM файл\?</string>
+    <string name="help_can_i_hack_android_game_body">Нет. Приложение не предназначено для взлома Android игр.</string>
+    <string name="help_can_i_hack_android_game_title">Возможно ли с помощью этого приложения взломать игру для Android\?</string>
+    <string name="help_what_patch_formats_are_supported_body">Приложение поддерживает патчи в форматах IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP и XDelta3.</string>
+    <string name="help_what_patch_formats_are_supported_title">Какие форматы патчей поддерживаются\?</string>
+    <string name="help_what_is_unipatcher_body">Это приложение для Android предназначенное для наложения патчей на ROM файлы различных игровых видеоконсолей.</string>
+    <string name="help_what_is_unipatcher_title">Что такое UniPatcher\?</string>
+    <string name="help_title">Часто задаваемые вопросы:</string>
 </resources>
-
