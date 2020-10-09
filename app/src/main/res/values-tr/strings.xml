@@ -115,9 +115,9 @@
     <string name="app_email">unipatcher@gmail.com</string>
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_name">UniPatcher</string>
-    <string name="help_feedback_body">Bana <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a> e-posta adresinden ulaşın. Lütfen İngilizce olarak yazın. Yama yapma ile ilgili sorun yaşıyorsanız, yamayı e-postaya ekleyin ve ROM\'unuzun adını yazın, bu bize zaman kazandıracaktır.</string>
+    <string name="help_feedback_body">Bana unipatcher@gmail.com e-posta adresinden ulaşın. Lütfen İngilizce olarak yazın. Yama yapma ile ilgili sorun yaşıyorsanız, yamayı e-postaya ekleyin ve ROM\'unuzun adını yazın, bu bize zaman kazandıracaktır.</string>
     <string name="help_feedback_title">Bir sorum, özellik isteğim veya hata bildirimim var.</string>
-    <string name="help_how_to_translate_body">Uygulamayı başka bir dile çevirmek veya var olan bir çeviriyi iyileştirmek istiyorsanız, bunu <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a> sitesinde yapabilirsiniz.</string>
+    <string name="help_how_to_translate_body">Uygulamayı başka bir dile çevirmek veya var olan bir çeviriyi iyileştirmek istiyorsanız, bunu https://hosted.weblate.org/projects/unipatcher/ Weblate sitesinde yapabilirsiniz.</string>
     <string name="help_how_to_translate_title">Uygulamanın çevirileri nasıl yapılıyor\?</string>
     <string name="help_snes_smc_body">SMC başlığı, bazı SNES ROM kalıplarının başlangıcında bulunan 512 bayttır. Bu baytların bir amacı yoktur, ancak sonraki verilerin yerini değiştirirler. Bir başlığın kaldırılması bazen bir yamanın doğru şekilde uygulanması amacıyla kullanılır.</string>
     <string name="help_snes_smc_title">Neden bazen Super Nintendo oyunlarından SMC başlıklarını kaldırmak gerekiyor\?</string>
@@ -131,7 +131,7 @@
 \n- Sega Mega Drive / Sega Genesis oyunları için sağlama toplamı düzeltme.
 \n- Super Nintendo oyunlarından SMC başlığını kaldırma.</string>
     <string name="help_additional_features_title">UniPatcher\'ın ek özellikleri var mı\?</string>
-    <string name="help_ecm_image_body">ECM, özellikle disk kalıpları için tasarlanmış bir veri sıkıştırma biçimidir. <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> programını kullanarak dosyayı açabilirsiniz.</string>
+    <string name="help_ecm_image_body">ECM, özellikle disk kalıpları için tasarlanmış bir veri sıkıştırma biçimidir. https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver ZArchiver uygulamasını kullanarak dosyayı açabilirsiniz.</string>
     <string name="help_ecm_image_title">.ECM dosya türüyle ne yapabilirim\?</string>
     <string name="help_ips_no_checksum_body">IPS biçim yamaları bir sağlama toplamı içermez. Bu nedenle yama herhangi bir ROM dosyasına (yanlış bile olsa) uygulanacaktır. Bu durumda başka bir ROM dosyası aramanız gerekir.</string>
     <string name="help_ips_no_checksum_title">IPS yamasını uyguluyorum ve sonra oyun çalışmıyor / grafik hataları içeriyor. Neyi yanlış yapıyorum\?</string>
@@ -147,7 +147,7 @@
     <string name="help_rom_not_compatible_with_patch_title">Uygulama şu hatayı gösteriyor: “Bu ROM yama ile uyumlu değil”.</string>
     <string name="help_archive_should_be_unpacked_body">Seçtiğiniz dosya bir arşiv. Arşiv, dizinleri ve dosyaları sıkıştırılmış bir biçimde içerir.
 \n
-\nŞu anda UniPatcher arşivleri çıkaramıyor, bu nedenle arşivinizi farklı bir programda açmanız gerekir. Ücretsiz olan <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> programını tavsiye ederim.</string>
+\nŞu anda UniPatcher arşivleri çıkaramıyor, bu nedenle arşivinizi farklı bir programda açmanız gerekir. Ücretsiz olan https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver ZArchiver uygulamasını tavsiye ederim.</string>
     <string name="help_archive_should_be_unpacked_title">Uygulama dosya seçiminden sonra bir mesaj gösteriyor: “Arşiv harici bir programda açılmalıdır”.</string>
     <string name="help_how_to_apply_patch_to_rom_body">Bir ROM dosyası, bir yama ve hangi dosyanın kaydedileceğini seçmeniz ve ardından kırmızı yuvarlak düğmeye tıklamanız gerekir. Dosyalar, standart dosya uygulaması (veya yüklediğiniz dosya yöneticilerinden biri) aracılığıyla seçilir. Uygulama, yama dosyaya uygulandığında bir mesaj gösterecektir. Yama dosyaya uygulanana kadar uygulamayı kapatmayın.</string>
     <string name="help_how_to_apply_patch_to_rom_title">ROM\'a yama nasıl uygulanır\?</string>
@@ -169,4 +169,5 @@
     <string name="help_what_is_unipatcher_title">UniPatcher nedir\?</string>
     <string name="help_title">Sık Sorulan Sorular:</string>
     <string name="about_translators"><h5>Çevirmenler:</h5> <ul> <li><b>Çince</b>: Nabarl Wang</li> <li><b>Fransızca</b>: Thibaut Panis</li> <li><b>İtalyanca</b>: Matteo Sechi</li> <li><b>Japonca</b>: Naofumi Fukue</li> <li><b>Korece</b>: Minseo Lee</li> <li><b>Bokmål Norveççe</b>: Allan Nordhøy</li> <li><b>Lehçe</b>: Michal Bychowski</li> <li><b>Portekizce</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso</li> <li><b>Rusça</b>: Борис Тимофеев</li> <li><b>İspanyolca</b>: Carlos Sánchez</li> <li><b>Türkçe</b>: Oğuz Ersen</li> <li><b>Ukraynaca</b>: Володимир Шевчук</li> </ul> <p>Uygulamanın dilinize çevrilmesine yardımcı olun: https://hosted.weblate.org/projects/unipatcher/</p></string>
+    <string name="about_used_libraries"><h5>Kullanılan kütüphaneler:</h5> <ul> <li>ACRA ekibi tarafından Apache 2.0 lisansı altında lisanslanan <b>ACRA</b>. https://github.com/ACRA/acra</li> <li>SufficientlySecure ve penn5 tarafından Apache 2.0 lisansı altında lisanslanan <b>Android Donations</b>. https://github.com/penn5/donations</li> <li>Apache Yazılım Vakfı tarafından Apache 2.0 lisansı altında lisanslanan <b>Apache Commons IO</b>. https://commons.apache.org/proper/commons-io/</li> <li>Dagger yazarları tarafından Apache 2.0 lisansı altında lisanslanan <b>Dagger</b>. https://github.com/google/dagger</li> <li>Google tarafından Apache 2.0 lisansı altında lisanslanan <b>Material tasarım simgeleri</b>. https://github.com/google/material-design-icons</li> <li>Topluluk tarafından SIL Açık Yazı Tipi Lisansı 1.1 altında lisanslanan <b>Material tasarım simgeleri</b>. https://materialdesignicons.com</li> <li>Jake Wharton tarafından Apache 2.0 lisansı altında lisanslanan <b>Timber</b>. https://github.com/JakeWharton/timber</li> <li>Joshua MacDonald tarafından Apache 2.0 lisansı altında lisanslanan <b>XDelta sürüm 3</b>. https://github.com/jmacd/xdelta</li> </ul></string>
 </resources>
