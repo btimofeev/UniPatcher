@@ -115,4 +115,57 @@
     <string name="app_email">unipatcher@gmail.com</string>
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_name">UniPatcher</string>
+    <string name="help_feedback_body">Bana <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a> e-posta adresinden ulaşın. Lütfen İngilizce olarak yazın. Yama yapma ile ilgili sorun yaşıyorsanız, yamayı e-postaya ekleyin ve ROM\'unuzun adını yazın, bu bize zaman kazandıracaktır.</string>
+    <string name="help_feedback_title">Bir sorum, özellik isteğim veya hata bildirimim var.</string>
+    <string name="help_how_to_translate_body">Uygulamayı başka bir dile çevirmek veya var olan bir çeviriyi iyileştirmek istiyorsanız, bunu <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a> sitesinde yapabilirsiniz.</string>
+    <string name="help_how_to_translate_title">Uygulamanın çevirileri nasıl yapılıyor\?</string>
+    <string name="help_snes_smc_body">SMC başlığı, bazı SNES ROM kalıplarının başlangıcında bulunan 512 bayttır. Bu baytların bir amacı yoktur, ancak sonraki verilerin yerini değiştirirler. Bir başlığın kaldırılması bazen bir yamanın doğru şekilde uygulanması amacıyla kullanılır.</string>
+    <string name="help_snes_smc_title">Neden bazen Super Nintendo oyunlarından SMC başlıklarını kaldırmak gerekiyor\?</string>
+    <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) oyunlarının sağlama toplamları ROM\'a yazılır. Oyunun yalnızca herhangi bir bölümünü değiştirirseniz, bunlar eşleşmeyecek ve sonuç olarak çalışmayacaktır. Bunun yaptığı şey, değişikliğin doğru sağlama toplamını hesaplamak ve onu değiştirilmiş ROM dosyasına yazmaktır.
+\n
+\n<b>Uyarı:</b> Bu işlev bir yedek ROM oluşturmaz.</string>
+    <string name="help_sega_fix_checksum_title">Sega Mega Drive oyunları için sağlama toplamını neden düzeltmem gerekiyor\?</string>
+    <string name="help_additional_features_body">Evet. UniPatcher aşağıdakileri yapabilir:
+\n
+\n- XDelta3 yamaları oluşturma.
+\n- Sega Mega Drive / Sega Genesis oyunları için sağlama toplamı düzeltme.
+\n- Super Nintendo oyunlarından SMC başlığını kaldırma.</string>
+    <string name="help_additional_features_title">UniPatcher\'ın ek özellikleri var mı\?</string>
+    <string name="help_ecm_image_body">ECM, özellikle disk kalıpları için tasarlanmış bir veri sıkıştırma biçimidir. <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> programını kullanarak dosyayı açabilirsiniz.</string>
+    <string name="help_ecm_image_title">.ECM dosya türüyle ne yapabilirim\?</string>
+    <string name="help_ips_no_checksum_body">IPS biçim yamaları bir sağlama toplamı içermez. Bu nedenle yama herhangi bir ROM dosyasına (yanlış bile olsa) uygulanacaktır. Bu durumda başka bir ROM dosyası aramanız gerekir.</string>
+    <string name="help_ips_no_checksum_title">IPS yamasını uyguluyorum ve sonra oyun çalışmıyor / grafik hataları içeriyor. Neyi yanlış yapıyorum\?</string>
+    <string name="help_find_rom_pokemon_emerald_body">Oyunun yamalarının çoğu “Pokemon - Emerald Version (U) [f1] (Save Type).gba” ROM\'u ile çalışmaktadır.</string>
+    <string name="help_find_rom_pokemon_emerald_title">“Pokémon Emerald” oyunu için doğru ROM\'u bulamıyorum.</string>
+    <string name="help_i_cant_patch_smw_rom_body">Bu ROM bir SMC başlığı içerir, ancak bu oyun için yazılan çoğu yama ROM\'un bu başlığa sahip olmamasını gerektirir. Soldaki menüden uygun ögeyi seçerek SMC başlığını kaldırabilir ve ardından ortaya çıkan ROM\'a yamayı uygulayabilirsiniz.</string>
+    <string name="help_i_cant_patch_smw_rom_title">“Super Mario World (U) [!].smc” dosyasını yamayamıyorum</string>
+    <string name="help_rom_not_compatible_with_patch_body">Yamada depolanan sağlama toplamı ROM\'un sağlama toplamı ile eşleşmiyorsa uygulama bu hatayı gösterecektir. Bu, ROM dosyasının yama ile uyumlu olmadığı anlamına gelir. Farklı bir ROM dosyası seçmeniz gerekir. Genellikle her oyun için birkaç ROM vardır (Avrupa, ABD, Japonya sürümü, iyi veya kötü dökümler vs.).
+\n
+\nROM değiştiricileri genellikle gerekli ROM dosyasının sağlama toplamını (bir web sayfasında veya README dosyasında) yayınlar. Bunu sahip olduğunuzla karşılaştırın. Sağlama toplamı eşleşiyorsa, yamanın yazıldığı ROM\'a sahipsiniz. Değilse, farklı bir ROM\'a ihtiyacınız var.
+\n
+\nEn kötü durumda, doğru ROM dosyasını bulamazsanız, ayarlarda “Sağlama toplamını yok say” seçeneğini ayarlayabilirsiniz. Ancak bu durumda oyunun hatalar içerebileceğini veya tamamen oynanamaz olabileceğini unutmayın.</string>
+    <string name="help_rom_not_compatible_with_patch_title">Uygulama şu hatayı gösteriyor: “Bu ROM yama ile uyumlu değil”.</string>
+    <string name="help_archive_should_be_unpacked_body">Seçtiğiniz dosya bir arşiv. Arşiv, dizinleri ve dosyaları sıkıştırılmış bir biçimde içerir.
+\n
+\nŞu anda UniPatcher arşivleri çıkaramıyor, bu nedenle arşivinizi farklı bir programda açmanız gerekir. Ücretsiz olan <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> programını tavsiye ederim.</string>
+    <string name="help_archive_should_be_unpacked_title">Uygulama dosya seçiminden sonra bir mesaj gösteriyor: “Arşiv harici bir programda açılmalıdır”.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">Bir ROM dosyası, bir yama ve hangi dosyanın kaydedileceğini seçmeniz ve ardından kırmızı yuvarlak düğmeye tıklamanız gerekir. Dosyalar, standart dosya uygulaması (veya yüklediğiniz dosya yöneticilerinden biri) aracılığıyla seçilir. Uygulama, yama dosyaya uygulandığında bir mesaj gösterecektir. Yama dosyaya uygulanana kadar uygulamayı kapatmayın.</string>
+    <string name="help_how_to_apply_patch_to_rom_title">ROM\'a yama nasıl uygulanır\?</string>
+    <string name="help_why_not_distribute_modified_games_body">Değişiklikler ve çeviriler, indirme boyutunu küçültmek ve telif hakkı sorunlarını önlemek için genellikle yamalar halinde dağıtılır.</string>
+    <string name="help_why_not_distribute_modified_games_title">ROM değiştiricileri neden değiştirilmiş oyunları dağıtmaz\?</string>
+    <string name="help_what_is_a_patch_body">Yama, bir ROM\'un orijinal sürümü ile değiştirilmiş sürümü arasındaki farkları içeren bir dosyadır.
+\n
+\nYama dağıtılır ve son kullanıcılar yamayı orijinal ROM\'un bir kopyasına uygular, bu da yapılan değişimin oynatılabilir bir sürümünü üretir.</string>
+    <string name="help_what_is_a_patch_title">Yama nedir\?</string>
+    <string name="help_what_is_rom_hacking_body">ROM değiştirme, bir ROM kalıbının içindeki verileri değiştirmektir. Bu grafikleri, oyun seviyelerini, zorluk derecesini değiştirme, hatta bir oyunun orijinal olarak kullanıma sunulmadığı bir dile çevirme şeklinde olabilir.</string>
+    <string name="help_what_is_rom_hacking_title">ROM değiştirme nedir\?</string>
+    <string name="help_what_is_rom_image_body">ROM kalıbı, video oyun kartuşunun bir kopyasını içeren bir bilgisayar dosyasıdır. Öykünme süreci aracılığıyla, bilgisayarınızda veya telefonunuzda oyunun keyfini çıkarmak için bu dosyayı kopyalarsınız, “öykünücü” adı verilen bir yazılımda çalıştırırsınız.</string>
+    <string name="help_what_is_rom_image_title">ROM kalıbı nedir\?</string>
+    <string name="help_can_i_hack_android_game_body">Hayır. UniPatcher Android oyunlarını değiştirmek için tasarlanmamıştır.</string>
+    <string name="help_can_i_hack_android_game_title">Bu uygulamayı kullanarak Android oyununu değiştirebilir veya kırabilir miyim\?</string>
+    <string name="help_what_patch_formats_are_supported_body">Uygulama IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP ve XDelta3 yamalarını destekler.</string>
+    <string name="help_what_patch_formats_are_supported_title">Hangi yama biçimleri desteklenir\?</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher, çeşitli video oyun konsollarının ROM kalıplarına yamalar uygulamak için bir Android aracıdır.</string>
+    <string name="help_what_is_unipatcher_title">UniPatcher nedir\?</string>
+    <string name="help_title">Sık Sorulan Sorular:</string>
 </resources>

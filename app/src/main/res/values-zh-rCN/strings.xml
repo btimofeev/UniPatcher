@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">UniPatcher</string>
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_email">unipatcher@gmail.com</string>
-
     <!-- Main activity -->
     <string name="main_activity_rom_file">ROM 文件</string>
     <string name="main_activity_patch_file">补丁文件</string>
@@ -24,11 +22,9 @@
     <string name="snes_smc_header_will_be_removed">ROM 包含 SMC 标头，该标头将被移除。</string>
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">此功能仅限世嘉 Mega Drive (Sega Genesis) ROM 使用。\n\n它能修复“红屏死机”。\n\n警告：此功能不会创建备份。</string>
-
     <!-- Notifications -->
     <string name="notify_patching_complete">补丁集成完毕</string>
     <string name="notify_create_patch_complete">补丁已创建</string>
-
     <string name="notify_error">错误</string>
     <string name="notify_error_could_not_copy_file">不能复制文件</string>
     <string name="notify_error_file_not_found">文件未找到</string>
@@ -50,12 +46,9 @@
     <string name="notify_error_wrong_checksum_after_patching">集成补丁后的文件校验和错误</string>
     <string name="notify_error_failed_load_lib_xdelta3">载入库 libxdelta3.so 失败</string>
     <string name="notify_error_unknown">未知错误</string>
-
     <string name="notify_error_not_smd_rom">非世嘉 Mega Drive 的 ROM</string>
     <string name="notify_smd_fix_checksum_complete">校验和已修正</string>
-
     <string name="notify_snes_delete_smc_header_complete">SMC 标头已被删除</string>
-
     <!-- Settings -->
     <string name="settings_activity_title">设置</string>
     <string name="settings_interface_header">用户界面</string>
@@ -66,7 +59,6 @@
     <string name="settings_patching_header">正在集成补丁</string>
     <string name="settings_ignore_checksum">无视校验和</string>
     <string name="settings_ignore_checksum_description">即使选择了错误的 ROM 也不要打断补丁的集成。使用提示: 此选项会破坏你的游戏。</string>
-
     <!-- Help activity -->
     <string name="help_activity_title">帮助</string>
     <string name="help_activity_faq_tab_title">常见问答</string>
@@ -77,13 +69,10 @@
     <string name="help_activity_action_visit_site">访问网站</string>
     <string name="help_activity_action_changelog">更新历史</string>
     <string name="donate_activity_title">捐赠</string>
-
     <string name="send_feedback_dialog_title">发送邮件</string>
     <string name="send_feedback_error_no_email_apps">未安装邮件客户端</string>
-
     <string name="share_dialog_title">分享 UniPatcher</string>
     <string name="share_text">下载 Android 最好的 ROM 补丁工具，它支持 IPS、IPS32、UPS、BPS, APS (GBA)、APS (N64)、PPF、DPS、EBP 和 XDelta3。\n\n</string>
-
     <!-- Navigation list -->
     <string name="nav_apply_patch">应用补丁</string>
     <string name="nav_create_patch">创建补丁</string>
@@ -95,10 +84,55 @@
     <string name="nav_help">帮助</string>
     <string name="nav_drawer_open">开启导航绘图器</string>
     <string name="nav_drawer_close">关闭导航绘图器</string>
-
     <string name="donation">捐赠</string>
     <string name="icon">图标</string>
     <string name="notification_channel_name">通知</string>
-
+    <string name="help_feedback_body">通过邮件 <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a> 联系我，请用英语或俄语写信。如果你对打补丁有问题，把补丁用附件发送给我并注明你的 ROM 的名字，这样我和你都能省时省力。</string>
+    <string name="help_feedback_title">我有问题，有功能请求或有 bug 汇报。</string>
+    <string name="help_how_to_translate_body">如果你想将本应用翻译为其他语言或想改进现有翻译，请在 <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a> 操作。</string>
+    <string name="help_how_to_translate_title">怎么翻译此应用？</string>
+    <string name="help_sega_fix_checksum_body">世嘉 Mega Drive (Genesis) 游戏在 ROM 中有自己的校验和。如果你只更改游戏的任何部分, 它们将不匹配, 因此无法运行。它所做的是计算更改的正确校验和并将其写入修改后的 ROM 文件。
+\n
+\n<b>警告:</b> 此功能不会创建备份 ROM。</string>
+    <string name="help_sega_fix_checksum_title">为什么我必须修正世嘉 Mega Drive 游戏的校验和？</string>
+    <string name="help_additional_features_body">是的，UniPatcher 还可以：
+\n
+\n- 创建 XDelta3 补丁。
+\n- 为世嘉 Mega Drive / Genesis 游戏修正校验和。
+\n- Remove SMC header in Super Nintendo games.</string>
+    <string name="help_additional_features_title">UniPatcher 有什么附加功能吗？</string>
+    <string name="help_ecm_image_body">ECM 是一种为光盘特制的数据压缩格式，你可以用 <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> 解压它。</string>
+    <string name="help_ecm_image_title">我该怎么处理 .ECM 文件类型？</string>
+    <string name="help_ips_no_checksum_body">IPS 格式的补丁不含校验和，因此，它可以应用到任何 ROM 文件，哪怕是不匹配的。碰到这种情况，你需要其他的 ROM 文件。</string>
+    <string name="help_ips_no_checksum_title">我应用了 IPS 补丁，然后游戏不运行了 / 包含图像错误，是我什么地方搞错了吗？</string>
+    <string name="help_find_rom_pokemon_emerald_title">我不能为游戏“口袋妖怪 翡翠”找到正确的 ROM。</string>
+    <string name="help_rom_not_compatible_with_patch_body">如果补丁内的校验和与 ROM 内的校验和不符，应用会显示此错误，这意味着 ROM 文件与补丁不兼容。一般一个游戏有几个版本的 ROM (如欧、美、日版，好或坏的转储，等)。
+\n
+\n
+\nROM hackers often publish checksum of the accompanying ROM file (on a web page or in README file). Compare that to the one you have. If the checksum matches you have the ROM the patch was written for. If not, you need a different ROM.
+\n
+\n最坏的情况，如果你不能找到正确的 ROM 文件，那你可以在设置里开启选项“无视校验和”，但请记住在这种情况下游戏可能会含有 bug，甚至根本不能玩。</string>
+    <string name="help_rom_not_compatible_with_patch_title">应用会告知错误：“此 ROM 与补丁不兼容”。</string>
+    <string name="help_archive_should_be_unpacked_body">你选择的文件是一个压缩包，它包含的目录和文件是压缩过的格式。
+\n
+\n目前 UniPatcher 不能解开压缩档案，所以你需要用其他程序来解包。我推荐免费程序 <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a></string>
+    <string name="help_archive_should_be_unpacked_title">在选择文件后应用会显示一句消息：“压缩包应该由外部程序解压”。</string>
+    <string name="help_how_to_apply_patch_to_rom_title">如何应用补丁到 ROM？</string>
+    <string name="help_why_not_distribute_modified_games_body">修改和翻译用补丁形式发布是为了减少下载数据量及避免版权问题。</string>
+    <string name="help_why_not_distribute_modified_games_title">为什么 ROM 修改者们不发布修改版游戏？</string>
+    <string name="help_what_is_a_patch_body">补丁是一个包含了原始 ROM 与修改过的 ROM 不同部分的文件。
+\n
+\n补丁发布后，终端用户应用补丁到原始 ROM 的拷贝，就可以玩修改版了。</string>
+    <string name="help_what_is_a_patch_title">补丁是什么？</string>
+    <string name="help_what_is_rom_hacking_body">ROM 修改即修改 ROM 映像的数据，它可以是更改调整图像、关卡、难度，甚至将一个游戏翻译成其他语言。</string>
+    <string name="help_what_is_rom_hacking_title">ROM 修改是什么？</string>
+    <string name="help_what_is_rom_image_body">ROM 映像是一个电脑文件，它包含了电子游戏卡带的拷贝。通过一个模拟进程来将文件拷贝出来，用“模拟器”软件运行，就可以在电脑或手机上游玩了。</string>
+    <string name="help_what_is_rom_image_title">ROM 映像是什么？</string>
+    <string name="help_can_i_hack_android_game_body">不，UniPatcher 不是为修改 Android 游戏而设计的。</string>
+    <string name="help_can_i_hack_android_game_title">我可以通过这个应用修改或破解 Android 游戏吗？</string>
+    <string name="help_what_patch_formats_are_supported_body">本应用支持 IPS、IPS32、UPS、BPS、APS (GBA)、APS (N64)、PPF、DPS、EBP 和 XDelta3 补丁。</string>
+    <string name="help_what_patch_formats_are_supported_title">支持哪些补丁格式？</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher 是 Android 上一个为不同电子游戏主机的 ROM 映像应用补丁的工具。</string>
+    <string name="help_what_is_unipatcher_title">UniPatcher 是什么？</string>
+    <string name="help_title">常见问答:</string>
 </resources>
-
