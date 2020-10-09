@@ -6,19 +6,172 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.FaqFragment">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginStart="@dimen/content_left_margin"
         android:layout_marginEnd="@dimen/content_right_margin"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
-        <org.sufficientlysecure.htmltextview.HtmlTextView
-            android:id="@+id/faqText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="@android:style/TextAppearance.Small"/>
-    </FrameLayout>
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+            android:text="@string/help_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_what_is_unipatcher_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_what_is_unipatcher_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_what_patch_formats_are_supported_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_what_patch_formats_are_supported_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_can_i_hack_android_game_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_can_i_hack_android_game_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_what_is_rom_image_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_what_is_rom_image_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_what_is_rom_hacking_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_what_is_rom_hacking_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_what_is_a_patch_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_what_is_a_patch_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_why_not_distribute_modified_games_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_why_not_distribute_modified_games_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_how_to_apply_patch_to_rom_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_how_to_apply_patch_to_rom_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_archive_should_be_unpacked_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_archive_should_be_unpacked_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_rom_not_compatible_with_patch_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_rom_not_compatible_with_patch_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_i_cant_patch_smw_rom_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_i_cant_patch_smw_rom_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_find_rom_pokemon_emerald_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_find_rom_pokemon_emerald_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_ips_no_checksum_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_ips_no_checksum_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_ecm_image_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_ecm_image_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_additional_features_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_additional_features_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_sega_fix_checksum_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_sega_fix_checksum_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_snes_smc_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_snes_smc_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_how_to_translate_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_how_to_translate_body"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText.Title"
+            android:text="@string/help_feedback_title"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/HelpText"
+            android:text="@string/help_feedback_body"/>
+
+    </LinearLayout>
 
 </ScrollView>
