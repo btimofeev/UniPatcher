@@ -19,7 +19,7 @@
     <string name="main_activity_donate_snackbar_text">Поддержите разработку этого приложения</string>
     <string name="main_activity_donate_snackbar_button">Пожертвовать</string>
     <string name="main_activity_button_how_to_use_app">Как пользоваться приложением</string>
-    <string name="main_activity_double_back_to_exit_message">Нажмите ещё раз НАЗАД, чтобы выйти. Это может прервать запущенные операции. </string>
+    <string name="main_activity_double_back_to_exit_message">Нажмите ещё раз НАЗАД, чтобы выйти. Это может прервать запущенные операции</string>
     <!-- Create patch fragment -->
     <string name="create_patch_fragment_source_file">Исходный файл</string>
     <string name="create_patch_fragment_modified_file">Изменённый файл</string>
@@ -131,7 +131,7 @@
 \n- Исправлять контрольную сумму для игр Sega Mega Drive.
 \n- Удалять SMC заголовки в играх Super Nintendo.</string>
     <string name="help_additional_features_title">Есть ли какие-то дополнительные функции\?</string>
-    <string name="help_ecm_image_body">ECM это формат сжатия данных созданный специально для образов дисков. Программа ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver умеет распаковывать этот формат.</string>
+    <string name="help_ecm_image_body">ECM это формат сжатия данных созданный специально для образов дисков. Вы можете распаковать такой файл программой ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_ecm_image_title">Что можно сделать с файлом в формате .ECM\?</string>
     <string name="help_ips_no_checksum_body">Патчи в формате IPS не содержат контрольной суммы. Поэтому, такой патч наложится на любой (даже неподходящий) ROM файл. В этом случае нужно использовать ROM другого региона.</string>
     <string name="help_ips_no_checksum_title">Я применяю патч формата IPS к игре и после этого игра не работает/содержит графические артефакты. Что я делаю неправильно\?</string>
