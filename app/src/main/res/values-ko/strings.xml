@@ -89,9 +89,9 @@
     <string name="donation">기부</string>
     <string name="icon">아이콘</string>
     <string name="notification_channel_name">알림</string>
-    <string name="help_feedback_body">이메일 <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a>로 저에게 연락하십시오. 영어 또는 러시아어로 작성해 주십시오. 패치에 문제가 있는 경우 메일에 패치를 첨부하고 롬 이름을 쓰면 시간이 단축됩니다.</string>
+    <string name="help_feedback_body">이메일 unipatcher@gmail.com 로 저에게 연락하십시오. 영어 또는 러시아어로 작성해 주십시오. 패치에 문제가 있는 경우 메일에 패치를 첨부하고 롬 이름을 쓰면 시간이 단축됩니다.</string>
     <string name="help_feedback_title">질문, 기능 요청 혹은 버그 보고를 하고 싶습니다.</string>
-    <string name="help_how_to_translate_body">앱을 다른 언어로 번역하거나 기존 번역을 개선하려면 <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a> 사이트에서 할 수 있습니다.</string>
+    <string name="help_how_to_translate_body">앱을 다른 언어로 번역하거나 기존 번역을 개선하려면 Weblate https://hosted.weblate.org/projects/unipatcher/ 사이트에서 할 수 있습니다.</string>
     <string name="help_how_to_translate_title">앱을 번역하는 방법은 무엇입니까\?</string>
     <string name="help_sega_fix_checksum_body">세가 메가 드라이브(제네시스)게임들은 그들의 체크섬을 롬에 기록한다. 만역 너가 게임의 일부를 수정하고 싶다면, 그것들은 매칭이 않될것이고 결국 실행에 실패할 것이다. 이것은 변경사항의 정확한 체크섬을 계산하여 수정된 ROM 파일에 쓸 것이다.\"
 \n
@@ -103,7 +103,7 @@
 \n- 세가 메가 드라이브/세가 제네시스 게임 체크섬 수정.
 \n- Remove SMC header in Super Nintendo games.</string>
     <string name="help_additional_features_title">유니패처에 다른 추가 기능이 있습니까\?</string>
-    <string name="help_ecm_image_body">ECM은 디스크 이미지를 위해 특별히 고안된 데이터 압축 형식입니다. <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> 프로그램을 사용하여 파일의 압축을 풀 수 있습니다.</string>
+    <string name="help_ecm_image_body">ECM은 디스크 이미지를 위해 특별히 고안된 데이터 압축 형식입니다. ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver 프로그램을 사용하여 파일의 압축을 풀 수 있습니다.</string>
     <string name="help_ecm_image_title">.ECM 파일 유형으로 무엇을 할 수 있습니까\?</string>
     <string name="help_ips_no_checksum_body">IPS 형식 패치에는 체크섬이 없습니다. 따라서 이 패치는 임의의 롬에도 적용됩니다. 이 경우 다른 롬을 찾아야 합니다.</string>
     <string name="help_ips_no_checksum_title">IPS 패치를 적용한 다음 게임이 작동하지 않거나 그래픽 결함이 있습니다. 내가 뭘 잘못한 겁니까\?</string>
@@ -117,7 +117,7 @@
     <string name="help_rom_not_compatible_with_patch_title">앱에 오류가 표시됩니다: “이 롬은 패치와 호환되지 않습니다”.</string>
     <string name="help_archive_should_be_unpacked_body">선택한 파일이 압축 파일입니다. 압축 파일에는 디렉터리와 파일이 압축된 형식으로 포함됩니다.
 \n
-\n현재 유니패처는 압축 파일을 풀 수 없으므로 다른 프로그램에서 압축 파일의 압축을 풀어야 합니다. 무료 프로그램 <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>를 권장합니다.</string>
+\n현재 유니패처는 압축 파일을 풀 수 없으므로 다른 프로그램에서 압축 파일의 압축을 풀어야 합니다. 무료 프로그램 ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver 를 권장합니다.</string>
     <string name="help_archive_should_be_unpacked_title">파일 선택 후 앱에 메시지가 표시됩니다: “압축 파일은 외부 프로그램에서 압축을 풀어야 합니다”.</string>
     <string name="help_how_to_apply_patch_to_rom_title">롬에 패치를 적용하는 방법은 무엇입니까\?</string>
     <string name="help_why_not_distribute_modified_games_body">해킹 및 번역은 일반적으로 다운로드 크기를 줄이고 저작권 문제를 피하기 위해 패치로 배포됩니다.</string>
