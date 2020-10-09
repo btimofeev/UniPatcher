@@ -1,7 +1,8 @@
 #### 0.17.1 (October 9, 2020)
 - File operations are performed in an open application, and not in a background service as before.
 - Completed work is notified as a pop-up message, not in the notification area.
-- Translations are now managed on https://hosted.weblate.org/projects/unipatcher/
+- Added Turkish language (thanks to Oğuz Ersen)
+- Translations are now managed on https://hosted.weblate.org/engage/unipatcher/
 
 #### 0.17 (September 18, 2020)
 - Replaced the built-in file manager with the standard Storage Access Framework. Work with files on SD card and cloud hosting (e.g. Google Drive). Applying patches requires more time and free disk space. File checksum view temporarily removed.
