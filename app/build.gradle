@@ -14,8 +14,8 @@ android {
         applicationId "org.emunix.unipatcher"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 170002
-        versionName "0.17"
+        versionCode 170100
+        versionName "0.17.1"
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
         }
