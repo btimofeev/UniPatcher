@@ -168,4 +168,5 @@
     <string name="help_what_is_unipatcher_body">UniPatcher, çeşitli video oyun konsollarının ROM kalıplarına yamalar uygulamak için bir Android aracıdır.</string>
     <string name="help_what_is_unipatcher_title">UniPatcher nedir\?</string>
     <string name="help_title">Sık Sorulan Sorular:</string>
+    <string name="about_translators"><h5>Çevirmenler:</h5> <ul> <li><b>Çince</b>: Nabarl Wang</li> <li><b>Fransızca</b>: Thibaut Panis</li> <li><b>İtalyanca</b>: Matteo Sechi</li> <li><b>Japonca</b>: Naofumi Fukue</li> <li><b>Korece</b>: Minseo Lee</li> <li><b>Bokmål Norveççe</b>: Allan Nordhøy</li> <li><b>Lehçe</b>: Michal Bychowski</li> <li><b>Portekizce</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso</li> <li><b>Rusça</b>: Борис Тимофеев</li> <li><b>İspanyolca</b>: Carlos Sánchez</li> <li><b>Türkçe</b>: Oğuz Ersen</li> <li><b>Ukraynaca</b>: Володимир Шевчук</li> </ul> <p>Uygulamanın dilinize çevrilmesine yardımcı olun: https://hosted.weblate.org/projects/unipatcher/</p></string>
 </resources>
