@@ -81,9 +81,9 @@
     <string name="nav_drawer_close">Zamknij kartę nawigacyjną</string>
     <string name="donation">Donacja</string>
     <string name="icon">ikona</string>
-    <string name="help_feedback_body">Skontaktuj się ze mną przez e-mail <a href="mailto:unipatcher@gmail.com" class="email">unipatcher@gmail.com</a>. Proszę pisz po Angielsku albo Rosyjsku. Jeżeli masz jakieś problemy z łatkowaniem, załącz łatkę do mail-a i napisz nazwę ROM-u, to oszczędzi nasz czas.</string>
+    <string name="help_feedback_body">Skontaktuj się ze mną przez e-mail unipatcher@gmail.com. Proszę pisz po Angielsku albo Rosyjsku. Jeżeli masz jakieś problemy z łatkowaniem, załącz łatkę do mail-a i napisz nazwę ROM-u, to oszczędzi nasz czas.</string>
     <string name="help_feedback_title">Mam pytanie, prośba o dodanie funkcji albo raport w sprawie błędu.</string>
-    <string name="help_how_to_translate_body">Jeżeli chciałbyś/chciałabyś przetłumaczyć aplikację na inny język, albo poprawić istniejące tłumaczenie, możesz to zrobić na stronie <a href="https://hosted.weblate.org/projects/unipatcher/">Weblate</a>.</string>
+    <string name="help_how_to_translate_body">Jeżeli chciałbyś/chciałabyś przetłumaczyć aplikację na inny język, albo poprawić istniejące tłumaczenie, możesz to zrobić na stronie Weblate https://hosted.weblate.org/projects/unipatcher/</string>
     <string name="help_how_to_translate_title">Jak przetłumaczyć aplikację\?</string>
     <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you only change any part of the game, they will not match, failing to run as a result. What this does is calculate the correct checksum of the change and write it to the modified ROM-file.\"
 \n
@@ -95,14 +95,14 @@
 \n- Naprawiać sumę kontrolną w grach z konsol Sega Mega Drive/Sega Genesis
 \n- Remove SMC header in Super Nintendo games.</string>
     <string name="help_additional_features_title">Czy UniPatcher ma dodatkowe funkcje\?</string>
-    <string name="help_ecm_image_body">ECM jest formatem skompresowanego pliku specyficznego dla image-ów z dysku. Możesz go zdekompresować używając <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+    <string name="help_ecm_image_body">ECM jest formatem skompresowanego pliku specyficznego dla image-ów z dysku. Możesz go zdekompresować używając ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_ecm_image_title">Co mogę zrobić z typem pliku .ECM\?</string>
     <string name="help_ips_no_checksum_title">Po zaaplikowaniu łatki IPS gra nie działa/zawiera glitche graficzne. Co robię źle\?</string>
     <string name="help_find_rom_pokemon_emerald_body">Większość łatek do gry “Pokémon - Emerald Version” działa z ROM-em “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
     <string name="help_rom_not_compatible_with_patch_title">Aplikacja wyświetla błąd: “Ten ROM nie jest kompatybilny z łatką”.</string>
     <string name="help_archive_should_be_unpacked_body">Plik który wybrałeś jest archiwum. Archiwa zawierają ścieżki i pliki w skompresowanym formacie.
 \n
-\nCurrently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a>.</string>
+\nCurrently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">Aplikacja wyświetla wiadomość do wybraniu pliku: “Archiwa powinny być wypakowane w zewnętrznym programie”.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Jak zaaplikować łatkę do ROM-u\?</string>
     <string name="help_why_not_distribute_modified_games_body">Haki i tłumaczenia są generalnie wypuszczanie jako łatki aby zredukować wielkość pliku i aby ominąć problemy z prawami autorskimi.</string>
