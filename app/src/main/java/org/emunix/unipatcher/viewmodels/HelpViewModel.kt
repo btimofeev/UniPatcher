@@ -34,26 +34,15 @@ import java.io.IOException
 
 class HelpViewModel(val app: Application): AndroidViewModel(app) {
     private val helpText: MutableLiveData<String> = MutableLiveData()
-    private val aboutText: MutableLiveData<String> = MutableLiveData()
     private val message: MutableLiveData<ConsumableEvent<String>> = MutableLiveData()
 
     fun getHelpText(): LiveData<String> = helpText
-    fun getAboutText(): LiveData<String> = aboutText
     fun getMessage(): LiveData<ConsumableEvent<String>> = message
 
     fun helpInit() = viewModelScope.launch(Dispatchers.IO) {
         try {
             val html =  app.resources.openRawResource(R.raw.faq).bufferedReader().use(BufferedReader::readText)
             helpText.postValue(html)
-        } catch (e: IOException) {
-            message.postValue(ConsumableEvent(app.getString(R.string.help_activity_error_cannot_load_text)))
-        }
-    }
-
-    fun aboutInit() = viewModelScope.launch(Dispatchers.IO) {
-        try {
-            val html = app.resources.openRawResource(R.raw.about).bufferedReader().use(BufferedReader::readText)
-            aboutText.postValue(html)
         } catch (e: IOException) {
             message.postValue(ConsumableEvent(app.getString(R.string.help_activity_error_cannot_load_text)))
         }

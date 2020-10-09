@@ -22,18 +22,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.databinding.FragmentAboutBinding
-import org.emunix.unipatcher.viewmodels.HelpViewModel
 import org.sufficientlysecure.htmltextview.HtmlResImageGetter
 
 class AboutFragment : Fragment() {
-
-    private lateinit var viewModel: HelpViewModel
 
     private var _binding: FragmentAboutBinding? = null
     private val binding get() = _binding!!
@@ -52,15 +47,7 @@ class AboutFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.versionText.text = getString(R.string.help_activity_about_tab_version, Utils.getAppVersion(requireActivity()))
-        viewModel = ViewModelProvider(requireActivity()).get(HelpViewModel::class.java)
-        viewModel.aboutInit()
-        viewModel.getAboutText().observe(viewLifecycleOwner, { html ->
-            binding.aboutText.setHtml(html, HtmlResImageGetter(requireActivity()))
-        })
-        viewModel.getMessage().observe(viewLifecycleOwner, { event ->
-            event.getContentIfNotHandled()?.let { message ->
-                Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
-            }
-        })
+        binding.translators.setHtml(getString(R.string.about_translators), HtmlResImageGetter(requireActivity()))
+        binding.usedLibraries.setHtml(getString(R.string.about_used_libraries), HtmlResImageGetter(requireActivity()))
     }
 }
