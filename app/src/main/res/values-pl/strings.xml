@@ -121,4 +121,18 @@
     <string name="help_what_is_unipatcher_body">UniPatcher jest narzędziem do łatkowania ROM-ów różnych konsol.</string>
     <string name="help_what_is_unipatcher_title">Co to jest UniPatcher\?</string>
     <string name="help_title">Często Zadawane Pytania:</string>
+    <string name="notify_error_unable_open_patch_file">Nie można otworzyć pliku łatki</string>
+    <string name="notify_error_unable_open_modified_file">Nie można otworzyć zmodyfikowanego pliku</string>
+    <string name="notify_error_unable_open_source_file">Nie można otworzyć plik źródłowego</string>
+    <string name="notify_error_xdelta3_internal_error">błąd wewnętrzny XDelta3</string>
+    <string name="notify_create_patch_complete">Łatka utworzona</string>
+    <string name="snes_rom_has_no_smc_header">Ten ROM nie posiada nagłówka SMC. Nie musisz niczego usuwać.</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">Plik łatki nie jest wybrany</string>
+    <string name="main_activity_double_back_to_exit_message">Naciśnij ponownie BACK, aby wyjść. Może to zakłócić aktualnie odbywające się operacje</string>
+    <string name="main_activity_button_how_to_use_app">Jak używać aplikacji</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">dotknij, aby wskazać, gdzie zapisać łatkę</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">dotknij, aby wskazać, gdzie zapisać ROM</string>
+    <string name="main_activity_rom_without_smc_file">Plik wyjściowy ROM bez nagłówka</string>
+    <string name="main_activity_toast_output_not_selected">Nie wybrano pliku wyjściowego</string>
+    <string name="main_activity_rom_with_smc_file">Plik ROM z nagłówkiem SMC</string>
 </resources>
