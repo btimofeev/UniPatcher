@@ -1,0 +1,12 @@
+UniPatcher te permite aplicar parches a ROMs de juegos.
+
+¿Qué es un parche?
+Un archivo con el que alterar los datos del juego original. Por ejemplo, aplicar una traducción no oficial a un juego en japonés. Solo tienes que descargar dicho parche y aplicarlo a la versión original japonesa para convertirla fácilmente y de forma indolora.
+
+Este programa no sirve para alterar juegos de Android, sino que está pensado para archivos de consolas antiguas (Super Nintendo, Sega Mega Drive, Game Boy Advance, Sony PlayStation y demás).
+
+Características:
+* Aplicar parches en formato: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3.
+* Crear parches en formato XDelta.
+* Recalcular la suma de comprobación en ROMs de Sega Mega Drive.
+* Quitar el encabezado SMC de ROMs de Super Nintendo.
