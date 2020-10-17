@@ -89,7 +89,8 @@
     <string name="notification_channel_name">通知</string>
     <string name="help_feedback_body">通过邮件 unipatcher@gmail.com 联系我，请用英语或俄语写信。如果你对打补丁有问题，把补丁用附件发送给我并注明你的 ROM 的名字，这样我和你都能省时省力。</string>
     <string name="help_feedback_title">我有问题，有功能请求或有 bug 汇报。</string>
-    <string name="help_how_to_translate_body">如果你想将本应用翻译为其他语言或想改进现有翻译，请在 Weblate https://hosted.weblate.org/engage/unipatcher/ 操作。</string>
+    <string name="help_how_to_translate_body">如果你想将本应用翻译为其他语言或改进现有翻译，你可以在 Weblate 网站上进行操作
+\nhttps://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">怎么翻译此应用？</string>
     <string name="help_sega_fix_checksum_body">世嘉 Mega Drive (Genesis) 游戏在 ROM 中有自己的校验和。如果你只更改游戏的任何部分, 它们将不匹配, 因此无法运行。它所做的是计算更改的正确校验和并将其写入修改后的 ROM 文件。
 \n
@@ -101,7 +102,8 @@
 \n- 为世嘉 Mega Drive / Genesis 游戏修正校验和。
 \n- 删除Super Nintendo游戏中的SMC标头。</string>
     <string name="help_additional_features_title">UniPatcher 有什么附加功能吗？</string>
-    <string name="help_ecm_image_body">"ECM 是一种为光盘特制的数据压缩格式，你可以用  ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver 解压它。"</string>
+    <string name="help_ecm_image_body">ECM 是一种为光盘特制的数据压缩格式。你可以用 ZArchiver 应用解压此类文件
+\nhttps://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_ecm_image_title">我该怎么处理 .ECM 文件类型？</string>
     <string name="help_ips_no_checksum_body">IPS 格式的补丁不含校验和，因此，它可以应用到任何 ROM 文件，哪怕是不匹配的。碰到这种情况，你需要其他的 ROM 文件。</string>
     <string name="help_ips_no_checksum_title">我应用了 IPS 补丁，然后游戏不运行了 / 包含图像错误，是我什么地方搞错了吗？</string>
@@ -112,9 +114,9 @@
 \n
 \n最坏的情况，如果你不能找到正确的 ROM 文件，那你可以在设置里开启选项“无视校验和”，但请记住在这种情况下游戏可能会含有 bug，甚至根本不能玩。</string>
     <string name="help_rom_not_compatible_with_patch_title">应用会告知错误：“此 ROM 与补丁不兼容”。</string>
-    <string name="help_archive_should_be_unpacked_body">"你选择的文件是一个压缩包，它包含的目录和文件是压缩过的格式。
+    <string name="help_archive_should_be_unpacked_body">你选择的文件是一个压缩包。它以压缩格式包含目录和文件。
 \n
-\n目前 UniPatcher 不能解开压缩档案，所以你需要用其他程序来解包。我推荐免费程序  ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver"</string>
+\n目前 UniPatcher 不能提取压缩档，所以你需要用其他程序来解包。我推荐免费应用 ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">在选择文件后应用会显示一句消息：“压缩包应该由外部程序解压”。</string>
     <string name="help_how_to_apply_patch_to_rom_title">如何应用补丁到 ROM？</string>
     <string name="help_why_not_distribute_modified_games_body">修改和翻译用补丁形式发布是为了减少下载数据量及避免版权问题。</string>
