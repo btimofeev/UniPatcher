@@ -1,0 +1,4 @@
+- Operações de arquivos realizadas em uma aplicação aberta, e não em um serviço de fundo as como.
+- Trabalho completado é notificado como uma mensagem pop-up, não na área de notificação.
+- Idioama Turco Adicionado (agradecimentos a Oğuz Ersen)
+- Traduções são agora gerenciadas em https://hosted.weblate.org/engage/unipatcher/
