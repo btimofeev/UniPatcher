@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="main_activity_toast_output_not_selected">Sem arquivo de saída selecionado</string>
+    <string name="main_activity_toast_patch_not_selected">Sem arquivo remendo selecionado</string>
+    <string name="main_activity_toast_rom_not_selected">Sem arquivo ROM selecionado</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">Toque para selecionar onde salvar o ROM</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">Toque para selecionar onde salvar o remendo</string>
+    <string name="main_activity_tap_to_select">Toque para selecionar</string>
+    <string name="main_activity_rom_without_smc_file">Saída arquivo ROM sem cabeçalho</string>
+    <string name="main_activity_rom_with_smc_file">Arquivo ROM com cabeçalho SMC</string>
+    <string name="main_activity_output_file">Arquivo de saída</string>
+    <string name="main_activity_patch_file">Arquivo remendo</string>
+    <string name="main_activity_rom_file">Arquivo ROM</string>
+    <string name="app_email">unipatcher@gmail.com</string>
+    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
+    <string name="app_name">UniPatcher</string>
+</resources>
