@@ -1,0 +1,3 @@
+- Filoperasjoner utføres nå i åpent program, ikke i bakgrunnstjenesten som tidligere.
+-Fullførte oppgaver blir annonsert som oppsprett, ikke i merknadsområdet.
+- Oversettelser håndteres nå på https://hosted.weblate.org/engage/unipatcher/

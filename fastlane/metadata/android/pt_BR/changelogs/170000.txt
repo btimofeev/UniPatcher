@@ -1,0 +1,6 @@
+-Gerente de arquivo substituído com o Framework de Acesso de Armazenamento padrão. Trabalhar com arquivos do cartão SD e hospedagem na web. aplicar remendos necessita mais tempo e espaço livre. Visão soma de verificação de arquivo temporariamente removida.
+-Suporte para compressão LZMA em remendos XDelta3
+-Removida habilidade para adicionar cabeçalho SMC para ROMs SNES (Nunca precisei dela)
+-Suporte para Android 10 e 11
+-Sem desaparecimento de notificações
+-Muitas mudanças de interface pequenas
