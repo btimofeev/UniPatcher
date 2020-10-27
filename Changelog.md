@@ -1,3 +1,8 @@
+#### 0.17.2 (???, 2020)
+- Added Hebrew language (thanks to Tamer Dabsan)
+- Finished translations into Spanish and Portuguese (thanks to Swyter and Marvin SIlc)
+- Updated Polish, French, Chinese and Norwegian Bokmål translations (thanks to Jarek Karpiel, J. Lavoie, Eric and Allan Nordhøy)
+
 #### 0.17.1 (October 9, 2020)
 - File operations are performed in an open application, and not in a background service as before.
 - Completed work is notified as a pop-up message, not in the notification area.
