@@ -164,4 +164,21 @@
     <string name="help_what_is_unipatcher_body">UniPatcher er et Android-verktøy for å legge programfikser til ROM-avbildninger tilhørende forskjellige spillkonsoller.</string>
     <string name="help_what_is_unipatcher_title">Hva er UniPatcher\?</string>
     <string name="help_title">Ofte Stilte Spørsmål:</string>
+    <string name="about_translators"><b>Oversettere:</b>
+\n
+\n - <b>Kinesisk</b>: Nabarl Wang, Eric
+\n - <b>Fransk</b>: Thibaut Panis, J. Lavoie
+\n - <b>Hebraisk</b>: Tamer Dabsan
+\n - <b>Italiensk</b>: Matteo Sechi
+\n - <b>Japansk</b>: Naofumi Fukue
+\n - <b>Koreansk</b>: Minseo Lee
+\n - <b>Norsk bokmål</b>: Allan Nordhøy
+\n - <b>Polisk</b>: Michal Bychowski, Jarek Karpiel
+\n - <b>Portugisisk</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso og Marvin SIlc
+\n - <b>Russisk</b>: Борис Тимофеев
+\n - <b>Spansk</b>: Carlos Sánchez, Swyter
+\n - <b>Tyrkisk</b>: Oğuz Ersen
+\n - <b>Ukrainsk</b>: Володимир Шевчук
+\n
+\nHelp translate the app into your language: https://hosted.weblate.org/engage/unipatcher/</string>
 </resources>
