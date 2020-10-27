@@ -1,0 +1,12 @@
+UniPatcher permite a você aplicar remendos as ROMs do jogo.
+
+O que é um remendo?
+Um arquivo com datos modificados do jogo. Por exemplo, um jogo traduzido do Japônes para Inglês. Você baixa o remendo contendo a tradução. Deve ser aplicada para a versão Japonesa, para fazê-la uma versão Inglesa dela.
+
+Este progama não irá ajudar você a acessar jogos Android nativamente, foi criada para console de jogos antigos (Super Nintendo, Sega Mega Drive, Game Boy Advance, Sony PlayStation etc.)
+
+Características:
+*Formatos de remendos suportados: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
+*Criar remendos XDelta
+*Consertar a soma de verificação em ROMs do Sega Mega Driva
+*Remover o SMC cabeçalho das ROMs do Super Nintendo

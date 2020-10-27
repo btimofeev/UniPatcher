@@ -1,0 +1,6 @@
+- Erstattet innebygd filbehandler med lagringstilgangsrammeverket. Fungerer med filer på SD-kort og i sky (f.eks. Google Drive). Å utføre programfikser tar mer tid og tar mer plass. Fil-sjekksumsvisning er midlertidig fjernet.
+- Støtte for komprimering i XDelta3-programfikser
+- Fjernet støtte for å legge til SMC-hoder i SNES-ROM-filer (har aldri trengt funksjonen)
+- Støtte for Android 10 og 11
+- Ingen merknader blir borte
+- Mange små grensesnittsendringer
