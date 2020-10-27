@@ -1,2 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="help_feedback_body">צרו איתי קשר בדואר אלקטרוני unipatcher@gmail.com. בבקשה תכתוב באנגלית. אם יש לך בעיות עם תיקון, צרף את התיקון לאות וכתב את שם ה- ROM שלך, זה יחסוך לנו זמן.</string>
+    <string name="help_feedback_title">יש לי שאלה, בקשת תכונה או דיווח באג.</string>
+    <string name="help_how_to_translate_body">אם תרצה לתרגם את האפליקציה לשפה אחרת או לשפר תרגום קיים, תוכל לעשות זאת באתר Weblate https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="help_how_to_translate_title">כיצד לתרגם את האפליקציה\?</string>
+    <string name="help_snes_smc_body">כותרת SMC היא 512 בתים שנמצאו בתחילת כמה תמונות SNES ROM. לבתים אלה אין מטרה, אך הם משנים את מיקום הנתונים הנותרים. לפעמים משתמשים בהסרת כותרת לצורך יישום נכון של תיקון.</string>
+    <string name="help_snes_smc_title">מדוע לפעמים יש צורך להסיר כותרות SMC ממשחקי סופר נינטנדו\?</string>
+    <string name="help_sega_fix_checksum_body">למשחקי Sega Mega Drive (Genesis) נכתב סכום הבדיקה שלהם ל- ROM. אם תשנה רק חלק כלשהו במשחק, הם לא יתאימו, ולא יצליחו לרוץ כתוצאה מכך. מה שזה עושה הוא לחשב את בדיקת הבדיקה הנכונה של השינוי ולכתוב אותו לקובץ ה- ROM ששונה.
+\n
+\n<b> אזהרה: </b> פונקציה זו אינה יוצרת ROM לגיבוי.</string>
+    <string name="help_sega_fix_checksum_title">מדוע עלי לתקן סכום בדיקה עבור משחקי Sega Mega Drive\?</string>
+    <string name="help_additional_features_body">כן. UniPatcher יכול:
+\n
+\n- יצור תיקוני XDelta3.
+\n- תקן בדיקת בדיקה למשחקי Sega Mega Drive / Sega Genesis.
+\n- הסר כותרת SMC במשחקי סופר נינטנדו.</string>
+    <string name="help_additional_features_title">האם ל- UniPatcher יש כמה תכונות נוספות\?</string>
+    <string name="help_ecm_image_body">ECM הוא פורמט דחיסת נתונים שתוכנן במיוחד עבור תמונות דיסק. באפשרותך לדחוס את הקובץ מחדש באמצעות אפליקציית ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="help_ecm_image_title">מה אוכל לעשות עם סוג הקובץ .ECM\?</string>
+    <string name="help_ips_no_checksum_body">תקונים בפורמט IPS אינם מכילים בדיקת בדיקה. לכן, התיקון יחול על כל קובץ ROM (אפילו שגוי). במקרה זה, עליך לחפש קובץ ROM אחר.</string>
+    <string name="help_ips_no_checksum_title">אני מחיל את תיקון ה- IPS ואז המשחק לא עובד / מכיל תקלות גרפיות. מה אני עושה לא נכון\?</string>
+    <string name="help_find_rom_pokemon_emerald_body">רוב תיקוני המשחק עובדים עם ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
+    <string name="help_find_rom_pokemon_emerald_title">אני לא יכול למצוא את ה- ROM הנכון למשחק \"Pokémon Emerald\".</string>
+    <string name="help_i_cant_patch_smw_rom_body">ROM זה מכיל כותרת SMC, בעוד שרוב התיקונים למשחק זה מחייבים את ה- ROM שלא יהיה כותרת זו. באפשרותך להסיר כותרת SMC על ידי בחירת הפריט המתאים בתפריט בצד שמאל ואז להחיל את התיקון על ה- ROM שהתקבל.</string>
+    <string name="help_i_cant_patch_smw_rom_title">אני לא יכול לתקן \"World Super Mario (U) [!]. Smc\"</string>
+    <string name="help_rom_not_compatible_with_patch_body">האפליקציה תציג שגיאה זו אם סכום הבדיקה המאוחסן בתיקון אינו תואם את סכום הבדיקה של ה- ROM. המשמעות היא שקובץ ה- ROM אינו תואם לתיקון. עליכם לבחור קובץ ROM אחר. בדרך כלל ישנם מספר ROM עבור כל משחק (כגון הגרסה לאירופה, ארה\"ב, יפן, וכו \').
+\n
+\nהאקרים לרוב מפרסמים בדיקת בדיקה של קובץ ה- ROM הנלווה (בדף אינטרנט או בקובץ README). השווה את זה לזה שיש לך. אם סכום הבדיקה תואם לך את ה- ROM שהתיקון נכתב עבורו. אם לא, אתה צריך ROM אחר.
+\n
+\nבמקרה הגרוע ביותר, אם אתה לא יכול למצוא את קובץ ה- ROM הנכון, אתה יכול להגדיר את האפשרות \"התעלם מבדיקת הבדיקה\" בהגדרות. אך יש לזכור שבמקרה זה המשחק עשוי להכיל באגים או להיות בלתי ניתן למשחק לחלוטין.</string>
+    <string name="help_rom_not_compatible_with_patch_title">האפליקציה מציגה את השגיאה: \"ROM זה אינו תואם לתיקון\".</string>
+    <string name="help_archive_should_be_unpacked_body">הקובץ שבחרת הוא ארכיון. הארכיון מכיל את הספריות והקבצים בפורמט דחוס.
+\n
+\nנכון לעכשיו UniPatcher לא יכול לחלץ ארכיונים, אז אתה צריך לפרוק את הארכיון שלך בתוכנה אחרת. אני ממליץ על אפליקציית ZArchiver בחינם https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="help_archive_should_be_unpacked_title">האפליקציה מציגה הודעה לאחר בחירת הקובץ: \"יש לפרוק את הארכיון בתוכנה חיצונית\".</string>
+    <string name="help_how_to_apply_patch_to_rom_body">עליכם לבחור קובץ ROM, תיקון ולבחור איזה קובץ לשמור, ואז ללחוץ על הכפתור העגול האדום. קבצים נבחרים באמצעות יישום הקבצים הסטנדרטי (או דרך אחד ממנהלי הקבצים שהתקנת). היישום יציג הודעה כאשר התיקון מתוקן. אל תסגור את היישום עד לתיקון הקובץ.</string>
+    <string name="help_how_to_apply_patch_to_rom_title">כיצד להחיל תיקון על ROM\?</string>
+    <string name="help_why_not_distribute_modified_games_body">פריצות ותרגומים מופצים בדרך כלל כתיקונים כדי להקטין את גודל ההורדה ולהימנע מבעיות בזכויות יוצרים.</string>
+    <string name="help_why_not_distribute_modified_games_title">מדוע האקרים של ROM אינם מפיצים משחקים ששונו\?</string>
+    <string name="help_what_is_a_patch_body">תיקון הוא קובץ המכיל את ההבדלים בין הגרסה המקורית של ROM לבין הגרסה הפרוצה.
+\n
+\nהתיקון מופץ, ומשתמשי הקצה מיישמים את התיקון על עותק של ה- ROM המקורי, המייצר גרסה ניתנת להפעלה.</string>
+    <string name="help_what_is_a_patch_title">מה זה תיקון\?</string>
+    <string name="help_what_is_rom_hacking_body">פריצת ROM היא שינוי הנתונים בתמונת ROM. זה עשוי להיות בצורה של שינוי גרפיקה, שינוי שלבי המשחק, שינוי רמת קושי, או אפילו תרגום לשפה שעבורה לא הועמד למשחק במקור.</string>
+    <string name="help_what_is_rom_hacking_title">מה זה פריצת ROM\?</string>
+    <string name="help_what_is_rom_image_body">תמונת ROM היא קובץ מחשב המכיל עותק של מחסנית משחקי הווידאו. בתהליך ההדמיה אתה מעתיק את הקובץ הזה, מריץ אותו בתוכנה שנקראת \"אמולטור\", כדי ליהנות מהמשחק במחשב או בטלפון.</string>
+    <string name="help_what_is_rom_image_title">מהי תמונת ROM\?</string>
+    <string name="help_can_i_hack_android_game_body">לא. UniPatcher לא נועד לפרוץ את משחקי אנדרואיד.</string>
+    <string name="help_can_i_hack_android_game_title">האם אוכל לפרוץ או לפצח משחק אנדרואיד באמצעות אפליקציה זו\?</string>
+    <string name="help_what_patch_formats_are_supported_body">האפליקציה תומכת בתיקוני IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP ו- XDelta3.</string>
+    <string name="help_what_patch_formats_are_supported_title">באילו פורמטים של תיקונים יש תמיכה\?</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher הוא כלי אנדרואיד ליישום תקונים על תמונות ROM של קונסולות משחק וידאו שונות.</string>
+    <string name="help_what_is_unipatcher_title">מהו UniPatcher\?</string>
+    <string name="help_title">שאלות נפוצות:</string>
+    <string name="notification_channel_name">התראות</string>
+    <string name="icon">אייקון</string>
+    <string name="donation">תרומה</string>
+    <string name="nav_drawer_close">סגור את מגירת הניווט</string>
+    <string name="nav_drawer_open">פתח את מגירת הניווט</string>
+    <string name="nav_help">עזרה</string>
+    <string name="nav_share">שתף</string>
+    <string name="nav_donate">תרום</string>
+    <string name="nav_rate">דרג את האפליקציה הזו</string>
+    <string name="nav_settings">הגדרות</string>
+    <string name="nav_snes_add_del_smc_header">הסר כותרת SMC (SNES)</string>
+    <string name="nav_smd_fix_checksum">תיקון סכום בדיקה (SMD)</string>
+    <string name="nav_create_patch">צור תיקון</string>
+    <string name="nav_apply_patch">החל תיקון</string>
+    <string name="share_text">הורד את תיקון ה- ROM הטוב ביותר לאנדרואיד. הוא תומך בסוגי תיקון IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP ו- XDelta3.
+\n
+\n</string>
+    <string name="share_dialog_title">שתף את UniPatcher</string>
+    <string name="send_feedback_error_no_email_apps">אין לקוחות דוא\"ל מותקנים</string>
+    <string name="send_feedback_dialog_title">שלח אימייל</string>
+    <string name="donate_activity_title">תרום</string>
+    <string name="error_file_picker_app_is_no_installed">שגיאה: אין אפליקציית קובץ מותקנת</string>
+    <string name="error_crash_discard_button">השליך</string>
+    <string name="error_crash_send_button">שלח</string>
+    <string name="error_crash_message">מצטער, היישום קרס. אנא שלח דיווח למפתחים.</string>
+    <string name="error_crash_title">קריסה</string>
+    <string name="help_activity_error_cannot_load_text">שגיאה: לא ניתן לטעון טקסט</string>
+    <string name="help_activity_action_changelog">יומן שינויים</string>
+    <string name="help_activity_action_visit_site">בקר באתר</string>
+    <string name="help_activity_action_send_feedback">שלח משוב</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_license">רישיון: GNU GPLv3</string>
+    <string name="help_activity_about_tab_version">גרסה %1$s</string>
+    <string name="help_activity_about_tab_title">אודות</string>
+    <string name="help_activity_faq_tab_title">שאלות נפוצות</string>
+    <string name="help_activity_title">עזרה</string>
+    <string name="settings_ignore_checksum_description">אל תפריע לתיקון אם אתה משתמש ב- ROM הלא נכון. היזהר: אפשרות זו יכולה לשבור את המשחק שלך.</string>
+    <string name="settings_ignore_checksum">התעלם מסכומי בדיקה</string>
+    <string name="settings_patching_header">תיקון</string>
+    <string name="settings_show_button_how_to_use_app_description">הצג את הלחצן \"כיצד להשתמש באפליקציה\" במסך הראשי</string>
+    <string name="settings_show_button_how_to_use_app">הצג לחצן עזרה</string>
+    <string name="settings_theme_name_follow_system">השתמש בברירת מחדל של המערכת</string>
+    <string name="settings_theme_name_auto_battery">מוגדר על ידי חיסכון בסוללה</string>
+    <string name="settings_theme_name_dark">כהה</string>
+    <string name="settings_theme_name_light">בהיר</string>
+    <string name="settings_theme_dialog_title">בחר ערכת נושא</string>
+    <string name="settings_theme">ערכות נושא</string>
+    <string name="settings_interface_header">ממשק משתמש</string>
+    <string name="settings_activity_title">הגדרות</string>
+    <string name="notify_snes_delete_smc_header_complete">כותרת SMC נמחקה</string>
+    <string name="notify_smd_fix_checksum_complete">תוקן בדיקת בדיקה</string>
+    <string name="notify_error_not_smd_rom">לא ROM של Sega Mega Drive</string>
+    <string name="notify_error_unknown">שגיאה לא ידועה</string>
+    <string name="notify_error_failed_load_lib_xdelta3">טעינת הספרייה libxdelta3.so נכשלה</string>
+    <string name="notify_error_wrong_checksum_after_patching">בקובץ יש סכום בדיקה שגוי לאחר שתוקן</string>
+    <string name="notify_error_rom_not_compatible_with_patch">ROM זה אינו תואם לתיקון</string>
+    <string name="notify_error_patch_corrupted">קובץ התיקון פגום</string>
+    <string name="notify_error_unexpected_end_of_file">סוף הקובץ לא צפוי</string>
+    <string name="notify_error_unknown_patch_format">פורמט תיקון לא ידוע</string>
+    <string name="notify_error_unable_open_patch_file">לא ניתן לפתוח קובץ תיקון</string>
+    <string name="notify_error_unable_open_modified_file">לא ניתן לפתוח את הקובץ שהשתנה</string>
+    <string name="notify_error_unable_open_source_file">לא ניתן לפתוח את קובץ המקור</string>
+    <string name="notify_error_unable_open_file">לא ניתן לפתוח את הקובץ</string>
+    <string name="notify_error_xdelta1_unsupported">אני לא מסוגל לעבוד עם תיקוני XDelta1</string>
+    <string name="notify_error_xdelta3_internal_error">שגיאה פנימית של XDelta3</string>
+    <string name="notify_error_not_xdelta3_patch">תיקון XDelta3 לא תקף</string>
+    <string name="notify_error_not_dps_patch">תיקון DPS לא תקף</string>
+    <string name="notify_error_not_ebp_patch">תיקון EBP לא תקף</string>
+    <string name="notify_error_not_aps_patch">תיקון APS לא תקף</string>
+    <string name="notify_error_not_ppf_patch">תיקון PPF לא תקף</string>
+    <string name="notify_error_not_bps_patch">תיקון BPS לא תקף</string>
+    <string name="notify_error_not_ups_patch">תיקון UPS לא תקף</string>
+    <string name="notify_error_not_ips_patch">תיקון IPS לא תקף</string>
+    <string name="about_used_libraries"><b>ספריות משומשות: </b>
+\n
+\n - <b>ACRA</b> על ידי צוות ACRA, מורשה ברישיון Apache 2.0. https://github.com/ACRA/acra
+\n - <b>תרומות אנדרואיד</b> על ידי SufficlySecure ו- penn5, מורשה תחת רישיון Apache 2.0. https://github.com/penn5/donations
+\n - <b> Apache Commons IO </b> על ידי The Apache Software Foundation, מורשה תחת רישיון Apache 2.0. https://commons.apache.org/proper/commons-io/
+\n - <b>Dagger</b> מאת The Dagger Authors, מורשה ברישיון Apache 2.0. https://github.com/google/dagger
+\n - <b>סמלי עיצוב חומרים</b> על ידי גוגל, מורשים ברישיון Apache 2.0. https://github.com/google/material-design-icons
+\n - <b>סמלי עיצוב חומרים</b> לפי הקהילה, מורשים תחת רישיון SIL Open Font 1.1. https://materialdesignicons.com
+\n - <b>עץ</b> מאת ג\'ייק וורטון, מורשה ברישיון Apache 2.0 https://github.com/JakeWharton/timber
+\n - <b> גרסת XDelta 3 </b> מאת ג\'ושוע מקדונלד, מורשה ברישיון Apache 2.0. https://github.com/jmacd/xdelta</string>
+    <string name="about_translators"><b>מתרגמים:</b>
+\n
+\n - <b>סינית</b>: נברל וואנג
+\n - <b>צרפתית</b>: תיבאו פאניס
+\n - <b>איטלקי</b>: מטאו סיכי
+\n - <b>יפני</b>: נאופומי פוקו
+\n - <b>קוריאני</b>: מינסאו לי
+\n - <b>נורבגית</b>: אלן נורדהוי
+\n - <b>פולנית</b>: מיכל ביכובסקי
+\n - <b>פורטוגזית</b>: דייוי לופס, מתאוס סילבה סאליס, ג\'ונתן קרדוסו
+\n - <b>רוסית</b>: Борис Тимофеев
+\n - <b>ספרדית</b>: קרלוס סאנצ\'ס
+\n - <b>טורקית</b>: אוגוז ארסין
+\n - <b>אוקראינית</b>: Володимир Шевчук
+\n
+\nעזור לתרגם את האפליקציה לשפה שלך: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="notify_error_not_enough_space">אין מספיק מקום בדיסק</string>
+    <string name="notify_error_file_not_found">הקובץ לא נמצא</string>
+    <string name="notify_error_could_not_copy_file">לא ניתן היה להעתיק את הקובץ</string>
+    <string name="notify_error">שגיאה</string>
+    <string name="notify_create_patch_complete">תיקון נוצר</string>
+    <string name="notify_patching_complete">התיקון הושלם</string>
+    <string name="smd_fix_checksum_help">תכונה זו מיועדת רק ל- Sega Mega Drive (Sega Genesis) ROMs.
+\n
+\nזה מתקן את \"המסך האדום של המוות\".
+\n
+\nאזהרה: פונקציה זו אינה יוצרת גיבוי.</string>
+    <string name="snes_smc_error_unable_to_get_file_size">שגיאה: אין אפשרות לקבוע את גודל הקובץ</string>
+    <string name="snes_rom_has_no_smc_header">ל- ROM זה אין כותרת SMC. אתה לא צריך למחוק שום דבר.</string>
+    <string name="snes_smc_header_will_be_removed">ל- ROM זה יש כותרת SMC. זה יוסר.</string>
+    <string name="snes_smc_header_help">תכונה זו מיועדת רק ל- ROM של סופר נינטנדו.
+\n
+\nחלק מהתיקונים מחייבים כי ל- ROM אין כותרת SMC. פונקציה זו תעזור לך להסיר אותה.</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">קובץ התיקון לא נבחר</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">הקובץ ששונה לא נבחר</string>
+    <string name="create_patch_fragment_toast_source_not_selected">קובץ המקור לא נבחר</string>
+    <string name="create_patch_fragment_patch_file">קובץ תיקון</string>
+    <string name="create_patch_fragment_modified_file">קובץ שונה</string>
+    <string name="create_patch_fragment_source_file">קובץ מקור</string>
+    <string name="main_activity_double_back_to_exit_message">לחץ שוב על חזרה כדי לצאת. זה יכול להפריע לכל פעולות הפועלות</string>
+    <string name="main_activity_button_how_to_use_app">כיצד להשתמש באפליקציה</string>
+    <string name="main_activity_donate_snackbar_button">תרום</string>
+    <string name="main_activity_donate_snackbar_text">תמכו בפיתוח UniPatcher על ידי תרומה</string>
+    <string name="main_activity_toast_archives_not_supported">יש לפרוק את הארכיון בתוכנה חיצונית</string>
+    <string name="main_activity_toast_output_not_selected">לא נבחר קובץ פלט</string>
+    <string name="main_activity_toast_patch_not_selected">לא נבחר קובץ תיקון</string>
+    <string name="main_activity_toast_rom_not_selected">לא נבחר קובץ ROM</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">הקש כדי לבחור היכן לשמור את ה- ROM</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">הקש כדי לבחור היכן לשמור את התיקון</string>
+    <string name="main_activity_tap_to_select">הקש כדי לבחור</string>
+    <string name="main_activity_rom_without_smc_file">פלט קובץ ROM ללא כותרת</string>
+    <string name="main_activity_rom_with_smc_file">קובץ ROM עם כותרת SMC</string>
+    <string name="main_activity_output_file">קובץ פלט</string>
+    <string name="main_activity_patch_file">קובץ תיקון</string>
+    <string name="main_activity_rom_file">קובץ ROM</string>
+    <string name="app_email">unipatcher@gmail.com</string>
+    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
+    <string name="app_name">UniPatcher</string>
+</resources>
