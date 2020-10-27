@@ -19,28 +19,21 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.activity
 
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.PagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
-import dagger.Lazy
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.databinding.ActivityHelpBinding
-import org.emunix.unipatcher.helpers.SocialHelper
 import org.emunix.unipatcher.ui.adapter.HelpPagerAdapter
-import javax.inject.Inject
 
 class HelpActivity : AppCompatActivity() {
 
-    @Inject lateinit var social: Lazy<SocialHelper>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        UniPatcher.appComponent.inject(this)
 
         val binding = ActivityHelpBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -62,27 +55,10 @@ class HelpActivity : AppCompatActivity() {
         })
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.activity_help, menu)
-        return true
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
                 finish()
-                true
-            }
-            R.id.action_send_feedback -> {
-                social.get().sendFeedback()
-                true
-            }
-            R.id.action_visit_website -> {
-                social.get().openWebsite()
-                true
-            }
-            R.id.action_changelog -> {
-                social.get().showChangelog()
                 true
             }
             else -> super.onOptionsItemSelected(item)
