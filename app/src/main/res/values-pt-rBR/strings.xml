@@ -14,4 +14,85 @@
     <string name="app_email">unipatcher@gmail.com</string>
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_name">UniPatcher</string>
+    <string name="help_ips_no_checksum_body">Os patches de formato IPS não contêm uma soma de verificação. Portanto, o patch se aplicará a qualquer arquivo ROM (até errado). Nesse caso, você precisa procurar outro arquivo ROM.</string>
+    <string name="help_ecm_image_title">O que posso fazer com o tipo de arquivo .ECM\?</string>
+    <string name="help_ecm_image_body">ECM é um formato de compressão de dados projetado especificamente para imagens de disco. Você pode descompactar o arquivo usando o aplicativo ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="help_additional_features_title">O UniPatcher tem alguns recursos adicionais\?</string>
+    <string name="help_additional_features_body">Sim. O UniPatcher pode:
+\n
+\n- Criar patches XDelta3.
+\n- Corrigir a soma de verificação para jogos Sega Mega Drive / Sega Genesis.
+\n- Remover o cabeçalho SMC em jogos Super Nintendo.</string>
+    <string name="help_sega_fix_checksum_title">Por que tenho que corrigir a soma de verificação para os jogos Sega Mega Drive\?</string>
+    <string name="help_sega_fix_checksum_body">Os jogos Sega Mega Drive (Genesis) têm sua soma de verificação gravada na ROM. Se você alterar apenas qualquer parte do jogo, eles não irão corresponder, deixando de funcionar como resultado. O que isso faz é calcular a soma de verificação da mudança e gravar no arquivo ROM modificado.
+\n
+\n&lt;b&gt;Aviso&lt;b&gt;: Essa função não cria nenhum tipo de backup do arquivo ROM.</string>
+    <string name="help_snes_smc_title">Por que às vezes é necessário remover os cabeçalhos SMC dos jogos Super Nintendo\?</string>
+    <string name="help_snes_smc_body">Um cabeçalho SMC é de 512 bytes encontrado no início de algumas imagens nas roms de SNES. Esses bytes não têm propósito, mas mudam a localização dos dados restantes. Remover um cabeçalho às vezes é usado para o propósito de aplicar corretamente um patch.</string>
+    <string name="help_how_to_translate_body">Se você gostaria de traduzir o aplicativo para outro idioma ou melhorar uma tradução existente, você pode fazê-lo no site Weblate https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="help_how_to_translate_title">Como traduzir o app\?</string>
+    <string name="help_feedback_title">Tenho uma pergunta, um pedido de recurso ou um relatório de erros.</string>
+    <string name="help_feedback_body">"Entre em contato comigo em  unipatcher@gmail.com. Por favor, escreva em inglês. Se você tiver problemas com o patch, anexe o patch à carta e escreva o nome da sua ROM, isso economizará nosso tempo."</string>
+    <string name="about_translators"><b>Translators:</b>
+\n
+\n - <b>Chinese</b>: Nabarl Wang, Eric
+\n - <b>French</b>: Thibaut Panis, J. Lavoie
+\n - <b>Hebrew</b>: Tamer Dabsan
+\n - <b>Italian</b>: Matteo Sechi
+\n - <b>Japanese</b>: Naofumi Fukue
+\n - <b>Korean</b>: Minseo Lee
+\n - <b>Norwegian Bokmål</b>: Allan Nordhøy
+\n - <b>Polish</b>: Michal Bychowski, Jarek Karpiel
+\n - <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc
+\n - <b>Russian</b>: Борис Тимофеев
+\n - <b>Spanish</b>: Carlos Sánchez, Swyter
+\n - <b>Turkish</b>: Oğuz Ersen
+\n - <b>Ukrainian</b>: Володимир Шевчук
+\n
+\nAjude a traduzir o aplicativo para o seu idioma: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="notify_error_patch_corrupted">O arquivo de patch está corrompido</string>
+    <string name="notify_error_unexpected_end_of_file">Fim de arquivo inesperado</string>
+    <string name="notify_error_unknown_patch_format">Formato de patch desconhecido</string>
+    <string name="notify_error_unable_open_patch_file">Não foi possível abrir o arquivo patch</string>
+    <string name="notify_error_unable_open_modified_file">Não foi possível abrir o arquivo modificado</string>
+    <string name="notify_error_unable_open_source_file">Não foi possível abrir o arquivo de origem</string>
+    <string name="notify_error_unable_open_file">Impossível abrir o ficheiro</string>
+    <string name="notify_error_xdelta1_unsupported">Não consigo trabalhar com patches XDelta1</string>
+    <string name="notify_error_xdelta3_internal_error">Erro interno no XDelta3</string>
+    <string name="notify_error_not_xdelta3_patch">Patch XDelta3 inválido</string>
+    <string name="notify_error_not_dps_patch">Patch DPS inválido</string>
+    <string name="notify_error_not_ebp_patch">Patch EBP inválido</string>
+    <string name="notify_error_not_aps_patch">Patch APS inválido</string>
+    <string name="notify_error_not_ppf_patch">Patch PPF inválido</string>
+    <string name="notify_error_not_bps_patch">Patch BPS inválido</string>
+    <string name="notify_error_not_ups_patch">Patch UPS inválido</string>
+    <string name="notify_error_not_ips_patch">Patch IPS inválido</string>
+    <string name="notify_error_not_enough_space">Espaço insuficiente na memória</string>
+    <string name="notify_error_file_not_found">Arquivo não encontrado</string>
+    <string name="notify_error_could_not_copy_file">Não foi possível copiar o arquivo.</string>
+    <string name="notify_error">Erro</string>
+    <string name="notify_create_patch_complete">Parche criado</string>
+    <string name="notify_patching_complete">Parche completo</string>
+    <string name="smd_fix_checksum_help">Este recurso é apenas para ROMs Sega Mega Drive (Sega Genesis).
+\n
+\nEle corrige \"a tela vermelha da morte\".
+\n
+\nAviso: esta função não cria um backup.</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Erro: não foi possível determinar o tamanho do arquivo.</string>
+    <string name="snes_rom_has_no_smc_header">Esta ROM não possui cabeçalho SMC. Você não precisa deletar nada.</string>
+    <string name="snes_smc_header_will_be_removed">Esta ROM possui o cabeçalho SMC. Ele deverá ser removido.</string>
+    <string name="snes_smc_header_help">Este recurso é apenas para ROMs do Super Nintendo.
+\n
+\nAlguns patches requerem que a ROM não tenha cabeçalho SMC. Esta função o ajudará a removê-lo.</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">O arquivo de patch não está selecionado.</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">O arquivo modificado não foi selecionado.</string>
+    <string name="create_patch_fragment_toast_source_not_selected">O arquivo de origem não está selecionado.</string>
+    <string name="create_patch_fragment_patch_file">Arquivo de patch</string>
+    <string name="create_patch_fragment_modified_file">Arquivo Modificado</string>
+    <string name="create_patch_fragment_source_file">Arquivo Fonte</string>
+    <string name="main_activity_double_back_to_exit_message">Pressione VOLTAR novamente para sair. Isso pode interromper todas as operações em execução.</string>
+    <string name="main_activity_button_how_to_use_app">Como usar o aplicativo</string>
+    <string name="main_activity_donate_snackbar_button">Doar</string>
+    <string name="main_activity_donate_snackbar_text">Apoie o desenvolvimento do UniPatcher fazendo uma doação!</string>
+    <string name="main_activity_toast_archives_not_supported">O arquivo deve ser descompactado em um programa externo.</string>
 </resources>
