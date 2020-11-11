@@ -1,0 +1,4 @@
+- Las operaciones con archivos ahora se hacen en un primer plano en vez de en un servicio en segundo plano.
+- Se ha cambiado la notificación al terminar el parcheado a un mensaje emergente en vez de en la barra de notificación.
+- Añadido el turco (por Oğuz Ersen)
+- Las traducciones se gestionarán a partir de ahora desde https://hosted.weblate.org/engage/unipatcher/

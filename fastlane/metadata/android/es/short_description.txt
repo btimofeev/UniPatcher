@@ -1,1 +1,1 @@
-Una herramienta para parchear ROMs de consola en Android.
+Una herramienta para parchear ROMs de consola en Android
