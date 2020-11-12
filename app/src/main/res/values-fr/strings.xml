@@ -4,10 +4,10 @@
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_email">unipatcher@gmail.com</string>
     <!-- Main activity -->
-    <string name="main_activity_rom_file">ROM</string>
-    <string name="main_activity_patch_file">Patch</string>
-    <string name="main_activity_output_file">ROM patchée</string>
-    <string name="main_activity_tap_to_select">Parcourir</string>
+    <string name="main_activity_rom_file">Fichier ROM</string>
+    <string name="main_activity_patch_file">Fichier patch</string>
+    <string name="main_activity_output_file">Fichier de sortie</string>
+    <string name="main_activity_tap_to_select">appuyez pour sélectionner</string>
     <string name="main_activity_toast_rom_not_selected">Aucune ROM n\'est sélectionnée</string>
     <string name="main_activity_toast_patch_not_selected">Aucun patch n\'est sélectionné</string>
     <string name="main_activity_toast_archives_not_supported">L\'archive devrait d\'abord être extraite à l\'aide d\'une autre appli</string>
@@ -21,7 +21,11 @@
     <string name="create_patch_fragment_toast_modified_not_selected">Le fichier modifié n\'est pas sélectionné</string>
     <string name="snes_smc_header_will_be_removed">Cette ROM a un en-tête SMC. Il sera supprimé.</string>
     <!-- Info for SMD fix checksum -->
-    <string name="smd_fix_checksum_help">Cette fonctionnalité ne concerne que les ROMs Sega Mega Drive (Sega Genesis).\n\nIl permet de corriger le problème de \"l\'écran rouge\".\n\nAttention : cette fonctionnalité ne fait pas de backups.</string>
+    <string name="smd_fix_checksum_help">Cette fonctionnalité ne concerne que les ROM Sega Mega Drive (Sega Genesis).
+\n
+\nIl permet de corriger le problème de « l\'écran rouge ».
+\n
+\nAttention : cette fonctionnalité ne fait pas de sauvegardes.</string>
     <!-- Notifications -->
     <string name="notify_patching_complete">Patch terminé</string>
     <string name="notify_create_patch_complete">Patch créé</string>
@@ -65,7 +69,7 @@
     <string name="help_activity_about_tab_title">À propos</string>
     <string name="help_activity_about_tab_version">Version %1$s</string>
     <string name="help_activity_about_tab_license">Licence : GNU GPLv3</string>
-    <string name="help_activity_action_send_feedback">Envoyer un commentaire</string>
+    <string name="help_activity_action_send_feedback">Envoyer une remarque</string>
     <string name="help_activity_action_visit_site">Visitez le site web</string>
     <string name="help_activity_action_changelog">Nouveautés</string>
     <string name="donate_activity_title">Faire un don</string>
@@ -142,4 +146,19 @@
     <string name="main_activity_double_back_to_exit_message">Appuyez sur RETOUR à nouveau pour sortir. Ceci peut interrompre toutes les opérations en cours</string>
     <string name="main_activity_button_how_to_use_app">Comment utiliser l\'appli</string>
     <string name="main_activity_rom_with_smc_file">Fichier ROM avec en-tête SMC</string>
+    <string name="error_crash_discard_button">Annuler</string>
+    <string name="error_crash_send_button">Envoyer</string>
+    <string name="error_crash_message">Désolé, l\'application a planté. Veuillez envoyer un rapport aux développeurs.</string>
+    <string name="error_crash_title">Plantage</string>
+    <string name="help_activity_error_cannot_load_text">Erreur : impossible de charger le texte</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="settings_show_button_how_to_use_app_description">Afficher le bouton « Comment utiliser l\'application » sur l\'écran principal</string>
+    <string name="settings_show_button_how_to_use_app">Afficher le bouton d\'aide</string>
+    <string name="settings_theme_name_follow_system">Utiliser le thème du système</string>
+    <string name="settings_theme_name_auto_battery">Défini par l\'économiseur de batterie</string>
+    <string name="notify_error_unable_open_patch_file">Impossible d\'ouvrir le fichier patch</string>
+    <string name="notify_error_unable_open_modified_file">Impossible d\'ouvrir le fichier modifié</string>
+    <string name="notify_error_unable_open_source_file">Impossible d\'ouvrir le fichier source</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">appuyez pour sélectionner où enregistrer le ROM</string>
+    <string name="main_activity_rom_without_smc_file">Fichier de sortie ROM sans en-tête</string>
 </resources>
