@@ -1,0 +1,13 @@
+UniPatcher lässt dich Patches für Spiele-ROMs einspielen.
+
+Was ist ein Patch?
+Eine Datei mit veränderten Spieldaten. Z.B. ein Spiel, das von Japanisch ins Englische übersetzt wurde. Du lädtst den Patch mit der Übersetzung. Der Patch muss auf die japanische Version angewendet werden, damit eine englische Version daraus wird.
+
+Das Programm wird dir nicht dabei helfen, native Android-Spiele zu hacken, es wurde für alte Spielkonsolen-Spiele entwickelt
+(Super Nintendo, Sega Mega Drive, GameBoy Advance, Sony Playstation etc.)
+
+Funktionen:
+* Unterstütze Patchformate: PS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
+* Kann XDelta-Patches erstellen
+* Prüfsumme in ROMs für Sega Mega Drive reparieren
+* SMC-Header aus ROMs für Super Nintendo entfernen
