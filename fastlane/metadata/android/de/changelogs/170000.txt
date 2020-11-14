@@ -1,0 +1,6 @@
+- intergrierter Dateimanager mit standardisiertem Storage Access Framework ersetzt. Kann Dateien auf SD-Karten und Cloud-Diensten (z.B. Google Drive) verwenden. Patchen benötigt mehr Zeit und mehr Speicherplatz. Prüfsummen-Anzeige vorübergehend deaktiviert.
+- unterstützt LZMA-Kompression in XDelta3-Patches
+- SMC-Header können an SNES-ROMs nicht mehr angefügt werden (diese Funktion habe ich noch nie benötigt)
+- unterstützt Android 10 u. 11
+- Nachrichten verschwinden nicht
+- Interface-Änderungen
