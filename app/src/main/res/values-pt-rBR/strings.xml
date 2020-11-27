@@ -85,15 +85,15 @@
 \n
 \nAlguns patches requerem que a ROM não tenha cabeçalho SMC. Esta função o ajudará a removê-lo.</string>
     <string name="create_patch_fragment_toast_patch_not_selected">O arquivo de patch não está selecionado.</string>
-    <string name="create_patch_fragment_toast_modified_not_selected">O arquivo modificado não foi selecionado.</string>
-    <string name="create_patch_fragment_toast_source_not_selected">O arquivo de origem não está selecionado.</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">O arquivo modificado não foi selecionado</string>
+    <string name="create_patch_fragment_toast_source_not_selected">O arquivo fonte não está selecionado</string>
     <string name="create_patch_fragment_patch_file">Arquivo de patch</string>
     <string name="create_patch_fragment_modified_file">Arquivo Modificado</string>
     <string name="create_patch_fragment_source_file">Arquivo Fonte</string>
-    <string name="main_activity_double_back_to_exit_message">Pressione VOLTAR novamente para sair. Isso pode interromper todas as operações em execução.</string>
+    <string name="main_activity_double_back_to_exit_message">Pressione VOLTAR novamente para sair. Isso pode interromper todas as operações em execução</string>
     <string name="main_activity_button_how_to_use_app">Como usar o aplicativo</string>
     <string name="main_activity_donate_snackbar_button">Doar</string>
-    <string name="main_activity_donate_snackbar_text">Apoie o desenvolvimento do UniPatcher fazendo uma doação!</string>
+    <string name="main_activity_donate_snackbar_text">Apoie o desenvolvimento do UniPatcher fazendo uma doação</string>
     <string name="main_activity_toast_archives_not_supported">O arquivo deve ser descompactado em um programa externo.</string>
     <string name="settings_show_button_how_to_use_app_description">Mostrar o botão \"Como usar o aplicativo\" na tela principal</string>
     <string name="settings_show_button_how_to_use_app">Mostrar botão de ajuda</string>
