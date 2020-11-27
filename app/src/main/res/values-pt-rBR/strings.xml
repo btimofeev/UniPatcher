@@ -71,7 +71,7 @@
     <string name="notify_error_file_not_found">Arquivo não encontrado</string>
     <string name="notify_error_could_not_copy_file">Não foi possível copiar o arquivo.</string>
     <string name="notify_error">Erro</string>
-    <string name="notify_create_patch_complete">Parche criado</string>
+    <string name="notify_create_patch_complete">Patch criado</string>
     <string name="notify_patching_complete">Parche completo</string>
     <string name="smd_fix_checksum_help">Este recurso é apenas para ROMs Sega Mega Drive (Sega Genesis).
 \n
@@ -95,4 +95,11 @@
     <string name="main_activity_donate_snackbar_button">Doar</string>
     <string name="main_activity_donate_snackbar_text">Apoie o desenvolvimento do UniPatcher fazendo uma doação!</string>
     <string name="main_activity_toast_archives_not_supported">O arquivo deve ser descompactado em um programa externo.</string>
+    <string name="settings_show_button_how_to_use_app_description">Mostrar o botão \"Como usar o aplicativo\" na tela principal</string>
+    <string name="settings_show_button_how_to_use_app">Mostrar botão de ajuda</string>
+    <string name="settings_theme_name_auto_battery">Definido pela economia de bateria</string>
+    <string name="notify_snes_delete_smc_header_complete">Header SMC deletado</string>
+    <string name="notify_smd_fix_checksum_complete">Checksum fixado</string>
+    <string name="notify_error_unknown">Erro desconhecido</string>
+    <string name="notify_error_rom_not_compatible_with_patch">Esta ROM não é compatível com o patch</string>
 </resources>
