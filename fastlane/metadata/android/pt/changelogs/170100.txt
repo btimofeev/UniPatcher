@@ -1,4 +1,4 @@
-- Operações de arquivos são feitas em uma aplicação aberta, e não em serviço de fundo com antes.
+- Operações de ficheiros são feitas em uma aplicação aberta, e não em serviço de fundo com antes.
 - Trabalho completado é notificado com uma mensagem pop-up, não na área de notificação.
 - Idioma Turco adicionado (agradecimentos à Oğuz Ersen)
-- Traduções são agora gerenciadas em https://hosted.weblate.org/engage/unipatcher/
+- Traduções são agora geridas em https://hosted.weblate.org/engage/unipatcher/
