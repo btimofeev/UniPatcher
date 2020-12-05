@@ -1,6 +1,6 @@
-- Substituído o gerenciador de arquivos imbutido com o Framework de Acesso de Armazenamento padrão. Trabalhar com arquivos no cartão SD e na web. Remendos requerem mais tempo de espaço de livre. Visão da soma de verificação do Arquivo removida temporariamente.
-- Suporte de compressão LZMA in remendo XDeltra3
+- Substituído o gestor de ficheiros embutido com o Framework de Acesso de Armazenamento padrão. Trabalhar com ficheiros no cartão SD e na web. Remendos requerem mais tempo e espaço no disco. Visão da soma de verificação do ficheiros removida temporariamente.
+- Suporte de compressão LZMA em remendos XDeltra3
 - Removida abilidade de adicionar cabeçalho SMC em ROMs SNES (nunca necessitei desta função)
 - Suporte Android 10 e 11
-- Sem sumiço das notificações
+- Sem sumiço de notificações
 - Muitas mudanças de interface pequenas
