@@ -84,7 +84,7 @@
     <string name="snes_smc_header_help">Este recurso é apenas para ROMs do Super Nintendo.
 \n
 \nAlguns patches requerem que a ROM não tenha cabeçalho SMC. Esta função o ajudará a removê-lo.</string>
-    <string name="create_patch_fragment_toast_patch_not_selected">O arquivo de patch não está selecionado.</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">O arquivo de patch não está selecionado</string>
     <string name="create_patch_fragment_toast_modified_not_selected">O arquivo modificado não foi selecionado</string>
     <string name="create_patch_fragment_toast_source_not_selected">O arquivo fonte não está selecionado</string>
     <string name="create_patch_fragment_patch_file">Arquivo de patch</string>
@@ -94,7 +94,7 @@
     <string name="main_activity_button_how_to_use_app">Como usar o aplicativo</string>
     <string name="main_activity_donate_snackbar_button">Doar</string>
     <string name="main_activity_donate_snackbar_text">Apoie o desenvolvimento do UniPatcher fazendo uma doação</string>
-    <string name="main_activity_toast_archives_not_supported">O arquivo deve ser descompactado em um programa externo.</string>
+    <string name="main_activity_toast_archives_not_supported">O arquivo deve ser descompactado em um programa externo</string>
     <string name="settings_show_button_how_to_use_app_description">Mostrar o botão \"Como usar o aplicativo\" na tela principal</string>
     <string name="settings_show_button_how_to_use_app">Mostrar botão de ajuda</string>
     <string name="settings_theme_name_auto_battery">Definido pela economia de bateria</string>
@@ -102,4 +102,29 @@
     <string name="notify_smd_fix_checksum_complete">Checksum fixado</string>
     <string name="notify_error_unknown">Erro desconhecido</string>
     <string name="notify_error_rom_not_compatible_with_patch">Esta ROM não é compatível com o patch</string>
+    <string name="error_crash_discard_button">Descartar</string>
+    <string name="error_crash_send_button">Enviar</string>
+    <string name="error_crash_message">Desculpe, o aplicativo travou. Por favor, envie um relatório para os desenvolvedores.</string>
+    <string name="error_crash_title">Crash</string>
+    <string name="help_activity_error_cannot_load_text">Erro: texto não pode ser carregado</string>
+    <string name="help_activity_action_changelog">Changelog</string>
+    <string name="help_activity_action_visit_site">Visite o site</string>
+    <string name="help_activity_action_send_feedback">Feedback</string>
+    <string name="help_activity_about_tab_license">Licença: GNU GPLv3</string>
+    <string name="help_activity_about_tab_version">Versão %1$s</string>
+    <string name="help_activity_about_tab_title">Sobre</string>
+    <string name="help_activity_title">Ajuda</string>
+    <string name="help_ips_no_checksum_title">Eu aplico o patch IPS e o jogo não funciona / contém falhas gráficas. O que estou fazendo errado\?</string>
+    <string name="settings_ignore_checksum">Ignorar checksum</string>
+    <string name="settings_patching_header"></string>
+    <string name="settings_theme_name_follow_system">Use o padrão do sistema</string>
+    <string name="settings_theme_name_dark">Escuro</string>
+    <string name="settings_theme_name_light">Claro</string>
+    <string name="settings_theme_dialog_title">Selecionar o tema</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_interface_header">Interface do usuário</string>
+    <string name="settings_activity_title">Preferẽncias</string>
+    <string name="notify_error_not_smd_rom">Não é uma ROM de Sega Mega Drive</string>
+    <string name="notify_error_failed_load_lib_xdelta3">Não foi possivel carregar a biblioteca libxdelta3.so</string>
+    <string name="notify_error_wrong_checksum_after_patching">O arquivo teve a verificação invalidada após ser corrigido</string>
 </resources>
