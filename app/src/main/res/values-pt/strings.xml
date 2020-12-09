@@ -51,7 +51,7 @@
     <string name="notify_snes_delete_smc_header_complete">Header SMC deletado com sucesso</string>
     <!-- Settings -->
     <string name="settings_activity_title">Ajustes</string>
-    <string name="settings_interface_header">Interface de usuário</string>
+    <string name="settings_interface_header">Interface de utilizador</string>
     <string name="settings_theme">Tema</string>
     <string name="settings_theme_dialog_title">Selecionar tema</string>
     <string name="settings_theme_name_light">Claro</string>
