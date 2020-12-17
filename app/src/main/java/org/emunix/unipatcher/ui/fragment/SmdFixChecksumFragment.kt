@@ -81,7 +81,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
     override fun onClick(view: View) {
         val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
-            type = "application/octet-stream"
+            type = "*/*"
         }
         try {
             startActivityForResult(intent, Action.SELECT_ROM_FILE)
