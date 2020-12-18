@@ -1,7 +1,9 @@
-#### 0.17.2 (???, 2020)
+#### 0.17.2 (December ??, 2020)
 - Added Hebrew language (thanks to Tamer Dabsan)
+- Added German language (thanks to Honigdieb)
 - Finished translations into Spanish and Portuguese (thanks to Swyter and Marvin SIlc)
-- Updated Polish, French, Chinese and Norwegian Bokmål translations (thanks to Jarek Karpiel, J. Lavoie, Eric and Allan Nordhøy)
+- Portuguese (Brazil) translation started and many other translations updated (thanks to everyone involved)
+- Fixed an issue where some files could not be selected
 
 #### 0.17.1 (October 9, 2020)
 - File operations are performed in an open application, and not in a background service as before.
