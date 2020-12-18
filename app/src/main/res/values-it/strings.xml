@@ -50,11 +50,11 @@
     <!-- Help activity -->
     <string name="help_activity_title">Aiuto</string>
     <string name="help_activity_faq_tab_title">FAQ</string>
-    <string name="help_activity_about_tab_title">A proposito</string>
+    <string name="help_activity_about_tab_title">Informazioni</string>
     <string name="help_activity_about_tab_version">Versione %1$s</string>
     <string name="help_activity_about_tab_license">Licensa: GNU GPLv3</string>
-    <string name="help_activity_action_send_feedback">Invia feedback</string>
-    <string name="help_activity_action_visit_site">Visita sito web</string>
+    <string name="help_activity_action_send_feedback">Invia un commento</string>
+    <string name="help_activity_action_visit_site">Visita il sito web</string>
     <string name="help_activity_action_changelog">Registro delle modifiche</string>
     <string name="send_feedback_dialog_title">Invia e-mail</string>
     <string name="send_feedback_error_no_email_apps">Non ci sono clienti di posta elettronica installati</string>
@@ -71,7 +71,7 @@
     <string name="nav_drawer_open">Apri cassetto di navigazione</string>
     <string name="nav_drawer_close">Chiudi cassetto di navigazione</string>
     <string name="icon">icona</string>
-    <string name="help_feedback_body">Contattami alla e-mail unipatcher@gmail.com. Per favore, scrivi in inglese o in russo. Se hai qualche problema con il patch, allega la patch alla mail e scrivi il nome della tua ROM, ti farà risparmiare tempo.</string>
+    <string name="help_feedback_body">Contattami all\'indirizzo unipatcher@gmail.com. Per favore, scrivi in inglese o in russo. Se hai qualche problema con il patch, allega la patch all\'e-mail e scrivi il nome della tua ROM, ti farà risparmiare tempo.</string>
     <string name="help_feedback_title">Ho una domanda, la richiesta di una funzionalità o la segnalazione di un bug.</string>
     <string name="help_how_to_translate_body">Se ti piacerebbe tradurre l’app in una lingua diversa o migliorare una traduzione esistente, puoi farlo sul Weblate sito https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Come tradurre l’app\?</string>
@@ -109,4 +109,8 @@
     <string name="help_what_is_unipatcher_body">UniPatcher è uno strumento per Android per applicare delle patch alle ROM di varie console per videogiochi.</string>
     <string name="help_what_is_unipatcher_title">Cosa è UniPatcher\?</string>
     <string name="help_title">Domande Frequenti:</string>
+    <string name="donate_activity_title">Dona</string>
+    <string name="error_crash_discard_button">Annulla</string>
+    <string name="error_crash_send_button">Invia</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
 </resources>

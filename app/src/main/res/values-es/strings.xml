@@ -157,20 +157,22 @@
     <string name="help_snes_smc_body">Ciertas imágenes ROM para SNES contienen 512 bytes a mayores al principio del todo. Este espacio extra no sirve de nada, pero mueve y altera el tamaño de lo que va detrás y hace que no coincida. Quitarlo te permite conseguir el archivo original y poder aplicar el parche.</string>
     <string name="about_translators"><b>Traductores:</b>
 \n
-\n - <b>Chino</b>: Nabarl Wang
-\n - <b>Francés</b>: Thibaut Panis
+\n - <b>Chino</b>: Nabarl Wang, Eric
+\n - <b>Francés</b>: Thibaut Panis, J. Lavoie
+\n - <b>Hebreo</b>: Tamer Dabsan
 \n - <b>Italiano</b>: Matteo Sechi
 \n - <b>Japonés</b>: Naofumi Fukue
 \n - <b>Coreano</b>: Minseo Lee
 \n - <b>Noruego Bokmål</b>: Allan Nordhøy
-\n - <b>Polaco</b>: Michal Bychowski
-\n - <b>Portugués</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso
+\n - <b>Polaco</b>: Michal Bychowski, Jarek Karpiel
+\n - <b>Portugués</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc
 \n - <b>Ruso</b>: Борис Тимофеев
-\n - <b>Castellano</b>: Carlos Sánchez y Swyter
+\n - <b>Castellano</b>: Carlos Sánchez, Swyter
 \n - <b>Turco</b>: Oğuz Ersen
 \n - <b>Ucraniano</b>: Володимир Шевчук
 \n
-\nAyúdanos a traducir la aplicación a tu idioma materno: https://hosted.weblate.org/engage/unipatcher/</string>
+\nAyúdanos a traducir la aplicación a tu idioma materno:
+\nhttps://hosted.weblate.org/engage/unipatcher/</string>
     <string name="nav_snes_add_del_smc_header">Quitar el encabezado SMC (SNES)</string>
     <string name="snes_smc_header_help">Esta función es sólo para ROMs de Super Nintendo.
 \n

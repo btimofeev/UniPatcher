@@ -4,21 +4,21 @@
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_email">unipatcher@gmail.com</string>
     <!-- Main activity -->
-    <string name="main_activity_rom_file">Arquivo ROM</string>
-    <string name="main_activity_patch_file">Arquivo de patch</string>
-    <string name="main_activity_output_file">Arquivo de saída</string>
+    <string name="main_activity_rom_file">Ficheiro ROM</string>
+    <string name="main_activity_patch_file">Ficheiro de patch</string>
+    <string name="main_activity_output_file">Ficheiro de saída</string>
     <string name="main_activity_tap_to_select">aperte para selecionar</string>
-    <string name="main_activity_toast_rom_not_selected">Nenhum arquivo ROM foi selecionado</string>
-    <string name="main_activity_toast_patch_not_selected">Nenhum arquivo de patch foi selecionado</string>
+    <string name="main_activity_toast_rom_not_selected">Nenhum ficheiro ROM foi selecionado</string>
+    <string name="main_activity_toast_patch_not_selected">Nenhum ficheiro de patch foi selecionado</string>
     <string name="main_activity_toast_archives_not_supported">O arquivo deve ser extraído por uma aplicação externa</string>
     <string name="main_activity_donate_snackbar_text">Contribua com o desenvolvimento do UniPatcher fazendo uma doação</string>
     <string name="main_activity_donate_snackbar_button">Doar</string>
     <!-- Create patch fragment -->
-    <string name="create_patch_fragment_source_file">Arquivo fonte</string>
-    <string name="create_patch_fragment_modified_file">Arquivo modificado</string>
-    <string name="create_patch_fragment_patch_file">Arquivo de patch</string>
-    <string name="create_patch_fragment_toast_source_not_selected">O arquivo fonte não foi selecionado</string>
-    <string name="create_patch_fragment_toast_modified_not_selected">O arquivo modificado não foi selecionado</string>
+    <string name="create_patch_fragment_source_file">Ficheiro fonte</string>
+    <string name="create_patch_fragment_modified_file">Ficheiro modificado</string>
+    <string name="create_patch_fragment_patch_file">Ficheiro de patch</string>
+    <string name="create_patch_fragment_toast_source_not_selected">O ficheiro fonte não foi selecionado</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">O ficheiro modificado não foi selecionado</string>
     <string name="snes_smc_header_will_be_removed">Esta ROM contém o header SMC. O mesmo será removido.</string>
     <!-- Info for SMD fix checksum -->
     <string name="smd_fix_checksum_help">Este recurso é apenas para ROMs do Sega Mega Drive (Sega Genesis).\n\nServe para consertar a \"tela vermelha da morte\".\n\nAtenção: Esta função não irá criar backups.</string>
@@ -26,8 +26,8 @@
     <string name="notify_patching_complete">Patch aplicado com sucesso</string>
     <string name="notify_create_patch_complete">Patch criado com sucesso</string>
     <string name="notify_error">Erro</string>
-    <string name="notify_error_could_not_copy_file">Não foi possível copiar o arquivo</string>
-    <string name="notify_error_file_not_found">Arquivo não encontrado</string>
+    <string name="notify_error_could_not_copy_file">Não foi possível copiar o ficheiro</string>
+    <string name="notify_error_file_not_found">Ficheiro não encontrado</string>
     <string name="notify_error_not_enough_space">Não há espaço em disco suficiente</string>
     <string name="notify_error_not_ips_patch">Patch IPS inválido</string>
     <string name="notify_error_not_ups_patch">Patch UPS inválido</string>
@@ -38,12 +38,12 @@
     <string name="notify_error_not_dps_patch">Patch DPS inválido</string>
     <string name="notify_error_not_xdelta3_patch">Patch XDelta3 inválido</string>
     <string name="notify_error_xdelta1_unsupported">Não tenho como operar patches do tipo XDelta1</string>
-    <string name="notify_error_unable_open_file">Incapaz de abrir o arquivo</string>
+    <string name="notify_error_unable_open_file">Incapaz de abrir o ficheiro</string>
     <string name="notify_error_unknown_patch_format">Formato de patch desconhecido</string>
-    <string name="notify_error_unexpected_end_of_file">Final não-esperado do arquivo</string>
-    <string name="notify_error_patch_corrupted">O arquivo patch está corrompido</string>
+    <string name="notify_error_unexpected_end_of_file">Final não-esperado do ficheiro</string>
+    <string name="notify_error_patch_corrupted">O ficheiro patch está corrompido</string>
     <string name="notify_error_rom_not_compatible_with_patch">Esta ROM não é compatível com este patch</string>
-    <string name="notify_error_wrong_checksum_after_patching">O arquivo adquiriu um checksum errado após o patch</string>
+    <string name="notify_error_wrong_checksum_after_patching">O ficheiro adquiriu um checksum errado após o patch</string>
     <string name="notify_error_failed_load_lib_xdelta3">Falha ao carregar a biblioteca libxdelta3.so</string>
     <string name="notify_error_unknown">Erro desconhecido</string>
     <string name="notify_error_not_smd_rom">Esta ROM não é de um Sega Mega Drive</string>
@@ -51,7 +51,7 @@
     <string name="notify_snes_delete_smc_header_complete">Header SMC deletado com sucesso</string>
     <!-- Settings -->
     <string name="settings_activity_title">Ajustes</string>
-    <string name="settings_interface_header">Interface de usuário</string>
+    <string name="settings_interface_header">Interface de utilizador</string>
     <string name="settings_theme">Tema</string>
     <string name="settings_theme_dialog_title">Selecionar tema</string>
     <string name="settings_theme_name_light">Claro</string>
@@ -102,27 +102,27 @@
 \n- Corrigir Soma de verificação para jogos de Sega Mega Drive / Sega Genesis.
 \n- Remover cabeçalho SMC em Jogos do Super Nintendo.</string>
     <string name="help_additional_features_title">O UniPatcher tem alguma função adicional\?</string>
-    <string name="help_ecm_image_body">ECM é um formato de compressão de dados projetado especificamente para imagens de disco. Você pode descomprimir o arquivo usando ZArchiver app https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
-    <string name="help_ecm_image_title">O que eu posso fazer com arquivos do tipo ECM\?</string>
+    <string name="help_ecm_image_body">ECM é um formato de compressão de dados projetado especificamente para imagens de disco. Pode descomprimir o ficheiro a usar a app ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="help_ecm_image_title">O que eu posso fazer com ficheiro do tipo ECM\?</string>
     <string name="help_ips_no_checksum_title">Eu aplico o patch IPS e o jogo não está funcionando/ tem glitches gráficos. O quê estou fazendo de errado\?</string>
     <string name="help_find_rom_pokemon_emerald_body">A maioria dos patches do jogo funciona com a ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
     <string name="help_find_rom_pokemon_emerald_title">Não consigo achar a ROM correta para o jogo “Pokémon Emerald”.</string>
     <string name="help_rom_not_compatible_with_patch_title">O aplicativo mostra o erro: “Esta ROM não é compatível com o patch”.</string>
-    <string name="help_archive_should_be_unpacked_body">O arquivo que você selecionou é um ficheiro. O ficheiro contém os diretórios e arquivos em um formato comprimido (Ex. .zip, .rar).
+    <string name="help_archive_should_be_unpacked_body">O ficheiro que selecionou é um arquivo. O arquivo contém os diretórios e ficheiros num formato comprimido (Ex. .zip, .rar).
 \n
-\nAté este momento, o UniPatcher não pode extrair arquivos, então você precisará descompactar seu arquivo em uma aplicação diferente. Eu recomendo uma gratuita ZArchiver app https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
-    <string name="help_archive_should_be_unpacked_title">O aplicativo mostra uma mensagem após selecionar um arquivo: \" O arquivo deve ser decomprimido em um aplicativo externo\".</string>
-    <string name="help_how_to_apply_patch_to_rom_body">Você selecionou a arquivo ROM, um remendo e escolha qual arquivo salvar, então clique on botão vermelho redondo. Arquivos são selecionando através do padrão Aplicação de Arquivos (ou através de um dos gerenciadores de arquivos que você instalou). A aplicação mostrará uma mensagem quando é arquivo é remendado. Não feche a aplicação até o arquivo estiver remendado.</string>
+\nAté este momento, o UniPatcher não pode extrair arquivos, então precisará descompactar o seu arquivo num software diferente. Recomendo uma app gratuita ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="help_archive_should_be_unpacked_title">A app mostra uma mensagem após selecionar um ficheiro: \" O ficheiro deve ser decomprimido em num software externo\".</string>
+    <string name="help_how_to_apply_patch_to_rom_body">Selecionou a ficheiro ROM, um remendo e escolha qual ficheiro gravar, então clique on botão vermelho redondo. Ficheiro são selecionados através do padrão Aplicação de Ficheiros (ou através de um dos gestores de ficheiro que instalou). A aplicação mostrará uma mensagem quando o ficheiro é remendado. Não feche a aplicação até o ficheiro estiver remendado.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Como aplicar um patch em uma ROM\?</string>
     <string name="help_why_not_distribute_modified_games_body">Hacks e traduções são geralmente distribuídos como patches para reduzir o tamanho de download e evitar problemas com direitos autorais.</string>
     <string name="help_why_not_distribute_modified_games_title">Por quê ROM hackers não distribúem jogos modificados\?</string>
-    <string name="help_what_is_a_patch_body">Um patch é um arquivo que contém as diferenças entre a versão original de uma ROM e a versão hackeada.
+    <string name="help_what_is_a_patch_body">Um patch é um ficheiro que contém as diferenças entre a versão original de uma ROM e a versão hackeada.
 \n
-\nO patch é distribuído, e os usuários finais aplicam o patch em uma cópia da ROM original, cuja produz uma versão jogável da hack.</string>
+\nO patch é distribuído, e os utilizadores finais aplicam o patch em uma cópia da ROM original, cuja produz uma versão jogável da hack.</string>
     <string name="help_what_is_a_patch_title">O que é um patch\?</string>
     <string name="help_what_is_rom_hacking_body">Hackeamento de ROM é a modificação de dados em uma imagem ROM. Isto pode tomar a forma de alterar gráficos, mudar níveis do jogo, manipular fatores de dificuldade, ou mesmo a tradução para um idioma para o qual um jogo não foi originalmente feito disponível.</string>
     <string name="help_what_is_rom_hacking_title">O que é hackeamento de ROM\?</string>
-    <string name="help_what_is_rom_image_body">Uma imagem ROM é um arquivo computacional que contém uma cópia de um jogo para console. Através do processo de emulação, você pode copiar este arquivo e rodá-lo usando uma aplicação chamada “emulador”, para aproveitar o jogo pelo seu dispositivo, seja um computador, um tablet ou smartphone.</string>
+    <string name="help_what_is_rom_image_body">Uma imagem ROM é um ficheiro computacional que contém uma cópia de um jogo para console. Através do processo de emulação, pode copiar este ficheiro e executá-lo num software chamado “emulador”, para aproveitar o jogo pelo seu aparelho, seja um computador, um tablet ou smartphone.</string>
     <string name="help_what_is_rom_image_title">O que é imagem ROM\?</string>
     <string name="help_can_i_hack_android_game_body">Não. O UniPatcher não é desenvolvido para hackear jogos Android.</string>
     <string name="help_can_i_hack_android_game_title">Posso hackear ou crackear jogos Android usando este aplicativo\?</string>
@@ -158,16 +158,16 @@
 \n
 \nAjude a traduzir a aplicação em outro idioma: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_snes_smc_body">Um cabeçalho SMC são 512 bytes encontrados no início de algumas imagems ROM do SNES. Esses byte não têm propósito, mas, eles mudam a localização dos dados restante. Remover um cabeçalho é, algumas vezes, usado para o propósito de aplicar corretamente um remendo.</string>
-    <string name="help_ips_no_checksum_body">Remendos de formato IPS não contém uma soma de verificação. Além do mais, o remendo irá aplicar qualquer (mesmo errado) arquivo ROM. Neste caso, você precisa olhara para outro arquivo ROM.</string>
+    <string name="help_ips_no_checksum_body">Remendos de formato IPS não contém uma soma de verificação. Além do mais, o remendo irá aplicar qualquer (mesmo errado) ficheiro ROM. Neste caso, precisa procurar outro ficheiro ROM.</string>
     <string name="help_i_cant_patch_smw_rom_body">Este ROM contém um cabeçalho SMC, enquanto a maioria dos remendos para este jogo pedem ao ROM para não ter este cabeçalho. Você pode remover cabeçalho SMC selecionando o item apropriado no menu à esquerda, e então aplicar o remendo ao ROM resultante.</string>
     <string name="help_i_cant_patch_smw_rom_title">Eu não consigo remendar \"Super Mario World (U) [I].smc\"</string>
-    <string name="help_rom_not_compatible_with_patch_body">A app irá mostrar este erro se a soma de verificação no remendo não combina com a soma de verificação do ROM. Isso significa que o arquivo ROM não é compatível com o remendo. Você precisa escolher um arquivo ROM diferente. Usualmente, há muitos arquivos ROM para cada jogo (tais como a versão para Europa, EUA, Japão, despejos bons e maus, etc.).
+    <string name="help_rom_not_compatible_with_patch_body">A app irá mostrar este erro se a soma de verificação no remendo não combina com a soma de verificação do ROM. Isso significa que o ficheiro ROM não é compatível com o remendo. Precisa escolher um ficheiro ROM diferente. Usualmente, há muitos ROMs para cada jogo (tais como a versão para Europa, EUA, Japão, despejos bons e maus, etc.).
 \n
-\nHackers ROM frequentemente publicam soma de verificação junto do arquivo ROM (na página da web ou em um arquivo LEIAME). Compare esse ao que você tem. Se a soma de verificação combina, você tem o arquivo ROM para o qual o remendo foi escrito. Se não, você precisa de um ROM diferente.
+\nHackers ROM frequentemente publicam soma de verificação junto ao ficheiro ROM (na página da web ou num ficheiro LEIAME). Compare esse ao que tem. Se a soma de verificação combina, tem o ficheiro ROM para o qual o remendo foi escrito. Se não, precisa de um ROM diferente.
 \n
-\nNo pior dos casos, se você não encontrar o arquivo ROM correto, você pode configurar a opção \"Ignora a soma de verficação\" nas configurações. Porém, tenha em mente que neste caso, o jogo pode conter bugs ou ser completamente injogável.</string>
+\nNo pior dos casos, se não encontrar o ficheiro ROM correto, pode configurar a opção \"Ignora a soma de verficação\" nas configurações. Porém, tenha em mente que neste caso, o jogo pode conter bugs ou ser completamente injogável.</string>
     <string name="nav_snes_add_del_smc_header">Remover cabeçalho SMC (SNES)</string>
-    <string name="error_file_picker_app_is_no_installed">Erro; não há app Arquivo instalado</string>
+    <string name="error_file_picker_app_is_no_installed">Erro: não há app de ficheiro instalado</string>
     <string name="error_crash_discard_button">Descartar</string>
     <string name="error_crash_send_button">Enviar</string>
     <string name="error_crash_message">Desculpe, a aplicativo Travou. Por favor, envie um relatório para os desenvolvedores.</string>
@@ -178,21 +178,21 @@
     <string name="settings_show_button_how_to_use_app">Mostrar butão Ajuda</string>
     <string name="settings_theme_name_follow_system">Use sistema padrão</string>
     <string name="settings_theme_name_auto_battery">Configurado pela Economia de Energia</string>
-    <string name="notify_error_unable_open_patch_file">Incapaz de abrir arquivo de remendo</string>
-    <string name="notify_error_unable_open_modified_file">Incapaz de abrir arquivo modificado</string>
-    <string name="notify_error_unable_open_source_file">Incapaz de abrir o arquivo fonte</string>
+    <string name="notify_error_unable_open_patch_file">Incapaz de abrir ficheiro de remendo</string>
+    <string name="notify_error_unable_open_modified_file">Incapaz de abrir ficheiro modificado</string>
+    <string name="notify_error_unable_open_source_file">Incapaz de abrir o ficheiro fonte</string>
     <string name="notify_error_xdelta3_internal_error">Erro interno XDelta3</string>
-    <string name="snes_smc_error_unable_to_get_file_size">Erro: incapaz de determinar tamanho do arquivo</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Erro: incapaz de determinar tamanho do ficheiro</string>
     <string name="snes_rom_has_no_smc_header">Esta ROM não tem cabeçalho SMC. Você não precisa deletar nada.</string>
     <string name="snes_smc_header_help">Esta característica é somente para ROMs do Super Nintendo.
 \n
 \nAlguns remendo necessitam da ROM para não ter cabeçalho SMC. Essa função ajudará você a removê-lo.</string>
-    <string name="create_patch_fragment_toast_patch_not_selected">O arquivo remendo não está selecionado</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">O ficheiro remendo não está selecionado</string>
     <string name="main_activity_double_back_to_exit_message">Pressione VOLTAR novamente para sair . Isso pode interromper todas as operações executando</string>
     <string name="main_activity_button_how_to_use_app">Como usar a app</string>
-    <string name="main_activity_toast_output_not_selected">Sem arquivo de saída selecionado</string>
+    <string name="main_activity_toast_output_not_selected">Nenhum ficheiro de saída selecionado</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">Pressione para selecionar onde salvar o ROM</string>
     <string name="main_activity_tap_to_select_where_to_save_patch">Pressione para selecionar onde salvar o remendo</string>
-    <string name="main_activity_rom_without_smc_file">Saída do arquivo ROM sem cabeçalho</string>
-    <string name="main_activity_rom_with_smc_file">Arquivo Rom com cabeçalho SMC</string>
+    <string name="main_activity_rom_without_smc_file">Saída do ficheiro ROM sem cabeçalho</string>
+    <string name="main_activity_rom_with_smc_file">Ficheiro Rom com cabeçalho SMC</string>
 </resources>

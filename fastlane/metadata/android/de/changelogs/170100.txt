@@ -1,0 +1,4 @@
+- Dateioperationen werden in der geöffneten Anwendung, nicht wie zuvor als Hintergrunddienst ausgeführt
+- Auf den Abschluss der Operationen wird nun per Pop-Up-Nachricht hingewiesen, nicht im Benachrichtigungsbereich
+- Türkische Übersetzung hinzugefügt (Dank an Oğuz Ersen)
+- Übersetzungen werden jetzt unter https://hosted.weblate.org/engage/unipatcher/ realisiert

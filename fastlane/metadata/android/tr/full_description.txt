@@ -1,7 +1,7 @@
-UniPatcher, oyun ROM'larına yamalar uygulamanıza izin verir.
+UniPatcher, oyun ROM'larına yamalar uygulamanıza olanak sağlar.
 
 Yama nedir?
-Oyunun değiştirilmiş verilerinin bulunduğu bir dosya. Örneğin, Japoncadan İngilizceye çevrilmiş bir oyun. Çeviriyi içeren yamayı indirirsiniz. İngilizce sürümünü oluşturmak için Japonca sürüme uygulanması gerekir.
+Oyunun değiştirilmiş verilerinin bulunduğu bir dosyadır. Örneğin, Japoncadan İngilizceye çevrilmiş bir oyun. Çeviriyi içeren yamayı indirirsiniz. İngilizce sürümünü oluşturmak için yamanın Japonca sürüme uygulanması gerekir.
 
 Bu program yerel Android oyunlarını değiştirmenize yardımcı olmayacaktır, eski konsol oyunları (Super Nintendo, Sega Mega Drive, Game Boy Advance, Sony PlayStation vb.) için oluşturulmuştur.
 
