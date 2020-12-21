@@ -1,0 +1,5 @@
+- İbranice dili eklendi (Tamer Dabsan'a teşekkürler)
+- Almanca dili eklendi (Honigdieb'e teşekkürler)
+- İspanyolca ve Portekizce çeviriler tamamlandı (Swyter ve Marvin SIlc'e teşekkürler)
+- Portekizce (Brezilya) çevirisi başladı ve diğer birçok çeviri güncellendi (katılan herkese teşekkürler)
+- Bazı dosyaların seçilemediği bir sorun düzeltildi
