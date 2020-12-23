@@ -26,7 +26,7 @@
     <string name="help_sega_fix_checksum_title">Por que tenho que corrigir o checksum para os jogos Sega Mega Drive\?</string>
     <string name="help_sega_fix_checksum_body">Os jogos Sega Mega Drive (Genesis) têm seu checksum gravado na ROM. Se você alterar apenas qualquer parte do jogo, eles não irão corresponder, deixando de funcionar como resultado. O que isso faz é calcular o checksum da mudança e gravar no arquivo ROM modificado.
 \n
-\n&lt;b&gt;Aviso&lt;b&gt;: Essa função não cria nenhum tipo de backup do arquivo ROM.</string>
+\n<b>Aviso</b>: Essa função não cria nenhum tipo de backup do arquivo ROM.</string>
     <string name="help_snes_smc_title">Por que às vezes é necessário remover os headers SMC dos jogos Super Nintendo\?</string>
     <string name="help_snes_smc_body">Um header SMC é de 512 bytes encontrado no início de algumas imagens nas roms de SNES. Esses bytes não têm propósito, mas mudam a localização dos dados restantes. Remover um header às vezes é usado para aplicar corretamente um patch.</string>
     <string name="help_how_to_translate_body">Se você gostaria de traduzir o aplicativo para outro idioma ou melhorar uma tradução existente, você pode fazê-lo no site Weblate https://hosted.weblate.org/engage/unipatcher/</string>
@@ -69,7 +69,7 @@
     <string name="notify_error_not_ips_patch">Patch IPS inválido</string>
     <string name="notify_error_not_enough_space">Espaço insuficiente na memória</string>
     <string name="notify_error_file_not_found">Arquivo não encontrado</string>
-    <string name="notify_error_could_not_copy_file">Não foi possível copiar o arquivo.</string>
+    <string name="notify_error_could_not_copy_file">Não foi possível copiar o arquivo</string>
     <string name="notify_error">Erro</string>
     <string name="notify_create_patch_complete">Patch criado</string>
     <string name="notify_patching_complete">Parche completo</string>
@@ -78,7 +78,7 @@
 \nEle corrige \"a tela vermelha da morte\".
 \n
 \nAviso: esta função não cria um backup.</string>
-    <string name="snes_smc_error_unable_to_get_file_size">Erro: não foi possível determinar o tamanho do arquivo.</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Erro: não foi possível determinar o tamanho do arquivo</string>
     <string name="snes_rom_has_no_smc_header">Esta ROM não possui header SMC. Você não precisa deletar nada.</string>
     <string name="snes_smc_header_will_be_removed">Esta ROM possui o header SMC. Ele deverá ser removido.</string>
     <string name="snes_smc_header_help">Este recurso é apenas para ROMs do Super Nintendo.
