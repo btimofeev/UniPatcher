@@ -138,7 +138,7 @@
 \n - <b>Timber</b> por Jake Wharton, licenciado sob a licença Apache 2.0. https://github.com/JakeWharton/timber
 \n - <b>XDelta version 3</b> por Joshua MacDonald, licenciado sob a licença Apache 2.0. https://github.com/jmacd/xdelta</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
-    <string name="help_activity_faq_tab_title">Perguntas frequentes</string>
+    <string name="help_activity_faq_tab_title">Faq</string>
     <string name="help_find_rom_pokemon_emerald_body">A maioria dos patches para esse jogo funciona com a ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
     <string name="help_find_rom_pokemon_emerald_title">Não consigo achar a ROM correta para o jogo “Pokémon Emerald”.</string>
     <string name="help_i_cant_patch_smw_rom_body">Essa ROM contém um header de SMC, enquanto que a maioria dos patches para esse jogo requerem que a ROM não tenha esse header. Você pode remover a header do SMC ao selecionar o item apropriado no menu à esquerda e então aplicar o patch à ROM final.</string>
