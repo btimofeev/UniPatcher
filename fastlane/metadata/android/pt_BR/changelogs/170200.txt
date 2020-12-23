@@ -1,0 +1,5 @@
+- Adicionado hebraico (agradecimentos a Tamer Dabsan)
+- Adicionado alemão (agradecimentos a Honigdieb)
+- Terminadas as traduções para Espanhol e Português (agradecimentos a Swyter e Marvin SIlc)
+- Tradução para Português (Brasil) iniciada e muitas outras atualizadas (agradecimentos a todos envolvidos)
+- Corrigido um erro onde alguns arquivos não podiam ser selecionados
