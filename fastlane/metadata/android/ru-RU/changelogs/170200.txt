@@ -1,5 +1,6 @@
 - Добавлен перевод на иврит (перевёл Tamer Dabsan)
 - Добавлен перевод на немецкий язык (перевёл Honigdieb)
 - Закончены переводы на испанский и португальский (перевели Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes)
-- Обновлены множество других переводов (спасибо всем переводчикам)
+- Обновлены множество других переводов
 - Исправлена ошибка, из-за которой некоторые файлы нельзя было выбрать
+- Вы можете предложить идею или задать вопрос на странице https://github.com/btimofeev/UniPatcher/discussions
