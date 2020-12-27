@@ -1,7 +1,7 @@
 #### 0.17.2 (December ??, 2020)
 - Added Hebrew language (thanks to Tamer Dabsan)
 - Added German language (thanks to Honigdieb)
-- Finished translations into Spanish and Portuguese (thanks to Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, joaooliva)
+- Finished translations into Spanish and Portuguese (thanks to Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes)
 - Many other translations updated (thanks to everyone involved)
 - Fixed an issue where some files could not be selected
 
