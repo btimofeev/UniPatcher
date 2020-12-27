@@ -24,14 +24,18 @@ UniPatcher is a ROM patcher for Android that supports IPS, IPS32, UPS, BPS, APS 
 
 ### Contribute:
 
-#### Report a bug or suggest features
+#### Report a bug
 
-These are discussed on the GitHub [Issue Tracker](https://github.com/btimofeev/UniPatcher/issues).
+You can report a bug on the GitHub [Issue Tracker](https://github.com/btimofeev/UniPatcher/issues).
+
+#### Suggest an idea for a new functionality or ask a question
+
+We discuss new functionality and answer questions on the GitHub [Discussions](https://github.com/btimofeev/UniPatcher/discussions).
 
 #### Translations
 Help translate UniPatcher into another language on the [Weblate project page](https://hosted.weblate.org/projects/unipatcher/). 
 
-#### Building application from source code
+### Building application from source code
 ```
 ./gradlew downloadDependencies
 ./gradlew assembleFreeDebug

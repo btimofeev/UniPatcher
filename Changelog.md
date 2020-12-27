@@ -4,6 +4,7 @@
 - Finished translations into Spanish and Portuguese (thanks to Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes)
 - Many other translations updated (thanks to everyone involved)
 - Fixed an issue where some files could not be selected
+- Now you can suggest an idea for a new feature or ask a question on the page https://github.com/btimofeev/UniPatcher/discussions
 
 #### 0.17.1 (October 9, 2020)
 - File operations are performed in an open application, and not in a background service as before.
