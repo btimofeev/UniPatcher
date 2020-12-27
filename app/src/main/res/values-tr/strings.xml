@@ -115,7 +115,11 @@
     <string name="app_email">unipatcher@gmail.com</string>
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_name">UniPatcher</string>
-    <string name="help_feedback_body">Bana unipatcher@gmail.com e-posta adresinden ulaşın. Lütfen İngilizce olarak yazın. Yama yapma ile ilgili sorun yaşıyorsanız, yamayı e-postaya ekleyin ve ROM\'unuzun adını yazın, bu bize zaman kazandıracaktır.</string>
+    <string name="help_feedback_body">GitHub Tartışmalarında yeni işlevleri tartışıyor ve soruları yanıtlıyoruz: https://github.com/btimofeev/UniPatcher/discussions
+\n
+\n GitHub Sorun İzleyicisinde hata bildirebilirsiniz: https://github.com/btimofeev/UniPatcher/issues
+\n
+\n Ayrıca, unipatcher@gmail.com adresine e-posta göndererek uygulamanın yazarıyla da iletişime geçebilirsiniz. Lütfen İngilizce olarak yazın. Yama yapma ile ilgili sorun yaşıyorsanız, yamayı e-postaya ekleyin ve ROM\'unuzun adını yazın, bu bize zaman kazandıracaktır.</string>
     <string name="help_feedback_title">Bir sorum, özellik isteğim veya hata bildirimim var.</string>
     <string name="help_how_to_translate_body">Uygulamayı başka bir dile çevirmek veya var olan bir çeviriyi iyileştirmek istiyorsanız, bunu https://hosted.weblate.org/engage/unipatcher/ Weblate sitesinde yapabilirsiniz.</string>
     <string name="help_how_to_translate_title">Uygulamanın çevirileri nasıl yapılıyor\?</string>
