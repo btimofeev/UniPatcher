@@ -32,7 +32,13 @@
     <string name="help_how_to_translate_body">Se você gostaria de traduzir o aplicativo para outro idioma ou melhorar uma tradução existente, você pode fazê-lo no site Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Como traduzir o app\?</string>
     <string name="help_feedback_title">Tenho uma pergunta, um pedido de recurso ou um relatório de erros.</string>
-    <string name="help_feedback_body">Entre em contato comigo em unipatcher@gmail.com. Por favor, escreva em inglês. Se você tiver problemas com o patch, anexe o patch ao e-mail e escreva o nome da sua ROM, isso economizará nosso tempo.</string>
+    <string name="help_feedback_body">Discutimos novas funções e respondemos a perguntas no GitHub Discussions https://github.com/btimofeev/UniPatcher/discussions
+\n
+\n
+\nVocê pode reportar um bug no GitHub Issue Tracker https://github.com/btimofeev/UniPatcher/issues
+\n
+\n
+\n Você também pode contatar o autor do aplicativo via e-mail unipatcher@gmail.com. Por favor escreva em Inglês. Se tiver problemas com patching, anexe o patch ao e-mail e digite o nome da sua ROM, isso economizará nosso tempo.</string>
     <string name="about_translators"><b>Tradutores:</b>
 \n
 \n - <b>Chinês</b>: Nabarl Wang, Eric
