@@ -1,0 +1,6 @@
+- İbranice eklendi (Tamer Dabsan'a teşekkürler)
+- Almanca eklendi (Honigdieb'e teşekkürler)
+- İspanyolca ve Portekizce çeviriler tamamlandı (Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes'e teşekkürler)
+- Birçok çeviri güncellendi (katılanlara teşekkürler)
+- Bazı dosyaların seçilemediği bir sorun düzeltildi
+- https://github.com/btimofeev/UniPatcher/discussions sayfasında bir özellik için fikir önerebilir veya soru sorabilirsiniz

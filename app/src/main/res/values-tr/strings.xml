@@ -115,7 +115,11 @@
     <string name="app_email">unipatcher@gmail.com</string>
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_name">UniPatcher</string>
-    <string name="help_feedback_body">Bana unipatcher@gmail.com e-posta adresinden ulaşın. Lütfen İngilizce olarak yazın. Yama yapma ile ilgili sorun yaşıyorsanız, yamayı e-postaya ekleyin ve ROM\'unuzun adını yazın, bu bize zaman kazandıracaktır.</string>
+    <string name="help_feedback_body">GitHub Tartışmalarında yeni işlevleri tartışıyor ve soruları yanıtlıyoruz: https://github.com/btimofeev/UniPatcher/discussions
+\n
+\n GitHub Sorun İzleyicisinde hata bildirebilirsiniz: https://github.com/btimofeev/UniPatcher/issues
+\n
+\n Ayrıca, unipatcher@gmail.com adresine e-posta göndererek uygulamanın yazarıyla da iletişime geçebilirsiniz. Lütfen İngilizce olarak yazın. Yama yapma ile ilgili sorun yaşıyorsanız, yamayı e-postaya ekleyin ve ROM\'unuzun adını yazın, bu bize zaman kazandıracaktır.</string>
     <string name="help_feedback_title">Bir sorum, özellik isteğim veya hata bildirimim var.</string>
     <string name="help_how_to_translate_body">Uygulamayı başka bir dile çevirmek veya var olan bir çeviriyi iyileştirmek istiyorsanız, bunu https://hosted.weblate.org/engage/unipatcher/ Weblate sitesinde yapabilirsiniz.</string>
     <string name="help_how_to_translate_title">Uygulamanın çevirileri nasıl yapılıyor\?</string>
@@ -170,16 +174,18 @@
     <string name="help_title">Sık Sorulan Sorular:</string>
     <string name="about_translators"><b>Çevirmenler:</b>
 \n
+\n - <b>Almanca</b>: Honigdieb
 \n - <b>Bokmål Norveççe</b>: Allan Nordhøy
 \n - <b>Çince</b>: Nabarl Wang, Eric
 \n - <b>Fransızca</b>: Thibaut Panis, J. Lavoie
 \n - <b>İbranice</b>: Tamer Dabsan
 \n - <b>İspanyolca</b>: Carlos Sánchez, Swyter
-\n - <b>İtalyanca</b>: Matteo Sechi
+\n - <b>İtalyanca</b>: Matteo Sechi, J.Lavoie
 \n - <b>Japonca</b>: Naofumi Fukue
 \n - <b>Korece</b>: Minseo Lee
 \n - <b>Lehçe</b>: Michal Bychowski, Jarek Karpiel
-\n - <b>Portekizce</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc
+\n - <b>Portekizce</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n - <b>Portekizce (Brezilya)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
 \n - <b>Rusça</b>: Борис Тимофеев
 \n - <b>Türkçe</b>: Oğuz Ersen
 \n - <b>Ukraynaca</b>: Володимир Шевчук
