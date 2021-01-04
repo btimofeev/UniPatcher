@@ -115,7 +115,11 @@
     <string name="donation">Пожертвование</string>
     <string name="icon">иконка</string>
     <string name="notification_channel_name">Уведомления</string>
-    <string name="help_feedback_body">Вы можете связаться со мной по электронной почте, мой адрес unipatcher@gmail.com. Прошу писать по-английски или по-русски. Если у вас проблема с наложением патча, то прикрепите патч к письму и напишите название вашего ROM’а, это сэкономит наше время.</string>
+    <string name="help_feedback_body">Мы обсуждаем новые функции и отвечаем на вопросы на странице https://github.com/btimofeev/UniPatcher/discussions
+\n
+\nВы можете сообщить об ошибке на сранице https://github.com/btimofeev/UniPatcher/issues
+\n
+\nТакже вы можете связаться с автором приложения по электронной почте unipatcher@gmail.com. Прошу писать по-английски или по-русски. Если у вас проблема с наложением патча, то прикрепите патч к письму и напишите название вашего ROM’а, это сэкономит наше время.</string>
     <string name="help_feedback_title">У меня есть вопрос, идея для новой функции или сообщение об ошибке.</string>
     <string name="help_how_to_translate_body">Если вы хотите перевести приложение на другой язык или улучшить существующий перевод, вы можете сделать это на сайте Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Как перевести приложение на другой язык\?</string>
@@ -182,13 +186,15 @@
 \n
 \n - <b>Chinese</b>: Nabarl Wang, Eric
 \n - <b>French</b>: Thibaut Panis, J. Lavoie
+\n - <b>German</b>: Honigdieb
 \n - <b>Hebrew</b>: Tamer Dabsan
-\n - <b>Italian</b>: Matteo Sechi
+\n - <b>Italian</b>: Matteo Sechi, J.Lavoie
 \n - <b>Japanese</b>: Naofumi Fukue
 \n - <b>Korean</b>: Minseo Lee
 \n - <b>Norwegian Bokmål</b>: Allan Nordhøy
 \n - <b>Polish</b>: Michal Bychowski, Jarek Karpiel
-\n - <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc
+\n - <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n - <b>Portuguese (Brazil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
 \n - <b>Russian</b>: Борис Тимофеев
 \n - <b>Spanish</b>: Carlos Sánchez, Swyter
 \n - <b>Turkish</b>: Oğuz Ersen
