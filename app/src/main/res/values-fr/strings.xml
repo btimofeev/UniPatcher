@@ -161,4 +161,7 @@
     <string name="notify_error_unable_open_source_file">Impossible d\'ouvrir le fichier source</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">appuyez pour sélectionner où enregistrer le ROM</string>
     <string name="main_activity_rom_without_smc_file">Fichier de sortie ROM sans en-tête</string>
+    <string name="snes_rom_has_no_smc_header">Cette ROM n\'a pas d\'en-tête SMC. Vous n\'avez rien à supprimer.</string>
+    <string name="snes_smc_header_help">Cette fonctionnalité est réservée aux ROM Super Nintendo.
+\nCertains correctifs exigent que la ROM n\'ait pas d\'en-tête SMC. Cette fonction vous aidera à le supprimer.</string>
 </resources>
