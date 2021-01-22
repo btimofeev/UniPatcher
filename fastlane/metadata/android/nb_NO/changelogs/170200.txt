@@ -1,0 +1,6 @@
+- Tillagt hebraisk (takk til Tamer Dabsan)
+- Tillagt tysk (takk til Honigdieb)
+- Fullførte oversettelser til spansk og portugisisk (tak til Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo ogJoey Mendes)
+- Mange andre oversettelser oppdatert (takk til alle involverte)
+- Fikset et problem der ikke alle filer kunne velges
+- Nå kan du foreslå en idé for en ny funksjon eller stille et spørsmål her: https://github.com/btimofeev/UniPatcher/discussions
