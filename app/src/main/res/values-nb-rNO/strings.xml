@@ -116,7 +116,11 @@
     <string name="notify_error_unable_open_modified_file">Kunne ikke åpne endret fil</string>
     <string name="main_activity_toast_output_not_selected">Ingen utdatafil valgt</string>
     <string name="main_activity_rom_with_smc_file">ROM-fil med SMC-hode</string>
-    <string name="help_feedback_body">Kontakt meg på e-post unipatcher@gmail.com. Skriv på Engelsk eller Russisk. Hvis du har problemer med programfiksing, legg ved hele programfiksen og skriv navnet på ROM-fila di, det vil spare tid.</string>
+    <string name="help_feedback_body">Vi diskuterer ny funksjonalitet og besvarer spørsmål i GitHub-diskusjoner https://github.com/btimofeev/UniPatcher/discussions
+\n
+\n Du kan innrapportere feil til GitHub-feilsporeren https://github.com/btimofeev/UniPatcher/issues
+\n
+\nDu kan også kontakte utvikleren av programmet per e-post på unipatcher@gmail.com. Skriv på Engelsk eller Russisk. Hvis du har problemer med programfiksing, legg ved hele programfiksen og skriv navnet på ROM-fila di, det vil spare tid.</string>
     <string name="help_feedback_title">Jeg har et spørsmål, en funksjonsforespørsel eller en feilrapport.</string>
     <string name="help_how_to_translate_body">Hvis du vil oversette programmet til et annet språk eller forbedre en eksisterende oversettelse, kan du gjøre det på Weblate-siden https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Hvordan oversette programmet\?</string>
@@ -168,19 +172,20 @@
 \n
 \n - <b>Kinesisk</b>: Nabarl Wang, Eric
 \n - <b>Fransk</b>: Thibaut Panis, J. Lavoie
+\n - <b>Tysk</b>: Honigdieb
 \n - <b>Hebraisk</b>: Tamer Dabsan
-\n - <b>Italiensk</b>: Matteo Sechi
+\n - <b>Italiensk</b>: Matteo Sechi, J.Lavoie
 \n - <b>Japansk</b>: Naofumi Fukue
 \n - <b>Koreansk</b>: Minseo Lee
 \n - <b>Norsk bokmål</b>: Allan Nordhøy
 \n - <b>Polisk</b>: Michal Bychowski, Jarek Karpiel
-\n - <b>Portugisisk</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso og Marvin SIlc
+\n - <b>Portugisisk</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
 \n - <b>Russisk</b>: Борис Тимофеев
 \n - <b>Spansk</b>: Carlos Sánchez, Swyter
 \n - <b>Tyrkisk</b>: Oğuz Ersen
 \n - <b>Ukrainsk</b>: Володимир Шевчук
 \n
-\nHelp translate the app into your language: https://hosted.weblate.org/engage/unipatcher/</string>
+\nBistå oversettelsen til ditt språk: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="about_used_libraries"><b>Brukte bibliotek:</b>
 \n
 \n - <b>ACRA</b> av ACRA-laget, lisensiert Apache 2.0. https://github.com/ACRA/acra
