@@ -1,4 +1,4 @@
-#### 0.17.2 (December ??, 2020)
+#### 0.17.2 (January 22, 2020)
 - Added Hebrew language (thanks to Tamer Dabsan)
 - Added German language (thanks to Honigdieb)
 - Finished translations into Spanish and Portuguese (thanks to Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes)
