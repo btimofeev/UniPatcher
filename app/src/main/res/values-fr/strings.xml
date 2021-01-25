@@ -91,7 +91,11 @@
     <string name="donation">Don</string>
     <string name="icon">icône</string>
     <string name="notification_channel_name">Notifications</string>
-    <string name="help_feedback_body">Contactez-moi par courriel unipatcher@gmail.com. Merci de m’écrire en anglais ou en russe. Si vous avez des problèmes pour patcher, attachez votre patch en pièce jointe et écrivez le nom de votre ROM, ce sera toujours un gain de temps.</string>
+    <string name="help_feedback_body">Nous discutons des nouvelles fonctionnalités et répondons aux questions sur les discussions GitHub https://github.com/btimofeev/UniPatcher/discussions
+\n
+\n Vous pouvez signaler un bug sur le suivi des problèmes GitHub https://github.com/btimofeev/UniPatcher/issues
+\n
+\n Vous pouvez également contacter l\'auteur de l\'application par e-mail unipatcher@gmail.com. Ecrivez en anglais s\'il vous plait. Si vous avez des problèmes de patch, attachez le patch à la lettre et écrivez le nom de votre ROM, cela nous fera gagner du temps.</string>
     <string name="help_feedback_title">J’ai une question, une proposition d’amélioration ou un rapport d’erreur à soumettre.</string>
     <string name="help_how_to_translate_body">Si vous souhaitez traduire cette appli dans une autre langue ou améliorer une traduction existante, n’hésitez pas à visiter le site Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Comment traduire cette appli \?</string>
@@ -163,5 +167,43 @@
     <string name="main_activity_rom_without_smc_file">Fichier de sortie ROM sans en-tête</string>
     <string name="snes_rom_has_no_smc_header">Cette ROM n\'a pas d\'en-tête SMC. Vous n\'avez rien à supprimer.</string>
     <string name="snes_smc_header_help">Cette fonctionnalité est réservée aux ROM Super Nintendo.
+\n
 \nCertains correctifs exigent que la ROM n\'ait pas d\'en-tête SMC. Cette fonction vous aidera à le supprimer.</string>
+    <string name="about_used_libraries"><b> Bibliothèques utilisées : </b>
+\n
+\n - <b> ACRA </b> par l\'équipe ACRA, sous licence Apache 2.0. https ://github.com/ACRA/acra
+\n - <b> Donations Android </b> par SufficientlySecure et penn5, sous licence Apache 2.0. https ://github.com/penn5/donations
+\n - <b> Apache Commons IO </b> par The Apache Software Foundation, sous licence Apache 2.0. https ://commons.apache.org/proper/commons-io/
+\n - <b> Dagger </b> par The Dagger Authors, sous licence Apache 2.0. https ://github.com/google/dagger
+\n - <b> Icônes de conception matérielle </b> de Google, sous licence Apache 2.0. https ://github.com/google/material-design-icons
+\n - <b> Icônes de conception matérielle </b> par communauté, sous licence SIL Open Font License 1.1. https ://materialdesignicons.com
+\n - <b> Timber </b> par Jake Wharton, sous licence Apache 2.0. https ://github.com/JakeWharton/timber
+\n - <b> XDelta version 3 </b> par Joshua MacDonald, sous licence Apache 2.0. https ://github.com/jmacd/xdelta</string>
+    <string name="about_translators"><b> Traducteurs : </b>
+\n
+\n - <b> Chinois </b> : Nabarl Wang, Eric
+\n - <b> Français </b> : Thibaut Panis, J. Lavoie
+\n - <b> Allemand </b> : Honigdieb
+\n - <b> Hébreu </b> : Tamer Dabsan
+\n - <b> italien </b> : Matteo Sechi, J.Lavoie
+\n - <b> Japonais </b> : Naofumi Fukue
+\n - <b> coréen </b> : Minseo Lee
+\n - <b> Bokmål norvégien </b> : Allan Nordhøy
+\n - <b> polonais </b> : Michal Bychowski, Jarek Karpiel
+\n - <b> Portugais </b> : Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n - <b> Portugais (Brésil) </b> : Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
+\n - <b> Russe </b> : Борис Тимофеев
+\n - <b> Espagnol </b> : Carlos Sánchez, Swyter
+\n - <b> turc </b> : Oğuz Ersen
+\n - <b> ukrainien </b> : Володимир Шевчук
+\n
+\nAidez à traduire l\'application dans votre langue : https ://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="help_snes_smc_body">Un en-tête SMC est de 512 octets trouvés au début de certaines images ROM SNES. Ces octets n\'ont aucun but, mais ils changent l\'emplacement des données restantes. La suppression d\'un en-tête est parfois utilisée dans le but d\'appliquer correctement un correctif.</string>
+    <string name="help_snes_smc_title">Pourquoi est-il parfois nécessaire de supprimer les en-têtes SMC des jeux Super Nintendo \?</string>
+    <string name="help_i_cant_patch_smw_rom_body">Cette ROM contient un en-tête SMC, alors que la plupart des correctifs pour ce jeu nécessitent que la ROM ne possède pas cet en-tête. Vous pouvez supprimer l\'en-tête SMC en sélectionnant l\'élément approprié dans le menu de gauche, puis appliquer le correctif à la ROM résultante.</string>
+    <string name="help_i_cant_patch_smw_rom_title">Je ne peux pas patcher \"Super Mario World (U) [!]. Smc\"</string>
+    <string name="help_how_to_apply_patch_to_rom_body">Vous devez sélectionner un fichier ROM, un patch et choisir le fichier à enregistrer, puis cliquer sur le bouton rond rouge. Les fichiers sont sélectionnés via l\'application Fichiers standard (ou via l\'un des gestionnaires de fichiers que vous avez installés). L\'application affichera un message lorsque le fichier est corrigé. Ne fermez pas l\'application tant que le fichier n\'a pas été corrigé.</string>
+    <string name="nav_snes_add_del_smc_header">Retirer l\'en-tête SMC (SNES)</string>
+    <string name="error_file_picker_app_is_no_installed">Erreur : aucun fichiers d\'applications installer</string>
+    <string name="notify_error_xdelta3_internal_error">XDelta3 : Erreur interne</string>
 </resources>
