@@ -39,7 +39,7 @@
             android:layout_margin="@dimen/fab_margin"
             app:backgroundTint="@color/colorAccent"
             app:tint="@android:color/white"
-            app:srcCompat="@drawable/content_save"/>
+            app:srcCompat="@drawable/ic_save"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
