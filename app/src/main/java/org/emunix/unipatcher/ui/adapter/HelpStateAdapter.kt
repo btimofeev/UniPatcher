@@ -19,20 +19,27 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.adapter
 
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
-import org.emunix.unipatcher.ui.fragment.FaqFragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import org.emunix.unipatcher.ui.fragment.AboutFragment
+import org.emunix.unipatcher.ui.fragment.FaqFragment
 
-class HelpPagerAdapter(manager: FragmentManager?, var numOfTabs: Int) : FragmentStatePagerAdapter(manager!!, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
-    override fun getItem(position: Int): Fragment {
+class HelpStateAdapter(fragmentActivity: FragmentActivity?) : FragmentStateAdapter(fragmentActivity!!) {
+    companion object {
+        const val POS_FAQ = 0
+        const val POS_ABOUT = 1
+        const val TOTAL_COUNT = 2
+    }
+
+    override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> FaqFragment()
-            else -> AboutFragment()
+            POS_FAQ -> FaqFragment()
+            POS_ABOUT -> AboutFragment()
+            else -> throw IllegalArgumentException("Unknown position for ViewPager2")
         }
     }
 
-    override fun getCount(): Int {
-        return numOfTabs
+    override fun getItemCount(): Int {
+        return TOTAL_COUNT
     }
 }
