@@ -19,6 +19,8 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher
 
+import androidx.core.content.edit
+
 
 object Settings {
 
@@ -33,9 +35,7 @@ object Settings {
     }
 
     fun setPatchingSuccessful(isSuccessful: Boolean?) {
-        val editor = prefs.edit()
-        editor.putBoolean("patching_successful", isSuccessful!!)
-        editor.apply()
+        prefs.edit { putBoolean("patching_successful", isSuccessful!!) }
     }
 
     fun getPatchingSuccessful(): Boolean {
@@ -43,9 +43,7 @@ object Settings {
     }
 
     fun setDontShowDonateSnackbarCount(count: Int) {
-        val editor = prefs.edit()
-        editor.putInt("dont_show_donate_snackbar", count)
-        editor.apply()
+        prefs.edit { putInt("dont_show_donate_snackbar", count) }
     }
 
     fun getDontShowDonateSnackbarCount(): Int {

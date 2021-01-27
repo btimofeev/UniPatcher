@@ -23,6 +23,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
 import org.emunix.unipatcher.BuildConfig
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.ActivityDonateBinding
@@ -39,13 +40,13 @@ class DonateActivity : AppCompatActivity() {
         supportActionBar?.setTitle(R.string.donate_activity_title)
         var fragment = supportFragmentManager.findFragmentByTag("donationsFragment") as DonationsFragment?
         if (fragment == null) {
-            val ft = supportFragmentManager.beginTransaction()
-            fragment = DonationsFragment.Companion.newInstance(BuildConfig.DEBUG,
-                    true, BuildConfig.GOOGLE_PLAY_PUBKEY, GOOGLE_PLAY_CATALOG, GOOGLE_PLAY_COST,
-                    false, null, null, null,
-                    false, null)
-            ft.replace(R.id.donate_fragment, fragment, "donationsFragment")
-            ft.commit()
+            supportFragmentManager.commit {
+                fragment = DonationsFragment.Companion.newInstance(BuildConfig.DEBUG,
+                        true, BuildConfig.GOOGLE_PLAY_PUBKEY, GOOGLE_PLAY_CATALOG, GOOGLE_PLAY_COST,
+                        false, null, null, null,
+                        false, null)
+                replace(R.id.donate_fragment, fragment!!, "donationsFragment")
+            }
         }
     }
 

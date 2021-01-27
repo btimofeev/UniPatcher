@@ -26,8 +26,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
@@ -39,8 +41,8 @@ import timber.log.Timber
 
 class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
 
-    private lateinit var viewModel: ApplyPatchViewModel
-    private lateinit var actionIsRunningViewModel: ActionIsRunningViewModel
+    private val viewModel by viewModels<ApplyPatchViewModel>()
+    private val actionIsRunningViewModel by viewModels<ActionIsRunningViewModel>()
 
     private var _binding: ApplyPatchFragmentBinding? = null
     private val binding get() = _binding!!
@@ -61,8 +63,6 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
         super.onActivityCreated(savedInstanceState)
         activity?.setTitle(R.string.nav_apply_patch)
 
-        actionIsRunningViewModel = ViewModelProvider(requireActivity()).get(ActionIsRunningViewModel::class.java)
-        viewModel = ViewModelProvider(requireActivity()).get(ApplyPatchViewModel::class.java)
         viewModel.getPatchName().observe(viewLifecycleOwner, Observer {
             binding.patchNameTextView.text = it
         })
@@ -82,11 +82,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
         })
         viewModel.getActionIsRunning().observe(viewLifecycleOwner, Observer { isRunning ->
             actionIsRunningViewModel.applyPatch(isRunning)
-            if(isRunning) {
-                binding.progressBar.visibility = View.VISIBLE
-            } else {
-                binding.progressBar.visibility = View.INVISIBLE
-            }
+            binding.progressBar.isInvisible = !isRunning
         })
 
         binding.patchCardView.setOnClickListener(this)
@@ -97,10 +93,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
 
     override fun onResume() {
         super.onResume()
-        if (Settings.getShowHelpButton())
-            binding.howToUseAppButton.visibility = View.VISIBLE
-        else
-            binding.howToUseAppButton.visibility = View.GONE
+        binding.howToUseAppButton.isVisible = Settings.getShowHelpButton()
     }
 
     override fun onClick(view: View) {

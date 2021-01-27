@@ -22,12 +22,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import dagger.Lazy
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         APPLY_PATCH, CREATE_PATCH, SMD_FIX_CHECKSUM, SNES_SMC_HEADER
     }
 
-    private lateinit var actionIsRunningViewModel: ActionIsRunningViewModel
+    private val actionIsRunningViewModel by viewModels<ActionIsRunningViewModel>()
 
     private var actionIsRunning: Boolean = false
     private var doubleBackToExitPressedOnce = false
@@ -83,7 +84,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             binding.navigationView.menu.getItem(0).isChecked = true
         }
 
-        actionIsRunningViewModel = ViewModelProvider(this).get(ActionIsRunningViewModel::class.java)
         actionIsRunningViewModel.get().observe(this, Observer {
             actionIsRunning = it
         })
@@ -120,9 +120,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             NavigateTo.SMD_FIX_CHECKSUM -> SmdFixChecksumFragment()
             NavigateTo.SNES_SMC_HEADER -> SnesSmcHeaderFragment()
         }
-        val ft = supportFragmentManager.beginTransaction()
-        ft.setCustomAnimations(R.anim.slide_from_bottom, android.R.anim.fade_out)
-        ft.replace(R.id.content_frame, fragment).commit()
+        supportFragmentManager.commit {
+            setCustomAnimations(R.anim.slide_from_bottom, android.R.anim.fade_out)
+            replace(R.id.content_frame, fragment)
+        }
     }
 
     override fun onBackPressed() {
