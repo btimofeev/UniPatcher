@@ -31,7 +31,7 @@ class FaqFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         _binding = FragmentFaqBinding.inflate(inflater, container, false)
         return binding.root
     }

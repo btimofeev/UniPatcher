@@ -29,7 +29,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isInvisible
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.CreatePatchFragmentBinding
@@ -45,7 +44,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
     private var _binding: CreatePatchFragmentBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = CreatePatchFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -59,21 +58,21 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
         super.onActivityCreated(savedInstanceState)
         activity?.setTitle(R.string.nav_create_patch)
 
-        viewModel.getSourceName().observe(viewLifecycleOwner, Observer {
+        viewModel.getSourceName().observe(viewLifecycleOwner, {
             binding.sourceFileNameTextView.text = it
         })
-        viewModel.getModifiedName().observe(viewLifecycleOwner, Observer {
+        viewModel.getModifiedName().observe(viewLifecycleOwner, {
             binding.modifiedFileNameTextView.text = it
         })
-        viewModel.getPatchName().observe(viewLifecycleOwner, Observer {
+        viewModel.getPatchName().observe(viewLifecycleOwner, {
             binding.patchFileNameTextView.text = it
         })
-        viewModel.getMessage().observe(viewLifecycleOwner, Observer { event ->
+        viewModel.getMessage().observe(viewLifecycleOwner, { event ->
             event.getContentIfNotHandled()?.let { message ->
                 Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
             }
         })
-        viewModel.getActionIsRunning().observe(viewLifecycleOwner, Observer { isRunning ->
+        viewModel.getActionIsRunning().observe(viewLifecycleOwner, { isRunning ->
             actionIsRunningViewModel.createPatch(isRunning)
             binding.progressBar.isInvisible = !isRunning
         })
@@ -125,7 +124,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
         Timber.d("onActivityResult($requestCode, $resultCode, $resultData)")
         if (resultCode == Activity.RESULT_OK && resultData != null && (requestCode == Action.SELECT_SOURCE_FILE || requestCode == Action.SELECT_MODIFIED_FILE || requestCode == Action.SELECT_PATCH_FILE)) {
             resultData.data?.let { uri ->
-                Timber.d(uri.toString())
+                Timber.d("$uri")
                 when (requestCode) {
                     Action.SELECT_SOURCE_FILE -> {
                         viewModel.sourceSelected(uri)

@@ -28,7 +28,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isInvisible
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.SmdFixChecksumFragmentBinding
@@ -44,7 +43,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
     private var _binding: SmdFixChecksumFragmentBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = SmdFixChecksumFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -58,15 +57,15 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
         super.onActivityCreated(savedInstanceState)
         activity?.setTitle(R.string.nav_smd_fix_checksum)
 
-        viewModel.getRomName().observe(viewLifecycleOwner, Observer {
+        viewModel.getRomName().observe(viewLifecycleOwner, {
             binding.romNameTextView.text = it
         })
-        viewModel.getMessage().observe(viewLifecycleOwner, Observer { event ->
+        viewModel.getMessage().observe(viewLifecycleOwner, { event ->
             event.getContentIfNotHandled()?.let { message ->
                 Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
             }
         })
-        viewModel.getActionIsRunning().observe(viewLifecycleOwner, Observer { isRunning ->
+        viewModel.getActionIsRunning().observe(viewLifecycleOwner, { isRunning ->
             actionIsRunningViewModel.fixChecksum(isRunning)
             binding.progressBar.isInvisible = !isRunning
         })
@@ -91,7 +90,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
         Timber.d("onActivityResult($requestCode, $resultCode, $resultData)")
         if (requestCode == Action.SELECT_ROM_FILE && resultCode == Activity.RESULT_OK && resultData != null) {
             resultData.data?.let { uri ->
-                Timber.d(uri.toString())
+                Timber.d("$uri")
                 viewModel.romSelected(uri)
             }
         }

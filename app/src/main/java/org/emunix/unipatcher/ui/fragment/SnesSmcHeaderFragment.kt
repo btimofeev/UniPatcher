@@ -28,7 +28,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isInvisible
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.SnesSmcHeaderFragmentBinding
@@ -46,7 +45,7 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
 
     private var suggestedOutputName: String = "headerless_rom.smc"
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = SnesSmcHeaderFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -60,24 +59,24 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
         super.onActivityCreated(savedInstanceState)
         activity?.setTitle(R.string.nav_snes_add_del_smc_header)
 
-        viewModel.getRomName().observe(viewLifecycleOwner, Observer {
+        viewModel.getRomName().observe(viewLifecycleOwner, {
             binding.romNameTextView.text = it
         })
-        viewModel.getOutputName().observe(viewLifecycleOwner, Observer {
+        viewModel.getOutputName().observe(viewLifecycleOwner, {
             binding.outputNameTextView.text = it
         })
-        viewModel.getSuggestedOutputName().observe(viewLifecycleOwner, Observer {
+        viewModel.getSuggestedOutputName().observe(viewLifecycleOwner, {
             suggestedOutputName = it
         })
-        viewModel.getMessage().observe(viewLifecycleOwner, Observer { event ->
+        viewModel.getMessage().observe(viewLifecycleOwner, { event ->
             event.getContentIfNotHandled()?.let { message ->
                 Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
             }
         })
-        viewModel.getInfoText().observe(viewLifecycleOwner, Observer { text ->
+        viewModel.getInfoText().observe(viewLifecycleOwner, { text ->
             binding.headerInfoTextView.text = text
         })
-        viewModel.getActionIsRunning().observe(viewLifecycleOwner, Observer { isRunning ->
+        viewModel.getActionIsRunning().observe(viewLifecycleOwner, { isRunning ->
             actionIsRunningViewModel.removeSmc(isRunning)
             binding.progressBar.isInvisible = !isRunning
         })
@@ -118,7 +117,7 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
         Timber.d("onActivityResult($requestCode, $resultCode, $resultData)")
         if (resultCode == Activity.RESULT_OK && resultData != null && (requestCode == Action.SELECT_ROM_FILE || requestCode == Action.SELECT_OUTPUT_FILE)) {
             resultData.data?.let { uri ->
-                Timber.d(uri.toString())
+                Timber.d("$uri")
                 when (requestCode) {
                     Action.SELECT_ROM_FILE -> {
                         viewModel.romSelected(uri)
