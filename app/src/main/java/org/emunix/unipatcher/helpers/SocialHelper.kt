@@ -25,6 +25,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
+import androidx.core.net.toUri
 import org.emunix.unipatcher.BuildConfig
 import org.emunix.unipatcher.R
 import javax.inject.Inject
@@ -45,9 +46,9 @@ class SocialHelper @Inject constructor(val context: Context) {
 
     fun rateApp() {
         val rateAppIntent = Intent(Intent.ACTION_VIEW)
-        rateAppIntent.data = Uri.parse(BuildConfig.RATE_URL)
+        rateAppIntent.data = BuildConfig.RATE_URL.toUri()
         if (context.packageManager.queryIntentActivities(rateAppIntent, 0).size == 0) { // Market app is not installed. Open web browser
-            rateAppIntent.data = Uri.parse(BuildConfig.SHARE_URL)
+            rateAppIntent.data = BuildConfig.SHARE_URL.toUri()
         }
         rateAppIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         context.startActivity(rateAppIntent)
@@ -67,13 +68,13 @@ class SocialHelper @Inject constructor(val context: Context) {
     }
 
     fun openWebsite() {
-        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.app_site)))
+        val browserIntent = Intent(Intent.ACTION_VIEW, context.getString(R.string.app_site).toUri())
         browserIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         context.startActivity(browserIntent)
     }
 
     fun showChangelog() {
-        val changelogIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/btimofeev/UniPatcher/blob/master/Changelog.md"))
+        val changelogIntent = Intent(Intent.ACTION_VIEW, "https://github.com/btimofeev/UniPatcher/blob/master/Changelog.md".toUri())
         changelogIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         context.startActivity(changelogIntent)
     }

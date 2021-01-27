@@ -21,6 +21,8 @@ package org.emunix.unipatcher.ui.activity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.ActivitySettingsBinding
 import org.emunix.unipatcher.ui.fragment.SettingsFragment
@@ -32,9 +34,9 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.includes.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.content, SettingsFragment())
-                .commit()
+        supportFragmentManager.commit {
+            replace<SettingsFragment>(R.id.content)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
