@@ -28,7 +28,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
-import androidx.lifecycle.Observer
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import dagger.Lazy
@@ -84,7 +83,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             binding.navigationView.menu.getItem(0).isChecked = true
         }
 
-        actionIsRunningViewModel.get().observe(this, Observer {
+        actionIsRunningViewModel.get().observe(this, {
             actionIsRunning = it
         })
 

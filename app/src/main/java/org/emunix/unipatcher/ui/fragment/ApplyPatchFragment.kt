@@ -29,7 +29,6 @@ import android.widget.Toast
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
@@ -49,7 +48,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
 
     private var suggestedOutputName: String = "specify_rom_name"
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = ApplyPatchFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -63,24 +62,24 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
         super.onActivityCreated(savedInstanceState)
         activity?.setTitle(R.string.nav_apply_patch)
 
-        viewModel.getPatchName().observe(viewLifecycleOwner, Observer {
+        viewModel.getPatchName().observe(viewLifecycleOwner, {
             binding.patchNameTextView.text = it
         })
-        viewModel.getRomName().observe(viewLifecycleOwner, Observer {
+        viewModel.getRomName().observe(viewLifecycleOwner, {
             binding.romNameTextView.text = it
         })
-        viewModel.getOutputName().observe(viewLifecycleOwner, Observer {
+        viewModel.getOutputName().observe(viewLifecycleOwner, {
             binding.outputNameTextView.text = it
         })
-        viewModel.getSuggestedOutputName().observe(viewLifecycleOwner, Observer {
+        viewModel.getSuggestedOutputName().observe(viewLifecycleOwner, {
             suggestedOutputName = it
         })
-        viewModel.getMessage().observe(viewLifecycleOwner, Observer { event ->
+        viewModel.getMessage().observe(viewLifecycleOwner, { event ->
             event.getContentIfNotHandled()?.let { message ->
                 Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
             }
         })
-        viewModel.getActionIsRunning().observe(viewLifecycleOwner, Observer { isRunning ->
+        viewModel.getActionIsRunning().observe(viewLifecycleOwner, { isRunning ->
             actionIsRunningViewModel.applyPatch(isRunning)
             binding.progressBar.isInvisible = !isRunning
         })
@@ -143,7 +142,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
         Timber.d("onActivityResult($requestCode, $resultCode, $resultData)")
         if (resultCode == Activity.RESULT_OK && resultData != null && (requestCode == Action.SELECT_PATCH_FILE || requestCode == Action.SELECT_ROM_FILE || requestCode == Action.SELECT_OUTPUT_FILE)) {
             resultData.data?.let { uri ->
-                Timber.d(uri.toString())
+                Timber.d("$uri")
                 when (requestCode) {
                     Action.SELECT_PATCH_FILE -> {
                         viewModel.patchSelected(uri)

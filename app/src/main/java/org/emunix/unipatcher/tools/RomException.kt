@@ -18,5 +18,4 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 package org.emunix.unipatcher.tools
 
-class RomException(message: String?) : Exception(message) {
-}
+class RomException(message: String?) : Exception(message)
