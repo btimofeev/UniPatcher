@@ -66,7 +66,7 @@
                         android:padding="8dp"
                         android:text="@string/main_activity_tap_to_select"
                         android:textSize="20sp"
-                        app:drawableStartCompat="@drawable/folder" />
+                        app:drawableStartCompat="@drawable/ic_folder" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -107,7 +107,7 @@
                         android:padding="8dp"
                         android:text="@string/main_activity_tap_to_select"
                         android:textSize="20sp"
-                        app:drawableStartCompat="@drawable/folder" />
+                        app:drawableStartCompat="@drawable/ic_folder" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -148,7 +148,7 @@
                         android:padding="8dp"
                         android:text="@string/main_activity_tap_to_select_where_to_save_rom"
                         android:textSize="20sp"
-                        app:drawableStartCompat="@drawable/folder" />
+                        app:drawableStartCompat="@drawable/ic_folder" />
 
 
                 </LinearLayout>
@@ -166,7 +166,7 @@
                 android:padding="16dp"
                 android:text="@string/main_activity_button_how_to_use_app"
                 android:textColor="@color/colorCardHeaderText"
-                app:icon="@drawable/book"
+                app:icon="@drawable/ic_book"
                 app:iconTint="@color/colorCardHeaderText" />
 
         </LinearLayout>

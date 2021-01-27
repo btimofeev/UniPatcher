@@ -69,7 +69,7 @@
                         android:padding="8dp"
                         android:text="@string/main_activity_tap_to_select"
                         android:textSize="20sp"
-                        app:drawableStartCompat="@drawable/folder" />
+                        app:drawableStartCompat="@drawable/ic_folder" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
