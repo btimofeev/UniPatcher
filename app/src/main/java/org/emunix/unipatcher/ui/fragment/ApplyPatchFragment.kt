@@ -20,7 +20,6 @@ package org.emunix.unipatcher.ui.fragment
 
 import android.app.Activity
 import android.content.ActivityNotFoundException
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -29,10 +28,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
-import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.databinding.ApplyPatchFragmentBinding
 import org.emunix.unipatcher.ui.activity.HelpActivity
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
@@ -40,6 +39,7 @@ import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
 import timber.log.Timber
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
 
     @Inject lateinit var settings: Settings
@@ -51,11 +51,6 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
     private val binding get() = _binding!!
 
     private var suggestedOutputName: String = "specify_rom_name"
-
-    override fun onAttach(context: Context) {
-        UniPatcher.appComponent.inject(this)
-        super.onAttach(context)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = ApplyPatchFragmentBinding.inflate(inflater, container, false)

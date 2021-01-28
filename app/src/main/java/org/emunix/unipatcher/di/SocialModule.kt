@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020 Boris Timofeev
+ Copyright (c) 2021 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -23,13 +23,21 @@ package org.emunix.unipatcher.di
 import android.content.Context
 import dagger.Module
 import dagger.Provides
-import javax.inject.Singleton
+import dagger.Reusable
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
+import org.emunix.unipatcher.helpers.SocialHelper
 
+@InstallIn(SingletonComponent::class)
 @Module
-class AppModule(private val context: Context) {
+object SocialModule {
 
     @Provides
-    @Singleton
-    fun provideContext(): Context = context
-
+    @Reusable
+    fun provideSocialHelper(
+            @ApplicationContext context: Context
+    ): SocialHelper {
+        return SocialHelper(context)
+    }
 }

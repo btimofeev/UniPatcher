@@ -29,6 +29,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.CreatePatchFragmentBinding
@@ -36,6 +37,7 @@ import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.CreatePatchViewModel
 import timber.log.Timber
 
+@AndroidEntryPoint
 class CreatePatchFragment : ActionFragment(), View.OnClickListener {
 
     private val viewModel by viewModels<CreatePatchViewModel>()

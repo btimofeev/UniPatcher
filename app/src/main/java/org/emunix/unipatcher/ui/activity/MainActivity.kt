@@ -31,12 +31,12 @@ import androidx.fragment.app.commit
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import dagger.Lazy
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
-import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.databinding.ActivityMainBinding
 import org.emunix.unipatcher.helpers.SocialHelper
 import org.emunix.unipatcher.ui.fragment.*
@@ -44,6 +44,7 @@ import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import java.util.*
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     enum class NavigateTo {
@@ -63,8 +64,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        UniPatcher.appComponent.inject(this)
 
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

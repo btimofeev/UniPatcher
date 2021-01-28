@@ -25,19 +25,28 @@ import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 import dagger.Module
 import dagger.Provides
+import dagger.Reusable
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.SettingsImpl
 import javax.inject.Singleton
 
+@InstallIn(SingletonComponent::class)
 @Module
-class PreferenceModule {
+object PreferenceModule {
 
     @Provides
     @Singleton
-    fun provideSharedPreferences(context: Context): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+    fun provideSharedPreferences(
+            @ApplicationContext context: Context
+    ): SharedPreferences {
+        return PreferenceManager.getDefaultSharedPreferences(context)
+    }
 
     @Provides
-    @Singleton
+    @Reusable
     fun provideSettings(prefs: SharedPreferences): Settings = SettingsImpl(prefs)
 
 }
