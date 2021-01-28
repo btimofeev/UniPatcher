@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013-2017, 2019-2020 Boris Timofeev
+Copyright (C) 2013-2017, 2019-2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private val binding get() = _binding
 
     @Inject lateinit var social: Lazy<SocialHelper>
+    @Inject lateinit var settings : Settings
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -141,11 +142,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun showDonateSnackbar() { // don't show snackbar if the user did not patch the file successfully
-        if (!Settings.getPatchingSuccessful()) return
+        if (!settings.getPatchingSuccessful()) return
         // don't show snackbar some time if the user swiped off it before
-        var count = Settings.getDontShowDonateSnackbarCount()
+        var count = settings.getDontShowDonateSnackbarCount()
         if (count != 0) {
-            Settings.setDontShowDonateSnackbarCount(--count)
+            settings.setDontShowDonateSnackbarCount(--count)
             return
         }
         // don't show snackbar each time you open the application
@@ -155,7 +156,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .addCallback(object : Snackbar.Callback() {
                     override fun onDismissed(snackbar: Snackbar, event: Int) {
                         if (event == DISMISS_EVENT_SWIPE) {
-                            Settings.setDontShowDonateSnackbarCount(30)
+                            settings.setDontShowDonateSnackbarCount(30)
                         }
                     }
                 }

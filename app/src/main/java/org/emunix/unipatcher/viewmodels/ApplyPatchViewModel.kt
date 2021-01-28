@@ -32,14 +32,18 @@ import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
+import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.patcher.PatcherFactory
 
 import timber.log.Timber
 import java.io.File
+import javax.inject.Inject
 
 class ApplyPatchViewModel(val app: Application): AndroidViewModel(app) {
+
+    @Inject lateinit var settings: Settings
 
     private var patchUri: Uri? = null
     private var romUri: Uri? = null
@@ -59,6 +63,7 @@ class ApplyPatchViewModel(val app: Application): AndroidViewModel(app) {
     fun getActionIsRunning(): LiveData<Boolean> = actionIsRunning
 
     init {
+        UniPatcher.appComponent.inject(this)
         actionIsRunning.value = false
     }
 
@@ -145,9 +150,9 @@ class ApplyPatchViewModel(val app: Application): AndroidViewModel(app) {
             patchFile = Utils.copyToTempFile(app.applicationContext, patchUri, patchName)
             outputFile = File.createTempFile("output", ".rom", Utils.getTempDir(app.applicationContext))
             val patcher = PatcherFactory.createPatcher(app.applicationContext, patchFile, romFile, outputFile)
-            patcher.apply(Settings.getIgnoreChecksum())
+            patcher.apply(settings.getIgnoreChecksum())
             Utils.copy(outputFile, outputUri, app.applicationContext)
-            Settings.setPatchingSuccessful(true)
+            settings.setPatchingSuccessful(true)
         } finally {
             FileUtils.deleteQuietly(outputFile)
             FileUtils.deleteQuietly(romFile)

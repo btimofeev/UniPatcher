@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017-2020 Boris Timofeev
+ Copyright (c) 2017-2021 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -33,13 +33,18 @@ import kotlinx.coroutines.withContext
 import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
+import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.tools.CreateXDelta3
 import timber.log.Timber
 import java.io.File
+import javax.inject.Inject
 
 class CreatePatchViewModel(val app: Application): AndroidViewModel(app)  {
+
+    @Inject lateinit var settings: Settings
+
     private var sourceUri: Uri? = null
     private var modifiedUri: Uri? = null
     private var patchUri: Uri? = null
@@ -56,6 +61,7 @@ class CreatePatchViewModel(val app: Application): AndroidViewModel(app)  {
     fun getActionIsRunning(): LiveData<Boolean> = actionIsRunning
 
     init {
+        UniPatcher.appComponent.inject(this)
         actionIsRunning.value = false
     }
 
@@ -124,7 +130,7 @@ class CreatePatchViewModel(val app: Application): AndroidViewModel(app)  {
             val patchMaker = CreateXDelta3(app.applicationContext, patchFile, sourceFile, modifiedFile)
             patchMaker.create()
             Utils.copy(patchFile, patchUri, app.applicationContext)
-            Settings.setPatchingSuccessful(true)
+            settings.setPatchingSuccessful(true)
         } finally {
             FileUtils.deleteQuietly(sourceFile)
             FileUtils.deleteQuietly(modifiedFile)

@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020 Boris Timofeev
+ Copyright (c) 2020-2021 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -24,6 +24,9 @@ import android.content.SharedPreferences
 import dagger.Component
 import org.emunix.unipatcher.ui.activity.MainActivity
 import org.emunix.unipatcher.ui.fragment.AboutFragment
+import org.emunix.unipatcher.ui.fragment.ApplyPatchFragment
+import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
+import org.emunix.unipatcher.viewmodels.CreatePatchViewModel
 import javax.inject.Singleton
 
 @Singleton
@@ -32,6 +35,9 @@ interface AppComponent {
 
     fun inject(activity: MainActivity)
     fun inject(fragment: AboutFragment)
+    fun inject(fragment: ApplyPatchFragment)
+    fun inject(viewModel: ApplyPatchViewModel)
+    fun inject(viewModel: CreatePatchViewModel)
 
     fun sharedPreferences(): SharedPreferences
 }
