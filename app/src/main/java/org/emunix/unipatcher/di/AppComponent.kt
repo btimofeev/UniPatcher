@@ -22,6 +22,7 @@ package org.emunix.unipatcher.di
 
 import android.content.SharedPreferences
 import dagger.Component
+import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.ui.activity.MainActivity
 import org.emunix.unipatcher.ui.fragment.AboutFragment
 import org.emunix.unipatcher.ui.fragment.ApplyPatchFragment
@@ -40,4 +41,5 @@ interface AppComponent {
     fun inject(viewModel: CreatePatchViewModel)
 
     fun sharedPreferences(): SharedPreferences
+    fun settings(): Settings
 }

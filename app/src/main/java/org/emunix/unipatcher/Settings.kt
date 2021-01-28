@@ -21,6 +21,7 @@ package org.emunix.unipatcher
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import org.emunix.unipatcher.helpers.ThemeHelper
 import javax.inject.Inject
 
 
@@ -37,6 +38,8 @@ interface Settings {
     fun setDontShowDonateSnackbarCount(count: Int)
 
     fun getDontShowDonateSnackbarCount(): Int
+
+    fun getTheme(): String
 }
 
 
@@ -64,5 +67,9 @@ class SettingsImpl @Inject constructor(private val prefs: SharedPreferences) : S
 
     override fun getDontShowDonateSnackbarCount(): Int {
         return prefs.getInt("dont_show_donate_snackbar", 0)
+    }
+
+    override fun getTheme(): String {
+        return prefs.getString("theme", ThemeHelper.DEFAULT_MODE) ?: ThemeHelper.DEFAULT_MODE
     }
 }
