@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, 2019-2020 Boris Timofeev
+ Copyright (c) 2017, 2019-2021 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -88,10 +88,8 @@ class UniPatcher : Application() {
         }
     }
 
-    fun setTheme() {
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val themePref = sharedPreferences?.getString("theme", ThemeHelper.DEFAULT_MODE) ?: ThemeHelper.DEFAULT_MODE
-        ThemeHelper.applyTheme(themePref)
+    private fun setTheme() {
+        ThemeHelper.applyTheme(appComponent.settings().getTheme())
     }
 
     companion object {
