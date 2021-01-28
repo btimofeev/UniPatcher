@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020 Boris Timofeev
+ Copyright (c) 2020-2021 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -25,6 +25,8 @@ import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 import dagger.Module
 import dagger.Provides
+import org.emunix.unipatcher.Settings
+import org.emunix.unipatcher.SettingsImpl
 import javax.inject.Singleton
 
 @Module
@@ -33,5 +35,9 @@ class PreferenceModule {
     @Provides
     @Singleton
     fun provideSharedPreferences(context: Context): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+
+    @Provides
+    @Singleton
+    fun provideSettings(prefs: SharedPreferences): Settings = SettingsImpl(prefs)
 
 }

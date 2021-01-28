@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014, 2016, 2017, 2019-2020 Boris Timofeev
+Copyright (C) 2014, 2016, 2017, 2019-2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -20,25 +20,29 @@ package org.emunix.unipatcher.ui.fragment
 
 import android.app.Activity
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
+import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.databinding.ApplyPatchFragmentBinding
 import org.emunix.unipatcher.ui.activity.HelpActivity
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
 import timber.log.Timber
+import javax.inject.Inject
 
 class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
+
+    @Inject lateinit var settings: Settings
 
     private val viewModel by viewModels<ApplyPatchViewModel>()
     private val actionIsRunningViewModel by viewModels<ActionIsRunningViewModel>()
@@ -47,6 +51,11 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
     private val binding get() = _binding!!
 
     private var suggestedOutputName: String = "specify_rom_name"
+
+    override fun onAttach(context: Context) {
+        UniPatcher.appComponent.inject(this)
+        super.onAttach(context)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = ApplyPatchFragmentBinding.inflate(inflater, container, false)
@@ -92,7 +101,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
 
     override fun onResume() {
         super.onResume()
-        binding.howToUseAppButton.isVisible = Settings.getShowHelpButton()
+        binding.howToUseAppButton.isVisible = settings.getShowHelpButton()
     }
 
     override fun onClick(view: View) {
