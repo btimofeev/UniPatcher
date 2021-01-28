@@ -27,19 +27,17 @@ import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import androidx.core.content.getSystemService
-import androidx.preference.PreferenceManager
+import dagger.hilt.android.HiltAndroidApp
 import org.acra.ACRA
 import org.acra.annotation.AcraCore
 import org.acra.annotation.AcraMailSender
 import org.acra.annotation.AcraNotification
 import org.acra.data.StringFormat
-import org.emunix.unipatcher.di.AppComponent
-import org.emunix.unipatcher.di.AppModule
-import org.emunix.unipatcher.di.DaggerAppComponent
 import org.emunix.unipatcher.helpers.ThemeHelper
 import timber.log.Timber
+import javax.inject.Inject
 
-
+@HiltAndroidApp
 @AcraCore(stopServicesOnCrash = true,
         reportFormat = StringFormat.KEY_VALUE_LIST)
 @AcraMailSender(mailTo = "unipatcher@gmail.com",
@@ -51,12 +49,10 @@ import timber.log.Timber
         resChannelName = R.string.notification_channel_name)
 class UniPatcher : Application() {
 
+    @Inject lateinit var settings: Settings
+
     override fun onCreate() {
         super.onCreate()
-
-        appComponent = DaggerAppComponent.builder()
-                .appModule(AppModule(this))
-                .build()
 
         initLogger()
         initNotificationChannel()
@@ -89,13 +85,10 @@ class UniPatcher : Application() {
     }
 
     private fun setTheme() {
-        ThemeHelper.applyTheme(appComponent.settings().getTheme())
+        ThemeHelper.applyTheme(settings.getTheme())
     }
 
     companion object {
         const val NOTIFICATION_CHANNEL_ID = "notifications"
-
-        lateinit var appComponent: AppComponent
-        private set
     }
 }

@@ -27,13 +27,13 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
-import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.tools.CreateXDelta3
@@ -41,9 +41,8 @@ import timber.log.Timber
 import java.io.File
 import javax.inject.Inject
 
-class CreatePatchViewModel(val app: Application): AndroidViewModel(app)  {
-
-    @Inject lateinit var settings: Settings
+@HiltViewModel
+class CreatePatchViewModel @Inject constructor(val app: Application, val settings: Settings): AndroidViewModel(app)  {
 
     private var sourceUri: Uri? = null
     private var modifiedUri: Uri? = null
@@ -61,7 +60,6 @@ class CreatePatchViewModel(val app: Application): AndroidViewModel(app)  {
     fun getActionIsRunning(): LiveData<Boolean> = actionIsRunning
 
     init {
-        UniPatcher.appComponent.inject(this)
         actionIsRunning.value = false
     }
 

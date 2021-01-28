@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016, 2020 Boris Timofeev
+Copyright (C) 2016, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -24,13 +24,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import dagger.Lazy
+import dagger.hilt.android.AndroidEntryPoint
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.databinding.FragmentAboutBinding
 import org.emunix.unipatcher.helpers.SocialHelper
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class AboutFragment : Fragment() {
 
     @Inject
@@ -52,7 +53,6 @@ class AboutFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        UniPatcher.appComponent.inject(this)
         binding.versionText.text = getString(R.string.help_activity_about_tab_version, Utils.getAppVersion(requireActivity()))
         binding.sendFeedbackButton.setOnClickListener { social.get().sendFeedback() }
         binding.visitSiteButton.setOnClickListener { social.get().openWebsite() }

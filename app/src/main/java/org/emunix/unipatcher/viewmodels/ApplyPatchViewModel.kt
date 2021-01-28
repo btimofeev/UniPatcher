@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2013-2020 Boris Timofeev
+ Copyright (c) 2013-2021 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -27,12 +27,12 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
-import org.emunix.unipatcher.UniPatcher
 import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.patcher.PatcherFactory
@@ -41,9 +41,8 @@ import timber.log.Timber
 import java.io.File
 import javax.inject.Inject
 
-class ApplyPatchViewModel(val app: Application): AndroidViewModel(app) {
-
-    @Inject lateinit var settings: Settings
+@HiltViewModel
+class ApplyPatchViewModel @Inject constructor(val app: Application, val settings: Settings): AndroidViewModel(app) {
 
     private var patchUri: Uri? = null
     private var romUri: Uri? = null
@@ -63,7 +62,6 @@ class ApplyPatchViewModel(val app: Application): AndroidViewModel(app) {
     fun getActionIsRunning(): LiveData<Boolean> = actionIsRunning
 
     init {
-        UniPatcher.appComponent.inject(this)
         actionIsRunning.value = false
     }
 

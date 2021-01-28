@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2013-2020 Boris Timofeev
+ Copyright (c) 2013-2021 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -28,9 +28,8 @@ import android.widget.Toast
 import androidx.core.net.toUri
 import org.emunix.unipatcher.BuildConfig
 import org.emunix.unipatcher.R
-import javax.inject.Inject
 
-class SocialHelper @Inject constructor(val context: Context) {
+class SocialHelper(val context: Context) {
 
     fun shareApp() {
         val shareIntent = Intent(Intent.ACTION_SEND)

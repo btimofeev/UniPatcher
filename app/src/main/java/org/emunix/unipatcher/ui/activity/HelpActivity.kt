@@ -23,12 +23,13 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.ActivityHelpBinding
 import org.emunix.unipatcher.ui.adapter.HelpStateAdapter
 
+@AndroidEntryPoint
 class HelpActivity : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
