@@ -81,7 +81,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
         })
         viewModel.getActionIsRunning().observe(viewLifecycleOwner, { isRunning ->
             actionIsRunningViewModel.applyPatch(isRunning)
-            binding.progressBar.isInvisible = !isRunning
+            binding.progressBar.isVisible = isRunning
         })
 
         binding.patchCardView.setOnClickListener(this)
