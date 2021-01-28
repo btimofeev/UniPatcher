@@ -26,8 +26,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.core.view.isInvisible
+import androidx.fragment.app.viewModels
 import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.SmdFixChecksumFragmentBinding
@@ -36,13 +36,14 @@ import org.emunix.unipatcher.viewmodels.SmdFixChecksumViewModel
 import timber.log.Timber
 
 class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
-    private lateinit var viewModel: SmdFixChecksumViewModel
-    private lateinit var actionIsRunningViewModel: ActionIsRunningViewModel
+
+    private val viewModel by viewModels<SmdFixChecksumViewModel>()
+    private val actionIsRunningViewModel by viewModels<ActionIsRunningViewModel>()
 
     private var _binding: SmdFixChecksumFragmentBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = SmdFixChecksumFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -56,23 +57,17 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
         super.onActivityCreated(savedInstanceState)
         activity?.setTitle(R.string.nav_smd_fix_checksum)
 
-        actionIsRunningViewModel = ViewModelProvider(requireActivity()).get(ActionIsRunningViewModel::class.java)
-        viewModel = ViewModelProvider(requireActivity()).get(SmdFixChecksumViewModel::class.java)
-        viewModel.getRomName().observe(viewLifecycleOwner, Observer {
+        viewModel.getRomName().observe(viewLifecycleOwner, {
             binding.romNameTextView.text = it
         })
-        viewModel.getMessage().observe(viewLifecycleOwner, Observer { event ->
+        viewModel.getMessage().observe(viewLifecycleOwner, { event ->
             event.getContentIfNotHandled()?.let { message ->
                 Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
             }
         })
-        viewModel.getActionIsRunning().observe(viewLifecycleOwner, Observer { isRunning ->
+        viewModel.getActionIsRunning().observe(viewLifecycleOwner, { isRunning ->
             actionIsRunningViewModel.fixChecksum(isRunning)
-            if(isRunning) {
-                binding.progressBar.visibility = View.VISIBLE
-            } else {
-                binding.progressBar.visibility = View.INVISIBLE
-            }
+            binding.progressBar.isInvisible = !isRunning
         })
 
         binding.romCardView.setOnClickListener(this)
@@ -95,7 +90,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
         Timber.d("onActivityResult($requestCode, $resultCode, $resultData)")
         if (requestCode == Action.SELECT_ROM_FILE && resultCode == Activity.RESULT_OK && resultData != null) {
             resultData.data?.let { uri ->
-                Timber.d(uri.toString())
+                Timber.d("$uri")
                 viewModel.romSelected(uri)
             }
         }
