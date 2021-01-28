@@ -23,8 +23,9 @@ package org.emunix.unipatcher.patcher
 import android.content.Context
 import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
-import java.io.*
-import java.util.*
+import java.io.File
+import java.io.FileInputStream
+import java.io.IOException
 import java.util.zip.CRC32
 
 class BPS(context: Context, patch: File, rom: File, output: File) : Patcher(context, patch, rom, output) {
@@ -190,7 +191,7 @@ class BPS(context: Context, patch: File, rom: File, output: File) : Patcher(cont
         fun checkMagic(f: File): Boolean {
             val buffer = ByteArray(4)
             FileInputStream(f).use { it.read(buffer) }
-            return Arrays.equals(buffer, MAGIC_NUMBER)
+            return buffer.contentEquals(MAGIC_NUMBER)
         }
     }
 }

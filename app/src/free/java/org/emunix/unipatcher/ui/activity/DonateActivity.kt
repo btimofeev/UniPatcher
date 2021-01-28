@@ -22,6 +22,7 @@ package org.emunix.unipatcher.ui.activity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
 import org.emunix.unipatcher.BuildConfig
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.ActivityDonateBinding
@@ -39,13 +40,13 @@ class DonateActivity : AppCompatActivity() {
         supportActionBar?.setTitle(R.string.donate_activity_title)
         var fragment = supportFragmentManager.findFragmentByTag("donationsFragment") as DonationsFragment?
         if (fragment == null) {
-            val ft = supportFragmentManager.beginTransaction()
-            fragment = DonationsFragment.Companion.newInstance(BuildConfig.DEBUG,
-                    false, null, null, null,
-                    true, BuildConfig.PAYPAL_USER, BuildConfig.PAYPAL_CURRENCY_CODE, getString(R.string.donation),
-                    true, BuildConfig.BITCOIN_ADDRESS)
-            ft.replace(R.id.donate_fragment, fragment, "donationsFragment")
-            ft.commit()
+            supportFragmentManager.commit {
+                fragment = DonationsFragment.Companion.newInstance(BuildConfig.DEBUG,
+                        false, null, null, null,
+                        true, BuildConfig.PAYPAL_USER, BuildConfig.PAYPAL_CURRENCY_CODE, getString(R.string.donation),
+                        true, BuildConfig.BITCOIN_ADDRESS)
+                replace(R.id.donate_fragment, fragment!!, "donationsFragment")
+            }
         }
     }
 

@@ -21,13 +21,11 @@ package org.emunix.unipatcher.ui.activity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager.widget.PagerAdapter
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
-import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
+import com.google.android.material.tabs.TabLayoutMediator
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.ActivityHelpBinding
-import org.emunix.unipatcher.ui.adapter.HelpPagerAdapter
+import org.emunix.unipatcher.ui.adapter.HelpStateAdapter
 
 class HelpActivity : AppCompatActivity() {
 
@@ -39,20 +37,16 @@ class HelpActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        binding.tabLayout.addTab(binding.tabLayout.newTab().setText(getString(R.string.help_activity_faq_tab_title)))
-        binding.tabLayout.addTab(binding.tabLayout.newTab().setText(getString(R.string.help_activity_about_tab_title)))
-        binding.tabLayout.tabGravity = TabLayout.GRAVITY_FILL
-        val adapter: PagerAdapter = HelpPagerAdapter(supportFragmentManager, binding.tabLayout.tabCount)
-        binding.pager.adapter = adapter
-        binding.pager.addOnPageChangeListener(TabLayoutOnPageChangeListener(binding.tabLayout))
-        binding.tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                binding.pager.currentItem = tab.position
+        val adapter = HelpStateAdapter(this)
+        binding.viewpager2.adapter = adapter
+        TabLayoutMediator(binding.tabLayout, binding.viewpager2) { tab: TabLayout.Tab, position: Int ->
+            tab.text = when (position) {
+                HelpStateAdapter.POS_FAQ -> getString(R.string.help_activity_faq_tab_title)
+                HelpStateAdapter.POS_ABOUT -> getString(R.string.help_activity_about_tab_title)
+                else -> throw IllegalArgumentException("Unknown position for ViewPager2")
             }
-
-            override fun onTabUnselected(tab: TabLayout.Tab) {}
-            override fun onTabReselected(tab: TabLayout.Tab) {}
-        })
+        }.attach()
+        binding.tabLayout.tabGravity = TabLayout.GRAVITY_FILL
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -8,13 +8,13 @@
             android:entryValues="@array/theme_values"
             android:key="theme"
             android:title="@string/settings_theme"
-            android:icon="@drawable/theme_light_dark_24dp"/>
+            android:icon="@drawable/ic_brightness_medium"/>
         <SwitchPreference
             android:defaultValue="true"
             android:key="show_how_to_use_app_button"
             android:title="@string/settings_show_button_how_to_use_app"
             android:summary="@string/settings_show_button_how_to_use_app_description"
-            android:icon="@drawable/book" />
+            android:icon="@drawable/ic_book" />
 
     </PreferenceCategory>
 
@@ -24,6 +24,6 @@
             android:key="ignore_checksum"
             android:title="@string/settings_ignore_checksum"
             android:summary="@string/settings_ignore_checksum_description"
-            android:icon="@drawable/fingerprint"/>
+            android:icon="@drawable/ic_fingerprint"/>
     </PreferenceCategory>
 </PreferenceScreen>

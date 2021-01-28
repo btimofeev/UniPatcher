@@ -155,7 +155,7 @@ object Utils {
         for (i in bytes.indices) {
             sb.append("%x".format(bytes[i]))
         }
-        return sb.toString()
+        return "$sb"
     }
 
     suspend fun isArchive(path: String): Boolean = withContext(Dispatchers.Default) {
