@@ -93,7 +93,11 @@
     <string name="donation">Donación</string>
     <string name="icon">icono</string>
     <string name="notification_channel_name">Notificaciones</string>
-    <string name="help_feedback_body">Envíame un correo electrónico a unipatcher@gmail.com, escríbeme en inglés o ruso. Si tienes problemas con algún parche adjúntalo al correo y acompáñalo del nombre de la ROM; así ahorraremos tiempo.</string>
+    <string name="help_feedback_body">Discutimos nuevas funcionalidades y respondemos preguntas en las discusiones de GitHub https://github.com/btimofeev/UniPatcher/discussions
+\n
+\nPuede informar un error en el Rastreador de problemas de GitHub https://github.com/btimofeev/UniPatcher/issues
+\n
+\nTambién puede ponerse en contacto con el autor de la aplicación a través del correo electrónico unipatcher@gmail.com. Por favor escribe en ingles. Si tienes problemas con el parche, adjunta el parche a la letra y escribe el nombre de tu ROM, nos ahorrará tiempo.</string>
     <string name="help_feedback_title">Tengo una pregunta, faltan cosas importantes o quiero informar de un error.</string>
     <string name="help_how_to_translate_body">Si quieres ayudar a traducir la aplicación a otro idioma o mejorar la que ya está, puedes hacerlo desde la página de Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">¿Cómo puedo traducir la aplicación\?</string>
@@ -173,8 +177,7 @@
 \n - <b>Turco</b>: Oğuz Ersen
 \n - <b>Ucraniano</b>: Володимир Шевчук
 \n
-\nAyúdanos a traducir la aplicación a tu idioma materno:
-\nhttps://hosted.weblate.org/engage/unipatcher/</string>
+\nAyúdanos a traducir la aplicación a tu idioma materno:https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="nav_snes_add_del_smc_header">Quitar el encabezado SMC (SNES)</string>
     <string name="snes_smc_header_help">Esta función es sólo para ROMs de Super Nintendo.
 \n
