@@ -16,16 +16,16 @@
     <!-- Create patch fragment -->
     <string name="create_patch_fragment_source_file">Archivo original</string>
     <string name="create_patch_fragment_modified_file">Archivo cambiado</string>
-    <string name="create_patch_fragment_patch_file">Archivo de parche</string>
+    <string name="create_patch_fragment_patch_file">Archivo del parche</string>
     <string name="create_patch_fragment_toast_source_not_selected">Todavía no has elegido ningún archivo original</string>
     <string name="create_patch_fragment_toast_modified_not_selected">Todavía no has elegido ningún archivo cambiado</string>
     <string name="snes_smc_header_will_be_removed">Esta ROM tiene un encabezado SMC y se quitará.</string>
     <!-- Info for SMD fix checksum -->
-    <string name="smd_fix_checksum_help">Esta función es sólo para ROMs de Sega Mega Drive (Sega Genesis).
+    <string name="smd_fix_checksum_help">Ten en cuenta que esta función es sólo para ROMs de Sega Mega Drive (Sega Genesis).
 \n
-\nSirve para evitar la conocida «pantalla roja de la muerte» o «red screen of death», en inglés.
+\nRecalcular la suma de comprobación sirve para evitar la conocida y malograda «pantalla roja mortal» o «red screen of death», en inglés.
 \n
-\nTen cuidado, esta función no crea una copia respaldo y sobrescribe la original.</string>
+\nTen cuidado; esta función no crea una copia respaldo y sobrescribe la original.</string>
     <!-- Notifications -->
     <string name="notify_patching_complete">Se ha terminado el parcheo</string>
     <string name="notify_create_patch_complete">Se ha creado el parche</string>
@@ -80,9 +80,9 @@
 \n
 \n</string>
     <!-- Navigation list -->
-    <string name="nav_apply_patch">Aplicar parche</string>
-    <string name="nav_create_patch">Crear parche</string>
-    <string name="nav_smd_fix_checksum">Recalcular la suma de comprobación (SMD)</string>
+    <string name="nav_apply_patch">Aplicar un parche</string>
+    <string name="nav_create_patch">Crear un parche</string>
+    <string name="nav_smd_fix_checksum">Recalcular suma (SMD)</string>
     <string name="nav_settings">Ajustes</string>
     <string name="nav_rate">Calificar esta aplicación</string>
     <string name="nav_donate">Donar</string>
@@ -93,11 +93,11 @@
     <string name="donation">Donación</string>
     <string name="icon">icono</string>
     <string name="notification_channel_name">Notificaciones</string>
-    <string name="help_feedback_body">Discutimos nuevas funcionalidades y respondemos preguntas en las discusiones de GitHub https://github.com/btimofeev/UniPatcher/discussions
+    <string name="help_feedback_body">Conversamos en inglés sobre nuevas funcionalidades y respondemos a cualquier pregunta en el foro de GitHub: https://github.com/btimofeev/UniPatcher/discussions
 \n
-\nPuede informar un error en el Rastreador de problemas de GitHub https://github.com/btimofeev/UniPatcher/issues
+\nPuedes informar de errores en el rastreador de problemas de GitHub: https://github.com/btimofeev/UniPatcher/issues
 \n
-\nTambién puede ponerse en contacto con el autor de la aplicación a través del correo electrónico unipatcher@gmail.com. Por favor escribe en ingles. Si tienes problemas con el parche, adjunta el parche a la letra y escribe el nombre de tu ROM, nos ahorrará tiempo.</string>
+\nTambién puedes ponerte en contacto con el autor a través del correo electrónico unipatcher@gmail.com. Por favor, escribe en inglés. Si tienes problemas con algún parche adjúntalo al correo y acompáñalo del nombre de la ROM original; así ahorraremos tiempo.</string>
     <string name="help_feedback_title">Tengo una pregunta, faltan cosas importantes o quiero informar de un error.</string>
     <string name="help_how_to_translate_body">Si quieres ayudar a traducir la aplicación a otro idioma o mejorar la que ya está, puedes hacerlo desde la página de Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">¿Cómo puedo traducir la aplicación\?</string>
@@ -117,7 +117,7 @@
     <string name="help_ips_no_checksum_title">Aplico el parche IPS y luego el juego no funciona o tiene fallos gráficos. ¿Qué estoy haciendo mal\?</string>
     <string name="help_find_rom_pokemon_emerald_body">La mayoría de los parches del juego están hechos para la ROM «Pokemon - Emerald Version (U) [f1] (Save Type).gba».</string>
     <string name="help_find_rom_pokemon_emerald_title">No puedo encontrar la ROM correcta para el juego «Pokémon Esmeralda».</string>
-    <string name="help_rom_not_compatible_with_patch_body">Este error ocurre si la suma de comprobación del parche no coincide con la calculada en la ROM, lo que significa que el archivo elegido o está corrupto o no es compatible con dicho parche y tendrás que buscar una ROM distinta. Lo normal es que existan varias versiones de un mismo juego (por ejemplo una europea, otra americana y otra japonesa, así como versiones mal volcadas, incompletas o defectuosas)
+    <string name="help_rom_not_compatible_with_patch_body">Este error ocurre si la suma de comprobación del parche no coincide con la calculada en la ROM, lo que significa que el archivo elegido o está dañado o no es compatible con dicho parche y tendrás que buscar una ROM distinta. Lo normal es que existan varias versiones de un mismo juego (por ejemplo una europea, otra americana y otra japonesa, así como versiones mal volcadas, incompletas o defectuosas)
 \n
 \nLos «ROM hackers» suelen adjuntar todas las sumas de comprobación necesarias con el parche (ya sea en la página web o en el archivo LÉEME). Compara los números y mira a ver si coinciden, si no es así entonces tienes el archivo que no es.
 \n
@@ -129,7 +129,7 @@
     <string name="help_archive_should_be_unpacked_title">La aplicación dice algo sobre «descomprimir con un programa externo» tras elegir un archivo.</string>
     <string name="help_how_to_apply_patch_to_rom_title">¿Cómo aplicar un parche a la ROM\?</string>
     <string name="help_why_not_distribute_modified_games_body">Los «hacks» y las traducciones se distribuyen generalmente como parches para reducir el tamaño de la descarga y evitar los problemas legales de autoría y derechos de autor.</string>
-    <string name="help_why_not_distribute_modified_games_title">¿Por qué los ROM hackers no distribuyen directamente los archivos modificados\?</string>
+    <string name="help_why_not_distribute_modified_games_title">¿Por qué los «ROM hackers» no distribuyen directamente los archivos modificados\?</string>
     <string name="help_what_is_a_patch_body">Un parche es un pequeño archivo que solo contiene las diferencias entre la versión original de una ROM y la versión «hackeada» o modificada.
 \n
 \nEl parche es lo único que se distribuye al público general, y así los usuarios que tengan una copia de la ROM original pueden reconstruir el archivo cambiado y jugarlo.</string>
@@ -139,7 +139,7 @@
     <string name="help_what_is_rom_image_body">Una imagen ROM es un archivo binario que contiene una copia volcada del cartucho o disco físico de un videojuego. Un programa «emulador» puede abrir este tipo de archivos y te permite jugar al mismo en dispositivos modernos como tu equipo de escritorio o teléfono, en un fiel reflejo de la experiencia original.</string>
     <string name="help_what_is_rom_image_title">¿Qué es una imagen o archivo ROM\?</string>
     <string name="help_can_i_hack_android_game_body">No. UniPatcher no está diseñado para «hackear» los juegos de Android.</string>
-    <string name="help_can_i_hack_android_game_title">¿Puedo hackear o crackear juegos Android usando esta aplicación\?</string>
+    <string name="help_can_i_hack_android_game_title">¿Puedo «hackear» o «crackear» juegos de Android usando esta aplicación\?</string>
     <string name="help_what_patch_formats_are_supported_body">La aplicación admite parches de tipo IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP y XDelta3.</string>
     <string name="help_what_patch_formats_are_supported_title">¿Qué formatos de parche son compatibles\?</string>
     <string name="help_what_is_unipatcher_body">UniPatcher es una herramienta para Android que parchea o aplica cambios a archivos ROM de varias consolas de videojuegos.</string>
@@ -149,12 +149,12 @@
     <string name="main_activity_double_back_to_exit_message">Vuelve a pulsar el botón de ir hacia atrás para salir, ten en cuenta que puede que interrumpas la operación pendiente</string>
     <string name="about_used_libraries"><b>Bibliotecas en uso:</b>
 \n
-\n - <b>ACRA</b> por ACRA team, licensed under the Apache 2.0 license. https://github.com/ACRA/acra
+\n - <b>ACRA</b> por el equipo de ACRA, licensed under the Apache 2.0 license. https://github.com/ACRA/acra
 \n - <b>Android Donations</b> por SufficientlySecure y penn5, licensed under the Apache 2.0 license. https://github.com/penn5/donations
 \n - <b>Apache Commons IO</b> por The Apache Software Foundation, licensed under the Apache 2.0 license. https://commons.apache.org/proper/commons-io/
 \n - <b>Dagger</b> por The Dagger Authors, licensed under the Apache 2.0 license. https://github.com/google/dagger
 \n - <b>Material design icons</b> by Google, licensed under the Apache 2.0 license. https://github.com/google/material-design-icons
-\n - <b>Material design icons</b> por community, licensed under SIL Open Font License 1.1. https://materialdesignicons.com
+\n - <b>Material design icons</b> creados por los autores de su comunidad, licensed under SIL Open Font License 1.1. https://materialdesignicons.com
 \n - <b>Timber</b> por Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber
 \n - <b>XDelta version 3</b> por Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta</string>
     <string name="help_i_cant_patch_smw_rom_body">Esta ROM contiene un encabezado SMC y casi todos los parches disponibles esperan el otro formato. Puedes quitar dicho encabezado SMC mediante la opción del menú de la izquierda y luego aplicar el parche sobre la ROM resultante.</string>
@@ -177,9 +177,9 @@
 \n - <b>Turco</b>: Oğuz Ersen
 \n - <b>Ucraniano</b>: Володимир Шевчук
 \n
-\nAyúdanos a traducir la aplicación a tu idioma materno:https://hosted.weblate.org/engage/unipatcher/</string>
-    <string name="nav_snes_add_del_smc_header">Quitar el encabezado SMC (SNES)</string>
-    <string name="snes_smc_header_help">Esta función es sólo para ROMs de Super Nintendo.
+\nAyúdanos a traducir la aplicación a tu idioma materno: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="nav_snes_add_del_smc_header">Quitar encabezado SMC (SNES)</string>
+    <string name="snes_smc_header_help">Ten en cuenta que esta función es sólo para ROMs de Super Nintendo.
 \n
 \nAlgunos parches dependen de que la ROM no tenga un encabezado SMC. Por suerte puedes quitarlo con esta herramienta.</string>
     <string name="snes_smc_error_unable_to_get_file_size">Error: no se pudo determinar con certeza el tamaño del archivo</string>
@@ -204,8 +204,8 @@
     <string name="create_patch_fragment_toast_patch_not_selected">Todavía no has elegido la ubicación del parche</string>
     <string name="main_activity_button_how_to_use_app">Cómo funciona la aplicación</string>
     <string name="main_activity_toast_output_not_selected">No has elegido el archivo de salida</string>
-    <string name="main_activity_tap_to_select_where_to_save_rom">toca para elegir dónde guardar la ROM</string>
-    <string name="main_activity_tap_to_select_where_to_save_patch">toca para elegir dónde guardar el parche</string>
-    <string name="main_activity_rom_without_smc_file">Crear archivo ROM sin encabezado</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">toca para elegir dónde guardar la ROM resultante</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">toca para elegir dónde guardar el parche resultante</string>
+    <string name="main_activity_rom_without_smc_file">Archivo ROM resultante, sin encabezado</string>
     <string name="main_activity_rom_with_smc_file">Archivo ROM con encabezado SMC</string>
 </resources>
