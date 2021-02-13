@@ -125,4 +125,15 @@
     <string name="main_activity_toast_output_not_selected">Nessun file di output selezionato</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">Tocca per selezionare dove salvare la ROM</string>
     <string name="main_activity_tap_to_select_where_to_save_patch">Tocca per selezionare dove salvare la patch</string>
+    <string name="notify_snes_delete_smc_header_complete">Intestazione SMC cancellata</string>
+    <string name="notify_error_unable_open_modified_file">Impossibile aprire il file modificato</string>
+    <string name="notify_error_unable_open_source_file">Impossibile aprire il file sorgente</string>
+    <string name="notify_error_xdelta3_internal_error">XDelta3 errore interno</string>
+    <string name="notify_create_patch_complete">Patch creata</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Errore: impossibile determinare la grandezza del file</string>
+    <string name="snes_rom_has_no_smc_header">Questa ROM non ha intestazione SMC. Non c\'è bisogno di cancellare nulla.</string>
+    <string name="main_activity_rom_with_smc_file">File ROM con un\'intestazione SMC</string>
+    <string name="snes_smc_header_help">Questa funzione è solo per le ROM di Super Nintendo.
+\n
+\nAlcune patches richiedono che la ROM non abbia un\'intestazione SMC. Questa funzione ti aiuterà a rimuoverla.</string>
 </resources>
