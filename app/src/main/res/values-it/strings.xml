@@ -113,4 +113,16 @@
     <string name="error_crash_discard_button">Annulla</string>
     <string name="error_crash_send_button">Invia</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">Il file patch non è selezionato</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">Il file modificato non è selezionato</string>
+    <string name="create_patch_fragment_toast_source_not_selected">Il file sorgente non è selezionato</string>
+    <string name="create_patch_fragment_modified_file">File modificato</string>
+    <string name="main_activity_double_back_to_exit_message">Premi di nuovo INDIETRO per uscire. Questo può interrompere tutte le operazioni in corso</string>
+    <string name="create_patch_fragment_source_file">File sorgente</string>
+    <string name="main_activity_button_how_to_use_app">Come usare l\'app</string>
+    <string name="main_activity_donate_snackbar_button">Donare</string>
+    <string name="main_activity_donate_snackbar_text">Supporta lo sviluppo di UNiPatcher con una donazione</string>
+    <string name="main_activity_toast_output_not_selected">Nessun file di output selezionato</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">Tocca per selezionare dove salvare la ROM</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">Tocca per selezionare dove salvare la patch</string>
 </resources>
