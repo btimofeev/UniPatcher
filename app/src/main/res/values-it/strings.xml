@@ -136,4 +136,13 @@
     <string name="snes_smc_header_help">Questa funzione è solo per le ROM di Super Nintendo.
 \n
 \nAlcune patches richiedono che la ROM non abbia un\'intestazione SMC. Questa funzione ti aiuterà a rimuoverla.</string>
+    <string name="notification_channel_name">Notifiche</string>
+    <string name="donation">Donazione</string>
+    <string name="nav_donate">Dona</string>
+    <string name="error_file_picker_app_is_no_installed">Errore: Non ci sono File app installati</string>
+    <string name="help_activity_error_cannot_load_text">Errore: impossibile caricare il testo</string>
+    <string name="settings_ignore_checksum_description">Non interrompere l\'aggiornamento se stai usando la ROM sbagliata. Fa attenzione: Questa opzione può distruggere il tuo gioco.</string>
+    <string name="settings_patching_header">Aggiornando</string>
+    <string name="settings_show_button_how_to_use_app_description">Mostra il pulsante \"Come usare l\'app\" nello schermo principale</string>
+    <string name="settings_show_button_how_to_use_app">Mostra il pulsante aiuto</string>
 </resources>
