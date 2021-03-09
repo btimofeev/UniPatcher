@@ -71,7 +71,11 @@
     <string name="nav_drawer_open">Apri cassetto di navigazione</string>
     <string name="nav_drawer_close">Chiudi cassetto di navigazione</string>
     <string name="icon">icona</string>
-    <string name="help_feedback_body">Contattami all\'indirizzo unipatcher@gmail.com. Per favore, scrivi in inglese o in russo. Se hai qualche problema con il patch, allega la patch all\'e-mail e scrivi il nome della tua ROM, ti farà risparmiare tempo.</string>
+    <string name="help_feedback_body">Discutiamo le funzionalità e rispondiamo alle domande su GitHub Discussions https://github.com/btimofeev/UniPatcher/discussions
+\n
+\nPuoi segnalare un bug al GitHub Issue Tracker https://github.com/btimofeev/UniPatcher/issues
+\n
+\nContattami all\'indirizzo unipatcher@gmail.com. Per favore, scrivi in inglese o in russo. Se hai qualche problema con il patch, allega la patch all\'e-mail e scrivi il nome della tua ROM, ti farà risparmiare tempo.</string>
     <string name="help_feedback_title">Ho una domanda, la richiesta di una funzionalità o la segnalazione di un bug.</string>
     <string name="help_how_to_translate_body">Se ti piacerebbe tradurre l’app in una lingua diversa o migliorare una traduzione esistente, puoi farlo sul Weblate sito https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Come tradurre l’app\?</string>
@@ -145,4 +149,57 @@
     <string name="settings_patching_header">Aggiornando</string>
     <string name="settings_show_button_how_to_use_app_description">Mostra il pulsante \"Come usare l\'app\" nello schermo principale</string>
     <string name="settings_show_button_how_to_use_app">Mostra il pulsante aiuto</string>
+    <string name="about_used_libraries"><b>Librerie utilizzate:</b>
+\n
+\n - <b>ACRA</b> by ACRA team, licensed under the Apache 2.0 license. https://github.com/ACRA/acra
+\n - <b>Android Donations</b> by SufficientlySecure and penn5, licensed under the Apache 2.0 license. https://github.com/penn5/donations
+\n - <b>Apache Commons IO</b> by The Apache Software Foundation, licensed under the Apache 2.0 license. https://commons.apache.org/proper/commons-io/
+\n - <b>Dagger</b> by The Dagger Authors, licensed under the Apache 2.0 license. https://github.com/google/dagger
+\n - <b>Material design icons</b> by Google, licensed under the Apache 2.0 license. https://github.com/google/material-design-icons
+\n - <b>Material design icons</b> by community, licensed under SIL Open Font License 1.1. https://materialdesignicons.com
+\n - <b>Timber</b> by Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber
+\n - <b>XDelta version 3</b> by Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta</string>
+    <string name="about_translators"><b>Traduttori:</b>
+\n
+\n - <b>Cinese</b>: Nabarl Wang, Eric
+\n - <b>Francese</b>: Thibaut Panis, J. Lavoie
+\n - <b>Tedesco</b>: Honigdieb
+\n - <b>Ebreo</b>: Tamer Dabsan
+\n - <b>Italiano</b>: Matteo Sechi, J.Lavoie, A.Mandelli
+\n - <b>Giapponese</b>: Naofumi Fukue
+\n - <b>Coreano</b>: Minseo Lee
+\n - <b>Norvegese Bokmål</b>: Allan Nordhøy
+\n - <b>Polacco</b>: Michal Bychowski, Jarek Karpiel
+\n - <b>Portoghese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n - <b>Porteghese (Brasile)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
+\n - <b>Russo</b>: Борис Тимофеев
+\n - <b>Spagnolo</b>: Carlos Sánchez, Swyter
+\n - <b>Turco</b>: Oğuz Ersen
+\n - <b>Ucraino</b>: Володимир Шевчук
+\n
+\nSe vuoi tradurre la app nella tua lingua, puoi aiutare: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="help_snes_smc_body">Un\'intestazione SMC è composta da 512 bytes che si trovano all\'inizio di alcune immagini ROM SNES. Questi bytes non sono utilizzati, ma spostano la posizione dei dati successivi. Rimuovere un\'intestazione talvolta ha il solo scopo di permettere l\'applicazione di una patch correttamente.</string>
+    <string name="help_snes_smc_title">Perché talvolta è necessario rimuovere le intestazioni SMC dai giochi Super Nintendo\?</string>
+    <string name="help_sega_fix_checksum_body">I giochi della Sega Mega Drive (Genesis) hanno la checksum scritta nella ROM. Se una qualsiasi parte del gioco cambia, non coinciderà più, e quindi non potrà essere lanciato. Ciò che fa questa funzione è calcolare il checksum corretto della modifica e scriverla nella ROM modificata.
+\n
+\n<b>Attenzione:</b> Questa funzione non crea una copia della ROM.</string>
+    <string name="help_ips_no_checksum_body">Le patch al formato IPS non contengono una checksum, quindi la patch si applicherà a qualsiasi file ROM (anche sbagliato). In questo caso, dovrai eventualmente cercare un file ROM differente.</string>
+    <string name="help_i_cant_patch_smw_rom_body">Questa ROM contiene un\'intestazione SMC, mentre la maggior parte delle patch di questo gioco richiedono una ROM senza intestazione. Puoi rimuovere l\'intestazione SMC selezionando la voce appropriata nel menu a sinistra, e successivamente applicare la patch alla ROM risultante.</string>
+    <string name="help_i_cant_patch_smw_rom_title">Non posso patchare “Super Mario World (U) [!].smc”</string>
+    <string name="help_rom_not_compatible_with_patch_body">La app mostrerà questo errore se il checksum salvato nella patch non coincide con il checksum della ROM. Ciò significa che il file ROM non è compatibile con la patch. Devi quindi scegliere un differente file ROM. Normalmente sono disponibili molte ROM per ogni gioco (ad esempio le versioni per Europa, USA, Giappone, copie buone e non buone, ecc.).
+\n
+\nGli hacker delle ROM spesso pubblicano i checksum che accompagnano le ROM (su una pagina web o un file README). Confrontalo con quello che hai. Se i checksum coincidono, hai la ROM per la quale la patch è stata scritta, altrimenti devi procurarti una ROM differente.
+\n
+\nNel caso peggiore, se non puoi trovare la versione corretta della ROM, puoi impostare l\'opzione \"Ignora il checksum\" nelle impostazioni. Ma ricorda che in questo caso il gioco potrebbe non essere giocabile o presentare dei problemi.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">Devi selezione un file ROM, una patch e scegliere quale file salvare, poi cliccare sul pulsante rosso. I file vengono selezionati con la normale applicazione per la gestione file (o attraverso uno dei file manager che hai installato). L\'applicazione mostrerà un messaggio quando il file è stato patchato. Non chiudere l\'applicazione fino a che il file non è stato patchato.</string>
+    <string name="help_what_is_rom_image_body">Un immagine ROM è un file che contiene una copia della cartuccia del videogioco. Attraverso il processo di emulazione, puoi copiare il file, e lanciarlo in un software che si chiama \"emulatore\", per eseguire il gioco sul tuo computer o smartphone.</string>
+    <string name="nav_snes_add_del_smc_header">Rimuovi le intestazioni SMC (SNES)</string>
+    <string name="nav_create_patch">Crea patch</string>
+    <string name="error_crash_message">Spiacenti, l\'applicazione si è schiantata. Manda un rapporto agli sviluppatori.</string>
+    <string name="error_crash_title">Errore</string>
+    <string name="settings_ignore_checksum">Ignora checksums</string>
+    <string name="settings_theme_name_follow_system">Usa i default di sistema</string>
+    <string name="settings_theme_name_auto_battery">Impostato dal risparmio batteria</string>
+    <string name="notify_error_unable_open_patch_file">Impossibile aprire file patch</string>
+    <string name="main_activity_rom_without_smc_file">Esporta file ROM senza intestazioni</string>
 </resources>
