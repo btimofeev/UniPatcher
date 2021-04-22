@@ -97,7 +97,7 @@
     <string name="help_additional_features_title">В UniPatcher’і є хоч якісь додаткові функції\?</string>
     <string name="help_ecm_image_body">ECM це формат стискання даних створений спеціально для образів дисків. Програма ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver уміє розпаковувати такий формат.</string>
     <string name="help_ecm_image_title">Що можна зробити із файлом у форматі .ECM\?</string>
-    <string name="help_ips_no_checksum_body">IPS format patches do not contain a checksum. Therefore, the patch will apply to any (even wrong) ROM file. In this case, you need to look for another ROM file.</string>
+    <string name="help_ips_no_checksum_body">Патчі в форматі IPS не містять контрольної суми. Тому, такий патч накладеться на будь-який (навіть непідходящий) ROM файл. В цьому випадку потрібно використовувати ROM іншого регіону.</string>
     <string name="help_ips_no_checksum_title">Я застосовую патч у форматі IPS до гри а після цього гра не працює/містить графічні артефакти. Що я роблю не правильно\?</string>
     <string name="help_find_rom_pokemon_emerald_body">Більшість патчів цієї гри працюють із ROM’ом “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
     <string name="help_find_rom_pokemon_emerald_title">Не можу підібрати ROM для гри “Pokémon Emerald”.</string>
