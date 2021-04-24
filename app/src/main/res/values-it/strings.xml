@@ -14,11 +14,15 @@
     <string name="create_patch_fragment_patch_file">File patch</string>
     <string name="snes_smc_header_will_be_removed">Questa ROM ha l\'intestazione SMC. Verrà rimossa.</string>
     <!-- Info for SMD fix checksum -->
-    <string name="smd_fix_checksum_help">Questa caratteristica è solo per le ROM del Sega Mega Drive (Sega Genesis).\n\nlt risolve \"lo schermo rosso della morte\".\n\nAttenzione: questa funzione non crea un backup.</string>
+    <string name="smd_fix_checksum_help">Questa caratteristica riguarda solo le ROM del Sega Mega Drive (Sega Genesis).
+\n
+\nRisolve \"lo schermo rosso della morte\".
+\n
+\nAttenzione: questa funzione non crea un backup.</string>
     <!-- Notifications -->
     <string name="notify_patching_complete">Patch completato</string>
     <string name="notify_error">Errore</string>
-    <string name="notify_error_could_not_copy_file">Non si può copiare il file</string>
+    <string name="notify_error_could_not_copy_file">Impossibile copiare il file</string>
     <string name="notify_error_file_not_found">File non trovato</string>
     <string name="notify_error_not_enough_space">Spazio non sufficiente sul disco</string>
     <string name="notify_error_not_ips_patch">Patch IPS non valida</string>
@@ -52,12 +56,12 @@
     <string name="help_activity_faq_tab_title">FAQ</string>
     <string name="help_activity_about_tab_title">Informazioni</string>
     <string name="help_activity_about_tab_version">Versione %1$s</string>
-    <string name="help_activity_about_tab_license">Licensa: GNU GPLv3</string>
+    <string name="help_activity_about_tab_license">Licenza: GNU GPLv3</string>
     <string name="help_activity_action_send_feedback">Invia un commento</string>
     <string name="help_activity_action_visit_site">Visita il sito web</string>
     <string name="help_activity_action_changelog">Registro delle modifiche</string>
-    <string name="send_feedback_dialog_title">Invia e-mail</string>
-    <string name="send_feedback_error_no_email_apps">Non ci sono clienti di posta elettronica installati</string>
+    <string name="send_feedback_dialog_title">Invia un\'e-mail</string>
+    <string name="send_feedback_error_no_email_apps">Non ci sono client di posta elettronica installati</string>
     <string name="share_dialog_title">Condividi UniPatcher</string>
     <string name="share_text">Scarica il miglior patcher di ROM per Android. Supporta i formati IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.
 \n
@@ -76,45 +80,45 @@
 \n
 \nPuoi segnalare un bug al GitHub Issue Tracker https://github.com/btimofeev/UniPatcher/issues
 \n
-\nContattami all\'indirizzo unipatcher@gmail.com. Per favore, scrivi in inglese o in russo. Se hai qualche problema con il patch, allega la patch all\'e-mail e scrivi il nome della tua ROM, ti farà risparmiare tempo.</string>
-    <string name="help_feedback_title">Ho una domanda, la richiesta di una funzionalità o la segnalazione di un bug.</string>
-    <string name="help_how_to_translate_body">Se ti piacerebbe tradurre l’app in una lingua diversa o migliorare una traduzione esistente, puoi farlo sul Weblate sito https://hosted.weblate.org/engage/unipatcher/</string>
-    <string name="help_how_to_translate_title">Come tradurre l’app\?</string>
+\nContattami all\'indirizzo unipatcher@gmail.com. Per favore, scrivi in inglese o in russo. Se hai qualche problema con le patch, allega la patch all\'e-mail e scrivi il nome della tua ROM, ti farà risparmiare tempo.</string>
+    <string name="help_feedback_title">Ho una domanda, una richiesta di una funzionalità o la segnalazione di un bug.</string>
+    <string name="help_how_to_translate_body">Se ti piacerebbe tradurre l\'app in una lingua diversa o migliorare una traduzione già esistente, puoi farlo sul sito Weblate https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="help_how_to_translate_title">Come posso tradurre l’app\?</string>
     <string name="help_sega_fix_checksum_title">Perchè devo risolvere il checksum per i giochi del Sega Mega Drive\?</string>
     <string name="help_additional_features_body">Si. UniPatcher può:
 \n
-\n- Create XDelta3 patches.
-\n- Risolvere checksum per un gioco Sega Mega Drive / Sega Genesis.
-\n- Remove SMC header in Super Nintendo games.</string>
-    <string name="help_additional_features_title">Ha UniPatcher qualche funzione aggiuntiva\?</string>
-    <string name="help_ecm_image_body">ECM è un formato di compressione progettato specificamente per i dischi immagine. Puoi decomprimere il file usando il programma ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+\n- Creare patch XDelta3.
+\n- Risolvere checksum per i giochi Sega Mega Drive / Sega Genesis.
+\n- Rimuovere l\'intestazione SMC nei giochi per Super Nintendo.</string>
+    <string name="help_additional_features_title">UniPatcher ha qualche funzione aggiuntiva\?</string>
+    <string name="help_ecm_image_body">ECM è un formato di compressione progettato specificamente per le immagini disco. Puoi decomprimere il file usando il programma ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_ecm_image_title">Cosa posso fare con un file .ECM\?</string>
     <string name="help_ips_no_checksum_title">Io applico la patch IPS e poi il gioco non funziona / contiene difetti grafici. Cosa sto sbagliando\?</string>
-    <string name="help_find_rom_pokemon_emerald_body">La maggior parte del gioco funziona con la ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
-    <string name="help_find_rom_pokemon_emerald_title">Non trovo la ROM corretta del gioco “Pokémon Emerald”.</string>
+    <string name="help_find_rom_pokemon_emerald_body">La maggior parte delle patch del gioco funzionano con la ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
+    <string name="help_find_rom_pokemon_emerald_title">Non trovo la ROM corretta del gioco “Pokémon Smeraldo”.</string>
     <string name="help_rom_not_compatible_with_patch_title">L’app mostra l’errore: “Questa ROM non è compatibile con la patch”.</string>
     <string name="help_archive_should_be_unpacked_body">Il file che hai selezionato è un archivio. L’archivio contiene le cartelle e i file in un file compresso.
 \n
-\nCurrently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
-    <string name="help_archive_should_be_unpacked_title">L’app mostra un messaggio dopo la selezione del file: “L’archivio dovrebbe essere spacchettato in un programma esterno”.</string>
+\nAl momento, UniPatcher non può ancora estrarre i file compressi, e perciò avrai bisogno di decomprimerlo con un altro programma. Consiglio il programma gratuito ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="help_archive_should_be_unpacked_title">L’app mostra un messaggio dopo la selezione del file: “L’archivio dovrebbe essere estratto in un programma esterno”.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Come si applica una patch ad una ROM\?</string>
-    <string name="help_why_not_distribute_modified_games_body">Gli hack e le traduzioni sono generalmente distribuiti come patch per ridurre la dimensione del download ed evitare problemi di copyright.</string>
-    <string name="help_why_not_distribute_modified_games_title">Perchè gli hacker di ROM non distribuiscono i giochi modificati\?</string>
+    <string name="help_why_not_distribute_modified_games_body">Le hack e le traduzioni sono generalmente distribuiti come patch per ridurre la dimensione del download ed evitare problemi di copyright.</string>
+    <string name="help_why_not_distribute_modified_games_title">Perchè gli hacker delle ROM non distribuiscono i giochi modificati\?</string>
     <string name="help_what_is_a_patch_body">Una patch è un file che contiene le differenze tra la versione originale della ROM e la versione hackerata.
 \n
-\nLa patch è distribuita, e gli utenti applicazione la patch ad una copia della ROM originale, che produce una versione avviabile dell’hack.</string>
-    <string name="help_what_is_a_patch_title">Cosa è una patch\?</string>
-    <string name="help_what_is_rom_hacking_body">L’hackeraggio di una ROM è la modifica dei dati in una immagine ROM. Questo può esprimersi come l’alterazione grafica, il cambiamento dei livelli, il ritocco del fattore di difficoltà, o anche la traduzione in un linguaggio per cui il gioco non è stato reso disponibile in origine.</string>
-    <string name="help_what_is_rom_hacking_title">Cosa è l’hackeraggio di una ROM\?</string>
-    <string name="help_what_is_rom_image_title">Cosa è una immagine ROM\?</string>
-    <string name="help_can_i_hack_android_game_body">No. UniPatcher non è progettato per hackerare i giochi di Android.</string>
-    <string name="help_can_i_hack_android_game_title">Posso hackerare o crackare i giochi di Android con questa app\?</string>
+\nLa patch è distribuita, e gli utenti applicano la patch ad una copia della ROM originale, che produce una versione avviabile dell’hack.</string>
+    <string name="help_what_is_a_patch_title">Cos\'è una patch\?</string>
+    <string name="help_what_is_rom_hacking_body">Il ROM Hacking è la modifica dei dati in una ROM. Questo può assumere la forma di alterazione grafica, il cambiamento dei livelli, il ritocco del fattore di difficoltà, o anche la traduzione in una lingua per cui il gioco non è stato reso disponibile in origine.</string>
+    <string name="help_what_is_rom_hacking_title">Cos\'è il ROM Hacking\?</string>
+    <string name="help_what_is_rom_image_title">Cos\'è una ROM\?</string>
+    <string name="help_can_i_hack_android_game_body">No. UniPatcher non è progettato per hackerare i giochi per Android.</string>
+    <string name="help_can_i_hack_android_game_title">Posso hackerare o crackare i giochi per Android con questa app\?</string>
     <string name="help_what_patch_formats_are_supported_body">L’app supporta le patch IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.</string>
     <string name="help_what_patch_formats_are_supported_title">Quali formati di patch sono supportati\?</string>
     <string name="help_what_is_unipatcher_body">UniPatcher è uno strumento per Android per applicare delle patch alle ROM di varie console per videogiochi.</string>
-    <string name="help_what_is_unipatcher_title">Cosa è UniPatcher\?</string>
+    <string name="help_what_is_unipatcher_title">Cos\'è UniPatcher\?</string>
     <string name="help_title">Domande Frequenti:</string>
-    <string name="donate_activity_title">Dona</string>
+    <string name="donate_activity_title">Fai una donazione</string>
     <string name="error_crash_discard_button">Annulla</string>
     <string name="error_crash_send_button">Invia</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
@@ -126,28 +130,28 @@
     <string name="create_patch_fragment_source_file">File sorgente</string>
     <string name="main_activity_button_how_to_use_app">Come usare l\'app</string>
     <string name="main_activity_donate_snackbar_button">Donare</string>
-    <string name="main_activity_donate_snackbar_text">Supporta lo sviluppo di UNiPatcher con una donazione</string>
+    <string name="main_activity_donate_snackbar_text">Supporta lo sviluppo di UniPatcher con una donazione</string>
     <string name="main_activity_toast_output_not_selected">Nessun file di output selezionato</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">Tocca per selezionare dove salvare la ROM</string>
     <string name="main_activity_tap_to_select_where_to_save_patch">Tocca per selezionare dove salvare la patch</string>
     <string name="notify_snes_delete_smc_header_complete">Intestazione SMC cancellata</string>
     <string name="notify_error_unable_open_modified_file">Impossibile aprire il file modificato</string>
     <string name="notify_error_unable_open_source_file">Impossibile aprire il file sorgente</string>
-    <string name="notify_error_xdelta3_internal_error">XDelta3 errore interno</string>
+    <string name="notify_error_xdelta3_internal_error">Errore interno XDelta3</string>
     <string name="notify_create_patch_complete">Patch creata</string>
     <string name="snes_smc_error_unable_to_get_file_size">Errore: impossibile determinare la grandezza del file</string>
     <string name="snes_rom_has_no_smc_header">Questa ROM non ha intestazione SMC. Non c\'è bisogno di cancellare nulla.</string>
     <string name="main_activity_rom_with_smc_file">File ROM con un\'intestazione SMC</string>
-    <string name="snes_smc_header_help">Questa funzione è solo per le ROM di Super Nintendo.
+    <string name="snes_smc_header_help">Questa funzione riguarda solo le ROM per Super Nintendo.
 \n
-\nAlcune patches richiedono che la ROM non abbia un\'intestazione SMC. Questa funzione ti aiuterà a rimuoverla.</string>
+\nAlcune patch richiedono che la ROM non abbia un\'intestazione SMC. Questa funzione ti aiuterà a rimuoverla.</string>
     <string name="notification_channel_name">Notifiche</string>
     <string name="donation">Donazione</string>
-    <string name="nav_donate">Dona</string>
+    <string name="nav_donate">Fai una donazione</string>
     <string name="error_file_picker_app_is_no_installed">Errore: Non ci sono File app installati</string>
     <string name="help_activity_error_cannot_load_text">Errore: impossibile caricare il testo</string>
-    <string name="settings_ignore_checksum_description">Non interrompere l\'aggiornamento se stai usando la ROM sbagliata. Fa attenzione: Questa opzione può distruggere il tuo gioco.</string>
-    <string name="settings_patching_header">Aggiornando</string>
+    <string name="settings_ignore_checksum_description">Non interrompere il patching se stai usando la ROM sbagliata. Fa attenzione: Questa opzione può distruggere il tuo gioco.</string>
+    <string name="settings_patching_header">Patch in corso</string>
     <string name="settings_show_button_how_to_use_app_description">Mostra il pulsante \"Come usare l\'app\" nello schermo principale</string>
     <string name="settings_show_button_how_to_use_app">Mostra il pulsante aiuto</string>
     <string name="about_used_libraries"><b>Librerie utilizzate:</b>
@@ -178,28 +182,28 @@
 \n - <b>Turco</b>: Oğuz Ersen
 \n - <b>Ucraino</b>: Володимир Шевчук
 \n
-\nSe vuoi tradurre la app nella tua lingua, puoi aiutare: https://hosted.weblate.org/engage/unipatcher/</string>
+\nSe vuoi tradurre l\'app nella tua lingua, puoi aiutare: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_snes_smc_body">Un\'intestazione SMC è composta da 512 bytes che si trovano all\'inizio di alcune immagini ROM SNES. Questi bytes non sono utilizzati, ma spostano la posizione dei dati successivi. Rimuovere un\'intestazione talvolta ha il solo scopo di permettere l\'applicazione di una patch correttamente.</string>
     <string name="help_snes_smc_title">Perché talvolta è necessario rimuovere le intestazioni SMC dai giochi Super Nintendo\?</string>
-    <string name="help_sega_fix_checksum_body">I giochi della Sega Mega Drive (Genesis) hanno la checksum scritta nella ROM. Se una qualsiasi parte del gioco cambia, non coinciderà più, e quindi non potrà essere lanciato. Ciò che fa questa funzione è calcolare il checksum corretto della modifica e scriverla nella ROM modificata.
+    <string name="help_sega_fix_checksum_body">I giochi del Sega Mega Drive (Genesis) hanno la checksum scritta nella ROM. Se una qualsiasi parte del gioco cambia, non coinciderà più, e quindi non potrà essere lanciato. Ciò che fa questa funzione è calcolare il checksum corretto della modifica e scriverla nella ROM modificata.
 \n
 \n<b>Attenzione:</b> Questa funzione non crea una copia della ROM.</string>
     <string name="help_ips_no_checksum_body">Le patch al formato IPS non contengono una checksum, quindi la patch si applicherà a qualsiasi file ROM (anche sbagliato). In questo caso, dovrai eventualmente cercare un file ROM differente.</string>
     <string name="help_i_cant_patch_smw_rom_body">Questa ROM contiene un\'intestazione SMC, mentre la maggior parte delle patch di questo gioco richiedono una ROM senza intestazione. Puoi rimuovere l\'intestazione SMC selezionando la voce appropriata nel menu a sinistra, e successivamente applicare la patch alla ROM risultante.</string>
     <string name="help_i_cant_patch_smw_rom_title">Non posso patchare “Super Mario World (U) [!].smc”</string>
-    <string name="help_rom_not_compatible_with_patch_body">La app mostrerà questo errore se il checksum salvato nella patch non coincide con il checksum della ROM. Ciò significa che il file ROM non è compatibile con la patch. Devi quindi scegliere un differente file ROM. Normalmente sono disponibili molte ROM per ogni gioco (ad esempio le versioni per Europa, USA, Giappone, copie buone e non buone, ecc.).
+    <string name="help_rom_not_compatible_with_patch_body">L\'app mostrerà questo errore se il checksum salvato nella patch non coincide con il checksum della ROM. Ciò significa che il file ROM non è compatibile con la patch. Devi quindi scegliere un differente file ROM. Normalmente sono disponibili molte ROM per ogni gioco (ad esempio le versioni per Europa, USA, Giappone, dump buoni e dump pessimi, ecc.).
 \n
-\nGli hacker delle ROM spesso pubblicano i checksum che accompagnano le ROM (su una pagina web o un file README). Confrontalo con quello che hai. Se i checksum coincidono, hai la ROM per la quale la patch è stata scritta, altrimenti devi procurarti una ROM differente.
+\nGli hacker delle ROM spesso pubblicano i checksum che accompagnano le ROM (su una pagina web o tramite un file README). Confrontalo con quello che hai. Se i checksum coincidono, hai la ROM per la quale la patch è stata scritta, altrimenti devi procurarti una ROM differente.
 \n
 \nNel caso peggiore, se non puoi trovare la versione corretta della ROM, puoi impostare l\'opzione \"Ignora il checksum\" nelle impostazioni. Ma ricorda che in questo caso il gioco potrebbe non essere giocabile o presentare dei problemi.</string>
     <string name="help_how_to_apply_patch_to_rom_body">Devi selezione un file ROM, una patch e scegliere quale file salvare, poi cliccare sul pulsante rosso. I file vengono selezionati con la normale applicazione per la gestione file (o attraverso uno dei file manager che hai installato). L\'applicazione mostrerà un messaggio quando il file è stato patchato. Non chiudere l\'applicazione fino a che il file non è stato patchato.</string>
-    <string name="help_what_is_rom_image_body">Un immagine ROM è un file che contiene una copia della cartuccia del videogioco. Attraverso il processo di emulazione, puoi copiare il file, e lanciarlo in un software che si chiama \"emulatore\", per eseguire il gioco sul tuo computer o smartphone.</string>
+    <string name="help_what_is_rom_image_body">Una ROM è un file che contiene una copia della cartuccia del videogioco. Attraverso il processo di emulazione, puoi copiare il file, e avviarlo in un software che si chiama \"emulatore\", per eseguire il gioco sul tuo computer o smartphone.</string>
     <string name="nav_snes_add_del_smc_header">Rimuovi le intestazioni SMC (SNES)</string>
     <string name="nav_create_patch">Crea patch</string>
-    <string name="error_crash_message">Spiacenti, l\'applicazione si è schiantata. Manda un rapporto agli sviluppatori.</string>
+    <string name="error_crash_message">Spiacenti, l\'applicazione si è bloccata. Si prega di inviare un report agli sviluppatori.</string>
     <string name="error_crash_title">Errore</string>
     <string name="settings_ignore_checksum">Ignora checksums</string>
-    <string name="settings_theme_name_follow_system">Usa i default di sistema</string>
+    <string name="settings_theme_name_follow_system">Usa i temi default di sistema</string>
     <string name="settings_theme_name_auto_battery">Impostato dal risparmio batteria</string>
     <string name="notify_error_unable_open_patch_file">Impossibile aprire file patch</string>
     <string name="main_activity_rom_without_smc_file">Esporta file ROM senza intestazioni</string>
