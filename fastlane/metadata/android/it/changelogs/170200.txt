@@ -1,0 +1,6 @@
+- Aggiunta lingua ebraica e tedesca (grazie a Tamer Dabsan e Honigdieb)
+- Traduzioni finite in spagnolo e portoghese (grazie a Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes)
+- Molte altre traduzioni aggiornate (grazie a tutti quelli coinvolti)
+- Risolto un problema per cui alcuni file non potevano essere selezionati
+- Ora puoi suggerire idee o fare delle domande sulla pagina
+https://github.com/btimofeev/UniPatcher/discussions
