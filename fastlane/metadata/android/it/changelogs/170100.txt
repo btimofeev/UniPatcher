@@ -1,0 +1,4 @@
+- Le operazioni sui file vengono eseguite in un'applicazione aperta, e non in un servizio in background come prima.
+- Il lavoro completato viene notificato come messaggio pop-up, non nell'area di notifica.
+- Aggiunta lingua turca (grazie a Oğuz Ersen)
+- Le traduzioni sono ora gestite su https://hosted.weblate.org/engage/unipatcher/
