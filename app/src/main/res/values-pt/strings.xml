@@ -87,7 +87,11 @@
     <string name="donation">Doação</string>
     <string name="icon">ícone</string>
     <string name="notification_channel_name">Notificações</string>
-    <string name="help_feedback_body">Me contate pelo e-mail unipatcher@gmail.com. Por favor escreva em Inglês ou Russo se você tem problemas com patcheamento, anexe o patch no e-mail e escreva o nome da sua ROM, isso poupará nosso tempo.</string>
+    <string name="help_feedback_body">Discutimos novas funcionalidades e respondemos a perguntas sobre as Discussões do GitHub https://github.com/btimofeev/UniPatcher/discussions
+\n
+\n Pode reportar um bug no GitHub Issue Tracker https://github.com/btimofeev/UniPatcher/issues
+\n
+\n Também pode contactar o autor da aplicação através do e-mail unipatcher@gmail.com. Por favor, escreva em inglês. Se tiver problemas com o patch, anexe o patch à carta e escreva o nome da sua ROM, isso economizará o nosso tempo.</string>
     <string name="help_feedback_title">Tenho uma pergunta, um requerimento de função ou uma denúncia de bug.</string>
     <string name="help_how_to_translate_body">Se você gostaria de traduzir a app para outro idioma ou melhorar uma tradução existente, você pode fazer isso no site Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Como traduzir o app\?</string>
@@ -141,22 +145,25 @@
 \n - <b>Ícones do Material Design</b> pela comunidade, licençiado sobe a licença SIL Open Font 1.1. https://materialdesignicons.com
 \n - <b>Timber</b> por Jake Wharton, licençiado sob a licença Apache 2.0. https://github.com/JakeWharton/timber
 \n - <b>XDelta versão 3</b> por Joshua MacDonald, licençiado sob a licença Apache 2.0. https://github.com/jmacd/xdelta</string>
-    <string name="about_translators"><b>Translators:</b>
+    <string name="about_translators"><b>Tradutores:</b>
 \n
-\n - <b>Chinese</b>: Nabarl Wang
-\n - <b>French</b>: Thibaut Panis
-\n - <b>Italian</b>: Matteo Sechi
-\n - <b>Japanese</b>: Naofumi Fukue
-\n - <b>Korean</b>: Minseo Lee
-\n - <b>Norwegian Bokmål</b>: Allan Nordhøy
-\n - <b>Polish</b>: Michal Bychowski
-\n - <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin Silc
-\n - <b>Russian</b>: Борис Тимофеев
-\n - <b>Spanish</b>: Carlos Sánchez
-\n - <b>Turkish</b>: Oğuz Ersen
-\n - <b>Ukrainian</b>: Володимир Шевчук
+\n - <b>Chinês</b>: Nabarl Wang, Eric
+\n - <b> Francês</b>: Thibaut Panis, J. Lavoie
+\n - <b>Alemão</b>: Honigdieb
+\n - <b>Hebraico</b>: Tamer Dabsan
+\n - <b>Italiano</b>: Matteo Sechi, J.Lavoie
+\n - <b>Japonês</b>: Naofumi Fukue
+\n - <b> Coreano</b>: Minseo Lee
+\n - <b>Bokmål norueguês</b>: Allan Nordhøy
+\n - <b>Polonês</b>: Michal Bychowski, Jarek Karpiel
+\n - <b>Português</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n - <b>Português (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
+\n - <b>Russo</b>: Борис Тимофеев
+\n - <b>Espanhol</b>: Carlos Sánchez, Swyter
+\n - <b> Turco</b>: Oğuz Ersen
+\n - <b>Ucraniano</b>: Володимир Шевчук
 \n
-\nAjude a traduzir a aplicação em outro idioma: https://hosted.weblate.org/engage/unipatcher/</string>
+\nAjude a traduzir a app para o seu idioma: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_snes_smc_body">Um cabeçalho SMC são 512 bytes encontrados no início de algumas imagems ROM do SNES. Esses byte não têm propósito, mas, eles mudam a localização dos dados restante. Remover um cabeçalho é, algumas vezes, usado para o propósito de aplicar corretamente um remendo.</string>
     <string name="help_ips_no_checksum_body">Remendos de formato IPS não contém uma soma de verificação. Além do mais, o remendo irá aplicar qualquer (mesmo errado) ficheiro ROM. Neste caso, precisa procurar outro ficheiro ROM.</string>
     <string name="help_i_cant_patch_smw_rom_body">Este ROM contém um cabeçalho SMC, enquanto a maioria dos remendos para este jogo pedem ao ROM para não ter este cabeçalho. Você pode remover cabeçalho SMC selecionando o item apropriado no menu à esquerda, e então aplicar o remendo ao ROM resultante.</string>
