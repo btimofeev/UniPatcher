@@ -1,0 +1,6 @@
+- Adicionado hebraico (graças a Tamer Dabsan)
+- Adicionado alemão (graças a Honigdieb)
+- Terminadas traduções para espanhol e português (graças a Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes)
+- Muitas mais traduções atualizadas (graças a todos envolvidos)
+- Corrigido erro onde alguns ficheiros não podiam ser selecionados
+- Agora pode sugerir uma ideia de nova função ou fazer uma pergunta na página https://github.com/btimofeev/UniPatcher/discussions
