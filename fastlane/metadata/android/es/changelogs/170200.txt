@@ -1,0 +1,3 @@
+Agregado el idioma hebreo (gracias a Tamer Dabsan)
+Agregado el idioma aleman(gracias a Honigdieb)
+Finalizado la traducción a español y portugués (gracias a Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes)
