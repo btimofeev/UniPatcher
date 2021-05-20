@@ -21,6 +21,7 @@ package org.emunix.unipatcher.ui.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import org.emunix.unipatcher.R
 import org.emunix.unipatcher.ui.fragment.AboutFragment
 import org.emunix.unipatcher.ui.fragment.FaqFragment
 
@@ -41,5 +42,13 @@ class HelpStateAdapter(fragmentActivity: FragmentActivity?) : FragmentStateAdapt
 
     override fun getItemCount(): Int {
         return TOTAL_COUNT
+    }
+
+    fun getPageTitle(position: Int): Int {
+        return when (position) {
+            POS_FAQ -> R.string.help_activity_faq_tab_title
+            POS_ABOUT -> R.string.help_activity_about_tab_title
+            else -> throw IllegalArgumentException("Unknown position for ViewPager2")
+        }
     }
 }

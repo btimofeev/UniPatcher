@@ -24,7 +24,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
-import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.ActivityHelpBinding
 import org.emunix.unipatcher.ui.adapter.HelpStateAdapter
 
@@ -40,12 +39,8 @@ class HelpActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val adapter = HelpStateAdapter(this)
         binding.viewpager2.adapter = adapter
-        TabLayoutMediator(binding.tabLayout, binding.viewpager2) { tab: TabLayout.Tab, position: Int ->
-            tab.text = when (position) {
-                HelpStateAdapter.POS_FAQ -> getString(R.string.help_activity_faq_tab_title)
-                HelpStateAdapter.POS_ABOUT -> getString(R.string.help_activity_about_tab_title)
-                else -> throw IllegalArgumentException("Unknown position for ViewPager2")
-            }
+        TabLayoutMediator(binding.tabLayout, binding.viewpager2) { tab, position ->
+            tab.text = getString(adapter.getPageTitle(position))
         }.attach()
         binding.tabLayout.tabGravity = TabLayout.GRAVITY_FILL
     }
