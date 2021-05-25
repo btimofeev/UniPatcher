@@ -135,4 +135,26 @@
     <string name="main_activity_rom_without_smc_file">Plik wyjściowy ROM bez nagłówka</string>
     <string name="main_activity_toast_output_not_selected">Nie wybrano pliku wyjściowego</string>
     <string name="main_activity_rom_with_smc_file">Plik ROM z nagłówkiem SMC</string>
+    <string name="help_how_to_apply_patch_to_rom_body">Musisz wybrać plik ROM, aktualizacje i wybrać który plik zapisać, potem kliknąć na czerwony przycisk. Pliki są wybrane przez standardowe Pliki aplikacji(albo przez menadżera którego zainstalowałeś). Aplikacja pokaże wiadomość kiedy plik zostanie zaktualizowany. Nie zamykaj aplikacji aż do zaktualizowania pliku.</string>
+    <string name="help_what_is_rom_image_body">Obraz ROM jest plikiem komputerowym zawierającym kopie kasety z grą video. Przez proces emulacji, możesz skopiować ten plik, uruchomić w aplikacji zwanej \"emulatorem\", w celu cieszenia się z gry na twoim komputerze lub telefonie.</string>
+    <string name="notification_channel_name">Powiadomienia</string>
+    <string name="nav_snes_add_del_smc_header">Usuń header SMC (SNES)</string>
+    <string name="nav_create_patch">Utwórz aktualizację</string>
+    <string name="error_file_picker_app_is_no_installed">Błąd: Nie ma zainstalowanych Plików aplikacji</string>
+    <string name="error_crash_discard_button">Odrzuć</string>
+    <string name="error_crash_send_button">Wyślij</string>
+    <string name="error_crash_message">Przykro nam, aplikacja przestała działać. Proszę wyślij raport do deweloperów.</string>
+    <string name="error_crash_title">Crash</string>
+    <string name="help_activity_error_cannot_load_text">Błąd: nie można załadować tekstu</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="settings_ignore_checksum_description">Nie przerywaj aktualizacji jeżeli użyto złego ROM-a. Uwaga: Ta opcja może uszkodzić twoją grę.</string>
+    <string name="settings_ignore_checksum">Ignoruj checksums</string>
+    <string name="settings_patching_header">Aktualizowanie</string>
+    <string name="settings_show_button_how_to_use_app_description">Pokaż przycisk \"Jak używać aplikacji\" na głównym ekranie</string>
+    <string name="settings_show_button_how_to_use_app">Pokaż przycisk pomocy</string>
+    <string name="settings_theme_name_auto_battery">Ustawiane przez Oszczędzanie Baterii</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Błąd: nie można zidentyfikować rozmiaru pliku</string>
+    <string name="snes_smc_header_help">Ta funkcja jest tylko dla ROM\'ów z Super Nintendo 
+\n
+\nNiektóre aktualizacje wymagają żeby ROM nie posiadał SMC header. Ta funkcja pomoże go usunąć.</string>
 </resources>
