@@ -28,7 +28,6 @@ import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.ActivityDonateBinding
 import org.sufficientlysecure.donations.DonationsFragment
 
-
 class DonateActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,15 +37,15 @@ class DonateActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setTitle(R.string.donate_activity_title)
-        var fragment = supportFragmentManager.findFragmentByTag("donationsFragment") as DonationsFragment?
-        if (fragment == null) {
-            supportFragmentManager.commit {
-                fragment = DonationsFragment.Companion.newInstance(BuildConfig.DEBUG,
-                        false, null, null, null,
-                        true, BuildConfig.PAYPAL_USER, BuildConfig.PAYPAL_CURRENCY_CODE, getString(R.string.donation),
-                        true, BuildConfig.BITCOIN_ADDRESS)
-                replace(R.id.donate_fragment, fragment!!, "donationsFragment")
-            }
+
+        val fragment = DonationsFragment.Companion.newInstance(
+            BuildConfig.DEBUG, false, null,
+            null, null,
+            true, BuildConfig.PAYPAL_USER, BuildConfig.PAYPAL_CURRENCY_CODE,
+            getString(R.string.donation), true, BuildConfig.BITCOIN_ADDRESS
+        )
+        supportFragmentManager.commit {
+            replace(R.id.donate_fragment, fragment)
         }
     }
 

@@ -136,7 +136,7 @@ dependencies {
     implementation 'commons-io:commons-io:2.5'
     // 2.6 crashes the application on Android below 8, because java.nio.file is not available in these versions
 
-    implementation 'com.github.penn5:donations:3.4.5'
+    implementation 'com.github.penn5:donations:3.5.1'
 
     // DI
     implementation "com.google.dagger:hilt-android:$hilt_version"
