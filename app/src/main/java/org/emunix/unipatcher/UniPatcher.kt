@@ -59,16 +59,16 @@ class UniPatcher : Application() {
         setTheme()
     }
 
-    @TargetApi(26)
+    @TargetApi(Build.VERSION_CODES.O)
     fun initNotificationChannel() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
             return
         }
-        val manager = getSystemService<NotificationManager>()!!
+        val manager = getSystemService<NotificationManager>()
         val channel = NotificationChannel(NOTIFICATION_CHANNEL_ID,
                 getString(R.string.notification_channel_name),
                 NotificationManager.IMPORTANCE_DEFAULT)
-        manager.createNotificationChannel(channel)
+        manager?.createNotificationChannel(channel)
     }
 
     private fun initLogger() {
