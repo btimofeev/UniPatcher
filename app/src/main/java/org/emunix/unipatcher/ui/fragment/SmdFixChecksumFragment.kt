@@ -53,8 +53,8 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
         _binding = null
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         activity?.setTitle(R.string.nav_smd_fix_checksum)
 
         viewModel.getRomName().observe(viewLifecycleOwner, {

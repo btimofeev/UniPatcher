@@ -51,8 +51,8 @@ class AboutFragment : Fragment() {
         _binding = null
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.versionText.text = getString(R.string.help_activity_about_tab_version, Utils.getAppVersion(requireActivity()))
         binding.sendFeedbackButton.setOnClickListener { social.get().sendFeedback() }
         binding.visitSiteButton.setOnClickListener { social.get().openWebsite() }

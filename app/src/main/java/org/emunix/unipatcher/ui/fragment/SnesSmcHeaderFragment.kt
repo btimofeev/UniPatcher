@@ -55,8 +55,8 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
         _binding = null
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         activity?.setTitle(R.string.nav_snes_add_del_smc_header)
 
         viewModel.getRomName().observe(viewLifecycleOwner, {
