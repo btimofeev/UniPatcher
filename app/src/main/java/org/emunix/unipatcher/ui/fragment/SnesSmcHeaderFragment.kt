@@ -18,7 +18,6 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 package org.emunix.unipatcher.ui.fragment
 
-import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
@@ -26,19 +25,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
-import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.SnesSmcHeaderFragmentBinding
+import org.emunix.unipatcher.ktx.registerActivityResult
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.SnesSmcHeaderViewModel
-import timber.log.Timber
 
 class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
 
     private val viewModel by viewModels<SnesSmcHeaderViewModel>()
     private val actionIsRunningViewModel by viewModels<ActionIsRunningViewModel>()
+
+    private lateinit var activityRomFile: ActivityResultLauncher<Intent>
+    private lateinit var activityOutputFile: ActivityResultLauncher<Intent>
 
     private var _binding: SnesSmcHeaderFragmentBinding? = null
     private val binding get() = _binding!!
@@ -58,6 +60,9 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.setTitle(R.string.nav_snes_add_del_smc_header)
+
+        activityRomFile = registerActivityResult(viewModel::romSelected)
+        activityOutputFile = registerActivityResult(viewModel::outputSelected)
 
         viewModel.getRomName().observe(viewLifecycleOwner, {
             binding.romNameTextView.text = it
@@ -93,7 +98,7 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
                     type = "*/*"
                 }
                 try {
-                    startActivityForResult(intent, Action.SELECT_ROM_FILE)
+                    activityRomFile.launch(intent)
                 } catch (e: ActivityNotFoundException) {
                     Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
                 }
@@ -105,31 +110,12 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
                     putExtra(Intent.EXTRA_TITLE, suggestedOutputName)
                 }
                 try {
-                    startActivityForResult(intent, Action.SELECT_OUTPUT_FILE)
+                    activityOutputFile.launch(intent)
                 } catch (e: ActivityNotFoundException) {
                     Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
                 }
             }
         }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
-        Timber.d("onActivityResult($requestCode, $resultCode, $resultData)")
-        if (resultCode == Activity.RESULT_OK && resultData != null && (requestCode == Action.SELECT_ROM_FILE || requestCode == Action.SELECT_OUTPUT_FILE)) {
-            resultData.data?.let { uri ->
-                Timber.d("$uri")
-                when (requestCode) {
-                    Action.SELECT_ROM_FILE -> {
-                        viewModel.romSelected(uri)
-                    }
-                    Action.SELECT_OUTPUT_FILE -> {
-                        viewModel.outputSelected(uri)
-                    }
-                    else -> IllegalStateException("RequestCode is not valid: $requestCode")
-                }
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, resultData)
     }
 
     override fun runAction(){
