@@ -19,7 +19,6 @@
  */
 package org.emunix.unipatcher.ui.fragment
 
-import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
@@ -27,21 +26,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.CreatePatchFragmentBinding
+import org.emunix.unipatcher.ktx.registerActivityResult
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.CreatePatchViewModel
-import timber.log.Timber
 
 @AndroidEntryPoint
 class CreatePatchFragment : ActionFragment(), View.OnClickListener {
 
     private val viewModel by viewModels<CreatePatchViewModel>()
     private val actionIsRunningViewModel by viewModels<ActionIsRunningViewModel>()
+
+    private lateinit var activitySourceFile: ActivityResultLauncher<Intent>
+    private lateinit var activityModifiedFile: ActivityResultLauncher<Intent>
+    private lateinit var activityPatchFile: ActivityResultLauncher<Intent>
 
     private var _binding: CreatePatchFragmentBinding? = null
     private val binding get() = _binding!!
@@ -59,6 +62,10 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.setTitle(R.string.nav_create_patch)
+
+        activitySourceFile = registerActivityResult(viewModel::sourceSelected)
+        activityModifiedFile = registerActivityResult(viewModel::modifiedSelected)
+        activityPatchFile = registerActivityResult(viewModel::patchSelected)
 
         viewModel.getSourceName().observe(viewLifecycleOwner, {
             binding.sourceFileNameTextView.text = it
@@ -91,7 +98,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                     type = "*/*"
                 }
                 try {
-                    startActivityForResult(intent, Action.SELECT_SOURCE_FILE)
+                    activitySourceFile.launch(intent)
                 } catch (e: ActivityNotFoundException) {
                     Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
                 }
@@ -102,7 +109,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                     type = "*/*"
                 }
                 try {
-                    startActivityForResult(intent, Action.SELECT_MODIFIED_FILE)
+                    activityModifiedFile.launch(intent)
                 } catch (e: ActivityNotFoundException) {
                     Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
                 }
@@ -114,34 +121,12 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
                     putExtra(Intent.EXTRA_TITLE, "patch.xdelta")
                 }
                 try {
-                    startActivityForResult(intent, Action.SELECT_PATCH_FILE)
+                    activityPatchFile.launch(intent)
                 } catch (e: ActivityNotFoundException) {
                     Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
                 }
             }
         }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
-        Timber.d("onActivityResult($requestCode, $resultCode, $resultData)")
-        if (resultCode == Activity.RESULT_OK && resultData != null && (requestCode == Action.SELECT_SOURCE_FILE || requestCode == Action.SELECT_MODIFIED_FILE || requestCode == Action.SELECT_PATCH_FILE)) {
-            resultData.data?.let { uri ->
-                Timber.d("$uri")
-                when (requestCode) {
-                    Action.SELECT_SOURCE_FILE -> {
-                        viewModel.sourceSelected(uri)
-                    }
-                    Action.SELECT_MODIFIED_FILE -> {
-                        viewModel.modifiedSelected(uri)
-                    }
-                    Action.SELECT_PATCH_FILE -> {
-                        viewModel.patchSelected(uri)
-                    }
-                    else -> IllegalStateException("RequestCode is not valid: $requestCode")
-                }
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, resultData)
     }
 
     override fun runAction() {

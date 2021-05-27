@@ -18,7 +18,6 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 package org.emunix.unipatcher.ui.fragment
 
-import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
@@ -26,17 +25,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import org.emunix.unipatcher.Action
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.databinding.ApplyPatchFragmentBinding
+import org.emunix.unipatcher.ktx.registerActivityResult
 import org.emunix.unipatcher.ui.activity.HelpActivity
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
-import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -46,6 +45,10 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
 
     private val viewModel by viewModels<ApplyPatchViewModel>()
     private val actionIsRunningViewModel by viewModels<ActionIsRunningViewModel>()
+
+    private lateinit var activityPatchFile: ActivityResultLauncher<Intent>
+    private lateinit var activityRomFile: ActivityResultLauncher<Intent>
+    private lateinit var activityOutputFile: ActivityResultLauncher<Intent>
 
     private var _binding: ApplyPatchFragmentBinding? = null
     private val binding get() = _binding!!
@@ -65,6 +68,10 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.setTitle(R.string.nav_apply_patch)
+
+        activityPatchFile = registerActivityResult(viewModel::patchSelected)
+        activityRomFile = registerActivityResult(viewModel::romSelected)
+        activityOutputFile = registerActivityResult(viewModel::outputSelected)
 
         viewModel.getPatchName().observe(viewLifecycleOwner, {
             binding.patchNameTextView.text = it
@@ -107,7 +114,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
                     type = "*/*"
                 }
                 try {
-                    startActivityForResult(intent, Action.SELECT_PATCH_FILE)
+                    activityPatchFile.launch(intent)
                 } catch (e: ActivityNotFoundException) {
                     Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
                 }
@@ -118,7 +125,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
                     type = "*/*"
                 }
                 try {
-                    startActivityForResult(intent, Action.SELECT_ROM_FILE)
+                    activityRomFile.launch(intent)
                 } catch (e: ActivityNotFoundException) {
                     Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
                 }
@@ -130,7 +137,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
                     putExtra(Intent.EXTRA_TITLE, suggestedOutputName)
                 }
                 try {
-                    startActivityForResult(intent, Action.SELECT_OUTPUT_FILE)
+                    activityOutputFile.launch(intent)
                 } catch (ex: ActivityNotFoundException) {
                     Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
                 }
@@ -139,28 +146,6 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
                 val helpIntent = Intent(requireContext(), HelpActivity::class.java)
                 startActivity(helpIntent)
             }
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
-        Timber.d("onActivityResult($requestCode, $resultCode, $resultData)")
-        if (resultCode == Activity.RESULT_OK && resultData != null && (requestCode == Action.SELECT_PATCH_FILE || requestCode == Action.SELECT_ROM_FILE || requestCode == Action.SELECT_OUTPUT_FILE)) {
-            resultData.data?.let { uri ->
-                Timber.d("$uri")
-                when (requestCode) {
-                    Action.SELECT_PATCH_FILE -> {
-                        viewModel.patchSelected(uri)
-                    }
-                    Action.SELECT_ROM_FILE -> {
-                        viewModel.romSelected(uri)
-                    }
-                    Action.SELECT_OUTPUT_FILE -> {
-                        viewModel.outputSelected(uri)
-                    }
-                    else -> IllegalStateException("RequestCode is not valid: $requestCode")
-                }
-            }
-            super.onActivityResult(requestCode, resultCode, resultData)
         }
     }
 
