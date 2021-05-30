@@ -21,7 +21,11 @@
     <string name="create_patch_fragment_toast_modified_not_selected">O ficheiro modificado não foi selecionado</string>
     <string name="snes_smc_header_will_be_removed">Esta ROM contém o header SMC. O mesmo será removido.</string>
     <!-- Info for SMD fix checksum -->
-    <string name="smd_fix_checksum_help">Este recurso é apenas para ROMs do Sega Mega Drive (Sega Genesis).\n\nServe para consertar a \"tela vermelha da morte\".\n\nAtenção: Esta função não irá criar backups.</string>
+    <string name="smd_fix_checksum_help">Este recurso é apenas para ROMs do Sega Mega Drive (Sega Genesis).
+\n
+\nServe para consertar \"o ecrã vermelho da morte\".
+\n
+\nAtenção: Esta função não irá criar backups.</string>
     <!-- Notifications -->
     <string name="notify_patching_complete">Patch aplicado com sucesso</string>
     <string name="notify_create_patch_complete">Patch criado com sucesso</string>
@@ -87,7 +91,11 @@
     <string name="donation">Doação</string>
     <string name="icon">ícone</string>
     <string name="notification_channel_name">Notificações</string>
-    <string name="help_feedback_body">Me contate pelo e-mail unipatcher@gmail.com. Por favor escreva em Inglês ou Russo se você tem problemas com patcheamento, anexe o patch no e-mail e escreva o nome da sua ROM, isso poupará nosso tempo.</string>
+    <string name="help_feedback_body">Discutimos novas funcionalidades e respondemos a perguntas sobre as Discussões do GitHub https://github.com/btimofeev/UniPatcher/discussions
+\n
+\n Pode reportar um bug no GitHub Issue Tracker https://github.com/btimofeev/UniPatcher/issues
+\n
+\n Também pode contactar o autor da aplicação através do e-mail unipatcher@gmail.com. Por favor, escreva em inglês. Se tiver problemas com o patch, anexe o patch à carta e escreva o nome da sua ROM, isso economizará o nosso tempo.</string>
     <string name="help_feedback_title">Tenho uma pergunta, um requerimento de função ou uma denúncia de bug.</string>
     <string name="help_how_to_translate_body">Se você gostaria de traduzir a app para outro idioma ou melhorar uma tradução existente, você pode fazer isso no site Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Como traduzir o app\?</string>
@@ -114,7 +122,7 @@
     <string name="help_archive_should_be_unpacked_title">A app mostra uma mensagem após selecionar um ficheiro: \" O ficheiro deve ser decomprimido em num software externo\".</string>
     <string name="help_how_to_apply_patch_to_rom_body">Selecionou a ficheiro ROM, um remendo e escolha qual ficheiro gravar, então clique on botão vermelho redondo. Ficheiro são selecionados através do padrão Aplicação de Ficheiros (ou através de um dos gestores de ficheiro que instalou). A aplicação mostrará uma mensagem quando o ficheiro é remendado. Não feche a aplicação até o ficheiro estiver remendado.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Como aplicar um patch em uma ROM\?</string>
-    <string name="help_why_not_distribute_modified_games_body">Hacks e traduções são geralmente distribuídos como patches para reduzir o tamanho de download e evitar problemas com direitos autorais.</string>
+    <string name="help_why_not_distribute_modified_games_body">Hacks e traduções são geralmente distribuídos como patches para reduzir o tamanho da descarrega e evitar problemas com direitos autorais.</string>
     <string name="help_why_not_distribute_modified_games_title">Por quê ROM hackers não distribúem jogos modificados\?</string>
     <string name="help_what_is_a_patch_body">Um patch é um ficheiro que contém as diferenças entre a versão original de uma ROM e a versão hackeada.
 \n
@@ -141,22 +149,25 @@
 \n - <b>Ícones do Material Design</b> pela comunidade, licençiado sobe a licença SIL Open Font 1.1. https://materialdesignicons.com
 \n - <b>Timber</b> por Jake Wharton, licençiado sob a licença Apache 2.0. https://github.com/JakeWharton/timber
 \n - <b>XDelta versão 3</b> por Joshua MacDonald, licençiado sob a licença Apache 2.0. https://github.com/jmacd/xdelta</string>
-    <string name="about_translators"><b>Translators:</b>
+    <string name="about_translators"><b>Tradutores:</b>
 \n
-\n - <b>Chinese</b>: Nabarl Wang
-\n - <b>French</b>: Thibaut Panis
-\n - <b>Italian</b>: Matteo Sechi
-\n - <b>Japanese</b>: Naofumi Fukue
-\n - <b>Korean</b>: Minseo Lee
-\n - <b>Norwegian Bokmål</b>: Allan Nordhøy
-\n - <b>Polish</b>: Michal Bychowski
-\n - <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin Silc
-\n - <b>Russian</b>: Борис Тимофеев
-\n - <b>Spanish</b>: Carlos Sánchez
-\n - <b>Turkish</b>: Oğuz Ersen
-\n - <b>Ukrainian</b>: Володимир Шевчук
+\n - <b>Chinês</b>: Nabarl Wang, Eric
+\n - <b> Francês</b>: Thibaut Panis, J. Lavoie
+\n - <b>Alemão</b>: Honigdieb
+\n - <b>Hebraico</b>: Tamer Dabsan
+\n - <b>Italiano</b>: Matteo Sechi, J.Lavoie
+\n - <b>Japonês</b>: Naofumi Fukue
+\n - <b> Coreano</b>: Minseo Lee
+\n - <b>Bokmål norueguês</b>: Allan Nordhøy
+\n - <b>Polonês</b>: Michal Bychowski, Jarek Karpiel
+\n - <b>Português</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n - <b>Português (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
+\n - <b>Russo</b>: Борис Тимофеев
+\n - <b>Espanhol</b>: Carlos Sánchez, Swyter
+\n - <b> Turco</b>: Oğuz Ersen
+\n - <b>Ucraniano</b>: Володимир Шевчук
 \n
-\nAjude a traduzir a aplicação em outro idioma: https://hosted.weblate.org/engage/unipatcher/</string>
+\nAjude a traduzir a app para o seu idioma: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_snes_smc_body">Um cabeçalho SMC são 512 bytes encontrados no início de algumas imagems ROM do SNES. Esses byte não têm propósito, mas, eles mudam a localização dos dados restante. Remover um cabeçalho é, algumas vezes, usado para o propósito de aplicar corretamente um remendo.</string>
     <string name="help_ips_no_checksum_body">Remendos de formato IPS não contém uma soma de verificação. Além do mais, o remendo irá aplicar qualquer (mesmo errado) ficheiro ROM. Neste caso, precisa procurar outro ficheiro ROM.</string>
     <string name="help_i_cant_patch_smw_rom_body">Este ROM contém um cabeçalho SMC, enquanto a maioria dos remendos para este jogo pedem ao ROM para não ter este cabeçalho. Você pode remover cabeçalho SMC selecionando o item apropriado no menu à esquerda, e então aplicar o remendo ao ROM resultante.</string>
@@ -170,11 +181,11 @@
     <string name="error_file_picker_app_is_no_installed">Erro: não há app de ficheiro instalado</string>
     <string name="error_crash_discard_button">Descartar</string>
     <string name="error_crash_send_button">Enviar</string>
-    <string name="error_crash_message">Desculpe, a aplicativo Travou. Por favor, envie um relatório para os desenvolvedores.</string>
+    <string name="error_crash_message">Desculpe, a aplicação travou. Por favor, envie um relatório para os programadores.</string>
     <string name="error_crash_title">Erro</string>
     <string name="help_activity_error_cannot_load_text">Erro: não é possível carregar texto</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
-    <string name="settings_show_button_how_to_use_app_description">Mostrar botão \"Como usar a app\" na tela principal</string>
+    <string name="settings_show_button_how_to_use_app_description">Mostrar botão \"Como usar a app\" no ecrã principal</string>
     <string name="settings_show_button_how_to_use_app">Mostrar butão Ajuda</string>
     <string name="settings_theme_name_follow_system">Use sistema padrão</string>
     <string name="settings_theme_name_auto_battery">Configurado pela Economia de Energia</string>
