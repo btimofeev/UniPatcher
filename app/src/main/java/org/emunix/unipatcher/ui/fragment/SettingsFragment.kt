@@ -28,7 +28,7 @@ import org.emunix.unipatcher.helpers.ThemeHelper.applyTheme
 
 class SettingsFragment : PreferenceFragmentCompat(), OnSharedPreferenceChangeListener {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.preferences, rootKey)
+        addPreferencesFromResource(R.xml.preferences)
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences,
