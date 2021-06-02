@@ -1,0 +1,6 @@
+- Dodano język hebrajski (T. Dabsanowi)
+- Dodano język niemiecki (Honigdieb)
+- Ukończone tłumaczenia na język hiszpański i portugalski (Swyter, M. SIlc, Y. LevelLand, A. Lúcio, A. Q. Santos, D. de Souza Melo, J. Mendes)
+- Zaktualizowano wiele innych tłumaczeń (dziękuje wszystkim zaangażowanym)
+- Naprawiono problem, w którym nie można było wybrać niektórych plików
+- Teraz możesz zaproponować pomysł na nową funkcję, zadać pytanie na stronie https://github.com/btimofeev/UniPatcher/discussions
