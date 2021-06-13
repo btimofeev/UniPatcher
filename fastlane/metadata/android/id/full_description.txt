@@ -1,0 +1,11 @@
+UniPatcher memungkinkan Anda untuk menerapkan patch ke ROM game. 
+
+Apa itu tambalan? 
+File dengan data game yang dimodifikasi. Misalnya, game yang diterjemahkan dari bahasa Jepang ke bahasa Inggris. Anda mengunduh tambalan yang berisi terjemahan. Itu harus diterapkan ke versi Jepang untuk membuat versi bahasa Inggrisnya. 
+
+Program ini tidak akan membantu Anda meretas game Android asli, itu dibuat untuk game konsol lama (Super Nintendo, Sega Mega Drive, Game Boy Advance, Sony PlayStation, dll.) 
+
+Fitur: 
+* Format patch yang didukung: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3 * Membuat tambalan XDelta 
+* Memperbaiki checksum di ROM Sega Mega Drive 
+* Menghapus header SMC dari Super Nintendo ROM
