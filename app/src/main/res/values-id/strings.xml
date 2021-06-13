@@ -1,2 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="create_patch_fragment_modified_file">File yang dimodifikasi</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">File yang dimodifikasi tidak dipilih</string>
+    <string name="create_patch_fragment_toast_source_not_selected">File sumber tidak dipilih</string>
+    <string name="create_patch_fragment_patch_file">File tambalan</string>
+    <string name="create_patch_fragment_source_file">File sumber</string>
+    <string name="main_activity_double_back_to_exit_message">Tekan KEMBALI lagi untuk keluar. Ini dapat mengganggu semua operasi yang sedang berjalan</string>
+    <string name="main_activity_button_how_to_use_app">Cara menggunakan aplikasi</string>
+    <string name="main_activity_donate_snackbar_button">Donasi</string>
+    <string name="main_activity_donate_snackbar_text">Dukung pengembangan UniPatcher dengan memberikan donasi</string>
+    <string name="main_activity_toast_archives_not_supported">Arsip harus dibongkar dalam program eksternal</string>
+    <string name="main_activity_toast_output_not_selected">Tidak ada hasil file yang dipilih</string>
+    <string name="main_activity_toast_patch_not_selected">Tidak ada file tambalan yang dipilih</string>
+    <string name="main_activity_toast_rom_not_selected">Tidak ada file ROM yang dipilih</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">ketuk untuk memilih tempat menyimpan ROM</string>
+    <string name="main_activity_tap_to_select">ketuk untuk memilih</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">ketuk untuk memilih tempat menyimpan tambalan</string>
+    <string name="main_activity_rom_without_smc_file">Hasil file ROM tanpa header</string>
+    <string name="main_activity_output_file">File hasil</string>
+    <string name="main_activity_rom_with_smc_file">File ROM dengan baris SMC</string>
+    <string name="main_activity_patch_file">File tambalan</string>
+    <string name="main_activity_rom_file">File ROM</string>
+    <string name="app_email">unipatcher@gmail.com</string>
+    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
+    <string name="app_name">UniPatcher</string>
+</resources>
