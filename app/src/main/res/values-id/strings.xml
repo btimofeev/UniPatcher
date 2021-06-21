@@ -44,4 +44,31 @@
 \n - <b>Ukraina</b>: Володимир Шевчук
 \n
 \nBantu terjemahkan aplikasi ke dalam bahasa Anda: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="notify_patching_complete">Modifikasi berhasil</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Galat: tidak dapat mengukur ukuran file</string>
+    <string name="notify_error_not_enough_space">Penyimpanan yang tersedia tidak mencukupi</string>
+    <string name="notify_error_file_not_found">File tidak ditemukan</string>
+    <string name="notify_error_could_not_copy_file">Tidak bisa menyalin file</string>
+    <string name="notify_error">Galat</string>
+    <string name="nav_donate">Donasi</string>
+    <string name="donate_activity_title">Donasi</string>
+    <string name="help_activity_title">Bantuan</string>
+    <string name="settings_patching_header">Menambal</string>
+    <string name="settings_show_button_how_to_use_app_description">Tunjuk tombol \"Cara guna aplikasi ini\" dalam layar utama</string>
+    <string name="settings_show_button_how_to_use_app">Tunjuk tombol bantuan</string>
+    <string name="settings_theme_name_dark">Gelap</string>
+    <string name="settings_theme_name_light">Terang</string>
+    <string name="settings_theme_dialog_title">Pilih tema</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_interface_header">Antarmuka pengguna</string>
+    <string name="settings_activity_title">Pengaturan</string>
+    <string name="notify_error_not_xdelta3_patch">Tambalan XDelta3 tidak sah</string>
+    <string name="notify_error_not_dps_patch">Tambalan DPS tidak sah</string>
+    <string name="notify_error_not_ebp_patch">Tambalan EBP tidak sah</string>
+    <string name="notify_error_not_aps_patch">Tambalan APS tidak sah</string>
+    <string name="notify_error_not_ppf_patch">Tambalan PPF tidak sah</string>
+    <string name="notify_error_not_bps_patch">Tambalan BPS tidak sah</string>
+    <string name="notify_error_not_ups_patch">Tambalan UPS tidak sah</string>
+    <string name="notify_error_not_ips_patch">Tambalan IPS tidak sah</string>
+    <string name="notify_create_patch_complete">Tambalan dicipta</string>
 </resources>
