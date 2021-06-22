@@ -25,4 +25,23 @@
     <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_name">UniPatcher</string>
     <string name="create_patch_fragment_toast_patch_not_selected">File tambalan tidak dipilih</string>
+    <string name="about_translators"><b> Penerjemah:</b>
+\n
+\n- <b>Tiongkok</b>: Nabarl Wang, Eric
+\n - <b>Prancis</b>: Thibaut Panis, J. Lavoie
+\n - <b>Jerman</b>: Honigdieb
+\n - <b>Ibrani</b>: Tamer Dabsan
+\n - <b>Italia</b>: Matteo Sechi, J.Lavoie
+\n - <b>Jepang</b>: Naofumi Fukue
+\n - <b>Korea</b>: Minseo Lee
+\n - <b>Bokmål Norwegia</b>: Allan Nordhøy
+\n - <b>Polandia</b>: Michal Bychowski, Jarek Karpiel
+\n - <b>Portugis</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n - <b>Portugis (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
+\n - <b>Rusia</b>: Борис Тимофеев
+\n - <b>Spanyol</b>: Carlos Sánchez, Swyter
+\n - <b>Turki</b>: Oğuz Ersen
+\n - <b>Ukraina</b>: Володимир Шевчук
+\n
+\nBantu terjemahkan aplikasi ke dalam bahasa Anda: https://hosted.weblate.org/engage/unipatcher/</string>
 </resources>
