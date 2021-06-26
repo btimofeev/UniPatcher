@@ -1,0 +1,6 @@
+— Zastąpiono wbudowanego menedżera plików standardową platformą Storage Access Framework. Pracuj z plikami na karcie SD i hostingu w chmurze (np. Dysk Google). Stosowanie poprawek wymaga więcej czasu i wolnego miejsca na dysku. Widok sumy kontrolnej pliku został tymczasowo usunięty.
+- Obsługa kompresji LZMA w łatkach XDelta33
+- Usunięto możliwość dodawania nagłówka SMC do SNES ROM-ów
+- Wsparcie dla Androida 10 i 11
+- Brak znikających powiadomień
+- Wiele zmian w interfejsie
