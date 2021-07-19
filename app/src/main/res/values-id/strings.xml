@@ -71,4 +71,27 @@
     <string name="notify_error_not_ups_patch">Tambalan UPS tidak sah</string>
     <string name="notify_error_not_ips_patch">Tambalan IPS tidak sah</string>
     <string name="notify_create_patch_complete">Tambalan dicipta</string>
+    <string name="error_file_picker_app_is_no_installed">Galat: Tidak ada aplikasi File yang terinstal</string>
+    <string name="error_crash_discard_button">Buang</string>
+    <string name="error_crash_send_button">Kirim</string>
+    <string name="nav_rate">Nilai aplikasi ini</string>
+    <string name="nav_settings">Pengaturan</string>
+    <string name="nav_snes_add_del_smc_header">Hapus header SMC (SNES)</string>
+    <string name="nav_smd_fix_checksum">Perbaiki checksum (SMD)</string>
+    <string name="nav_create_patch">Buat patch</string>
+    <string name="nav_apply_patch">Terapkan patch</string>
+    <string name="share_text">Unduh ROM patcher terbaik untuk Android. Mendukung jenis patch IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP dan XDelta3.
+\n
+\n</string>
+    <string name="share_dialog_title">Bagikan UniPatcher</string>
+    <string name="send_feedback_error_no_email_apps">Tidak ada klien email yang diinstal</string>
+    <string name="send_feedback_dialog_title">Kirim e-mail</string>
+    <string name="nav_help">Bantuan</string>
+    <string name="nav_share">Bagikan</string>
+    <string name="help_what_is_rom_image_title">Apa itu ROM image\?</string>
+    <string name="help_rom_not_compatible_with_patch_title">Aplikasi menampilkan galat: \"ROM ini tidak kompatibel dengan patch\".</string>
+    <string name="help_sega_fix_checksum_title">Mengapa saya harus memperbaiki checksum untuk game Sega Mega Drive\?</string>
+    <string name="help_feedback_title">Saya punya pertanyaan, permintaan fitur atau laporan bug.</string>
+    <string name="help_how_to_translate_body">Jika Anda ingin menerjemahkan aplikasi ke bahasa lain atau memperbaiki terjemahan yang sudah ada, Anda dapat melakukannya di situs Weblate https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="help_how_to_translate_title">Bagaimana cara menerjemahkan aplikasi\?</string>
 </resources>
