@@ -1,2 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="notify_error_not_enough_space">Diske nepakanka vietos</string>
+    <string name="notify_error_file_not_found">Failas nerastas</string>
+    <string name="notify_error_could_not_copy_file">Nepavyko nukopijuoti failo</string>
+    <string name="notify_error">Klaida</string>
+    <string name="smd_fix_checksum_help">Ši funkcija skirta tik „Sega Mega Drive“ („Sega Genesis“) ROM\'ams.
+\n
+\nJi ištaiso „raudoną mirties ekraną“.
+\n
+\nĮspėjimas: Ši funkcija nesukuria atsarginės kopijos.</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Klaida: nepavyksta nustatyti failo dydžio</string>
+    <string name="snes_rom_has_no_smc_header">Šis ROM neturi SMC antraštės. Jums nereikia nieko ištrinti.</string>
+    <string name="snes_smc_header_will_be_removed">Šis ROM turi SMC antraštę. Jis bus pašalintas.</string>
+    <string name="create_patch_fragment_toast_source_not_selected">Šaltinio failas nepasirinktas</string>
+    <string name="create_patch_fragment_source_file">Šaltinio failas</string>
+    <string name="main_activity_double_back_to_exit_message">Norėdami išeiti, dar kartą paspauskite ATGAL. Tai gali nutraukti visas vykdomas operacijas</string>
+    <string name="main_activity_button_how_to_use_app">Kaip naudotis programėle</string>
+    <string name="main_activity_donate_snackbar_button">Paaukoti</string>
+    <string name="main_activity_donate_snackbar_text">Paremkite UniPatcher kūrimą aukodami</string>
+    <string name="main_activity_toast_archives_not_supported">Archyvas turėtų būti išpakuotas išorinėje programoje</string>
+    <string name="main_activity_toast_output_not_selected">Nepasirinktas joks išvesties failas</string>
+    <string name="main_activity_toast_rom_not_selected">Nepasirinktas joks ROM failas</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">bakstelėkite, kad pasirinktumėte, kur išsaugoti ROM</string>
+    <string name="main_activity_tap_to_select">bakstelėkite, kad pasirinktumėte</string>
+    <string name="main_activity_rom_without_smc_file">Išvesties ROM failas be antraštės</string>
+    <string name="main_activity_rom_with_smc_file">ROM failas su SMC antrašte</string>
+    <string name="main_activity_output_file">Išvesties failas</string>
+    <string name="main_activity_rom_file">ROM failas</string>
+    <string name="app_email">unipatcher@gmail.com</string>
+    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
+    <string name="app_name">UniPatcher</string>
+</resources>
