@@ -1,0 +1,6 @@
+- Pridėta hebrajų kalba (ačiū Tamer Dabsan)
+- Pridėta vokiečių kalba (ačiū Honigdiebui)
+- Baigti vertimai į ispanų ir portugalų kalbas (ačiū Swyteriui, Marvinui SIlcui, Yoshi LevelLandui, Alberane'ui Lúcio, „Alission Queiroz Santos“, Danieliui de Souza Melo, Joey Mendesui)
+- Atnaujinta daug kitų vertimų (ačiū visiems)
+- Ištaisyta problema, kai nepavykdavo pasirinkti kai kurių failų
+- Galite pasiūlyti naujos funkcijos idėją arba užduoti klausimą https://github.com/btimofeev/UniPatcher/discussions
