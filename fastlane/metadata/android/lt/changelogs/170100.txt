@@ -1,0 +1,4 @@
+- Failų operacijos atliekamos naudojant atvirą programą, o ne foninėje tarnyboje, kaip anksčiau.
+- Apie atliktą darbą pranešama kaip iššokančiu pranešimu, o ne pranešimų srityje.
+- Pridėta turkų kalba (dėka Oğuzo Erseno)
+- Vertimai dabar tvarkomi https://hosted.weblate.org/engage/unipatcher/
