@@ -1,0 +1,6 @@
+- Mengganti pengelola file bawaan dengan Kerangka Akses Penyimpanan standar. Bekerja dengan file pada kartu SD dan cloud hosting (misal Google Drive). Menerapkan patch butuh lebih banyak waktu dan ruang disk. Tampilan checksum file untuk sementara dihapus.
+- Dukungan untuk kompresi LZMA di patch XDelta3
+- Kemampuan yang dihapus untuk menambahkan header SMC ke ROM SNES
+- Dukungan untuk Android 10 dan 11
+- Tidak ada pemberitahuan menghilang
+- Banyak perubahan antarmuka kecil
