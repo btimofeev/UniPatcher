@@ -1,0 +1,4 @@
+- Operasi file dilakukan dalam aplikasi terbuka, dan tidak dalam layanan latar belakang seperti sebelumnya.
+- Pekerjaan yang sudah selesai diberitahu sebagai pesan pop-up, bukan di area pemberitahuan.
+- Menambahkan bahasa Turki (terima kasih kepada Oğuz Ersen)
+- Terjemahan sekarang dikelola pada https://hosted.weblate.org/engage/unipatcher/
