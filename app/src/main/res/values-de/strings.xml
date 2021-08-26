@@ -109,7 +109,6 @@
     <string name="error_crash_title">Absturz</string>
     <string name="help_activity_error_cannot_load_text">Fehler: Konnte Text nicht laden</string>
     <string name="help_activity_action_changelog">Änderungshistorie</string>
-    <string name="help_activity_action_send_feedback">Feedback abgeben</string>
     <string name="help_activity_action_visit_site">Webseite besuchen</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
     <string name="help_activity_about_tab_license">Lizenz: GNU GPLv3</string>

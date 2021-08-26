@@ -63,7 +63,6 @@
     <string name="help_activity_about_tab_title">Про додаток</string>
     <string name="help_activity_about_tab_version">Версія %1$s</string>
     <string name="help_activity_about_tab_license">Ліцензія: GNU GPLv3</string>
-    <string name="help_activity_action_send_feedback">Надіслати відгук</string>
     <string name="help_activity_action_visit_site">Відвідати веб-сайт</string>
     <string name="help_activity_action_changelog">Зміни</string>
     <string name="donate_activity_title">Пожертвування</string>

@@ -69,7 +69,6 @@
     <string name="help_activity_about_tab_title">Acerca de</string>
     <string name="help_activity_about_tab_version">Versión %1$s</string>
     <string name="help_activity_about_tab_license">Licencia: GNU GPLv3</string>
-    <string name="help_activity_action_send_feedback">Enviar comentarios</string>
     <string name="help_activity_action_visit_site">Visitar sitio web</string>
     <string name="help_activity_action_changelog">Registro de cambios</string>
     <string name="donate_activity_title">Donar</string>

@@ -82,7 +82,6 @@
     <string name="help_activity_error_cannot_load_text">שגיאה: לא ניתן לטעון טקסט</string>
     <string name="help_activity_action_changelog">יומן שינויים</string>
     <string name="help_activity_action_visit_site">בקר באתר</string>
-    <string name="help_activity_action_send_feedback">שלח משוב</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
     <string name="help_activity_about_tab_license">רישיון: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">גרסה %1$s</string>

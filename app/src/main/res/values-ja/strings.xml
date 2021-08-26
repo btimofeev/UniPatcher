@@ -67,7 +67,6 @@
     <string name="help_activity_about_tab_title">アプリについて</string>
     <string name="help_activity_about_tab_version">バージョン %1$s</string>
     <string name="help_activity_about_tab_license">ライセンス: GNU GPLv3</string>
-    <string name="help_activity_action_send_feedback">フィードバックを送る</string>
     <string name="help_activity_action_visit_site">Web サイトを参照</string>
     <string name="help_activity_action_changelog">変更履歴</string>
     <string name="donate_activity_title">寄付する</string>
