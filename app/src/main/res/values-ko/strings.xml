@@ -67,7 +67,6 @@
     <string name="help_activity_about_tab_title">정보</string>
     <string name="help_activity_about_tab_version">버전 %1$s</string>
     <string name="help_activity_about_tab_license">라이선스: GNU GPLv3</string>
-    <string name="help_activity_action_send_feedback">의견 보내기</string>
     <string name="help_activity_action_visit_site">웹사이트 방문</string>
     <string name="help_activity_action_changelog">변경 이력</string>
     <string name="donate_activity_title">기부</string>

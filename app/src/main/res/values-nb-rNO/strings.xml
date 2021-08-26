@@ -65,7 +65,6 @@
     <string name="help_activity_about_tab_title">Om</string>
     <string name="help_activity_about_tab_version">Versjon %1$s</string>
     <string name="help_activity_about_tab_license">Lisense: GNU GPLv3</string>
-    <string name="help_activity_action_send_feedback">Send tilbakemelding</string>
     <string name="help_activity_action_visit_site">Besøk nettside</string>
     <string name="help_activity_action_changelog">Endringslogg</string>
     <string name="donate_activity_title">Doner</string>

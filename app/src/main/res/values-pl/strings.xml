@@ -61,7 +61,6 @@
     <string name="help_activity_about_tab_title">O aplikacji</string>
     <string name="help_activity_about_tab_version">Wersja %1$s</string>
     <string name="help_activity_about_tab_license">Licencja: GNU GPLv3</string>
-    <string name="help_activity_action_send_feedback">Wyślij opinię</string>
     <string name="help_activity_action_visit_site">Odwiedź stronę</string>
     <string name="help_activity_action_changelog">Dziennik zmian</string>
     <string name="donate_activity_title">Donacja</string>

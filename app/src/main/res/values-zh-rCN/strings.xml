@@ -65,7 +65,6 @@
     <string name="help_activity_about_tab_title">关于</string>
     <string name="help_activity_about_tab_version">版本号 %1$s</string>
     <string name="help_activity_about_tab_license">许可: GNU GPLv3</string>
-    <string name="help_activity_action_send_feedback">发送反馈</string>
     <string name="help_activity_action_visit_site">访问网站</string>
     <string name="help_activity_action_changelog">更新历史</string>
     <string name="donate_activity_title">捐赠</string>

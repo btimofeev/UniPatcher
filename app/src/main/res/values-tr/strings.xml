@@ -33,7 +33,6 @@
     <string name="help_activity_error_cannot_load_text">Hata: metin yüklenemiyor</string>
     <string name="help_activity_action_changelog">Değişiklikler</string>
     <string name="help_activity_action_visit_site">Web sitesini ziyaret et</string>
-    <string name="help_activity_action_send_feedback">Geri bildirim gönder</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
     <string name="help_activity_about_tab_license">Lisans: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">Sürüm %1$s</string>

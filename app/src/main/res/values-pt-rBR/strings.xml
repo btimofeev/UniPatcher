@@ -115,7 +115,6 @@
     <string name="help_activity_error_cannot_load_text">Erro: texto não pode ser carregado</string>
     <string name="help_activity_action_changelog">Changelog</string>
     <string name="help_activity_action_visit_site">Visite o site</string>
-    <string name="help_activity_action_send_feedback">Feedback</string>
     <string name="help_activity_about_tab_license">Licença: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">Versão %1$s</string>
     <string name="help_activity_about_tab_title">Sobre</string>
