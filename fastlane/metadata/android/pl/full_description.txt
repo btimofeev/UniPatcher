@@ -1,0 +1,12 @@
+UniPatcher pozwala na stosowanie poprawek do ROM-ów gier.
+
+Co to jest łatka?
+Plik ze zmodyfikowanymi danymi gry. Na przykład gra przetłumaczona z japońskiego na angielski. Pobierasz łatkę zawierającą tłumaczenie. Musi być zastosowany do wersji japońskiej, aby powstała wersja angielska.
+
+Ten program nie pomoże w hakowaniu natywnych gier na Androida, został stworzony dla starych gier konsolowych (Super Nintendo, Sega Mega Drive, Game Boy Advance, Sony PlayStation itp.)
+
+Funkcje:
+* Obsługiwane formaty poprawek: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
+* Twórz łatki XDelta
+* Napraw sumę kontrolną w ROM-ach Sega Mega Drive
+* Usuń nagłówek SMC z ROM-ów Super Nintendo

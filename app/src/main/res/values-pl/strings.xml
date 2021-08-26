@@ -80,28 +80,32 @@
     <string name="nav_drawer_close">Zamknij kartę nawigacyjną</string>
     <string name="donation">Donacja</string>
     <string name="icon">ikona</string>
-    <string name="help_feedback_body">Skontaktuj się ze mną przez e-mail unipatcher@gmail.com. Proszę pisz po Angielsku albo Rosyjsku. Jeżeli masz jakieś problemy z łatkowaniem, załącz łatkę do mail-a i napisz nazwę ROM-u, to oszczędzi nasz czas.</string>
+    <string name="help_feedback_body">Omawiamy nowe funkcje i odpowiadamy na pytania w Dyskusjach GitHub https://github.com/btimofeev/UniPatcher/discussions
+\n
+\nMożesz zgłosić błąd w GitHub Issue Tracker https://github.com/btimofeev/UniPatcher/issues
+\n
+\nSkontaktuj się ze mną przez e-mail unipatcher@gmail.com. Proszę pisz po Angielsku albo Rosyjsku. Jeżeli masz jakieś problemy z łatkowaniem, załącz łatkę do mail-a i napisz nazwę ROM-u, to oszczędzi nasz czas.</string>
     <string name="help_feedback_title">Mam pytanie, prośba o dodanie funkcji albo raport w sprawie błędu.</string>
     <string name="help_how_to_translate_body">Jeżeli chciałbyś/chciałabyś przetłumaczyć aplikację na inny język, albo poprawić istniejące tłumaczenie, możesz to zrobić na stronie Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Jak przetłumaczyć aplikację\?</string>
-    <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you only change any part of the game, they will not match, failing to run as a result. What this does is calculate the correct checksum of the change and write it to the modified ROM-file.\"
+    <string name="help_sega_fix_checksum_body">Gry Sega Mega Drive (Genesis) mają swoją sumę kontrolną zapisaną w pamięci ROM. Jeśli zmienisz tylko dowolną część gry, nie będą one pasować, w wyniku czego nie będą działać. W ten sposób oblicza się poprawną sumę kontrolną zmiany i zapisuje ją w zmodyfikowanym pliku ROM.\"
 \n
 \n<b>Uwaga:</b> Ta funkcja nie tworzy kopii zapasowe ROM-u.</string>
     <string name="help_sega_fix_checksum_title">Po co mam naprawiać sumę kontrolną w grach z Sega Mega Drive/Genesis\?</string>
-    <string name="help_additional_features_body">Tak. UniPatcher może:
+    <string name="help_additional_features_body">Tak, UniPatcher może:
 \n
-\n- Create XDelta3 patches.
-\n- Naprawiać sumę kontrolną w grach z konsol Sega Mega Drive/Sega Genesis
-\n- Remove SMC header in Super Nintendo games.</string>
+\n- Tworzyć poprawki XDelta3.
+\n- Naprawiać sumę kontrolną w grach z konsolą Sega Mega Drive/Sega Genesis
+\n- Usunąć nagłówek SMC w grach Super Nintendo.</string>
     <string name="help_additional_features_title">Czy UniPatcher ma dodatkowe funkcje\?</string>
-    <string name="help_ecm_image_body">ECM jest formatem skompresowanego pliku specyficznego dla image-ów z dysku. Możesz go zdekompresować używając ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="help_ecm_image_body">ECM jest formatem skompresowanego pliku specyficznego dla image-ów z dysku. Możesz go zdekompresować używając aplikacji ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_ecm_image_title">Co mogę zrobić z typem pliku .ECM\?</string>
     <string name="help_ips_no_checksum_title">Po zaaplikowaniu łatki IPS gra nie działa/zawiera glitche graficzne. Co robię źle\?</string>
     <string name="help_find_rom_pokemon_emerald_body">Większość łatek do gry “Pokémon - Emerald Version” działa z ROM-em “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
     <string name="help_rom_not_compatible_with_patch_title">Aplikacja wyświetla błąd: “Ten ROM nie jest kompatybilny z łatką”.</string>
     <string name="help_archive_should_be_unpacked_body">Plik który wybrałeś jest archiwum. Archiwa zawierają ścieżki i pliki w skompresowanym formacie.
 \n
-\nCurrently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+\nObecnie UniPatcher nie może rozpakować archiwów, więc musisz rozpakować swoje archiwum w innym programie. Polecam darmową aplikację ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">Aplikacja wyświetla wiadomość do wybraniu pliku: “Archiwa powinny być wypakowane w zewnętrznym programie”.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Jak zaaplikować łatkę do ROM-u\?</string>
     <string name="help_why_not_distribute_modified_games_body">Haki i tłumaczenia są generalnie wypuszczanie jako łatki aby zredukować wielkość pliku i aby ominąć problemy z prawami autorskimi.</string>
@@ -143,7 +147,7 @@
     <string name="error_crash_discard_button">Odrzuć</string>
     <string name="error_crash_send_button">Wyślij</string>
     <string name="error_crash_message">Przykro nam, aplikacja przestała działać. Proszę wyślij raport do deweloperów.</string>
-    <string name="error_crash_title">Crash</string>
+    <string name="error_crash_title">Wypadek</string>
     <string name="help_activity_error_cannot_load_text">Błąd: nie można załadować tekstu</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
     <string name="settings_ignore_checksum_description">Nie przerywaj aktualizacji jeżeli użyto złego ROM-a. Uwaga: Ta opcja może uszkodzić twoją grę.</string>
@@ -156,4 +160,45 @@
     <string name="snes_smc_header_help">Ta funkcja jest tylko dla ROM\'ów z Super Nintendo 
 \n
 \nNiektóre aktualizacje wymagają żeby ROM nie posiadał SMC header. Ta funkcja pomoże go usunąć.</string>
+    <string name="about_used_libraries"><b>Używate biblioteki:</b>
+\n
+\n- <b>ACRA</b> przez zespół ACRA, na licencji Apache 2.0. https://github.com/ACRA/acra
+\n- <b>Dotacje na Androida</b> firmy SufficientlySecure i penn5, na licencji Apache 2.0. https://github.com/penn5/darowizny
+\n- <b>Apache Commons IO</b> autorstwa The Apache Software Foundation, na licencji Apache 2.0. https://commons.apache.org/proper/commons-io/
+\n- <b>Dagger</b> autorstwa The Dagger Authors, na licencji Apache 2.0. https://github.com/google/sztylet
+\n- <b>Ikony projektowania materiałów</b> firmy Google na licencji Apache 2.0. https://github.com/google/material-design-icons
+\n- <b>Ikony projektowania materiałów</b> przez społeczność, na licencji SIL Open Font License 1.1. https://materialdesignicons.com
+\n- <b>Timber</b> Jake\'a Whartona, na licencji Apache 2.0. https://github.com/JakeWharton/timber
+\n- <b>XDelta w wersji 3</b> autorstwa Joshua MacDonald, na licencji Apache 2.0. https://github.com/jmacd/xdelta</string>
+    <string name="about_translators"><b>Tłumacze:</b>
+\n
+\n- <b>Chiński</b>: Nabarl Wang, Er
+\n- <b>Francuski</b>: Thibaut Panis, J. Lavo
+\n- <b>niemiecki</b>: Honigdieb
+\n- <b>Hebrajski</b>: Tamer Dabsan
+\n- <b>włoski</b>: Matteo Sechi, J.Lavoie
+\n- <b>Japoński</b>: Naofumi Fukue
+\n- <b>koreański</b>: Minseo Lee
+\n- <b>Norweski bokmål</b>: Allan Nordhøy
+\n- <b>Polski</b>: Michał Bychowski, Jarek Karpiel
+\n- <b>portugalski</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n- <b>portugalski (Brazylia)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SILc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
+\n- <b>rosyjski</b>: Борис Тимофеев
+\n- <b>hiszpański</b>: Carlos Sánchez, Swyter
+\n- <b>turecki</b>: Oğuz Ersen
+\n- <b>ukraiński</b>: Володимир Шевчук
+\n
+\nPomóż przetłumaczyć aplikację na swój język: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="help_snes_smc_body">Nagłówek SMC ma 512 bajtów na początku niektórych obrazów SNES ROM. Te bajty nie mają żadnego celu, ale zmieniają lokalizację pozostałych danych. Usunięcie nagłówka jest czasami używane w celu prawidłowego zastosowania poprawki.</string>
+    <string name="help_snes_smc_title">Dlaczego czasami trzeba usunąć nagłówki SMC z gier Super Nintendo\?</string>
+    <string name="help_ips_no_checksum_body">Poprawki formatu IPS nie zawierają sumy kontrolnej. W związku z tym poprawka zostanie zastosowana do dowolnego (nawet błędnego) pliku ROM. W takim przypadku musisz poszukać innego pliku ROM.</string>
+    <string name="help_find_rom_pokemon_emerald_title">Nie można znaleźć prawidłowego ROM-u do gry \"Pokémon Emerald\".</string>
+    <string name="help_i_cant_patch_smw_rom_body">Ten ROM zawiera nagłówek SMC, podczas gdy większość poprawek do tej gry wymaga, aby ROM nie miał tego nagłówka. Możesz usunąć nagłówek SMC, wybierając odpowiednią pozycję w menu po lewej stronie, a następnie zastosować poprawkę do wynikowej pamięci ROM.</string>
+    <string name="help_i_cant_patch_smw_rom_title">Nie mogę naprawić „Super Mario World (U) [!].smc”</string>
+    <string name="help_rom_not_compatible_with_patch_body">Aplikacja wyświetli ten błąd, jeśli suma kontrolna przechowywana w łatce nie pasuje do sumy kontrolnej pamięci ROM. Oznacza to, że plik ROM nie jest zgodny z poprawką. Musisz wybrać inny plik ROM. Zwykle dla każdej gry jest kilka ROMów (takich jak wersja dla Europy, USA, Japonii, dobre lub złe zrzuty itp.).
+\n
+\nHakerzy ROM często publikują sumę kontrolną towarzyszącego pliku ROM (na stronie internetowej lub w pliku README). Porównaj to z tym, który masz. Jeśli suma kontrolna jest zgodna, masz ROM, dla którego została napisana łatka. Jeśli nie, potrzebujesz innej pamięci ROM.
+\n
+\nW najgorszym przypadku, jeśli nie możesz znaleźć odpowiedniego pliku ROM, możesz ustawić opcję „Ignoruj sumę kontrolną” w ustawieniach. Pamiętaj jednak, że w tym przypadku gra może zawierać błędy lub być całkowicie niegrywalna.</string>
+    <string name="settings_theme_name_follow_system">Użyj domyślnego systemowego</string>
 </resources>

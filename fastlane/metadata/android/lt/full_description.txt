@@ -1,0 +1,12 @@
+UniPatcher leidžia taikyti pataisas žaidimo ROM.
+
+Kas yra pataisa
+Failas su modifikuotais žaidimo duomenimis. Pavyzdžiui, žaidimas išverstas iš japonų į anglų kalbą. Galite atsisiųsti pataisą, kurioje yra vertimas. Ji turi būti pritaikoma japonų kalbos versijai, kad būtų galima sukurti žaidimo versiją anglų kalba.
+
+Ši programėlė nepadės jums nulaužti vietinių Android žaidimų, ji buvo sukurta seniems konsolių žaidimams („Super Nintendo“, „Sega Mega Drive“, „Game Boy Advance“, „Sony PlayStation“ ir kt.)
+
+Funkcijos:
+* Palaikomi pataisų formatai: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
+* Sukurkite „XDelta“ pataisas
+* Ištaisykite kontrolinę sumą „Sega Mega Drive“ ROM
+* Pašalinkite SMC antraštę iš „Super Nintendo“ ROM

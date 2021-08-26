@@ -1,0 +1,6 @@
+- Pakeitė integruotą failų tvarkyklę standartine saugyklos prieigos sistema. Dirbkite su failais SD kortelėje ir debesyje (pvz., "Google" diske). Failų kontrolinės duomenų kontrolinės duomenų rodinio peržiūra laikinai pašalinta.
+- Parama LZMA suspaudimui XDelta3 pataisose
+- Pašalinta galimybė pridėti SMC antraštę į SNES ROM (per metus man niekada nereikėjo šios funkcijos)
+- "Android 10" ir "Android 11" palaikymas
+- Jokių dingstančių pranešimų
+- Daug mažų sąsajos pakeitimų
