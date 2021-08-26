@@ -77,22 +77,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:constraint_referenced_ids="sendFeedbackButton,visitSiteButton,changelogButton"
+                app:constraint_referenced_ids="visitSiteButton,changelogButton"
                 app:flow_maxElementsWrap="4"
                 app:flow_wrapMode="chain"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/sendFeedbackButton"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/help_activity_action_send_feedback"
-                android:textColor="@color/colorCardHeaderText"
-                tools:ignore="MissingConstraints"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/visitSiteButton"
