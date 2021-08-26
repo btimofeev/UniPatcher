@@ -1,0 +1,6 @@
+- Menambahkan bahasa Ibrani (terima kasih kepada Tamer Dabsan)
+- Menambahkan bahasa Jerman (terima kasih kepada Honigdieb)
+- Terjemahan selesai ke dalam bahasa Spanyol dan Portugis (terima kasih kepada Swyter, Marvin SIlc, dan lainnya)
+- Banyak terjemahan lain yang diperbarui (terima kasih kepada semua orang yang ikut)
+- Memperbaiki masalah di mana beberapa file tidak dapat dipilih
+- https://github.com/btimofeev/UniPatcher/discussions untuk pertanyaan

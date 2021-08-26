@@ -1,0 +1,4 @@
+- Operacje na plikach są wykonywane w otwartej aplikacji, a nie w usłudze działającej w tle, jak poprzednio.
+- Ukończona praca jest powiadamiana jako wiadomość wyskakująca, a nie w obszarze powiadomień.
+- Dodano język turecki (dzięki Oğuz Ersen)
+- Tłumaczenia są teraz zarządzane na https://hosted.weblate.org/engage/unipatcher/

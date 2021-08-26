@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notify_error_not_enough_space">Diske nepakanka vietos</string>
+    <string name="notify_error_file_not_found">Failas nerastas</string>
+    <string name="notify_error_could_not_copy_file">Nepavyko nukopijuoti failo</string>
+    <string name="notify_error">Klaida</string>
+    <string name="smd_fix_checksum_help">Ši funkcija skirta tik „Sega Mega Drive“ („Sega Genesis“) ROM\'ams.
+\n
+\nJi ištaiso „raudoną mirties ekraną“.
+\n
+\nĮspėjimas: Ši funkcija nesukuria atsarginės kopijos.</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Klaida: nepavyksta nustatyti failo dydžio</string>
+    <string name="snes_rom_has_no_smc_header">Šis ROM neturi SMC antraštės. Jums nereikia nieko ištrinti.</string>
+    <string name="snes_smc_header_will_be_removed">Šis ROM turi SMC antraštę. Jis bus pašalintas.</string>
+    <string name="create_patch_fragment_toast_source_not_selected">Šaltinio failas nepasirinktas</string>
+    <string name="create_patch_fragment_source_file">Šaltinio failas</string>
+    <string name="main_activity_double_back_to_exit_message">Norėdami išeiti, dar kartą paspauskite ATGAL. Tai gali nutraukti visas vykdomas operacijas</string>
+    <string name="main_activity_button_how_to_use_app">Kaip naudotis programėle</string>
+    <string name="main_activity_donate_snackbar_button">Paaukoti</string>
+    <string name="main_activity_donate_snackbar_text">Paremkite UniPatcher kūrimą aukodami</string>
+    <string name="main_activity_toast_archives_not_supported">Archyvas turėtų būti išpakuotas išorinėje programoje</string>
+    <string name="main_activity_toast_output_not_selected">Nepasirinktas joks išvesties failas</string>
+    <string name="main_activity_toast_rom_not_selected">Nepasirinktas joks ROM failas</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">bakstelėkite, kad pasirinktumėte, kur išsaugoti ROM</string>
+    <string name="main_activity_tap_to_select">bakstelėkite, kad pasirinktumėte</string>
+    <string name="main_activity_rom_without_smc_file">Išvesties ROM failas be antraštės</string>
+    <string name="main_activity_rom_with_smc_file">ROM failas su SMC antrašte</string>
+    <string name="main_activity_output_file">Išvesties failas</string>
+    <string name="main_activity_rom_file">ROM failas</string>
+    <string name="app_email">unipatcher@gmail.com</string>
+    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
+    <string name="app_name">UniPatcher</string>
+    <string name="help_why_not_distribute_modified_games_body">Nulaužimai ir vertimai paprastai platinami kaip pataisos, siekiant sumažinti atsisiuntimo dydį ir išvengti autorių teisių problemų.</string>
+    <string name="help_why_not_distribute_modified_games_title">Kodėl ROM nulaužėjai neplatina modifikuotų žaidimų\?</string>
+    <string name="help_what_is_a_patch_body">Pataisa yra failas, kuriame yra originalios ROM ir nulaužtosios versijos skirtumai.
+\n
+\nPataisa platinama, o galutiniai vartotojai pataisą pritaiko originalios ROM kopijai, kuri sukuria paleidžiamą nulaužimo versiją.</string>
+    <string name="help_what_is_rom_hacking_body">ROM nulaužimas pakeičia ROM atvaizdo duomenis. Tai gali būti grafikos pakeitimas, žaidimo lygių keitimas, sudėtingumo koeficiento keitimas ar net vertimas į kalbą, kuriai žaidimas iš pradžių nebuvo prieinamas.</string>
+    <string name="help_what_is_rom_hacking_title">Kas yra ROM nulaužimas\?</string>
+    <string name="help_feedback_body">Mes aptariame naujas funkcijas ir atsakome į klausimus GitHub diskusijose https://github.com/btimofeev/UniPatcher/discussions
+\n
+\n Galite pranešti apie klaidą „GitHub Issue Tracker“ https://github.com/btimofeev/UniPatcher/issues
+\n
+\n Taip pat galite susisiekti su programos autoriumi el. paštu unipatcher@gmail.com. Prašome parašyti anglų kalba. Jei kyla problemų dėl pataisų pritaikymo, pridėkite pataisą prie laiško ir parašykite savo ROM pavadinimą, tai sutaupys mūsų laiko.</string>
+    <string name="help_snes_smc_body">SMC antraštė yra 512 baitų, esančių kai kurių SNES ROM vaizdų pradžioje. Šie baitai neturi tikslo, tačiau pakeičia likusių duomenų vietą. Antraštės pašalinimas kartais naudojamas siekiant teisingai uždėti pataisą.</string>
+    <string name="help_sega_fix_checksum_body">„Sega Mega Drive“ („Genesis“) žaidimų kontrolinė suma įrašyta į ROM. Jei pakeisite tik kurią nors žaidimo dalį, jos nesutaps, todėl nepavyks paleisti. Tai apskaičiuoja teisingą pakeitimo kontrolinę sumą ir įrašo ją į pakeistą ROM failą.
+\n
+\n<b> Įspėjimas: </b> Ši funkcija nesukuria atsarginio ROM.</string>
+    <string name="help_sega_fix_checksum_title">Kodėl turiu nustatyti \"Sega Mega Drive\" žaidimų kontrolinę sistemą\?</string>
+    <string name="help_additional_features_body">Taip. UniPatcher gali:
+\n
+\n- Sukurti „XDelta3“ pataisas.
+\n- Ištaisyti „Sega Mega Drive“ / „Sega Genesis“ žaidimų kontrolines sumas.
+\n- Pašalinti SMC antraštę „Super Nintendo“ žaidimuose.</string>
+    <string name="help_ips_no_checksum_body">IPS formato pataisose nėra kontrolinės sumos. Todėl pataisa bus taikoma bet kuriam (net netinkamam) ROM failui. Tokiu atveju turite ieškoti kito ROM failo.</string>
+    <string name="help_ips_no_checksum_title">Aš uždedu IPS pataisą ir tada žaidimas neveikia / yra grafinių trikdžių. Ką aš darau ne taip\?</string>
+    <string name="help_find_rom_pokemon_emerald_body">Dauguma žaidimo pataisų veikia su ROM „Pokemon - Emerald Version (U) [f1] (Save Type).gba“.</string>
+    <string name="help_i_cant_patch_smw_rom_body">Šiame ROM yra SMC antraštė, o dauguma šio žaidimo pataisų reikalauja, kad ROM neturėtų šios antraštės. Galite pašalinti SMC antraštę pasirinkdami atitinkamą elementą meniu kairėje ir tada taikyti pataisą gautam ROM.</string>
+    <string name="help_i_cant_patch_smw_rom_title">Negaliu pritaikyti pataisos „Super Mario World (U) [!].smc“</string>
+    <string name="help_rom_not_compatible_with_patch_body">Programėlė parodys šią klaidą, jei pataisoje saugoma kontrolinė suma neatitinka ROM kontrolinės sumos. Tai reiškia, kad ROM failas nesuderinamas su pataisa. Turite pasirinkti kitą ROM failą. Paprastai kiekvienam žaidimui yra keli ROM (pvz., Europos, JAV, Japonijos versija, geri ar blogi duomenų paketai ir kt.).
+\n
+\nROM nulaužėjai dažnai skelbia pridedamo ROM failo kontrolinę sumą (tinklalapyje arba README faile). Palyginkite tai su turima. Jei kontrolinė suma sutampa, turite ROM, kuriam buvo parašyta pataisa. Jei ne, jums reikia kito ROM.
+\n
+\nBlogiausiu atveju, jei nerandate tinkamo ROM failo, nustatymuose galite nustatyti parinktį „Ignoruoti kontrolinę sumą“. Tačiau atminkite, kad šiuo atveju žaidime gali būti klaidų arba jis gali būti visiškai nepaleidžiamas.</string>
+    <string name="help_rom_not_compatible_with_patch_title">Programoje rodoma klaida: „Šis ROM nesuderinamas su pataisa“.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">Turite pasirinkti ROM failą, pataisą ir pasirinkti, kurį failą išsaugoti, tada spustelėkite raudoną apvalų mygtuką. Failai parenkami naudojant standartinę failų programą (arba per vieną iš įdiegtų failų tvarkyklių). Pataisius failą, programa parodys pranešimą. Neuždarykite programos, kol failui nebus pritaikyta pataisa.</string>
+    <string name="help_how_to_apply_patch_to_rom_title">Kaip pritaikyti pataisą ROM\?</string>
+    <string name="about_used_libraries"><b> Naudotos bibliotekos: </b>
+\n
+\n - <b> ACRA </b> “ACRA team“, licencijuota pagal „Apache 2.0“ licenciją. https://github.com/ACRA/acra
+\n - <b> „Aukos„ Android “</b>, kurias pateikė„ SufficientlySecure “ir„ penn5 “, licencijuotos pagal„ Apache 2.0 “licenciją. https://github.com/penn5/donations
+\n - <b> „Apache Commons IO“ </b>, kurį pateikė „Apache Software Foundation“, licencijuota pagal „Apache 2.0“ licenciją. https://commons.apache.org/proper/commons-io/
+\n - <b> „The Dagger Authors“ durklas </b>, licencijuotas pagal „Apache 2.0“ licenciją. https://github.com/google/dagger
+\n - <b> „Google“ material dizaino piktogramos </b>, licencijuotos pagal „Apache 2.0“ licenciją. https://github.com/google/material-design-icons
+\n - <b> Material dizaino piktogramos </b> pagal bendruomenę, licencijuotos pagal SIL atviro šrifto licenciją 1.1. https://materialdesignicons.com
+\n - <b> “Timber“ </b>Jake Wharton , licencijuota pagal „Apache 2.0“ licenciją. https://github.com/JakeWharton/timber
+\n - <b> „XDelta 3“ versija </b>, autorė Joshua MacDonald, licencijuota pagal „Apache 2.0“ licenciją. https://github.com/jmacd/xdelta</string>
+    <string name="help_what_is_a_patch_title">Kas yra pataisa\?</string>
+    <string name="help_what_patch_formats_are_supported_body">Programėlė palaiko IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP ir XDelta3 pataisas.</string>
+    <string name="help_what_patch_formats_are_supported_title">Kokie pataisų formatai palaikomi\?</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher yra Android įrankis, skirtas pritaikyti pataisas įvairių vaizdo žaidimų konsolių ROM vaizdams.</string>
+    <string name="nav_smd_fix_checksum">Ištaisyti kontrolinę sumą (SMD)</string>
+    <string name="nav_create_patch">Kurti pataisą</string>
+    <string name="nav_apply_patch">Taikyti pataisą</string>
+    <string name="share_text">Atsisiųskite geriausią ROM pataisų pritaikymui skirtą Android programėlę. Ji palaiko IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP ir XDelta3 pataisų tipus.
+\n
+\n</string>
+    <string name="settings_ignore_checksum_description">Nenutraukite pataisos pritaikymo, jei naudojate netinkamą ROM. Būkite atsargūs: ši parinktis gali sugadinti žaidimą.</string>
+    <string name="settings_patching_header">Pritaikoma pataisa</string>
+    <string name="settings_theme_name_auto_battery">Nustatyti pagal baterijos tausojimo rėžimą</string>
+    <string name="notify_smd_fix_checksum_complete">Kontrolinė suma ištaisyta</string>
+    <string name="notify_error_wrong_checksum_after_patching">Failas turi neteisingą kontrolinę sistemą po to, kai buvo pritaikyta pataisa</string>
+    <string name="notify_error_rom_not_compatible_with_patch">Šis ROM nesuderinamas su pataisa</string>
+    <string name="notify_error_patch_corrupted">Pataisos failas yra sugadintas</string>
+    <string name="notify_error_unknown_patch_format">Nežinomas pataisos formatas</string>
+    <string name="notify_error_unable_open_patch_file">Nepavyko atidaryti pataisos failo</string>
+    <string name="notify_error_xdelta1_unsupported">Aš negaliu dirbti su XDelta1 pataisomis</string>
+    <string name="notify_error_not_xdelta3_patch">Neleistina XDelta3 pataisa</string>
+    <string name="notify_error_not_dps_patch">Neleistina DPS pataisa</string>
+    <string name="notify_error_not_ebp_patch">Neleistina EBP pataisa</string>
+    <string name="notify_error_not_aps_patch">Neleistina APS pataisa</string>
+    <string name="notify_error_not_ppf_patch">Neleistina PPF pataisa</string>
+    <string name="notify_error_not_bps_patch">Neleistina BPS pataisa</string>
+    <string name="notify_error_not_ups_patch">Neleistina UPS pataisa</string>
+    <string name="notify_error_not_ips_patch">Neleistina IPS pataisa</string>
+    <string name="notify_create_patch_complete">Pataisa sukurta</string>
+    <string name="notify_patching_complete">Pataisa baigta</string>
+    <string name="snes_smc_header_help">Ši funkcija skirta tik „Super Nintendo“ ROM.
+\n
+\nKai kurios pataisos reikalauja, kad ROM nebūtų SMC antraštės. Ši funkcija padės ją pašalinti.</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">Pataisos failas nepasirinktas</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">Modifikuotas failas nepasirinktas</string>
+    <string name="create_patch_fragment_patch_file">Pataisos failas</string>
+    <string name="create_patch_fragment_modified_file">Modifikuotas failas</string>
+    <string name="main_activity_toast_patch_not_selected">Nepasirinktas joks pataisos failas</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">bakstelėkite, kad pasirinktumėte, kur išsaugoti pataisą</string>
+    <string name="main_activity_patch_file">Pataisos failas</string>
+    <string name="about_translators"><b> Vertėjai:</b>
+\n
+\n- <b>Kinų</b>: Nabarl Wang, Eric
+\n - <b>Prancūzų</b>: Thibaut Panis, J. Lavoie
+\n - <b>Vokiečių</b>: Honigdieb
+\n - <b>Hebrajų</b>: Tamer Dabsan
+\n - <b>Italų</b>: Matteo Sechi, J.Lavoie
+\n - <b>Japonų</b>: Naofumi Fukue
+\n - <b>Korėjiečių</b>: Minseo Lee
+\n - <b>Norvegų Bokmål</b>: Allan Nordhøy
+\n - <b>Lenkų</b>: Michal Bychowski, Jarek Karpiel
+\n - <b>Portugalų</b>: Davi Lopes, Matheus Silva Pardavimai, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n - <b>Portugalų (Brazilija)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
+\n - <b>Rusų</b>: Борис Тимофеев
+\n - <b>Ispanų</b>: Carlos Sánchez, Swyter
+\n - <b>turkų</b>: Oğuz Ersen
+\n - <b>Ukrainiečių</b>: Володимир Шевчук
+\n
+\nPadėkite išversti programėlę į savo kalbą: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="help_feedback_title">Turiu klausimą, funkcijų užklausą arba pranešimą apie klaidą.</string>
+    <string name="help_how_to_translate_body">Jei norite išversti programėlę į kitą kalbą arba patobulinti esamą vertimą, tai galite padaryti žiniatinklio svetainėje https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="help_how_to_translate_title">Kaip išversti programėlę\?</string>
+    <string name="help_snes_smc_title">Kodėl kartais reikia pašalinti SMC antraštes iš „Super Nintendo“ žaidimų\?</string>
+    <string name="help_additional_features_title">Ar UniPatcher turi papildomų funkcijų\?</string>
+    <string name="help_ecm_image_body">ECM yra duomenų glaudinimo formatas, specialiai sukurtas disko vaizdams. Failą galite išarchyvuoti naudodami „ZArchiver“ programėlę https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="help_ecm_image_title">Ką aš galiu daryti su .ECM failo tipu\?</string>
+    <string name="help_find_rom_pokemon_emerald_title">Negaliu rasti tinkamo žaidimo „Pokémon Emerald“ ROM.</string>
+    <string name="help_archive_should_be_unpacked_body">Jūsų pasirinktas failas yra archyvas. Archyve yra suspausto formato katalogai ir failai.
+\n
+\nŠiuo metu UniPatcher negali išgauti archyvų, todėl turite išpakuoti archyvą kitoje programoje. Aš rekomenduoju nemokamą „ZArchiver“ programėlę https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="help_archive_should_be_unpacked_title">Pasirinkus failą, programoje rodomas pranešimas: „Archyvas turi būti išpakuotas išorinėje programoje“.</string>
+    <string name="help_what_is_rom_image_body">ROM atvaizdas yra kompiuterio failas, kuriame yra vaizdo žaidimų kasetės kopija. Per emuliacijos procesą, galite nukopijuoti šį failą, paleisti jį emuliatoriuje ir mėgautis žaidimu savo kompiuteryje ar telefone.</string>
+    <string name="help_what_is_rom_image_title">Kas yra ROM vaizdas\?</string>
+    <string name="help_can_i_hack_android_game_body">Ne. UniPatcher nėra skirta nulaužti Android žaidimus.</string>
+    <string name="help_can_i_hack_android_game_title">Ar galiu nulaužti „Android“ žaidimą naudodami šią programą\?</string>
+    <string name="help_what_is_unipatcher_title">Kas yra UniPatcher\?</string>
+    <string name="help_title">Dažniausiai užduodami klausimai:</string>
+    <string name="notification_channel_name">Pranešimai</string>
+    <string name="icon">piktograma</string>
+    <string name="donation">Auka</string>
+    <string name="nav_drawer_close">Uždaryti naršymo stalčių</string>
+    <string name="nav_drawer_open">Atidaryti naršymo stalčių</string>
+    <string name="nav_help">Pagalba</string>
+    <string name="nav_share">Dalintis</string>
+    <string name="nav_donate">Paaukoti</string>
+    <string name="nav_rate">Įvertinkite šią programėlę</string>
+    <string name="nav_settings">Nustatymai</string>
+    <string name="nav_snes_add_del_smc_header">Pašalinti SMC antraštę (SNES)</string>
+    <string name="share_dialog_title">Dalytis UniPatcher</string>
+    <string name="send_feedback_error_no_email_apps">Nėra įdiegtų el. pašto klientų</string>
+    <string name="send_feedback_dialog_title">Siųsti el. laišką</string>
+    <string name="donate_activity_title">Paaukoti</string>
+    <string name="error_file_picker_app_is_no_installed">Klaida: Nėra įdiegtos failų programėlės</string>
+    <string name="error_crash_discard_button">Išmesti</string>
+    <string name="error_crash_send_button">Siųsti</string>
+    <string name="error_crash_message">Atsiprašome, programa užstrigo. Nusiųskite ataskaitą kūrėjams.</string>
+    <string name="error_crash_title">Triktis</string>
+    <string name="help_activity_error_cannot_load_text">Klaida: nepavyksta įkelti teksto</string>
+    <string name="help_activity_action_changelog">Pakeitimų žurnalas</string>
+    <string name="help_activity_action_visit_site">Apsilankykite svetainėje</string>
+    <string name="help_activity_action_send_feedback">Siųsti atsiliepimą</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_license">Licencija: GNU GPLv3</string>
+    <string name="help_activity_about_tab_version">Versija %1$s</string>
+    <string name="help_activity_about_tab_title">Apie</string>
+    <string name="help_activity_faq_tab_title">DUK</string>
+    <string name="help_activity_title">Pagalba</string>
+    <string name="settings_ignore_checksum">Ignoruoti kontrolines sumas</string>
+    <string name="settings_show_button_how_to_use_app_description">Pagrindiniame ekrane rodyti mygtuką „Kaip naudotis programėle“</string>
+    <string name="settings_show_button_how_to_use_app">Rodyti pagalbos mygtuką</string>
+    <string name="settings_theme_name_follow_system">Naudoti sistemos numatytąją</string>
+    <string name="settings_theme_name_dark">Tamsi</string>
+    <string name="settings_theme_name_light">Šviesi</string>
+    <string name="settings_theme_dialog_title">Pasirinkite temą</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_interface_header">Vartotojo sąsaja</string>
+    <string name="settings_activity_title">Nustatymai</string>
+    <string name="notify_snes_delete_smc_header_complete">SMC antraštė ištrinta</string>
+    <string name="notify_error_not_smd_rom">Ne Sega Mega Drive ROM</string>
+    <string name="notify_error_unknown">Nežinoma klaida</string>
+    <string name="notify_error_failed_load_lib_xdelta3">Nepavyko įkelti bibliotekos libxdelta3.so</string>
+    <string name="notify_error_unexpected_end_of_file">Netikėta failo pabaiga</string>
+    <string name="notify_error_unable_open_modified_file">Nepavyksta atidaryti modifikuoto failo</string>
+    <string name="notify_error_unable_open_source_file">Nepavyksta atidaryti šaltinio failo</string>
+    <string name="notify_error_unable_open_file">Nepavyksta atidaryti failo</string>
+    <string name="notify_error_xdelta3_internal_error">XDelta3 vidinė klaida</string>
+</resources>
