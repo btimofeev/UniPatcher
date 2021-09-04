@@ -1,3 +1,8 @@
+#### in development (August ??, 2021)
+- Added Lithuanian language (thanks to Gediminas Murauskas)
+- Added Indonesian language (thanks to Tsaqib Fadhlurrahman Soka, Reza Almanda аnd other)
+- Many other translations updated (thanks to everyone involved)
+
 #### 0.17.2 (January 22, 2021)
 - Added Hebrew language (thanks to Tamer Dabsan)
 - Added German language (thanks to Honigdieb)
