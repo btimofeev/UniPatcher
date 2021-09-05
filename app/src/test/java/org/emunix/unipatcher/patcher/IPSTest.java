@@ -1,25 +1,20 @@
 package org.emunix.unipatcher.patcher;
 
-import android.content.Context;
-
-import org.apache.commons.io.FileUtils;
-import org.emunix.unipatcher.R;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import java.io.File;
 import java.io.IOException;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import static org.mockito.Mockito.*;
+import org.apache.commons.io.FileUtils;
+import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.helpers.ResourceProvider;
+import org.junit.*;
+import org.junit.rules.*;
+import org.junit.runner.*;
+import org.mockito.*;
+import org.mockito.junit.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class IPSTest {
@@ -30,11 +25,11 @@ public class IPSTest {
     public TemporaryFolder folder = new TemporaryFolder();
 
     @Mock
-    Context mockContext;
+    ResourceProvider resourceProvider;
 
     @Before
     public void setUp() throws Exception {
-        when(mockContext.getString(R.string.notify_error_not_ips_patch))
+        when(resourceProvider.getString(R.string.notify_error_not_ips_patch))
                 .thenReturn(NOT_IPS_PATCH);
     }
 
@@ -44,7 +39,7 @@ public class IPSTest {
         File in = new File(getClass().getResource("/ips/min_ips.bin").getPath());
         File out = folder.newFile("out.bin");
 
-        IPS patcher = new IPS(mockContext, patch, in, out);
+        IPS patcher = new IPS(patch, in, out, resourceProvider);
 
         try {
             patcher.apply();
@@ -94,7 +89,7 @@ public class IPSTest {
         File in = new File(getClass().getResource(origName).getPath());
         File out = folder.newFile("out.bin");
 
-        IPS patcher = new IPS(mockContext, patch, in, out);
+        IPS patcher = new IPS(patch, in, out, resourceProvider);
         try {
             patcher.apply();
         } catch (PatchException | IOException e) {

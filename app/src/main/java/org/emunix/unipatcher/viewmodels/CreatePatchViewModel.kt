@@ -36,13 +36,18 @@ import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.helpers.ConsumableEvent
+import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.tools.CreateXDelta3
 import timber.log.Timber
 import java.io.File
 import javax.inject.Inject
 
 @HiltViewModel
-class CreatePatchViewModel @Inject constructor(val app: Application, val settings: Settings): AndroidViewModel(app)  {
+class CreatePatchViewModel @Inject constructor(
+    private val app: Application,
+    private val settings: Settings,
+    private val resourceProvider: ResourceProvider,
+) : AndroidViewModel(app) {
 
     private var sourceUri: Uri? = null
     private var modifiedUri: Uri? = null
@@ -87,24 +92,32 @@ class CreatePatchViewModel @Inject constructor(val app: Application, val setting
     fun runActionClicked() = viewModelScope.launch {
         when {
             sourceUri == null -> {
-                message.value = ConsumableEvent(app.getString(R.string.create_patch_fragment_toast_source_not_selected))
+                message.value =
+                    ConsumableEvent(resourceProvider.getString(R.string.create_patch_fragment_toast_source_not_selected))
                 return@launch
             }
             modifiedUri == null -> {
-                message.value = ConsumableEvent(app.getString(R.string.create_patch_fragment_toast_modified_not_selected))
+                message.value =
+                    ConsumableEvent(resourceProvider.getString(R.string.create_patch_fragment_toast_modified_not_selected))
                 return@launch
             }
             patchUri == null -> {
-                message.value = ConsumableEvent(app.getString(R.string.create_patch_fragment_toast_patch_not_selected))
+                message.value =
+                    ConsumableEvent(resourceProvider.getString(R.string.create_patch_fragment_toast_patch_not_selected))
                 return@launch
             }
             else -> {
                 try {
                     actionIsRunning.value = true
                     createPatch()
-                    message.postValue(ConsumableEvent(app.getString(R.string.notify_create_patch_complete)))
+                    message.postValue(ConsumableEvent(resourceProvider.getString(R.string.notify_create_patch_complete)))
                 } catch (e: Exception) {
-                    val errorMsg = "${app.getString(R.string.notify_error)}: ${e.message ?: app.getString(R.string.notify_error_unknown)}"
+                    val errorMsg =
+                        "${resourceProvider.getString(R.string.notify_error)}: ${
+                            e.message ?: resourceProvider.getString(
+                                R.string.notify_error_unknown
+                            )
+                        }"
                     message.postValue(ConsumableEvent(errorMsg))
                 } finally {
                     actionIsRunning.value = false
@@ -125,7 +138,7 @@ class CreatePatchViewModel @Inject constructor(val app: Application, val setting
         val modifiedFile = Utils.copyToTempFile(app.applicationContext, modifiedUri)
         val patchFile = File.createTempFile("patch", ".xdelta", Utils.getTempDir(app.applicationContext))
         try {
-            val patchMaker = CreateXDelta3(app.applicationContext, patchFile, sourceFile, modifiedFile)
+            val patchMaker = CreateXDelta3(patchFile, sourceFile, modifiedFile, resourceProvider)
             patchMaker.create()
             Utils.copy(patchFile, patchUri, app.applicationContext)
             settings.setPatchingSuccessful(true)

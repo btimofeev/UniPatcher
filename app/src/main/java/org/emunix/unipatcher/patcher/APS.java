@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2017 Boris Timofeev
+Copyright (C) 2017, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -19,15 +19,13 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher.patcher;
 
-import android.content.Context;
-
-import org.apache.commons.io.IOUtils;
-import org.emunix.unipatcher.R;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
+import org.apache.commons.io.IOUtils;
+import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class APS extends Patcher {
 
@@ -38,8 +36,8 @@ public class APS extends Patcher {
     private static final byte[] APS_N64_MAGIC = {0x41, 0x50, 0x53, 0x31, 0x30}; // APS10
     private static final byte[] APS_GBA_MAGIC = {0x41, 0x50, 0x53, 0x31};       // APS1
 
-    public APS(Context context, File patch, File rom, File output) {
-        super(context, patch, rom, output);
+    public APS(File patch, File rom, File output, ResourceProvider resourceProvider) {
+        super(patch, rom, output, resourceProvider);
     }
 
     @Override
@@ -47,13 +45,13 @@ public class APS extends Patcher {
         Patcher aps = null;
         switch (checkAPS(patchFile)) {
             case APS_N64_PATCH:
-                aps = new APS_N64(context, patchFile, romFile, outputFile);
+                aps = new APS_N64(patchFile, romFile, outputFile, resourceProvider);
                 break;
             case APS_GBA_PATCH:
-                aps = new APS_GBA(context, patchFile, romFile, outputFile);
+                aps = new APS_GBA(patchFile, romFile, outputFile, resourceProvider);
                 break;
             case NOT_APS_PATCH:
-                throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
         }
 
         aps.apply(ignoreChecksum);
@@ -66,7 +64,7 @@ public class APS extends Patcher {
             byte[] magicN64 = new byte[5];
             int count = stream.read(magicN64);
             if (count < 5)
-                throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
             if (Arrays.equals(magicN64, APS_N64_MAGIC)) {
                 return APS_N64_PATCH;
             } else {

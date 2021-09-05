@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014, 2016 Boris Timofeev
+Copyright (C) 2014, 2016, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -29,6 +29,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class DPS extends Patcher {
 
@@ -37,15 +38,15 @@ public class DPS extends Patcher {
     private static final int COPY_DATA = 0;
     private static final int ENCLOSED_DATA = 1;
 
-    public DPS(Context context, File patch, File rom, File output) {
-        super(context, patch, rom, output);
+    public DPS(File patch, File rom, File output, ResourceProvider resourceProvider) {
+        super(patch, rom, output, resourceProvider);
     }
 
     @Override
     public void apply(boolean ignoreChecksum) throws PatchException, IOException {
 
         if (patchFile.length() < MIN_SIZE_PATCH) {
-            throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+            throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
         }
 
         BufferedInputStream patchStream = null;
@@ -60,13 +61,13 @@ public class DPS extends Patcher {
             // check version of dps patch
             long i = patchStream.read(buffer, 0, 198);
             if (buffer[193] != 1)
-                throw new PatchException(context.getString(R.string.notify_error_not_dps_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_dps_patch));
 
             // verify rom
             if (!ignoreChecksum) {
                 long romSize = getUInt(buffer, 194);
                 if (romSize != romFile.length())
-                    throw new IOException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                    throw new IOException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
             }
 
             romStream = new RandomAccessFile(romFile, "r");

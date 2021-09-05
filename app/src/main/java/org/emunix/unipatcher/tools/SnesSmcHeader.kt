@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014, 2020 Boris Timofeev
+Copyright (C) 2014, 2020, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -18,9 +18,9 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 package org.emunix.unipatcher.tools
 
-import android.content.Context
 import org.apache.commons.io.IOUtils
 import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -35,12 +35,13 @@ class SnesSmcHeader {
      * Copy [romFile] without SMC header to [outputFile]
      * @param romFile the file from which you want to remove the smc header
      * @param outputFile the file in which you want to save rom without smc header
+     * @param resourceProvider application resource provider
      * @throws RomException if [romFile] has no SMC header
      */
     @Throws(IOException::class, RomException::class)
-    fun deleteSnesSmcHeader(context: Context, romFile: File, outputFile: File) {
+    fun deleteSnesSmcHeader(romFile: File, outputFile: File, resourceProvider: ResourceProvider, ) {
         if (!isRomHasSmcHeader(romFile.length())) {
-            throw RomException(context.getString(R.string.snes_rom_has_no_smc_header))
+            throw RomException(resourceProvider.getString(R.string.snes_rom_has_no_smc_header))
         }
 
         val inputStream = FileInputStream(romFile)

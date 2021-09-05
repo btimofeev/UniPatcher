@@ -1,7 +1,7 @@
 /*
 This file based on source code of EBPatcher by Marc Gagné (https://github.com/Lyrositor/EBPatcher)
 
-Copyright (C) 2016, 2020 Boris Timofeev
+Copyright (C) 2016, 2020, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -21,16 +21,7 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher.patcher;
 
-import android.content.Context;
 import androidx.annotation.NonNull;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
-import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.Utils;
-import org.emunix.unipatcher.tools.RomException;
-import org.emunix.unipatcher.tools.SnesSmcHeader;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -44,6 +35,13 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.HashMap;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.Utils;
+import org.emunix.unipatcher.helpers.ResourceProvider;
+import org.emunix.unipatcher.tools.RomException;
+import org.emunix.unipatcher.tools.SnesSmcHeader;
 
 public class EBP extends Patcher {
 
@@ -63,21 +61,21 @@ public class EBP extends Patcher {
         EB_WRONG_MD5.put("cc9fa297e7bf9af21f7f179e657f1aa1", "patch/ebp/wrong6.ips");
     }
 
-    public EBP(Context context, File patch, File rom, File output) {
-        super(context, patch, rom, output);
+    public EBP(File patch, File rom, File output, ResourceProvider resourceProvider) {
+        super(patch, rom, output, resourceProvider);
     }
 
     @Override
     public void apply(boolean ignoreChecksum) throws PatchException, IOException {
-        File cleanRom = File.createTempFile("rom", null, context.getCacheDir());
-        File ipsPatch = File.createTempFile("patch", null, context.getCacheDir());
+        File cleanRom = File.createTempFile("rom", null, resourceProvider.getCacheDir());
+        File ipsPatch = File.createTempFile("patch", null, resourceProvider.getCacheDir());
         try {
-            Utils.INSTANCE.copyFile(context, romFile, cleanRom);
+            Utils.INSTANCE.copyFile(romFile, cleanRom, resourceProvider);
             prepareCleanRom(cleanRom, ignoreChecksum);
 
             EBPtoIPS(patchFile, ipsPatch);
 
-            IPS ips = new IPS(context, ipsPatch, cleanRom, outputFile);
+            IPS ips = new IPS(ipsPatch, cleanRom, outputFile, resourceProvider);
             ips.apply();
         } finally {
             FileUtils.deleteQuietly(ipsPatch);
@@ -88,22 +86,25 @@ public class EBP extends Patcher {
     private void prepareCleanRom(File file, boolean ignoreChecksum) throws IOException, PatchException {
         // delete smc header
         try {
-            new SnesSmcHeader().deleteSnesSmcHeader(context, romFile, file);
+            new SnesSmcHeader().deleteSnesSmcHeader(romFile, file, resourceProvider);
         } catch (RomException e) {
             // no header
         }
 
         // check rom size and remove unused expanded space
         if (!ignoreChecksum) {
-            if (file.length() < EB_CLEAN_ROM_SIZE)
-                throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+            if (file.length() < EB_CLEAN_ROM_SIZE) {
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
+            }
         }
-        if (file.length() > EB_CLEAN_ROM_SIZE && checkExpanded(file))
+        if (file.length() > EB_CLEAN_ROM_SIZE && checkExpanded(file)) {
             removeExpanded(file);
+        }
 
         // try to fix the ROM if it's incorrect
-        if (!checkMD5(file))
+        if (!checkMD5(file)) {
             repairRom(file);
+        }
 
         // if we couldn't fix the ROM, try to remove a 0xff byte at the end.
         if (!checkMD5(file)) {
@@ -112,10 +113,12 @@ public class EBP extends Patcher {
             FileInputStream in = new FileInputStream(file);
             int count = in.read(buffer);
             in.close();
-            if (count != file.length())
+            if (count != file.length()) {
                 throw new IOException("Unable read file");
-            if (buffer[length - 1] == 0xff)
+            }
+            if (buffer[length - 1] == 0xff) {
                 buffer[length - 1] = 0;
+            }
 
             if (checkMD5(buffer)) {
                 RandomAccessFile f = new RandomAccessFile(file, "rw");
@@ -126,7 +129,7 @@ public class EBP extends Patcher {
         }
 
         if (!checkMD5(file) || !checkEarthBound(file)) {
-            throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+            throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
         }
     }
 
@@ -135,8 +138,9 @@ public class EBP extends Patcher {
         FileInputStream f = new FileInputStream(file);
         int count = f.read(byteArray);
         IOUtils.closeQuietly(f);
-        if (count < EB_CLEAN_ROM_SIZE)
+        if (count < EB_CLEAN_ROM_SIZE) {
             throw new IOException("Unable to read 0x300000 bytes from ROM");
+        }
         // ExHiROM expanded ROMs have two bytes different from LoROM.
         byteArray[0xffd5] = 0x31;
         byteArray[0xffd7] = 0x0c;
@@ -164,15 +168,15 @@ public class EBP extends Patcher {
         if (EB_WRONG_MD5.containsKey(md5)) {
 
             // copy patch from assets
-            InputStream in = context.getAssets().open(EB_WRONG_MD5.get(md5));
-            File patch = File.createTempFile("patch", null, context.getCacheDir());
+            InputStream in = resourceProvider.getAsset(EB_WRONG_MD5.get(md5));
+            File patch = File.createTempFile("patch", null, resourceProvider.getCacheDir());
             FileUtils.copyToFile(in, patch);
             IOUtils.closeQuietly(in);
 
             // fix rom
-            File tmpFile = File.createTempFile("rom", null, context.getCacheDir());
+            File tmpFile = File.createTempFile("rom", null, resourceProvider.getCacheDir());
             FileUtils.copyFile(file, tmpFile);
-            IPS ips = new IPS(context, patch, tmpFile, file);
+            IPS ips = new IPS(patch, tmpFile, file, resourceProvider);
             ips.apply();
 
             FileUtils.deleteQuietly(tmpFile);
@@ -203,8 +207,9 @@ public class EBP extends Patcher {
             MessageDigest md5Digest = MessageDigest.getInstance("MD5");
             byte[] byteArray = new byte[32768];
             int count;
-            while ((count = f.read(byteArray)) != -1)
+            while ((count = f.read(byteArray)) != -1) {
                 md5Digest.update(byteArray, 0, count);
+            }
             return Utils.INSTANCE.bytesToHexString(md5Digest.digest());
         } catch (NoSuchAlgorithmException e) {
             throw new IOException(e.getMessage());
@@ -233,38 +238,45 @@ public class EBP extends Patcher {
             byte[] buffer = new byte[65536];
 
             if (ebpFile.length() < 14) {
-                throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
             }
 
             // check magic string
             byte[] magic = new byte[5];
             size = ebp.read(magic);
-            if (size != 5 || !Arrays.equals(magic, MAGIC_NUMBER))
-                throw new PatchException(context.getString(R.string.notify_error_not_ebp_patch));
+            if (size != 5 || !Arrays.equals(magic, MAGIC_NUMBER)) {
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_ebp_patch));
+            }
 
             ips.write(magic);
 
             while (true) {
                 size = ebp.read(buffer, 0, 3);
-                if (size < 3)
-                    throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+                if (size < 3) {
+                    throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+                }
                 ips.write(buffer, 0, 3);
                 if (buffer[0] == 0x45 && buffer[1] == 0x4f && buffer[2] == 0x46) // EOF
+                {
                     break;
+                }
                 size = ebp.read(buffer, 0, 2);
-                if (size < 2)
-                    throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+                if (size < 2) {
+                    throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+                }
                 ips.write(buffer, 0, 2);
                 size = (((int) buffer[0] & 0xff) << 8) + ((int) buffer[1] & 0xff);
                 if (size != 0) {
                     int c = ebp.read(buffer, 0, size);
-                    if (c < size)
-                        throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+                    if (c < size) {
+                        throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+                    }
                     ips.write(buffer, 0, size);
                 } else {
                     size = ebp.read(buffer, 0, 3);
-                    if (size < 3)
-                        throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+                    if (size < 3) {
+                        throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+                    }
                     ips.write(buffer, 0, 3);
                 }
             }

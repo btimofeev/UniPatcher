@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2014-2020 Boris Timofeev
+ Copyright (c) 2014-2021 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -27,6 +27,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -34,11 +35,18 @@ import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.helpers.ConsumableEvent
+import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.tools.SmdFixChecksum
 import timber.log.Timber
 import java.io.File
+import javax.inject.Inject
 
-class SmdFixChecksumViewModel(val app: Application): AndroidViewModel(app) {
+@HiltViewModel
+class SmdFixChecksumViewModel @Inject constructor(
+    private val app: Application,
+    private val resourceProvider: ResourceProvider,
+) : AndroidViewModel(app) {
+
     private var romUri: Uri? = null
     private val romName: MutableLiveData<String> = MutableLiveData()
     private val message: MutableLiveData<ConsumableEvent<String>> = MutableLiveData()
@@ -62,16 +70,22 @@ class SmdFixChecksumViewModel(val app: Application): AndroidViewModel(app) {
     fun runActionClicked() = viewModelScope.launch {
         when (romUri) {
             null -> {
-                message.value = ConsumableEvent(app.getString(R.string.main_activity_toast_rom_not_selected))
+                message.value =
+                    ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_rom_not_selected))
                 return@launch
             }
             else -> {
                 try {
                     actionIsRunning.value = true
                     fixChecksum()
-                    message.postValue(ConsumableEvent(app.getString(R.string.notify_smd_fix_checksum_complete)))
+                    message.postValue(ConsumableEvent(resourceProvider.getString(R.string.notify_smd_fix_checksum_complete)))
                 } catch (e: Exception) {
-                    val errorMsg = "${app.getString(R.string.notify_error)}: ${e.message ?: app.getString(R.string.notify_error_unknown)}"
+                    val errorMsg =
+                        "${resourceProvider.getString(R.string.notify_error)}: ${
+                            e.message ?: resourceProvider.getString(
+                                R.string.notify_error_unknown
+                            )
+                        }"
                     message.postValue(ConsumableEvent(errorMsg))
                 } finally {
                     actionIsRunning.value = false
@@ -87,7 +101,7 @@ class SmdFixChecksumViewModel(val app: Application): AndroidViewModel(app) {
         var tmpFile: File? = null
         try {
             tmpFile = Utils.copyToTempFile(app.applicationContext, romUri)
-            val worker = SmdFixChecksum(app.applicationContext, tmpFile)
+            val worker = SmdFixChecksum(tmpFile, resourceProvider)
             worker.fixChecksum()
             Utils.copy(tmpFile, romUri, app.applicationContext)
         } finally {

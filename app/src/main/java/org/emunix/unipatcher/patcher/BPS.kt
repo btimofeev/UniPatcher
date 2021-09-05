@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2016, 2018, 2020 Boris Timofeev
+ Copyright (c) 2016, 2018, 2020, 2021 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -20,36 +20,41 @@
 
 package org.emunix.unipatcher.patcher
 
-import android.content.Context
 import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
 import java.io.File
 import java.io.FileInputStream
 import java.io.IOException
 import java.util.zip.CRC32
 
-class BPS(context: Context, patch: File, rom: File, output: File) : Patcher(context, patch, rom, output) {
+class BPS(
+    patch: File,
+    rom: File,
+    output: File,
+    resourceProvider: ResourceProvider
+) : Patcher(patch, rom, output, resourceProvider) {
 
     @Throws(PatchException::class, IOException::class)
     override fun apply(ignoreChecksum: Boolean) {
 
         if (patchFile.length() < 19) {
-            throw PatchException(context.getString(R.string.notify_error_patch_corrupted))
+            throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
         }
 
         if (!checkMagic(patchFile))
-            throw PatchException(context.getString(R.string.notify_error_not_bps_patch))
+            throw PatchException(resourceProvider.getString(R.string.notify_error_not_bps_patch))
 
         val patch = FileUtils.readFileToByteArray(patchFile)
 
         val crc = readBpsCrc(patch)
         if (crc.patchFile != crc.realPatch)
-            throw PatchException(context.getString(R.string.notify_error_patch_corrupted))
+            throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
 
         if (!ignoreChecksum) {
             val realRomCrc = FileUtils.checksumCRC32(romFile)
             if (realRomCrc != crc.inputFile) {
-                throw PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch))
+                throw PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch))
             }
         }
 
@@ -67,7 +72,7 @@ class BPS(context: Context, patch: File, rom: File, output: File) : Patcher(cont
         if (outputSize > Int.MAX_VALUE)
             throw PatchException("The output file is too large.")
         if (outputSize < 0)
-            throw PatchException(context.getString(R.string.notify_error_patch_corrupted))
+            throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
         patchPos = decoded.component2()
         val output = ByteArray(outputSize)
         var outputPos = 0
@@ -125,13 +130,13 @@ class BPS(context: Context, patch: File, rom: File, output: File) : Patcher(cont
         if (!ignoreChecksum) {
             val realOutCrc = FileUtils.checksumCRC32(outputFile)
             if (realOutCrc != crc.outputFile)
-                throw PatchException(context.getString(R.string.notify_error_wrong_checksum_after_patching))
+                throw PatchException(resourceProvider.getString(R.string.notify_error_wrong_checksum_after_patching))
         }
     }
 
     private fun decode(array: ByteArray, pos: Int): Pair<Int, Int> {
         if (pos < 0)
-            throw PatchException(context.getString(R.string.notify_error_patch_corrupted))
+            throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
         var newPos = pos
         var offset = 0
         var shift = 1
@@ -154,7 +159,7 @@ class BPS(context: Context, patch: File, rom: File, output: File) : Patcher(cont
 
         var index = array.size - 12
         if (index < 0)
-            throw PatchException(context.getString(R.string.notify_error_patch_corrupted))
+            throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
 
         var inputCrc: Long = 0
         for (i in 0..3) {

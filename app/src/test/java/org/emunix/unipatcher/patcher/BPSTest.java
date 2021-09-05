@@ -1,23 +1,18 @@
 package org.emunix.unipatcher.patcher;
 
-import android.content.Context;
-
-import org.apache.commons.io.FileUtils;
-import org.emunix.unipatcher.R;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import java.io.File;
 import java.io.IOException;
-
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import static org.mockito.Mockito.when;
+import org.apache.commons.io.FileUtils;
+import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.helpers.ResourceProvider;
+import org.junit.*;
+import org.junit.rules.*;
+import org.junit.runner.*;
+import org.mockito.*;
+import org.mockito.junit.*;
 
 @RunWith(MockitoJUnitRunner.Silent.class)
 public class BPSTest {
@@ -28,11 +23,11 @@ public class BPSTest {
     public TemporaryFolder folder = new TemporaryFolder();
 
     @Mock
-    Context mockContext;
+    ResourceProvider resourceProvider;
 
     @Before
     public void setUp() throws Exception {
-        when(mockContext.getString(R.string.notify_error_patch_corrupted))
+        when(resourceProvider.getString(R.string.notify_error_patch_corrupted))
                 .thenReturn(PATCH_CORRUPTED);
     }
 
@@ -46,7 +41,7 @@ public class BPSTest {
         File in = new File(getClass().getResource(origName).getPath());
         File out = folder.newFile("out.bin");
 
-        BPS patcher = new BPS(mockContext, patch, in, out);
+        BPS patcher = new BPS(patch, in, out, resourceProvider);
         try {
             patcher.apply(false);
         } catch (PatchException | IOException e) {

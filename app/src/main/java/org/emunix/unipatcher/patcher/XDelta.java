@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016, 2017, 2020 Boris Timofeev
+Copyright (C) 2016, 2017, 2020, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -19,16 +19,13 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher.patcher;
 
-import android.content.Context;
-
-import org.apache.commons.io.IOUtils;
-import org.emunix.unipatcher.R;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
-
+import org.apache.commons.io.IOUtils;
+import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.helpers.ResourceProvider;
 import timber.log.Timber;
 
 public class XDelta extends Patcher {
@@ -43,19 +40,19 @@ public class XDelta extends Patcher {
 
     public static native int xdelta3apply(String patchPath, String romPath, String outputPath, boolean ignoreChecksum);
 
-    public XDelta(Context context, File patch, File rom, File output) {
-        super(context, patch, rom, output);
+    public XDelta(File patch, File rom, File output, ResourceProvider resourceProvider) {
+        super(patch, rom, output, resourceProvider);
     }
 
     @Override
     public void apply(boolean ignoreChecksum) throws PatchException, IOException {
         if (checkXDelta1(patchFile))
-            throw new PatchException(context.getString(R.string.notify_error_xdelta1_unsupported));
+            throw new PatchException(resourceProvider.getString(R.string.notify_error_xdelta1_unsupported));
 
         try {
             System.loadLibrary("xdelta3");
         } catch (UnsatisfiedLinkError e) {
-            throw new PatchException(context.getString(R.string.notify_error_failed_load_lib_xdelta3));
+            throw new PatchException(resourceProvider.getString(R.string.notify_error_failed_load_lib_xdelta3));
         }
 
         int ret = xdelta3apply(patchFile.getPath(), romFile.getPath(), outputFile.getPath(), ignoreChecksum);
@@ -65,22 +62,22 @@ public class XDelta extends Patcher {
             case NO_ERROR:
                 return;
             case ERR_UNABLE_OPEN_PATCH:
-                throw new PatchException(context.getString(R.string.notify_error_unable_open_file)
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_unable_open_file)
                         .concat(" ").concat(patchFile.getName()));
             case ERR_UNABLE_OPEN_ROM:
-                throw new PatchException(context.getString(R.string.notify_error_unable_open_file)
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_unable_open_file)
                         .concat(" ").concat(romFile.getName()));
             case ERR_UNABLE_OPEN_OUTPUT:
-                throw new PatchException(context.getString(R.string.notify_error_unable_open_file)
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_unable_open_file)
                         .concat(" ").concat(outputFile.getName()));
             case ERR_WRONG_CHECKSUM:
-                throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
             case ERR_INTERNAL:
-                throw new PatchException(context.getString(R.string.notify_error_xdelta3_internal_error));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_xdelta3_internal_error));
             case ERR_INVALID_INPUT:
-                throw new PatchException(context.getString(R.string.notify_error_not_xdelta3_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_xdelta3_patch));
             default:
-                throw new PatchException(context.getString(R.string.notify_error_unknown));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_unknown));
         }
     }
 

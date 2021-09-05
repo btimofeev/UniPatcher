@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014, 2020 Boris Timofeev
+Copyright (C) 2014, 2020, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -28,12 +28,14 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.SmdFixChecksumFragmentBinding
 import org.emunix.unipatcher.ktx.registerActivityResult
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.SmdFixChecksumViewModel
 
+@AndroidEntryPoint
 class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
 
     private val viewModel by viewModels<SmdFixChecksumViewModel>()

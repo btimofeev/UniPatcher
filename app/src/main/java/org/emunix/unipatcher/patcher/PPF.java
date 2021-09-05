@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013 Boris Timofeev
+Copyright (C) 2013, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -19,17 +19,15 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher.patcher;
 
-import android.content.Context;
-
-import org.apache.commons.io.IOUtils;
-import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.Utils;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.Arrays;
+import org.apache.commons.io.IOUtils;
+import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.Utils;
+import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class PPF extends Patcher {
 
@@ -38,8 +36,8 @@ public class PPF extends Patcher {
     private RandomAccessFile patchStream;
     private RandomAccessFile outputStream;
 
-    public PPF(Context context, File patch, File rom, File output) {
-        super(context, patch, rom, output);
+    public PPF(File patch, File rom, File output, ResourceProvider resourceProvider) {
+        super(patch, rom, output, resourceProvider);
     }
 
     /**
@@ -71,10 +69,10 @@ public class PPF extends Patcher {
     @Override
     public void apply(boolean ignoreChecksum) throws PatchException, IOException {
         if (patchFile.length() < 61) {
-            throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+            throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
         }
 
-        Utils.INSTANCE.copyFile(context, romFile, outputFile);
+        Utils.INSTANCE.copyFile(romFile, outputFile, resourceProvider);
 
         switch (getPPFVersion(patchFile)) {
             case 1:
@@ -87,7 +85,7 @@ public class PPF extends Patcher {
                 applyPPF3(ignoreChecksum);
                 break;
             default:
-                throw new PatchException(context.getString(R.string.notify_error_not_ppf_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_ppf_patch));
         }
     }
 
@@ -124,7 +122,7 @@ public class PPF extends Patcher {
             long romSize = readLittleEndianInt(patchStream);
             if (!ignoreChecksum) {
                 if (romSize != romFile.length()) {
-                    throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                    throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
                 }
             }
 
@@ -138,7 +136,7 @@ public class PPF extends Patcher {
             outputStream.read(romBinaryBlock, 0, 1024);
             if (!ignoreChecksum) {
                 if (!Arrays.equals(patchBinaryBlock, romBinaryBlock))
-                    throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                    throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
             }
 
             // Calculate end of patch data
@@ -191,7 +189,7 @@ public class PPF extends Patcher {
                 outputStream.read(romBinaryBlock, 0, 1024);
                 if (!ignoreChecksum) {
                     if (!Arrays.equals(patchBinaryBlock, romBinaryBlock))
-                        throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                        throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
                 }
             }
 
