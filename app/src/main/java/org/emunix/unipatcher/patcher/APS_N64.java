@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2017 Boris Timofeev
+Copyright (C) 2017, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -19,12 +19,6 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher.patcher;
 
-import android.content.Context;
-
-import org.apache.commons.io.IOUtils;
-import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.Utils;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -34,6 +28,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.util.Arrays;
+import org.apache.commons.io.IOUtils;
+import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.Utils;
+import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class APS_N64 extends Patcher {
 
@@ -42,8 +40,8 @@ public class APS_N64 extends Patcher {
     private static final int TYPE_N64_PATCH = 1;
     private static final int ENCODING_SIMPLE = 0;
 
-    public APS_N64(Context context, File patch, File rom, File output) {
-        super(context, patch, rom, output);
+    public APS_N64(File patch, File rom, File output, ResourceProvider resourceProvider) {
+        super(patch, rom, output, resourceProvider);
     }
 
     @Override
@@ -67,26 +65,26 @@ public class APS_N64 extends Patcher {
             byte[] magic = new byte[5];
             size = patchStream.read(magic);
             if (size != 5 || !Arrays.equals(magic, MAGIC_NUMBER))
-                throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
             patchPos += 5;
 
             // read and check type of the patch
             int patchType = patchStream.read();
             if ((patchType != TYPE_SIMPLE_PATCH) && (patchType != TYPE_N64_PATCH))
-                throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
             patchPos++;
 
             // check encoding method
             int encoding = patchStream.read();
             if (encoding != ENCODING_SIMPLE)
-                throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
             patchPos++;
 
             // skip description
             byte[] description = new byte[50];
             size = patchStream.read(description);
             if (size < 50)
-                throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
             patchPos += 50;
 
             // validate ROM
@@ -98,7 +96,7 @@ public class APS_N64 extends Patcher {
                 patchStream.read(crc);
                 if (!ignoreChecksum) {
                     if (!validateROM(endianness, cardID, country, crc))
-                        throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                        throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
                 }
                 // skip bytes for future expansion
                 byte[] skip = new byte[5];
@@ -117,7 +115,7 @@ public class APS_N64 extends Patcher {
             while (patchPos < patchSize) {
                 offset = readLELong(patchStream);
                 if (offset < 0)
-                    throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+                    throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
                 patchPos += 4;
 
                 // copy data from rom to out

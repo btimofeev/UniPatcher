@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, 2020 Boris Timofeev
+ Copyright (c) 2017, 2020, 2021 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -20,16 +20,18 @@
 
 package org.emunix.unipatcher.tools
 
-import android.content.Context
 import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.patcher.PatchException
 import java.io.File
 import java.io.IOException
 
-class CreateXDelta3(private val context: Context,
-                    private val patchFile: File,
-                    private val sourceFile: File,
-                    private val modifiedFile: File) {
+class CreateXDelta3(
+    private val patchFile: File,
+    private val sourceFile: File,
+    private val modifiedFile: File,
+    private val resourceProvider: ResourceProvider,
+) {
 
     private external fun xdelta3create(patchPath: String, sourcePath: String, modifiedPath: String): Int
 
@@ -38,23 +40,23 @@ class CreateXDelta3(private val context: Context,
         try {
             System.loadLibrary("xdelta3")
         } catch (e: UnsatisfiedLinkError) {
-            throw PatchException(context.getString(R.string.notify_error_failed_load_lib_xdelta3))
+            throw PatchException(resourceProvider.getString(R.string.notify_error_failed_load_lib_xdelta3))
         }
 
         when (val ret = xdelta3create(patchFile.path, sourceFile.path, modifiedFile.path)) {
             NO_ERROR ->
                 return
             ERR_UNABLE_OPEN_PATCH -> {
-                throw PatchException(context.getString(R.string.notify_error_unable_open_patch_file))
+                throw PatchException(resourceProvider.getString(R.string.notify_error_unable_open_patch_file))
             }
             ERR_UNABLE_OPEN_SOURCE -> {
-                throw PatchException(context.getString(R.string.notify_error_unable_open_source_file))
+                throw PatchException(resourceProvider.getString(R.string.notify_error_unable_open_source_file))
             }
             ERR_UNABLE_OPEN_MODIFIED -> {
-                throw PatchException(context.getString(R.string.notify_error_unable_open_modified_file))
+                throw PatchException(resourceProvider.getString(R.string.notify_error_unable_open_modified_file))
             }
             else ->
-                throw PatchException("${context.getString(R.string.notify_error_unknown)}: $ret")
+                throw PatchException("${resourceProvider.getString(R.string.notify_error_unknown)}: $ret")
         }
     }
 

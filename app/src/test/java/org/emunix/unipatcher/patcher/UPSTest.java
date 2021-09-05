@@ -1,22 +1,18 @@
 package org.emunix.unipatcher.patcher;
 
-import android.content.Context;
-
-import org.apache.commons.io.FileUtils;
-import org.emunix.unipatcher.R;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import java.io.File;
 import java.io.IOException;
-
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.when;
+import org.apache.commons.io.FileUtils;
+import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.helpers.ResourceProvider;
+import org.junit.*;
+import org.junit.rules.*;
+import org.junit.runner.*;
+import org.mockito.*;
+import org.mockito.junit.*;
 
 @RunWith(MockitoJUnitRunner.Silent.class)
 public class UPSTest {
@@ -27,11 +23,11 @@ public class UPSTest {
     public TemporaryFolder folder = new TemporaryFolder();
 
     @Mock
-    Context mockContext;
+    ResourceProvider resourceProvider;
 
     @Before
     public void setUp() throws Exception {
-        when(mockContext.getString(R.string.notify_error_patch_corrupted))
+        when(resourceProvider.getString(R.string.notify_error_patch_corrupted))
                 .thenReturn(PATCH_CORRUPTED);
     }
 
@@ -45,7 +41,7 @@ public class UPSTest {
         File patch = new File(this.getClass().getResource("/ups/readUpsCrc.ups").getPath());
         UPS.UpsCrc pCrc = null;
         try {
-            pCrc = UPS.readUpsCrc(mockContext, patch);
+            pCrc = UPS.readUpsCrc(patch, resourceProvider);
         } catch (PatchException e) {
             fail("Patch exception");
         }
@@ -65,7 +61,7 @@ public class UPSTest {
         File in = new File(getClass().getResource(origName).getPath());
         File out = folder.newFile("out.bin");
 
-        UPS patcher = new UPS(mockContext, patch, in, out);
+        UPS patcher = new UPS(patch, in, out, resourceProvider);
         try {
             patcher.apply(false);
         } catch (PatchException | IOException e) {

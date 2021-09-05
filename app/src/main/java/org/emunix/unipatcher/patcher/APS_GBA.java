@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2017 Boris Timofeev
+Copyright (C) 2017, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -19,12 +19,6 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher.patcher;
 
-import android.content.Context;
-
-import org.apache.commons.io.IOUtils;
-import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.Utils;
-
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,6 +26,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.util.Arrays;
+import org.apache.commons.io.IOUtils;
+import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.Utils;
+import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class APS_GBA extends Patcher {
     private static final byte[] MAGIC_NUMBER = {0x41, 0x50, 0x53, 0x31}; // APS1
@@ -72,8 +70,8 @@ public class APS_GBA extends Patcher {
             0x6E17, 0x7E36, 0x4E55, 0x5E74, 0x2E93, 0x3EB2, 0x0ED1, 0x1EF0
     };
 
-    public APS_GBA(Context context, File patch, File rom, File output) {
-        super(context, patch, rom, output);
+    public APS_GBA(File patch, File rom, File output, ResourceProvider resourceProvider) {
+        super(patch, rom, output, resourceProvider);
     }
 
     @Override
@@ -89,7 +87,7 @@ public class APS_GBA extends Patcher {
         BufferedInputStream patchStream = null;
         RandomAccessFile output = null;
 
-        Utils.INSTANCE.copyFile(context, romFile, outputFile);
+        Utils.INSTANCE.copyFile(romFile, outputFile, resourceProvider);
 
         try {
             patchStream = new BufferedInputStream(new FileInputStream(patchFile));
@@ -98,12 +96,12 @@ public class APS_GBA extends Patcher {
             byte[] magic = new byte[4];
             pCount = patchStream.read(magic);
             if (pCount < 4 || !Arrays.equals(magic, MAGIC_NUMBER))
-                throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
 
             fileSize1 = readLEInt(patchStream);
             fileSize2 = readLEInt(patchStream);
             if (fileSize1 < 0 || fileSize2 < 0)
-                throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
 
             bytesLeft = patchFile.length() - 12;
 
@@ -113,14 +111,14 @@ public class APS_GBA extends Patcher {
                 patchCrc2 = readLEChar(patchStream);
                 bytesLeft -= 8;
                 if (offset < 0 || patchCrc1 < 0 || patchCrc2 < 0)
-                    throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
+                    throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
 
                 output.seek(offset);
                 oCount = output.read(romBuf);
                 pCount = patchStream.read(patchBuf);
                 bytesLeft -= CHUNK_SIZE;
                 if (pCount < CHUNK_SIZE)
-                    throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
+                    throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
 
                 if (oCount < CHUNK_SIZE) {
                     if (oCount < 0) oCount = 0;
@@ -139,10 +137,10 @@ public class APS_GBA extends Patcher {
                     isModified = true;
                 } else {
                     if (!ignoreChecksum)
-                        throw new PatchException(context.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                        throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
                 }
                 if (isOriginal && isModified)
-                    throw new PatchException(context.getString(R.string.notify_error_not_aps_patch));
+                    throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
 
                 output.seek(offset);
                 output.write(romBuf);

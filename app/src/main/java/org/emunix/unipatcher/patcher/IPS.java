@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013, 2016, 2017, 2020 Boris Timofeev
+Copyright (C) 2013, 2016, 2017, 2020, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -19,8 +19,6 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher.patcher;
 
-import android.content.Context;
-
 import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.Utils;
@@ -33,6 +31,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
+import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class IPS extends Patcher {
 
@@ -45,8 +44,8 @@ public class IPS extends Patcher {
 
     private int mPatchType = NOT_IPS_PATCH;
 
-    public IPS(Context context, File patch, File rom, File output) {
-        super(context, patch, rom, output);
+    public IPS(File patch, File rom, File output, ResourceProvider resourceProvider) {
+        super(patch, rom, output, resourceProvider);
     }
 
     @Override
@@ -71,7 +70,7 @@ public class IPS extends Patcher {
             long size;
 
             if (patchFile.length() < 14) {
-                throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
             }
 
             byte[] magic = new byte[5];
@@ -81,13 +80,13 @@ public class IPS extends Patcher {
             } else if (Arrays.equals(magic, MAGIC_NUMBER_IPS32)) {
                 mPatchType = IPS32_PATCH;
             } else {
-                throw new PatchException(context.getString(R.string.notify_error_not_ips_patch));
+                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_ips_patch));
             }
 
             while (true) {
                 offset = readOffset(patchStream);
                 if (offset < 0)
-                    throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+                    throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
                 if (checkEOF(offset)) {
                     // truncate file or copy tail
                     if (romPos < romSize) {
@@ -125,14 +124,14 @@ public class IPS extends Patcher {
 
                 size = (patchStream.read() << 8) + patchStream.read();
                 if (size != 0) {
-                    if (size < 0) throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+                    if (size < 0) throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
                     byte[] data = new byte[(int)size];
                     patchStream.read(data);
                     outputStream.write(data);
                     outPos += size;
                 } else { // RLE
                     size = (patchStream.read() << 8) + patchStream.read();
-                    if (size < 0) throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+                    if (size < 0) throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
                     byte val = (byte) patchStream.read();
                     byte[] data = new byte[(int)size];
                     Arrays.fill(data, val);
@@ -144,7 +143,7 @@ public class IPS extends Patcher {
                     if (romPos + size > romSize) {
                         romPos = romSize;
                     } else {
-                        if (size < 0) throw new PatchException(context.getString(R.string.notify_error_patch_corrupted));
+                        if (size < 0) throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
                         byte[] buf = new byte[(int)size];
                         romStream.read(buf);
                         romPos += size;

@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014, 2020 Boris Timofeev
+Copyright (C) 2014, 2020, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -18,22 +18,25 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 package org.emunix.unipatcher.tools
 
-import android.content.Context
 import org.apache.commons.io.IOUtils
 import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
 import timber.log.Timber
 import java.io.BufferedInputStream
 import java.io.File
 import java.io.IOException
 import java.io.RandomAccessFile
 
-class SmdFixChecksum(private val context: Context, private val smdFile: File) {
+class SmdFixChecksum(
+    private val smdFile: File,
+    private val resourceProvider: ResourceProvider,
+) {
 
     @Throws(RomException::class, IOException::class)
     private fun calculateChecksum(): Int {
         val length = smdFile.length()
         if (length < 514) {
-            throw RomException(context.getString(R.string.notify_error_not_smd_rom))
+            throw RomException(resourceProvider.getString(R.string.notify_error_not_smd_rom))
         }
         var sum: Long = 0
         val stream = smdFile.inputStream()
@@ -46,7 +49,7 @@ class SmdFixChecksum(private val context: Context, private val smdFile: File) {
             while (c < length) {
                 byte1 = smdStream.read()
                 byte2 = smdStream.read()
-                if (byte1 == -1 || byte2 == -1) throw RomException(context.getString(R.string.notify_error_unexpected_end_of_file))
+                if (byte1 == -1 || byte2 == -1) throw RomException(resourceProvider.getString(R.string.notify_error_unexpected_end_of_file))
                 sum += (byte1 shl 8) + byte2.toLong()
                 c += 2
             }

@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013 Boris Timofeev
+Copyright (C) 2013, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -19,22 +19,22 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher.patcher;
 
-import android.content.Context;
-
 import java.io.File;
 import java.io.IOException;
+import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public abstract class Patcher {
-    protected File patchFile = null;
-    protected File romFile = null;
-    protected File outputFile = null;
-    protected Context context = null;
 
-    public Patcher(Context c, File patch, File rom, File output) {
-        context = c;
+    protected File patchFile;
+    protected File romFile;
+    protected File outputFile;
+    protected ResourceProvider resourceProvider;
+
+    public Patcher(File patch, File rom, File output, ResourceProvider resourceProvider) {
         patchFile = patch;
         romFile = rom;
         outputFile = output;
+        this.resourceProvider = resourceProvider;
     }
 
     public abstract void apply(boolean ignoreChecksum) throws PatchException, IOException;

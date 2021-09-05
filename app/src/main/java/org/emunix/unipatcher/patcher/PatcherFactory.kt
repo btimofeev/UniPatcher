@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020 Boris Timofeev
+ Copyright (c) 2020-2021 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -20,25 +20,28 @@
 
 package org.emunix.unipatcher.patcher
 
-import android.content.Context
 import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
 import java.io.File
 import java.util.*
+import javax.inject.Inject
 
-object PatcherFactory {
+class PatcherFactory @Inject constructor(
+    private val resourceProvider: ResourceProvider,
+) {
 
-    fun createPatcher(context: Context, patch: File, rom: File, output: File): Patcher {
-        return when (FilenameUtils.getExtension(patch.name).toLowerCase(Locale.getDefault())) {
-            "ips" -> IPS(context, patch, rom, output)
-            "ups" -> UPS(context, patch, rom, output)
-            "bps" -> BPS(context, patch, rom, output)
-            "ppf" -> PPF(context, patch, rom, output)
-            "aps" -> APS(context, patch, rom, output)
-            "ebp" -> EBP(context, patch, rom, output)
-            "dps" -> DPS(context, patch, rom, output)
-            "xdelta", "xdelta3", "xd", "vcdiff" -> XDelta(context, patch, rom, output)
-            else -> throw PatchException(context.getString(R.string.notify_error_unknown_patch_format))
+    fun createPatcher(patch: File, rom: File, output: File): Patcher {
+        return when (FilenameUtils.getExtension(patch.name).lowercase(Locale.getDefault())) {
+            "ips" -> IPS(patch, rom, output, resourceProvider)
+            "ups" -> UPS(patch, rom, output, resourceProvider)
+            "bps" -> BPS(patch, rom, output, resourceProvider)
+            "ppf" -> PPF(patch, rom, output, resourceProvider)
+            "aps" -> APS(patch, rom, output, resourceProvider)
+            "ebp" -> EBP(patch, rom, output, resourceProvider)
+            "dps" -> DPS(patch, rom, output, resourceProvider)
+            "xdelta", "xdelta3", "xd", "vcdiff" -> XDelta(patch, rom, output, resourceProvider)
+            else -> throw PatchException(resourceProvider.getString(R.string.notify_error_unknown_patch_format))
         }
     }
 }

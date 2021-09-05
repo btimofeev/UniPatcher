@@ -35,6 +35,7 @@ import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.helpers.ConsumableEvent
+import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.patcher.PatcherFactory
 
 import timber.log.Timber
@@ -42,7 +43,12 @@ import java.io.File
 import javax.inject.Inject
 
 @HiltViewModel
-class ApplyPatchViewModel @Inject constructor(val app: Application, val settings: Settings): AndroidViewModel(app) {
+class ApplyPatchViewModel @Inject constructor(
+    private val app: Application,
+    private val settings: Settings,
+    private val resourceProvider: ResourceProvider,
+    private val patcherFactory: PatcherFactory,
+) : AndroidViewModel(app) {
 
     private var patchUri: Uri? = null
     private var romUri: Uri? = null
@@ -92,24 +98,29 @@ class ApplyPatchViewModel @Inject constructor(val app: Application, val settings
     fun runActionClicked() = viewModelScope.launch {
         when {
             patchUri == null -> {
-                message.value = ConsumableEvent(app.getString(R.string.main_activity_toast_patch_not_selected))
+                message.value =
+                    ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_patch_not_selected))
                 return@launch
             }
             romUri == null -> {
-                message.value = ConsumableEvent(app.getString(R.string.main_activity_toast_rom_not_selected))
+                message.value =
+                    ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_rom_not_selected))
                 return@launch
             }
             outputUri == null -> {
-                message.value = ConsumableEvent(app.getString(R.string.main_activity_toast_output_not_selected))
+                message.value =
+                    ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_output_not_selected))
                 return@launch
             }
             else -> {
                 try {
                     actionIsRunning.value = true
                     applyPatch()
-                    message.postValue(ConsumableEvent(app.getString(R.string.notify_patching_complete)))
+                    message.postValue(ConsumableEvent(resourceProvider.getString(R.string.notify_patching_complete)))
                 } catch (e: Exception) {
-                    val errorMsg = "${app.getString(R.string.notify_error)}: ${e.message ?: app.getString(R.string.notify_error_unknown)}"
+                    val errorMsg = "${resourceProvider.getString(R.string.notify_error)}: ${
+                        e.message ?: resourceProvider.getString(R.string.notify_error_unknown)
+                    }"
                     message.postValue(ConsumableEvent(errorMsg))
                 } finally {
                     actionIsRunning.value = false
@@ -122,7 +133,8 @@ class ApplyPatchViewModel @Inject constructor(val app: Application, val settings
         val isArchive = Utils.isArchive(fileName)
         Timber.d("isArchive = $isArchive")
         if (isArchive)
-            message.value = ConsumableEvent(app.getString(R.string.main_activity_toast_archives_not_supported))
+            message.value =
+                ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_archives_not_supported))
     }
 
     private suspend fun suggestOutputName(romName: String) = withContext(Dispatchers.Default) {
@@ -147,7 +159,7 @@ class ApplyPatchViewModel @Inject constructor(val app: Application, val settings
             romFile = Utils.copyToTempFile(app.applicationContext, romUri)
             patchFile = Utils.copyToTempFile(app.applicationContext, patchUri, patchName)
             outputFile = File.createTempFile("output", ".rom", Utils.getTempDir(app.applicationContext))
-            val patcher = PatcherFactory.createPatcher(app.applicationContext, patchFile, romFile, outputFile)
+            val patcher = patcherFactory.createPatcher(patchFile, romFile, outputFile)
             patcher.apply(settings.getIgnoreChecksum())
             Utils.copy(outputFile, outputUri, app.applicationContext)
             settings.setPatchingSuccessful(true)

@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2014-2020 Boris Timofeev
+ Copyright (c) 2014-2021 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -27,6 +27,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -35,11 +36,18 @@ import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.helpers.ConsumableEvent
+import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.tools.SnesSmcHeader
 import timber.log.Timber
 import java.io.File
+import javax.inject.Inject
 
-class SnesSmcHeaderViewModel(val app: Application): AndroidViewModel(app) {
+@HiltViewModel
+class SnesSmcHeaderViewModel @Inject constructor(
+    private val app: Application,
+    private val resourceProvider: ResourceProvider,
+) : AndroidViewModel(app) {
+
     private var romUri: Uri? = null
     private var outputUri: Uri? = null
     private val romName: MutableLiveData<String> = MutableLiveData()
@@ -85,34 +93,41 @@ class SnesSmcHeaderViewModel(val app: Application): AndroidViewModel(app) {
     private suspend fun checkSmc(uri: Uri) = withContext(Dispatchers.Default) {
         val uriFileSize = DocumentFile.fromSingleUri(app.applicationContext, uri)?.length()
         if (uriFileSize == null || uriFileSize == 0L) {
-            infoText.postValue(app.getString(R.string.snes_smc_error_unable_to_get_file_size))
+            infoText.postValue(resourceProvider.getString(R.string.snes_smc_error_unable_to_get_file_size))
             return@withContext
         }
         val checker = SnesSmcHeader()
         if (checker.isRomHasSmcHeader(uriFileSize)) {
-            infoText.postValue(app.getString(R.string.snes_smc_header_will_be_removed))
+            infoText.postValue(resourceProvider.getString(R.string.snes_smc_header_will_be_removed))
         } else {
-            infoText.postValue(app.getString(R.string.snes_rom_has_no_smc_header))
+            infoText.postValue(resourceProvider.getString(R.string.snes_rom_has_no_smc_header))
         }
     }
 
     fun runActionClicked() = viewModelScope.launch {
         when {
             romUri == null -> {
-                message.value = ConsumableEvent(app.getString(R.string.main_activity_toast_rom_not_selected))
+                message.value =
+                    ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_rom_not_selected))
                 return@launch
             }
             outputUri == null -> {
-                message.value = ConsumableEvent(app.getString(R.string.main_activity_toast_output_not_selected))
+                message.value =
+                    ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_output_not_selected))
                 return@launch
             }
             else -> {
                 try {
                     actionIsRunning.value = true
                     removeSmc()
-                    message.postValue(ConsumableEvent(app.getString(R.string.notify_snes_delete_smc_header_complete)))
+                    message.postValue(ConsumableEvent(resourceProvider.getString(R.string.notify_snes_delete_smc_header_complete)))
                 } catch (e: Exception) {
-                    val errorMsg = "${app.getString(R.string.notify_error)}: ${e.message ?: app.getString(R.string.notify_error_unknown)}"
+                    val errorMsg =
+                        "${resourceProvider.getString(R.string.notify_error)}: ${
+                            e.message ?: resourceProvider.getString(
+                                R.string.notify_error_unknown
+                            )
+                        }"
                     message.postValue(ConsumableEvent(errorMsg))
                 } finally {
                     actionIsRunning.value = false
@@ -132,7 +147,7 @@ class SnesSmcHeaderViewModel(val app: Application): AndroidViewModel(app) {
         try {
             romFile = Utils.copyToTempFile(app.applicationContext, romUri)
             outputFile = Utils.copyToTempFile(app.applicationContext, outputUri)
-            SnesSmcHeader().deleteSnesSmcHeader(app.applicationContext, romFile, outputFile)
+            SnesSmcHeader().deleteSnesSmcHeader(romFile, outputFile, resourceProvider)
             Utils.copy(outputFile, outputUri, app.applicationContext)
         } finally {
             FileUtils.deleteQuietly(outputFile)

@@ -27,6 +27,7 @@ import kotlinx.coroutines.withContext
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
 import org.apache.commons.io.IOUtils
+import org.emunix.unipatcher.helpers.ResourceProvider
 import timber.log.Timber
 import java.io.*
 import java.util.*
@@ -57,17 +58,17 @@ object Utils {
     }
 
     @Throws(IOException::class)
-    fun copyFile(context: Context, from: File, to: File) {
+    fun copyFile(from: File, to: File, resourceProvider: ResourceProvider) {
         val dir = to.parentFile ?: throw IOException("Couldn't find parent file: $to")
 
         if (getFreeSpace(dir) < from.length()) {
-            throw IOException(context.getString(R.string.notify_error_not_enough_space))
+            throw IOException(resourceProvider.getString(R.string.notify_error_not_enough_space))
         }
 
         try {
             FileUtils.copyFile(from, to)
         } catch (e: IOException) {
-            throw IOException(context.getString(R.string.notify_error_could_not_copy_file))
+            throw IOException(resourceProvider.getString(R.string.notify_error_could_not_copy_file))
         }
     }
 

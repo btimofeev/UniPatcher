@@ -31,22 +31,27 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.SettingsImpl
+import org.emunix.unipatcher.helpers.ResourceProvider
+import org.emunix.unipatcher.helpers.ResourceProviderImpl
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-object PreferenceModule {
+object ProviderModule {
 
     @Provides
     @Singleton
     fun provideSharedPreferences(
-            @ApplicationContext context: Context
-    ): SharedPreferences {
-        return PreferenceManager.getDefaultSharedPreferences(context)
-    }
+        @ApplicationContext context: Context
+    ): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
     @Provides
     @Reusable
     fun provideSettings(prefs: SharedPreferences): Settings = SettingsImpl(prefs)
 
+    @Provides
+    @Singleton
+    fun provideResourceProvider(
+        @ApplicationContext context: Context
+    ): ResourceProvider = ResourceProviderImpl(context)
 }
