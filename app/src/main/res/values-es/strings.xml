@@ -104,7 +104,7 @@
 \n
 \n<b>Advertencia:</b> Esta función no crea una copia de respaldo de la ROM original y la sobrescribirá.</string>
     <string name="help_sega_fix_checksum_title">¿Por qué tengo que arreglar la suma de comprobación de los juegos de Sega Mega Drive\?</string>
-    <string name="help_additional_features_body">Sí, con UniPatcher también puedes:
+    <string name="help_additional_features_body">Con UniPatcher también puedes:
 \n
 \n- Crear parches XDelta3.
 \n- Arreglar las sumas de comprobación de juegos para Sega Mega Drive / Sega Genesis.
@@ -126,7 +126,7 @@
 \n
 \nLa versión actual de UniPatcher no puede extraer archivos, por lo que necesita que lo descomprimas de forma manual con otros programas. Te recomiendo uno que es gratis y me gusta mucho que se llama ZArchiver: https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">La aplicación dice algo sobre «descomprimir con un programa externo» tras elegir un archivo.</string>
-    <string name="help_how_to_apply_patch_to_rom_title">¿Cómo aplicar un parche a la ROM\?</string>
+    <string name="help_how_to_apply_patch_to_rom_title">¿Cómo parcheo una ROM\?</string>
     <string name="help_why_not_distribute_modified_games_body">Los «hacks» y las traducciones se distribuyen generalmente como parches para reducir el tamaño de la descarga y evitar los problemas legales de autoría y derechos de autor.</string>
     <string name="help_why_not_distribute_modified_games_title">¿Por qué los «ROM hackers» no distribuyen directamente los archivos modificados\?</string>
     <string name="help_what_is_a_patch_body">Un parche es un pequeño archivo que solo contiene las diferencias entre la versión original de una ROM y la versión «hackeada» o modificada.
@@ -164,11 +164,13 @@
 \n - <b>Francés</b>: Thibaut Panis, J. Lavoie
 \n - <b>Alemán</b>: Honigdieb
 \n - <b>Hebreo</b>: Tamer Dabsan
-\n - <b>Italiano</b>: Matteo Sechi, J.Lavoie
+\n - <b>Indonesio</b>: Tsaqib F toadhlurrahman Soka, Reza Almanda
+\n - <b>Italiano</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
 \n - <b>Japonés</b>: Naofumi Fukue
+\n - <b>Lithuanian</b>: Gediminas Murauskas
 \n - <b>Coreano</b>: Minseo Lee
 \n - <b>Noruego Bokmål</b>: Allan Nordhøy
-\n - <b>Polaco</b>: Michal Bychowski, Jarek Karpiel
+\n - <b>Polaco</b>: Michal Bychowski, Jarek Karpiel, hayneken993
 \n - <b>Portugués</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
 \n - <b>Portugués (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, joaooliva
 \n - <b>Ruso</b>: Борис Тимофеев
