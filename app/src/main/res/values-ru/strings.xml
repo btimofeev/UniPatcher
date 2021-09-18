@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">UniPatcher</string>
-    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
-    <string name="app_email">unipatcher@gmail.com</string>
     <!-- Main activity -->
     <string name="main_activity_rom_file">ROM-файл</string>
     <string name="main_activity_patch_file">Патч</string>

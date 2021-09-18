@@ -27,8 +27,6 @@
     <string name="main_activity_rom_with_smc_file">ROM failas su SMC antrašte</string>
     <string name="main_activity_output_file">Išvesties failas</string>
     <string name="main_activity_rom_file">ROM failas</string>
-    <string name="app_email">unipatcher@gmail.com</string>
-    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_name">UniPatcher</string>
     <string name="help_why_not_distribute_modified_games_body">Nulaužimai ir vertimai paprastai platinami kaip pataisos, siekiant sumažinti atsisiuntimo dydį ir išvengti autorių teisių problemų.</string>
     <string name="help_why_not_distribute_modified_games_title">Kodėl ROM nulaužėjai neplatina modifikuotų žaidimų\?</string>

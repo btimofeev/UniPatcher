@@ -111,8 +111,6 @@
     <string name="main_activity_output_file">Çıktı dosyası</string>
     <string name="main_activity_patch_file">Yama dosyası</string>
     <string name="main_activity_rom_file">ROM dosyası</string>
-    <string name="app_email">unipatcher@gmail.com</string>
-    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_name">UniPatcher</string>
     <string name="help_feedback_body">GitHub Tartışmalarında yeni işlevleri tartışıyor ve soruları yanıtlıyoruz: https://github.com/btimofeev/UniPatcher/discussions
 \n

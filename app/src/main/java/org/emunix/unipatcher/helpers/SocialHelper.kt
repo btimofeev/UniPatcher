@@ -51,7 +51,7 @@ class SocialHelper(val context: Context) {
     }
 
     fun openWebsite() {
-        val browserIntent = Intent(Intent.ACTION_VIEW, context.getString(R.string.app_site).toUri())
+        val browserIntent = Intent(Intent.ACTION_VIEW, "https://github.com/btimofeev/UniPatcher".toUri())
         browserIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         context.startActivity(browserIntent)
     }
