@@ -38,10 +38,11 @@ import java.util.HashMap;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.Utils;
+import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 import org.emunix.unipatcher.tools.RomException;
 import org.emunix.unipatcher.tools.SnesSmcHeader;
+import org.emunix.unipatcher.utils.ExtensionsKt;
 
 public class EBP extends Patcher {
 
@@ -61,21 +62,21 @@ public class EBP extends Patcher {
         EB_WRONG_MD5.put("cc9fa297e7bf9af21f7f179e657f1aa1", "patch/ebp/wrong6.ips");
     }
 
-    public EBP(File patch, File rom, File output, ResourceProvider resourceProvider) {
-        super(patch, rom, output, resourceProvider);
+    public EBP(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+        super(patch, rom, output, resourceProvider, fileUtils);
     }
 
     @Override
     public void apply(boolean ignoreChecksum) throws PatchException, IOException {
-        File cleanRom = File.createTempFile("rom", null, resourceProvider.getCacheDir());
-        File ipsPatch = File.createTempFile("patch", null, resourceProvider.getCacheDir());
+        File cleanRom = File.createTempFile("rom", null, resourceProvider.getTempDir());
+        File ipsPatch = File.createTempFile("patch", null, resourceProvider.getTempDir());
         try {
-            Utils.INSTANCE.copyFile(romFile, cleanRom, resourceProvider);
+            fileUtils.copyFile(romFile, cleanRom);
             prepareCleanRom(cleanRom, ignoreChecksum);
 
             EBPtoIPS(patchFile, ipsPatch);
 
-            IPS ips = new IPS(ipsPatch, cleanRom, outputFile, resourceProvider);
+            IPS ips = new IPS(ipsPatch, cleanRom, outputFile, resourceProvider, fileUtils);
             ips.apply();
         } finally {
             FileUtils.deleteQuietly(ipsPatch);
@@ -169,14 +170,14 @@ public class EBP extends Patcher {
 
             // copy patch from assets
             InputStream in = resourceProvider.getAsset(EB_WRONG_MD5.get(md5));
-            File patch = File.createTempFile("patch", null, resourceProvider.getCacheDir());
+            File patch = File.createTempFile("patch", null, resourceProvider.getTempDir());
             FileUtils.copyToFile(in, patch);
             IOUtils.closeQuietly(in);
 
             // fix rom
-            File tmpFile = File.createTempFile("rom", null, resourceProvider.getCacheDir());
+            File tmpFile = File.createTempFile("rom", null, resourceProvider.getTempDir());
             FileUtils.copyFile(file, tmpFile);
-            IPS ips = new IPS(patch, tmpFile, file, resourceProvider);
+            IPS ips = new IPS(patch, tmpFile, file, resourceProvider, fileUtils);
             ips.apply();
 
             FileUtils.deleteQuietly(tmpFile);
@@ -188,7 +189,7 @@ public class EBP extends Patcher {
         try {
             MessageDigest md5Digest = MessageDigest.getInstance("MD5");
             md5Digest.update(array);
-            String md5 = Utils.INSTANCE.bytesToHexString(md5Digest.digest());
+            String md5 = ExtensionsKt.bytesToHexString(md5Digest.digest());
             return md5.equals(EB_CLEAN_MD5);
         } catch (NoSuchAlgorithmException e) {
             throw new IOException(e.getMessage());
@@ -210,7 +211,7 @@ public class EBP extends Patcher {
             while ((count = f.read(byteArray)) != -1) {
                 md5Digest.update(byteArray, 0, count);
             }
-            return Utils.INSTANCE.bytesToHexString(md5Digest.digest());
+            return ExtensionsKt.bytesToHexString(md5Digest.digest());
         } catch (NoSuchAlgorithmException e) {
             throw new IOException(e.getMessage());
         } finally {

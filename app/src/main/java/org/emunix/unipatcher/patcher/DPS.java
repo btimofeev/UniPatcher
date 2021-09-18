@@ -19,8 +19,6 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher.patcher;
 
-import android.content.Context;
-
 import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
 
@@ -29,6 +27,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class DPS extends Patcher {
@@ -38,8 +37,8 @@ public class DPS extends Patcher {
     private static final int COPY_DATA = 0;
     private static final int ENCLOSED_DATA = 1;
 
-    public DPS(File patch, File rom, File output, ResourceProvider resourceProvider) {
-        super(patch, rom, output, resourceProvider);
+    public DPS(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+        super(patch, rom, output, resourceProvider, fileUtils);
     }
 
     @Override

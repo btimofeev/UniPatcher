@@ -30,15 +30,15 @@ import java.util.zip.CRC32;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.Utils;
+import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class UPS extends Patcher {
 
     private static final byte[] MAGIC_NUMBER = {0x55, 0x50, 0x53, 0x31}; // "UPS1"
 
-    public UPS(File patch, File rom, File output, ResourceProvider resourceProvider) {
-        super(patch, rom, output, resourceProvider);
+    public UPS(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+        super(patch, rom, output, resourceProvider, fileUtils);
     }
 
     @Override
@@ -104,7 +104,7 @@ public class UPS extends Patcher {
                 offset += p.getValue();
                 patchPos += p.getSize();
                 if (offset > ySize) continue;
-                Utils.INSTANCE.copy(romStream, outputStream, offset - outPos);
+                fileUtils.copy(romStream, outputStream, offset - outPos);
                 outPos += offset - outPos;
                 for (long i = offset; i < ySize; i++) {
                     x = patchStream.read();
@@ -117,7 +117,7 @@ public class UPS extends Patcher {
                 }
             }
             // write rom tail and trim
-            Utils.INSTANCE.copy(romStream, outputStream, ySize - outPos);
+            fileUtils.copy(romStream, outputStream, ySize - outPos);
 
         } finally {
             IOUtils.closeQuietly(patchStream);

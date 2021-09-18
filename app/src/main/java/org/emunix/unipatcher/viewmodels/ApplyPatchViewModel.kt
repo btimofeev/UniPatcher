@@ -20,12 +20,10 @@
 
 package org.emunix.unipatcher.viewmodels
 
-import android.app.Application
 import android.net.Uri
-import androidx.documentfile.provider.DocumentFile
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
@@ -33,22 +31,22 @@ import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
-import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.patcher.PatcherFactory
-
+import org.emunix.unipatcher.utils.UFileUtils
+import org.emunix.unipatcher.utils.isArchive
 import timber.log.Timber
 import java.io.File
 import javax.inject.Inject
 
 @HiltViewModel
 class ApplyPatchViewModel @Inject constructor(
-    private val app: Application,
     private val settings: Settings,
     private val resourceProvider: ResourceProvider,
     private val patcherFactory: PatcherFactory,
-) : AndroidViewModel(app) {
+    private val fileUtils: UFileUtils,
+) : ViewModel() {
 
     private var patchUri: Uri? = null
     private var romUri: Uri? = null
@@ -73,16 +71,14 @@ class ApplyPatchViewModel @Inject constructor(
 
     fun patchSelected(uri: Uri) = viewModelScope.launch {
         patchUri = uri
-        val name = DocumentFile.fromSingleUri(app.applicationContext, uri)?.name ?: "Undefined name"
-        Timber.d("Patch name: $name")
+        val name = fileUtils.getFileName(uri)
         patchName.value = name
         checkArchive(name)
     }
 
     fun romSelected(uri: Uri) = viewModelScope.launch {
         romUri = uri
-        val name = DocumentFile.fromSingleUri(app.applicationContext, uri)?.name ?: "Undefined name"
-        Timber.d("ROM name: $name")
+        val name = fileUtils.getFileName(uri)
         romName.value = name
         checkArchive(name)
         suggestOutputName(name)
@@ -90,9 +86,7 @@ class ApplyPatchViewModel @Inject constructor(
 
     fun outputSelected(uri: Uri) = viewModelScope.launch {
         outputUri = uri
-        val name = DocumentFile.fromSingleUri(app.applicationContext, uri)?.name ?: "Undefined name"
-        Timber.d("Output name: $name")
-        outputName.value = name
+        outputName.value = fileUtils.getFileName(uri)
     }
 
     fun runActionClicked() = viewModelScope.launch {
@@ -129,8 +123,8 @@ class ApplyPatchViewModel @Inject constructor(
         }
     }
 
-    private suspend fun checkArchive(fileName: String) {
-        val isArchive = Utils.isArchive(fileName)
+    private fun checkArchive(fileName: String) {
+        val isArchive = File(fileName).isArchive()
         Timber.d("isArchive = $isArchive")
         if (isArchive)
             message.value =
@@ -156,12 +150,12 @@ class ApplyPatchViewModel @Inject constructor(
         var romFile: File? = null
         var outputFile: File? = null
         try {
-            romFile = Utils.copyToTempFile(app.applicationContext, romUri)
-            patchFile = Utils.copyToTempFile(app.applicationContext, patchUri, patchName)
-            outputFile = File.createTempFile("output", ".rom", Utils.getTempDir(app.applicationContext))
+            romFile = fileUtils.copyToTempFile(romUri)
+            patchFile = fileUtils.copyToTempFile(patchUri, patchName)
+            outputFile = File.createTempFile("output", ".rom", fileUtils.getTempDir())
             val patcher = patcherFactory.createPatcher(patchFile, romFile, outputFile)
             patcher.apply(settings.getIgnoreChecksum())
-            Utils.copy(outputFile, outputUri, app.applicationContext)
+            fileUtils.copy(outputFile, outputUri)
             settings.setPatchingSuccessful(true)
         } finally {
             FileUtils.deleteQuietly(outputFile)

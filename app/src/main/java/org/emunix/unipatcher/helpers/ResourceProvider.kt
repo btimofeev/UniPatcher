@@ -22,6 +22,7 @@ package org.emunix.unipatcher.helpers
 
 import android.content.Context
 import androidx.annotation.StringRes
+import timber.log.Timber
 import java.io.File
 import java.io.InputStream
 import javax.inject.Inject
@@ -32,9 +33,14 @@ import javax.inject.Inject
 interface ResourceProvider {
 
     /**
+     * Returns version of the application
+     */
+    val appVersion: String
+
+    /**
      * Returns the absolute path to the application specific cache directory on the filesystem.
      */
-    val cacheDir: File
+    val tempDir: File
 
     /**
      * Open file from "assets" directory
@@ -58,8 +64,16 @@ interface ResourceProvider {
  */
 class ResourceProviderImpl @Inject constructor(private val context: Context) : ResourceProvider {
 
-    override val cacheDir: File
-        get() = context.cacheDir
+    override val appVersion: String
+        get() = try {
+            context.packageManager.getPackageInfo(context.packageName, 0).versionName
+        } catch (e: Exception) {
+            Timber.e("Application version is not available")
+            ""
+        }
+
+    override val tempDir: File
+        get() = context.externalCacheDir ?: context.cacheDir
 
     override fun getAsset(fileName: String): InputStream = context.assets.open(fileName)
 

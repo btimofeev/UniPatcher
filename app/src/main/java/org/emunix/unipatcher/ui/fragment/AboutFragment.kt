@@ -26,8 +26,8 @@ import androidx.fragment.app.Fragment
 import dagger.Lazy
 import dagger.hilt.android.AndroidEntryPoint
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.databinding.FragmentAboutBinding
+import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.helpers.SocialHelper
 import javax.inject.Inject
 
@@ -37,11 +37,16 @@ class AboutFragment : Fragment() {
     @Inject
     lateinit var social: Lazy<SocialHelper>
 
+    @Inject
+    lateinit var resourceProvider: ResourceProvider
+
     private var _binding: FragmentAboutBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -53,7 +58,7 @@ class AboutFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.versionText.text = getString(R.string.help_activity_about_tab_version, Utils.getAppVersion(requireActivity()))
+        binding.versionText.text = getString(R.string.help_activity_about_tab_version, resourceProvider.appVersion)
         binding.visitSiteButton.setOnClickListener { social.get().openWebsite() }
         binding.changelogButton.setOnClickListener { social.get().showChangelog() }
     }

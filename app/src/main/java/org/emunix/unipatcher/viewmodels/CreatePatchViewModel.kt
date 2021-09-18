@@ -20,12 +20,10 @@
 
 package org.emunix.unipatcher.viewmodels
 
-import android.app.Application
 import android.net.Uri
-import androidx.documentfile.provider.DocumentFile
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -34,20 +32,19 @@ import kotlinx.coroutines.withContext
 import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
-import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.tools.CreateXDelta3
-import timber.log.Timber
+import org.emunix.unipatcher.utils.UFileUtils
 import java.io.File
 import javax.inject.Inject
 
 @HiltViewModel
 class CreatePatchViewModel @Inject constructor(
-    private val app: Application,
     private val settings: Settings,
     private val resourceProvider: ResourceProvider,
-) : AndroidViewModel(app) {
+    private val fileUtils: UFileUtils,
+) : ViewModel() {
 
     private var sourceUri: Uri? = null
     private var modifiedUri: Uri? = null
@@ -70,23 +67,17 @@ class CreatePatchViewModel @Inject constructor(
 
     fun sourceSelected(uri: Uri) = viewModelScope.launch {
         sourceUri = uri
-        val name = DocumentFile.fromSingleUri(app.applicationContext, uri)?.name ?: "Undefined name"
-        Timber.d("Source name: $name")
-        sourceName.value = name
+        sourceName.value = fileUtils.getFileName(uri)
     }
 
     fun modifiedSelected(uri: Uri) = viewModelScope.launch {
         modifiedUri = uri
-        val name = DocumentFile.fromSingleUri(app.applicationContext, uri)?.name ?: "Undefined name"
-        Timber.d("Modified name: $name")
-        modifiedName.value = name
+        modifiedName.value = fileUtils.getFileName(uri)
     }
 
     fun patchSelected(uri: Uri) = viewModelScope.launch {
         patchUri = uri
-        val name = DocumentFile.fromSingleUri(app.applicationContext, uri)?.name ?: "Undefined name"
-        Timber.d("Patch name: $name")
-        patchName.value = name
+        patchName.value = fileUtils.getFileName(uri)
     }
 
     fun runActionClicked() = viewModelScope.launch {
@@ -134,13 +125,13 @@ class CreatePatchViewModel @Inject constructor(
         require(modifiedUri != null) { "modifiedUri is null" }
         require(patchUri != null) { "patchUri is null" }
 
-        val sourceFile = Utils.copyToTempFile(app.applicationContext, sourceUri)
-        val modifiedFile = Utils.copyToTempFile(app.applicationContext, modifiedUri)
-        val patchFile = File.createTempFile("patch", ".xdelta", Utils.getTempDir(app.applicationContext))
+        val sourceFile = fileUtils.copyToTempFile(sourceUri)
+        val modifiedFile = fileUtils.copyToTempFile(modifiedUri)
+        val patchFile = File.createTempFile("patch", ".xdelta", fileUtils.getTempDir())
         try {
             val patchMaker = CreateXDelta3(patchFile, sourceFile, modifiedFile, resourceProvider)
             patchMaker.create()
-            Utils.copy(patchFile, patchUri, app.applicationContext)
+            fileUtils.copy(patchFile, patchUri)
             settings.setPatchingSuccessful(true)
         } finally {
             FileUtils.deleteQuietly(sourceFile)
