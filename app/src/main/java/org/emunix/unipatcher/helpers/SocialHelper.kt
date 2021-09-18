@@ -26,7 +26,7 @@ import androidx.core.net.toUri
 import org.emunix.unipatcher.BuildConfig
 import org.emunix.unipatcher.R
 
-class SocialHelper(val context: Context) {
+class SocialHelper(private val context: Context) {
 
     fun shareApp() {
         val shareIntent = Intent(Intent.ACTION_SEND)
@@ -43,7 +43,8 @@ class SocialHelper(val context: Context) {
     fun rateApp() {
         val rateAppIntent = Intent(Intent.ACTION_VIEW)
         rateAppIntent.data = BuildConfig.RATE_URL.toUri()
-        if (context.packageManager.queryIntentActivities(rateAppIntent, 0).size == 0) { // Market app is not installed. Open web browser
+        if (context.packageManager.queryIntentActivities(rateAppIntent, 0).size == 0) {
+            // Market app is not installed. Open web browser
             rateAppIntent.data = BuildConfig.SHARE_URL.toUri()
         }
         rateAppIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
@@ -51,14 +52,20 @@ class SocialHelper(val context: Context) {
     }
 
     fun openWebsite() {
-        val browserIntent = Intent(Intent.ACTION_VIEW, "https://github.com/btimofeev/UniPatcher".toUri())
+        val browserIntent = Intent(Intent.ACTION_VIEW, SITE_URL.toUri())
         browserIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         context.startActivity(browserIntent)
     }
 
     fun showChangelog() {
-        val changelogIntent = Intent(Intent.ACTION_VIEW, "https://github.com/btimofeev/UniPatcher/blob/master/Changelog.md".toUri())
+        val changelogIntent = Intent(Intent.ACTION_VIEW, CHANGELOG_URL.toUri())
         changelogIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         context.startActivity(changelogIntent)
+    }
+
+    companion object {
+
+        private const val SITE_URL = "https://github.com/btimofeev/UniPatcher"
+        private const val CHANGELOG_URL = "https://github.com/btimofeev/UniPatcher/blob/master/Changelog.md"
     }
 }
