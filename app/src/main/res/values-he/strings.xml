@@ -191,7 +191,5 @@
     <string name="main_activity_output_file">קובץ פלט</string>
     <string name="main_activity_patch_file">קובץ תיקון</string>
     <string name="main_activity_rom_file">קובץ ROM</string>
-    <string name="app_email">unipatcher@gmail.com</string>
-    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_name">UniPatcher</string>
 </resources>

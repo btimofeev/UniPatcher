@@ -191,7 +191,5 @@
     <string name="main_activity_output_file">Ausgabedatei</string>
     <string name="main_activity_patch_file">Patch-Datei</string>
     <string name="main_activity_rom_file">ROM-Datei</string>
-    <string name="app_email">unipatcher@gmail.com</string>
-    <string name="app_site">Unipatcher</string>
     <string name="app_name">UniPatcher</string>
 </resources>

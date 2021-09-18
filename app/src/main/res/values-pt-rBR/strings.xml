@@ -11,8 +11,6 @@
     <string name="main_activity_output_file">Arquivo de saída</string>
     <string name="main_activity_patch_file">Arquivo remendo</string>
     <string name="main_activity_rom_file">Arquivo ROM</string>
-    <string name="app_email">unipatcher@gmail.com</string>
-    <string name="app_site">https://github.com/btimofeev/UniPatcher</string>
     <string name="app_name">UniPatcher</string>
     <string name="help_ips_no_checksum_body">Os patches de formato IPS não contêm um checksum. Portanto, o patch se aplicará a qualquer arquivo ROM (até errado). Nesse caso, você precisa procurar outro arquivo ROM.</string>
     <string name="help_ecm_image_title">O que posso fazer com o tipo de arquivo .ECM\?</string>
