@@ -1,4 +1,4 @@
-package org.emunix.unipatcher.ktx
+package org.emunix.unipatcher.utils
 
 import android.app.Activity
 import android.content.Intent
