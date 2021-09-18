@@ -22,25 +22,27 @@ package org.emunix.unipatcher.patcher
 
 import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.R
+import org.emunix.unipatcher.utils.UFileUtils
 import org.emunix.unipatcher.helpers.ResourceProvider
 import java.io.File
-import java.util.*
+import java.util.Locale
 import javax.inject.Inject
 
 class PatcherFactory @Inject constructor(
     private val resourceProvider: ResourceProvider,
+    private val fileUtils: UFileUtils,
 ) {
 
     fun createPatcher(patch: File, rom: File, output: File): Patcher {
         return when (FilenameUtils.getExtension(patch.name).lowercase(Locale.getDefault())) {
-            "ips" -> IPS(patch, rom, output, resourceProvider)
-            "ups" -> UPS(patch, rom, output, resourceProvider)
-            "bps" -> BPS(patch, rom, output, resourceProvider)
-            "ppf" -> PPF(patch, rom, output, resourceProvider)
-            "aps" -> APS(patch, rom, output, resourceProvider)
-            "ebp" -> EBP(patch, rom, output, resourceProvider)
-            "dps" -> DPS(patch, rom, output, resourceProvider)
-            "xdelta", "xdelta3", "xd", "vcdiff" -> XDelta(patch, rom, output, resourceProvider)
+            "ips" -> IPS(patch, rom, output, resourceProvider, fileUtils)
+            "ups" -> UPS(patch, rom, output, resourceProvider, fileUtils)
+            "bps" -> BPS(patch, rom, output, resourceProvider, fileUtils)
+            "ppf" -> PPF(patch, rom, output, resourceProvider, fileUtils)
+            "aps" -> APS(patch, rom, output, resourceProvider, fileUtils)
+            "ebp" -> EBP(patch, rom, output, resourceProvider, fileUtils)
+            "dps" -> DPS(patch, rom, output, resourceProvider, fileUtils)
+            "xdelta", "xdelta3", "xd", "vcdiff" -> XDelta(patch, rom, output, resourceProvider, fileUtils)
             else -> throw PatchException(resourceProvider.getString(R.string.notify_error_unknown_patch_format))
         }
     }

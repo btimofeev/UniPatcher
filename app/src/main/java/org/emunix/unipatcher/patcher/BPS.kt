@@ -22,6 +22,7 @@ package org.emunix.unipatcher.patcher
 
 import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
+import org.emunix.unipatcher.utils.UFileUtils
 import org.emunix.unipatcher.helpers.ResourceProvider
 import java.io.File
 import java.io.FileInputStream
@@ -32,8 +33,9 @@ class BPS(
     patch: File,
     rom: File,
     output: File,
-    resourceProvider: ResourceProvider
-) : Patcher(patch, rom, output, resourceProvider) {
+    resourceProvider: ResourceProvider,
+    fileUtils: UFileUtils,
+) : Patcher(patch, rom, output, resourceProvider, fileUtils) {
 
     @Throws(PatchException::class, IOException::class)
     override fun apply(ignoreChecksum: Boolean) {

@@ -3,11 +3,13 @@ package org.emunix.unipatcher.patcher;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+import android.content.Context;
 import java.io.File;
 import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.helpers.ResourceProvider;
+import org.emunix.unipatcher.utils.UFileUtils;
 import org.junit.*;
 import org.junit.rules.*;
 import org.junit.runner.*;
@@ -25,10 +27,16 @@ public class BPSTest {
     @Mock
     ResourceProvider resourceProvider;
 
+    @Mock
+    Context context;
+
+    private UFileUtils fileUtils;
+
     @Before
     public void setUp() throws Exception {
         when(resourceProvider.getString(R.string.notify_error_patch_corrupted))
                 .thenReturn(PATCH_CORRUPTED);
+        fileUtils = new UFileUtils(context, resourceProvider);
     }
 
     @Test
@@ -41,7 +49,7 @@ public class BPSTest {
         File in = new File(getClass().getResource(origName).getPath());
         File out = folder.newFile("out.bin");
 
-        BPS patcher = new BPS(patch, in, out, resourceProvider);
+        BPS patcher = new BPS(patch, in, out, resourceProvider, fileUtils);
         try {
             patcher.apply(false);
         } catch (PatchException | IOException e) {

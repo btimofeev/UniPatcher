@@ -21,7 +21,7 @@ package org.emunix.unipatcher.patcher;
 
 import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.Utils;
+import org.emunix.unipatcher.utils.UFileUtils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -44,8 +44,8 @@ public class IPS extends Patcher {
 
     private int mPatchType = NOT_IPS_PATCH;
 
-    public IPS(File patch, File rom, File output, ResourceProvider resourceProvider) {
-        super(patch, rom, output, resourceProvider);
+    public IPS(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+        super(patch, rom, output, resourceProvider, fileUtils);
     }
 
     @Override
@@ -96,7 +96,7 @@ public class IPS extends Patcher {
                         } else {
                             size = romSize - romPos;
                         }
-                        Utils.INSTANCE.copy(romStream, outputStream, size);
+                        fileUtils.copy(romStream, outputStream, size);
                     }
                     break;
                 }
@@ -104,20 +104,20 @@ public class IPS extends Patcher {
                 if (offset <= romSize) {
                     if (outPos < offset) {
                         size = offset - outPos;
-                        Utils.INSTANCE.copy(romStream, outputStream, size);
+                        fileUtils.copy(romStream, outputStream, size);
                         romPos += size;
                         outPos += size;
                     }
                 } else {
                     if (outPos < romSize) {
                         size = romSize - outPos;
-                        Utils.INSTANCE.copy(romStream, outputStream, size);
+                        fileUtils.copy(romStream, outputStream, size);
                         romPos += size;
                         outPos += size;
                     }
                     if (outPos < offset) {
                         size = offset - outPos;
-                        Utils.INSTANCE.copy(size, (byte) 0x0, outputStream);
+                        fileUtils.copy(size, (byte) 0x0, outputStream);
                         outPos += size;
                     }
                 }

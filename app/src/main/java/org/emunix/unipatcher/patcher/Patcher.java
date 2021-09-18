@@ -21,6 +21,7 @@ package org.emunix.unipatcher.patcher;
 
 import java.io.File;
 import java.io.IOException;
+import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public abstract class Patcher {
@@ -29,12 +30,14 @@ public abstract class Patcher {
     protected File romFile;
     protected File outputFile;
     protected ResourceProvider resourceProvider;
+    protected UFileUtils fileUtils;
 
-    public Patcher(File patch, File rom, File output, ResourceProvider resourceProvider) {
+    public Patcher(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
         patchFile = patch;
         romFile = rom;
         outputFile = output;
         this.resourceProvider = resourceProvider;
+        this.fileUtils = fileUtils;
     }
 
     public abstract void apply(boolean ignoreChecksum) throws PatchException, IOException;

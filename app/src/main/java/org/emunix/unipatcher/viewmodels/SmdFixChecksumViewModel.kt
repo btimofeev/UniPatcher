@@ -20,12 +20,10 @@
 
 package org.emunix.unipatcher.viewmodels
 
-import android.app.Application
 import android.net.Uri
-import androidx.documentfile.provider.DocumentFile
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -33,19 +31,18 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.tools.SmdFixChecksum
-import timber.log.Timber
+import org.emunix.unipatcher.utils.UFileUtils
 import java.io.File
 import javax.inject.Inject
 
 @HiltViewModel
 class SmdFixChecksumViewModel @Inject constructor(
-    private val app: Application,
     private val resourceProvider: ResourceProvider,
-) : AndroidViewModel(app) {
+    private val fileUtils: UFileUtils,
+) : ViewModel() {
 
     private var romUri: Uri? = null
     private val romName: MutableLiveData<String> = MutableLiveData()
@@ -62,9 +59,7 @@ class SmdFixChecksumViewModel @Inject constructor(
 
     fun romSelected(uri: Uri) = viewModelScope.launch {
         romUri = uri
-        val name = DocumentFile.fromSingleUri(app.applicationContext, uri)?.name ?: "Undefined name"
-        Timber.d("ROM name: $name")
-        romName.value = name
+        romName.value = fileUtils.getFileName(uri)
     }
 
     fun runActionClicked() = viewModelScope.launch {
@@ -100,10 +95,10 @@ class SmdFixChecksumViewModel @Inject constructor(
 
         var tmpFile: File? = null
         try {
-            tmpFile = Utils.copyToTempFile(app.applicationContext, romUri)
+            tmpFile = fileUtils.copyToTempFile(romUri)
             val worker = SmdFixChecksum(tmpFile, resourceProvider)
             worker.fixChecksum()
-            Utils.copy(tmpFile, romUri, app.applicationContext)
+            fileUtils.copy(tmpFile, romUri)
         } finally {
             FileUtils.deleteQuietly(tmpFile)
         }

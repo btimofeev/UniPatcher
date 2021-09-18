@@ -20,12 +20,10 @@
 
 package org.emunix.unipatcher.viewmodels
 
-import android.app.Application
 import android.net.Uri
-import androidx.documentfile.provider.DocumentFile
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -34,19 +32,18 @@ import kotlinx.coroutines.withContext
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.Utils
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.tools.SnesSmcHeader
-import timber.log.Timber
+import org.emunix.unipatcher.utils.UFileUtils
 import java.io.File
 import javax.inject.Inject
 
 @HiltViewModel
 class SnesSmcHeaderViewModel @Inject constructor(
-    private val app: Application,
     private val resourceProvider: ResourceProvider,
-) : AndroidViewModel(app) {
+    private val fileUtils: UFileUtils,
+) : ViewModel() {
 
     private var romUri: Uri? = null
     private var outputUri: Uri? = null
@@ -70,8 +67,7 @@ class SnesSmcHeaderViewModel @Inject constructor(
 
     fun romSelected(uri: Uri) = viewModelScope.launch {
         romUri = uri
-        val name = DocumentFile.fromSingleUri(app.applicationContext, uri)?.name ?: "Undefined name"
-        Timber.d("ROM name: $name")
+        val name = fileUtils.getFileName(uri)
         romName.value = name
         checkSmc(uri)
         suggestOutputName(name)
@@ -79,9 +75,7 @@ class SnesSmcHeaderViewModel @Inject constructor(
 
     fun outputSelected(uri: Uri) = viewModelScope.launch {
         outputUri = uri
-        val name = DocumentFile.fromSingleUri(app.applicationContext, uri)?.name ?: "Undefined name"
-        Timber.d("Output name: $name")
-        outputName.value = name
+        outputName.value = fileUtils.getFileName(uri)
     }
 
     private suspend fun suggestOutputName(romName: String) = withContext(Dispatchers.Default) {
@@ -91,7 +85,7 @@ class SnesSmcHeaderViewModel @Inject constructor(
     }
 
     private suspend fun checkSmc(uri: Uri) = withContext(Dispatchers.Default) {
-        val uriFileSize = DocumentFile.fromSingleUri(app.applicationContext, uri)?.length()
+        val uriFileSize = fileUtils.getFileSize(uri)
         if (uriFileSize == null || uriFileSize == 0L) {
             infoText.postValue(resourceProvider.getString(R.string.snes_smc_error_unable_to_get_file_size))
             return@withContext
@@ -145,10 +139,10 @@ class SnesSmcHeaderViewModel @Inject constructor(
         var romFile: File? = null
         var outputFile: File? = null
         try {
-            romFile = Utils.copyToTempFile(app.applicationContext, romUri)
-            outputFile = Utils.copyToTempFile(app.applicationContext, outputUri)
+            romFile = fileUtils.copyToTempFile(romUri)
+            outputFile = fileUtils.copyToTempFile(outputUri)
             SnesSmcHeader().deleteSnesSmcHeader(romFile, outputFile, resourceProvider)
-            Utils.copy(outputFile, outputUri, app.applicationContext)
+            fileUtils.copy(outputFile, outputUri)
         } finally {
             FileUtils.deleteQuietly(outputFile)
             FileUtils.deleteQuietly(romFile)

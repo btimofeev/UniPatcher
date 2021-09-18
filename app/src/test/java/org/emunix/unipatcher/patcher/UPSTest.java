@@ -3,10 +3,12 @@ package org.emunix.unipatcher.patcher;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+import android.content.Context;
 import java.io.File;
 import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 import org.junit.*;
 import org.junit.rules.*;
@@ -25,10 +27,16 @@ public class UPSTest {
     @Mock
     ResourceProvider resourceProvider;
 
+    @Mock
+    Context context;
+
+    private UFileUtils fileUtils;
+
     @Before
     public void setUp() throws Exception {
         when(resourceProvider.getString(R.string.notify_error_patch_corrupted))
                 .thenReturn(PATCH_CORRUPTED);
+        fileUtils = new UFileUtils(context, resourceProvider);
     }
 
     @Test
@@ -61,7 +69,7 @@ public class UPSTest {
         File in = new File(getClass().getResource(origName).getPath());
         File out = folder.newFile("out.bin");
 
-        UPS patcher = new UPS(patch, in, out, resourceProvider);
+        UPS patcher = new UPS(patch, in, out, resourceProvider, fileUtils);
         try {
             patcher.apply(false);
         } catch (PatchException | IOException e) {

@@ -30,7 +30,7 @@ import java.io.RandomAccessFile;
 import java.util.Arrays;
 import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.Utils;
+import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class APS_N64 extends Patcher {
@@ -40,8 +40,8 @@ public class APS_N64 extends Patcher {
     private static final int TYPE_N64_PATCH = 1;
     private static final int ENCODING_SIMPLE = 0;
 
-    public APS_N64(File patch, File rom, File output, ResourceProvider resourceProvider) {
-        super(patch, rom, output, resourceProvider);
+    public APS_N64(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+        super(patch, rom, output, resourceProvider, fileUtils);
     }
 
     @Override
@@ -122,20 +122,20 @@ public class APS_N64 extends Patcher {
                 if (offset <= romSize) {
                     if (outPos < offset) {
                         size = offset - outPos;
-                        Utils.INSTANCE.copy(romStream, outputStream, size);
+                        fileUtils.copy(romStream, outputStream, size);
                         romPos += size;
                         outPos += size;
                     }
                 } else {
                     if (outPos < romSize) {
                         size = (int) romSize - outPos;
-                        Utils.INSTANCE.copy(romStream, outputStream, size);
+                        fileUtils.copy(romStream, outputStream, size);
                         romPos += size;
                         outPos += size;
                     }
                     if (outPos < offset) {
                         size = offset - outPos;
-                        Utils.INSTANCE.copy(size, (byte) 0x0, outputStream);
+                        fileUtils.copy(size, (byte) 0x0, outputStream);
                         outPos += size;
                     }
                 }
@@ -171,7 +171,7 @@ public class APS_N64 extends Patcher {
                 }
             }
             // write rom tail and trim
-            Utils.INSTANCE.copy(romStream, outputStream, outSize - outPos);
+            fileUtils.copy(romStream, outputStream, outSize - outPos);
         } finally {
             IOUtils.closeQuietly(romStream);
             IOUtils.closeQuietly(patchStream);

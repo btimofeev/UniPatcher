@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013-2017, 2019-2020 Boris Timofeev
+Copyright (C) 2013-2017, 2019-2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -17,40 +17,27 @@ You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package org.emunix.unipatcher
+package org.emunix.unipatcher.utils
 
 import android.content.Context
 import android.net.Uri
 import android.os.StatFs
+import androidx.documentfile.provider.DocumentFile
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import org.apache.commons.io.FileUtils
-import org.apache.commons.io.FilenameUtils
 import org.apache.commons.io.IOUtils
+import org.emunix.unipatcher.R.string
 import org.emunix.unipatcher.helpers.ResourceProvider
-import timber.log.Timber
 import java.io.*
 import java.util.*
+import javax.inject.Inject
 
-object Utils {
+class UFileUtils @Inject constructor(
+    private val context: Context,
+    private val resourceProvider: ResourceProvider,
+) {
 
-    private const val BUFFER_SIZE = 10240 // 10 Kb
-
-    fun getAppVersion(context: Context): String {
-        var versionName = "N/A"
-        try {
-            val pinfo = context.packageManager.getPackageInfo(context.packageName, 0)
-            versionName = pinfo.versionName
-        } catch (e: Exception) {
-            Timber.e("App version is not available")
-        }
-
-        return versionName
-    }
-
-    fun getTempDir(context: Context): File {
-        return context.externalCacheDir ?: context.cacheDir
-    }
+    fun getTempDir(): File = resourceProvider.tempDir
 
     fun getFreeSpace(file: File): Long {
         val stat = StatFs(file.path)
@@ -58,25 +45,27 @@ object Utils {
     }
 
     @Throws(IOException::class)
-    fun copyFile(from: File, to: File, resourceProvider: ResourceProvider) {
-        val dir = to.parentFile ?: throw IOException("Couldn't find parent file: $to")
+    fun copyFile(input: File, output: File) {
+        val dir = output.parentFile ?: throw IOException("Couldn't find parent file: $output")
 
-        if (getFreeSpace(dir) < from.length()) {
-            throw IOException(resourceProvider.getString(R.string.notify_error_not_enough_space))
+        if (getFreeSpace(dir) < input.length()) {
+            throw IOException(resourceProvider.getString(string.notify_error_not_enough_space))
         }
 
         try {
-            FileUtils.copyFile(from, to)
+            input.copyTo(target = output, overwrite = true)
         } catch (e: IOException) {
-            throw IOException(resourceProvider.getString(R.string.notify_error_could_not_copy_file))
+            throw IOException(resourceProvider.getString(string.notify_error_could_not_copy_file))
+        } catch (e: NoSuchFileException) {
+            throw IOException(resourceProvider.getString(string.notify_error_could_not_copy_file))
         }
     }
 
     @Throws(IOException::class)
     fun truncateFile(f: File, size: Long) {
-        val channel = FileOutputStream(f, true).channel
-        channel.truncate(size)
-        IOUtils.closeQuietly(channel)
+        FileOutputStream(f, true)
+            .channel
+            .use { it.truncate(size) }
     }
 
     @Throws(IOException::class)
@@ -117,32 +106,33 @@ object Utils {
     }
 
     @Throws(IOException::class)
-    suspend fun copyToTempFile(context: Context, inputStream: InputStream, ext: String = ".tmp"): File = withContext(Dispatchers.IO) {
-        val tmpDir = getTempDir(context)
-        val tmpFile = File.createTempFile("file", ext, tmpDir)
-        val outputStream = tmpFile.outputStream()
-        outputStream.use {
-            IOUtils.copy(inputStream, it)
+    suspend fun copyToTempFile(inputStream: InputStream, ext: String = ".tmp"): File =
+        withContext(Dispatchers.IO) {
+            val tmpDir = getTempDir()
+            val tmpFile = File.createTempFile("file", ext, tmpDir)
+            val outputStream = tmpFile.outputStream()
+            outputStream.use {
+                IOUtils.copy(inputStream, it)
+            }
+            return@withContext tmpFile
         }
-        return@withContext tmpFile
-    }
 
     @Throws(IOException::class, FileNotFoundException::class)
-    suspend fun copyToTempFile(context: Context, uri: Uri, ext: String = ".tmp"): File = withContext(Dispatchers.IO) {
+    suspend fun copyToTempFile(uri: Uri, ext: String = ".tmp"): File = withContext(Dispatchers.IO) {
         val stream = context.contentResolver.openInputStream(uri)
-                ?: throw IOException("Unable to open ${uri}: content resolver returned null")
+            ?: throw IOException("Unable to open ${uri}: content resolver returned null")
         try {
-            return@withContext copyToTempFile(context, stream, ext)
+            return@withContext copyToTempFile(stream, ext)
         } finally {
             IOUtils.closeQuietly(stream)
         }
     }
 
     @Throws(IOException::class)
-    fun copy(from: File, to: Uri, context: Context) {
+    fun copy(from: File, to: Uri) {
         val inputStream = from.inputStream()
         val outputStream = context.contentResolver.openOutputStream(to)
-                ?: throw IOException("Unable to open ${to}: content resolver returned null")
+            ?: throw IOException("Unable to open ${to}: content resolver returned null")
         try {
             IOUtils.copy(inputStream, outputStream)
         } finally {
@@ -151,20 +141,12 @@ object Utils {
         }
     }
 
-    fun bytesToHexString(bytes: ByteArray): String {
-        val sb = StringBuilder()
-        for (i in bytes.indices) {
-            sb.append("%x".format(bytes[i]))
-        }
-        return "$sb"
-    }
+    fun getFileName(uri: Uri): String = DocumentFile.fromSingleUri(context, uri)?.name ?: "Undefined name"
 
-    suspend fun isArchive(path: String): Boolean = withContext(Dispatchers.Default) {
-        val ext = FilenameUtils.getExtension(path).toLowerCase(Locale.getDefault())
-        return@withContext (ext == "zip"
-                || ext == "rar"
-                || ext == "7z"
-                || ext == "gz"
-                || ext == "tgz")
+    fun getFileSize(uri: Uri): Long? = DocumentFile.fromSingleUri(context, uri)?.length()
+
+    companion object {
+
+        private const val BUFFER_SIZE = 10240 // 10 Kb
     }
 }

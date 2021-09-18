@@ -26,7 +26,7 @@ import java.io.RandomAccessFile;
 import java.util.Arrays;
 import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.Utils;
+import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class PPF extends Patcher {
@@ -36,8 +36,8 @@ public class PPF extends Patcher {
     private RandomAccessFile patchStream;
     private RandomAccessFile outputStream;
 
-    public PPF(File patch, File rom, File output, ResourceProvider resourceProvider) {
-        super(patch, rom, output, resourceProvider);
+    public PPF(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+        super(patch, rom, output, resourceProvider, fileUtils);
     }
 
     /**
@@ -72,7 +72,7 @@ public class PPF extends Patcher {
             throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
         }
 
-        Utils.INSTANCE.copyFile(romFile, outputFile, resourceProvider);
+        fileUtils.copyFile(romFile, outputFile);
 
         switch (getPPFVersion(patchFile)) {
             case 1:

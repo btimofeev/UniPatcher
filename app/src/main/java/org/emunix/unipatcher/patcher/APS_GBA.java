@@ -28,7 +28,7 @@ import java.io.RandomAccessFile;
 import java.util.Arrays;
 import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.Utils;
+import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 import org.emunix.unipatcher.utils.Crc16;
 
@@ -36,8 +36,8 @@ public class APS_GBA extends Patcher {
     private static final byte[] MAGIC_NUMBER = {0x41, 0x50, 0x53, 0x31}; // APS1
     private static final int CHUNK_SIZE = 65536;
 
-    public APS_GBA(File patch, File rom, File output, ResourceProvider resourceProvider) {
-        super(patch, rom, output, resourceProvider);
+    public APS_GBA(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+        super(patch, rom, output, resourceProvider, fileUtils);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class APS_GBA extends Patcher {
         BufferedInputStream patchStream = null;
         RandomAccessFile output = null;
 
-        Utils.INSTANCE.copyFile(romFile, outputFile, resourceProvider);
+        fileUtils.copyFile(romFile, outputFile);
 
         try {
             patchStream = new BufferedInputStream(new FileInputStream(patchFile));
@@ -117,9 +117,9 @@ public class APS_GBA extends Patcher {
         }
 
         if (isOriginal) {
-            Utils.INSTANCE.truncateFile(outputFile, fileSize2);
+            fileUtils.truncateFile(outputFile, fileSize2);
         } else if (isModified) {
-            Utils.INSTANCE.truncateFile(outputFile, fileSize1);
+            fileUtils.truncateFile(outputFile, fileSize1);
         }
     }
 

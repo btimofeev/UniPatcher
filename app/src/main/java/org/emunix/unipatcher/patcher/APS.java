@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
+import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class APS extends Patcher {
@@ -36,8 +37,8 @@ public class APS extends Patcher {
     private static final byte[] APS_N64_MAGIC = {0x41, 0x50, 0x53, 0x31, 0x30}; // APS10
     private static final byte[] APS_GBA_MAGIC = {0x41, 0x50, 0x53, 0x31};       // APS1
 
-    public APS(File patch, File rom, File output, ResourceProvider resourceProvider) {
-        super(patch, rom, output, resourceProvider);
+    public APS(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+        super(patch, rom, output, resourceProvider, fileUtils);
     }
 
     @Override
@@ -45,10 +46,10 @@ public class APS extends Patcher {
         Patcher aps = null;
         switch (checkAPS(patchFile)) {
             case APS_N64_PATCH:
-                aps = new APS_N64(patchFile, romFile, outputFile, resourceProvider);
+                aps = new APS_N64(patchFile, romFile, outputFile, resourceProvider, fileUtils);
                 break;
             case APS_GBA_PATCH:
-                aps = new APS_GBA(patchFile, romFile, outputFile, resourceProvider);
+                aps = new APS_GBA(patchFile, romFile, outputFile, resourceProvider, fileUtils);
                 break;
             case NOT_APS_PATCH:
                 throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
