@@ -31,7 +31,7 @@ import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.SmdFixChecksumFragmentBinding
-import org.emunix.unipatcher.ktx.registerActivityResult
+import org.emunix.unipatcher.utils.registerActivityResult
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.SmdFixChecksumViewModel
 
