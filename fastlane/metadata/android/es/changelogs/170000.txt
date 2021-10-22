@@ -1,4 +1,6 @@
-- Se ha reemplazado el navegador interno de archivos por el estándar de Storage Access Framework, que funciona con tarjetas SD y almacenamiento en línea (como Google Drive). aplicar parches ahora necesita más espacio y lleva más tiempo. La vista de suma de comprobación se ha quitado temporalmente.
-- Los parches XDelta3 comprimidos con LZMA ahora se pueden leer.
+- Se ha reemplazado el navegador interno de archivos por el estándar SAF, que funciona con tarjetas SD y almacenamiento en línea (como Google Drive). Aplicar parches será más lento. La vista con las sumas ha desaparecido de forma temporal.
+- Los parches XDelta3 comprimidos con LZMA ahora se pueden leer
 - Quitada la opción de aplicar encabezados SMC a ROMs de SNES (nunca he necesitado usarla)
-- Añadid'o soporte para Android 10 y 11:vvvvv
+- Añadido soporte para Android 10 y 11
+- Ya no desaparecen las notificaciones
+- Pequeños retoques de IU
