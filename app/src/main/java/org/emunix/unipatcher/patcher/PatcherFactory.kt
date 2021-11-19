@@ -21,7 +21,7 @@
 package org.emunix.unipatcher.patcher
 
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.utils.UFileUtils
+import org.emunix.unipatcher.utils.FileUtils
 import org.emunix.unipatcher.helpers.ResourceProvider
 import java.io.File
 import java.util.Locale
@@ -29,7 +29,7 @@ import javax.inject.Inject
 
 class PatcherFactory @Inject constructor(
     private val resourceProvider: ResourceProvider,
-    private val fileUtils: UFileUtils,
+    private val fileUtils: FileUtils,
 ) {
 
     fun createPatcher(patch: File, rom: File, output: File): Patcher {

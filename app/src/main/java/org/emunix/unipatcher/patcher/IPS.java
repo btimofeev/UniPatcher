@@ -20,7 +20,7 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.patcher;
 
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.utils.UFileUtils;
+import org.emunix.unipatcher.utils.FileUtils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -43,7 +43,7 @@ public class IPS extends Patcher {
 
     private int mPatchType = NOT_IPS_PATCH;
 
-    public IPS(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+    public IPS(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
         super(patch, rom, output, resourceProvider, fileUtils);
     }
 

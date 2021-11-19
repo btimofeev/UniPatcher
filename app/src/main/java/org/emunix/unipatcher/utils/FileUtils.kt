@@ -22,7 +22,6 @@ package org.emunix.unipatcher.utils
 import android.content.Context
 import android.net.Uri
 import android.os.StatFs
-import android.os.WorkSource
 import androidx.documentfile.provider.DocumentFile
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -35,7 +34,7 @@ import java.io.*
 import java.util.*
 import javax.inject.Inject
 
-class UFileUtils @Inject constructor(
+class FileUtils @Inject constructor(
     private val context: Context,
     private val resourceProvider: ResourceProvider,
 ) {

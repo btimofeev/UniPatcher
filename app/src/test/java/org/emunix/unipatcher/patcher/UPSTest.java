@@ -7,7 +7,7 @@ import android.content.Context;
 import java.io.File;
 import java.io.IOException;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.utils.UFileUtils;
+import org.emunix.unipatcher.utils.FileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 import org.junit.*;
 import org.junit.rules.*;
@@ -29,13 +29,13 @@ public class UPSTest {
     @Mock
     Context context;
 
-    private UFileUtils fileUtils;
+    private FileUtils fileUtils;
 
     @Before
     public void setUp() throws Exception {
         when(resourceProvider.getString(R.string.notify_error_patch_corrupted))
                 .thenReturn(PATCH_CORRUPTED);
-        fileUtils = new UFileUtils(context, resourceProvider);
+        fileUtils = new FileUtils(context, resourceProvider);
     }
 
     @Test

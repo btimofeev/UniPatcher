@@ -32,7 +32,7 @@ import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.patcher.PatcherFactory
-import org.emunix.unipatcher.utils.UFileUtils
+import org.emunix.unipatcher.utils.FileUtils
 import org.emunix.unipatcher.utils.isArchive
 import timber.log.Timber
 import java.io.File
@@ -43,7 +43,7 @@ class ApplyPatchViewModel @Inject constructor(
     private val settings: Settings,
     private val resourceProvider: ResourceProvider,
     private val patcherFactory: PatcherFactory,
-    private val fileUtils: UFileUtils,
+    private val fileUtils: FileUtils,
 ) : ViewModel() {
 
     private var patchUri: Uri? = null

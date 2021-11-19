@@ -34,7 +34,7 @@ import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.tools.CreateXDelta3
-import org.emunix.unipatcher.utils.UFileUtils
+import org.emunix.unipatcher.utils.FileUtils
 import java.io.File
 import javax.inject.Inject
 
@@ -42,7 +42,7 @@ import javax.inject.Inject
 class CreatePatchViewModel @Inject constructor(
     private val settings: Settings,
     private val resourceProvider: ResourceProvider,
-    private val fileUtils: UFileUtils,
+    private val fileUtils: FileUtils,
 ) : ViewModel() {
 
     private var sourceUri: Uri? = null

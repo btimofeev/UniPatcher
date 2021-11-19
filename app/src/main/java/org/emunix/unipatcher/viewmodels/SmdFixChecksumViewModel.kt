@@ -33,14 +33,14 @@ import org.emunix.unipatcher.R
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.tools.SmdFixChecksum
-import org.emunix.unipatcher.utils.UFileUtils
+import org.emunix.unipatcher.utils.FileUtils
 import java.io.File
 import javax.inject.Inject
 
 @HiltViewModel
 class SmdFixChecksumViewModel @Inject constructor(
     private val resourceProvider: ResourceProvider,
-    private val fileUtils: UFileUtils,
+    private val fileUtils: FileUtils,
 ) : ViewModel() {
 
     private var romUri: Uri? = null

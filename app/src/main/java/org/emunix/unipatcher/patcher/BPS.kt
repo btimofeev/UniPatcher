@@ -21,7 +21,7 @@
 package org.emunix.unipatcher.patcher
 
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.utils.UFileUtils
+import org.emunix.unipatcher.utils.FileUtils
 import org.emunix.unipatcher.helpers.ResourceProvider
 import java.io.File
 import java.io.FileInputStream
@@ -33,7 +33,7 @@ class BPS(
     rom: File,
     output: File,
     resourceProvider: ResourceProvider,
-    fileUtils: UFileUtils,
+    fileUtils: FileUtils,
 ) : Patcher(patch, rom, output, resourceProvider, fileUtils) {
 
     @Throws(PatchException::class, IOException::class)

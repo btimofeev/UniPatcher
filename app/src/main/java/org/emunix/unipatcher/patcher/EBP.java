@@ -36,7 +36,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.HashMap;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.utils.UFileUtils;
+import org.emunix.unipatcher.utils.FileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 import org.emunix.unipatcher.tools.RomException;
 import org.emunix.unipatcher.tools.SnesSmcHeader;
@@ -60,7 +60,7 @@ public class EBP extends Patcher {
         EB_WRONG_MD5.put("cc9fa297e7bf9af21f7f179e657f1aa1", "patch/ebp/wrong6.ips");
     }
 
-    public EBP(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+    public EBP(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
         super(patch, rom, output, resourceProvider, fileUtils);
     }
 

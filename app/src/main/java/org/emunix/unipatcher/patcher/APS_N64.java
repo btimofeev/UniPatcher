@@ -29,7 +29,7 @@ import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.util.Arrays;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.utils.UFileUtils;
+import org.emunix.unipatcher.utils.FileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class APS_N64 extends Patcher {
@@ -39,7 +39,7 @@ public class APS_N64 extends Patcher {
     private static final int TYPE_N64_PATCH = 1;
     private static final int ENCODING_SIMPLE = 0;
 
-    public APS_N64(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+    public APS_N64(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
         super(patch, rom, output, resourceProvider, fileUtils);
     }
 

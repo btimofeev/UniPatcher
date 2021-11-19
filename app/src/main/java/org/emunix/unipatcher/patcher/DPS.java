@@ -26,7 +26,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import org.emunix.unipatcher.utils.UFileUtils;
+import org.emunix.unipatcher.utils.FileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class DPS extends Patcher {
@@ -36,7 +36,7 @@ public class DPS extends Patcher {
     private static final int COPY_DATA = 0;
     private static final int ENCLOSED_DATA = 1;
 
-    public DPS(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+    public DPS(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
         super(patch, rom, output, resourceProvider, fileUtils);
     }
 

@@ -27,7 +27,7 @@ import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.util.Arrays;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.utils.UFileUtils;
+import org.emunix.unipatcher.utils.FileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 import org.emunix.unipatcher.utils.Crc16;
 
@@ -35,7 +35,7 @@ public class APS_GBA extends Patcher {
     private static final byte[] MAGIC_NUMBER = {0x41, 0x50, 0x53, 0x31}; // APS1
     private static final int CHUNK_SIZE = 65536;
 
-    public APS_GBA(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+    public APS_GBA(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
         super(patch, rom, output, resourceProvider, fileUtils);
     }
 
