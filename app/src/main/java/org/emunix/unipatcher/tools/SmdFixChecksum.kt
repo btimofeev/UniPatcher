@@ -20,7 +20,7 @@ package org.emunix.unipatcher.tools
 
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.helpers.ResourceProvider
-import org.emunix.unipatcher.utils.UFileUtils
+import org.emunix.unipatcher.utils.FileUtils
 import timber.log.Timber
 import java.io.BufferedInputStream
 import java.io.File
@@ -30,7 +30,7 @@ import java.io.RandomAccessFile
 class SmdFixChecksum(
     private val smdFile: File,
     private val resourceProvider: ResourceProvider,
-    private val fileUtils: UFileUtils,
+    private val fileUtils: FileUtils,
 ) {
 
     @Throws(RomException::class, IOException::class)

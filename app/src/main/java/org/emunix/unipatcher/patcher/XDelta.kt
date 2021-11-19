@@ -19,14 +19,14 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.patcher
 
 import org.emunix.unipatcher.R.string
-import org.emunix.unipatcher.utils.UFileUtils
+import org.emunix.unipatcher.utils.FileUtils
 import org.emunix.unipatcher.helpers.ResourceProvider
 import timber.log.Timber
 import java.io.File
 import java.io.FileInputStream
 import java.io.IOException
 
-class XDelta(patch: File?, rom: File?, output: File?, resourceProvider: ResourceProvider?, fileUtils: UFileUtils) :
+class XDelta(patch: File?, rom: File?, output: File?, resourceProvider: ResourceProvider?, fileUtils: FileUtils) :
     Patcher(patch, rom, output, resourceProvider, fileUtils) {
 
     @Throws(PatchException::class, IOException::class)

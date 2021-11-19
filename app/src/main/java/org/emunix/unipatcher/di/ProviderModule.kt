@@ -31,7 +31,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.SettingsImpl
-import org.emunix.unipatcher.utils.UFileUtils
+import org.emunix.unipatcher.utils.FileUtils
 import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.helpers.ResourceProviderImpl
 import javax.inject.Singleton
@@ -61,5 +61,5 @@ object ProviderModule {
     fun provideFileUtils(
         @ApplicationContext context: Context,
         resourceProvider: ResourceProvider
-    ): UFileUtils = UFileUtils(context, resourceProvider)
+    ): FileUtils = FileUtils(context, resourceProvider)
 }

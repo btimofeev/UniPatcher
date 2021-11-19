@@ -20,7 +20,7 @@ package org.emunix.unipatcher.tools
 
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.helpers.ResourceProvider
-import org.emunix.unipatcher.utils.UFileUtils
+import org.emunix.unipatcher.utils.FileUtils
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -39,7 +39,7 @@ class SnesSmcHeader {
      * @throws RomException if [romFile] has no SMC header
      */
     @Throws(IOException::class, RomException::class)
-    fun deleteSnesSmcHeader(romFile: File, outputFile: File, resourceProvider: ResourceProvider, fileUtils: UFileUtils) {
+    fun deleteSnesSmcHeader(romFile: File, outputFile: File, resourceProvider: ResourceProvider, fileUtils: FileUtils) {
         if (!isRomHasSmcHeader(romFile.length())) {
             throw RomException(resourceProvider.getString(R.string.snes_rom_has_no_smc_header))
         }

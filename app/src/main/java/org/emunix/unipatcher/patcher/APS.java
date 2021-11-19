@@ -24,7 +24,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.utils.UFileUtils;
+import org.emunix.unipatcher.utils.FileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
 
 public class APS extends Patcher {
@@ -36,7 +36,7 @@ public class APS extends Patcher {
     private static final byte[] APS_N64_MAGIC = {0x41, 0x50, 0x53, 0x31, 0x30}; // APS10
     private static final byte[] APS_GBA_MAGIC = {0x41, 0x50, 0x53, 0x31};       // APS1
 
-    public APS(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+    public APS(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
         super(patch, rom, output, resourceProvider, fileUtils);
     }
 

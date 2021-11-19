@@ -29,13 +29,13 @@ import java.util.Arrays;
 import java.util.zip.CRC32;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.helpers.ResourceProvider;
-import org.emunix.unipatcher.utils.UFileUtils;
+import org.emunix.unipatcher.utils.FileUtils;
 
 public class UPS extends Patcher {
 
     private static final byte[] MAGIC_NUMBER = {0x55, 0x50, 0x53, 0x31}; // "UPS1"
 
-    public UPS(File patch, File rom, File output, ResourceProvider resourceProvider, UFileUtils fileUtils) {
+    public UPS(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
         super(patch, rom, output, resourceProvider, fileUtils);
     }
 
