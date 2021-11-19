@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016, 2020 Boris Timofeev
+Copyright (C) 2016, 2020, 2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -19,7 +19,6 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.activity
 
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
@@ -37,15 +36,7 @@ class SettingsActivity : AppCompatActivity() {
         supportFragmentManager.commit {
             replace<SettingsFragment>(R.id.settings_container)
         }
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                finish()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
+        binding.includes.toolbar.setNavigationOnClickListener { finish() }
     }
 }
