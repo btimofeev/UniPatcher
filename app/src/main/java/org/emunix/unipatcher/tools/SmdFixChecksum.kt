@@ -18,9 +18,9 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 package org.emunix.unipatcher.tools
 
-import org.apache.commons.io.IOUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.helpers.ResourceProvider
+import org.emunix.unipatcher.utils.UFileUtils
 import timber.log.Timber
 import java.io.BufferedInputStream
 import java.io.File
@@ -30,6 +30,7 @@ import java.io.RandomAccessFile
 class SmdFixChecksum(
     private val smdFile: File,
     private val resourceProvider: ResourceProvider,
+    private val fileUtils: UFileUtils,
 ) {
 
     @Throws(RomException::class, IOException::class)
@@ -42,7 +43,7 @@ class SmdFixChecksum(
         val stream = smdFile.inputStream()
         val smdStream = BufferedInputStream(stream)
         try {
-            var c = IOUtils.skip(smdStream, 512)
+            var c = fileUtils.skip(smdStream, 512)
             if (c != 512L) throw IOException("Skip failed")
             var byte1: Int
             var byte2: Int
@@ -54,8 +55,8 @@ class SmdFixChecksum(
                 c += 2
             }
         } finally {
-            IOUtils.closeQuietly(smdStream)
-            IOUtils.closeQuietly(stream)
+            fileUtils.closeQuietly(smdStream)
+            fileUtils.closeQuietly(stream)
         }
         return sum.toInt() and 0xffff
     }
@@ -64,12 +65,9 @@ class SmdFixChecksum(
     private fun writeChecksum(sum: Int) {
         val data = byteArrayOf((sum shr 8 and 0xff).toByte(), (sum and 0xff).toByte())
 
-        val smdStream = RandomAccessFile(smdFile, "rw")
-        try {
-            smdStream.seek(CHECKSUM_OFFSET.toLong())
-            smdStream.write(data)
-        } finally {
-            IOUtils.closeQuietly(smdStream)
+        RandomAccessFile(smdFile, "rw").use { smdFile ->
+            smdFile.seek(CHECKSUM_OFFSET.toLong())
+            smdFile.write(data)
         }
     }
 

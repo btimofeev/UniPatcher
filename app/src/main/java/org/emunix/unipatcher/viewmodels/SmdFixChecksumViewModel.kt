@@ -29,7 +29,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.helpers.ResourceProvider
@@ -96,11 +95,11 @@ class SmdFixChecksumViewModel @Inject constructor(
         var tmpFile: File? = null
         try {
             tmpFile = fileUtils.copyToTempFile(romUri)
-            val worker = SmdFixChecksum(tmpFile, resourceProvider)
+            val worker = SmdFixChecksum(tmpFile, resourceProvider, fileUtils)
             worker.fixChecksum()
             fileUtils.copy(tmpFile, romUri)
         } finally {
-            FileUtils.deleteQuietly(tmpFile)
+            fileUtils.delete(tmpFile)
         }
     }
 }

@@ -24,7 +24,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.Arrays;
-import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
@@ -61,7 +60,7 @@ public class PPF extends Patcher {
                 else if (b == 0x33) version = 3;
             }
         } finally {
-            IOUtils.closeQuietly(stream);
+            fileUtils.closeQuietly(stream);
         }
         return version;
     }
@@ -108,8 +107,8 @@ public class PPF extends Patcher {
                 outputStream.write(chunkData, 0, chunkSize);
             }
         } finally {
-            IOUtils.closeQuietly(patchStream);
-            IOUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(patchStream);
+            fileUtils.closeQuietly(outputStream);
         }
     }
 
@@ -160,8 +159,8 @@ public class PPF extends Patcher {
                 outputStream.write(chunkData, 0, chunkSize);
             }
         } finally {
-            IOUtils.closeQuietly(patchStream);
-            IOUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(patchStream);
+            fileUtils.closeQuietly(outputStream);
         }
     }
 
@@ -222,8 +221,8 @@ public class PPF extends Patcher {
                 outputStream.write(chunkData, 0, chunkSize);
             }
         } finally {
-            IOUtils.closeQuietly(patchStream);
-            IOUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(patchStream);
+            fileUtils.closeQuietly(outputStream);
         }
     }
 

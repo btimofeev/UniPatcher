@@ -23,7 +23,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
-import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
@@ -76,7 +75,7 @@ public class APS extends Patcher {
                 }
             }
         } finally {
-            IOUtils.closeQuietly(stream);
+            fileUtils.closeQuietly(stream);
         }
         return NOT_APS_PATCH;
     }
