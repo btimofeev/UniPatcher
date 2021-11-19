@@ -29,7 +29,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.helpers.ConsumableEvent
@@ -134,9 +133,9 @@ class CreatePatchViewModel @Inject constructor(
             fileUtils.copy(patchFile, patchUri)
             settings.setPatchingSuccessful(true)
         } finally {
-            FileUtils.deleteQuietly(sourceFile)
-            FileUtils.deleteQuietly(modifiedFile)
-            FileUtils.deleteQuietly(patchFile)
+            fileUtils.delete(sourceFile)
+            fileUtils.delete(modifiedFile)
+            fileUtils.delete(patchFile)
         }
     }
 }

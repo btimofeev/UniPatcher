@@ -6,7 +6,6 @@ import static org.mockito.Mockito.*;
 import android.content.Context;
 import java.io.File;
 import java.io.IOException;
-import org.apache.commons.io.FileUtils;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
@@ -77,6 +76,6 @@ public class UPSTest {
         }
 
         File origOut = new File(getClass().getResource(modifiedName).getPath());
-        return FileUtils.checksumCRC32(out) == FileUtils.checksumCRC32(origOut);
+        return fileUtils.checksumCRC32(out) == fileUtils.checksumCRC32(origOut);
     }
 }

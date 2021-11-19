@@ -29,8 +29,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.apache.commons.io.FileUtils
-import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.helpers.ResourceProvider
@@ -79,8 +77,8 @@ class SnesSmcHeaderViewModel @Inject constructor(
     }
 
     private suspend fun suggestOutputName(romName: String) = withContext(Dispatchers.Default) {
-        val baseName = FilenameUtils.getBaseName(romName)
-        val ext = FilenameUtils.getExtension(romName)
+        val baseName = fileUtils.getBaseName(romName)
+        val ext = fileUtils.getExtension(romName)
         suggestedOutputName.postValue("$baseName [headerless].$ext")
     }
 
@@ -141,11 +139,11 @@ class SnesSmcHeaderViewModel @Inject constructor(
         try {
             romFile = fileUtils.copyToTempFile(romUri)
             outputFile = fileUtils.copyToTempFile(outputUri)
-            SnesSmcHeader().deleteSnesSmcHeader(romFile, outputFile, resourceProvider)
+            SnesSmcHeader().deleteSnesSmcHeader(romFile, outputFile, resourceProvider, fileUtils)
             fileUtils.copy(outputFile, outputUri)
         } finally {
-            FileUtils.deleteQuietly(outputFile)
-            FileUtils.deleteQuietly(romFile)
+            fileUtils.delete(outputFile)
+            fileUtils.delete(romFile)
         }
     }
 }

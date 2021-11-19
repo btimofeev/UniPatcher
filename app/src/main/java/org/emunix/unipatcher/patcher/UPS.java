@@ -27,11 +27,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.zip.CRC32;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
+import org.emunix.unipatcher.utils.UFileUtils;
 
 public class UPS extends Patcher {
 
@@ -53,12 +51,14 @@ public class UPS extends Patcher {
         BufferedOutputStream outputStream = null;
         UpsCrc upsCrc;
         try {
-            if (!checkMagic(patchFile))
+            if (!checkMagic(patchFile)) {
                 throw new PatchException(resourceProvider.getString(R.string.notify_error_not_ups_patch));
+            }
 
             upsCrc = readUpsCrc(patchFile, resourceProvider);
-            if (upsCrc.getPatchFileCRC() != upsCrc.getRealPatchCRC())
+            if (upsCrc.getPatchFileCRC() != upsCrc.getRealPatchCRC()) {
                 throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+            }
 
             patchStream = new BufferedInputStream(new FileInputStream(patchFile));
             long patchPos = 0;
@@ -77,7 +77,7 @@ public class UPS extends Patcher {
             long ySize = p.getValue();
             patchPos += p.getSize();
 
-            long realRomCrc = FileUtils.checksumCRC32(romFile);
+            long realRomCrc = fileUtils.checksumCRC32(romFile);
 
             if (romFile.length() == xSize && realRomCrc == upsCrc.getInputFileCRC()) {
                 // xSize, ySize, inCRC, outCRC not change
@@ -103,14 +103,18 @@ public class UPS extends Patcher {
                 p = decode(patchStream);
                 offset += p.getValue();
                 patchPos += p.getSize();
-                if (offset > ySize) continue;
+                if (offset > ySize) {
+                    continue;
+                }
                 fileUtils.copy(romStream, outputStream, offset - outPos);
                 outPos += offset - outPos;
                 for (long i = offset; i < ySize; i++) {
                     x = patchStream.read();
                     patchPos++;
                     offset++;
-                    if (x == 0x00) break; // chunk terminating byte - 0x00
+                    if (x == 0x00) {
+                        break; // chunk terminating byte - 0x00
+                    }
                     y = i < xSize ? romStream.read() : 0x00;
                     outputStream.write(x ^ y);
                     outPos++;
@@ -120,15 +124,16 @@ public class UPS extends Patcher {
             fileUtils.copy(romStream, outputStream, ySize - outPos);
 
         } finally {
-            IOUtils.closeQuietly(patchStream);
-            IOUtils.closeQuietly(romStream);
-            IOUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(patchStream);
+            fileUtils.closeQuietly(romStream);
+            fileUtils.closeQuietly(outputStream);
         }
 
         if (!ignoreChecksum) {
-            long realOutCrc = FileUtils.checksumCRC32(outputFile);
-            if (realOutCrc != upsCrc.getOutputFileCRC())
+            long realOutCrc = fileUtils.checksumCRC32(outputFile);
+            if (realOutCrc != upsCrc.getOutputFileCRC()) {
                 throw new PatchException(resourceProvider.getString(R.string.notify_error_wrong_checksum_after_patching));
+            }
         }
     }
 
@@ -140,11 +145,14 @@ public class UPS extends Patcher {
         int x;
         while (true) {
             x = stream.read();
-            if (x == -1)
+            if (x == -1) {
                 throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+            }
             size++;
             offset += (x & 0x7fL) * shift;
-            if ((x & 0x80) != 0) break;
+            if ((x & 0x80) != 0) {
+                break;
+            }
             shift <<= 7;
             offset += shift;
         }
@@ -152,35 +160,31 @@ public class UPS extends Patcher {
     }
 
     public static boolean checkMagic(File f) throws IOException {
-        FileInputStream stream = null;
-        try {
-            stream = new FileInputStream(f);
+        try (FileInputStream stream = new FileInputStream(f)) {
             byte[] buffer = new byte[4];
             stream.read(buffer);
             return Arrays.equals(buffer, MAGIC_NUMBER);
-        } finally {
-            IOUtils.closeQuietly(stream);
         }
     }
 
     public static UpsCrc readUpsCrc(File f, ResourceProvider resourceProvider) throws PatchException, IOException {
-        BufferedInputStream stream = null;
-        try {
-            stream = new BufferedInputStream(new FileInputStream(f));
+        try (BufferedInputStream stream = new BufferedInputStream(new FileInputStream(f))) {
             CRC32 crc = new CRC32();
             int x;
             for (long i = f.length() - 12; i != 0; i--) {
                 x = stream.read();
-                if (x == -1)
+                if (x == -1) {
                     throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+                }
                 crc.update(x);
             }
 
             long inputCrc = 0;
             for (int i = 0; i < 4; i++) {
                 x = stream.read();
-                if (x == -1)
+                if (x == -1) {
                     throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+                }
                 crc.update(x);
                 inputCrc += ((long) x) << (i * 8);
             }
@@ -188,19 +192,19 @@ public class UPS extends Patcher {
             long outputCrc = 0;
             for (int i = 0; i < 4; i++) {
                 x = stream.read();
-                if (x == -1)
+                if (x == -1) {
                     throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+                }
                 crc.update(x);
                 outputCrc += ((long) x) << (i * 8);
             }
 
             long realPatchCrc = crc.getValue();
             long patchCrc = readLong(stream);
-            if (patchCrc == -1)
+            if (patchCrc == -1) {
                 throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+            }
             return new UpsCrc(inputCrc, outputCrc, patchCrc, realPatchCrc);
-        } finally {
-            IOUtils.closeQuietly(stream);
         }
     }
 
@@ -209,14 +213,16 @@ public class UPS extends Patcher {
         int x;
         for (int i = 0; i < 4; i++) {
             x = stream.read();
-            if (x == -1)
+            if (x == -1) {
                 return -1;
+            }
             result += ((long) x) << (i * 8);
         }
         return result;
     }
 
     public static class UpsCrc {
+
         private long inputFileCRC;
         private long outputFileCRC;
         private long patchFileCRC;
@@ -255,6 +261,7 @@ public class UPS extends Patcher {
     }
 
     final class Pair {
+
         private final long value;
         private final long size;
 

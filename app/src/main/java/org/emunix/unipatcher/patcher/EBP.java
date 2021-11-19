@@ -35,8 +35,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.HashMap;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
@@ -79,15 +77,15 @@ public class EBP extends Patcher {
             IPS ips = new IPS(ipsPatch, cleanRom, outputFile, resourceProvider, fileUtils);
             ips.apply();
         } finally {
-            FileUtils.deleteQuietly(ipsPatch);
-            FileUtils.deleteQuietly(cleanRom);
+            fileUtils.delete(ipsPatch);
+            fileUtils.delete(cleanRom);
         }
     }
 
     private void prepareCleanRom(File file, boolean ignoreChecksum) throws IOException, PatchException {
         // delete smc header
         try {
-            new SnesSmcHeader().deleteSnesSmcHeader(romFile, file, resourceProvider);
+            new SnesSmcHeader().deleteSnesSmcHeader(romFile, file, resourceProvider, fileUtils);
         } catch (RomException e) {
             // no header
         }
@@ -138,7 +136,7 @@ public class EBP extends Patcher {
         byte[] byteArray = new byte[EB_CLEAN_ROM_SIZE];
         FileInputStream f = new FileInputStream(file);
         int count = f.read(byteArray);
-        IOUtils.closeQuietly(f);
+        fileUtils.closeQuietly(f);
         if (count < EB_CLEAN_ROM_SIZE) {
             throw new IOException("Unable to read 0x300000 bytes from ROM");
         }
@@ -171,17 +169,17 @@ public class EBP extends Patcher {
             // copy patch from assets
             InputStream in = resourceProvider.getAsset(EB_WRONG_MD5.get(md5));
             File patch = File.createTempFile("patch", null, resourceProvider.getTempDir());
-            FileUtils.copyToFile(in, patch);
-            IOUtils.closeQuietly(in);
+            fileUtils.copyToFile(in, patch);
+            fileUtils.closeQuietly(in);
 
             // fix rom
             File tmpFile = File.createTempFile("rom", null, resourceProvider.getTempDir());
-            FileUtils.copyFile(file, tmpFile);
+            fileUtils.copyFile(file, tmpFile);
             IPS ips = new IPS(patch, tmpFile, file, resourceProvider, fileUtils);
             ips.apply();
 
-            FileUtils.deleteQuietly(tmpFile);
-            FileUtils.deleteQuietly(patch);
+            fileUtils.delete(tmpFile);
+            fileUtils.delete(patch);
         }
     }
 
@@ -215,7 +213,7 @@ public class EBP extends Patcher {
         } catch (NoSuchAlgorithmException e) {
             throw new IOException(e.getMessage());
         } finally {
-            IOUtils.closeQuietly(f);
+            fileUtils.closeQuietly(f);
         }
     }
 
@@ -282,8 +280,8 @@ public class EBP extends Patcher {
                 }
             }
         } finally {
-            IOUtils.closeQuietly(ips);
-            IOUtils.closeQuietly(ebp);
+            fileUtils.closeQuietly(ips);
+            fileUtils.closeQuietly(ebp);
         }
     }
 }

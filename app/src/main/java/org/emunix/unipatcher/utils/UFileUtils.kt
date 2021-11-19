@@ -22,9 +22,12 @@ package org.emunix.unipatcher.utils
 import android.content.Context
 import android.net.Uri
 import android.os.StatFs
+import android.os.WorkSource
 import androidx.documentfile.provider.DocumentFile
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import org.apache.commons.io.FileUtils
+import org.apache.commons.io.FilenameUtils
 import org.apache.commons.io.IOUtils
 import org.emunix.unipatcher.R.string
 import org.emunix.unipatcher.helpers.ResourceProvider
@@ -144,6 +147,37 @@ class UFileUtils @Inject constructor(
     fun getFileName(uri: Uri): String = DocumentFile.fromSingleUri(context, uri)?.name ?: "Undefined name"
 
     fun getFileSize(uri: Uri): Long? = DocumentFile.fromSingleUri(context, uri)?.length()
+
+    fun checksumCRC32(file: File): Long = FileUtils.checksumCRC32(file)
+
+    fun closeQuietly(closeable: Closeable?) {
+        IOUtils.closeQuietly(closeable)
+    }
+
+    fun readFileToByteArray(file: File): ByteArray = FileUtils.readFileToByteArray(file)
+
+    fun writeByteArrayToFile(file: File, data: ByteArray) = FileUtils.writeByteArrayToFile(file, data)
+
+    fun delete(file: File?) {
+        file?.deleteRecursively()
+    }
+
+    fun getBaseName(filename: String): String = FilenameUtils.getBaseName(filename)
+
+    fun getExtension(filename: String): String = FilenameUtils.getExtension(filename)
+
+    fun copyToFile(source: InputStream, destination: File) {
+        FileUtils.copyToFile(source, destination)
+    }
+
+    fun skip(input: InputStream, toSkip: Long): Long = IOUtils.skip(input, toSkip)
+
+    fun skipFully(input: InputStream, toSkip: Long) {
+        IOUtils.skipFully(input, toSkip)
+    }
+
+    fun copy(input: InputStream, output: OutputStream): Int = IOUtils.copy(input, output)
+
 
     companion object {
 

@@ -28,7 +28,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.util.Arrays;
-import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.utils.UFileUtils;
 import org.emunix.unipatcher.helpers.ResourceProvider;
@@ -173,9 +172,9 @@ public class APS_N64 extends Patcher {
             // write rom tail and trim
             fileUtils.copy(romStream, outputStream, outSize - outPos);
         } finally {
-            IOUtils.closeQuietly(romStream);
-            IOUtils.closeQuietly(patchStream);
-            IOUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(romStream);
+            fileUtils.closeQuietly(patchStream);
+            fileUtils.closeQuietly(outputStream);
         }
     }
 
@@ -220,7 +219,7 @@ public class APS_N64 extends Patcher {
             if (!Arrays.equals(crc, buf))
                 return false;
         } finally {
-            IOUtils.closeQuietly(rom);
+            fileUtils.closeQuietly(rom);
         }
         return true;
     }

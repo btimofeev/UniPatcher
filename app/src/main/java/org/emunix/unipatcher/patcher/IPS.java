@@ -19,7 +19,6 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher.patcher;
 
-import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
 import org.emunix.unipatcher.utils.UFileUtils;
 
@@ -151,9 +150,9 @@ public class IPS extends Patcher {
                 }
             }
         } finally {
-            IOUtils.closeQuietly(romStream);
-            IOUtils.closeQuietly(patchStream);
-            IOUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(romStream);
+            fileUtils.closeQuietly(patchStream);
+            fileUtils.closeQuietly(outputStream);
         }
     }
 

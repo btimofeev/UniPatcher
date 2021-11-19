@@ -19,7 +19,6 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
 package org.emunix.unipatcher.patcher;
 
-import org.apache.commons.io.IOUtils;
 import org.emunix.unipatcher.R;
 
 import java.io.BufferedInputStream;
@@ -116,9 +115,9 @@ public class DPS extends Patcher {
                 }
             }
         } finally {
-            IOUtils.closeQuietly(romStream);
-            IOUtils.closeQuietly(outputStream);
-            IOUtils.closeQuietly(patchStream);
+            fileUtils.closeQuietly(romStream);
+            fileUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(patchStream);
         }
     }
 

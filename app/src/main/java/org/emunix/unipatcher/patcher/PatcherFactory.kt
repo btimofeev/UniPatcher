@@ -20,7 +20,6 @@
 
 package org.emunix.unipatcher.patcher
 
-import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.utils.UFileUtils
 import org.emunix.unipatcher.helpers.ResourceProvider
@@ -34,7 +33,7 @@ class PatcherFactory @Inject constructor(
 ) {
 
     fun createPatcher(patch: File, rom: File, output: File): Patcher {
-        return when (FilenameUtils.getExtension(patch.name).lowercase(Locale.getDefault())) {
+        return when (fileUtils.getExtension(patch.name).lowercase(Locale.getDefault())) {
             "ips" -> IPS(patch, rom, output, resourceProvider, fileUtils)
             "ups" -> UPS(patch, rom, output, resourceProvider, fileUtils)
             "bps" -> BPS(patch, rom, output, resourceProvider, fileUtils)

@@ -27,8 +27,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
-import org.apache.commons.io.FileUtils
-import org.apache.commons.io.FilenameUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.helpers.ConsumableEvent
@@ -132,8 +130,8 @@ class ApplyPatchViewModel @Inject constructor(
     }
 
     private suspend fun suggestOutputName(romName: String) = withContext(Dispatchers.Default) {
-        val baseName = FilenameUtils.getBaseName(romName)
-        val ext = FilenameUtils.getExtension(romName)
+        val baseName = fileUtils.getBaseName(romName)
+        val ext = fileUtils.getExtension(romName)
         suggestedOutputName.postValue("$baseName [patched].$ext")
     }
 
@@ -158,9 +156,9 @@ class ApplyPatchViewModel @Inject constructor(
             fileUtils.copy(outputFile, outputUri)
             settings.setPatchingSuccessful(true)
         } finally {
-            FileUtils.deleteQuietly(outputFile)
-            FileUtils.deleteQuietly(romFile)
-            FileUtils.deleteQuietly(patchFile)
+            fileUtils.delete(outputFile)
+            fileUtils.delete(romFile)
+            fileUtils.delete(patchFile)
         }
     }
 }

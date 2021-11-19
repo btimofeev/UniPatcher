@@ -20,7 +20,6 @@
 
 package org.emunix.unipatcher.patcher
 
-import org.apache.commons.io.FileUtils
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.utils.UFileUtils
 import org.emunix.unipatcher.helpers.ResourceProvider
@@ -47,14 +46,14 @@ class BPS(
         if (!checkMagic(patchFile))
             throw PatchException(resourceProvider.getString(R.string.notify_error_not_bps_patch))
 
-        val patch = FileUtils.readFileToByteArray(patchFile)
+        val patch = fileUtils.readFileToByteArray(patchFile)
 
         val crc = readBpsCrc(patch)
         if (crc.patchFile != crc.realPatch)
             throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
 
         if (!ignoreChecksum) {
-            val realRomCrc = FileUtils.checksumCRC32(romFile)
+            val realRomCrc = fileUtils.checksumCRC32(romFile)
             if (realRomCrc != crc.inputFile) {
                 throw PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch))
             }
@@ -66,7 +65,7 @@ class BPS(
         // decode rom size
         decoded = decode(patch, patchPos)
         patchPos = decoded.component2()
-        val rom = FileUtils.readFileToByteArray(romFile)
+        val rom = fileUtils.readFileToByteArray(romFile)
 
         // decode output size
         decoded = decode(patch, patchPos)
@@ -127,10 +126,10 @@ class BPS(
             }
         }
 
-        FileUtils.writeByteArrayToFile(outputFile, output)
+        fileUtils.writeByteArrayToFile(outputFile, output)
 
         if (!ignoreChecksum) {
-            val realOutCrc = FileUtils.checksumCRC32(outputFile)
+            val realOutCrc = fileUtils.checksumCRC32(outputFile)
             if (realOutCrc != crc.outputFile)
                 throw PatchException(resourceProvider.getString(R.string.notify_error_wrong_checksum_after_patching))
         }
