@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016, 2019-2020 Boris Timofeev
+Copyright (C) 2016, 2019-2021 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -25,12 +25,7 @@ import org.emunix.unipatcher.R
 import org.emunix.unipatcher.ui.fragment.AboutFragment
 import org.emunix.unipatcher.ui.fragment.FaqFragment
 
-class HelpStateAdapter(fragmentActivity: FragmentActivity?) : FragmentStateAdapter(fragmentActivity!!) {
-    companion object {
-        const val POS_FAQ = 0
-        const val POS_ABOUT = 1
-        const val TOTAL_COUNT = 2
-    }
+class HelpStateAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
@@ -41,7 +36,7 @@ class HelpStateAdapter(fragmentActivity: FragmentActivity?) : FragmentStateAdapt
     }
 
     override fun getItemCount(): Int {
-        return TOTAL_COUNT
+        return TABS_COUNT
     }
 
     fun getPageTitle(position: Int): Int {
@@ -50,5 +45,12 @@ class HelpStateAdapter(fragmentActivity: FragmentActivity?) : FragmentStateAdapt
             POS_ABOUT -> R.string.help_activity_about_tab_title
             else -> throw IllegalArgumentException("Unknown position for ViewPager2")
         }
+    }
+
+    companion object {
+
+        private const val POS_FAQ = 0
+        private const val POS_ABOUT = 1
+        private const val TABS_COUNT = 2
     }
 }
