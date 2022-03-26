@@ -150,9 +150,9 @@
     <string name="help_how_to_apply_patch_to_rom_title">Hvordan legge en programfiks til ei ROM-fil\?</string>
     <string name="help_why_not_distribute_modified_games_body">Hacks og oversettelser bli i hovedsak distribuert som programfikser for å redusere nedlastingsstørrelse og for å unngå kopiretts-problematikk.</string>
     <string name="help_why_not_distribute_modified_games_title">Hvorfor ROM-hackere ikke distribuerer modifiserte spill\?</string>
-    <string name="help_what_is_a_patch_body">En programfiks er ei fil som inneholder forskjellene mellom orginalversjonen av ei ROM-fil og den hackede versjonen
+    <string name="help_what_is_a_patch_body">En programfiks er ei fil som inneholder forskjellene mellom originalversjonen av ei ROM-fil og den hackede versjonen
 \n
-\nProgramfiksen blir distribuert, og sluttbrukere legger den til en kopi av orginal-ROM-fila, som produserer en spillversjon av hack-en.</string>
+\nProgramfiksen blir distribuert, og sluttbrukere legger den til en kopi av original-ROM-fila, som produserer en spillversjon av hack-en.</string>
     <string name="help_what_is_a_patch_title">Hva er en programfiks\?</string>
     <string name="help_what_is_rom_hacking_body">ROM-hacking er å modifisere dataene i ROM-avbildningen. Dette kan være å forandre grafikken, endre nivåene, endre vanskelighetsgraden, eller selv oversettelse til et annet språk der spillet aldri kom ut.</string>
     <string name="help_what_is_rom_hacking_title">Hva er ROM-hacking\?</string>
