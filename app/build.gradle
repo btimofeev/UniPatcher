@@ -54,8 +54,6 @@ android {
         free {
             buildConfigField "String", "RATE_URL", "\"https://github.com/btimofeev/UniPatcher\""
             buildConfigField "String", "SHARE_URL", "\"https://github.com/btimofeev/UniPatcher\""
-            buildConfigField "String", "PAYPAL_USER", "\"btimofeev@emunix.org\""
-            buildConfigField "String", "PAYPAL_CURRENCY_CODE", "\"USD\""
             buildConfigField "String", "BITCOIN_ADDRESS", "\"16coztryz7xbNNDNhhf98wuHmi3hEintsW\""
         }
         google {

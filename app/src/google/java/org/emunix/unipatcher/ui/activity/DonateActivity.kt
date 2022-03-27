@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, 2020 Boris Timofeev
+ Copyright (c) 2017, 2020, 2022 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -38,10 +38,18 @@ class DonateActivity : AppCompatActivity() {
         supportActionBar?.setTitle(R.string.donate_activity_title)
 
         val fragment = DonationsFragment.Companion.newInstance(
-            BuildConfig.DEBUG, true, BuildConfig.GOOGLE_PLAY_PUBKEY,
-            GOOGLE_PLAY_CATALOG, GOOGLE_PLAY_COST,
-            false, null, null,
-            null, false, null
+            debug = BuildConfig.DEBUG,
+            googleEnabled = true,
+            googlePubkey = BuildConfig.GOOGLE_PLAY_PUBKEY,
+            googleCatalog = GOOGLE_PLAY_CATALOG,
+            googleCatalogValues = GOOGLE_PLAY_COST,
+            googleCutPercent = 15,
+            paypalEnabled = false,
+            paypalUser = null,
+            paypalCurrencyCode = null,
+            paypalItemName = null,
+            bitcoinEnabled = false,
+            bitcoinAddress = null
         )
         supportFragmentManager.commit {
             replace(R.id.donate_fragment, fragment)
