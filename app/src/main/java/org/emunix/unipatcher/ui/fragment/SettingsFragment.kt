@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016-2017, 2019-2020 Boris Timofeev
+Copyright (C) 2016-2017, 2019-2022 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -27,12 +27,15 @@ import org.emunix.unipatcher.R
 import org.emunix.unipatcher.helpers.ThemeHelper.applyTheme
 
 class SettingsFragment : PreferenceFragmentCompat(), OnSharedPreferenceChangeListener {
+
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         addPreferencesFromResource(R.xml.preferences)
     }
 
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences,
-                                           key: String) {
+    override fun onSharedPreferenceChanged(
+        sharedPreferences: SharedPreferences,
+        key: String
+    ) {
         when (key) {
             "theme" -> {
                 val theme = findPreference<ListPreference>("theme")
@@ -44,13 +47,11 @@ class SettingsFragment : PreferenceFragmentCompat(), OnSharedPreferenceChangeLis
 
     override fun onResume() {
         super.onResume()
-        preferenceScreen.sharedPreferences
-                .registerOnSharedPreferenceChangeListener(this)
+        preferenceScreen.sharedPreferences?.registerOnSharedPreferenceChangeListener(this)
     }
 
     override fun onPause() {
         super.onPause()
-        preferenceScreen.sharedPreferences
-                .unregisterOnSharedPreferenceChangeListener(this)
+        preferenceScreen.sharedPreferences?.unregisterOnSharedPreferenceChangeListener(this)
     }
 }
