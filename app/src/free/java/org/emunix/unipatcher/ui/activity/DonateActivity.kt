@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, 2020 Boris Timofeev
+ Copyright (c) 2017, 2020, 2022 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -39,10 +39,18 @@ class DonateActivity : AppCompatActivity() {
         supportActionBar?.setTitle(R.string.donate_activity_title)
 
         val fragment = DonationsFragment.Companion.newInstance(
-            BuildConfig.DEBUG, false, null,
-            null, null,
-            true, BuildConfig.PAYPAL_USER, BuildConfig.PAYPAL_CURRENCY_CODE,
-            getString(R.string.donation), true, BuildConfig.BITCOIN_ADDRESS
+            debug = BuildConfig.DEBUG,
+            googleEnabled = false,
+            googlePubkey = null,
+            googleCatalog = null,
+            googleCatalogValues = null,
+            googleCutPercent = 15,
+            paypalEnabled = false,
+            paypalUser = null,
+            paypalCurrencyCode = null,
+            paypalItemName = null,
+            bitcoinEnabled = true,
+            bitcoinAddress = BuildConfig.BITCOIN_ADDRESS
         )
         supportFragmentManager.commit {
             replace(R.id.donate_fragment, fragment)
