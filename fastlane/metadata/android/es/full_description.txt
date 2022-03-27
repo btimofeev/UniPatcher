@@ -8,5 +8,11 @@ Este programa no sirve para alterar juegos de Android, sino que está pensado pa
 Características:
 * Aplicar parches en formato: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3.
 * Crear parches en formato XDelta.
-* Recalcular la suma de comprobación en ROMs de Sega Mega Drive.
+* Recalcular la suma de comprobación en ROMs de Sega Mega Drive y Genesis.
 * Quitar el encabezado SMC de ROMs de Super Nintendo.
+
+¿Cómo se usa?
+Tienes que elegir un archivo ROM, un parche y elegir dónde guardar el resultado al hacer clic en el botón rojo gigante. La selección de archivos se hace a través del selector del sistema (o de administradores de terceros si los tienes instalados). La aplicación te mostrará un mensaje una vez haya terminado, no cierres la aplicación mientras el parcheado esté en progreso.
+
+Importante:
+Si el juego o el parche están comprimidos (ZIP, RAR, 7z y demás) tienes que extraerlos antes de forma manual.
