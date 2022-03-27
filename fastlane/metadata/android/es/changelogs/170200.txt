@@ -1,3 +1,6 @@
-Agregado el idioma hebreo (gracias a Tamer Dabsan)
-Agregado el idioma aleman(gracias a Honigdieb)
-Finalizado la traducción a español y portugués (gracias a Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes)
+- Traducido al hebreo (gracias a Tamer Dabsan)
+- Traducido al alemán (gracias a Honigdieb)
+- Traducción completa al español y portugués (gracias a Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes)
+- Se han actualizado muchas otras traducciones (gracias a los voluntarios)
+- Arreglado el problema de que a veces no se podía elegir archivos
+- Para sugerir ideas, visita: https://github.com/btimofeev/UniPatcher/discussions
