@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, 2019-2021 Boris Timofeev
+ Copyright (c) 2017, 2019-2022 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -28,31 +28,15 @@ import android.content.Context
 import android.os.Build
 import androidx.core.content.getSystemService
 import dagger.hilt.android.HiltAndroidApp
-import org.acra.ACRA
-import org.acra.annotation.AcraCore
-import org.acra.annotation.AcraMailSender
-import org.acra.annotation.AcraNotification
+import org.acra.config.mailSender
+import org.acra.config.notification
 import org.acra.data.StringFormat
+import org.acra.ktx.initAcra
 import org.emunix.unipatcher.helpers.ThemeHelper
 import timber.log.Timber
 import javax.inject.Inject
 
 @HiltAndroidApp
-@AcraCore(
-    stopServicesOnCrash = true,
-    reportFormat = StringFormat.KEY_VALUE_LIST
-)
-@AcraMailSender(
-    mailTo = "unipatcher@gmail.com",
-    reportFileName = "unipatcher_crash_report.txt"
-)
-@AcraNotification(
-    resText = R.string.error_crash_message,
-    resTitle = R.string.error_crash_title,
-    resSendButtonText = R.string.error_crash_send_button,
-    resDiscardButtonText = R.string.error_crash_discard_button,
-    resChannelName = R.string.notification_channel_name
-)
 class UniPatcher : Application() {
 
     @Inject
@@ -64,6 +48,13 @@ class UniPatcher : Application() {
         initLogger()
         initNotificationChannel()
         setTheme()
+    }
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        if (!BuildConfig.DEBUG) {
+            initCrashReportLibrary()
+        }
     }
 
     @TargetApi(Build.VERSION_CODES.O)
@@ -86,10 +77,24 @@ class UniPatcher : Application() {
         }
     }
 
-    override fun attachBaseContext(base: Context?) {
-        super.attachBaseContext(base)
-        if (!BuildConfig.DEBUG) {
-            ACRA.init(this)
+    private fun initCrashReportLibrary() {
+        initAcra {
+            buildConfigClass = BuildConfig::class.java
+            reportFormat = StringFormat.KEY_VALUE_LIST
+            stopServicesOnCrash = true
+
+            mailSender {
+                mailTo = "unipatcher@gmail.com"
+                reportFileName = "unipatcher_crash_report.txt"
+            }
+
+            notification {
+                withResTitle(R.string.error_crash_title)
+                withResText(R.string.error_crash_message)
+                withResSendButtonText(R.string.error_crash_send_button)
+                withResDiscardButtonText(R.string.error_crash_discard_button)
+                withResChannelName(R.string.notification_channel_name)
+            }
         }
     }
 
