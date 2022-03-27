@@ -72,7 +72,6 @@
     <string name="notify_error_not_ups_patch">Patch UPS inválido</string>
     <string name="notify_error_not_ips_patch">Patch IPS inválido</string>
     <string name="notify_error_not_enough_space">Espaço insuficiente na memória</string>
-    <string name="notify_error_file_not_found">Arquivo não encontrado</string>
     <string name="notify_error_could_not_copy_file">Não foi possível copiar o arquivo</string>
     <string name="notify_error">Erro</string>
     <string name="notify_create_patch_complete">Patch criado</string>
@@ -110,7 +109,6 @@
     <string name="error_crash_send_button">Enviar</string>
     <string name="error_crash_message">Desculpe, o aplicativo travou. Por favor, envie um relatório para os desenvolvedores.</string>
     <string name="error_crash_title">Erro inesperado</string>
-    <string name="help_activity_error_cannot_load_text">Erro: texto não pode ser carregado</string>
     <string name="help_activity_action_changelog">Changelog</string>
     <string name="help_activity_action_visit_site">Visite o site</string>
     <string name="help_activity_about_tab_license">Licença: GNU GPLv3</string>
@@ -176,8 +174,6 @@
     <string name="help_what_is_unipatcher_title">O que é o UniPatcher\?</string>
     <string name="help_title">Perguntas Frequentes:</string>
     <string name="notification_channel_name">Notificações</string>
-    <string name="icon">ícone</string>
-    <string name="donation">Doação</string>
     <string name="nav_drawer_close">Fechar gaveta de navegação</string>
     <string name="nav_drawer_open">Abrir gaveta de navegação</string>
     <string name="nav_help">Ajuda</string>
@@ -193,8 +189,6 @@
 \n
 \n</string>
     <string name="share_dialog_title">Compatilhar UniPatcher</string>
-    <string name="send_feedback_error_no_email_apps">Não há cliente de e-mail instalado</string>
-    <string name="send_feedback_dialog_title">Enviar e-mail</string>
     <string name="donate_activity_title">Doar</string>
     <string name="error_file_picker_app_is_no_installed">Erro: não há app de arquivo instalado</string>
     <string name="settings_ignore_checksum_description">Não interrompa o patching se você usar a ROM errada. Aviso: essa opção pode quebrar o seu jogo.</string>

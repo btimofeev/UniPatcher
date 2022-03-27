@@ -25,7 +25,6 @@
     <string name="notify_create_patch_complete">补丁已创建</string>
     <string name="notify_error">错误</string>
     <string name="notify_error_could_not_copy_file">不能复制文件</string>
-    <string name="notify_error_file_not_found">文件未找到</string>
     <string name="notify_error_not_enough_space">磁盘空间不足</string>
     <string name="notify_error_not_ips_patch">不是有效的 IPS 补丁</string>
     <string name="notify_error_not_ups_patch">不是有效的 UPS 补丁</string>
@@ -66,8 +65,6 @@
     <string name="help_activity_action_visit_site">访问网站</string>
     <string name="help_activity_action_changelog">更新历史</string>
     <string name="donate_activity_title">捐赠</string>
-    <string name="send_feedback_dialog_title">发送邮件</string>
-    <string name="send_feedback_error_no_email_apps">未安装邮件客户端</string>
     <string name="share_dialog_title">分享 UniPatcher</string>
     <string name="share_text">下载 Android 最好的 ROM 补丁工具，它支持 IPS、IPS32、UPS、BPS, APS (GBA)、APS (N64)、PPF、DPS、EBP 和 XDelta3。\n\n</string>
     <!-- Navigation list -->
@@ -81,8 +78,6 @@
     <string name="nav_help">帮助</string>
     <string name="nav_drawer_open">开启导航绘图器</string>
     <string name="nav_drawer_close">关闭导航绘图器</string>
-    <string name="donation">捐赠</string>
-    <string name="icon">图标</string>
     <string name="notification_channel_name">通知</string>
     <string name="help_feedback_body">我们在GitHub讨论区讨论新功能并回答问题 https://github.com/btimofeev/UniPatcher/discussions
 \n
@@ -140,7 +135,6 @@
     <string name="error_crash_send_button">发送</string>
     <string name="error_crash_message">抱歉，应用程序意外退出。请将异常报告发送给开发人员。</string>
     <string name="error_crash_title">程序崩溃</string>
-    <string name="help_activity_error_cannot_load_text">出错了：无法加载文本</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
     <string name="settings_show_button_how_to_use_app_description">在主屏幕上显示“如何使用应用程序”</string>
     <string name="settings_show_button_how_to_use_app">显示帮助按钮</string>

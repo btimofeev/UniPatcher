@@ -6,17 +6,10 @@
     <dimen name="content_top_margin">8dp</dimen>
     <dimen name="content_left_margin">16dp</dimen>
     <dimen name="content_right_margin">16dp</dimen>
-    <dimen name="file_browser_content_left_margin">0dp</dimen>
-    <dimen name="file_browser_content_right_margin">0dp</dimen>
 
     <dimen name="card_elevation">2dp</dimen>
     <dimen name="card_corner_radius">8dp</dimen>
     <dimen name="card_padding">8dp</dimen>
     <dimen name="card_line_margin">8dp</dimen>
     <dimen name="card_line_height">1dp</dimen>
-
-    <dimen name="keyline_one">16dp</dimen>
-    <dimen name="keyline_two">72dp</dimen>
-
-    <dimen name="material_text_subhead">16sp</dimen>
 </resources>

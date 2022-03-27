@@ -25,7 +25,6 @@
     <string name="notify_create_patch_complete">패치 생성됨</string>
     <string name="notify_error">오류</string>
     <string name="notify_error_could_not_copy_file">파일을 복사할 수 없음</string>
-    <string name="notify_error_file_not_found">파일을 찾을 수 없음</string>
     <string name="notify_error_not_enough_space">저장 공간 부족함</string>
     <string name="notify_error_not_ips_patch">유효한 IPS 패치가 아님</string>
     <string name="notify_error_not_ups_patch">유효한 UPS 패치가 아님</string>
@@ -68,8 +67,6 @@
     <string name="help_activity_action_visit_site">웹사이트 방문</string>
     <string name="help_activity_action_changelog">변경 이력</string>
     <string name="donate_activity_title">기부</string>
-    <string name="send_feedback_dialog_title">메일 보내기</string>
-    <string name="send_feedback_error_no_email_apps">이메일 클라이언트가 설치되어 있지 않습니다.</string>
     <string name="share_dialog_title">유니패처 공유</string>
     <string name="share_text">안드로이드를 위한 최고의 롬 패처를 다운로드하십시오. IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP 및 XDelta3 패치 유형을 지원합니다.\n\n</string>
     <!-- Navigation list -->
@@ -83,8 +80,6 @@
     <string name="nav_help">도움말</string>
     <string name="nav_drawer_open">탐색 서랍 열기</string>
     <string name="nav_drawer_close">탐색 서랍 닫기</string>
-    <string name="donation">기부</string>
-    <string name="icon">아이콘</string>
     <string name="notification_channel_name">알림</string>
     <string name="help_feedback_body">이메일 unipatcher@gmail.com 로 저에게 연락하십시오. 영어 또는 러시아어로 작성해 주십시오. 패치에 문제가 있는 경우 메일에 패치를 첨부하고 롬 이름을 쓰면 시간이 단축됩니다.</string>
     <string name="help_feedback_title">질문, 기능 요청 혹은 버그 보고를 하고 싶습니다.</string>

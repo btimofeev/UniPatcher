@@ -58,8 +58,6 @@
     <string name="help_what_is_unipatcher_title">מהו UniPatcher\?</string>
     <string name="help_title">שאלות נפוצות:</string>
     <string name="notification_channel_name">התראות</string>
-    <string name="icon">אייקון</string>
-    <string name="donation">תרומה</string>
     <string name="nav_drawer_close">סגור את מגירת הניווט</string>
     <string name="nav_drawer_open">פתח את מגירת הניווט</string>
     <string name="nav_help">עזרה</string>
@@ -75,15 +73,12 @@
 \n
 \n</string>
     <string name="share_dialog_title">שתף את UniPatcher</string>
-    <string name="send_feedback_error_no_email_apps">אין לקוחות דוא\"ל מותקנים</string>
-    <string name="send_feedback_dialog_title">שלח אימייל</string>
     <string name="donate_activity_title">תרום</string>
     <string name="error_file_picker_app_is_no_installed">שגיאה: אין אפליקציית קובץ מותקנת</string>
     <string name="error_crash_discard_button">השליך</string>
     <string name="error_crash_send_button">שלח</string>
     <string name="error_crash_message">מצטער, היישום קרס. אנא שלח דיווח למפתחים.</string>
     <string name="error_crash_title">קריסה</string>
-    <string name="help_activity_error_cannot_load_text">שגיאה: לא ניתן לטעון טקסט</string>
     <string name="help_activity_action_changelog">יומן שינויים</string>
     <string name="help_activity_action_visit_site">בקר באתר</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
@@ -161,7 +156,6 @@
 \n
 \nכדי לעזור לתרגם את היישום לשפה שלך: https://hosted.weblate.org/engage/unipatcher/‎</string>
     <string name="notify_error_not_enough_space">אין מספיק מקום בדיסק</string>
-    <string name="notify_error_file_not_found">הקובץ לא נמצא</string>
     <string name="notify_error_could_not_copy_file">לא ניתן היה להעתיק את הקובץ</string>
     <string name="notify_error">שגיאה</string>
     <string name="notify_create_patch_complete">תיקון נוצר</string>

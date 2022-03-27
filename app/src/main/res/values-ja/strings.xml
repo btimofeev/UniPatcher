@@ -25,7 +25,6 @@
     <string name="notify_create_patch_complete">パッチの作成が完了しました</string>
     <string name="notify_error">エラー</string>
     <string name="notify_error_could_not_copy_file">ファイルをコピーできません</string>
-    <string name="notify_error_file_not_found">ファイルが見つかりません</string>
     <string name="notify_error_not_enough_space">ディスクに十分な空き容量がありません</string>
     <string name="notify_error_not_ips_patch">無効な IPS パッチ</string>
     <string name="notify_error_not_ups_patch">無効な UPS パッチ</string>
@@ -68,8 +67,6 @@
     <string name="help_activity_action_visit_site">Web サイトを参照</string>
     <string name="help_activity_action_changelog">変更履歴</string>
     <string name="donate_activity_title">寄付する</string>
-    <string name="send_feedback_dialog_title">メールを送る</string>
-    <string name="send_feedback_error_no_email_apps">メールクライアントがインストールされていません</string>
     <string name="share_dialog_title">UniPatcher を共有</string>
     <string name="share_text">最高の Android 向け ROM パッチャーをダウンロードしましょう。 IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP および XDelta3 パッチ形式をサポートします。\n\n</string>
     <!-- Navigation list -->
@@ -83,8 +80,6 @@
     <string name="nav_help">ヘルプ</string>
     <string name="nav_drawer_open">ナビゲーションドロワーを開く</string>
     <string name="nav_drawer_close">ナビゲーションドロワーを閉じる</string>
-    <string name="donation">寄付する</string>
-    <string name="icon">アイコン</string>
     <string name="notification_channel_name">通知</string>
     <string name="help_feedback_body">GitHub ディスカッションの新機能について議論したり、質問に答えます https://github.com/btimofeev/UniPatcher/discussions
 \n
@@ -180,7 +175,6 @@
     <string name="error_crash_send_button">送信</string>
     <string name="error_crash_message">申し訳ありません。アプリケーションがクラッシュしました。開発者に報告を送ってください。</string>
     <string name="error_crash_title">クラッシュ</string>
-    <string name="help_activity_error_cannot_load_text">エラー: テキストを読み込めません</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
     <string name="settings_show_button_how_to_use_app_description">メイン画面に \"アプリの使い方\" ボタンを表示します</string>
     <string name="settings_show_button_how_to_use_app">ヘルプボタンを表示</string>

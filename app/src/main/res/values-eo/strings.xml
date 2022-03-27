@@ -7,8 +7,6 @@
     <string name="help_what_is_unipatcher_title">Kio estas UniPatcher\?</string>
     <string name="help_title">Oftaj demandoj:</string>
     <string name="notification_channel_name">Sciigoj</string>
-    <string name="icon">bildsimbolo</string>
-    <string name="donation">Donacio</string>
     <string name="nav_help">Helpo</string>
     <string name="nav_share">Konigi</string>
     <string name="nav_donate">Doni</string>
@@ -57,7 +55,6 @@
     <string name="notify_error_not_ups_patch">Nevalida flikaĵo de UPS</string>
     <string name="notify_error_not_ips_patch">Nevalida flikaĵo de IPS</string>
     <string name="notify_error_not_enough_space">Ne sufiĉe da spaco sur la disko</string>
-    <string name="notify_error_file_not_found">Dosiero ne trovita</string>
     <string name="notify_error_could_not_copy_file">Ne povas kopii dosieron</string>
     <string name="notify_error">Eraro</string>
     <string name="notify_create_patch_complete">Flikaĵo kreita</string>

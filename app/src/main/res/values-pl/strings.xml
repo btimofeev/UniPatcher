@@ -24,7 +24,6 @@
     <string name="notify_patching_complete">Łatkowanie ukończone</string>
     <string name="notify_error">Błąd</string>
     <string name="notify_error_could_not_copy_file">Nie można skopiować pliku</string>
-    <string name="notify_error_file_not_found">Plik nie znaleziony</string>
     <string name="notify_error_not_enough_space">Brak miejsca na Karcie Pamięci</string>
     <string name="notify_error_not_ips_patch">Niewłaściwa łatka IPS</string>
     <string name="notify_error_not_ups_patch">Niewłaściwa łatka UPS</string>
@@ -62,8 +61,6 @@
     <string name="help_activity_action_visit_site">Odwiedź stronę</string>
     <string name="help_activity_action_changelog">Dziennik zmian</string>
     <string name="donate_activity_title">Donacja</string>
-    <string name="send_feedback_dialog_title">Wyślij E-Maila</string>
-    <string name="send_feedback_error_no_email_apps">Tu nie ma żadnych klientów E-Mail zainstalowanych</string>
     <string name="share_dialog_title">Udostępnij UniPatcher-a swoim znajomym</string>
     <string name="share_text">Pobierz najlepszy program do łatkowania ROM-ów. Wspiera typy łatek: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP i XDelta3.\n\n</string>
     <!-- Navigation list -->
@@ -76,8 +73,6 @@
     <string name="nav_help">Pomoc</string>
     <string name="nav_drawer_open">Otwórz kartę nawigacyjną</string>
     <string name="nav_drawer_close">Zamknij kartę nawigacyjną</string>
-    <string name="donation">Donacja</string>
-    <string name="icon">ikona</string>
     <string name="help_feedback_body">Omawiamy nowe funkcje i odpowiadamy na pytania w Dyskusjach GitHub https://github.com/btimofeev/UniPatcher/discussions
 \n
 \nMożesz zgłosić błąd w GitHub Issue Tracker https://github.com/btimofeev/UniPatcher/issues
@@ -146,7 +141,6 @@
     <string name="error_crash_send_button">Wyślij</string>
     <string name="error_crash_message">Przykro nam, aplikacja przestała działać. Proszę wyślij raport do deweloperów.</string>
     <string name="error_crash_title">Wypadek</string>
-    <string name="help_activity_error_cannot_load_text">Błąd: nie można załadować tekstu</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
     <string name="settings_ignore_checksum_description">Nie przerywaj aktualizacji jeżeli użyto złego ROM-a. Uwaga: Ta opcja może uszkodzić twoją grę.</string>
     <string name="settings_ignore_checksum">Ignoruj checksums</string>

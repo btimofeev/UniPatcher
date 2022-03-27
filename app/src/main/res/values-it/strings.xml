@@ -21,7 +21,6 @@
     <string name="notify_patching_complete">Patch completato</string>
     <string name="notify_error">Errore</string>
     <string name="notify_error_could_not_copy_file">Impossibile copiare il file</string>
-    <string name="notify_error_file_not_found">File non trovato</string>
     <string name="notify_error_not_enough_space">Spazio non sufficiente sul disco</string>
     <string name="notify_error_not_ips_patch">Patch IPS non valida</string>
     <string name="notify_error_not_ups_patch">Patch UPS non valida</string>
@@ -57,8 +56,6 @@
     <string name="help_activity_about_tab_license">Licenza: GNU GPLv3</string>
     <string name="help_activity_action_visit_site">Visita il sito web</string>
     <string name="help_activity_action_changelog">Registro delle modifiche</string>
-    <string name="send_feedback_dialog_title">Invia un\'e-mail</string>
-    <string name="send_feedback_error_no_email_apps">Non ci sono client di posta elettronica installati</string>
     <string name="share_dialog_title">Condividi UniPatcher</string>
     <string name="share_text">Scarica il miglior patcher di ROM per Android. Supporta i formati IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.
 \n
@@ -72,7 +69,6 @@
     <string name="nav_help">Aiuto</string>
     <string name="nav_drawer_open">Apri cassetto di navigazione</string>
     <string name="nav_drawer_close">Chiudi cassetto di navigazione</string>
-    <string name="icon">icona</string>
     <string name="help_feedback_body">Discutiamo le funzionalità e rispondiamo alle domande su GitHub Discussions https://github.com/btimofeev/UniPatcher/discussions
 \n
 \nPuoi segnalare un bug al GitHub Issue Tracker https://github.com/btimofeev/UniPatcher/issues
@@ -143,10 +139,8 @@
 \n
 \nAlcune patch richiedono che la ROM non abbia un\'intestazione SMC. Questa funzione ti aiuterà a rimuoverla.</string>
     <string name="notification_channel_name">Notifiche</string>
-    <string name="donation">Donazione</string>
     <string name="nav_donate">Fai una donazione</string>
     <string name="error_file_picker_app_is_no_installed">Errore: Non ci sono File app installati</string>
-    <string name="help_activity_error_cannot_load_text">Errore: impossibile caricare il testo</string>
     <string name="settings_ignore_checksum_description">Non interrompere il patching se stai usando la ROM sbagliata. Fa attenzione: Questa opzione può distruggere il tuo gioco.</string>
     <string name="settings_patching_header">Patch in corso</string>
     <string name="settings_show_button_how_to_use_app_description">Mostra il pulsante \"Come usare l\'app\" nello schermo principale</string>

@@ -29,7 +29,6 @@
     <string name="notify_create_patch_complete">Patch créé</string>
     <string name="notify_error">Erreur</string>
     <string name="notify_error_could_not_copy_file">Impossible de copier le fichier</string>
-    <string name="notify_error_file_not_found">Fichier introuvable</string>
     <string name="notify_error_not_enough_space">Pas assez d\'espace sur le disque</string>
     <string name="notify_error_not_ips_patch">Fichier IPS invalide</string>
     <string name="notify_error_not_ups_patch">Fichier UPS invalide</string>
@@ -70,8 +69,6 @@
     <string name="help_activity_action_visit_site">Visitez le site web</string>
     <string name="help_activity_action_changelog">Nouveautés</string>
     <string name="donate_activity_title">Faire un don</string>
-    <string name="send_feedback_dialog_title">Envoyer un courriel</string>
-    <string name="send_feedback_error_no_email_apps">Aucun client de messagerie n\'est installé</string>
     <string name="share_dialog_title">Partager UniPatcher</string>
     <string name="share_text">Téléchargez le meilleur patcheur de ROMs pour Android. Il prend en charge les patchs IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP et XDelta3.\n\n</string>
     <!-- Navigation list -->
@@ -85,8 +82,6 @@
     <string name="nav_help">Aide</string>
     <string name="nav_drawer_open">Ouvrir le navigateur</string>
     <string name="nav_drawer_close">Fermer le navigateur</string>
-    <string name="donation">Don</string>
-    <string name="icon">icône</string>
     <string name="notification_channel_name">Notifications</string>
     <string name="help_feedback_body">Nous discutons des nouvelles fonctionnalités et répondons aux questions sur les discussions GitHub https://github.com/btimofeev/UniPatcher/discussions
 \n
@@ -151,7 +146,6 @@
     <string name="error_crash_send_button">Envoyer</string>
     <string name="error_crash_message">Désolé, l\'application a planté. Veuillez envoyer un rapport aux développeurs.</string>
     <string name="error_crash_title">Plantage</string>
-    <string name="help_activity_error_cannot_load_text">Erreur : impossible de charger le texte</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
     <string name="settings_show_button_how_to_use_app_description">Afficher le bouton « Comment utiliser l\'application » sur l\'écran principal</string>
     <string name="settings_show_button_how_to_use_app">Afficher le bouton d\'aide</string>

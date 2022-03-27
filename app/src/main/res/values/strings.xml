@@ -37,7 +37,6 @@
     <string name="notify_create_patch_complete">Patch created</string>
     <string name="notify_error">Error</string>
     <string name="notify_error_could_not_copy_file">Could not copy file</string>
-    <string name="notify_error_file_not_found">File not found</string>
     <string name="notify_error_not_enough_space">Not enough space on the disk</string>
     <string name="notify_error_not_ips_patch">Not a valid IPS patch</string>
     <string name="notify_error_not_ups_patch">Not a valid UPS patch</string>
@@ -86,15 +85,12 @@
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
     <string name="help_activity_action_visit_site">Visit website</string>
     <string name="help_activity_action_changelog">Changelog</string>
-    <string name="help_activity_error_cannot_load_text">Error: cannot load text</string>
     <string name="error_crash_title">Crash</string>
     <string name="error_crash_message">Sorry, the application crashed. Please send a report to the developers.</string>
     <string name="error_crash_send_button">Send</string>
     <string name="error_crash_discard_button">Discard</string>
     <string name="error_file_picker_app_is_no_installed">Error: There are no File app installed</string>
     <string name="donate_activity_title">Donate</string>
-    <string name="send_feedback_dialog_title">Send e-mail</string>
-    <string name="send_feedback_error_no_email_apps">There are no e-mail clients installed</string>
     <string name="share_dialog_title">Share UniPatcher</string>
     <string name="share_text">Download the best ROM patcher for Android. It supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patch types.\n\n</string>
     <!-- Navigation list -->
@@ -109,8 +105,6 @@
     <string name="nav_help">Help</string>
     <string name="nav_drawer_open">Open navigation drawer</string>
     <string name="nav_drawer_close">Close navigation drawer</string>
-    <string name="donation">Donation</string>
-    <string name="icon">icon</string>
     <string name="notification_channel_name">Notifications</string>
     <string name="help_title">Frequently Asked Questions:</string>
     <string name="help_what_is_unipatcher_title">What is UniPatcher?</string>

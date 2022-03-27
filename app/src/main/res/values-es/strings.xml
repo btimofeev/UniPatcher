@@ -29,7 +29,6 @@
     <string name="notify_create_patch_complete">Se ha creado el parche</string>
     <string name="notify_error">Error</string>
     <string name="notify_error_could_not_copy_file">No se pudo copiar el archivo</string>
-    <string name="notify_error_file_not_found">El archivo no existe</string>
     <string name="notify_error_not_enough_space">No hay suficiente espacio en el disco</string>
     <string name="notify_error_not_ips_patch">No es un parche IPS válido</string>
     <string name="notify_error_not_ups_patch">No es un parche UPS válido</string>
@@ -70,8 +69,6 @@
     <string name="help_activity_action_visit_site">Visitar sitio web</string>
     <string name="help_activity_action_changelog">Registro de cambios</string>
     <string name="donate_activity_title">Donar</string>
-    <string name="send_feedback_dialog_title">Enviar correo electrónico</string>
-    <string name="send_feedback_error_no_email_apps">No hay clientes de correo electrónico instalados</string>
     <string name="share_dialog_title">Compartir UniPatcher</string>
     <string name="share_text">Descarga el mejor parcheador de ROMs para Android. Admite todo tipo de parches IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP y XDelta3.
 \n
@@ -87,8 +84,6 @@
     <string name="nav_help">Ayuda</string>
     <string name="nav_drawer_open">Abrir cajón de navegación</string>
     <string name="nav_drawer_close">Cerrar cajón de navegación</string>
-    <string name="donation">Donación</string>
-    <string name="icon">icono</string>
     <string name="notification_channel_name">Notificaciones</string>
     <string name="help_feedback_body">Conversamos en inglés sobre nuevas funcionalidades y respondemos a cualquier pregunta en el foro de GitHub: https://github.com/btimofeev/UniPatcher/discussions
 \n
@@ -194,7 +189,6 @@
     <string name="error_crash_send_button">Enviar</string>
     <string name="error_crash_message">La aplicación se ha cerrado inesperadamente, ayuda al desarrollador enviando el informe de error.</string>
     <string name="error_crash_title">Cuelgue</string>
-    <string name="help_activity_error_cannot_load_text">Error: no se pudo cargar el texto</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
     <string name="settings_show_button_how_to_use_app_description">Muestra el botón de «cómo usar la aplicación» en la pantalla principal</string>
     <string name="settings_show_button_how_to_use_app">Mostrar botón de ayuda</string>
