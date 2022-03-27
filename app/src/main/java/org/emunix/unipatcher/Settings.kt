@@ -70,6 +70,6 @@ class SettingsImpl @Inject constructor(private val prefs: SharedPreferences) : S
     }
 
     override fun getTheme(): String {
-        return prefs.getString("theme", ThemeHelper.DEFAULT_MODE) ?: ThemeHelper.DEFAULT_MODE
+        return prefs.getString(PREFERENCES_THEME_KEY, ThemeHelper.DEFAULT_MODE) ?: ThemeHelper.DEFAULT_MODE
     }
 }

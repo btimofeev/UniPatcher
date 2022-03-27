@@ -38,18 +38,25 @@ import timber.log.Timber
 import javax.inject.Inject
 
 @HiltAndroidApp
-@AcraCore(stopServicesOnCrash = true,
-        reportFormat = StringFormat.KEY_VALUE_LIST)
-@AcraMailSender(mailTo = "unipatcher@gmail.com",
-        reportFileName = "unipatcher_crash_report.txt")
-@AcraNotification(resText = R.string.error_crash_message,
-        resTitle = R.string.error_crash_title,
-        resSendButtonText = R.string.error_crash_send_button,
-        resDiscardButtonText = R.string.error_crash_discard_button,
-        resChannelName = R.string.notification_channel_name)
+@AcraCore(
+    stopServicesOnCrash = true,
+    reportFormat = StringFormat.KEY_VALUE_LIST
+)
+@AcraMailSender(
+    mailTo = "unipatcher@gmail.com",
+    reportFileName = "unipatcher_crash_report.txt"
+)
+@AcraNotification(
+    resText = R.string.error_crash_message,
+    resTitle = R.string.error_crash_title,
+    resSendButtonText = R.string.error_crash_send_button,
+    resDiscardButtonText = R.string.error_crash_discard_button,
+    resChannelName = R.string.notification_channel_name
+)
 class UniPatcher : Application() {
 
-    @Inject lateinit var settings: Settings
+    @Inject
+    lateinit var settings: Settings
 
     override fun onCreate() {
         super.onCreate()
@@ -65,9 +72,11 @@ class UniPatcher : Application() {
             return
         }
         val manager = getSystemService<NotificationManager>()
-        val channel = NotificationChannel(NOTIFICATION_CHANNEL_ID,
-                getString(R.string.notification_channel_name),
-                NotificationManager.IMPORTANCE_DEFAULT)
+        val channel = NotificationChannel(
+            NOTIFICATION_CHANNEL_ID,
+            getString(R.string.notification_channel_name),
+            NotificationManager.IMPORTANCE_DEFAULT
+        )
         manager?.createNotificationChannel(channel)
     }
 
@@ -89,6 +98,7 @@ class UniPatcher : Application() {
     }
 
     companion object {
-        const val NOTIFICATION_CHANNEL_ID = "notifications"
+
+        private const val NOTIFICATION_CHANNEL_ID = "notifications"
     }
 }

@@ -1,5 +1,5 @@
 /*
- Copyright (C) 2017, 2020 Boris Timofeev
+ Copyright (C) 2017, 2020, 2022 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -30,6 +30,8 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
+import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
+import org.emunix.unipatcher.MIME_TYPE_OCTET_STREAM
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.CreatePatchFragmentBinding
 import org.emunix.unipatcher.utils.registerActivityResult
@@ -67,24 +69,24 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
         activityModifiedFile = registerActivityResult(viewModel::modifiedSelected)
         activityPatchFile = registerActivityResult(viewModel::patchSelected)
 
-        viewModel.getSourceName().observe(viewLifecycleOwner, {
+        viewModel.getSourceName().observe(viewLifecycleOwner) {
             binding.sourceFileNameTextView.text = it
-        })
-        viewModel.getModifiedName().observe(viewLifecycleOwner, {
+        }
+        viewModel.getModifiedName().observe(viewLifecycleOwner) {
             binding.modifiedFileNameTextView.text = it
-        })
-        viewModel.getPatchName().observe(viewLifecycleOwner, {
+        }
+        viewModel.getPatchName().observe(viewLifecycleOwner) {
             binding.patchFileNameTextView.text = it
-        })
-        viewModel.getMessage().observe(viewLifecycleOwner, { event ->
+        }
+        viewModel.getMessage().observe(viewLifecycleOwner) { event ->
             event.getContentIfNotHandled()?.let { message ->
                 Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
             }
-        })
-        viewModel.getActionIsRunning().observe(viewLifecycleOwner, { isRunning ->
+        }
+        viewModel.getActionIsRunning().observe(viewLifecycleOwner) { isRunning ->
             actionIsRunningViewModel.createPatch(isRunning)
             binding.progressBar.isVisible = isRunning
-        })
+        }
         binding.sourceFileCardView.setOnClickListener(this)
         binding.modifiedFileCardView.setOnClickListener(this)
         binding.patchFileCardView.setOnClickListener(this)
@@ -95,7 +97,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
             R.id.sourceFileCardView -> {
                 val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
-                    type = "*/*"
+                    type = MIME_TYPE_ALL_FILES
                 }
                 try {
                     activitySourceFile.launch(intent)
@@ -106,7 +108,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
             R.id.modifiedFileCardView -> {
                 val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
-                    type = "*/*"
+                    type = MIME_TYPE_ALL_FILES
                 }
                 try {
                     activityModifiedFile.launch(intent)
@@ -117,7 +119,7 @@ class CreatePatchFragment : ActionFragment(), View.OnClickListener {
             R.id.patchFileCardView -> {
                 val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
-                    type = "application/octet-stream"
+                    type = MIME_TYPE_OCTET_STREAM
                     putExtra(Intent.EXTRA_TITLE, "patch.xdelta")
                 }
                 try {

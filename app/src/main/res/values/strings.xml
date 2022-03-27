@@ -82,7 +82,7 @@
     <string name="help_activity_about_tab_title">About</string>
     <string name="help_activity_about_tab_version">Version %1$s</string>
     <string name="help_activity_about_tab_license">License: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
     <string name="help_activity_action_visit_site">Visit website</string>
     <string name="help_activity_action_changelog">Changelog</string>
     <string name="error_crash_title">Crash</string>
