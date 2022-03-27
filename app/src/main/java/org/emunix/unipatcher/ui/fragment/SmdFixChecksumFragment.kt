@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014, 2020, 2021 Boris Timofeev
+Copyright (C) 2014, 2020-2022 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -29,6 +29,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
+import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.SmdFixChecksumFragmentBinding
 import org.emunix.unipatcher.utils.registerActivityResult
@@ -62,18 +63,18 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
 
         activityRomFile = registerActivityResult(viewModel::romSelected)
 
-        viewModel.getRomName().observe(viewLifecycleOwner, {
+        viewModel.getRomName().observe(viewLifecycleOwner) {
             binding.romNameTextView.text = it
-        })
-        viewModel.getMessage().observe(viewLifecycleOwner, { event ->
+        }
+        viewModel.getMessage().observe(viewLifecycleOwner) { event ->
             event.getContentIfNotHandled()?.let { message ->
                 Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
             }
-        })
-        viewModel.getActionIsRunning().observe(viewLifecycleOwner, { isRunning ->
+        }
+        viewModel.getActionIsRunning().observe(viewLifecycleOwner) { isRunning ->
             actionIsRunningViewModel.fixChecksum(isRunning)
             binding.progressBar.isVisible = isRunning
-        })
+        }
 
         binding.romCardView.setOnClickListener(this)
     }
@@ -81,7 +82,7 @@ class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
     override fun onClick(view: View) {
         val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
-            type = "*/*"
+            type = MIME_TYPE_ALL_FILES
         }
         try {
             activityRomFile.launch(intent)

@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014, 2020, 2021 Boris Timofeev
+Copyright (C) 2014, 2020-2022 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -29,6 +29,8 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
+import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
+import org.emunix.unipatcher.MIME_TYPE_OCTET_STREAM
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.SnesSmcHeaderFragmentBinding
 import org.emunix.unipatcher.utils.registerActivityResult
@@ -66,27 +68,27 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
         activityRomFile = registerActivityResult(viewModel::romSelected)
         activityOutputFile = registerActivityResult(viewModel::outputSelected)
 
-        viewModel.getRomName().observe(viewLifecycleOwner, {
+        viewModel.getRomName().observe(viewLifecycleOwner) {
             binding.romNameTextView.text = it
-        })
-        viewModel.getOutputName().observe(viewLifecycleOwner, {
+        }
+        viewModel.getOutputName().observe(viewLifecycleOwner) {
             binding.outputNameTextView.text = it
-        })
-        viewModel.getSuggestedOutputName().observe(viewLifecycleOwner, {
+        }
+        viewModel.getSuggestedOutputName().observe(viewLifecycleOwner) {
             suggestedOutputName = it
-        })
-        viewModel.getMessage().observe(viewLifecycleOwner, { event ->
+        }
+        viewModel.getMessage().observe(viewLifecycleOwner) { event ->
             event.getContentIfNotHandled()?.let { message ->
                 Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
             }
-        })
-        viewModel.getInfoText().observe(viewLifecycleOwner, { text ->
+        }
+        viewModel.getInfoText().observe(viewLifecycleOwner) { text ->
             binding.headerInfoTextView.text = text
-        })
-        viewModel.getActionIsRunning().observe(viewLifecycleOwner, { isRunning ->
+        }
+        viewModel.getActionIsRunning().observe(viewLifecycleOwner) { isRunning ->
             actionIsRunningViewModel.removeSmc(isRunning)
             binding.progressBar.isVisible = isRunning
-        })
+        }
 
         binding.romCardView.setOnClickListener(this)
         binding.outputCardView.setOnClickListener(this)
@@ -97,7 +99,7 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
             R.id.romCardView -> {
                 val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
-                    type = "*/*"
+                    type = MIME_TYPE_ALL_FILES
                 }
                 try {
                     activityRomFile.launch(intent)
@@ -108,7 +110,7 @@ class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
             R.id.outputCardView -> {
                 val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
-                    type = "application/octet-stream"
+                    type = MIME_TYPE_OCTET_STREAM
                     putExtra(Intent.EXTRA_TITLE, suggestedOutputName)
                 }
                 try {

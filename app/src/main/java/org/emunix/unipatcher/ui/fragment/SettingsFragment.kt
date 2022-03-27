@@ -23,6 +23,7 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.os.Bundle
 import androidx.preference.ListPreference
 import androidx.preference.PreferenceFragmentCompat
+import org.emunix.unipatcher.PREFERENCES_THEME_KEY
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.helpers.ThemeHelper.applyTheme
 
@@ -37,8 +38,8 @@ class SettingsFragment : PreferenceFragmentCompat(), OnSharedPreferenceChangeLis
         key: String
     ) {
         when (key) {
-            "theme" -> {
-                val theme = findPreference<ListPreference>("theme")
+            PREFERENCES_THEME_KEY -> {
+                val theme = findPreference<ListPreference>(PREFERENCES_THEME_KEY)
                 if (theme?.value != null)
                     applyTheme(theme.value)
             }
