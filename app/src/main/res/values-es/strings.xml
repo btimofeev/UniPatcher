@@ -189,7 +189,7 @@
     <string name="error_crash_send_button">Enviar</string>
     <string name="error_crash_message">La aplicación se ha cerrado inesperadamente, ayuda al desarrollador enviando el informe de error.</string>
     <string name="error_crash_title">Cuelgue</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
     <string name="settings_show_button_how_to_use_app_description">Muestra el botón de «cómo usar la aplicación» en la pantalla principal</string>
     <string name="settings_show_button_how_to_use_app">Mostrar botón de ayuda</string>
     <string name="settings_theme_name_follow_system">Utilizar ajustes del sistema</string>
