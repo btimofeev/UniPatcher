@@ -1,0 +1,6 @@
+- Sostituito il file manager integrato con lo standard Storage Access Framework. L'applicazione di patch richiede più tempo e spazio libero su disco. Vista del checksum dei file temporaneamente rimossa.
+- Supporto per la compressione LZMA nelle patch XDelta3
+- Rimossa la possibilità di aggiungere gli header SMC alle ROM SNES (nel corso degli anni non ho mai avuto bisogno di questa funzione)
+- Supporto per Android 10 e 11
+- Nessuna notifica che scompare
+- Molte piccole modifiche all'interfaccia

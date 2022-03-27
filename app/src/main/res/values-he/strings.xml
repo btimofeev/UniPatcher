@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="help_feedback_body">צרו איתי קשר בדואר אלקטרוני unipatcher@gmail.com. בבקשה תכתוב באנגלית. אם יש לך בעיות עם תיקון, צרף את התיקון לאות וכתב את שם ה- ROM שלך, זה יחסוך לנו זמן.</string>
+    <string name="help_feedback_body">אנו דנים ביכולות חדשות ועונים על שאלות בדיונים שב־GitHub ‏https://github.com/btimofeev/UniPatcher/discussions
+\n
+\nניתן לדווח על תקלה במערכת התקלות של GitHub ‏https://github.com/btimofeev/UniPatcher/issues
+\n
+\nאפשר גם ליצור קשר עם יוצר היישום דרך כתובת הדוא״ל unipatcher@gmail.com. נא לכתוב באנגלית. אם נתקלת בבעיות עם טלאים, יש לצרף את הטלאי להודעה ולכתוב את שם ה־ROM שלך, זה יחסוך זמן.</string>
     <string name="help_feedback_title">יש לי שאלה, בקשת תכונה או דיווח באג.</string>
     <string name="help_how_to_translate_body">אם תרצה לתרגם את האפליקציה לשפה אחרת או לשפר תרגום קיים, תוכל לעשות זאת באתר Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">כיצד לתרגם את האפליקציה\?</string>
@@ -139,19 +143,23 @@
 \n
 \n - <b>סינית</b>: נברל וואנג
 \n - <b>צרפתית</b>: תיבאו פאניס
+\n - <b>גרמנית</b>: הוניגדיב
 \n - <b>עברית</b>: תאמר דבסאן
-\n - <b>איטלקי</b>: מטאו סיכי
+\n - <b>אינדונזית</b>: טסאקיב פדלורחמן סוקה, רזה אלמנדה
+\n - <b>איטלקית</b>: מתאו סיכי, ג׳. לאבוי, דני79, אלסנדרו מנדלי
 \n - <b>יפנית</b>: נאופומי פוקו
+\n - <b>ליטאית</b>: גדימינס מוראוסקס
 \n - <b>קוריאנית</b>: מינסאו לי
-\n - <b>נורבגית</b>: אלן נורדהוי
-\n - <b>פולנית</b>: מיכל ביכובסקי
-\n - <b>פורטוגלית</b>: דייוי לופס, מתאוס סילבה סאליס, ג׳ונתן קרדוסו
+\n - <b>נורבגית בוקמול</b>: אלן נורדהוי
+\n - <b>פולנית</b>: מיכל ביכובסקי, יארק קרפיאל, הייניקן993
+\n - <b>פורטוגלית</b>: דייוי לופס, מתאוס סילבה סאליס, ג׳ונתן קרדוסו, מרווין סילק, סנטוס
+\n - <b>פורטוגלית (ברזיל)</b>: יושי לבלנד, אלברן לוסיו, מרווין סילק, אליסיון קרוז סנטוס, דניאל דה סוזה מלו, ג׳ואי מנדז
 \n - <b>רוסית</b>: בוריס טימופייב
-\n - <b>ספרדית</b>: קרלוס סאנצ׳ז
+\n - <b>ספרדית</b>: קרלוס סאנצ׳ז, סוויטר
 \n - <b>טורקית</b>: אוגוז ארסין
-\n - <b>אוקראינית</b>: ולדימיר שבצ׳וק
+\n - <b>אוקראינית</b>: וולודימיר שבצ׳וק
 \n
-\nעזור לתרגם את האפליקציה לשפה שלך: https://hosted.weblate.org/engage/unipatcher/</string>
+\nכדי לעזור לתרגם את היישום לשפה שלך: https://hosted.weblate.org/engage/unipatcher/‎</string>
     <string name="notify_error_not_enough_space">אין מספיק מקום בדיסק</string>
     <string name="notify_error_file_not_found">הקובץ לא נמצא</string>
     <string name="notify_error_could_not_copy_file">לא ניתן היה להעתיק את הקובץ</string>

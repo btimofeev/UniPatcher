@@ -148,17 +148,19 @@
 \n - <b>Material design icons</b> by community, licensed under SIL Open Font License 1.1. https://materialdesignicons.com
 \n - <b>Timber</b> by Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber
 \n - <b>XDelta version 3</b> by Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta</string>
-    <string name="about_translators"><b>翻訳:</b>
+    <string name="about_translators"><b>Translators:</b>
 \n
 \n - <b>Chinese</b>: Nabarl Wang, Eric
 \n - <b>French</b>: Thibaut Panis, J. Lavoie
 \n - <b>German</b>: Honigdieb
 \n - <b>Hebrew</b>: Tamer Dabsan
-\n - <b>Italian</b>: Matteo Sechi, J.Lavoie
+\n - <b>Indonesian</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
+\n - <b>Italian</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
 \n - <b>Japanese</b>: Naofumi Fukue
+\n - <b>Lithuanian</b>: Gediminas Murauskas
 \n - <b>Korean</b>: Minseo Lee
 \n - <b>Norwegian Bokmål</b>: Allan Nordhøy
-\n - <b>Polish</b>: Michal Bychowski, Jarek Karpiel
+\n - <b>Polish</b>: Michal Bychowski, Jarek Karpiel, hayneken993
 \n - <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
 \n - <b>Portuguese (Brazil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
 \n - <b>Russian</b>: Борис Тимофеев
@@ -166,7 +168,7 @@
 \n - <b>Turkish</b>: Oğuz Ersen
 \n - <b>Ukrainian</b>: Володимир Шевчук
 \n
-\nお使いの言語に翻訳するのを手伝ってください: https://hosted.weblate.org/engage/unipatcher/</string>
+\nHelp translate the app into your language: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_snes_smc_body">SMC ヘッダーは、SNES ROM イメージの先頭に 512 バイトあります。これらのバイトには目的はありませんが、残りのデータの場所が変更されます。ヘッダーの削除は、パッチを正しく適用するために使用されることがあります。</string>
     <string name="help_snes_smc_title">スーパーファミコンのゲームからSMCヘッダーを削除する必要があるのはなぜですか\?</string>
     <string name="help_i_cant_patch_smw_rom_body">このROMにはSMCヘッダーが含まれていますが、このゲーム用のほとんどのパッチではヘッダーのないROMが必要です。SMC ヘッダーを削除するには、左側のメニューで適切な項目を選択し、その後、そのパッチを ROM に適用します。</string>
