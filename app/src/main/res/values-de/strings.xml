@@ -82,8 +82,6 @@
     <string name="help_what_is_unipatcher_title">Was ist UniPatcher\?</string>
     <string name="help_title">Häufig gestellte Fragen:</string>
     <string name="notification_channel_name">Benachrichtigungen</string>
-    <string name="icon">Symbol</string>
-    <string name="donation">Spende</string>
     <string name="nav_drawer_close">Schließe Navigationsleiste</string>
     <string name="nav_drawer_open">Öffne Navigationsleiste</string>
     <string name="nav_help">Hilfe</string>
@@ -99,15 +97,12 @@
 \n
 \n</string>
     <string name="share_dialog_title">UniPatcher weiterempfehlen</string>
-    <string name="send_feedback_error_no_email_apps">Es ist kein E-Mail-Client installiert</string>
-    <string name="send_feedback_dialog_title">E-Mail senden</string>
     <string name="donate_activity_title">Spenden</string>
     <string name="error_file_picker_app_is_no_installed">Fehler: Es ist keine Dateien-App installiert</string>
     <string name="error_crash_discard_button">Verwerfen</string>
     <string name="error_crash_send_button">Senden</string>
     <string name="error_crash_message">Sorry, die App ist abgestürzt. Bitte sende einen Bericht an die Entwickler.</string>
     <string name="error_crash_title">Absturz</string>
-    <string name="help_activity_error_cannot_load_text">Fehler: Konnte Text nicht laden</string>
     <string name="help_activity_action_changelog">Änderungshistorie</string>
     <string name="help_activity_action_visit_site">Webseite besuchen</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
@@ -154,7 +149,6 @@
     <string name="notify_error_not_ups_patch">Kein gültiger UPS-Patch</string>
     <string name="notify_error_not_ips_patch">Kein gültiger IPS-Patch</string>
     <string name="notify_error_not_enough_space">Nicht genug Speicherplatz frei</string>
-    <string name="notify_error_file_not_found">Datei nicht gefunden</string>
     <string name="notify_error_could_not_copy_file">Konnte Datei nicht kopieren</string>
     <string name="notify_error">Fehler</string>
     <string name="notify_create_patch_complete">Patch erstellt</string>

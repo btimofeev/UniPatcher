@@ -6,8 +6,6 @@
     <dimen name="content_top_margin">16dp</dimen>
     <dimen name="content_left_margin">64dp</dimen>
     <dimen name="content_right_margin">64dp</dimen>
-    <dimen name="file_browser_content_left_margin">64dp</dimen>
-    <dimen name="file_browser_content_right_margin">64dp</dimen>
 
     <dimen name="card_elevation">2dp</dimen>
     <dimen name="card_corner_radius">8dp</dimen>

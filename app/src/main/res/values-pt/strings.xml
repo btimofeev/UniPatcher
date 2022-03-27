@@ -29,7 +29,6 @@
     <string name="notify_create_patch_complete">Patch criado com sucesso</string>
     <string name="notify_error">Erro</string>
     <string name="notify_error_could_not_copy_file">Não foi possível copiar o ficheiro</string>
-    <string name="notify_error_file_not_found">Ficheiro não encontrado</string>
     <string name="notify_error_not_enough_space">Não há espaço em disco suficiente</string>
     <string name="notify_error_not_ips_patch">Patch IPS inválido</string>
     <string name="notify_error_not_ups_patch">Patch UPS inválido</string>
@@ -70,8 +69,6 @@
     <string name="help_activity_action_visit_site">Visitar website</string>
     <string name="help_activity_action_changelog">Lista de mudanças</string>
     <string name="donate_activity_title">Doar</string>
-    <string name="send_feedback_dialog_title">Enviar e-mail</string>
-    <string name="send_feedback_error_no_email_apps">Não foi localizado nenhum cliente de e-mail em seu dispositivo</string>
     <string name="share_dialog_title">Compartilhar o UniPatcher</string>
     <string name="share_text">Baixe agora o melhor patcher de ROMs para Android. Suporte para os formatos IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.\n\n</string>
     <!-- Navigation list -->
@@ -85,8 +82,6 @@
     <string name="nav_help">Ajuda</string>
     <string name="nav_drawer_open">Abrir o painel de navegação</string>
     <string name="nav_drawer_close">Fechar o painel de navegação</string>
-    <string name="donation">Doação</string>
-    <string name="icon">ícone</string>
     <string name="notification_channel_name">Notificações</string>
     <string name="help_feedback_body">Discutimos novas funcionalidades e respondemos a perguntas sobre as Discussões do GitHub https://github.com/btimofeev/UniPatcher/discussions
 \n
@@ -180,7 +175,6 @@
     <string name="error_crash_send_button">Enviar</string>
     <string name="error_crash_message">Desculpe, a aplicação travou. Por favor, envie um relatório para os programadores.</string>
     <string name="error_crash_title">Erro</string>
-    <string name="help_activity_error_cannot_load_text">Erro: não é possível carregar texto</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
     <string name="settings_show_button_how_to_use_app_description">Mostrar botão \"Como usar a app\" no ecrã principal</string>
     <string name="settings_show_button_how_to_use_app">Mostrar butão Ajuda</string>

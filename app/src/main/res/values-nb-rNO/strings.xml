@@ -25,7 +25,6 @@
     <string name="notify_create_patch_complete">Programfiks opprettet</string>
     <string name="notify_error">Feil</string>
     <string name="notify_error_could_not_copy_file">Kunne ikke kopiere fil</string>
-    <string name="notify_error_file_not_found">Fil ikke funnet</string>
     <string name="notify_error_not_enough_space">Ikke nokk plass på disken</string>
     <string name="notify_error_not_ips_patch">Ikke en gyldig IPS-programfiks</string>
     <string name="notify_error_not_ups_patch">Ikke en gyldig UPS-programfiks</string>
@@ -66,8 +65,6 @@
     <string name="help_activity_action_visit_site">Besøk nettside</string>
     <string name="help_activity_action_changelog">Endringslogg</string>
     <string name="donate_activity_title">Doner</string>
-    <string name="send_feedback_dialog_title">Send e-post</string>
-    <string name="send_feedback_error_no_email_apps">Ingen e-postklienter installert</string>
     <string name="share_dialog_title">Del UniPatcher</string>
     <string name="share_text">Last ned den beste ROM-programfikseren for Android. Den støtter IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP og XDelta3 -programfikstyper.\n\n</string>
     <!-- Navigation list -->
@@ -81,8 +78,6 @@
     <string name="nav_help">Hjelp</string>
     <string name="nav_drawer_open">Åpne navigasjonsskuff</string>
     <string name="nav_drawer_close">Lukk navigasjonsskuff</string>
-    <string name="donation">Donasjon</string>
-    <string name="icon">ikon</string>
     <string name="notification_channel_name">Merknader</string>
     <string name="error_file_picker_app_is_no_installed">Feil: Ingen filutforsker installert</string>
     <string name="error_crash_message">Programmet krasjet. Send feilrapport til utviklerne.</string>
@@ -103,7 +98,6 @@
     <string name="main_activity_button_how_to_use_app">Hvordan bruke programmet</string>
     <string name="settings_show_button_how_to_use_app_description">Vis \"Hvordan bruke programmet\"-knappen på hovedskjermen</string>
     <string name="settings_show_button_how_to_use_app">Vis \"Hjelp\"-knapp</string>
-    <string name="help_activity_error_cannot_load_text">Feil: kan ikke laste inn tekst</string>
     <string name="nav_snes_add_del_smc_header">Fjern SMC-hode (SNES)</string>
     <string name="error_crash_discard_button">Forkast</string>
     <string name="error_crash_send_button">Send</string>

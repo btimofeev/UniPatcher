@@ -5,8 +5,6 @@
     <string name="notify_error_unable_open_source_file">Kaynak dosyası açılamıyor</string>
     <string name="notify_error_unable_open_file">Dosya açılamıyor</string>
     <string name="notification_channel_name">Bildirimler</string>
-    <string name="icon">simge</string>
-    <string name="donation">Bağış</string>
     <string name="nav_drawer_close">Gezinme çekmecesini kapat</string>
     <string name="nav_drawer_open">Gezinme çekmecesini aç</string>
     <string name="nav_help">Yardım</string>
@@ -22,15 +20,12 @@
 \n
 \n</string>
     <string name="share_dialog_title">UniPatcher\'ı paylaş</string>
-    <string name="send_feedback_error_no_email_apps">Kurulu e-posta istemcisi yok</string>
-    <string name="send_feedback_dialog_title">E-posta gönder</string>
     <string name="donate_activity_title">Bağış yap</string>
     <string name="error_file_picker_app_is_no_installed">Hata: Kurulu dosya yöneticisi uygulaması yok</string>
     <string name="error_crash_discard_button">At</string>
     <string name="error_crash_send_button">Gönder</string>
     <string name="error_crash_message">Üzgünüm, uygulama çöktü. Lütfen geliştiricilere bir bildirim gönderin.</string>
     <string name="error_crash_title">Çökme</string>
-    <string name="help_activity_error_cannot_load_text">Hata: metin yüklenemiyor</string>
     <string name="help_activity_action_changelog">Değişiklikler</string>
     <string name="help_activity_action_visit_site">Web sitesini ziyaret et</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
@@ -74,7 +69,6 @@
     <string name="notify_error_not_ups_patch">Geçerli bir UPS yaması değil</string>
     <string name="notify_error_not_ips_patch">Geçerli bir IPS yaması değil</string>
     <string name="notify_error_not_enough_space">Diskte yeterli alan yok</string>
-    <string name="notify_error_file_not_found">Dosya bulunamadı</string>
     <string name="notify_error_could_not_copy_file">Dosya kopyalanamadı</string>
     <string name="notify_error">Hata</string>
     <string name="notify_create_patch_complete">Yama oluşturuldu</string>

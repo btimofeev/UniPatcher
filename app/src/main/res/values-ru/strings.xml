@@ -37,7 +37,6 @@
     <string name="notify_create_patch_complete">Патч создан</string>
     <string name="notify_error">Ошибка</string>
     <string name="notify_error_could_not_copy_file">Не удалось скопировать файл</string>
-    <string name="notify_error_file_not_found">Файл не найден</string>
     <string name="notify_error_not_enough_space">Не хватает места на диске</string>
     <string name="notify_error_not_ips_patch">Некорректный IPS патч</string>
     <string name="notify_error_not_ups_patch">Некорректный UPS патч</string>
@@ -86,15 +85,12 @@
     <string name="help_activity_about_tab_copyright">© Борис Тимофеев, 2013–2020</string>
     <string name="help_activity_action_visit_site">Посетить веб-сайт</string>
     <string name="help_activity_action_changelog">История изменений</string>
-    <string name="help_activity_error_cannot_load_text">Ошибка: не могу загрузить текст</string>
     <string name="error_crash_title">Приложение остановлено</string>
     <string name="error_crash_message">К сожалению, в приложении возникла критическая ошибка. Пожалуйста, отправьте отчет разработчику.</string>
     <string name="error_crash_send_button">Отправить</string>
     <string name="error_crash_discard_button">Отменить</string>
     <string name="error_file_picker_app_is_no_installed">Ошибка: приложение Файлы не установлено</string>
     <string name="donate_activity_title">Пожертвование</string>
-    <string name="send_feedback_dialog_title">Отправить e-mail</string>
-    <string name="send_feedback_error_no_email_apps">Не установлен e-mail клиент</string>
     <string name="share_dialog_title">Рассказать о UniPatcher</string>
     <string name="share_text">Скачай лучший ROM патчер для Android. Поддерживает патчи в форматах IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP и XDelta3.\n\n</string>
     <!-- Navigation list -->
@@ -109,8 +105,6 @@
     <string name="nav_help">Помощь</string>
     <string name="nav_drawer_open">Открыть главное меню</string>
     <string name="nav_drawer_close">Закрыть главное меню</string>
-    <string name="donation">Пожертвование</string>
-    <string name="icon">иконка</string>
     <string name="notification_channel_name">Уведомления</string>
     <string name="help_feedback_body">Мы обсуждаем новые функции и отвечаем на вопросы на странице https://github.com/btimofeev/UniPatcher/discussions
 \n

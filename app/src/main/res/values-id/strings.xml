@@ -47,7 +47,6 @@
     <string name="notify_patching_complete">Modifikasi berhasil</string>
     <string name="snes_smc_error_unable_to_get_file_size">Galat: tidak dapat mengukur ukuran file</string>
     <string name="notify_error_not_enough_space">Penyimpanan yang tersedia tidak mencukupi</string>
-    <string name="notify_error_file_not_found">File tidak ditemukan</string>
     <string name="notify_error_could_not_copy_file">Tidak bisa menyalin file</string>
     <string name="notify_error">Kesalahan</string>
     <string name="nav_donate">Donasi</string>
@@ -84,8 +83,6 @@
 \n
 \n</string>
     <string name="share_dialog_title">Bagikan UniPatcher</string>
-    <string name="send_feedback_error_no_email_apps">Tidak ada klien email yang diinstal</string>
-    <string name="send_feedback_dialog_title">Kirim e-mail</string>
     <string name="nav_help">Bantuan</string>
     <string name="nav_share">Bagikan</string>
     <string name="help_what_is_rom_image_title">Apa itu ROM image\?</string>
@@ -156,13 +153,10 @@
     <string name="help_what_is_unipatcher_title">Apa itu UniPatcher\?</string>
     <string name="help_title">Pertanyaan yang Sering Diajukan:</string>
     <string name="notification_channel_name">Notifikasi</string>
-    <string name="icon">ikon</string>
-    <string name="donation">Donasi</string>
     <string name="nav_drawer_close">Tutup laci navigasi</string>
     <string name="nav_drawer_open">Laci navigasi terbuka</string>
     <string name="error_crash_message">Maaf, aplikasi itu crash. Silakan kirim laporan ke pengembang.</string>
     <string name="error_crash_title">Kecelakaan</string>
-    <string name="help_activity_error_cannot_load_text">Kesalahan: tidak bisa memuat teks</string>
     <string name="help_activity_action_changelog">Daftar perubahan</string>
     <string name="help_activity_action_visit_site">Kunjungi situs web</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
