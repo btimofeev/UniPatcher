@@ -142,7 +142,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
     // Crash reports
-    def acraVersion = "5.7.0"
+    def acraVersion = "5.8.4"
     implementation "ch.acra:acra-mail:$acraVersion"
     implementation "ch.acra:acra-notification:$acraVersion"
 
