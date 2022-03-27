@@ -165,7 +165,6 @@
     <string name="help_activity_error_cannot_load_text">Kesalahan: tidak bisa memuat teks</string>
     <string name="help_activity_action_changelog">Daftar perubahan</string>
     <string name="help_activity_action_visit_site">Kunjungi situs web</string>
-    <string name="help_activity_action_send_feedback">Mengirim umpan balik</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
     <string name="help_activity_about_tab_license">Lisensi: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">Versi %1$s</string>
