@@ -82,7 +82,7 @@
     <string name="help_activity_about_tab_title">О программе</string>
     <string name="help_activity_about_tab_version">Версия %1$s</string>
     <string name="help_activity_about_tab_license">Лицензия: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">© Борис Тимофеев, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Борис Тимофеев, 2013–2022</string>
     <string name="help_activity_action_visit_site">Посетить веб-сайт</string>
     <string name="help_activity_action_changelog">История изменений</string>
     <string name="error_crash_title">Приложение остановлено</string>
