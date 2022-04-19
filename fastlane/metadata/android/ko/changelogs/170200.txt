@@ -1,0 +1,6 @@
+- 히브리어 추가 (Tamer Dabsan님께 감사드립니다)
+- 독일어 추가 (Honigdieb님께 감사드립니다)
+- 스페인어 및 포르투갈어로 번역 완료 (Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes님께 감사드립니다)
+- 다른 많은 번역이 업데이트되었습니다(관련된 모든 분들께 감사드립니다)
+- 일부 파일을 선택할 수 없는 문제 수정
+- 이제 https://github.com/btimofeev/UniPatcher/discussions 페이지에서 새로운 기능에 대한 아이디어를 제안하거나 질문할 수 있습니다
