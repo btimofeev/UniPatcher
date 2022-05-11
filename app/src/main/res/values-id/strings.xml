@@ -17,9 +17,9 @@
     <string name="main_activity_tap_to_select">ketuk untuk memilih</string>
     <string name="main_activity_tap_to_select_where_to_save_patch">ketuk untuk memilih tempat menyimpan tambalan</string>
     <string name="main_activity_rom_without_smc_file">Hasil file ROM tanpa header</string>
-    <string name="main_activity_output_file">File hasil</string>
+    <string name="main_activity_output_file">File output</string>
     <string name="main_activity_rom_with_smc_file">File ROM dengan header SMC</string>
-    <string name="main_activity_patch_file">File tambalan</string>
+    <string name="main_activity_patch_file">File patch</string>
     <string name="main_activity_rom_file">File ROM</string>
     <string name="app_name">UniPatcher</string>
     <string name="create_patch_fragment_toast_patch_not_selected">File tambalan tidak dipilih</string>
