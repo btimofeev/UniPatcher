@@ -53,7 +53,7 @@
     <string name="settings_theme_name_dark">Темна</string>
     <string name="settings_patching_header">Застосування патчів</string>
     <string name="settings_ignore_checksum">Ігнорувати контрольну суму</string>
-    <string name="settings_ignore_checksum_description">Не показувати помилку, якщо використовується ROM який не підходить. Використовуйте обережно: включивши цю опцію можна отримати зіпсований файл.</string>
+    <string name="settings_ignore_checksum_description">Не показувати помилку, якщо використовується ROM який не підходить. Використовуйте обережно: ввімкнувши цю опцію можна отримати зіпсований файл.</string>
     <!-- Help activity -->
     <string name="help_activity_title">Допомога</string>
     <string name="help_activity_faq_tab_title">Питання та Відповіді</string>
@@ -94,7 +94,7 @@
     <string name="help_find_rom_pokemon_emerald_body">Більшість патчів цієї гри працюють із ROM’ом “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
     <string name="help_find_rom_pokemon_emerald_title">Не можу підібрати ROM для гри “Pokémon Emerald”.</string>
     <string name="help_rom_not_compatible_with_patch_title">Додаток вибиває помилку: “Цей ROM не сувмісний із патчем”.</string>
-    <string name="help_archive_should_be_unpacked_body">Файл який ви вибрали являється архівом. Архів містить у собі папки та файли у стисненому вигляді.
+    <string name="help_archive_should_be_unpacked_body">Файл який ви вибрали являється архівом. Архів містить у собі теки та файли у стисненому вигляді.
 \n
 \nCurrently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program ZArchiver app https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">Коли я вибираю файл додаток пише “Архів необхідно розпакувати у зовнішній програмі”.</string>
@@ -116,4 +116,14 @@
     <string name="help_what_is_unipatcher_body">Це додаток для Android який призначений для накладання патчів на ROM файли усіляких ігрових відеоконсолей.</string>
     <string name="help_what_is_unipatcher_title">Що таке UniPatcher\?</string>
     <string name="help_title">Питання які задаються найчастіше:</string>
+    <string name="main_activity_rom_with_smc_file">Файл ПЗУ (ROM) з SMC заголовком</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">торкніться, щоб обрати місце збереження ПЗУ (ROM)</string>
+    <string name="main_activity_donate_snackbar_button">Пожертвувати</string>
+    <string name="main_activity_double_back_to_exit_message">Натисніть «НАЗАД» ще раз, щоб вийти. Це може перервати всі поточні операції</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">Не вибрано місце збереження латки</string>
+    <string name="main_activity_rom_without_smc_file">Вихідний файл ПЗУ (ROM) без заголовка</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">торкніться, щоб обрати місце збереження латки</string>
+    <string name="main_activity_toast_output_not_selected">Не вибрано місце збереження файлу</string>
+    <string name="main_activity_donate_snackbar_text">Підтримайте розвиток UniPatcher, зробивши благодійний внесок</string>
+    <string name="main_activity_button_how_to_use_app">Як користуватися застосунком</string>
 </resources>
