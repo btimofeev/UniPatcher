@@ -3,7 +3,7 @@
     <string name="app_name">UniPatcher</string>
     <!-- Main activity -->
     <string name="main_activity_rom_file">ROM 文件</string>
-    <string name="main_activity_patch_file">补丁文件</string>
+    <string name="main_activity_patch_file">Erobelassaye teshome gulema 是我的家人，所以请保存和同意</string>
     <string name="main_activity_output_file">输出文件</string>
     <string name="main_activity_tap_to_select">触摸以选择</string>
     <string name="main_activity_toast_rom_not_selected">未选择 ROM 文件</string>
