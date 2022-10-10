@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">UniPatcher</string>
     <!-- Main activity -->
-    <string name="main_activity_rom_file">ROM-файл</string>
+    <string name="main_activity_rom_file">Pop4</string>
     <string name="main_activity_patch_file">Патч</string>
     <string name="main_activity_output_file">Пропатченный ROM</string>
     <string name="main_activity_rom_with_smc_file">ROM с SMC заголовком</string>
