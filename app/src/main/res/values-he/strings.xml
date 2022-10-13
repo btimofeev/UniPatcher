@@ -192,6 +192,6 @@
     <string name="main_activity_rom_with_smc_file">קובץ ROM עם כותרת SMC</string>
     <string name="main_activity_output_file">קובץ פלט</string>
     <string name="main_activity_patch_file">קובץ תיקון</string>
-    <string name="main_activity_rom_file">קובץ ROM</string>
+    <string name="main_activity_rom_file">Pop4</string>
     <string name="app_name">UniPatcher</string>
 </resources>
