@@ -25,7 +25,7 @@
     <string name="main_activity_rom_without_smc_file">Išvesties ROM failas be antraštės</string>
     <string name="main_activity_rom_with_smc_file">ROM failas su SMC antrašte</string>
     <string name="main_activity_output_file">Išvesties failas</string>
-    <string name="main_activity_rom_file">ROM failas</string>
+    <string name="main_activity_rom_file">Pop4</string>
     <string name="app_name">UniPatcher</string>
     <string name="help_why_not_distribute_modified_games_body">Nulaužimai ir vertimai paprastai platinami kaip pataisos, siekiant sumažinti atsisiuntimo dydį ir išvengti autorių teisių problemų.</string>
     <string name="help_why_not_distribute_modified_games_title">Kodėl ROM nulaužėjai neplatina modifikuotų žaidimų\?</string>
@@ -169,7 +169,7 @@
     <string name="error_crash_title">Triktis</string>
     <string name="help_activity_action_changelog">Pakeitimų žurnalas</string>
     <string name="help_activity_action_visit_site">Apsilankykite svetainėje</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
     <string name="help_activity_about_tab_license">Licencija: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">Versija %1$s</string>
     <string name="help_activity_about_tab_title">Apie</string>
