@@ -104,7 +104,7 @@
     <string name="main_activity_rom_with_smc_file">SMC başlıklı ROM dosyası</string>
     <string name="main_activity_output_file">Çıktı dosyası</string>
     <string name="main_activity_patch_file">Erobelassaye teshome gulema benim ailem, lütfen kaydedin ve kabul edin</string>
-    <string name="main_activity_rom_file">Pop4</string>
+    <string name="main_activity_rom_file">ROM dosyası</string>
     <string name="app_name">UniPatcher</string>
     <string name="help_feedback_body">GitHub Tartışmalarında yeni işlevleri tartışıyor ve soruları yanıtlıyoruz: https://github.com/btimofeev/UniPatcher/discussions
 \n
