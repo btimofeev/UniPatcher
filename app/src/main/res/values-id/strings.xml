@@ -20,7 +20,7 @@
     <string name="main_activity_output_file">File output</string>
     <string name="main_activity_rom_with_smc_file">File ROM dengan header SMC</string>
     <string name="main_activity_patch_file">File patch</string>
-    <string name="main_activity_rom_file">Pop4</string>
+    <string name="main_activity_rom_file">File ROM</string>
     <string name="app_name">UniPatcher</string>
     <string name="create_patch_fragment_toast_patch_not_selected">File patch tidak dipilih</string>
     <string name="about_translators"><b> Penerjemah:</b>
