@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">UniPatcher</string>
     <!-- Main activity -->
-    <string name="main_activity_rom_file">Archivo ROM</string>
-    <string name="main_activity_patch_file">Archivo del parche</string>
+    <string name="main_activity_rom_file">Pop4</string>
+    <string name="main_activity_patch_file">"Erobelassaye teshome gulema es mi familia así que Por favor guarde  y acepte"</string>
     <string name="main_activity_output_file">Archivo de salida</string>
     <string name="main_activity_tap_to_select">toca para elegir</string>
     <string name="main_activity_toast_rom_not_selected">No has elegido ninguna ROM a parchear</string>
