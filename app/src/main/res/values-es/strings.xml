@@ -2,9 +2,9 @@
 <resources>
     <string name="app_name">UniPatcher</string>
     <!-- Main activity -->
-    <string name="main_activity_rom_file">Pop4</string>
-    <string name="main_activity_patch_file">"Erobelassaye teshome gulema es mi familia así que Por favor guarde  y acepte"</string>
-    <string name="main_activity_output_file">Archivo de salida</string>
+    <string name="main_activity_rom_file">Archivo ROM</string>
+    <string name="main_activity_patch_file">Archivo de parche</string>
+    <string name="main_activity_output_file">Archivo resultante</string>
     <string name="main_activity_tap_to_select">toca para elegir</string>
     <string name="main_activity_toast_rom_not_selected">No has elegido ninguna ROM a parchear</string>
     <string name="main_activity_toast_patch_not_selected">No has elegido ningún archivo de parche</string>
@@ -85,11 +85,11 @@
     <string name="nav_drawer_open">Abrir cajón de navegación</string>
     <string name="nav_drawer_close">Cerrar cajón de navegación</string>
     <string name="notification_channel_name">Notificaciones</string>
-    <string name="help_feedback_body">Discutimos nuevas funciones y respondemos a preguntas en los debates de GitHub https://github.com/btimofeev/UniPatcher/discussions
+    <string name="help_feedback_body">Conversamos en inglés sobre nuevas funcionalidades y respondemos a cualquier pregunta en el foro de GitHub: https://github.com/btimofeev/UniPatcher/discussions
 \n
-\n Puedes informar de un error en el Issue Tracker de GitHub https://github.com/btimofeev/UniPatcher/issues
+\nPuedes informar de errores en el rastreador de problemas de GitHub: https://github.com/btimofeev/UniPatcher/issues
 \n
-\n También puedes contactar con el autor de la aplicación a través del correo electrónico unipatcher@gmail.com. Por favor, escribe en inglés. Si tienes problemas con el parche, adjunta el parche y escribe el nombre de tu ROM, nos ahorrará tiempo.</string>
+\nTambién puedes ponerte en contacto con el autor a través del correo electrónico unipatcher@gmail.com. Por favor, escribe en inglés. Si tienes problemas con algún parche adjúntalo al correo y acompáñalo del nombre de la ROM original; así ahorraremos tiempo.</string>
     <string name="help_feedback_title">Tengo una pregunta, faltan cosas importantes o quiero informar de un error.</string>
     <string name="help_how_to_translate_body">Si quieres ayudar a traducir la aplicación a otro idioma o mejorar la que ya está, puedes hacerlo desde la página de Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">¿Cómo puedo traducir la aplicación\?</string>
@@ -152,26 +152,26 @@
     <string name="help_i_cant_patch_smw_rom_body">Esta ROM contiene un encabezado SMC y casi todos los parches disponibles esperan el otro formato. Puedes quitar dicho encabezado SMC mediante la opción del menú de la izquierda y luego aplicar el parche sobre la ROM resultante.</string>
     <string name="help_snes_smc_body">Ciertas imágenes ROM para SNES contienen 512 bytes a mayores al principio del todo. Este espacio extra no sirve de nada, pero mueve y altera el tamaño de lo que va detrás y hace que no coincida. Quitarlo te permite conseguir el archivo original y poder aplicar el parche.</string>
     <string name="about_translators"><b>Traductores:</b>
-\n
+\n 
 \n - <b>Chino</b>: Nabarl Wang, Eric
 \n - <b>Francés</b>: Thibaut Panis, J. Lavoie
 \n - <b>Alemán</b>: Honigdieb
 \n - <b>Hebreo</b>: Tamer Dabsan
 \n - <b>Indonesio</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
 \n - <b>Italiano</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n - <b>Japanés</b>: Naofumi Fukue
+\n - <b>Japonés</b>: Naofumi Fukue
 \n - <b>Lituano</b>: Gediminas Murauskas
 \n - <b>Coreano</b>: Minseo Lee
-\n - <b>Bokmål noruego</b>: Allan Nordhøy
+\n - <b>Noruego bokmål</b>: Allan Nordhøy
 \n - <b>Polaco</b>: Michal Bychowski, Jarek Karpiel, hayneken993
 \n - <b>Portugués</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n - <b>Portugués (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
+\n - <b>Portugués de Brasil</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
 \n - <b>Ruso</b>: Борис Тимофеев
-\n - <b>Español</b>: Carlos Sánchez, Swyter
+\n - <b>Castellano</b>: Carlos Sánchez, Swyter
 \n - <b>Turco</b>: Oğuz Ersen
 \n - <b>Ucraniano</b>: Володимир Шевчук
-\n
-\nAyude a traducir la aplicación a su idioma: https://hosted.weblate.org/engage/unipatcher/</string>
+\n 
+\nAyúdanos a traducir la aplicación a tu idioma materno: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="nav_snes_add_del_smc_header">Quitar encabezado SMC (SNES)</string>
     <string name="snes_smc_header_help">Ten en cuenta que esta función es sólo para ROMs de Super Nintendo.
 \n
