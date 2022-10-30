@@ -85,11 +85,11 @@
     <string name="nav_drawer_open">Abrir cajón de navegación</string>
     <string name="nav_drawer_close">Cerrar cajón de navegación</string>
     <string name="notification_channel_name">Notificaciones</string>
-    <string name="help_feedback_body">Conversamos en inglés sobre nuevas funcionalidades y respondemos a cualquier pregunta en el foro de GitHub: https://github.com/btimofeev/UniPatcher/discussions
+    <string name="help_feedback_body">Discutimos nuevas funciones y respondemos a preguntas en los debates de GitHub https://github.com/btimofeev/UniPatcher/discussions
 \n
-\nPuedes informar de errores en el rastreador de problemas de GitHub: https://github.com/btimofeev/UniPatcher/issues
+\n Puedes informar de un error en el Issue Tracker de GitHub https://github.com/btimofeev/UniPatcher/issues
 \n
-\nTambién puedes ponerte en contacto con el autor a través del correo electrónico unipatcher@gmail.com. Por favor, escribe en inglés. Si tienes problemas con algún parche adjúntalo al correo y acompáñalo del nombre de la ROM original; así ahorraremos tiempo.</string>
+\n También puedes contactar con el autor de la aplicación a través del correo electrónico unipatcher@gmail.com. Por favor, escribe en inglés. Si tienes problemas con el parche, adjunta el parche y escribe el nombre de tu ROM, nos ahorrará tiempo.</string>
     <string name="help_feedback_title">Tengo una pregunta, faltan cosas importantes o quiero informar de un error.</string>
     <string name="help_how_to_translate_body">Si quieres ayudar a traducir la aplicación a otro idioma o mejorar la que ya está, puedes hacerlo desde la página de Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">¿Cómo puedo traducir la aplicación\?</string>
@@ -157,21 +157,21 @@
 \n - <b>Francés</b>: Thibaut Panis, J. Lavoie
 \n - <b>Alemán</b>: Honigdieb
 \n - <b>Hebreo</b>: Tamer Dabsan
-\n - <b>Indonesio</b>: Tsaqib F toadhlurrahman Soka, Reza Almanda
+\n - <b>Indonesio</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
 \n - <b>Italiano</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n - <b>Japonés</b>: Naofumi Fukue
-\n - <b>Lithuanian</b>: Gediminas Murauskas
+\n - <b>Japanés</b>: Naofumi Fukue
+\n - <b>Lituano</b>: Gediminas Murauskas
 \n - <b>Coreano</b>: Minseo Lee
-\n - <b>Noruego Bokmål</b>: Allan Nordhøy
+\n - <b>Bokmål noruego</b>: Allan Nordhøy
 \n - <b>Polaco</b>: Michal Bychowski, Jarek Karpiel, hayneken993
 \n - <b>Portugués</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n - <b>Portugués (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, joaooliva
+\n - <b>Portugués (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
 \n - <b>Ruso</b>: Борис Тимофеев
-\n - <b>Castellano</b>: Carlos Sánchez, Swyter
+\n - <b>Español</b>: Carlos Sánchez, Swyter
 \n - <b>Turco</b>: Oğuz Ersen
 \n - <b>Ucraniano</b>: Володимир Шевчук
 \n
-\nAyúdanos a traducir la aplicación a tu idioma materno: https://hosted.weblate.org/engage/unipatcher/</string>
+\nAyude a traducir la aplicación a su idioma: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="nav_snes_add_del_smc_header">Quitar encabezado SMC (SNES)</string>
     <string name="snes_smc_header_help">Ten en cuenta que esta función es sólo para ROMs de Super Nintendo.
 \n
