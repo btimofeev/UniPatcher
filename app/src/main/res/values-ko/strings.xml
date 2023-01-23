@@ -181,23 +181,23 @@
     <string name="help_snes_smc_body">SMC 헤더는 일부 SNES 롬 이미지의 시작 부분에서 발견되는 512바이트입니다. 이 바이트는 목적이 없지만 나머지 데이터의 위치를 변경합니다. 패치를 올바르게 적용하기 위해 헤더를 제거하는 경우가 있습니다.</string>
     <string name="about_translators"><b>번역자:</b>
 \n
-\n - <b>Chinese</b>: Nabarl Wang, Eric
-\n - <b>French</b>: Thibaut Panis, J. Lavoie
-\n - <b>German</b>: Honigdieb
-\n - <b>Hebrew</b>: Tamer Dabsan
-\n - <b>Indonesian</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
-\n - <b>Italian</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n - <b>Japanese</b>: Naofumi Fukue
-\n - <b>Lithuanian</b>: Gediminas Murauskas
-\n - <b>Korean</b>: Minseo Lee, Junghee Lee
-\n - <b>Norwegian Bokmål</b>: Allan Nordhøy
-\n - <b>Polish</b>: Michal Bychowski, Jarek Karpiel, hayneken993
-\n - <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n - <b>Portuguese (Brazil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
-\n - <b>Russian</b>: Борис Тимофеев
-\n - <b>Spanish</b>: Carlos Sánchez, Swyter
-\n - <b>Turkish</b>: Oğuz Ersen
-\n - <b>Ukrainian</b>: Володимир Шевчук
+\n - <b>중국어</b>: Nabarl Wang, Eric
+\n - <b>프랑스어</b>: Thibaut Panis, J. Lavoie
+\n - <b>독일어</b>: Honigdieb
+\n - <b>히브리어</b>: Tamer Dabsan
+\n - <b>인도네시아어</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
+\n - <b>이탈리아어</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
+\n - <b>일본어</b>: Naofumi Fukue
+\n - <b>리투아어니아어</b>: Gediminas Murauskas
+\n - <b>한국어</b>: Minseo Lee, Junghee Lee
+\n - <b>노르웨이 보크말어</b>: Allan Nordhøy
+\n - <b>폴란드어</b>: Michal Bychowski, Jarek Karpiel, hayneken993
+\n - <b>포르투갈어</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n - <b>포르투갈어 (브라질)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
+\n - <b>러시아어</b>: Борис Тимофеев
+\n - <b>스페인어</b>: Carlos Sánchez, Swyter
+\n - <b>튀르키예어</b>: Oğuz Ersen
+\n - <b>우크라이나어</b>: Володимир Шевчук
 \n
 \n앱을 사용자의 언어로 번역할 수 있도록 도와주세요: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
