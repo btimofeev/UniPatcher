@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="main_activity_toast_output_not_selected">Sem arquivo de saída selecionado</string>
-    <string name="main_activity_toast_patch_not_selected">Sem arquivo remendo selecionado</string>
+    <string name="main_activity_toast_output_not_selected">Local para salvar ROM não foi selecionado</string>
+    <string name="main_activity_toast_patch_not_selected">Sem arquivo patch selecionado</string>
     <string name="main_activity_toast_rom_not_selected">Sem arquivo ROM selecionado</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">Toque para selecionar onde salvar o ROM</string>
-    <string name="main_activity_tap_to_select_where_to_save_patch">Toque para selecionar onde salvar o remendo</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">Toque para selecionar onde salvar o patch</string>
     <string name="main_activity_tap_to_select">Toque para selecionar</string>
-    <string name="main_activity_rom_without_smc_file">Saída arquivo ROM sem cabeçalho</string>
-    <string name="main_activity_rom_with_smc_file">Arquivo ROM com cabeçalho SMC</string>
-    <string name="main_activity_output_file">Arquivo de saída</string>
-    <string name="main_activity_patch_file">Arquivo remendo</string>
+    <string name="main_activity_rom_without_smc_file">ROM após remoção de header</string>
+    <string name="main_activity_rom_with_smc_file">Arquivo ROM com SMC header</string>
+    <string name="main_activity_output_file">ROM após patch</string>
+    <string name="main_activity_patch_file">Arquivo patch</string>
     <string name="main_activity_rom_file">Arquivo ROM</string>
     <string name="app_name">UniPatcher</string>
     <string name="help_ips_no_checksum_body">Os patches de formato IPS não contêm um checksum. Portanto, o patch se aplicará a qualquer arquivo ROM (até errado). Nesse caso, você precisa procurar outro arquivo ROM.</string>
@@ -83,16 +83,16 @@
 \nAviso: esta função não cria um backup.</string>
     <string name="snes_smc_error_unable_to_get_file_size">Erro: não foi possível determinar o tamanho do arquivo</string>
     <string name="snes_rom_has_no_smc_header">Esta ROM não possui header SMC. Você não precisa deletar nada.</string>
-    <string name="snes_smc_header_will_be_removed">Esta ROM possui o header SMC. Ele deverá ser removido.</string>
+    <string name="snes_smc_header_will_be_removed">Esta ROM possui o SMC header. Ele será removido.</string>
     <string name="snes_smc_header_help">Este recurso é apenas para ROMs do Super Nintendo.
 \n
-\nAlguns patches requerem que a ROM não tenha header SMC. Esta função o ajudará a removê-lo.</string>
+\nAlguns patches requerem que a ROM não tenha o SMC header. Esta função o ajudará a removê-lo.</string>
     <string name="create_patch_fragment_toast_patch_not_selected">O arquivo de patch não está selecionado</string>
     <string name="create_patch_fragment_toast_modified_not_selected">O arquivo modificado não foi selecionado</string>
-    <string name="create_patch_fragment_toast_source_not_selected">O arquivo fonte não está selecionado</string>
-    <string name="create_patch_fragment_patch_file">Arquivo patch</string>
-    <string name="create_patch_fragment_modified_file">Arquivo Modificado</string>
-    <string name="create_patch_fragment_source_file">Arquivo Fonte</string>
+    <string name="create_patch_fragment_toast_source_not_selected">O arquivo original não está selecionado</string>
+    <string name="create_patch_fragment_patch_file">Arquivo de patch</string>
+    <string name="create_patch_fragment_modified_file">Arquivo modificado</string>
+    <string name="create_patch_fragment_source_file">Arquivo original</string>
     <string name="main_activity_double_back_to_exit_message">Pressione VOLTAR novamente para sair. Isso pode interromper todas as operações em execução</string>
     <string name="main_activity_button_how_to_use_app">Como usar o app</string>
     <string name="main_activity_donate_snackbar_button">Doar</string>
