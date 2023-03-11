@@ -30,13 +30,11 @@
     <string name="help_how_to_translate_body">Se você gostaria de traduzir o aplicativo para outro idioma ou melhorar uma tradução existente, você pode fazê-lo no site Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Como traduzir o app\?</string>
     <string name="help_feedback_title">Tenho uma pergunta, um pedido de recurso ou um relatório de erros.</string>
-    <string name="help_feedback_body">Discutimos novas funções e respondemos a perguntas no GitHub Discussions https://github.com/btimofeev/UniPatcher/discussions
+    <string name="help_feedback_body">Discutimos novas funcionalidades e respondemos a perguntas sobre as Discussões GitHub https://github.com/btimofeev/UniPatcher/discussions
 \n
+\n Você pode relatar um bug no GitHub Issue Tracker https://github.com/btimofeev/UniPatcher/issues
 \n
-\nVocê pode reportar um bug no GitHub Issue Tracker https://github.com/btimofeev/UniPatcher/issues
-\n
-\n
-\n Você também pode contatar o autor do aplicativo via e-mail unipatcher@gmail.com. Por favor escreva em Inglês. Se tiver problemas com patching, anexe o patch ao e-mail e digite o nome da sua ROM, isso economizará nosso tempo.</string>
+\n Você também pode entrar em contato com o autor do aplicativo através do e-mail unipatcher@gmail.com. Por favor, escreva em inglês. Se você tiver problemas com o patch, anexe o patch ao email e escreva o nome da sua ROM, isso economizará nosso tempo.</string>
     <string name="about_translators"><b>Tradutores:</b>
 \n
 \n - <b>Chinês</b>: Nabarl Wang, Eric
@@ -79,7 +77,7 @@
     <string name="notify_error_could_not_copy_file">Não foi possível copiar o arquivo</string>
     <string name="notify_error">Erro</string>
     <string name="notify_create_patch_complete">Patch criado</string>
-    <string name="notify_patching_complete">Parche completo</string>
+    <string name="notify_patching_complete">Aplicação completa</string>
     <string name="smd_fix_checksum_help">Este recurso é apenas para ROMs Sega Mega Drive (Sega Genesis).
 \n
 \nEle corrige \"a tela vermelha da morte\".
@@ -113,7 +111,7 @@
     <string name="error_crash_send_button">Enviar</string>
     <string name="error_crash_message">Desculpe, o aplicativo travou. Por favor, envie um relatório para os desenvolvedores.</string>
     <string name="error_crash_title">Erro inesperado</string>
-    <string name="help_activity_action_changelog">Changelog</string>
+    <string name="help_activity_action_changelog">Lista de alterações</string>
     <string name="help_activity_action_visit_site">Visite o site</string>
     <string name="help_activity_about_tab_license">Licença: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">Versão %1$s</string>
@@ -121,7 +119,7 @@
     <string name="help_activity_title">Ajuda</string>
     <string name="help_ips_no_checksum_title">Eu aplico o patch IPS e o jogo não funciona / contém falhas gráficas. O que estou fazendo errado\?</string>
     <string name="settings_ignore_checksum">Ignorar checksum</string>
-    <string name="settings_patching_header">Patching</string>
+    <string name="settings_patching_header">Aplicando</string>
     <string name="settings_theme_name_follow_system">Use o padrão do sistema</string>
     <string name="settings_theme_name_dark">Escuro</string>
     <string name="settings_theme_name_light">Claro</string>
@@ -131,7 +129,7 @@
     <string name="settings_activity_title">Configurações</string>
     <string name="notify_error_not_smd_rom">Não é uma ROM de Sega Mega Drive</string>
     <string name="notify_error_failed_load_lib_xdelta3">Não foi possivel carregar a biblioteca libxdelta3.so</string>
-    <string name="notify_error_wrong_checksum_after_patching">O arquivo teve a verificação invalidada após ser corrigido</string>
+    <string name="notify_error_wrong_checksum_after_patching">O arquivo teve a soma de verificação invalidada após ser patcheado</string>
     <string name="about_used_libraries"><b> Libraries usadas:</b>
 \n
 \n - <b>ACRA</b> pelo ACRA team, licenciada sob a licença Apache 2.0. https://github.com/ACRA/acra
@@ -143,7 +141,7 @@
 \n - <b>Timber</b> por Jake Wharton, licenciado sob a licença Apache 2.0. https://github.com/JakeWharton/timber
 \n - <b>XDelta version 3</b> por Joshua MacDonald, licenciado sob a licença Apache 2.0. https://github.com/jmacd/xdelta</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
-    <string name="help_activity_faq_tab_title">Faq</string>
+    <string name="help_activity_faq_tab_title">Perguntas frequentes</string>
     <string name="help_find_rom_pokemon_emerald_body">A maioria dos patches para esse jogo funciona com a ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
     <string name="help_find_rom_pokemon_emerald_title">Não consigo achar a ROM correta para o jogo “Pokémon Emerald”.</string>
     <string name="help_i_cant_patch_smw_rom_body">Essa ROM contém um header de SMC, enquanto que a maioria dos patches para esse jogo requerem que a ROM não tenha esse header. Você pode remover a header do SMC ao selecionar o item apropriado no menu à esquerda e então aplicar o patch à ROM final.</string>
@@ -195,5 +193,5 @@
     <string name="share_dialog_title">Compatilhar UniPatcher</string>
     <string name="donate_activity_title">Doar</string>
     <string name="error_file_picker_app_is_no_installed">Erro: não há app de arquivo instalado</string>
-    <string name="settings_ignore_checksum_description">Não interrompa o patching se você usar a ROM errada. Aviso: essa opção pode quebrar o seu jogo.</string>
+    <string name="settings_ignore_checksum_description">Não interrompa a aplicação se você usar a ROM errada. Aviso: essa opção pode quebrar o seu jogo.</string>
 </resources>
