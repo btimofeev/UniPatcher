@@ -9,7 +9,7 @@
     <string name="main_activity_rom_without_smc_file">ROM após remoção de header</string>
     <string name="main_activity_rom_with_smc_file">Arquivo ROM com SMC header</string>
     <string name="main_activity_output_file">ROM após patch</string>
-    <string name="main_activity_patch_file">Arquivo patch</string>
+    <string name="main_activity_patch_file">Arquivo de patch</string>
     <string name="main_activity_rom_file">Arquivo ROM</string>
     <string name="app_name">UniPatcher</string>
     <string name="help_ips_no_checksum_body">Os patches de formato IPS não contêm um checksum. Portanto, o patch se aplicará a qualquer arquivo ROM (até errado). Nesse caso, você precisa procurar outro arquivo ROM.</string>
@@ -41,19 +41,23 @@
 \n
 \n - <b>Chinês</b>: Nabarl Wang, Eric
 \n - <b>Francês</b>: Thibaut Panis, J. Lavoie
+\n - <b>Alemão</b>: Honigdieb
 \n - <b>Hebraico</b>: Tamer Dabsan
-\n - <b>Italiano</b>: Matteo Sechi
-\n - <b>Japanês</b>: Naofumi Fukue
+\n - <b>Indonésio</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
+\n - <b>Italiano</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
+\n - <b>Japonês</b>: Naofumi Fukue
+\n - <b>Lituano</b>: Gediminas Murauskas
 \n - <b>Coreano</b>: Minseo Lee
-\n - <b>Norueguês Bokmål</b>: Allan Nordhøy
-\n - <b>Polandês</b>: Michal Bychowski, Jarek Karpiel
-\n - <b>Português</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
+\n - <b>Bokmål norueguês</b>: Allan Nordhøy
+\n - <b>Polonês</b>: Michal Bychowski, Jarek Karpiel, hayneken993
+\n - <b>Português</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n - <b>Português (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
 \n - <b>Russo</b>: Борис Тимофеев
 \n - <b>Espanhol</b>: Carlos Sánchez, Swyter
 \n - <b>Turco</b>: Oğuz Ersen
 \n - <b>Ucraniano</b>: Володимир Шевчук
 \n
-\nAjude a traduzir o aplicativo para o seu idioma: https://hosted.weblate.org/engage/unipatcher/</string>
+\nAjude a traduzir o aplicativo no seu idioma: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="notify_error_patch_corrupted">O arquivo de patch está corrompido</string>
     <string name="notify_error_unexpected_end_of_file">Fim de arquivo inesperado</string>
     <string name="notify_error_unknown_patch_format">Formato de patch desconhecido</string>
