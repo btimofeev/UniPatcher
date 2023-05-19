@@ -42,7 +42,7 @@
 \n - <b>Ukrainisch</b>: Володимир Шевчук
 \n
 \nHelfen Sie mit, die App in Ihre Sprache zu übersetzen: https://hosted.weblate.org/engage/unipatcher/</string>
-    <string name="help_feedback_body">Schreibe mir eine E-Mail an unipatcher@gmail.com. Bitte auf Englisch. Wenn du Probleme beim Patchen hast, hänge den Patch an die E-Mail an und gib den Namen deines ROMs an. Dies spart uns Zeit.</string>
+    <string name="help_feedback_body"></string>
     <string name="help_feedback_title">Ich habe eine Frage, einen Wunsch für ein Feature oder einen Fehlerbericht.</string>
     <string name="help_how_to_translate_body">Wenn du die App in eine andere Sprache übersetzen oder eine bestehende Übersetzung verbessern willst, kannst du dies auf der Weblate-Seite https://hosted.weblate.org/engage/unipatcher/ tun</string>
     <string name="help_how_to_translate_title">Wie kann ich die App übersetzen\?</string>
