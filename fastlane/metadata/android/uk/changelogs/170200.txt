@@ -1,0 +1,6 @@
+- Додано мову іврит (завдяки Tamer Dabsan)
+- Додано німецьку мову (завдяки Honigdieb)
+- Закінчені переклади іспанською та португальською мовами (завдяки Swyter, Marvin SIlc, Yoshi LevelLand, Alberane Lúcio, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes)
+- Оновлено багато інших перекладів (дякуємо всім учасникам)
+- Виправлено проблему, коли деякі файли не можна було вибрати
+- Тепер ви можете запропонувати ідею для нової функції або задати питання на сторінці https://github.com/btimofeev/UniPatcher/discussions
