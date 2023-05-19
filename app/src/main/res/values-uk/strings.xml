@@ -70,7 +70,7 @@
     <string name="nav_create_patch">Створити патч</string>
     <string name="nav_smd_fix_checksum">Виправити контрольну суму (SMD)</string>
     <string name="nav_settings">Налаштування</string>
-    <string name="nav_rate">Оцінити цей додаток</string>
+    <string name="nav_rate">Оцінити цей застосунок</string>
     <string name="nav_donate">Пожертвувати</string>
     <string name="nav_share">Поділитись з іншими</string>
     <string name="nav_help">Допомога</string>
@@ -97,7 +97,7 @@
     <string name="help_archive_should_be_unpacked_body">Файл який ви вибрали являється архівом. Архів містить у собі теки та файли у стисненому вигляді.
 \n
 \nCurrently UniPatcher can not extract archives, so you need to unpack your archive in a different program. I recommend a gratis program ZArchiver app https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
-    <string name="help_archive_should_be_unpacked_title">Коли я вибираю файл додаток пише “Архів необхідно розпакувати у зовнішній програмі”.</string>
+    <string name="help_archive_should_be_unpacked_title">Коли я вибираю файл застосунок пише “Архів необхідно розпакувати у зовнішній програмі”.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Як накласти патч на гру\?</string>
     <string name="help_why_not_distribute_modified_games_body">Хаки та переклади розповсюджуються у вигляді патчів для того, щоб зменшити розмір завантажуючих даних і не порушувати авторських прав на гру.</string>
     <string name="help_why_not_distribute_modified_games_title">Чому ромхакери не розповсюджують пропатчені ROM файли\?</string>
@@ -110,10 +110,10 @@
     <string name="help_what_is_rom_image_body">ROM файл це комп’ютерний файл який містить в собі копію даних із чіпа пам’яті ігрового картриджу. Цей файл може бути запущено з допомогою програми емулятора. Таким чином можна грати у консольні ігри на комп’ютері чи смартфоні.</string>
     <string name="help_what_is_rom_image_title">Що таке ROM файл\?</string>
     <string name="help_can_i_hack_android_game_body">Ні. Додаток не призначено для злому Android ігор.</string>
-    <string name="help_can_i_hack_android_game_title">Чи можливо із допомогою цього додатку зломати гру для Android\?</string>
-    <string name="help_what_patch_formats_are_supported_body">Додаток підтримує патчі у форматах IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP та XDelta3.</string>
+    <string name="help_can_i_hack_android_game_title">Чи можливо із допомогою цього застосунку зламати гру для Android\?</string>
+    <string name="help_what_patch_formats_are_supported_body">Застосунок підтримує патчі у форматах IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP та XDelta3.</string>
     <string name="help_what_patch_formats_are_supported_title">Які формати патчів підтримуються\?</string>
-    <string name="help_what_is_unipatcher_body">Це додаток для Android який призначений для накладання патчів на ROM файли усіляких ігрових відеоконсолей.</string>
+    <string name="help_what_is_unipatcher_body">Це застосунок для Android який призначений для накладання патчів на ROM файли усіляких ігрових відеоконсолей.</string>
     <string name="help_what_is_unipatcher_title">Що таке UniPatcher\?</string>
     <string name="help_title">Питання які задаються найчастіше:</string>
     <string name="main_activity_rom_with_smc_file">Файл ПЗУ (ROM) з SMC заголовком</string>
@@ -126,4 +126,8 @@
     <string name="main_activity_toast_output_not_selected">Не вибрано місце збереження файлу</string>
     <string name="main_activity_donate_snackbar_text">Підтримайте розвиток UniPatcher, зробивши благодійний внесок</string>
     <string name="main_activity_button_how_to_use_app">Як користуватися застосунком</string>
+    <string name="help_how_to_apply_patch_to_rom_body">Вам потрібно вибрати ROM-файл, патч і вибрати, який файл зберегти, а потім натиснути на червону круглу кнопку. Файли вибираються за допомогою стандартного застосунку \"Файли\" (або за допомогою одного з встановлених вами файлових менеджерів). Застосунок покаже повідомлення, коли файл буде виправлено. Не закривайте застосунок, поки файл не буде виправлено.</string>
+    <string name="settings_show_button_how_to_use_app">Показати кнопку допомоги</string>
+    <string name="settings_show_button_how_to_use_app_description">Показати кнопку \"Як користуватися застосунком\" на головному екрані</string>
+    <string name="error_crash_message">Вибачте, застосунок завершився аварійно. Будь ласка, надішліть звіт розробникам.</string>
 </resources>
