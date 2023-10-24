@@ -1,2 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="settings_interface_header">ڕووکاری بەکارهێنەر</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">فایلی گۆڕدراو دیارینەکراوە</string>
+    <string name="error_file_picker_app_is_no_installed">هەڵە: هیچ بەرنامەیەکی فایل دانەمەزراوە</string>
+    <string name="main_activity_patch_file">فایلی پینە</string>
+    <string name="settings_ignore_checksum">پشتگوێ خستنی پشکنین</string>
+    <string name="settings_show_button_how_to_use_app_description">پیشاندانی دوگمەی \"چۆنیەتی بەکارهێنانی بەرنامە\" لەسەر شاشەی سەرەکی</string>
+    <string name="notify_create_patch_complete">پینە دروستکرا</string>
+    <string name="notify_error_patch_corrupted">فایلی پاچەکە تێکچووە</string>
+    <string name="main_activity_double_back_to_exit_message">دوبارەی بکەوە بۆ دەرچوون. ئەمە دەتوانێت هەموو کردارەکانی کارکردن ببڕێت</string>
+    <string name="notify_error_wrong_checksum_after_patching">فایلەکە پشکنینی هەڵەی هەیە دوای ئەوەی کە پاککرایەوە</string>
+    <string name="notify_error_rom_not_compatible_with_patch">ئەم ڕۆمە لەگەڵ پاچەکە ناگونجێت</string>
+    <string name="help_activity_title">یارمەتی</string>
+    <string name="main_activity_rom_with_smc_file">فایلی Rom لەگەڵ سەرپەڕی SMC</string>
+    <string name="error_crash_discard_button">هەڵوەشانەوە</string>
+    <string name="notify_patching_complete">پینەکردنەکە تەواوبوو</string>
+    <string name="snes_smc_error_unable_to_get_file_size">هەڵە: ناتوانێت قەبارەی فایل دیاری بکات</string>
+    <string name="notify_error_xdelta3_internal_error">هەڵەی ناوەکی XDelta3</string>
+    <string name="share_dialog_title">بڵاوکردنەوە Uniپاچەر</string>
+    <string name="notify_error_unable_open_modified_file">ناتوانێت فایل گۆڕدراو بکاتەوە</string>
+    <string name="error_crash_message">ببورە، بەرنامەکە تێکچوو. تکایە ڕاپۆرتێک بنێرە بۆ گەشەپێدەران.</string>
+    <string name="main_activity_tap_to_select">دەسیلێبدە بۆ دیارکردن</string>
+    <string name="notify_error_could_not_copy_file">ناتوانرێت فایلەکە کۆپی بکرێت</string>
+    <string name="notify_error_not_ebp_patch">پاچێکی EBP دروست نیە</string>
+    <string name="create_patch_fragment_toast_source_not_selected">فایلی پینە دیارینەکراوە</string>
+    <string name="create_patch_fragment_modified_file">فایلی گۆڕدراو</string>
+    <string name="help_activity_action_visit_site">سەردانی ماڵپەڕ</string>
+    <string name="settings_theme_dialog_title">ڕووکار هەڵبژێرە</string>
+    <string name="main_activity_rom_without_smc_file">دەرهێنانی فایلی Rom بێ سەرپەڕە</string>
+    <string name="create_patch_fragment_patch_file">فایلی پینە</string>
+    <string name="notify_error_failed_load_lib_xdelta3">سەرکەوتوو نەبوو لە بارکردنی library libxdelta3.so</string>
+    <string name="donate_activity_title">بەخشین</string>
+    <string name="settings_activity_title">ڕێکخستنەکان</string>
+    <string name="notify_error">هەڵە</string>
+    <string name="main_activity_toast_output_not_selected">هیچ فایلێک دیارینەکراوە</string>
+    <string name="notify_smd_fix_checksum_complete">‏پشکنین جێگیرکرا</string>
+    <string name="main_activity_button_how_to_use_app">چۆن بەرنامەکە بەکاربهێنم</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
+    <string name="notify_error_not_ppf_patch">پاچێکی PPF دروست نیە</string>
+    <string name="notify_error_unable_open_source_file">ناتوانێت سەرچاوەی فایل بکاتەوە</string>
+    <string name="settings_theme_name_dark">تاریک</string>
+    <string name="settings_theme_name_auto_battery">دانراوە لەلایەن پارێزەری پاتری</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">دەستیلێبدە بۆ دیاریکردنی ئەو شوێنەی کە Rom خەزن دەکات</string>
+    <string name="main_activity_toast_archives_not_supported">ئەرشیڤ پێویستە لە بەرنامەیەکی دەرەکیدا پاک بکرێتەوە</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">دەستیلێبدە بۆ دیاریکردنی ئەو شوێنەی کە پاچەکەی تێدا خەزن دەکات</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">فایل دیارینەکرا</string>
+    <string name="error_crash_send_button">ناردن</string>
+    <string name="snes_smc_header_help">ئەم تایبەتمەندییە تەنها بۆ Romی سوپەر Nintendo دەبێت.
+\n
+\nهەندێک لە پەڕەکان پێویستیان بە Rom هەیە کە SMC نەبێت. ئەم کردارە یارمەتیت دەدات بۆ لابردنی.</string>
+    <string name="notify_error_xdelta1_unsupported">من ناتوانم کار بە پاچەکانی XDelta3 بکەم</string>
+    <string name="notify_error_unable_open_file">ناتوانێت فایل بکاتەوە</string>
+    <string name="notify_error_not_ips_patch">پاچێکی IPS دروست نیە</string>
+    <string name="notify_error_unknown_patch_format">جۆری پاچ نەناسراوە</string>
+    <string name="notify_error_not_ups_patch">پاچێکی UPS دروست نیە</string>
+    <string name="smd_fix_checksum_help">ئەم تایبەتمەندییە تەنها بۆ درایڤی سێگا مێگا (Sega Genesis)ڕۆم دەبێت.
+\n
+\nسەرەکی \" هەمەڕەنگ \" شاشەی سوور
+\n
+\nئاگاداری: ئەم کردارە هەڵگرتن دروست ناکات.</string>
+    <string name="notify_error_not_smd_rom">نەخێر سیگا میگا درایڤ ڕۆم</string>
+    <string name="notify_error_unexpected_end_of_file">کۆتایی چاوەڕوان نەکراوی فایل</string>
+    <string name="settings_theme_name_light">ڕووناک</string>
+    <string name="main_activity_donate_snackbar_text">هاوکاری کردنی UniPatcher بە بەخشینی بڕێک پارە</string>
+    <string name="settings_theme">ڕووکار</string>
+    <string name="notify_error_not_dps_patch">پاچێکی DPS دروست نیە</string>
+    <string name="main_activity_output_file">فایلی دەرەوە</string>
+    <string name="settings_show_button_how_to_use_app">پیشاندانی دوگمەی یارمەتی</string>
+    <string name="settings_theme_name_follow_system">بەکارهێنانی ئاسایی سیستەم</string>
+    <string name="notify_error_unknown">هەڵەی نەناسراو</string>
+    <string name="snes_smc_header_will_be_removed">ئەم ڕۆمە SMC هەیە. لادەبرێت.</string>
+    <string name="notify_error_not_bps_patch">پاچێکی BPS دروست نیە</string>
+    <string name="error_crash_title">شکان</string>
+    <string name="main_activity_donate_snackbar_button">بەخشین</string>
+    <string name="notify_error_not_enough_space">بۆشایی تەواو نیە لەسەر مۆبایلەکەت</string>
+    <string name="create_patch_fragment_source_file">فایلی سەرچاوە</string>
+    <string name="main_activity_toast_patch_not_selected">هیچ فایلێک دیارینەکراوە</string>
+    <string name="snes_rom_has_no_smc_header">ئەم ڕۆمە سەردێڕی SMCی نییە. پێویست ناکات هیچ شتێک بسڕیتەوە.</string>
+    <string name="notify_error_not_aps_patch">پاچێکی APS دروست نیە</string>
+    <string name="settings_ignore_checksum_description">پاچەکە مەپچڕە ئەگەر لەناو ڕۆم هەڵە بەکاربهێنیت.وریابە: ئەم هەڵبژاردنە لەوانەیە یاریەکەت بشکێنێت.</string>
+    <string name="notify_snes_delete_smc_header_complete">SMC header سڕدرایەوە</string>
+    <string name="help_activity_faq_tab_title">پرسیارەکان</string>
+    <string name="app_name">Uniپینەکەر</string>
+    <string name="main_activity_rom_file">فایل ROM</string>
+    <string name="settings_patching_header">پاچکردنی</string>
+    <string name="help_activity_action_changelog">گۆڕانکاری</string>
+    <string name="main_activity_toast_rom_not_selected">هیچ فایلێک دیارینەکراوە</string>
+    <string name="notify_error_unable_open_patch_file">ناتوانێت فایلی پاچ بکاتەوە</string>
+    <string name="help_activity_about_tab_title">دەربارە</string>
+    <string name="help_activity_about_tab_version">وەشانی %1$s</string>
+    <string name="help_activity_about_tab_license">مۆڵەت: GNU GPLv3</string>
+    <string name="notify_error_not_xdelta3_patch">پاچێکی XDelta3 دروست نیە</string>
+</resources>
