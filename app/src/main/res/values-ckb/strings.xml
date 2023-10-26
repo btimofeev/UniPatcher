@@ -3,10 +3,10 @@
     <string name="settings_interface_header">ڕووکاری بەکارهێنەر</string>
     <string name="create_patch_fragment_toast_modified_not_selected">فایلی گۆڕدراو دیارینەکراوە</string>
     <string name="error_file_picker_app_is_no_installed">هەڵە: هیچ بەرنامەیەکی فایل دانەمەزراوە</string>
-    <string name="main_activity_patch_file">فایلی پینە</string>
+    <string name="main_activity_patch_file">فایلی پاچ</string>
     <string name="settings_ignore_checksum">پشتگوێ خستنی پشکنین</string>
     <string name="settings_show_button_how_to_use_app_description">پیشاندانی دوگمەی \"چۆنیەتی بەکارهێنانی بەرنامە\" لەسەر شاشەی سەرەکی</string>
-    <string name="notify_create_patch_complete">پینە دروستکرا</string>
+    <string name="notify_create_patch_complete">پاچ دروستکرا</string>
     <string name="notify_error_patch_corrupted">فایلی پاچەکە تێکچووە</string>
     <string name="main_activity_double_back_to_exit_message">دوبارەی بکەوە بۆ دەرچوون. ئەمە دەتوانێت هەموو کردارەکانی کارکردن ببڕێت</string>
     <string name="notify_error_wrong_checksum_after_patching">فایلەکە پشکنینی هەڵەی هەیە دوای ئەوەی کە پاککرایەوە</string>
@@ -14,21 +14,21 @@
     <string name="help_activity_title">یارمەتی</string>
     <string name="main_activity_rom_with_smc_file">فایلی Rom لەگەڵ سەرپەڕی SMC</string>
     <string name="error_crash_discard_button">هەڵوەشانەوە</string>
-    <string name="notify_patching_complete">پینەکردنەکە تەواوبوو</string>
+    <string name="notify_patching_complete">پاچکردنەکە تەواوبوو</string>
     <string name="snes_smc_error_unable_to_get_file_size">هەڵە: ناتوانێت قەبارەی فایل دیاری بکات</string>
     <string name="notify_error_xdelta3_internal_error">هەڵەی ناوەکی XDelta3</string>
     <string name="share_dialog_title">بڵاوکردنەوە Uniپاچەر</string>
     <string name="notify_error_unable_open_modified_file">ناتوانێت فایل گۆڕدراو بکاتەوە</string>
     <string name="error_crash_message">ببورە، بەرنامەکە تێکچوو. تکایە ڕاپۆرتێک بنێرە بۆ گەشەپێدەران.</string>
-    <string name="main_activity_tap_to_select">دەسیلێبدە بۆ دیارکردن</string>
+    <string name="main_activity_tap_to_select">دەستیلێبدە بۆ دیارکردن</string>
     <string name="notify_error_could_not_copy_file">ناتوانرێت فایلەکە کۆپی بکرێت</string>
     <string name="notify_error_not_ebp_patch">پاچێکی EBP دروست نیە</string>
-    <string name="create_patch_fragment_toast_source_not_selected">فایلی پینە دیارینەکراوە</string>
+    <string name="create_patch_fragment_toast_source_not_selected">فایلی پاچ دیارینەکراوە</string>
     <string name="create_patch_fragment_modified_file">فایلی گۆڕدراو</string>
     <string name="help_activity_action_visit_site">سەردانی ماڵپەڕ</string>
     <string name="settings_theme_dialog_title">ڕووکار هەڵبژێرە</string>
     <string name="main_activity_rom_without_smc_file">دەرهێنانی فایلی Rom بێ سەرپەڕە</string>
-    <string name="create_patch_fragment_patch_file">فایلی پینە</string>
+    <string name="create_patch_fragment_patch_file">فایلی پاچ</string>
     <string name="notify_error_failed_load_lib_xdelta3">سەرکەوتوو نەبوو لە بارکردنی library libxdelta3.so</string>
     <string name="donate_activity_title">بەخشین</string>
     <string name="settings_activity_title">ڕێکخستنەکان</string>
@@ -62,7 +62,7 @@
     <string name="notify_error_not_smd_rom">نەخێر سیگا میگا درایڤ ڕۆم</string>
     <string name="notify_error_unexpected_end_of_file">کۆتایی چاوەڕوان نەکراوی فایل</string>
     <string name="settings_theme_name_light">ڕووناک</string>
-    <string name="main_activity_donate_snackbar_text">هاوکاری کردنی UniPatcher بە بەخشینی بڕێک پارە</string>
+    <string name="main_activity_donate_snackbar_text">هاوکاری کردنی Uni پاچەر بە بەخشینی بڕێک پارە</string>
     <string name="settings_theme">ڕووکار</string>
     <string name="notify_error_not_dps_patch">پاچێکی DPS دروست نیە</string>
     <string name="main_activity_output_file">فایلی دەرەوە</string>
@@ -81,7 +81,7 @@
     <string name="settings_ignore_checksum_description">پاچەکە مەپچڕە ئەگەر لەناو ڕۆم هەڵە بەکاربهێنیت.وریابە: ئەم هەڵبژاردنە لەوانەیە یاریەکەت بشکێنێت.</string>
     <string name="notify_snes_delete_smc_header_complete">SMC header سڕدرایەوە</string>
     <string name="help_activity_faq_tab_title">پرسیارەکان</string>
-    <string name="app_name">Uniپینەکەر</string>
+    <string name="app_name">Uni پاچەر</string>
     <string name="main_activity_rom_file">فایل ROM</string>
     <string name="settings_patching_header">پاچکردنی</string>
     <string name="help_activity_action_changelog">گۆڕانکاری</string>
@@ -91,4 +91,111 @@
     <string name="help_activity_about_tab_version">وەشانی %1$s</string>
     <string name="help_activity_about_tab_license">مۆڵەت: GNU GPLv3</string>
     <string name="notify_error_not_xdelta3_patch">پاچێکی XDelta3 دروست نیە</string>
+    <string name="help_how_to_translate_body">گەر دەتەوێ زانیاری زیاتر بزانیت دەربارەی من سەردانی یوتوبەکەم بکە بەناوی(Diary Droid) یان لە فەیسبووکبەناوی \"دیاری درۆید\"
+\nhttps://youtube.com/@diarydroid سوپاس بۆ بەکارهێنانی زمانی کوردی ڕەسمی لەم بەرنامەیەدا</string>
+    <string name="help_ecm_image_title">چی بکەم لەگەڵ جۆری فایلی .ECM؟</string>
+    <string name="help_ips_no_checksum_body">پاچەکانی فۆڕماتی IPS کاری پشکنینیان بۆنەکراوە. بۆیە پاچەکە بۆ هەر فایلێکی ڕوومەکە (بە هەڵە) کارا دەبێت. لەم حاڵەتەدا پێویستە بەدوای فایلی ڕوومێکی تردا بگەڕێیت.</string>
+    <string name="help_additional_features_title">ئایا Uni پاچەر هەندێک تایبەتمەندی زیادەی هەیە؟</string>
+    <string name="help_can_i_hack_android_game_body">نەخێر Uni پاچەر دیزاین نەکراوە بۆ هاککردنی یارییەکانی ئەندرۆید</string>
+    <string name="help_what_is_rom_image_body">ڕووم (ROM) فایلێکی کۆمپیوتەرییە کە کۆپییەکی کارتیجی یاری ڤیدیۆیی تێدایە. لە ڕێگەی پرۆسەی لاساییکردنەوە، تۆ ئەو فایلە کۆپی دەکەیت، لە پارچەیەک لە سۆفتوێر بەکاریدەهێنیت کە پێی دەوترێت \"ئیمۆلیتەر\"، بۆ چێژ وەرگرتن لە یاریەکە لەسەر کۆمپیوتەرەکەت یان مۆبایلەکەت.</string>
+    <string name="nav_rate">تاچەند لێمان ڕازیت 😱</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher توڵێکی ئەندرۆیدە بۆ بەکارهێنانی پارچ بۆ ROMی کۆنسۆڵی یاری ڤیدیۆییبەکوردی و پۆختی پاچ دروست دەکەیت بۆ هاکردنی یاری.</string>
+    <string name="share_text">باشترین ROM Patcher دابگرە بۆ ئەندرۆید پشتگیری لە IPS، IPS32، UPS، BPS، APS (GBA)، APS (N64)، PPF، DPS، EBP و XDelta3 دەکات.
+\n
+\n</string>
+    <string name="about_translators"><b>Translators:</b>
+\n
+\n-<b>Kurdish</b>: Diary Droid, Eric
+\n- <b>Chinese</b>: Nabarl Wang, Eric
+\n- <b>French</b>: Thibaut Panis, J. Lavoie
+\n- <b>German</b>: Honigdieb
+\n- <b>Hebrew</b>: Tamer Dabsan
+\n- <b>Indonesian</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
+\n- <b>Italian</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
+\n- <b>Japanese</b>: Naofumi Fukue
+\n- <b>Lithuanian</b>: Gediminas Murauskas
+\n- <b>Korean</b>: Minseo Lee
+\n- <b>Norwegian Bokmål</b>: Allan Nordhøy
+\n- <b>Polish</b>: Michal Bychowski, Jarek Karpiel, hayneken993
+\n- <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n- <b>Portuguese (Brazil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
+\n- <b>Russian</b>: Борис Тимофеев
+\n- <b>Spanish</b>: Carlos Sánchez, Swyter
+\n- <b>Turkish</b>: Oğuz Ersen
+\n- <b>Ukrainian</b>: Володимир Шевчук
+\n
+\nHelp translate the app into your language: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="help_feedback_title">پرسیارێکم هەیە، داواکاری تایبەتمەندییەک یان ڕاپۆرتی هەڵەیەکم هەیە.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">دەبێت فایلێکی ڕووم و پاچێک هەڵبژێریت و کام فایل خەزن بکەیت، پاشان کلیک لەسەر دوگمەی بازنەسورەکە بکە. فایلەکان لە ڕێگەی بەرنامەی ستانداردی فایلەکانەوە هەڵدەبژێردرێن (یان لە ڕێگەی یەکێک لەو بەڕێوەبەرە پەڕگانەی کە دامەزراندووە). بەرنامەکە پەیامێک پیشان دەدات کاتێک فایلەکە پاچ دەکرێت. تا فایلەکە پاچ نەکرێت بەرنامەکە دامەخە.</string>
+    <string name="help_i_cant_patch_smw_rom_body">ئەم ڕوومە سەردێڕی SMC لەخۆدەگرێت، لەکاتێکدا زۆربەی پاچەکان بۆ ئەم یارییە پێویستیان بە ڕوومەکە هەیە کە ئەم سەردێڕەی نەبێت. دەتوانیت سەردێڕی SMC لاببەیت بە هەڵبژاردنی بابەتی گونجاو لە لیستی لای چەپ و پاشان پاچەکە لەسەر ئەنجامی ڕوومەکە جێبەجێ بکەیت.</string>
+    <string name="nav_drawer_close">داخستنی نەخشەکێشی ڕێنیشاندەر</string>
+    <string name="help_sega_fix_checksum_body">لە یارییەکانی Sega Mega Drive (Genesis) لە ڕوومەکەدا نووسراوە. ئەگەر تەنها هەر بەشێکی یارییەکە بگۆڕیت، ئەوا یەک ناگرنەوە، لە ئەنجامدا شکست دەهێنن لە ڕاکردن. ئەوەی ئەمە دەیکات ئەوەیە کە کۆی پشکنینی دروستی گۆڕانکارییەکە حیساب دەکات و دەینوسێت بۆ ROM-file دەستکاریکراوەکە.
+\n
+\n <b>ئاگاداری:</b> بۆ ئەم کارە ڕوومە دروستکراوەکە هەڵناگرێت .</string>
+    <string name="help_what_is_rom_hacking_body">هاککردنی ڕووم گۆڕانکاری لە داتاکان دەکات لە rom ڕووم لە شێوەی گۆڕینی گرافیک و زمان، گۆڕینی ئاستی یاری، گۆڕینی فاکتەری ساختە، یان تەنانەت وەرگێڕان بۆ زمانێک کە لە بنەڕەتدا.</string>
+    <string name="nav_apply_patch">جێبەجێکردنی پاچ</string>
+    <string name="nav_snes_add_del_smc_header">لابردنی SMC header (SNES)</string>
+    <string name="help_title">پرسیارە زۆر دوبارەکان:</string>
+    <string name="help_what_is_unipatcher_title">ئایا Uni پاچەر چیە؟</string>
+    <string name="help_archive_should_be_unpacked_body">ئەو فایلەی کە هەڵتبژاردووە ئەرشیفە. ئەرشیفەکە بەڕێوەبەرایەتی و فایلەکان بە شێوەی پاڵەپەستۆکراو لەخۆدەگرێت.
+\n
+\nلە ئێستادا Uni پاچەر ناتوانێت ئەرشیفەکان دەربهێنێت، بۆیە پێویستە ئەرشیفەکەت لە بەرنامەیەکی جیاوازدا هەڵبکەیتەوە. پێشنیاری ئەپی ZArchiverدەکەم https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="nav_drawer_open">کردنەوەی نەخشەکێشی ڕێنیشاندەر</string>
+    <string name="help_snes_smc_title">بۆچی هەندێک جار پێویستە سەردێڕی SMC لە یارییەکانی Super Nintendo لاببرێت؟</string>
+    <string name="help_rom_not_compatible_with_patch_body">ئەپەکە ئەم هەڵەیە پیشان دەدات ئەگەر ئەو کۆی پشکنینەی کە لە پاچەکەدا هەڵگیراوە لەگەڵ کۆی پشکنینی ڕوومەکەدا نەگونجێت. ئەمەش واتە فایلە ڕوومەکە لەگەڵ پاچەکەدا ناگونجێت. پێویستە فایلێکی ڕوومی جیاواز هەڵبژێریت. بەزۆری بۆ هەر یارییەک چەند ڕۆمێک هەیە (وەک وەشانی بۆ ئەوروپا، ئەمریکا، ژاپۆن، دامپی باش یان خراپ و هتد).
+\n
+\nزۆرجار هاکەرانی ڕۆم کۆی پشکنینی پەڕگەی ڕۆمی هاوپێچ بڵاودەکەنەوە (لە لاپەڕەی وێب یان لە فایلێکی README). ئەوە بەراورد بکە بەو کەسەی کە هەتە. ئەگەر کۆی پشکنینەکە هاوتا بێت ئەوا تۆ ئەو ڕۆمەت هەیە کە پاچەکە بۆی نووسراوە. ئەگەر نا، پێویستت بە ڕۆمێکی جیاوازە.
+\n
+\nلە خراپترین حاڵەتدا ئەگەر نەتوانیت فایلێکی ڕۆمی دروست بدۆزیتەوە، دەتوانیت لە ڕێکخستنەکاندا هەڵبژاردەی “وازهێنان لە پشکنین” دابنێیت. بەڵام لەبیرت بێت کە لەم حاڵەتەدا یارییەکە ڕەنگە هەڵەی تێدابێت یان بە تەواوی یاری پێنەکرێت.</string>
+    <string name="nav_smd_fix_checksum">چاککردنی پشکنین (SMD)</string>
+    <string name="help_what_patch_formats_are_supported_title">چ شێوەیە(پاچێک) پشتگیری دەکرێت؟</string>
+    <string name="help_additional_features_body">بەڵێ. Uniپاچەر دەتوانێت:
+\n
+\n- دروستکردنی پاچی XDelta3.
+\n- چاککردن و پشکنین بۆ یارییەکانی Sega Mega Drive / Sega Genesis.
+\n- لابردنی سەردێڕی SMC لە یارییەکانی Super Nintendo.</string>
+    <string name="nav_settings">ڕیکخستنەکان</string>
+    <string name="nav_donate">بەخشین</string>
+    <string name="help_can_i_hack_android_game_title">ئایا دەتوانم یاری ئەندرۆید هاک یان کراکی بکەم بە بەکارهێنانی ئەم ئەپە؟</string>
+    <string name="help_how_to_apply_patch_to_rom_title">چۆن پاچەکە دەسەپێنین بەسەر ڕوومەکەدا؟</string>
+    <string name="help_rom_not_compatible_with_patch_title">ئەپەکە هەڵە پیشان دەدات: “ئەم ڕۆمە لەگەڵ پاچەکەدا ناگونجێت”.</string>
+    <string name="help_what_is_a_patch_body">پاچ (بە ئینگلیزی: Patch) بریتییە لە فایلێک کە جیاوازی نێوان وەشانی ئەسڵی ڕووم و وەشانی هاککراوی تێدایە.
+\n
+\nپەڕەکە دابەش دەکرێت و بەکارهێنەرانی کۆتایی پەڕەکە بەکاردەهێنن بۆ کۆپێکردنی ڕوومە ئەسڵیەکە، کە وەشانێکی دیاریکراوی هاکەکە بەرهەم دەهێنێت.</string>
+    <string name="help_how_to_translate_title">لەلایەن دیاری درۆید وەرگێڕانی بۆکراوە؟</string>
+    <string name="help_ips_no_checksum_title">من پاچی IPS بەکاردەهێنم و دواتر یارییەکە کارناکات / هەڵەی گرافیکی تێدایە. من چۆن چاکی بکەم؟</string>
+    <string name="help_find_rom_pokemon_emerald_title">ناتوانم ڕوومێکی ڕاست بۆ یاری پۆکی مۆن بدۆزمەوە “Pokémon Emerald”.</string>
+    <string name="help_sega_fix_checksum_title">بۆچی دەبێت پشکنین بۆ یارییەکانی Sega Mega Drive بکەم؟</string>
+    <string name="nav_create_patch">دروستکردنی پاچ</string>
+    <string name="help_i_cant_patch_smw_rom_title">ناتوان پاچی بکەم “Super Mario World (U) [!].smc”</string>
+    <string name="notification_channel_name">ئاگادارکردنەوە</string>
+    <string name="help_what_is_rom_hacking_title">هاککردنی ROM چیە؟</string>
+    <string name="help_find_rom_pokemon_emerald_body">زۆربەی پاچەکانی یارییەکە بە ڕووم کاردەکەن “Pokemon - Emerald وەشان (U) [f1] (جۆری پاشەکەوت).gba”.</string>
+    <string name="help_archive_should_be_unpacked_title">ئەپەکە دوای هەڵبژاردنی فایل پەیامێک پیشان دەدات: “پێویستە ئەرشیف لە بەرنامەیەکی دەرەکیدا پاک بکرێتەوە”.</string>
+    <string name="help_why_not_distribute_modified_games_title">بۆچی هاککەرەکانی ڕووم یارییە گۆڕدراوەکان دابەش ناکەن؟</string>
+    <string name="help_why_not_distribute_modified_games_body">هاککردن و وەرگێڕانەکان بە شێوەیەکی گشتی دابەش دەکرێن وەک پاچ بۆ کەمکردنەوەی قەبارەی دابەزاندن و خۆدوورگرتن لە کێشەی مافی لەبەرگرتنەوە.</string>
+    <string name="help_snes_smc_body">سەردێڕی SMC 512بایتە کە لە سەرەتای هەندێک ڕوومی SNES دەدۆزرێتەوە. ئەم بایتانە هیچ ئامانجێکیان نییە، بەڵام شوێنی ئەو داتایانەی کە ماونەتەوە دەگۆڕن. لابردنی سەردێڕ هەندێک جار بە مەبەستی جێبەجێکردنی دروستی پاچێک بەکاردەهێنرێت.</string>
+    <string name="nav_help">یارمەتی</string>
+    <string name="help_feedback_body">ئێمە باس لە کارایی نوێ دەکەین و وەڵامی پرسیارەکان دەدەینەوە لە گفتوگۆکانی GitHub https://github.com/btimofeev/UniPatcher/discussions
+\n
+\nدەتوانیت هەڵەیەک لە شوێنپێهەڵگری کێشەکان ڕاپۆرت بکەیت GitHub https://github.com/btimofeev/UniPatcher/issues
+\n
+\nهەروەها دەتوانن لە ڕێگەی ئیمەیڵ unipatcher@gmail.com پەیوەندی بە نووسەری داواکارییەکە بکەن. تکایە بە ئینگلیزی بنووسن. ئەگەر کێشەی پاچکردنت هەبوو، پاچەکە بە پیتەکەوە ببەستە و ناوی ڕۆمەکەت بنووسە، ئەوە کاتمان دەپارێزێت.</string>
+    <string name="nav_share">ناساندن بەهاوڕێیان</string>
+    <string name="about_used_libraries"><b>کتێبخانە بەکارهێنراوەکان:</b>
+\n
+\n \u0020- <b>ACRA</b> لەلایەن تیمی ACRA، مۆڵەتی بەپێی مۆڵەتی Apache 2.0 وەرگرتووە. \u0020https://github.com/ACRA/acra
+\n \u0020- <b>بەخشینی ئەندرۆید</b> لەلایەن SufficientlySecure و penn5، مۆڵەتی بەپێی مۆڵەتی Apache 2.0. \u0020https://github.com/penn5/بەخشینەکان
+\n \u0020- <b>Apache Commons IO</b> لەلایەن دامەزراوەی نەرمەکاڵای ئەپاچی، مۆڵەتی بەپێی مۆڵەتی ئەپاچی ٢.٠. \u0020https://commons.apache.org/proper/کۆمۆنس-یۆ/
+\n \u0020- <b>Dagger</b> لەلایەن The Dagger Authors، مۆڵەتی بەپێی مۆڵەتی Apache 2.0 وەرگرتووە.
+\nhttps://github.com/google/خەنجەر
+\n \u0020- <b>ئایکۆنی دیزاینی ماددە</b> لەلایەن گووگڵەوە، مۆڵەتی بەپێی مۆڵەتی ئەپاچی ٢.٠ وەرگرتووە. 
+\nhttps://github.com/google/ئایکۆنی-دیزاینی-ماددە
+\n \u0020- <b>ئایکۆنەکانی دیزاینی ماددە</b> بەپێی کۆمەڵگە، مۆڵەتیان پێدراوە بەپێی مۆڵەتی فۆنت کراوەی SIL 1.1. \u0020https://materialdesignicons.com
+\n \u0020- <b>Timber</b> لەلایەن Jake Wharton، مۆڵەتی بەپێی مۆڵەتی Apache 2.0 وەرگرتووە. \u0020https://github.com/JakeWharton/دارەکان
+\n \u0020- <b>XDelta وەشانی 3</b> لەلایەن Joshua MacDonald، مۆڵەتی بەپێی مۆڵەتی Apache 2.0 وەرگرتووە. \u0020https://github.com/jmacd/xdelta</string>
+    <string name="help_what_is_rom_image_title">ROM چیە؟</string>
+    <string name="help_what_patch_formats_are_supported_body">ئەپەکە پاڵپشتی IPS، IPS32، UPS، BPS، APS (GBA)، APS (N64)، PPF، DPS، EBP و XDelta3 دەکات.</string>
+    <string name="help_what_is_a_patch_title">پاچ چیە؟</string>
+    <string name="help_ecm_image_body">ECM فۆڕماتێکی پاڵپێوەنانی داتایە کە بە تایبەتی بۆ دیسک ئیمەیج دیزاین کراوە. دەتوانیت بە بەکارهێنانی ئەپی ZArchiver پەڕگەکە کەم بکەیتەوە https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
 </resources>
