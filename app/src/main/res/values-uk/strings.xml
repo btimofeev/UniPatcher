@@ -10,7 +10,7 @@
     <string name="main_activity_toast_patch_not_selected">Оберіть Патч</string>
     <string name="main_activity_toast_archives_not_supported">Архів повинен бути розпакований в зовнішній програмі</string>
     <!-- Create patch fragment -->
-    <string name="create_patch_fragment_source_file">Вихідний файл</string>
+    <string name="create_patch_fragment_source_file">Оригінальний файл</string>
     <string name="create_patch_fragment_modified_file">Змінений файл</string>
     <string name="create_patch_fragment_patch_file">Патч</string>
     <string name="create_patch_fragment_toast_source_not_selected">Спочатку виберіть вихідний файл</string>
