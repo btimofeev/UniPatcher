@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016-2017, 2019-2022 Boris Timofeev
+Copyright (C) 2016-2017, 2019-2024 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -35,7 +35,7 @@ class SettingsFragment : PreferenceFragmentCompat(), OnSharedPreferenceChangeLis
 
     override fun onSharedPreferenceChanged(
         sharedPreferences: SharedPreferences,
-        key: String
+        key: String?,
     ) {
         when (key) {
             PREFERENCES_THEME_KEY -> {

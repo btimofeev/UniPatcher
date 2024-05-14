@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, 2019-2022 Boris Timofeev
+ Copyright (c) 2017, 2019-2024 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -89,11 +89,11 @@ class UniPatcher : Application() {
             }
 
             notification {
-                withResTitle(R.string.error_crash_title)
-                withResText(R.string.error_crash_message)
-                withResSendButtonText(R.string.error_crash_send_button)
-                withResDiscardButtonText(R.string.error_crash_discard_button)
-                withResChannelName(R.string.notification_channel_name)
+                withTitle(getString(R.string.error_crash_title))
+                withText(getString(R.string.error_crash_message))
+                withSendButtonText(getString(R.string.error_crash_send_button))
+                withDiscardButtonText(getString(R.string.error_crash_discard_button))
+                withChannelName(getString(R.string.notification_channel_name))
             }
         }
     }
