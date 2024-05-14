@@ -4,9 +4,6 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "31.0.0"
-    ndkVersion "22.1.7171670"
 
     signingConfigs {
         release
@@ -15,7 +12,9 @@ android {
     defaultConfig {
         applicationId "org.emunix.unipatcher"
         minSdkVersion 21
+        compileSdk 31
         targetSdkVersion 31
+        ndkVersion "22.1.7171670"
         versionCode 170201
         versionName "0.17.2"
         ndk {
@@ -151,12 +150,13 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:3.9.0'
 }
 
-task deleteDependencies(type: Delete) {
+tasks.register("deleteDependencies", Delete) {
     delete 'src/main/cpp/xdelta3/xdelta'
     delete 'src/main/cpp/xz/xz'
 }
 
-task downloadDependencies(dependsOn: deleteDependencies) {
+tasks.register("downloadDependencies") {
+    dependsOn deleteDependencies
     def XDelta = '3.1.0'
     def xz = '5.2.4'
 
