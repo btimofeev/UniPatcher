@@ -141,7 +141,7 @@
     <string name="error_crash_send_button">Wyślij</string>
     <string name="error_crash_message">Przykro nam, aplikacja przestała działać. Proszę wyślij raport do deweloperów.</string>
     <string name="error_crash_title">Wypadek</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
     <string name="settings_ignore_checksum_description">Nie przerywaj aktualizacji jeżeli użyto złego ROM-a. Uwaga: Ta opcja może uszkodzić twoją grę.</string>
     <string name="settings_ignore_checksum">Ignoruj checksums</string>
     <string name="settings_patching_header">Aktualizowanie</string>
@@ -164,15 +164,17 @@
 \n- <b>XDelta w wersji 3</b> autorstwa Joshua MacDonald, na licencji Apache 2.0. https://github.com/jmacd/xdelta</string>
     <string name="about_translators"><b>Tłumacze:</b>
 \n
-\n- <b>Chiński</b>: Nabarl Wang, Er
-\n- <b>Francuski</b>: Thibaut Panis, J. Lavo
+\n- <b>chiński</b>: Nabarl Wang, Er
+\n- <b>francuski</b>: Thibaut Panis, J. Lavo
 \n- <b>niemiecki</b>: Honigdieb
-\n- <b>Hebrajski</b>: Tamer Dabsan
-\n- <b>włoski</b>: Matteo Sechi, J.Lavoie
-\n- <b>Japoński</b>: Naofumi Fukue
+\n- <b>hebrajski</b>: Tamer Dabsan
+\n- <b>indonezyjski</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
+\n- <b>włoski</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
+\n- <b>japoński</b>: Naofumi Fukue
+\n- <b>litewski</b>: Gediminas Murauskas
 \n- <b>koreański</b>: Minseo Lee
-\n- <b>Norweski bokmål</b>: Allan Nordhøy
-\n- <b>Polski</b>: Michał Bychowski, Jarek Karpiel
+\n- <b>norweski bokmål</b>: Allan Nordhøy
+\n- <b>polski</b>: Michał Bychowski, Jarek Karpiel, hayneken993
 \n- <b>portugalski</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
 \n- <b>portugalski (Brazylia)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SILc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
 \n- <b>rosyjski</b>: Борис Тимофеев

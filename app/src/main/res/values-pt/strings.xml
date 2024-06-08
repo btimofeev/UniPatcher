@@ -70,7 +70,9 @@
     <string name="help_activity_action_changelog">Lista de mudanças</string>
     <string name="donate_activity_title">Doar</string>
     <string name="share_dialog_title">Compartilhar o UniPatcher</string>
-    <string name="share_text">Baixe agora o melhor patcher de ROMs para Android. Suporte para os formatos IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.\n\n</string>
+    <string name="share_text">Descarregue agora o melhor patcher de ROMs para Android. Suporte para os formatos IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.
+\n
+\n</string>
     <!-- Navigation list -->
     <string name="nav_apply_patch">Aplicar patch</string>
     <string name="nav_create_patch">Criar patch</string>

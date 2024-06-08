@@ -3,8 +3,8 @@
     <string name="app_name">UniPatcher</string>
     <!-- Main activity -->
     <string name="main_activity_rom_file">Archivo ROM</string>
-    <string name="main_activity_patch_file">Archivo del parche</string>
-    <string name="main_activity_output_file">Archivo de salida</string>
+    <string name="main_activity_patch_file">Archivo de parche</string>
+    <string name="main_activity_output_file">Archivo resultante</string>
     <string name="main_activity_tap_to_select">toca para elegir</string>
     <string name="main_activity_toast_rom_not_selected">No has elegido ninguna ROM a parchear</string>
     <string name="main_activity_toast_patch_not_selected">No has elegido ningún archivo de parche</string>
@@ -152,25 +152,25 @@
     <string name="help_i_cant_patch_smw_rom_body">Esta ROM contiene un encabezado SMC y casi todos los parches disponibles esperan el otro formato. Puedes quitar dicho encabezado SMC mediante la opción del menú de la izquierda y luego aplicar el parche sobre la ROM resultante.</string>
     <string name="help_snes_smc_body">Ciertas imágenes ROM para SNES contienen 512 bytes a mayores al principio del todo. Este espacio extra no sirve de nada, pero mueve y altera el tamaño de lo que va detrás y hace que no coincida. Quitarlo te permite conseguir el archivo original y poder aplicar el parche.</string>
     <string name="about_translators"><b>Traductores:</b>
-\n
+\n 
 \n - <b>Chino</b>: Nabarl Wang, Eric
 \n - <b>Francés</b>: Thibaut Panis, J. Lavoie
 \n - <b>Alemán</b>: Honigdieb
 \n - <b>Hebreo</b>: Tamer Dabsan
-\n - <b>Indonesio</b>: Tsaqib F toadhlurrahman Soka, Reza Almanda
+\n - <b>Indonesio</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
 \n - <b>Italiano</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
 \n - <b>Japonés</b>: Naofumi Fukue
-\n - <b>Lithuanian</b>: Gediminas Murauskas
+\n - <b>Lituano</b>: Gediminas Murauskas
 \n - <b>Coreano</b>: Minseo Lee
-\n - <b>Noruego Bokmål</b>: Allan Nordhøy
+\n - <b>Noruego bokmål</b>: Allan Nordhøy
 \n - <b>Polaco</b>: Michal Bychowski, Jarek Karpiel, hayneken993
 \n - <b>Portugués</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n - <b>Portugués (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, joaooliva
+\n - <b>Portugués de Brasil</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
 \n - <b>Ruso</b>: Борис Тимофеев
 \n - <b>Castellano</b>: Carlos Sánchez, Swyter
 \n - <b>Turco</b>: Oğuz Ersen
 \n - <b>Ucraniano</b>: Володимир Шевчук
-\n
+\n 
 \nAyúdanos a traducir la aplicación a tu idioma materno: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="nav_snes_add_del_smc_header">Quitar encabezado SMC (SNES)</string>
     <string name="snes_smc_header_help">Ten en cuenta que esta función es sólo para ROMs de Super Nintendo.
@@ -189,7 +189,7 @@
     <string name="error_crash_send_button">Enviar</string>
     <string name="error_crash_message">La aplicación se ha cerrado inesperadamente, ayuda al desarrollador enviando el informe de error.</string>
     <string name="error_crash_title">Cuelgue</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
     <string name="settings_show_button_how_to_use_app_description">Muestra el botón de «cómo usar la aplicación» en la pantalla principal</string>
     <string name="settings_show_button_how_to_use_app">Mostrar botón de ayuda</string>
     <string name="settings_theme_name_follow_system">Utilizar ajustes del sistema</string>
