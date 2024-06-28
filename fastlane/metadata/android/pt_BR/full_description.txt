@@ -1,9 +1,9 @@
-UniPatcher permite você aplicar patches em ROMs de jogos.
+UniPatcher lhe permite aplicar patches em ROMs de jogos.
 
 O que é um patch?
-Um arquivo com dados modificado do jogo. Por exemplo, um jogo traduzido de Japonês para Inglês. Você baixa o remendo contendo a tradução. Isto deve ser aplicado a versão Japonesa para fazer uma versão em inglês dela.
+Um arquivo com dados modificado do jogo. Por exemplo, um jogo traduzido de japonês para inglês. Você baixa o patch contendo a tradução. Isto deve ser aplicado à versão japonesa para fazer uma versão em inglês dela.
 
-Este programa não ajudará você a modificar jogos Android, pois foi criada para os jogos de consoles antigos (SNES, PS1, GBA, N64, SMD\Genesis etc.)
+Este programa não lhe ajudará a modificar jogos Android, pois foi criada para os jogos de consoles antigos (SNES, PS1, GBA, N64, SMD\Genesis etc.)
 
 Características:
 * Formatos de patches suportados: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
