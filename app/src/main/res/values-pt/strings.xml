@@ -70,7 +70,9 @@
     <string name="help_activity_action_changelog">Lista de mudanças</string>
     <string name="donate_activity_title">Doar</string>
     <string name="share_dialog_title">Compartilhar o UniPatcher</string>
-    <string name="share_text">Baixe agora o melhor patcher de ROMs para Android. Suporte para os formatos IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.\n\n</string>
+    <string name="share_text">Descarregue agora o melhor patcher de ROMs para Android. Suporte para os formatos IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.
+\n
+\n</string>
     <!-- Navigation list -->
     <string name="nav_apply_patch">Aplicar patch</string>
     <string name="nav_create_patch">Criar patch</string>
@@ -147,11 +149,13 @@
 \n - <b> Francês</b>: Thibaut Panis, J. Lavoie
 \n - <b>Alemão</b>: Honigdieb
 \n - <b>Hebraico</b>: Tamer Dabsan
-\n - <b>Italiano</b>: Matteo Sechi, J.Lavoie
+\n - <b>Indonésio</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
+\n - <b>Italiano</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
 \n - <b>Japonês</b>: Naofumi Fukue
+\n - <b>Lituano</b>: Gediminas Murauskas
 \n - <b> Coreano</b>: Minseo Lee
 \n - <b>Bokmål norueguês</b>: Allan Nordhøy
-\n - <b>Polonês</b>: Michal Bychowski, Jarek Karpiel
+\n - <b>Polonês</b>: Michal Bychowski, Jarek Karpiel, hayneken993
 \n - <b>Português</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
 \n - <b>Português (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
 \n - <b>Russo</b>: Борис Тимофеев
@@ -175,10 +179,10 @@
     <string name="error_crash_send_button">Enviar</string>
     <string name="error_crash_message">Desculpe, a aplicação travou. Por favor, envie um relatório para os programadores.</string>
     <string name="error_crash_title">Erro</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
     <string name="settings_show_button_how_to_use_app_description">Mostrar botão \"Como usar a app\" no ecrã principal</string>
     <string name="settings_show_button_how_to_use_app">Mostrar butão Ajuda</string>
-    <string name="settings_theme_name_follow_system">Use sistema padrão</string>
+    <string name="settings_theme_name_follow_system">Usar padrão do sistema</string>
     <string name="settings_theme_name_auto_battery">Configurado pela Economia de Energia</string>
     <string name="notify_error_unable_open_patch_file">Incapaz de abrir ficheiro de remendo</string>
     <string name="notify_error_unable_open_modified_file">Incapaz de abrir ficheiro modificado</string>

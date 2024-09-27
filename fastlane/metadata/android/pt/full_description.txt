@@ -1,7 +1,7 @@
 UniPatcher permite-lhe aplicar remendos as ROMs do jogo.
 
 O que é um remendo?
-Um ficheiro com datos modificados do jogo. Por exemplo, um jogo traduzido do Japônes para Inglês. Descarregue o remendo que contem a tradução. Deve ser aplicada à versão Japonesa, para fazer uma versão Inglesa dela.
+Um ficheiro com dados modificados do jogo. Por exemplo, um jogo traduzido do Japonês para Inglês. Descarregue o remendo que contém a tradução. Deve ser aplicado à versão Japonesa para fazer uma versão Inglesa dela.
 
 Este progama não irá ajudá-lo a acessar jogos Android nativamente, foi criada para console de jogos antigos (Super Nintendo, Sega Mega Drive, Game Boy Advance, Sony PlayStation etc.)
 
