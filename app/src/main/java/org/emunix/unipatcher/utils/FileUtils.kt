@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013-2017, 2019-2021 Boris Timofeev
+Copyright (C) 2013-2017, 2019-2021, 2024 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -89,6 +89,13 @@ class FileUtils @Inject constructor(
                 bytes = 0
             }
         }
+    }
+
+    @Throws(IOException::class, IndexOutOfBoundsException::class)
+    fun copy(from: InputStream, size: Int, to: ByteArray, toPosition: Int) {
+        val buffer = ByteArray(size)
+        from.read(buffer)
+        System.arraycopy(buffer, 0, to, toPosition, size)
     }
 
     @Throws(IOException::class)
