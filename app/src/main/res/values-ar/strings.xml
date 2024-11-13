@@ -76,7 +76,7 @@
 \nغالبا ما ينشر مهكروا الـROM المجموع الاختباري لملف ROM المصاحب (على صفحة ويب أو في ملف README). قارن ذلك بالـROM الذي لديك. إذا تطابق المجموع الاختباري لديك مع الـROM أنت لديك الـROM الصحيح. إذا لا، تحتاج إلى ROM مختلف.
 \n
 \nوأسوأ حالة، عندما لا تستطيع إيجاد الـROM الصحيح، يمكنك أن تضغط على \"تجاهل المجموع الإختباري\" في الإعدادت. لكن يمكن هذا أن يتسبب في جعل اللعبة مليئة بالأخطاء أو جعلها غير قابلة للّعب.</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="main_activity_output_file">ملف الإخراج</string>
     <string name="main_activity_toast_rom_not_selected">لا يوجد ملف ROM محدد</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">أنقر لتحديد مكان لحفظ ملف الـROM</string>
