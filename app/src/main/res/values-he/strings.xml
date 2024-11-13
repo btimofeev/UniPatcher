@@ -81,7 +81,7 @@
     <string name="error_crash_title">קריסה</string>
     <string name="help_activity_action_changelog">יומן שינויים</string>
     <string name="help_activity_action_visit_site">בקר באתר</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="help_activity_about_tab_license">רישיון: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">גרסה %1$s</string>
     <string name="help_activity_about_tab_title">אודות</string>
