@@ -114,7 +114,7 @@
     <string name="donate_activity_title">Fai una donazione</string>
     <string name="error_crash_discard_button">Annulla</string>
     <string name="error_crash_send_button">Invia</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="create_patch_fragment_toast_patch_not_selected">Il file patch non è selezionato</string>
     <string name="create_patch_fragment_toast_modified_not_selected">Il file modificato non è selezionato</string>
     <string name="create_patch_fragment_toast_source_not_selected">Il file sorgente non è selezionato</string>
