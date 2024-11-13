@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_activity_rom_file">Tệp ROM</string>
+    <string name="main_activity_patch_file">Tệp vá</string>
+    <string name="main_activity_output_file">Nơi xuất tệp</string>
+    <string name="main_activity_rom_with_smc_file">Tệp ROM với tiêu đề SMC</string>
+    <string name="main_activity_tap_to_select">Chạm để chọn</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">Chạm để chọn nơi lưu bản vá</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">Chạm để chọn nơi lưu ROM</string>
+    <string name="main_activity_toast_rom_not_selected">Không có tệp ROM nào được chọn</string>
+    <string name="main_activity_toast_output_not_selected">Không có tập tin đầu ra nào được chọn</string>
+    <string name="main_activity_toast_archives_not_supported">Tệp nén phải được xả nén bằng 1 ứng dụng bên ngoài</string>
+    <string name="main_activity_button_how_to_use_app">Làm thế nào để sử dụng UniPatcher</string>
+    <string name="create_patch_fragment_source_file">Tệp nguồn</string>
+    <string name="create_patch_fragment_modified_file">Tệp đã sửa đổi</string>
+    <string name="create_patch_fragment_patch_file">Tệp vá</string>
+    <string name="create_patch_fragment_toast_source_not_selected">Tệp nguồn không được chọn</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">Tệp đã sửa đổi không được chọn</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">Tệp vá không được chọn</string>
+    <string name="snes_smc_header_will_be_removed">ROM này có tiêu đề SMC. Tiêu đề này sẽ bị xoá.</string>
+    <string name="snes_rom_has_no_smc_header">ROM này không có tiêu đề SMC.
+\nBạn không cần phải xóa bất cứ thứ gì.</string>
+    <string name="notify_error">Lỗi</string>
+    <string name="notify_create_patch_complete">Bản vá nầy đã tạo xong</string>
+    <string name="notify_error_could_not_copy_file">Không thể sao chép tập tin</string>
+    <string name="notify_error_not_enough_space">Không đủ dung lượng trên bộ nhớ</string>
+    <string name="notify_error_not_ips_patch">Không phải là bản vá IPS hợp lệ</string>
+    <string name="notify_error_not_ups_patch">Không phải là bản vá UPS hợp lệ</string>
+    <string name="notify_error_not_bps_patch">Không phải là bản vá BPS hợp lệ</string>
+    <string name="notify_error_not_ppf_patch">Không phải là bản vá PPF hợp lệ</string>
+    <string name="notify_error_not_aps_patch">Không phải là bản vá APS hợp lệ</string>
+    <string name="notify_error_not_dps_patch">Không phải là bản vá DPS hợp lệ</string>
+    <string name="notify_error_not_xdelta3_patch">Không phải là bản vá XDelta3 hợp lệ</string>
+    <string name="notify_error_xdelta3_internal_error">XDelta3 lỗi nội bộ</string>
+    <string name="notify_error_xdelta1_unsupported">Ứng dụng không thể hoạt động trên bản vá XDelta1</string>
+    <string name="notify_error_unable_open_source_file">Không thể mở tệp tin nguồn</string>
+    <string name="notify_error_unknown_patch_format">Định dạng bản vá không xác định</string>
+    <string name="notify_error_unexpected_end_of_file">Kết thúc tệp tin bất ngờ</string>
+    <string name="notify_error_patch_corrupted">Tệp vá bị hư hỏng</string>
+    <string name="notify_error_rom_not_compatible_with_patch">Tệp ROM nầy không tương thích với bản vá</string>
+    <string name="notify_error_wrong_checksum_after_patching">Tệp bị lỗi checksum sau khi được vá</string>
+    <string name="notify_error_failed_load_lib_xdelta3">Không tải được thư viện libxdelta3.so</string>
+    <string name="notify_error_unknown">Lỗi không xác định</string>
+    <string name="notify_error_not_smd_rom">Không phải tệp ROM của hệ máy Sega Mega Driver</string>
+    <string name="notify_smd_fix_checksum_complete">Đã sửa Checksum</string>
+    <string name="notify_snes_delete_smc_header_complete">Tiêu đề SMC đã bị xoá</string>
+    <string name="settings_interface_header">Giao diện người dùng</string>
+    <string name="settings_theme">Chủ đề</string>
+    <string name="settings_theme_dialog_title">Chọn chủ đề</string>
+    <string name="settings_theme_name_light">Sáng</string>
+    <string name="settings_theme_name_auto_battery">Cà đặt theo thiết lập gốc Battery Saver (Tiết kiệm Pin) trên hệ thống Android</string>
+    <string name="settings_theme_name_follow_system">Sử dụng theo cài đặt hệ thống</string>
+    <string name="settings_show_button_how_to_use_app">Hiện nút trợ giúp</string>
+    <string name="settings_show_button_how_to_use_app_description">Hiện nút \"Làm thế nào để sử dụng UniPacher\" trên màn hình chính</string>
+    <string name="settings_patching_header">Đang vá</string>
+    <string name="help_activity_title">Trợ giúp</string>
+    <string name="help_activity_faq_tab_title">Câu hỏi thường gặp</string>
+    <string name="help_activity_about_tab_title">Giới thiệu</string>
+    <string name="help_activity_about_tab_version">Phiên bản</string>
+    <string name="help_activity_about_tab_license">Giấy phép: GNU GPLv3</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
+    <string name="help_activity_action_visit_site">Truy cập trang web</string>
+    <string name="error_crash_message">Rất tiếc, ứng dụng đã bị sập (crash). Vui lòng gửi báo cáo cho nhà phát triển.</string>
+    <string name="error_crash_send_button">Gởi</string>
+    <string name="error_crash_discard_button">Loại bỏ</string>
+    <string name="error_file_picker_app_is_no_installed">Lỗi: Chưa cài đặt ứng dụng File</string>
+    <string name="donate_activity_title">Quyên góp</string>
+    <string name="share_dialog_title">Chia sẻ UniPatcher</string>
+    <string name="nav_apply_patch">Áp dụng bản vá</string>
+    <string name="nav_create_patch">Tạo bản vá</string>
+    <string name="nav_smd_fix_checksum">Sửa lỗi checksum (SMD)</string>
+    <string name="nav_snes_add_del_smc_header">Gỡ bỏ tiêu đề SMC (SNES)</string>
+    <string name="nav_settings">Cài đặt</string>
+    <string name="nav_rate">Đánh giá ứng dụng nầy</string>
+    <string name="nav_donate">Quyên góp</string>
+    <string name="nav_share">Chia sẻ</string>
+    <string name="nav_help">Trợ giúp</string>
+    <string name="nav_drawer_open">Mở ngăn điều hướng</string>
+    <string name="nav_drawer_close">Đóng ngăn điều hướng</string>
+    <string name="notification_channel_name">Thông báo</string>
+    <string name="help_what_is_unipatcher_title">UniPatcher là gì?</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher là một công cụ Android để áp dụng các bản vá vào tệp ROM của nhiều hệ máy chơi game video khác nhau.</string>
+    <string name="help_what_patch_formats_are_supported_body">UniPatcher hỗ trợ các bản vá IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP và XDelta3.</string>
+    <string name="help_can_i_hack_android_game_title">Tôi có thể hack hoặc bẻ khóa trò chơi Android bằng ứng dụng này không?</string>
+    <string name="help_can_i_hack_android_game_body">Không. UniPatcher không được thiết kế để hack các trò chơi Android.
+\nNgủ đi rồi mơ cái gì cũng có</string>
+    <string name="help_what_is_rom_image_title">ROM là gì?</string>
+    <string name="help_what_is_rom_hacking_title">ROM hack là gì?</string>
+    <string name="help_what_is_a_patch_title">Bản vá là gì?</string>
+    <string name="help_what_is_a_patch_body">Bản vá là một tệp chứa những khác biệt giữa phiên bản gốc của ROM và phiên bản bị hack.
+\n
+\nBản vá được phân phối và người dùng cuối áp dụng bản vá vào bản sao của ROM gốc, tạo ra phiên bản hack có thể chơi được</string>
+    <string name="help_why_not_distribute_modified_games_title">Tại sao các Hacker ROM không phân phối tệp ROM game đã sửa đổi</string>
+    <string name="help_why_not_distribute_modified_games_body">Các bản hack và bản dịch thường được phân phối dưới dạng bản vá (Patch) để giảm kích thước khi tải xuống và tránh các vấn đề về bản quyền từ các hãng game gốc</string>
+    <string name="main_activity_rom_without_smc_file">Xuất tệp ROM mà không có tiêu đề</string>
+    <string name="main_activity_toast_patch_not_selected">Không có tệp vá nào được chọn</string>
+    <string name="main_activity_donate_snackbar_text">Hãy hỗ trợ sự phát triển của UniPatcher bằng cách quyên góp</string>
+    <string name="main_activity_donate_snackbar_button">Quyên góp</string>
+    <string name="main_activity_double_back_to_exit_message">Nhấn phím BACK lần nữa để thoát. Điều nầy sẽ làm gián đoạn các tiến trình đang chạy</string>
+    <string name="snes_smc_header_help">Tính năng nầy chỉ dành cho ROM của hệ máy Super Nintendo (SNES).
+\n
+\nMột số bản vá yêu cầu ROM không có tiêu đề SMC. Tính năng nầy sẽ giúp bạn xoá tiêu đề đó.</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Lỗi: không thể xác định kích thước tệp</string>
+    <string name="notify_patching_complete">Đã vá xong</string>
+    <string name="notify_error_not_ebp_patch">Không phải là bản vá EBP hợp lệ</string>
+    <string name="notify_error_unable_open_file">Không thể mở tệp tin</string>
+    <string name="notify_error_unable_open_modified_file">Không thể mở tệp tin đã sửa đổi</string>
+    <string name="notify_error_unable_open_patch_file">Không thể mở tệp vá</string>
+    <string name="settings_activity_title">Cài đặt</string>
+    <string name="settings_theme_name_dark">Tối</string>
+    <string name="settings_ignore_checksum">Bỏ qua kiểm tra checksum</string>
+    <string name="settings_ignore_checksum_description">"Không làm gián đoạn quá trình vá nếu bạn sử dụng sai ROM.  
+\n
+\nHãy thận trọng: Tùy chọn này có thể phá hỏng trò chơi của bạn."</string>
+    <string name="help_activity_action_changelog">Nhật ký thay đổi</string>
+    <string name="error_crash_title">Sập (Crach)</string>
+    <string name="share_text">Tải xuống bản vá ROM tốt nhất cho Android. Nó hỗ trợ các loại bản vá IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP và XDelta3.
+\n
+\n</string>
+    <string name="help_title">Câu hỏi thường gặp:</string>
+    <string name="help_what_patch_formats_are_supported_title">Những định dạng bản vá nào được hỗ trợ?</string>
+    <string name="help_what_is_rom_image_body">"Hình ảnh ROM là một tệp tin chứa bản sao của băng trò chơi điện tử.  Thông qua quá trình chuyên dụng, bạn hoặc ai đó hoặc hãng game gốc sao chép tập tin đó ra từ băng trò chơi gốc, chạy nó trong một phần mềm gọi là “trình giả lập”, để thưởng thức trò chơi trên máy tính hoặc điện thoại.
+\n
+\nTrình giả lập cũng là công cụ mô phỏng cách hoạt động của 1 máy chơi game gốc và đánh lừa tệp ROM gốc là ROM chạy trên máy chơi game gốc mà không phải trên giả lập"</string>
+    <string name="help_what_is_rom_hacking_body">ROM Hack là Rom đã được sửa đổi dữ liệu. Điều này có thể dưới hình thức thay đổi đồ họa, thay đổi cấp độ trò chơi, điều chỉnh hệ số độ khó hoặc thậm chí dịch sang ngôn ngữ mà trò chơi ban đầu không có sẵn.</string>
+    <string name="smd_fix_checksum_help">Tính năng này chỉ dành cho ROM Sega Mega Drive (Sega Genesis).
+\n
+\n
+\n Nó sửa lỗi \"màn hình đỏ chết chóc\".
+\n
+\n
+\nCảnh báo: Chức năng này không tạo bản sao lưu dự phòng, vui lòng sao lưu tệp gốc kỹ trước khi sử dụng tính năng nầy</string>
+</resources>

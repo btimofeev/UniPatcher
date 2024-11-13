@@ -135,7 +135,7 @@
     <string name="error_crash_send_button">发送</string>
     <string name="error_crash_message">抱歉，应用程序意外退出。请将异常报告发送给开发人员。</string>
     <string name="error_crash_title">程序崩溃</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
     <string name="settings_show_button_how_to_use_app_description">在主屏幕上显示“如何使用应用程序”</string>
     <string name="settings_show_button_how_to_use_app">显示帮助按钮</string>
     <string name="settings_theme_name_follow_system">使用系统默认值</string>
@@ -153,4 +153,25 @@
     <string name="main_activity_tap_to_select_where_to_save_patch">点击此处，选择要保存修补程序的位置</string>
     <string name="main_activity_rom_without_smc_file">输出不带头信息的 ROM 文件</string>
     <string name="main_activity_rom_with_smc_file">带有 SMC 头信息的 ROM 文件</string>
+    <string name="about_translators"><b>译员：</b>
+\n
+\n - <b>中文</b>: Nabarl Wang, Eric
+\n - <b>法语</b>: Thibaut Panis, J. Lavoie
+\n - <b>德语</b>: Honigdieb
+\n - <b>希伯来语</b>: Tamer Dabsan
+\n - <b>印尼语</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
+\n - <b>意大利语</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
+\n - <b>日语</b>: Naofumi Fukue
+\n - <b>立陶宛语</b>: Gediminas Murauskas
+\n - <b>韩语</b>: Minseo Lee
+\n - <b>书面挪威语</b>: Allan Nordhøy
+\n - <b>波兰语</b>: Michal Bychowski, Jarek Karpiel, hayneken993
+\n - <b>葡萄牙语</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n - <b>葡萄牙语（巴西）</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
+\n - <b>俄语</b>: Борис Тимофеев
+\n - <b>西班牙语</b>: Carlos Sánchez, Swyter
+\n - <b>土耳其语</b>: Oğuz Ersen
+\n - <b>乌克兰语</b>: Володимир Шевчук
+\n
+\n帮忙将应用翻译成你的语言： https://hosted.weblate.org/engage/unipatcher/</string>
 </resources>

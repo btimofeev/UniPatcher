@@ -1,12 +1,18 @@
-UniPatcher permite você aplicar remendos as ROMs do jogo.
+UniPatcher lhe permite aplicar patches em ROMs de jogos.
 
-O que é um remendo?
-Um arquivo com dados modificado do jogo. Por exemplo, um jogo traduzido de Japonês para Inglês. Você baixa o remendo contendo a tradução. Isto deve ser aplicado a versão Japonesa para fazer uma versão inglesa dela.
+O que é um patch?
+Um arquivo com dados modificado do jogo. Por exemplo, um jogo traduzido de japonês para inglês. Você baixa o patch contendo a tradução. Isto deve ser aplicado à versão japonesa para fazer uma versão em inglês dela.
 
-Este programa não ajudará você a burlar jogos Android, pois foi criada para os jogos de consoles antigos (Super Nintendo, Sega Mega Drive, Game Boy Advance, Sony PlayStation etc.)
+Este programa não lhe ajudará a modificar jogos Android, pois foi criada para os jogos de consoles antigos (SNES, PS1, GBA, N64, SMD\Genesis etc.)
 
 Características:
-* Formatos de remendos suportados: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
-* Criar remendos XDelta
-*Consertar a soma de verificação em ROMS do SEGA Mega Drive
-*Remover o cabeçalho SMC das ROMs do Super Nintendo
+* Formatos de patches suportados: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
+* Criar patches XDelta
+*Consertar a soma de verificação em ROMS do SMD\Genesis
+*Remover o cabeçalho SMC das ROMs do SNES
+
+Como usar?
+Você deve selecionar um arquivo ROM, um patch e escolher qual arquivo salvar, depois clicar no botão redondo vermelho. Os arquivos são selecionados por meio do aplicativo de Arquivos padrão (ou por meio de um dos gerenciadores de arquivos que você instalou). O aplicativo mostrará uma mensagem quando o arquivo for patcheado. Não feche o aplicativo até que o arquivo seja patcheado.
+
+Muito importante:
+Se o jogo e o patch estiverem compactados (ZIP, RAR, 7z ou outro), primeiro eles precisam ser descompactados.

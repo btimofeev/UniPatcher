@@ -25,20 +25,24 @@
 \n
 \n - <b>Chinesisch</b>: Nabarl Wang, Eric
 \n - <b>Französisch</b>: Thibaut Panis, J. Lavoie
+\n - <b>Deutsch</b>: Honigdieb
 \n - <b>Hebräisch</b>: Tamer Dabsan
-\n - <b>Italienisch</b>: Matteo Sechi
+\n - <b>Indonesisch</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
+\n - <b>Italienisch</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
 \n - <b>Japanisch</b>: Naofumi Fukue
+\n - <b>Litauisch</b>: Gediminas Murauskas
 \n - <b>Koreanisch</b>: Minseo Lee
-\n - <b>Norwegisch (Bokmål)</b>: Allan Nordhøy
-\n - <b>Polnisch</b>: Michal Bychowski, Jarek Karpiel
-\n - <b>Portugiesisch</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc
+\n - <b>Norwegisch Bokmål</b>: Allan Nordhøy
+\n - <b>Polnisch</b>: Michal Bychowski, Jarek Karpiel, hayneken993
+\n - <b>Portugiesisch</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
+\n - <b>Portugiesisch (Brasilien)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
 \n - <b>Russisch</b>: Борис Тимофеев
 \n - <b>Spanisch</b>: Carlos Sánchez, Swyter
 \n - <b>Türkisch</b>: Oğuz Ersen
 \n - <b>Ukrainisch</b>: Володимир Шевчук
 \n
-\nHilf, die App auch in deine Sprache zu übersetzen: https://hosted.weblate.org/engage/unipatcher/</string>
-    <string name="help_feedback_body">Schreibe mir eine E-Mail an unipatcher@gmail.com. Bitte auf Englisch. Wenn du Probleme beim Patchen hast, hänge den Patch an die E-Mail an und gib den Namen deines ROMs an. Dies spart uns Zeit.</string>
+\nHelfen Sie mit, die App in Ihre Sprache zu übersetzen: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="help_feedback_body"></string>
     <string name="help_feedback_title">Ich habe eine Frage, einen Wunsch für ein Feature oder einen Fehlerbericht.</string>
     <string name="help_how_to_translate_body">Wenn du die App in eine andere Sprache übersetzen oder eine bestehende Übersetzung verbessern willst, kannst du dies auf der Weblate-Seite https://hosted.weblate.org/engage/unipatcher/ tun</string>
     <string name="help_how_to_translate_title">Wie kann ich die App übersetzen\?</string>
@@ -105,7 +109,7 @@
     <string name="error_crash_title">Absturz</string>
     <string name="help_activity_action_changelog">Änderungshistorie</string>
     <string name="help_activity_action_visit_site">Webseite besuchen</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
     <string name="help_activity_about_tab_license">Lizenz: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">Version %1$s</string>
     <string name="help_activity_about_tab_title">Über</string>

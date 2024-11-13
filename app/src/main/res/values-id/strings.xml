@@ -3,26 +3,26 @@
     <string name="create_patch_fragment_modified_file">File yang dimodifikasi</string>
     <string name="create_patch_fragment_toast_modified_not_selected">File yang dimodifikasi tidak dipilih</string>
     <string name="create_patch_fragment_toast_source_not_selected">File sumber tidak dipilih</string>
-    <string name="create_patch_fragment_patch_file">File tambalan</string>
+    <string name="create_patch_fragment_patch_file">File patch</string>
     <string name="create_patch_fragment_source_file">File sumber</string>
     <string name="main_activity_double_back_to_exit_message">Tekan KEMBALI lagi untuk keluar. Ini dapat mengganggu semua operasi yang sedang berjalan</string>
     <string name="main_activity_button_how_to_use_app">Cara menggunakan aplikasi</string>
     <string name="main_activity_donate_snackbar_button">Donasi</string>
     <string name="main_activity_donate_snackbar_text">Dukung pengembangan UniPatcher dengan memberikan donasi</string>
     <string name="main_activity_toast_archives_not_supported">Arsip harus dibongkar dalam program eksternal</string>
-    <string name="main_activity_toast_output_not_selected">Tidak ada hasil file yang dipilih</string>
-    <string name="main_activity_toast_patch_not_selected">Tidak ada file tambalan yang dipilih</string>
+    <string name="main_activity_toast_output_not_selected">Tidak ada file output yang dipilih</string>
+    <string name="main_activity_toast_patch_not_selected">Tidak ada file patch yang dipilih</string>
     <string name="main_activity_toast_rom_not_selected">Tidak ada file ROM yang dipilih</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">ketuk untuk memilih tempat menyimpan ROM</string>
     <string name="main_activity_tap_to_select">ketuk untuk memilih</string>
-    <string name="main_activity_tap_to_select_where_to_save_patch">ketuk untuk memilih tempat menyimpan tambalan</string>
-    <string name="main_activity_rom_without_smc_file">Hasil file ROM tanpa header</string>
-    <string name="main_activity_output_file">File hasil</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">ketuk untuk memilih tempat menyimpan patch</string>
+    <string name="main_activity_rom_without_smc_file">Output file ROM tanpa header</string>
+    <string name="main_activity_output_file">File output</string>
     <string name="main_activity_rom_with_smc_file">File ROM dengan header SMC</string>
-    <string name="main_activity_patch_file">File tambalan</string>
+    <string name="main_activity_patch_file">File patch</string>
     <string name="main_activity_rom_file">File ROM</string>
     <string name="app_name">UniPatcher</string>
-    <string name="create_patch_fragment_toast_patch_not_selected">File tambalan tidak dipilih</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">File patch tidak dipilih</string>
     <string name="about_translators"><b> Penerjemah:</b>
 \n
 \n- <b>Tiongkok</b>: Nabarl Wang, Eric
@@ -45,16 +45,16 @@
 \n
 \nBantu terjemahkan aplikasi ke dalam bahasa Anda: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="notify_patching_complete">Modifikasi berhasil</string>
-    <string name="snes_smc_error_unable_to_get_file_size">Galat: tidak dapat mengukur ukuran file</string>
+    <string name="snes_smc_error_unable_to_get_file_size">Kesalahan: tidak dapat mengukur ukuran file</string>
     <string name="notify_error_not_enough_space">Penyimpanan yang tersedia tidak mencukupi</string>
     <string name="notify_error_could_not_copy_file">Tidak bisa menyalin file</string>
     <string name="notify_error">Kesalahan</string>
     <string name="nav_donate">Donasi</string>
     <string name="donate_activity_title">Donasi</string>
     <string name="help_activity_title">Bantuan</string>
-    <string name="settings_patching_header">Menambal</string>
+    <string name="settings_patching_header">Patching</string>
     <string name="settings_show_button_how_to_use_app_description">Tampilkan tombol \"Cara menggunakan aplikasi\" di layar utama</string>
-    <string name="settings_show_button_how_to_use_app">Tunjuk tombol bantuan</string>
+    <string name="settings_show_button_how_to_use_app">Tampilkan tombol bantuan</string>
     <string name="settings_theme_name_dark">Gelap</string>
     <string name="settings_theme_name_light">Terang</string>
     <string name="settings_theme_dialog_title">Pilih tema</string>
@@ -70,7 +70,7 @@
     <string name="notify_error_not_ups_patch">Bukan patch UPS yang valid</string>
     <string name="notify_error_not_ips_patch">Bukan patch IPS yang valid</string>
     <string name="notify_create_patch_complete">Patch dibuat</string>
-    <string name="error_file_picker_app_is_no_installed">Galat: Tidak ada aplikasi File yang terinstal</string>
+    <string name="error_file_picker_app_is_no_installed">Kesalahan: Tidak ada aplikasi File yang diinstal</string>
     <string name="error_crash_discard_button">Buang</string>
     <string name="error_crash_send_button">Kirim</string>
     <string name="nav_rate">Nilai aplikasi ini</string>
@@ -86,12 +86,12 @@
     <string name="nav_help">Bantuan</string>
     <string name="nav_share">Bagikan</string>
     <string name="help_what_is_rom_image_title">Apa itu ROM image\?</string>
-    <string name="help_rom_not_compatible_with_patch_title">Aplikasi menampilkan galat: \"ROM ini tidak kompatibel dengan patch\".</string>
+    <string name="help_rom_not_compatible_with_patch_title">Aplikasi menunjukkan kesalahan: \"ROM ini tidak kompatibel dengan tambalan\".</string>
     <string name="help_sega_fix_checksum_title">Mengapa saya harus memperbaiki checksum untuk game Sega Mega Drive\?</string>
     <string name="help_feedback_title">Saya punya pertanyaan, permintaan fitur atau laporan bug.</string>
     <string name="help_how_to_translate_body">Jika Anda ingin menerjemahkan aplikasi ke bahasa lain atau memperbaiki terjemahan yang sudah ada, Anda dapat melakukannya di situs Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Bagaimana cara menerjemahkan aplikasi\?</string>
-    <string name="about_used_libraries"><b>Pustaka yang digunakan:</b>
+    <string name="about_used_libraries"><b>Library yang digunakan:</b>
 \n
 \n - <b>ACRA</b> oleh tim ACRA, dilisensikan di bawah lisensi Apache 2.0. https://github.com/ACRA/acra
 \n - <b>Android Donations</b> oleh SufficientlySecure dan penn5, dilisensikan di bawah lisensi Apache 2.0. https://github.com/penn5/donations
@@ -108,7 +108,7 @@
 \nAnda juga dapat menghubungi penulis aplikasi melalui email unipatcher@gmail.com. Silahkan menulis dalam bahasa Inggris. Jika Anda memiliki masalah dengan patching, melampirkan patch ke surat dan menulis nama ROM Anda, itu akan menghemat waktu kita.</string>
     <string name="help_snes_smc_body">Header SMC adalah 512 byte yang ditemukan pada awal beberapa gambar ROM SNES. Byte ini tidak memiliki tujuan, tetapi mereka mengubah lokasi data yang tersisa. Menghapus header kadang-kadang digunakan untuk tujuan menerapkan patch dengan benar.</string>
     <string name="help_snes_smc_title">Mengapa terkadang perlu menghapus header SMC dari game Super Nintendo\?</string>
-    <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) game memiliki checksum mereka ditulis ke dalam ROM. Jika Anda hanya mengubah bagian mana pun dari permainan, mereka tidak akan cocok, gagal berlari sebagai hasilnya. Apa yang dilakukan ini adalah menghitung checksum yang benar dari perubahan dan menulisnya ke file ROM yang dimodifikasi.
+    <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) game memiliki checksum mereka ditulis ke dalam ROM. Jika Anda hanya mengubah bagian mana pun dari game, mereka tidak akan cocok, gagal run sebagai hasilnya. Apa yang dilakukan ini adalah menghitung checksum yang benar dari perubahan dan menulisnya ke file ROM yang dimodifikasi.
 \n
 \n<b>Peringatan:</b> Fungsi ini tidak membuat ROM cadangan.</string>
     <string name="help_additional_features_body">Ya. UniPatcher dapat:
@@ -120,21 +120,21 @@
     <string name="help_ecm_image_body">ECM adalah format kompresi data yang dirancang khusus untuk gambar disk. Anda dapat mendekompresi file menggunakan aplikasi ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_ecm_image_title">Apa yang bisa kulakukan dengan. Tipe file ECM\?</string>
     <string name="help_ips_no_checksum_body">Patch format IPS tidak mengandung checksum. Oleh karena itu, patch akan berlaku untuk setiap (bahkan salah) file ROM. Dalam hal ini, Anda perlu mencari file ROM lain.</string>
-    <string name="help_ips_no_checksum_title">Saya menerapkan patch IPS dan kemudian permainan tidak berfungsi / berisi gangguan grafis. Apa yang saya lakukan salah\?</string>
+    <string name="help_ips_no_checksum_title">Saya menerapkan patch IPS dan kemudian game tidak berfungsi / berisi gangguan grafis. Apa yang saya lakukan salah\?</string>
     <string name="help_find_rom_pokemon_emerald_body">Sebagian besar patch dari permainan bekerja dengan ROM \"Pokemon - Emerald Version (U) [f1] (Save Type). gba\".</string>
-    <string name="help_find_rom_pokemon_emerald_title">Saya tidak dapat menemukan ROM yang benar untuk permainan \"Pokémon Emerald\".</string>
+    <string name="help_find_rom_pokemon_emerald_title">Saya tidak dapat menemukan ROM yang benar untuk game \"Pokémon Emerald\".</string>
     <string name="help_i_cant_patch_smw_rom_body">ROM ini berisi header SMC, sementara sebagian besar patch untuk game ini mengharuskan ROM untuk tidak memiliki header ini. Anda dapat menghapus header SMC dengan memilih item yang sesuai di menu di sebelah kiri dan kemudian menerapkan patch ke ROM yang dihasilkan.</string>
     <string name="help_i_cant_patch_smw_rom_title">Saya tidak bisa menambal \"Super Mario World (U) [!]. smc\"</string>
     <string name="help_rom_not_compatible_with_patch_body">Aplikasi akan menunjukkan kesalahan ini jika checksum yang disimpan dalam patch tidak sesuai dengan checksum ROM. Ini berarti bahwa file ROM tidak kompatibel dengan patch. Anda harus memilih file ROM yang berbeda. Biasanya ada beberapa ROM untuk setiap game (seperti versi untuk Eropa, Amerika Serikat, Jepang, tempat pembuangan yang baik atau buruk, dll.).
 \n
-\nRom hacker sering mempublikasikan checksum dari file ROM yang menyertainya (pada halaman web atau dalam file README). Bandingkan dengan yang Anda miliki. Jika checksum cocok Anda memiliki ROM patch untuk ditulis. Jika tidak, Anda memerlukan ROM yang berbeda.
+\nROM hacker sering mempublikasikan checksum dari file ROM yang menyertainya (pada halaman web atau dalam file README). Bandingkan dengan yang Anda miliki. Jika checksum cocok Anda memiliki ROM patch untuk ditulis. Jika tidak, Anda memerlukan ROM yang berbeda.
 \n
 \nDalam kasus terburuk, jika Anda tidak dapat menemukan file ROM yang benar, Anda dapat mengatur opsi \"Abaikan checksum\" di pengaturan. Tetapi ingatlah bahwa dalam hal ini permainan mungkin mengandung bug atau sama sekali tidak dapat dimainkan.</string>
     <string name="help_archive_should_be_unpacked_body">File yang Anda pilih adalah arsip. Arsip berisi direktori dan file dalam format terkompresi.
 \n
 \nSaat ini UniPatcher tidak dapat mengekstrak arsip, jadi Anda perlu membongkar arsip Anda dalam program yang berbeda. Saya merekomendasikan aplikasi ZArchiver gratis https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">Aplikasi menunjukkan pesan setelah pemilihan file: \"Arsip harus dibongkar dalam program eksternal\".</string>
-    <string name="help_how_to_apply_patch_to_rom_body">Anda harus memilih file ROM, patch dan memilih file mana yang akan disimpan, lalu klik tombol bulat merah. File dipilih melalui aplikasi File standar (atau melalui salah satu manajer file yang telah Anda instal). Aplikasi akan menampilkan pesan saat file ditambal. Jangan menutup aplikasi sampai file ditambal.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">Anda harus memilih file ROM, patch dan memilih file mana yang akan disimpan, lalu klik tombol bulat merah. File dipilih melalui aplikasi File standar (atau melalui salah satu manajer file yang telah Anda instal). Aplikasi akan menampilkan pesan saat file dipatch. Jangan menutup aplikasi sampai file dipatch.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Bagaimana cara menerapkan patch ke ROM\?</string>
     <string name="help_why_not_distribute_modified_games_body">Hacks dan terjemahan umumnya didistribusikan sebagai patch untuk mengurangi ukuran download dan menghindari masalah hak cipta.</string>
     <string name="help_why_not_distribute_modified_games_title">Mengapa peretas ROM tidak mendistribusikan game yang dimodifikasi\?</string>
@@ -142,11 +142,11 @@
 \n
 \nPatch didistribusikan, dan pengguna akhir menerapkan patch ke salinan ROM asli, yang menghasilkan versi yang dapat dimainkan dari hack.</string>
     <string name="help_what_is_a_patch_title">Apa itu patch\?</string>
-    <string name="help_what_is_rom_hacking_body">Peretasan ROM adalah memodifikasi data dalam gambar ROM. Ini mungkin berbentuk mengubah grafik, mengubah level permainan, faktor kesulitan tweaking, atau bahkan terjemahan ke dalam bahasa yang awalnya tidak disediakan oleh permainan.</string>
+    <string name="help_what_is_rom_hacking_body">ROM hacking adalah memodifikasi data dalam gambar ROM. Ini mungkin berbentuk mengubah grafik, mengubah level permainan, faktor kesulitan tweaking, atau bahkan terjemahan ke dalam bahasa yang awalnya tidak disediakan oleh permainan.</string>
     <string name="help_what_is_rom_hacking_title">Apa itu ROM hacking\?</string>
-    <string name="help_what_is_rom_image_body">Gambar ROM adalah file komputer yang berisi salinan kartrid video game. Melalui proses emulasi, Anda menyalin file itu, menjalankannya dalam perangkat lunak yang disebut \"emulator\", untuk menikmati permainan di komputer atau ponsel Anda.</string>
-    <string name="help_can_i_hack_android_game_body">Tidak. UniPatcher tidak dirancang untuk meretas game Android.</string>
-    <string name="help_can_i_hack_android_game_title">Bisakah saya meretas atau memecahkan game Android menggunakan aplikasi ini\?</string>
+    <string name="help_what_is_rom_image_body">ROM image adalah file komputer yang berisi salinan kartrid video game. Melalui proses emulasi, Anda menyalin file itu, menjalankannya dalam perangkat lunak yang disebut \"emulator\", untuk menikmati permainan di komputer atau ponsel Anda.</string>
+    <string name="help_can_i_hack_android_game_body">Tidak. UniPatcher tidak dirancang untuk hack game Android.</string>
+    <string name="help_can_i_hack_android_game_title">Bisakah saya meng-hack atau meng-crack game Android menggunakan aplikasi ini\?</string>
     <string name="help_what_patch_formats_are_supported_body">Aplikasi ini mendukung patch IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP dan XDelta3.</string>
     <string name="help_what_patch_formats_are_supported_title">Format patch apa yang didukung\?</string>
     <string name="help_what_is_unipatcher_body">UniPatcher adalah alat Android untuk menerapkan patch untuk gambar ROM dari berbagai konsol video game.</string>
@@ -154,44 +154,44 @@
     <string name="help_title">Pertanyaan yang Sering Diajukan:</string>
     <string name="notification_channel_name">Notifikasi</string>
     <string name="nav_drawer_close">Tutup laci navigasi</string>
-    <string name="nav_drawer_open">Laci navigasi terbuka</string>
-    <string name="error_crash_message">Maaf, aplikasi itu crash. Silakan kirim laporan ke pengembang.</string>
-    <string name="error_crash_title">Kecelakaan</string>
-    <string name="help_activity_action_changelog">Daftar perubahan</string>
+    <string name="nav_drawer_open">Buka laci navigasi</string>
+    <string name="error_crash_message">Maaf, aplikasi crash. Silakan kirim laporan ke pengembang.</string>
+    <string name="error_crash_title">Crash</string>
+    <string name="help_activity_action_changelog">Changelog</string>
     <string name="help_activity_action_visit_site">Kunjungi situs web</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
     <string name="help_activity_about_tab_license">Lisensi: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">Versi %1$s</string>
     <string name="help_activity_about_tab_title">Tentang</string>
-    <string name="help_activity_faq_tab_title">FAQ</string>
-    <string name="settings_ignore_checksum_description">Jangan menyela patching jika Anda menggunakan ROM yang salah. Gunakan hati-hati: Opsi ini dapat merusak permainan Anda.</string>
+    <string name="help_activity_faq_tab_title">Faq</string>
+    <string name="settings_ignore_checksum_description">Jangan hentikan patching jika anda menggunakan ROM yang salah. Hati-hati: Opsi ini dapat merusak game anda.</string>
     <string name="settings_ignore_checksum">Abaikan checksum</string>
     <string name="settings_theme_name_follow_system">Menggunakan default sistem</string>
     <string name="settings_theme_name_auto_battery">Ditetapkan oleh Penghemat Baterai</string>
     <string name="notify_snes_delete_smc_header_complete">Header SMC dihapus</string>
     <string name="notify_smd_fix_checksum_complete">Checksum diperbaiki</string>
     <string name="notify_error_not_smd_rom">Bukan sebuah ROM Sega Mega Drive</string>
-    <string name="notify_error_unknown">Kesalahan tak dikenal</string>
-    <string name="notify_error_failed_load_lib_xdelta3">Gagal memuat pustaka libxdelta3.so</string>
-    <string name="notify_error_wrong_checksum_after_patching">File memiliki checksum yang salah setelah ditambal</string>
+    <string name="notify_error_unknown">Kesalahan yang tidak diketahui</string>
+    <string name="notify_error_failed_load_lib_xdelta3">Gagal memuat library libxdelta3.so</string>
+    <string name="notify_error_wrong_checksum_after_patching">File memiliki checksum yang salah setelah di-patch</string>
     <string name="notify_error_rom_not_compatible_with_patch">ROM ini tidak kompatibel dengan patch</string>
     <string name="notify_error_patch_corrupted">File patch rusak</string>
     <string name="notify_error_unexpected_end_of_file">Akhir berkas yang tak terduga</string>
     <string name="notify_error_unknown_patch_format">Format patch tidak dikenal</string>
-    <string name="notify_error_unable_open_patch_file">Tak bisa membuka berkas patch</string>
-    <string name="notify_error_unable_open_modified_file">Tak bisa membuka berkas yang dimodifikasi</string>
-    <string name="notify_error_unable_open_source_file">Tak bisa membuka sumber berkas</string>
-    <string name="notify_error_unable_open_file">Tak bisa membuka berkas</string>
+    <string name="notify_error_unable_open_patch_file">Tidak bisa membuka file patch</string>
+    <string name="notify_error_unable_open_modified_file">Tidak bisa membuka file yang dimodifikasi</string>
+    <string name="notify_error_unable_open_source_file">Tidak dapat membuka file sumber</string>
+    <string name="notify_error_unable_open_file">Tidak dapat membuka file</string>
     <string name="notify_error_xdelta3_internal_error">Kesalahan internal XDelta3</string>
     <string name="notify_error_xdelta1_unsupported">Saya tidak dapat bekerja dengan patch XDelta1</string>
-    <string name="smd_fix_checksum_help">Fitur ini hanya untuk SEGA Mega Drive (Sega Genesis) ROM.
+    <string name="smd_fix_checksum_help">Fitur ini hanya untuk ROM SEGA Mega Drive (Sega Genesis).
 \n
 \nIni memperbaiki \"layar merah kematian\".
 \n
 \nPeringatan: Fungsi ini tidak membuat cadangan.</string>
     <string name="snes_rom_has_no_smc_header">ROM ini tidak memiliki header SMC. Anda tidak perlu menghapus apa pun.</string>
     <string name="snes_smc_header_will_be_removed">ROM ini memiliki header SMC. Ini akan dihapus.</string>
-    <string name="snes_smc_header_help">Fitur ini hanya untuk Super Nintendo ROM.
+    <string name="snes_smc_header_help">Fitur ini hanya untuk ROM Super Nintendo.
 \n
 \nBeberapa patch mengharuskan ROM untuk tidak memiliki header SMC. Fungsi ini akan membantu Anda menghapusnya.</string>
 </resources>

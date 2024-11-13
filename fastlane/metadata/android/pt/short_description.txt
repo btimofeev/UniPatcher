@@ -1,1 +1,1 @@
-Um remendador ROM de jogo de Console para Android
+Um remendador de ROMs de console de jogos para Android
