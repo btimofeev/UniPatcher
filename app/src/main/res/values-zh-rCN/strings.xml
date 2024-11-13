@@ -135,7 +135,7 @@
     <string name="error_crash_send_button">发送</string>
     <string name="error_crash_message">抱歉，应用程序意外退出。请将异常报告发送给开发人员。</string>
     <string name="error_crash_title">程序崩溃</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="settings_show_button_how_to_use_app_description">在主屏幕上显示“如何使用应用程序”</string>
     <string name="settings_show_button_how_to_use_app">显示帮助按钮</string>
     <string name="settings_theme_name_follow_system">使用系统默认值</string>
