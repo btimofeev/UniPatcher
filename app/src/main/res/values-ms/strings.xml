@@ -71,7 +71,7 @@
     <string name="error_crash_send_button">Hantar</string>
     <string name="error_crash_discard_button">Buang</string>
     <string name="error_file_picker_app_is_no_installed">Ralat: tiada aplikasi fail dimuat turun</string>
-    <string name="error_crash_title"></string>
+    <string name="error_crash_title"/>
     <string name="nav_apply_patch">Mohon tampalan</string>
     <string name="nav_create_patch">Cipta tampalan</string>
     <string name="main_activity_rom_file">Fail ROM</string>
