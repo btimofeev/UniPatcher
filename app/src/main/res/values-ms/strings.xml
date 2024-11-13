@@ -65,13 +65,13 @@
     <string name="help_activity_about_tab_title">Tentang</string>
     <string name="help_activity_about_tab_version">Versi %1$s</string>
     <string name="help_activity_about_tab_license">Lesen: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013-2022</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013-2024</string>
     <string name="help_activity_action_visit_site">Lawat laman sesawang</string>
     <string name="help_activity_action_changelog">Log perubahan</string>
     <string name="error_crash_send_button">Hantar</string>
     <string name="error_crash_discard_button">Buang</string>
     <string name="error_file_picker_app_is_no_installed">Ralat: tiada aplikasi fail dimuat turun</string>
-    <string name="error_crash_title"></string>
+    <string name="error_crash_title"/>
     <string name="nav_apply_patch">Mohon tampalan</string>
     <string name="nav_create_patch">Cipta tampalan</string>
     <string name="main_activity_rom_file">Fail ROM</string>

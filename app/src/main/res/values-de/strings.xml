@@ -42,7 +42,7 @@
 \n - <b>Ukrainisch</b>: Володимир Шевчук
 \n
 \nHelfen Sie mit, die App in Ihre Sprache zu übersetzen: https://hosted.weblate.org/engage/unipatcher/</string>
-    <string name="help_feedback_body"></string>
+    <string name="help_feedback_body"/>
     <string name="help_feedback_title">Ich habe eine Frage, einen Wunsch für ein Feature oder einen Fehlerbericht.</string>
     <string name="help_how_to_translate_body">Wenn du die App in eine andere Sprache übersetzen oder eine bestehende Übersetzung verbessern willst, kannst du dies auf der Weblate-Seite https://hosted.weblate.org/engage/unipatcher/ tun</string>
     <string name="help_how_to_translate_title">Wie kann ich die App übersetzen\?</string>
@@ -109,7 +109,7 @@
     <string name="error_crash_title">Absturz</string>
     <string name="help_activity_action_changelog">Änderungshistorie</string>
     <string name="help_activity_action_visit_site">Webseite besuchen</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="help_activity_about_tab_license">Lizenz: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">Version %1$s</string>
     <string name="help_activity_about_tab_title">Über</string>
