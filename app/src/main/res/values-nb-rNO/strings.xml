@@ -102,7 +102,7 @@
     <string name="error_crash_discard_button">Forkast</string>
     <string name="error_crash_send_button">Send</string>
     <string name="error_crash_title">Krasj</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="settings_theme_name_follow_system">Bruk systemforvalg</string>
     <string name="notify_error_unable_open_modified_file">Kunne ikke åpne endret fil</string>
     <string name="main_activity_toast_output_not_selected">Ingen utdatafil valgt</string>

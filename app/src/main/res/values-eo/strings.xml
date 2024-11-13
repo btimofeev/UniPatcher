@@ -21,7 +21,7 @@
     <string name="error_crash_send_button">Sendi</string>
     <string name="error_crash_title">Kolapso</string>
     <string name="help_activity_action_changelog">Ŝanĝoprotokolo</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="help_activity_about_tab_license">Permesilo: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">Versio %1$s</string>
     <string name="help_activity_about_tab_title">Pri</string>

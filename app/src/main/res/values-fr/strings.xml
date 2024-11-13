@@ -146,7 +146,7 @@
     <string name="error_crash_send_button">Envoyer</string>
     <string name="error_crash_message">Désolé, l\'application a planté. Veuillez envoyer un rapport aux développeurs.</string>
     <string name="error_crash_title">Plantage</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="settings_show_button_how_to_use_app_description">Afficher le bouton « Comment utiliser l\'application » sur l\'écran principal</string>
     <string name="settings_show_button_how_to_use_app">Afficher le bouton d\'aide</string>
     <string name="settings_theme_name_follow_system">Utiliser le thème du système</string>

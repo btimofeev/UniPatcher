@@ -88,7 +88,7 @@
     <string name="help_activity_about_tab_title">О программе</string>
     <string name="help_activity_about_tab_version">Версия %1$s</string>
     <string name="help_activity_about_tab_license">Лицензия: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">© Борис Тимофеев, 2013–2022</string>
+    <string name="help_activity_about_tab_copyright">© Борис Тимофеев, 2013–2024</string>
     <string name="help_activity_action_visit_site">Посетить веб-сайт</string>
     <string name="help_activity_action_changelog">История изменений</string>
     <string name="error_crash_title">Приложение остановлено</string>
@@ -179,25 +179,5 @@
 \n - <b>Material design icons</b> by community, licensed under SIL Open Font License 1.1. https://materialdesignicons.com
 \n - <b>Timber</b> by Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber
 \n - <b>XDelta version 3</b> by Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta</string>
-    <string name="about_translators"><b>Переводчики:</b>
-\n
-\n - <b>Китайский</b>: Nabarl Wang, Eric
-\n - <b>Французский</b>: Thibaut Panis, J. Lavoie
-\n - <b>Немецкий</b>: Honigdieb
-\n - <b>Иврит</b>: Tamer Dabsan
-\n - <b>Индонезийский</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
-\n - <b>Итальянский</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n - <b>Японский</b>: Naofumi Fukue
-\n - <b>Литовский</b>: Gediminas Murauskas
-\n - <b>Корейский</b>: Minseo Lee
-\n - <b>Норвежский букмол</b>: Allan Nordhøy
-\n - <b>Польский</b>: Michal Bychowski, Jarek Karpiel, hayneken993
-\n - <b>Португальский</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n - <b>Португальский (Бразилия)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
-\n - <b>Русский</b>: Борис Тимофеев
-\n - <b>Испанский</b>: Carlos Sánchez, Swyter
-\n - <b>Турецкий</b>: Oğuz Ersen
-\n - <b>Украинский</b>: Володимир Шевчук
-\n
-\nПомогите перевести приложение на Ваш язык: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="about_translators"><b>Переводчики:</b> \n \n - <b>Arabic</b>: Fayçal Boukamel \n - <b>Chinese</b>: Nabarl Wang, Eric, jane \n - <b>Esperanto</b>: Jakub Fabijan \n - <b>French</b>: Thibaut Panis, J. Lavoie, Un Anonyme \n - <b>German</b>: Honigdieb \n - <b>Hebrew</b>: Tamer Dabsan, Yaron Shahrabani \n - <b>Indonesian</b>: Tsaqib Fadhlurrahman Soka, Lim Jia Ming, Reza Almanda \n - <b>Italian</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli, TM, Da C \n - <b>Japanese</b>: Naofumi Fukue \n - <b>Lithuanian</b>: Gediminas Murauskas \n - <b>Malay</b>: Muhammad Ammar Bin Rozi \n - <b>Korean</b>: Minseo Lee, 이정희 \n - <b>Kurdish (Central)</b>: دیاری ئەرسەلان جەبار \n - <b>Norwegian Bokmål</b>: Allan Nordhøy \n - <b>Polish</b>: Michal Bychowski, Jarek Karpiel, hayneken993, Henio Szewczyk, Dawid Jaszczyk \n - <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos, Kauã Azevedo da Silva Vicente \n - <b>Portuguese (Brazil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes, Kauã Azevedo da Silva Vicente, Vinícius, Dinowattz \n - <b>Russian</b>: Борис Тимофеев, AHOHNMYC \n - <b>Spanish</b>: Carlos Sánchez, Swyter \n - <b>Turkish</b>: Oğuz Ersen \n - <b>Ukrainian</b>: Володимир Шевчук, Kefir2105, Artem \n - <b>Vietnamese</b>: Haibara Ai \n \nПомогите перевести приложение на Ваш язык: https://hosted.weblate.org/engage/unipatcher/</string>
 </resources>

@@ -141,7 +141,7 @@
     <string name="error_crash_send_button">Wyślij</string>
     <string name="error_crash_message">Przykro nam, aplikacja przestała działać. Proszę wyślij raport do deweloperów.</string>
     <string name="error_crash_title">Wypadek</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="settings_ignore_checksum_description">Nie przerywaj aktualizacji jeżeli użyto złego ROM-a. Uwaga: Ta opcja może uszkodzić twoją grę.</string>
     <string name="settings_ignore_checksum">Ignoruj checksums</string>
     <string name="settings_patching_header">Aktualizowanie</string>

@@ -159,7 +159,7 @@
     <string name="error_crash_title">Crash</string>
     <string name="help_activity_action_changelog">Changelog</string>
     <string name="help_activity_action_visit_site">Kunjungi situs web</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="help_activity_about_tab_license">Lisensi: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">Versi %1$s</string>
     <string name="help_activity_about_tab_title">Tentang</string>
