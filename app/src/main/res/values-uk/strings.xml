@@ -177,7 +177,7 @@
 \n - <b>Іконки Material design</b> від спільноти, ліцензовано за ліцензією SIL Open Font License 1.1. https://materialdesignicons.com
 \n - <b>Timber</b> від Jake Wharton, ліцензовано за ліцензією Apache 2.0. https://github.com/JakeWharton/timber
 \n - <b>XDelta версії 3</b> від Joshua MacDonald, ліцензована згідно з ліцензією Apache 2.0. https://github.com/jmacd/xdelta</string>
-    <string name="help_activity_about_tab_copyright">© Борис Тимофєєв, 2013-2022</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="notify_error_unable_open_source_file">Неможливо відкрити вихідний файл</string>
     <string name="snes_smc_header_help">Ця функція доступна лише для Super Nintendo ROM.
 \n
