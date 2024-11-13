@@ -140,7 +140,7 @@
 \n - <b>Ícones em Material Design</b> pela comunidade, licenciado sob a licença SIL Open Font License 1.1. https://materialdesignicons.com
 \n - <b>Timber</b> por Jake Wharton, licenciado sob a licença Apache 2.0. https://github.com/JakeWharton/timber
 \n - <b>XDelta version 3</b> por Joshua MacDonald, licenciado sob a licença Apache 2.0. https://github.com/jmacd/xdelta</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="help_activity_faq_tab_title">Perguntas frequentes</string>
     <string name="help_find_rom_pokemon_emerald_body">A maioria dos patches para esse jogo funciona com a ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
     <string name="help_find_rom_pokemon_emerald_title">Não consigo achar a ROM correta para o jogo “Pokémon Emerald”.</string>
