@@ -36,7 +36,7 @@
     <string name="main_activity_toast_output_not_selected">هیچ فایلێک دیارینەکراوە</string>
     <string name="notify_smd_fix_checksum_complete">‏پشکنین جێگیرکرا</string>
     <string name="main_activity_button_how_to_use_app">چۆن بەرنامەکە بەکاربهێنم</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="notify_error_not_ppf_patch">پاچێکی PPF دروست نیە</string>
     <string name="notify_error_unable_open_source_file">ناتوانێت سەرچاوەی فایل بکاتەوە</string>
     <string name="settings_theme_name_dark">تاریک</string>
