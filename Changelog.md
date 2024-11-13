@@ -1,6 +1,11 @@
-#### in development (August ??, 2021)
+#### in development (November ??, 2024)
+- Added Arabic language (thanks to Fayçal Boukamel)
+- Added Esperanto language (thanks to Jakub Fabijan)
+- Added Indonesian language (thanks to Tsaqib Fadhlurrahman Soka, Lim Jia Ming, Reza Almanda)
+- Added Kurdish (Central) language (thanks to دیاری ئەرسەلان جەبار)
 - Added Lithuanian language (thanks to Gediminas Murauskas)
-- Added Indonesian language (thanks to Tsaqib Fadhlurrahman Soka, Reza Almanda аnd other)
+- Added Malay language (thanks to Muhammad Ammar Bin Rozi)
+- Added Vietnamese language (thanks to Haibara Ai)
 - Many other translations updated (thanks to everyone involved)
 
 #### 0.17.2 (January 22, 2021)

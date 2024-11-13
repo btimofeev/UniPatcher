@@ -82,7 +82,7 @@
     <string name="help_activity_about_tab_title">About</string>
     <string name="help_activity_about_tab_version">Version %1$s</string>
     <string name="help_activity_about_tab_license">License: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="help_activity_action_visit_site">Visit website</string>
     <string name="help_activity_action_changelog">Changelog</string>
     <string name="error_crash_title">Crash</string>
@@ -145,6 +145,31 @@
     <string name="help_how_to_translate_body">If you would like to translate the app into another language or improve an existing translation, you can do it on Weblate site https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_feedback_title">I have a question, a feature request or a bug report.</string>
     <string name="help_feedback_body">We discuss new functionality and answer questions on the GitHub Discussions https://github.com/btimofeev/UniPatcher/discussions \n\n You can report a bug on the GitHub Issue Tracker https://github.com/btimofeev/UniPatcher/issues \n\n You can also contact the author of the application via email unipatcher@gmail.com. Please write in English. If you have problems with patching, attach the patch to the letter and write the name of your ROM, it will save our time.</string>
-    <string name="about_translators"><b>Translators:</b>\n\n - <b>Chinese</b>: Nabarl Wang, Eric\n - <b>French</b>: Thibaut Panis, J. Lavoie\n - <b>German</b>: Honigdieb\n - <b>Hebrew</b>: Tamer Dabsan\n - <b>Indonesian</b>: Tsaqib Fadhlurrahman Soka,  Reza Almanda\n - <b>Italian</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli\n - <b>Japanese</b>: Naofumi Fukue\n - <b>Lithuanian</b>: Gediminas Murauskas\n - <b>Korean</b>: Minseo Lee\n - <b>Norwegian Bokmål</b>: Allan Nordhøy\n - <b>Polish</b>: Michal Bychowski, Jarek Karpiel, hayneken993\n - <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos\n - <b>Portuguese (Brazil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes\n - <b>Russian</b>: Борис Тимофеев\n - <b>Spanish</b>: Carlos Sánchez, Swyter\n - <b>Turkish</b>: Oğuz Ersen\n - <b>Ukrainian</b>: Володимир Шевчук\n\nHelp translate the app into your language: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="about_translators"><b>Translators:</b>
+\n
+\n - <b>Arabic</b>: Fayçal Boukamel
+\n - <b>Chinese</b>: Nabarl Wang, Eric, jane
+\n - <b>Esperanto</b>: Jakub Fabijan
+\n - <b>French</b>: Thibaut Panis, J. Lavoie, Un Anonyme
+\n - <b>German</b>: Honigdieb
+\n - <b>Hebrew</b>: Tamer Dabsan, Yaron Shahrabani
+\n - <b>Indonesian</b>: Tsaqib Fadhlurrahman Soka, Lim Jia Ming, Reza Almanda
+\n - <b>Italian</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli, TM, Da C
+\n - <b>Japanese</b>: Naofumi Fukue
+\n - <b>Lithuanian</b>: Gediminas Murauskas
+\n - <b>Malay</b>: Muhammad Ammar Bin Rozi
+\n - <b>Korean</b>: Minseo Lee, 이정희
+\n - <b>Kurdish (Central)</b>: دیاری ئەرسەلان جەبار
+\n - <b>Norwegian Bokmål</b>: Allan Nordhøy
+\n - <b>Polish</b>: Michal Bychowski, Jarek Karpiel, hayneken993, Henio Szewczyk, Dawid Jaszczyk
+\n - <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos, Kauã Azevedo da Silva Vicente
+\n - <b>Portuguese (Brazil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes, Kauã Azevedo da Silva Vicente, Vinícius, Dinowattz
+\n - <b>Russian</b>: Борис Тимофеев, AHOHNMYC
+\n - <b>Spanish</b>: Carlos Sánchez, Swyter
+\n - <b>Turkish</b>: Oğuz Ersen
+\n - <b>Ukrainian</b>: Володимир Шевчук, Kefir2105, Artem
+\n - <b>Vietnamese</b>: Haibara Ai
+\n
+\nHelp translate the app into your language: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="about_used_libraries"><b>Used libraries:</b>\n\n - <b>ACRA</b> by ACRA team, licensed under the Apache 2.0 license. https://github.com/ACRA/acra \n - <b>Android Donations</b> by SufficientlySecure and penn5, licensed under the Apache 2.0 license. https://github.com/penn5/donations \n - <b>Apache Commons IO</b> by The Apache Software Foundation, licensed under the Apache 2.0 license. https://commons.apache.org/proper/commons-io/ \n - <b>Dagger</b> by The Dagger Authors, licensed under the Apache 2.0 license. https://github.com/google/dagger \n - <b>Material design icons</b> by Google, licensed under the Apache 2.0 license. https://github.com/google/material-design-icons \n - <b>Material design icons</b> by community, licensed under SIL Open Font License 1.1. https://materialdesignicons.com \n - <b>Timber</b> by Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber \n - <b>XDelta version 3</b> by Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta</string>
 </resources>
