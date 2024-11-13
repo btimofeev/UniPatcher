@@ -1,2 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">UniPatcher</string>
+    <string name="main_activity_rom_file">ملف مدمج</string>
+    <string name="main_activity_patch_file">ملف الرقعة</string>
+    <string name="main_activity_rom_with_smc_file">ملف ROM برأس SMC</string>
+    <string name="main_activity_tap_to_select_where_to_save_patch">أنقر لتحدد أين لحفظ الرقعة</string>
+    <string name="main_activity_rom_without_smc_file">إخراج ملف الـROM بدون رأس</string>
+    <string name="main_activity_tap_to_select">أنقر للتحديد</string>
+    <string name="create_patch_fragment_modified_file">ملف معدل</string>
+    <string name="create_patch_fragment_patch_file">ملف الرقعة</string>
+    <string name="create_patch_fragment_toast_modified_not_selected">لم يتم تحديد الملف المعدل</string>
+    <string name="snes_smc_header_help">هذه الميزة متوفرة فقط على الـROMs الخاصة بـSuper Nintendo
+\n
+\nبعض الرقع تحتاج إلى الـROM لتكون بدون رأس. هذه الإمكاتية ستساعدك في حذفه.</string>
+    <string name="create_patch_fragment_toast_patch_not_selected">لم يتم تحديد ملف الرقعة</string>
+    <string name="snes_smc_header_will_be_removed">هذا الـROM يملك رأس SMC. سيحذف.</string>
+    <string name="snes_rom_has_no_smc_header">هذا الـROM لا يملك رأس SMC. لن تحتاج إلى حذف أي شيء.</string>
+    <string name="snes_smc_error_unable_to_get_file_size">خطأ: غير قادر على تحديد حجم الملف</string>
+    <string name="notify_error_not_ups_patch">ليست رقعة UPS صالحة</string>
+    <string name="notify_error_not_ips_patch">ليست رقعة IPS صالحة</string>
+    <string name="notify_patching_complete">تم الترقيع</string>
+    <string name="notify_create_patch_complete">تمت صناعة رقعة</string>
+    <string name="notify_error">خطأ</string>
+    <string name="notify_error_could_not_copy_file">لا يمكن نسخ الملف</string>
+    <string name="notify_error_not_ppf_patch">ليست رقعة PPF صالحة</string>
+    <string name="notify_error_not_aps_patch">ليست رقعة APS صالحة</string>
+    <string name="notify_error_not_ebp_patch">ليست رقعة EBP صالحة</string>
+    <string name="notify_error_unexpected_end_of_file">نهاية ملف غير متوقعة</string>
+    <string name="notify_error_patch_corrupted">ملف الرقعة تالف</string>
+    <string name="notify_error_failed_load_lib_xdelta3">فشل في تحميل المكتبة libxdelta3.so</string>
+    <string name="notify_error_unknown">خطأ مجهول</string>
+    <string name="settings_theme_name_auto_battery">إختر حسب حافظ البطارية</string>
+    <string name="settings_patching_header">الترقيع</string>
+    <string name="error_crash_title">توقف عن العمل</string>
+    <string name="error_crash_send_button">أرسل</string>
+    <string name="share_dialog_title">أنشر Unipatcher</string>
+    <string name="nav_apply_patch">تطبيق الترقيع</string>
+    <string name="help_what_is_a_patch_title">ما هو الترقيع؟</string>
+    <string name="help_why_not_distribute_modified_games_body">يتم توزيع الاختراقات والترجمات بشكل عام كترقيعات لتقليل حجم التنزيل وتجنب مشكلات حقوق النشر.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">يجب عليك تحديد ملف الـROM، ملف الترقيع واختيار الملف الذي تريد حفظه ، ثم إضغط على الزر الأحمر الدائري. يتم تحديد الملفات من خلال تطبيق الملفات الرئيسي (أو من خلال أحد مديري الملفات الذين قمت بتحميلهم). سيعرض التطبيق رسالة عند الانتهاء من ترقيع الملف. لا تغلق التطبيق حتى يتم ترقيع الملف.</string>
+    <string name="help_i_cant_patch_smw_rom_title">لا أستطيع ترقيع \"Super Mario World (U) [!].smc\"</string>
+    <string name="help_find_rom_pokemon_emerald_title">لا أستطيع أن أجد الـROM الصحيح للعبة \"Pokémon Emerald \".</string>
+    <string name="help_ecm_image_body">ECM هو تنسيق ضغط بيانات مصمم خصيصا لصور القرص. يمكنك فك ضغط الملف باستخدام تطبيق ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="help_snes_smc_title">لماذا من الضروري في بعض الأحيان إزالة رؤوس SMC من ألعاب Super Nintendo؟</string>
+    <string name="help_feedback_title">لدي سؤال، طلب ميزة أو تقرير خطأ.</string>
+    <string name="help_feedback_body">نناقش الوظائف الجديدة ونجيب على الأسئلة حول مناقشات GitHub https://github.com/btimofeev/UniPatcher/discussions
+\n
+\nيمكنك الإبلاغ عن خطأ في أداة تعقب مشكلات Github https://github.com/btimofeev/UniPatcher/issues
+\n
+\nيمكنك أيضا الاتصال بمؤلف التطبيق عبر البريد الإلكتروني unipatcher@gmail.com. يرجى الكتابة باللغة الإنجليزية. إذا كانت لديك مشاكل في التصحيح، فقم بإرفاق الترقيع بالحرف واكتب اسم المستخدم وإسم الـROM الخاص بك، سيوفر وقتنا.</string>
+    <string name="notify_error_rom_not_compatible_with_patch">هذا الـROM غير متوافق مع الرقعة</string>
+    <string name="notify_error_wrong_checksum_after_patching">يحتوي هذا الملف على مجموع إختباري الخاطئ بعد أن تم ترقيعه</string>
+    <string name="notify_error_not_smd_rom">هذا ليس الـROM الخاص بـSega Mega Drive</string>
+    <string name="notify_smd_fix_checksum_complete">المجموع الإختباري قد أُصلح</string>
+    <string name="notify_snes_delete_smc_header_complete">تم حذف رأس SMC</string>
+    <string name="settings_activity_title">الإعدادات</string>
+    <string name="settings_interface_header">واجهة المستخدم</string>
+    <string name="settings_theme">المظهر</string>
+    <string name="nav_smd_fix_checksum">إصلاح المجموع الإختباري (SMD)</string>
+    <string name="nav_snes_add_del_smc_header">حذف رأس SMC (SNES)</string>
+    <string name="nav_settings">الإعدادات</string>
+    <string name="nav_rate">قيم هذا التطبيق</string>
+    <string name="nav_donate">تبرع</string>
+    <string name="nav_share">أنشر</string>
+    <string name="nav_help">أحتاج المساعدة</string>
+    <string name="help_what_is_rom_image_body">صورة الـROM هي ملف كمبيوتر يحتوي على نسخة من خرطوشة ألعاب الفيديو. من خلال عملية المحاكاة، تقوم بنسخ هذا الملف وتشغيله في برنامج يسمى \"المحاكي\"، للاستمتاع باللعبة على جهاز الكمبيوتر أو الهاتف.</string>
+    <string name="help_what_is_rom_hacking_title">ما هو تهكير الـROM؟</string>
+    <string name="help_what_is_rom_hacking_body">يقوم تهكير الـROM بتعديل البيانات في صورة الـROM. قد يأخذ هذا شكل تغيير الرسومات أو تغيير مستويات اللعبة أو تعديل عامل الصعوبة أو حتى الترجمة إلى لغة لم تكن اللعبة متاحة لها في الأصل.</string>
+    <string name="help_what_is_a_patch_body">الترقيع هو ملف يحتوي على الاختلافات بين الإصدار الأصلي من الـROM والإصدار المخترق.
+\n
+\nيتم توزيع الترقيع، ويقوم المستخدمون النهائيون بتطبيق الترقيع على نسخة من الـROM الأصلي، والذي ينتج نسخة قابلة للتشغيل من الاختراق.</string>
+    <string name="help_how_to_apply_patch_to_rom_title">كيف يتم تطبيق الترقيع على الـROM؟</string>
+    <string name="help_rom_not_compatible_with_patch_body">سيعرض التطبيق هذا الخطأ إذا كان المجموع الاختباري المخزن في الترقيع لا يتطابق مع المجموع الاختباري لذاكرة القراءة فقط. هذا يعني أن ملف الـROM غير متوافق مع التصحيح. تحتاج إلى اختيار ملف ROM مختلف. عادة ما يكون هناك العديد من ROM لكل لعبة (مثل الإصدار الخاص بأوروبا والولايات المتحدة الأمريكية واليابان والمقالب الجيدة أو السيئة ، وما إلى ذلك).
+\n
+\nغالبا ما ينشر مهكروا الـROM المجموع الاختباري لملف ROM المصاحب (على صفحة ويب أو في ملف README). قارن ذلك بالـROM الذي لديك. إذا تطابق المجموع الاختباري لديك مع الـROM أنت لديك الـROM الصحيح. إذا لا، تحتاج إلى ROM مختلف.
+\n
+\nوأسوأ حالة، عندما لا تستطيع إيجاد الـROM الصحيح، يمكنك أن تضغط على \"تجاهل المجموع الإختباري\" في الإعدادت. لكن يمكن هذا أن يتسبب في جعل اللعبة مليئة بالأخطاء أو جعلها غير قابلة للّعب.</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2022</string>
+    <string name="main_activity_output_file">ملف الإخراج</string>
+    <string name="main_activity_toast_rom_not_selected">لا يوجد ملف ROM محدد</string>
+    <string name="main_activity_tap_to_select_where_to_save_rom">أنقر لتحديد مكان لحفظ ملف الـROM</string>
+    <string name="main_activity_toast_patch_not_selected">لا يوجد ملف رقعة محدّد</string>
+    <string name="main_activity_toast_archives_not_supported">يجب فك الأرشيف في برنامج خارجي</string>
+    <string name="main_activity_toast_output_not_selected">لا يوجد ملف إخراج محدد</string>
+    <string name="main_activity_donate_snackbar_text">إدعم تطوير UniPatcher من خلال التبرع</string>
+    <string name="main_activity_donate_snackbar_button">تبرع</string>
+    <string name="main_activity_button_how_to_use_app">كيف تستعمل التطبيق</string>
+    <string name="main_activity_double_back_to_exit_message">إضغط \"عودة\" من جديد للخروج. هذا يمكن أن يعطل كل العمليات قيد العمل</string>
+    <string name="create_patch_fragment_source_file">الملف المصدر</string>
+    <string name="create_patch_fragment_toast_source_not_selected">لم يتم تحديد الملف المصدر</string>
+    <string name="smd_fix_checksum_help">هذه الميزة متوفرة فقط على الـROMs الخاصة بـSega Mega Drive (Sega Genesis).
+\n
+\nإنه يصلح \"شاشة الموت الحمراء\".
+\n
+\nتحذير: هذه الميزة لا تصنع نسخة إحتياطية.</string>
+    <string name="notify_error_not_bps_patch">ليست رقعة BPS صالحة</string>
+    <string name="notify_error_not_dps_patch">ليست رقعة DPS صالحة</string>
+    <string name="notify_error_xdelta1_unsupported">لا يمكنني أن أعمل مع رقعات XDelta1</string>
+    <string name="notify_error_not_xdelta3_patch">ليست رقعة XDelta3 صالحة</string>
+    <string name="notify_error_xdelta3_internal_error">خطأ XDelta3 داخلي</string>
+    <string name="notify_error_unable_open_file">لا يمكن فتح الملف</string>
+    <string name="notify_error_unable_open_source_file">لا يمكن فتح الملف المصدر</string>
+    <string name="notify_error_unable_open_modified_file">لا يمكن فتح الملف المعدل</string>
+    <string name="notify_error_unable_open_patch_file">لا يمكن فتح ملف الرقعة</string>
+    <string name="notify_error_unknown_patch_format">ملف رقعة مجهول</string>
+    <string name="notify_error_not_enough_space">لا توجد مساحة متبقية على القرص</string>
+    <string name="settings_theme_dialog_title">إختر المظهر</string>
+    <string name="settings_theme_name_light">فاتح</string>
+    <string name="settings_theme_name_dark">غامق</string>
+    <string name="settings_theme_name_follow_system">استخدم الأساسي</string>
+    <string name="settings_show_button_how_to_use_app">أظهر خانة المساعدة</string>
+    <string name="settings_ignore_checksum">تخطى المجموع الإختباري</string>
+    <string name="settings_show_button_how_to_use_app_description">أظهر زر \"كيف تستعمل التطبيق\" على الشاشة الأساسية</string>
+    <string name="settings_ignore_checksum_description">لا تتلف الترقيع إذا كنت تستعمل الـROM الخاطئ. تحذير: هذا الإختيار قد يتسبب في كسر لعبتك.</string>
+    <string name="help_activity_title">أحتاج المساعدة</string>
+    <string name="help_activity_faq_tab_title">أسئلة متكررة</string>
+    <string name="help_activity_about_tab_version">النسخة %1$s</string>
+    <string name="help_activity_action_visit_site">زر موقنا</string>
+    <string name="help_activity_action_changelog">غَيِّر السجل</string>
+    <string name="error_crash_message">آسفون، التطبيق توقف عن العمل. رجاءً أرسل تقريراً للمطورين.</string>
+    <string name="error_crash_discard_button">تجاهل</string>
+    <string name="share_text">حمل أفضل مرقع ROMs للأندرويد. إنه يدعم ملفات الترقيع IPS ،IPS32 ،UPS ،BPS ،APS (GBA) ،APS (N64) ،PPF ،DPS ،EBP وXDelta3
+\n
+\n</string>
+    <string name="nav_create_patch">صنع رقعة</string>
+    <string name="nav_drawer_open">إفتح درج التنقل</string>
+    <string name="help_title">أسئلة متكررة:</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher هو أداة أندرويد لتطبيق الترقيعات على ملفات صور الـROM لعدة أجهزة ألعاب إلكترونية متنوعة</string>
+    <string name="help_activity_about_tab_title">عن التطبيق</string>
+    <string name="help_activity_about_tab_license">الترخيص: GNU GPLv3</string>
+    <string name="error_file_picker_app_is_no_installed">خطأ: لا يوجد تطبيق ملفات محمّل</string>
+    <string name="nav_drawer_close">إغلق درج التنقل</string>
+    <string name="help_what_is_unipatcher_title">ما هو UniPatcher؟</string>
+    <string name="donate_activity_title">تبرع</string>
+    <string name="notification_channel_name">الإشعارات</string>
+    <string name="help_what_patch_formats_are_supported_title">ما هي ملفات الترقيع المدعومة؟</string>
+    <string name="help_what_patch_formats_are_supported_body">إن هذا التطبيق يدعم ملفات الترقيع IPS ،IPS32 ،UPS ،BPS ،APS (GBA) ،APS (N64) ،PPF ،DPS ،EBP وXDelta3.</string>
+    <string name="help_can_i_hack_android_game_title">هل أستطيع أن أهكر أو أخترق لعبة أندرويد باستعمال هذا التطبيق؟</string>
+    <string name="help_can_i_hack_android_game_body">لا. لم تم إنشاء UniPatcher لتهكير ألعاب الأندرويد.</string>
+    <string name="help_what_is_rom_image_title">ما هو ملف صورة الـROM؟</string>
+    <string name="help_why_not_distribute_modified_games_title">لماذا لا يقوم مهكروا الـROM بتوزيع الألعاب المعدلة؟</string>
+    <string name="help_archive_should_be_unpacked_title">التطبيق يعرض إشعاراً بعد التحديد: \"الملف المضغوط يجب أن يفك في برنامج خارجي\".</string>
+    <string name="help_archive_should_be_unpacked_body">الملف الذي حددته هو أرشيف. يحتوي الأرشيف على الدلائل والملفات بتنسيق مضغوط.
+\n
+\nحاليا لا يمكن لـUniPatcher فك الملفات المضغوطة، لذلك تحتاج إلى فك الأرشيف الخاص بك في برنامج مختلف. أوصي بتطبيق ZArchiver المجاني:
+\nhttps://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="help_rom_not_compatible_with_patch_title">يعرض التطبيق الخطأ: \"هذا الـROM غير متوافق مع الترقيع\".</string>
+    <string name="help_i_cant_patch_smw_rom_body">يحتوي هذا الـROM على رأس SMC ، بينما تتطلب معظم ترقيعاات هذه اللعبة عدم احتواء الـROM على هذا الرأس. يمكنك إزالة رأس SMC عن طريق تحديد العنصر المناسب في القائمة الموجودة على اليسار ثم تطبيق الترقيعات على الـROM الناتج.</string>
+    <string name="help_find_rom_pokemon_emerald_body">معظم ترقيعات اللعبة تعمل مع الـPokemon - Emerald Version (U) [f1] (Save Type).gba\" ROM\"</string>
+    <string name="help_additional_features_title">هل لدى UniPatcher بعض الميزات الإضافية؟</string>
+    <string name="help_additional_features_body">نعم. يمكن لـUniPatcher:
+\n
+\n- إنشاء ترقيعات XDelta3.
+\n- إصلاح المجموع الاختباري لألعاب Sega Mega Drive / Sega Genesis.
+\n- إزالة رأس SMC في ألعاب Super Nintendo.</string>
+    <string name="help_ips_no_checksum_body">لا تحتوي ترقيعات IPS على مجموع اختباري. لذلك، سيتم تطبيق التصحيح على أي ملف ROM (حتى الخاطئ). في هذه الحالة، تحتاج إلى البحث عن ملف ROM آخر.</string>
+    <string name="help_sega_fix_checksum_title">لماذا يجب علي إصلاح المجموع الاختباري لألعاب Sega Mega Drive؟</string>
+    <string name="help_ips_no_checksum_title">أنا قمت بتطبيق تصحيح IPS وبعد ذلك اللعبة لم تعمل / تحتوي على خلل في الرسوميات. ما الذي أفعله خاطأً؟</string>
+    <string name="help_ecm_image_title">ماذا يمكنني أن أفعله بنوع ملف ECM.؟</string>
+    <string name="help_how_to_translate_title">كيف تترجم التطبيق؟</string>
+    <string name="help_snes_smc_body">رأس SMC هو 512 بايت وجدت في بداية بعض صور ROM SNES. هذه البيانات ليس لها غرض ، لكنها تغير موقع البيانات المتبقية. تستخدم إزالة الرأس أحيانا لغرض تطبيق الترقيع بشكل صحيح.</string>
+    <string name="help_how_to_translate_body">إذا كنت ترغب في ترجمة التطبيق إلى لغة أخرى أو تحسين ترجمة موجودة ، فيمكنك القيام بذلك على موقع Weblate
+\n/https://hosted.weblate.org/engage/unipatcher</string>
+    <string name="help_sega_fix_checksum_body">تحتوي ألعاب Sega Mega Drive (Genesis) على مجموع اختباري مكتوب في ذاكرة القراءة فقط. إذا قمت بتغيير أي جزء من اللعبة فقط، فلن يتطابقوا ، ويفشلون في العمل نتيجة لذلك. ما يفعله هذا هو حساب المجموع الاختباري الصحيح للتغيير وكتابته في ملف ROM المعدل.
+\n
+\n<b>تحذير:</b>هذه الميزة لا تنشئ نسخة إحتياطية من الـROM.</string>
+    <string name="about_translators"><b>المترجمون:</b>
+\n
+\n- <b>الصينية</b>: نابارل وانغ ، إريك
+\n - <b>الفرنسية</b>: تيبو بانيس، ج. لافوا
+\n - <b>الألمانية</b>: هونيغديب
+\n - <b>بالعبرية</b>: تامر دبسان
+\n - <b>الإندونيسية</b>: ثاقب فضل الرحمن سوكا، رضا ألماندا
+\n - <b>الإيطالية</b>: ماتيو سيشي ، جيه لافوا ، داني 79 ، أليساندرو مانديلي
+\n - <b>اليابانية</b>: ناوفومي فوكو
+\n - <b>الليتوانية</b>: جيديميناس موراوسكاس
+\n - <b>الكورية</b>: مينسيو لي
+\n - <b>بوكمول النرويجي</b>: ألان نوردهوي
+\n - <b>البولندية</b>: ميشال بيتشوسكي، جاريك كاربيل، هاينكين
+\n - <b>البرتغالية</b>: دافي لوبيز، ماثيوس سيلفا سيلز، جوناتان كاردوسو، مارفن سيلك، سانتوس
+\n - <b>البرتغالية (البرازيل):</b> يوشي ليفللاند، ألبيران لوسيو، مارفن سيلك، أليسيون كيروش سانتوس، دانيال دي سوزا ميلو، جوي مينديز
+\n - <b>الروسية</b>: Борис Тимофеев
+\n - <b>الإسبانية</b>: كارلوس سانشيز، سويتر
+\n - <b>التركية</b>: أوغوز إرسن
+\n - <b>الأوكرانية</b>: Володимир Шевчук
+\n
+\nساعد في ترجمة التطبيق إلى لغتك: /https://hosted.weblate.org/engage/unipatcher</string>
+    <string name="about_used_libraries">&lt;b&gt;المكتبات المستعملة: &lt;/ب&gt;
+\n
+\n - &lt;B&gt;ACRA&lt;/b&gt; من قبل فريق ACRA، مرخص بموجب رخصة Apache 2.0. (أ) انظر: https://github.com/ACRA/acra - &lt;b&gt;تبرّعات أندريونية &lt;/b&gt; بواسطة Secrective Sector and pern5، مرخصة بموجب رخصة الأباتشي 2.0. https://s://github.com/penn/dodations - &lt;B&gt;Apapachanes IO&lt;/b&gt; من قبل مؤسسة البرمجيات الأباتشي، المرخصة بموجب ترخيص Apache 2.0. (أ) لا ينطبق على النص العربي.
+\n - &lt;b&gt;الخنجر &lt;/b&gt; بواسطة مؤلفات الخنجر، المرخصة بموجب ترخيص الأباتشي 2.0. https://github.com/google/dager - &lt;B&gt;أيقونات تصميم المواد &lt;/b&gt; بواسطة جوجل، مرخصة بموجب رخصة Apache 2.0. https://gigethub.com/google/arture-design-icons - &lt;B&gt;أيقونات تصميم المواد &lt;/b&gt; بواسطة المجتمع المحلي، مرخصة بموجب رخصة SIL Open Font 1.1. (أ) البلاغات الوطنية المقدمة من الدول الأطراف بموجب المادة 5 من البروتوكول الاختياري الملحق رقم 5 ( &lt;B&gt;)Timber&lt;/b&gt; بواسطة جيك Warton، مرخص بموجب ترخيص الأباتشي 2.0. (ب) https://gigethub.com/JakeWharton/timber - &lt;B&gt;XDمن قبل جوشوا ماكدونالد، مرخص له بموجب رخصة الأباتشي 2.0. https://github.com/jemacd/xdelta</string>
+</resources>
