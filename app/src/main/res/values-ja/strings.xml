@@ -175,7 +175,7 @@
     <string name="error_crash_send_button">送信</string>
     <string name="error_crash_message">申し訳ありません。アプリケーションがクラッシュしました。開発者に報告を送ってください。</string>
     <string name="error_crash_title">クラッシュ</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2020</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="settings_show_button_how_to_use_app_description">メイン画面に \"アプリの使い方\" ボタンを表示します</string>
     <string name="settings_show_button_how_to_use_app">ヘルプボタンを表示</string>
     <string name="notify_error_unable_open_patch_file">パッチファイルを開くことができません</string>
