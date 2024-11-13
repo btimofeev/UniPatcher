@@ -65,7 +65,7 @@
     <string name="help_activity_about_tab_title">Tentang</string>
     <string name="help_activity_about_tab_version">Versi %1$s</string>
     <string name="help_activity_about_tab_license">Lesen: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013-2022</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013-2024</string>
     <string name="help_activity_action_visit_site">Lawat laman sesawang</string>
     <string name="help_activity_action_changelog">Log perubahan</string>
     <string name="error_crash_send_button">Hantar</string>
