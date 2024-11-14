@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, 2020, 2022 Boris Timofeev
+ Copyright (c) 2017, 2020, 2022, 2024 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -19,42 +19,38 @@
  */
 package org.emunix.unipatcher.ui.activity
 
+import android.content.ActivityNotFoundException
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.commit
+import androidx.core.view.isVisible
 import org.emunix.unipatcher.BuildConfig
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.ActivityDonateBinding
-import org.sufficientlysecure.donations.DonationsFragment
 
 class DonateActivity : AppCompatActivity() {
 
+    private var binding: ActivityDonateBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityDonateBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
+        val layout = ActivityDonateBinding.inflate(layoutInflater)
+        binding = layout
+        setContentView(layout.root)
+        setSupportActionBar(layout.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setTitle(R.string.donate_activity_title)
+        layout.sendBitcoinButton.setOnClickListener { donateBitcoin() }
+    }
 
-        val fragment = DonationsFragment.Companion.newInstance(
-            debug = BuildConfig.DEBUG,
-            googleEnabled = false,
-            googlePubkey = null,
-            googleCatalog = null,
-            googleCatalogValues = null,
-            googleCutPercent = 15,
-            paypalEnabled = false,
-            paypalUser = null,
-            paypalCurrencyCode = null,
-            paypalItemName = null,
-            bitcoinEnabled = true,
-            bitcoinAddress = BuildConfig.BITCOIN_ADDRESS
-        )
-        supportFragmentManager.commit {
-            replace(R.id.donate_fragment, fragment)
-        }
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -65,5 +61,31 @@ class DonateActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun donateBitcoin() {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(BITCOIN_SCHEME + BuildConfig.BITCOIN_ADDRESS)
+        try {
+            startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            copyBitcoinAddressToClipboard()
+            binding?.apply {
+                bitcoinWalletMessage.isVisible = true
+                bitcoinWalletNumber.isVisible = true
+                bitcoinWalletNumber.text = BuildConfig.BITCOIN_ADDRESS
+            }
+        }
+    }
+
+    private fun copyBitcoinAddressToClipboard() {
+        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as? ClipboardManager ?: return
+        val clip = ClipData.newPlainText(BuildConfig.BITCOIN_ADDRESS, BuildConfig.BITCOIN_ADDRESS)
+        clipboard.setPrimaryClip(clip)
+    }
+
+    private companion object {
+
+        private const val BITCOIN_SCHEME = "bitcoin:"
     }
 }

@@ -24,3 +24,5 @@ const val MIME_TYPE_ALL_FILES = "*/*"
 const val MIME_TYPE_OCTET_STREAM = "application/octet-stream"
 
 const val PREFERENCES_THEME_KEY = "theme"
+
+const val FLAVOR_FREE = "free"

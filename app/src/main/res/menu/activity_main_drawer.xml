@@ -35,6 +35,7 @@
             android:title="@string/nav_rate"/>
         <item
             android:id="@+id/nav_donate"
+            android:visible="false"
             android:icon="@drawable/ic_gift"
             android:title="@string/nav_donate"/>
         <item
