@@ -141,16 +141,7 @@
     <string name="help_title">자주 묻는 질문:</string>
     <string name="main_activity_rom_with_smc_file">SMC 헤더가 있는 롬 파일</string>
     <string name="help_i_cant_patch_smw_rom_title">\"슈퍼 마리오 월드 (U) [!].smc\"를 패치할 수 없습니다</string>
-    <string name="about_used_libraries"><b>사용된 라이브러리:</b>
-\n
-\n - ACRA 팀의 <b>ACRA</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://github.com/ACRA/acra
-\n - SufficientlySecure 및 penn5의 <b>Android 기부</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://github.com/penn5/donations
-\n - Apache 소프트웨어 재단의 <b>Apache Commons IO</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://commons.apache.org/proper/commons-io/
-\n - The Dagger Authors의 <b>Dagger</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://github.com/google/dagger
-\n - Google의 <b>머티리얼 디자인 아이콘</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://github.com/google/material-design-icons
-\n - 커뮤니티의 <b>머티리얼 디자인 아이콘</b>, SIL Open Font License 1.1에 따라 라이선스가 부여되었습니다. https://materialdesignicons.com
-\n - Jake Wharton의 <b>Timber</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://github.com/JakeWharton/timber
-\n - Joshua MacDonald의 <b>XDelta 버전 3</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://github.com/jmacd/xdelta</string>
+    <string name="about_used_libraries"><b>사용된 라이브러리:</b> \n \n - ACRA 팀의 <b>ACRA</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://github.com/ACRA/acra \n - SufficientlySecure 및 penn5의 <b>Android 기부</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://github.com/penn5/donations \n - Apache 소프트웨어 재단의 <b>Apache Commons IO</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://commons.apache.org/proper/commons-io/ \n - The Dagger Authors의 <b>Dagger</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://github.com/google/dagger \n - Google의 <b>머티리얼 디자인 아이콘</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://github.com/google/material-design-icons \n - 커뮤니티의 <b>머티리얼 디자인 아이콘</b>, SIL Open Font License 1.1에 따라 라이선스가 부여되었습니다. https://materialdesignicons.com \n - Jake Wharton의 <b>Timber</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://github.com/JakeWharton/timber \n - Joshua MacDonald의 <b>XDelta 버전 3</b>, Apache 2.0 라이선스에 따라 라이선스가 부여되었습니다. https://github.com/jmacd/xdelta</string>
     <string name="create_patch_fragment_toast_patch_not_selected">패치 파일이 선택되지 않았습니다</string>
     <string name="settings_show_button_how_to_use_app">도움말 버튼 표시</string>
     <string name="settings_show_button_how_to_use_app_description">메인 화면에 \"앱 사용 방법\" 버튼 표시</string>
