@@ -192,4 +192,9 @@
     <string name="main_activity_tap_to_select_where_to_save_patch">toca para elegir dónde guardar el parche resultante</string>
     <string name="main_activity_rom_without_smc_file">Archivo ROM resultante, sin encabezado</string>
     <string name="main_activity_rom_with_smc_file">Archivo ROM con encabezado SMC</string>
+    <string name="donate_screen_message_1">Si te gusta UniPatcher, puedes expresar tu agradecimiento aquí.</string>
+    <string name="donate_screen_message_3">¡Gracias!</string>
+    <string name="donate_screen_send_bitcoin_button">Enviar Bitcoins</string>
+    <string name="donate_screen_bitcoin_copied_to_clipboard">La dirección del monedero bitcoin se ha copiado en el portapapeles.</string>
+    <string name="donate_screen_message_2">Utilizamos tus donaciones para mejorar la aplicación.</string>
 </resources>
