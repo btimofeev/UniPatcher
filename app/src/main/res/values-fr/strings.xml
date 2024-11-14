@@ -160,16 +160,7 @@
     <string name="snes_smc_header_help">Cette fonctionnalité est réservée aux ROM Super Nintendo.
 \n
 \nCertains correctifs exigent que la ROM n\'ait pas d\'en-tête SMC. Cette fonction vous aidera à le supprimer.</string>
-    <string name="about_used_libraries"><b> Bibliothèques utilisées : </b>
-\n
-\n - <b> ACRA </b> par l\'équipe ACRA, sous licence Apache 2.0. https ://github.com/ACRA/acra
-\n - <b> Donations Android </b> par SufficientlySecure et penn5, sous licence Apache 2.0. https ://github.com/penn5/donations
-\n - <b> Apache Commons IO </b> par The Apache Software Foundation, sous licence Apache 2.0. https ://commons.apache.org/proper/commons-io/
-\n - <b> Dagger </b> par The Dagger Authors, sous licence Apache 2.0. https ://github.com/google/dagger
-\n - <b> Icônes de conception matérielle </b> de Google, sous licence Apache 2.0. https ://github.com/google/material-design-icons
-\n - <b> Icônes de conception matérielle </b> par communauté, sous licence SIL Open Font License 1.1. https ://materialdesignicons.com
-\n - <b> Timber </b> par Jake Wharton, sous licence Apache 2.0. https ://github.com/JakeWharton/timber
-\n - <b> XDelta version 3 </b> par Joshua MacDonald, sous licence Apache 2.0. https ://github.com/jmacd/xdelta</string>
+    <string name="about_used_libraries"><b> Bibliothèques utilisées : </b> \n \n - <b> ACRA </b> par l\'équipe ACRA, sous licence Apache 2.0. https ://github.com/ACRA/acra \n - <b> Donations Android </b> par SufficientlySecure et penn5, sous licence Apache 2.0. https ://github.com/penn5/donations \n - <b> Apache Commons IO </b> par The Apache Software Foundation, sous licence Apache 2.0. https ://commons.apache.org/proper/commons-io/ \n - <b> Dagger </b> par The Dagger Authors, sous licence Apache 2.0. https ://github.com/google/dagger \n - <b> Icônes de conception matérielle </b> de Google, sous licence Apache 2.0. https ://github.com/google/material-design-icons \n - <b> Icônes de conception matérielle </b> par communauté, sous licence SIL Open Font License 1.1. https ://materialdesignicons.com \n - <b> Timber </b> par Jake Wharton, sous licence Apache 2.0. https ://github.com/JakeWharton/timber \n - <b> XDelta version 3 </b> par Joshua MacDonald, sous licence Apache 2.0. https ://github.com/jmacd/xdelta</string>
     <string name="about_translators"><b> Traducteurs : </b>
 \n
 \n - <b> Chinois </b> : Nabarl Wang, Eric

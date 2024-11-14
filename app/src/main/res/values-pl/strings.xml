@@ -152,16 +152,7 @@
     <string name="snes_smc_header_help">Ta funkcja jest tylko dla ROM\'ów z Super Nintendo 
 \n
 \nNiektóre aktualizacje wymagają żeby ROM nie posiadał SMC header. Ta funkcja pomoże go usunąć.</string>
-    <string name="about_used_libraries"><b>Używate biblioteki:</b>
-\n
-\n- <b>ACRA</b> przez zespół ACRA, na licencji Apache 2.0. https://github.com/ACRA/acra
-\n- <b>Dotacje na Androida</b> firmy SufficientlySecure i penn5, na licencji Apache 2.0. https://github.com/penn5/darowizny
-\n- <b>Apache Commons IO</b> autorstwa The Apache Software Foundation, na licencji Apache 2.0. https://commons.apache.org/proper/commons-io/
-\n- <b>Dagger</b> autorstwa The Dagger Authors, na licencji Apache 2.0. https://github.com/google/sztylet
-\n- <b>Ikony projektowania materiałów</b> firmy Google na licencji Apache 2.0. https://github.com/google/material-design-icons
-\n- <b>Ikony projektowania materiałów</b> przez społeczność, na licencji SIL Open Font License 1.1. https://materialdesignicons.com
-\n- <b>Timber</b> Jake\'a Whartona, na licencji Apache 2.0. https://github.com/JakeWharton/timber
-\n- <b>XDelta w wersji 3</b> autorstwa Joshua MacDonald, na licencji Apache 2.0. https://github.com/jmacd/xdelta</string>
+    <string name="about_used_libraries"><b>Używate biblioteki:</b> \n \n- <b>ACRA</b> przez zespół ACRA, na licencji Apache 2.0. https://github.com/ACRA/acra \n- <b>Dotacje na Androida</b> firmy SufficientlySecure i penn5, na licencji Apache 2.0. https://github.com/penn5/darowizny \n- <b>Apache Commons IO</b> autorstwa The Apache Software Foundation, na licencji Apache 2.0. https://commons.apache.org/proper/commons-io/ \n- <b>Dagger</b> autorstwa The Dagger Authors, na licencji Apache 2.0. https://github.com/google/sztylet \n- <b>Ikony projektowania materiałów</b> firmy Google na licencji Apache 2.0. https://github.com/google/material-design-icons \n- <b>Ikony projektowania materiałów</b> przez społeczność, na licencji SIL Open Font License 1.1. https://materialdesignicons.com \n- <b>Timber</b> Jake\'a Whartona, na licencji Apache 2.0. https://github.com/JakeWharton/timber \n- <b>XDelta w wersji 3</b> autorstwa Joshua MacDonald, na licencji Apache 2.0. https://github.com/jmacd/xdelta</string>
     <string name="about_translators"><b>Tłumacze:</b>
 \n
 \n- <b>chiński</b>: Nabarl Wang, Er
