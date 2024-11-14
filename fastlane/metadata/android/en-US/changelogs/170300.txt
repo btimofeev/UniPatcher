@@ -1,0 +1,8 @@
+- Arabic translation (thanks to Fayçal Boukamel)
+- Esperanto translation (thanks to Jakub Fabijan)
+- Indonesian translation (thanks to Tsaqib Fadhlurrahman Soka, Lim Jia Ming, Reza Almanda)
+- Kurdish (Central) translation (thanks to دیاری ئەرسەلان جەبار)
+- Lithuanian translation (thanks to Gediminas Murauskas)
+- Malay translation (thanks to Muhammad Ammar Bin Rozi)
+- Vietnamese translation (thanks to Haibara Ai)
+- Many other translations updated (thanks to everyone involved)
