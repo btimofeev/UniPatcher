@@ -133,16 +133,7 @@
     <string name="help_what_is_unipatcher_body">UniPatcher é uma ferramenta Android para aplicar patches em imagens ROM de vários consoles de vídeo-game.</string>
     <string name="help_what_is_unipatcher_title">O que é o UniPatcher\?</string>
     <string name="help_title">Perguntas mais frequentes:</string>
-    <string name="about_used_libraries"><b>Used libraries:</b>
-\n
-\n - <b>ACRA</b> pelo time ACRA, licençiado sob a licença Apache 2.0. https://github.com/ACRA/acra
-\n - <b>Doações Android</b> por SufficientlySecure and penn5, licençiado sob a licença Apache 2.0. https://github.com/penn5/donations
-\n - <b>Apache Commons IO</b> pela fundação de software Apache, licençiado sob a licença Apache 2.0. https://commons.apache.org/proper/commons-io/
-\n - <b>Punhal</b> pelo grupo de Autores, licençiados sob a licença Apache 2.0. https://github.com/google/dagger
-\n - <b>Ícones do Material Design</b> por Google, licençiados sob a licença Apache 2.0. https://github.com/google/material-design-icons
-\n - <b>Ícones do Material Design</b> pela comunidade, licençiado sobe a licença SIL Open Font 1.1. https://materialdesignicons.com
-\n - <b>Timber</b> por Jake Wharton, licençiado sob a licença Apache 2.0. https://github.com/JakeWharton/timber
-\n - <b>XDelta versão 3</b> por Joshua MacDonald, licençiado sob a licença Apache 2.0. https://github.com/jmacd/xdelta</string>
+    <string name="about_used_libraries"><b>Used libraries:</b> \n \n - <b>ACRA</b> pelo time ACRA, licençiado sob a licença Apache 2.0. https://github.com/ACRA/acra \n - <b>Doações Android</b> por SufficientlySecure and penn5, licençiado sob a licença Apache 2.0. https://github.com/penn5/donations \n - <b>Apache Commons IO</b> pela fundação de software Apache, licençiado sob a licença Apache 2.0. https://commons.apache.org/proper/commons-io/ \n - <b>Punhal</b> pelo grupo de Autores, licençiados sob a licença Apache 2.0. https://github.com/google/dagger \n - <b>Ícones do Material Design</b> por Google, licençiados sob a licença Apache 2.0. https://github.com/google/material-design-icons \n - <b>Ícones do Material Design</b> pela comunidade, licençiado sobe a licença SIL Open Font 1.1. https://materialdesignicons.com \n - <b>Timber</b> por Jake Wharton, licençiado sob a licença Apache 2.0. https://github.com/JakeWharton/timber \n - <b>XDelta versão 3</b> por Joshua MacDonald, licençiado sob a licença Apache 2.0. https://github.com/jmacd/xdelta</string>
     <string name="about_translators"><b>Tradutores:</b>
 \n
 \n - <b>Chinês</b>: Nabarl Wang, Eric

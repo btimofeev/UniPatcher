@@ -11,16 +11,7 @@
 \nIm schlechtesten Fall, falls du die passende ROM-Datei nicht finden kannst, kannst du die Option „Prüfsumme ignorieren“ setzen. Beachte, dass das Spiel in diesem Fall dann Fehler beinhalten kann oder sogar komplett unspielbar sein könnte.</string>
     <string name="help_find_rom_pokemon_emerald_body">Die meisten Patches für dieses Spiel funktionieren mit dem ROM „Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
     <string name="help_i_cant_patch_smw_rom_body">Das ROM enthält einen SMC-Header, wobei die meisten Patches für dieses Spiel voraussetzen, dass es keinen SMC-Header hat. Du kannst den Header über den entsprechenden Menüeintrag entfernen und dann den Patch auf das so erzeugte ROM anwenden.</string>
-    <string name="about_used_libraries"><b>Benutzte Bibliotheken:</b>
-\n
-\n - <b>ACRA</b> vom ACRA-Team, licensed under the Apache 2.0 license. https://github.com/ACRA/acra
-\n - <b>Android Donations</b> von SufficientlySecure und penn5, licensed under the Apache 2.0 license. https://github.com/penn5/donations
-\n - <b>Apache Commons IO</b> von The Apache Software Foundation, licensed under the Apache 2.0 license. https://commons.apache.org/proper/commons-io/
-\n - <b>Dagger</b> von The Dagger Authors, licensed under the Apache 2.0 license. https://github.com/google/dagger
-\n - <b>Icons im Material-Design</b> von Google, licensed under the Apache 2.0 license. https://github.com/google/material-design-icons
-\n - <b>Icons im Material-Design</b> der Community, licensed under SIL Open Font License 1.1. https://materialdesignicons.com
-\n - <b>Timber</b> von Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber
-\n - <b>XDelta version 3</b> von Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta</string>
+    <string name="about_used_libraries"><b>Benutzte Bibliotheken:</b> \n \n - <b>ACRA</b> vom ACRA-Team, licensed under the Apache 2.0 license. https://github.com/ACRA/acra \n - <b>Android Donations</b> von SufficientlySecure und penn5, licensed under the Apache 2.0 license. https://github.com/penn5/donations \n - <b>Apache Commons IO</b> von The Apache Software Foundation, licensed under the Apache 2.0 license. https://commons.apache.org/proper/commons-io/ \n - <b>Dagger</b> von The Dagger Authors, licensed under the Apache 2.0 license. https://github.com/google/dagger \n - <b>Icons im Material-Design</b> von Google, licensed under the Apache 2.0 license. https://github.com/google/material-design-icons \n - <b>Icons im Material-Design</b> der Community, licensed under SIL Open Font License 1.1. https://materialdesignicons.com \n - <b>Timber</b> von Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber \n - <b>XDelta version 3</b> von Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta</string>
     <string name="about_translators"><b>Übersetzer:</b>
 \n
 \n - <b>Chinesisch</b>: Nabarl Wang, Eric
