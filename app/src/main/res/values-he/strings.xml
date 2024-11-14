@@ -124,28 +124,8 @@
     <string name="notify_error_not_bps_patch">טלאי BPS שגוי</string>
     <string name="notify_error_not_ups_patch">טלאי UPS שגוי</string>
     <string name="notify_error_not_ips_patch">טלאי IPS שגוי</string>
-    <string name="about_used_libraries"><b>ספריות משומשות: </b> \n \n - <b>ACRA</b> על ידי צוות ACRA, מורשה ברישיון Apache 2.0. https://github.com/ACRA/acra \n - <b> Apache Commons IO </b> על ידי The Apache Software Foundation, מורשה תחת רישיון Apache 2.0. https://commons.apache.org/proper/commons-io/ \n - <b>Dagger</b> מאת The Dagger Authors, מורשה ברישיון Apache 2.0. https://github.com/google/dagger \n - <b>סמלי עיצוב חומרים</b> על ידי גוגל, מורשים ברישיון Apache 2.0. https://github.com/google/material-design-icons \n - <b>סמלי עיצוב חומרים</b> לפי הקהילה, מורשים תחת רישיון SIL Open Font 1.1. https://materialdesignicons.com \n - <b>עץ</b> מאת ג\'ייק וורטון, מורשה ברישיון Apache 2.0 https://github.com/JakeWharton/timber \n - <b> גרסת XDelta 3 </b> מאת ג\'ושוע מקדונלד, מורשה ברישיון Apache 2.0. https://github.com/jmacd/xdelta</string>
-    <string name="about_translators"><b>מתרגמים:</b>
-\n
-\n - <b>סינית</b>: נברל וואנג
-\n - <b>צרפתית</b>: תיבאו פאניס
-\n - <b>גרמנית</b>: הוניגדיב
-\n - <b>עברית</b>: תאמר דבסאן
-\n - <b>אינדונזית</b>: טסאקיב פדלורחמן סוקה, רזה אלמנדה
-\n - <b>איטלקית</b>: מתאו סיכי, ג׳. לאבוי, דני79, אלסנדרו מנדלי
-\n - <b>יפנית</b>: נאופומי פוקו
-\n - <b>ליטאית</b>: גדימינס מוראוסקס
-\n - <b>קוריאנית</b>: מינסאו לי
-\n - <b>נורבגית בוקמול</b>: אלן נורדהוי
-\n - <b>פולנית</b>: מיכל ביכובסקי, יארק קרפיאל, הייניקן993
-\n - <b>פורטוגלית</b>: דייוי לופס, מתאוס סילבה סאליס, ג׳ונתן קרדוסו, מרווין סילק, סנטוס
-\n - <b>פורטוגלית (ברזיל)</b>: יושי לבלנד, אלברן לוסיו, מרווין סילק, אליסיון קרוז סנטוס, דניאל דה סוזה מלו, ג׳ואי מנדז
-\n - <b>רוסית</b>: בוריס טימופייב
-\n - <b>ספרדית</b>: קרלוס סאנצ׳ז, סוויטר
-\n - <b>טורקית</b>: אוגוז ארסין
-\n - <b>אוקראינית</b>: וולודימיר שבצ׳וק
-\n
-\nכדי לעזור לתרגם את היישום לשפה שלך: https://hosted.weblate.org/engage/unipatcher/‎</string>
+    <string name="about_used_libraries"><b>ספריות בשימוש: </b> \n \n - <b>ACRA</b> מאת צוות ACRA, כפוף לרישיון Apache 2.0.‏ https://github.com/ACRA/acra \n - <b> Apache Commons IO </b> מאת קרן התוכנה אפאצ׳י, כפוף לרישיון Apache 2.0.‏ https://commons.apache.org/proper/commons-io/ \n - <b>Dagger</b> מאת יוצרי Dagger, כפוף לרישיון Apache 2.0.‏ https://github.com/google/dagger \n - <b>סמלי עיצוב Material</b> מאת גוגל, כפופים לרישיון Apache 2.0.‏ https://github.com/google/material-design-icons \n - <b>סמלי עיצוב Material</b> מאת הקהילה, כפופים לרישיון SIL Open Font 1.1.‏ https://materialdesignicons.com \n - <b>עץ</b> מאת ג׳ייק וורטון, כפוף לרישיון Apache 2.0.‏ https://github.com/JakeWharton/timber \n - <b> XDelta בגרסה 3 </b> מאת ג׳ושוע מקדונלד, כפוף לרישיון Apache 2.0.‏ https://github.com/jmacd/xdelta</string>
+    <string name="about_translators"><b>מתרגמים:</b> \n \n - <b>ערבית</b>: פייסל בוכאמל \n - <b>סינית</b>: נבארל ואנג \n - <b>אספרנטו</b>: יאקוב פביאן \n - <b>צרפתית</b>: טיבו פּאניס, י. לבואה, און אנונים \n - <b>גרמנית</b>: הוניגדיב \n - <b>עברית</b>: תאמר דבסאן, ירון שהרבני \n - <b>אינדונזית</b>: טסאקיב פדלורחמן סוקה, לים ג׳יה מינג, רזה אלמנדה \n - <b>איטלקית</b>: מתאו סיכי, י. לבואה, דני79, אלסנדרו מנדלי, ט.מ, דה סי \n - <b>יפנית</b>: נאופומי פוקואה \n - <b>ליטאית</b>: גדימינס מוראוסקס \n - <b>מלאית</b>: מוחמד עמר בין רוזי \n - <b>קוריאנית</b>: מינסאו לי, יונג׳הי \n - <b>כורדית תיכונה</b>: דיארי ארסלאן סבאר \n - <b>נורבגית ספרותית</b>: אלן נורדהוי \n - <b>פולנית</b>: מיכל ביקובסקי, יארק קרפיאל, הייניקן993, הניו צ׳ווציק, דוד יאז׳צ׳יק \n - <b>פורטוגלית</b>: דייוי לופס, מתאוס סילבה סאליס, ג׳ונתן קרדוסו, מרווין סילק, סנטוס, קאוה אסבדו דה סילבה וינסנטה \n - <b>פורטוגלית ברזילאית</b>: יושי לבלנד, אלברן לוסיו, מרווין סילק, אליסיון קרוז סנטוס, דניאל דה סוזה מלו, ג׳ואי מנדז, קאוה אסבדו דה סילבה וינסנטה, ויניסיוס, דינוואץ \n - <b>רוסית</b>: בוריס טימופייב, אנונימוס \n - <b>ספרדית</b>: קרלוס סאנצ׳ז, סוויטר \n - <b>טורקית</b>: אוע׳וז ארסן \n - <b>אוקראינית</b>: וולודימיר שבצ׳וק, קפיר2105, ארטיום\n - <b>וייטנאמית</b>: הייבארה איי \n \nכדי לעזור לתרגם את היישום לשפה שלך: https://hosted.weblate.org/engage/unipatcher/‎</string>
     <string name="notify_error_not_enough_space">אין מספיק מקום בדיסק</string>
     <string name="notify_error_could_not_copy_file">לא ניתן היה להעתיק את הקובץ</string>
     <string name="notify_error">שגיאה</string>
@@ -185,4 +165,9 @@
     <string name="main_activity_patch_file">קובץ טלאי</string>
     <string name="main_activity_rom_file">קובץ ROM</string>
     <string name="app_name">UniPatcher</string>
+    <string name="donate_screen_message_1">אם UniPatcher נושא חן בעיניך, אפשר להביע את הערכתך להלן.</string>
+    <string name="donate_screen_message_2">אנו משתמשים בתרומות שלך כדי לשפר את היישום.</string>
+    <string name="donate_screen_message_3">תודה רבה לך!</string>
+    <string name="donate_screen_bitcoin_copied_to_clipboard">כתובת ארנק הביטקוין הועתקה ללוח הגזירים.</string>
+    <string name="donate_screen_send_bitcoin_button">שליחת ביטקוין</string>
 </resources>
