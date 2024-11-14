@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013-2017, 2019-2021 Boris Timofeev
+Copyright (C) 2013-2017, 2019-2021, 2024 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -35,6 +35,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.emunix.unipatcher.BuildConfig
+import org.emunix.unipatcher.FLAVOR_FREE
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.databinding.ActivityMainBinding
@@ -59,8 +61,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var _binding: ActivityMainBinding
     private val binding get() = _binding
 
-    @Inject lateinit var social: Lazy<SocialHelper>
-    @Inject lateinit var settings : Settings
+    @Inject
+    lateinit var social: Lazy<SocialHelper>
+    @Inject
+    lateinit var settings: Settings
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,7 +73,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(binding.root)
         setSupportActionBar(binding.includes.toolbar)
         val toggle = ActionBarDrawerToggle(
-                this, binding.drawerLayout, binding.includes.toolbar, R.string.nav_drawer_open, R.string.nav_drawer_close)
+            /* activity = */ this,
+            /* drawerLayout = */ binding.drawerLayout,
+            /* toolbar = */ binding.includes.toolbar,
+            /* openDrawerContentDescRes = */ R.string.nav_drawer_open,
+            /* closeDrawerContentDescRes = */ R.string.nav_drawer_close
+        )
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         binding.fab.setOnClickListener {
@@ -87,7 +96,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             actionIsRunning = it
         })
 
-        showDonateSnackbar()
+        if (BuildConfig.FLAVOR == FLAVOR_FREE) {
+            showDonateMenuItem()
+            tryToShowDonateSnackbar()
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -125,6 +137,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         if (!actionIsRunning || doubleBackToExitPressedOnce) {
             super.onBackPressed()
@@ -132,7 +145,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         this.doubleBackToExitPressedOnce = true
-        Toast.makeText(this, getString(R.string.main_activity_double_back_to_exit_message), Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            /* context = */ this,
+            /* text = */ getString(R.string.main_activity_double_back_to_exit_message),
+            /* duration = */ Toast.LENGTH_SHORT
+        ).show()
 
         GlobalScope.launch {
             delay(2000L)
@@ -140,26 +157,46 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    private fun showDonateSnackbar() { // don't show snackbar if the user did not patch the file successfully
-        if (!settings.getPatchingSuccessful()) return
-        // don't show snackbar some time if the user swiped off it before
-        var count = settings.getDontShowDonateSnackbarCount()
-        if (count != 0) {
-            settings.setDontShowDonateSnackbarCount(--count)
-            return
+    private fun showDonateMenuItem() {
+        binding.navigationView.menu.findItem(R.id.nav_donate).isVisible = true
+    }
+
+    private fun tryToShowDonateSnackbar() {
+        if (settings.getPatchingSuccessful()
+            && isShowDonateSnackbarDelayOver()
+            && isShowDonateSnackbarRandom()
+        ) {
+            showDonateSnackbar()
         }
-        // don't show snackbar each time you open the application
-        if (Random().nextInt(6) != 0) return
-        Snackbar.make(binding.contentFrame, R.string.main_activity_donate_snackbar_text, Snackbar.LENGTH_INDEFINITE)
-                .setAction(R.string.main_activity_donate_snackbar_button) { showDonateActivity() }
-                .addCallback(object : Snackbar.Callback() {
-                    override fun onDismissed(snackbar: Snackbar, event: Int) {
-                        if (event == DISMISS_EVENT_SWIPE) {
-                            settings.setDontShowDonateSnackbarCount(30)
-                        }
+    }
+
+    private fun isShowDonateSnackbarDelayOver(): Boolean {
+        var count = settings.getDontShowDonateSnackbarCount()
+        if (count > 0) {
+            settings.setDontShowDonateSnackbarCount(--count)
+            return false
+        } else {
+            return true
+        }
+    }
+
+    private fun isShowDonateSnackbarRandom() = (Random().nextInt(6) == 0)
+
+    private fun showDonateSnackbar() {
+        Snackbar.make(
+            binding.contentFrame,
+            R.string.main_activity_donate_snackbar_text,
+            Snackbar.LENGTH_INDEFINITE
+        )
+            .setAction(R.string.main_activity_donate_snackbar_button) { showDonateActivity() }
+            .addCallback(object : Snackbar.Callback() {
+                override fun onDismissed(snackbar: Snackbar, event: Int) {
+                    if (event == DISMISS_EVENT_SWIPE) {
+                        settings.setDontShowDonateSnackbarCount(30)
                     }
                 }
-                ).show()
+            }
+            ).show()
     }
 
     private fun showDonateActivity() {

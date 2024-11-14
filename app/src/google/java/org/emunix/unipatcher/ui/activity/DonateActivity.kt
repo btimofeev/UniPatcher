@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, 2020, 2022 Boris Timofeev
+ Copyright (c) 2017, 2020, 2022, 2024 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -20,60 +20,12 @@
 package org.emunix.unipatcher.ui.activity
 
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.commit
-import org.emunix.unipatcher.BuildConfig
-import org.emunix.unipatcher.R
-import org.emunix.unipatcher.databinding.ActivityDonateBinding
-import org.sufficientlysecure.donations.DonationsFragment
 
 class DonateActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityDonateBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setTitle(R.string.donate_activity_title)
-
-        val fragment = DonationsFragment.Companion.newInstance(
-            debug = BuildConfig.DEBUG,
-            googleEnabled = true,
-            googlePubkey = BuildConfig.GOOGLE_PLAY_PUBKEY,
-            googleCatalog = GOOGLE_PLAY_CATALOG,
-            googleCatalogValues = GOOGLE_PLAY_COST,
-            googleCutPercent = 15,
-            paypalEnabled = false,
-            paypalUser = null,
-            paypalCurrencyCode = null,
-            paypalItemName = null,
-            bitcoinEnabled = false,
-            bitcoinAddress = null
-        )
-        supportFragmentManager.commit {
-            replace(R.id.donate_fragment, fragment)
-        }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                finish()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    companion object {
-        private val GOOGLE_PLAY_CATALOG = arrayOf(
-            "donate_1", "donate_3", "donate_5", "donate_10",
-            "donate_25", "donate_50", "donate_100"
-        )
-        private val GOOGLE_PLAY_COST = arrayOf(
-            "$1", "$3", "$5", "$10",
-            "$25", "$50", "$100"
-        )
+        finish()
     }
 }
