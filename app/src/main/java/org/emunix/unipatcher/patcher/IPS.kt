@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2013, 2016, 2017, 2020, 2021 Boris Timofeev
+Copyright (C) 2013, 2016, 2017, 2020, 2021, 2024 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -16,176 +16,191 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
+package org.emunix.unipatcher.patcher
 
-package org.emunix.unipatcher.patcher;
+import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
+import org.emunix.unipatcher.patcher.IPS.PatchType.IPS32_PATCH
+import org.emunix.unipatcher.patcher.IPS.PatchType.IPS_PATCH
+import org.emunix.unipatcher.patcher.IPS.PatchType.NOT_IPS_PATCH
+import org.emunix.unipatcher.utils.FileUtils
+import java.io.BufferedInputStream
+import java.io.BufferedOutputStream
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.InputStream
 
-import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.utils.FileUtils;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Arrays;
-import org.emunix.unipatcher.helpers.ResourceProvider;
+class IPS(
+    patch: File,
+    rom: File,
+    output: File,
+    resourceProvider: ResourceProvider,
+    fileUtils: FileUtils,
+) : Patcher(patch, rom, output, resourceProvider, fileUtils) {
 
-public class IPS extends Patcher {
+    private var mPatchType = NOT_IPS_PATCH
 
-    public static final int NOT_IPS_PATCH = 0;
-    public static final int IPS_PATCH = 1;
-    public static final int IPS32_PATCH = 2;
-
-    private static final byte[] MAGIC_NUMBER_IPS = {0x50, 0x41, 0x54, 0x43, 0x48};   // "PATCH"
-    private static final byte[] MAGIC_NUMBER_IPS32 = {0x49, 0x50, 0x53, 0x33, 0x32}; // "IPS32"
-
-    private int mPatchType = NOT_IPS_PATCH;
-
-    public IPS(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
-        super(patch, rom, output, resourceProvider, fileUtils);
+    @Throws(PatchException::class, IOException::class)
+    override fun apply(ignoreChecksum: Boolean) {
+        apply()
     }
 
-    @Override
-    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
-        apply();
-    }
+    @Throws(PatchException::class, IOException::class)
+    fun apply() {
+        assertFileSizeNotSmall()
 
-    public void apply() throws PatchException, IOException {
-        BufferedInputStream romStream = null;
-        BufferedInputStream patchStream = null;
-        BufferedOutputStream outputStream = null;
+        var romStream: BufferedInputStream? = null
+        var patchStream: BufferedInputStream? = null
+        var outputStream: BufferedOutputStream? = null
 
         try {
-            romStream = new BufferedInputStream(new FileInputStream(romFile));
-            patchStream = new BufferedInputStream(new FileInputStream(patchFile));
-            outputStream = new BufferedOutputStream(new FileOutputStream(outputFile));
+            romStream = BufferedInputStream(FileInputStream(romFile))
+            patchStream = BufferedInputStream(FileInputStream(patchFile))
+            outputStream = BufferedOutputStream(FileOutputStream(outputFile))
 
-            long romSize = romFile.length();
-            long romPos = 0;
-            long outPos = 0;
-            long offset;
-            long size;
+            readHeader(patchStream)
 
-            if (patchFile.length() < 14) {
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
-            }
-
-            byte[] magic = new byte[5];
-            size = patchStream.read(magic);
-            if (Arrays.equals(magic, MAGIC_NUMBER_IPS)) {
-                mPatchType = IPS_PATCH;
-            } else if (Arrays.equals(magic, MAGIC_NUMBER_IPS32)) {
-                mPatchType = IPS32_PATCH;
-            } else {
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_ips_patch));
-            }
+            val romSize = romFile.length()
+            var romPos: Long = 0
+            var outPos: Long = 0
 
             while (true) {
-                offset = readOffset(patchStream);
-                if (offset < 0)
-                    throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+                val offset = readOffset(patchStream)
+                assertNotNegative(offset)
                 if (checkEOF(offset)) {
                     // truncate file or copy tail
                     if (romPos < romSize) {
-                        offset = readOffset(patchStream);
-                        if (offset != -1 && offset >= romPos) {
-                            size = offset - romPos;
+                        val truncateOffset = readOffset(patchStream)
+                        val tailSize = if (truncateOffset != END_OF_STREAM && truncateOffset >= romPos) {
+                            truncateOffset - romPos
                         } else {
-                            size = romSize - romPos;
+                            romSize - romPos
                         }
-                        fileUtils.copy(romStream, outputStream, size);
+                        fileUtils.copy(romStream, outputStream, tailSize)
                     }
-                    break;
+                    break
                 }
 
                 if (offset <= romSize) {
                     if (outPos < offset) {
-                        size = offset - outPos;
-                        fileUtils.copy(romStream, outputStream, size);
-                        romPos += size;
-                        outPos += size;
+                        val size = offset - outPos
+                        fileUtils.copy(romStream, outputStream, size)
+                        romPos += size
+                        outPos += size
                     }
                 } else {
                     if (outPos < romSize) {
-                        size = romSize - outPos;
-                        fileUtils.copy(romStream, outputStream, size);
-                        romPos += size;
-                        outPos += size;
+                        val size = romSize - outPos
+                        fileUtils.copy(romStream, outputStream, size)
+                        romPos += size
+                        outPos += size
                     }
                     if (outPos < offset) {
-                        size = offset - outPos;
-                        fileUtils.copy(size, (byte) 0x0, outputStream);
-                        outPos += size;
+                        val size = offset - outPos
+                        fileUtils.copy(size, 0x0.toByte(), outputStream)
+                        outPos += size
                     }
                 }
 
-                size = (patchStream.read() << 8) + patchStream.read();
-                if (size != 0) {
-                    if (size < 0) throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
-                    byte[] data = new byte[(int)size];
-                    patchStream.read(data);
-                    outputStream.write(data);
-                    outPos += size;
-                } else { // RLE
-                    size = (patchStream.read() << 8) + patchStream.read();
-                    if (size < 0) throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
-                    byte val = (byte) patchStream.read();
-                    byte[] data = new byte[(int)size];
-                    Arrays.fill(data, val);
-                    outputStream.write(data);
-                    outPos += size;
+                var size = ((patchStream.read() shl ONE_BYTE) + patchStream.read()).toLong()
+                if (size == RLE_FLAG) {
+                    size = ((patchStream.read() shl ONE_BYTE) + patchStream.read()).toLong()
+                    assertNotNegative(size)
+                    val value = patchStream.read().toByte()
+                    fileUtils.copy(number = size, b = value, to = outputStream)
+                    outPos += size
+                } else {
+                    assertNotNegative(size)
+                    fileUtils.copy(from = patchStream, to = outputStream, size = size)
+                    outPos += size
                 }
 
                 if (offset <= romSize) {
                     if (romPos + size > romSize) {
-                        romPos = romSize;
+                        romPos = romSize
                     } else {
-                        if (size < 0) throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
-                        byte[] buf = new byte[(int)size];
-                        romStream.read(buf);
-                        romPos += size;
+                        assertNotNegative(size)
+                        val buf = ByteArray(size.toInt())
+                        romStream.read(buf)
+                        romPos += size
                     }
                 }
             }
         } finally {
-            fileUtils.closeQuietly(romStream);
-            fileUtils.closeQuietly(patchStream);
-            fileUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(romStream)
+            fileUtils.closeQuietly(patchStream)
+            fileUtils.closeQuietly(outputStream)
         }
     }
 
-    private boolean checkEOF(long value) {
-        switch (mPatchType) {
-            case IPS_PATCH:
-                return value == 0x454f46; // "EOF"
-            case IPS32_PATCH:
-                return value == 0x45454f46; // "EEOF"
+    private fun assertNotNegative(value: Long) {
+        if (value < 0) {
+            throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
         }
-        return false;
     }
 
-    private long readOffset(InputStream stream) throws IOException {
-        long offset = 0;
-        int numBytes;
-        switch (mPatchType) {
-            case IPS_PATCH:
-                numBytes = 3;
-                break;
-            case IPS32_PATCH:
-                numBytes = 4;
-                break;
-            default:
-                throw new IOException("Internal IPS error");
+    private fun assertFileSizeNotSmall() {
+        if (patchFile.length() < IPS_FILE_MIN_SIZE) {
+            throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
+        }
+    }
+
+    private fun readHeader(patchStream: BufferedInputStream) {
+        val magic = ByteArray(MAGIC_LENGTH)
+        patchStream.read(magic).toLong()
+        mPatchType = when {
+            magic.contentEquals(MAGIC_NUMBER_IPS) -> IPS_PATCH
+            magic.contentEquals(MAGIC_NUMBER_IPS32) -> IPS32_PATCH
+            else -> throw PatchException(resourceProvider.getString(R.string.notify_error_not_ips_patch))
+        }
+    }
+
+    private fun checkEOF(value: Long): Boolean =
+        when (mPatchType) {
+            IPS_PATCH -> value == EOF
+            IPS32_PATCH -> value == EEOF
+            else -> false
+        }
+
+    @Throws(IOException::class)
+    private fun readOffset(stream: InputStream): Long {
+        var offset: Long = 0
+        var numBytes = when (mPatchType) {
+            IPS_PATCH -> 3
+            IPS32_PATCH -> 4
+            else -> throw IOException("Internal IPS error")
         }
 
         while (numBytes-- != 0) {
-            int b = stream.read();
-            if (b == -1)
-                return -1;
-            offset = (offset << 8) + b;
+            val b = stream.read()
+            if (b == -1) return END_OF_STREAM
+            offset = (offset shl ONE_BYTE) + b
         }
-        return offset;
+        return offset
+    }
+
+    private enum class PatchType {
+        NOT_IPS_PATCH,
+        IPS_PATCH,
+        IPS32_PATCH
+    }
+
+    private companion object {
+
+        private val MAGIC_NUMBER_IPS = byteArrayOf(0x50, 0x41, 0x54, 0x43, 0x48) // "PATCH"
+        private val MAGIC_NUMBER_IPS32 = byteArrayOf(0x49, 0x50, 0x53, 0x33, 0x32) // "IPS32"
+        private const val MAGIC_LENGTH = 5
+
+        private const val EOF = 0x454f46L
+        private const val EEOF = 0x45454f46L
+
+        private const val IPS_FILE_MIN_SIZE = 14
+
+        private const val ONE_BYTE = 8
+        private const val END_OF_STREAM = -1L
+        private const val RLE_FLAG = 0L
     }
 }
