@@ -174,6 +174,6 @@
     <string name="donate_screen_message_1">Если Вам понравился UniPatcher, можете выразить свою признательность здесь.</string>
     <string name="donate_screen_message_2">Мы используем Ваши пожертвования для улучшения приложения.</string>
     <string name="donate_screen_message_3">Спасибо!</string>
-    <string name="donate_screen_send_bitcoin_button">Отправить биткойны</string>
+    <string name="donate_screen_send_bitcoin_button">Отправить Биткойны</string>
     <string name="donate_screen_bitcoin_copied_to_clipboard">Адрес биткоин-кошелька был скопирован в буфер обмена.</string>
 </resources>
