@@ -81,4 +81,10 @@
         <item name="colorControlNormal">@color/colorToolbarBackArrow</item>
     </style>
 
+    <style name="DonateButton" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/colorDonateButton</item>
+        <item name="android:textSize">7pt</item>
+        <item name="iconSize">24dp</item>
+    </style>
+
 </resources>

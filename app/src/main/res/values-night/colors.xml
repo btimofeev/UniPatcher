@@ -20,4 +20,6 @@
 
     <color name="tabSelectedText">#f2777a</color>
     <color name="tabIndicatorColor">#f2777a</color>
+
+    <color name="colorDonateButton">#D5A167</color>
 </resources>
