@@ -1,4 +1,4 @@
-#### in development (November ??, 2024)
+#### 0.17.3 (November 15, 2024)
 - Arabic translation (thanks to Fayçal Boukamel)
 - Esperanto translation (thanks to Jakub Fabijan)
 - Indonesian translation (thanks to Tsaqib Fadhlurrahman Soka, Lim Jia Ming, Reza Almanda)

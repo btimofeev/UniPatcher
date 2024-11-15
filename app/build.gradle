@@ -15,8 +15,8 @@ android {
         compileSdk 34
         targetSdkVersion 34
         ndkVersion "22.1.7171670"
-        versionCode 170201
-        versionName "0.17.2"
+        versionCode 170300
+        versionName "0.17.3"
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
         }
