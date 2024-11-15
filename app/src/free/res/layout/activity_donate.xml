@@ -69,10 +69,11 @@
 
             <Button
                 android:id="@+id/sendBitcoinButton"
-                style="@style/Widget.MaterialComponents.Button"
+                style="@style/DonateButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
+                android:minHeight="64dp"
                 android:text="@string/donate_screen_send_bitcoin_button"
                 app:icon="@drawable/ic_bitcoin"
                 app:layout_constraintEnd_toEndOf="parent"
