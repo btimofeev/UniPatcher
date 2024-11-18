@@ -121,11 +121,9 @@
 \nROM hacker sering mempublikasikan checksum dari file ROM yang menyertainya (pada halaman web atau dalam file README). Bandingkan dengan yang Anda miliki. Jika checksum cocok Anda memiliki ROM patch untuk ditulis. Jika tidak, Anda memerlukan ROM yang berbeda.
 \n
 \nDalam kasus terburuk, jika Anda tidak dapat menemukan file ROM yang benar, Anda dapat mengatur opsi \"Abaikan checksum\" di pengaturan. Tetapi ingatlah bahwa dalam hal ini permainan mungkin mengandung bug atau sama sekali tidak dapat dimainkan.</string>
-    <string name="help_archive_should_be_unpacked_body">File yang Anda pilih adalah arsip. Arsip berisi direktori dan file dalam format terkompresi.
-\n
-\nSaat ini UniPatcher tidak dapat mengekstrak arsip, jadi Anda perlu membongkar arsip Anda dalam program yang berbeda. Saya merekomendasikan aplikasi ZArchiver gratis https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
+    <string name="help_archive_should_be_unpacked_body">File yang kamu pilih adalah arsip. Arsip berisi direktori dan file dalam format terkompresi. \n \nSaat ini UniPatcher tidak dapat mengekstrak arsip, jadi kamu perlu membongkar arsipmu dalam program yang berbeda. Saya merekomendasikan aplikasi ZArchiver gratis https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">Aplikasi menunjukkan pesan setelah pemilihan file: \"Arsip harus dibongkar dalam program eksternal\".</string>
-    <string name="help_how_to_apply_patch_to_rom_body">Anda harus memilih file ROM, patch dan memilih file mana yang akan disimpan, lalu klik tombol bulat merah. File dipilih melalui aplikasi File standar (atau melalui salah satu manajer file yang telah Anda instal). Aplikasi akan menampilkan pesan saat file dipatch. Jangan menutup aplikasi sampai file dipatch.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">Kamu harus memilih file ROM, patch dan memilih file mana yang akan disimpan, lalu klik tombol bulat merah. File dipilih melalui aplikasi File standar (atau melalui salah satu manajer file yang telah Anda instal). Aplikasi akan menampilkan pesan saat file dipatch. Jangan menutup aplikasi sampai file dipatch.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Bagaimana cara menerapkan patch ke ROM\?</string>
     <string name="help_why_not_distribute_modified_games_body">Hacks dan terjemahan umumnya didistribusikan sebagai patch untuk mengurangi ukuran download dan menghindari masalah hak cipta.</string>
     <string name="help_why_not_distribute_modified_games_title">Mengapa peretas ROM tidak mendistribusikan game yang dimodifikasi\?</string>
@@ -155,7 +153,7 @@
     <string name="help_activity_about_tab_version">Versi %1$s</string>
     <string name="help_activity_about_tab_title">Tentang</string>
     <string name="help_activity_faq_tab_title">Faq</string>
-    <string name="settings_ignore_checksum_description">Jangan hentikan patching jika anda menggunakan ROM yang salah. Hati-hati: Opsi ini dapat merusak game anda.</string>
+    <string name="settings_ignore_checksum_description">Jangan hentikan patching jika kamu menggunakan ROM yang salah. Hati-hati: Opsi ini dapat merusak game-mu.</string>
     <string name="settings_ignore_checksum">Abaikan checksum</string>
     <string name="settings_theme_name_follow_system">Menggunakan default sistem</string>
     <string name="settings_theme_name_auto_battery">Ditetapkan oleh Penghemat Baterai</string>
@@ -180,9 +178,7 @@
 \nIni memperbaiki \"layar merah kematian\".
 \n
 \nPeringatan: Fungsi ini tidak membuat cadangan.</string>
-    <string name="snes_rom_has_no_smc_header">ROM ini tidak memiliki header SMC. Anda tidak perlu menghapus apa pun.</string>
+    <string name="snes_rom_has_no_smc_header">ROM ini tidak memiliki header SMC. Kamu tidak perlu menghapus apa pun.</string>
     <string name="snes_smc_header_will_be_removed">ROM ini memiliki header SMC. Ini akan dihapus.</string>
-    <string name="snes_smc_header_help">Fitur ini hanya untuk ROM Super Nintendo.
-\n
-\nBeberapa patch mengharuskan ROM untuk tidak memiliki header SMC. Fungsi ini akan membantu Anda menghapusnya.</string>
+    <string name="snes_smc_header_help">Fitur ini hanya untuk ROM Super Nintendo. \n \nBeberapa patch mengharuskan ROM untuk tidak memiliki header SMC. Fungsi ini akan membantumu menghapusnya.</string>
 </resources>
