@@ -1,9 +1,9 @@
-UniPatcher memungkinkan Anda untuk menerapkan patch ke ROM game.
+UniPatcher memungkinkanmu untuk menerapkan patch ke ROM game.
 
 Apa itu patch?
-File dengan data game yang dimodifikasi. Misalnya, game yang diterjemahkan dari bahasa Jepang ke bahasa Inggris. Anda mengunduh patch yang berisi terjemahan. Itu harus diterapkan ke versi Jepang untuk membuat versi bahasa Inggrisnya.
+File dengan data game yang dimodifikasi. Misalnya, game yang diterjemahkan dari bahasa Jepang ke bahasa Inggris. Kamu mendownload patch yang berisi terjemahan. Itu harus diterapkan ke versi Jepang untuk membuat versi bahasa Inggrisnya.
 
-Program ini tidak akan membantu Anda meng-hack game Android asli, ini dibuat untuk game konsol lama (SNES, PS1, GBA, N64, SMD\Genesis dll.)
+Program ini tidak akan membantumu meng-hack game Android asli, ini dibuat untuk game konsol lama (SNES, PS1, GBA, N64, SMD\Genesis dll.)
 
 Fitur:
 * Format patch yang didukung: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
@@ -11,8 +11,8 @@ Fitur:
 * Perbaiki checksum di ROM SMD\Genesis
 * Hapus header SMC dari ROM SNES
 
-Cara Penggunaan?
-Anda harus memilih file ROM, patch dan memilih file mana yang akan disimpan, lalu klik tombol bulat merah. File dipilih melalui aplikasi File standar (atau melalui salah satu pengelola file yang telah Anda instal). Aplikasi akan menampilkan pesan saat file dipatch. Jangan tutup aplikasi sampai file dipatch.
+Gimana cara gunakannya?
+Kamu perlu memilih file ROM, patch dan memilih file mana yang akan disimpan, lalu klik tombol bulat merah. File dipilih melalui aplikasi File standar (atau melalui salah satu pengelola file yang telah kamu instal). Aplikasi akan menampilkan pesan saat file dipatch. Jangan tutup aplikasi sampai file dipatch.
 
 Sangat penting:
 Jika game dan patch dikompresi (ZIP, RAR, 7z atau lainnya), mereka harus di-unzip terlebih dahulu.
