@@ -54,7 +54,7 @@
     <string name="help_can_i_hack_android_game_title">האם אוכל לפרוץ או לפצח משחק אנדרואיד באמצעות אפליקציה זו\?</string>
     <string name="help_what_patch_formats_are_supported_body">היישומון תומך בטלאי IPS,‏ IPS32,‏ UPS,‏ BPS,‏ APS (GBA),‏ APS (N64)‏, PPF,‏ DPS,‏ EBP ו־XDelta3.</string>
     <string name="help_what_patch_formats_are_supported_title">אילו תצורות טלאים נתמכות\?</string>
-    <string name="help_what_is_unipatcher_body">UniPatcher הוא כלי ל־Android ליישום טלאים על דמויות ROM של קונסולות משחקי וידאו שונות.</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher הוא כלי ל־Android ליישומון טלאים על דמויות ROM של קונסולות משחקי וידאו שונות.</string>
     <string name="help_what_is_unipatcher_title">מה זה UniPatcher\?</string>
     <string name="help_title">שאלות נפוצות:</string>
     <string name="notification_channel_name">התראות</string>
@@ -73,26 +73,26 @@
 \n
 \n</string>
     <string name="share_dialog_title">שיתוף UniPatcher</string>
-    <string name="donate_activity_title">תרום</string>
-    <string name="error_file_picker_app_is_no_installed">שגיאה: אין אפליקציית קובץ מותקנת</string>
-    <string name="error_crash_discard_button">השליך</string>
-    <string name="error_crash_send_button">שלח</string>
-    <string name="error_crash_message">מצטער, היישום קרס. אנא שלח דיווח למפתחים.</string>
+    <string name="donate_activity_title">תרומה</string>
+    <string name="error_file_picker_app_is_no_installed">שגיאה: אין יישומון קבצים מותקן</string>
+    <string name="error_crash_discard_button">התעלמות</string>
+    <string name="error_crash_send_button">שליחה</string>
+    <string name="error_crash_message">היישומון קרס, סליחה. נא לשלוח דיווח למפתחים.</string>
     <string name="error_crash_title">קריסה</string>
     <string name="help_activity_action_changelog">יומן שינויים</string>
-    <string name="help_activity_action_visit_site">בקר באתר</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
+    <string name="help_activity_action_visit_site">ביקור באתר</string>
+    <string name="help_activity_about_tab_copyright">© בוריס טימופייב, 2013–2024</string>
     <string name="help_activity_about_tab_license">רישיון: GNU GPLv3</string>
     <string name="help_activity_about_tab_version">גרסה %1$s</string>
-    <string name="help_activity_about_tab_title">אודות</string>
+    <string name="help_activity_about_tab_title">על אודות</string>
     <string name="help_activity_faq_tab_title">שאלות נפוצות</string>
     <string name="help_activity_title">עזרה</string>
     <string name="settings_ignore_checksum_description">לא כדאי להפריע לתיקון אם השתמשת ב־ROM הלא נכון. יש להשתמש בזהירות: אפשרות זו יכולה לפגום במשחק שלך.</string>
-    <string name="settings_ignore_checksum">התעלם מסכומי בדיקה</string>
+    <string name="settings_ignore_checksum">התעלמות מסיכומי ביקורת</string>
     <string name="settings_patching_header">תיקון</string>
-    <string name="settings_show_button_how_to_use_app_description">הצג את הלחצן \"כיצד להשתמש באפליקציה\" במסך הראשי</string>
-    <string name="settings_show_button_how_to_use_app">הצג לחצן עזרה</string>
-    <string name="settings_theme_name_follow_system">השתמש בברירת מחדל של המערכת</string>
+    <string name="settings_show_button_how_to_use_app_description">הצגת הכפתור „כיצד להשתמש ביישומון” במסך הראשי</string>
+    <string name="settings_show_button_how_to_use_app">הצגת לחצן עזרה</string>
+    <string name="settings_theme_name_follow_system">להשתמש בברירת מחדל של המערכת</string>
     <string name="settings_theme_name_auto_battery">מוגדר על ידי חיסכון בסוללה</string>
     <string name="settings_theme_name_dark">כהה</string>
     <string name="settings_theme_name_light">בהיר</string>
