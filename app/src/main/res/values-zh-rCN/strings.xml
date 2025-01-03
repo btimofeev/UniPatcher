@@ -153,25 +153,20 @@
     <string name="main_activity_tap_to_select_where_to_save_patch">点击此处，选择要保存修补程序的位置</string>
     <string name="main_activity_rom_without_smc_file">输出不带头信息的 ROM 文件</string>
     <string name="main_activity_rom_with_smc_file">带有 SMC 头信息的 ROM 文件</string>
-    <string name="about_translators"><b>译员：</b>
-\n
-\n - <b>中文</b>: Nabarl Wang, Eric
-\n - <b>法语</b>: Thibaut Panis, J. Lavoie
-\n - <b>德语</b>: Honigdieb
-\n - <b>希伯来语</b>: Tamer Dabsan
-\n - <b>印尼语</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
-\n - <b>意大利语</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n - <b>日语</b>: Naofumi Fukue
-\n - <b>立陶宛语</b>: Gediminas Murauskas
-\n - <b>韩语</b>: Minseo Lee
-\n - <b>书面挪威语</b>: Allan Nordhøy
-\n - <b>波兰语</b>: Michal Bychowski, Jarek Karpiel, hayneken993
-\n - <b>葡萄牙语</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n - <b>葡萄牙语（巴西）</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
-\n - <b>俄语</b>: Борис Тимофеев
-\n - <b>西班牙语</b>: Carlos Sánchez, Swyter
-\n - <b>土耳其语</b>: Oğuz Ersen
-\n - <b>乌克兰语</b>: Володимир Шевчук
-\n
-\n帮忙将应用翻译成你的语言： https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="about_translators"><b>译者：</b> \n \n - <b>阿拉伯语</b>: Fayçal Boukamel \n - <b>中文</b>: Nabarl Wang, Eric, jane \n - <b>世界语</b>: Jakub Fabijan \n - <b>法语</b>: Thibaut Panis, J. Lavoie, Un Anonyme \n - <b>德语</b>: Honigdieb \n - <b>希伯来语</b>: Tamer Dabsan, Yaron Shahrabani \n - <b>印尼语</b>: Tsaqib Fadhlurrahman Soka, Lim Jia Ming, Reza Almanda \n - <b>意大利语</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli, TM, Da C \n - <b>日语</b>: Naofumi Fukue \n - <b>立陶宛语</b>: Gediminas Murauskas \n - <b>马来语</b>: Muhammad Ammar Bin Rozi \n - <b>韩语</b>: Minseo Lee, 이정희 \n - <b>库尔德语 (中部)</b>: دیاری ئەرسەلان جەبار \n - <b>书面挪威语</b>: Allan Nordhøy \n - <b>波兰语</b>: Michal Bychowski, Jarek Karpiel, hayneken993, Henio Szewczyk, Dawid Jaszczyk \n - <b>葡萄牙语</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos, Kauã Azevedo da Silva Vicente \n - <b>葡萄牙语 (巴西)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes, Kauã Azevedo da Silva Vicente, Vinícius, Dinowattz \n - <b>俄语n</b>: Борис Тимофеев, AHOHNMYC \n - <b>西班牙语</b>: Carlos Sánchez, Swyter \n - <b>土耳其语</b>: Oğuz Ersen \n - <b>乌克兰语</b>: Володимир Шевчук, Kefir2105, Artem \n - <b>越南语</b>: Haibara Ai \n \n帮忙将本应用翻译成您的语言：https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="help_i_cant_patch_smw_rom_title">我无法 patch “Super Mario World (U) [!].smc”</string>
+    <string name="help_snes_smc_title">为什么有时候需要从 Super Nintendo 游戏中移除 SMC 标头？</string>
+    <string name="help_i_cant_patch_smw_rom_body">此 ROM 包含 SMC 标头，而此游戏的多数 patch 要求 ROM 没有这个标头，要移除 SMC 标头，你可以在左侧的菜单中选中恰当的项目，接着将 patch 应用到移除了 SMC 标头的 ROM。</string>
+    <string name="help_find_rom_pokemon_emerald_body">此游戏的多数 patch 适用 ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
+    <string name="settings_theme_name_auto_battery">由节电程序设置</string>
+    <string name="error_crash_discard_button">关闭</string>
+    <string name="help_how_to_apply_patch_to_rom_body">你必须选择一个 ROM 文件、一个 patch，选择保存哪个文件，接着单击红色的圆形按钮。通过标准的 Files 应用选择文件（或者通过你已经安装的文件管理器中的一个）。当文件被 patch 时，应用会显示消息。在文件被 patch 前，不要关闭应用。</string>
+    <string name="help_snes_smc_body">SMC 标头是在某些 SNES ROM 映像文件开头处找到的 512 字节。这些字节没有目的，但它们改变剩余数据的位置。移除标头有时是为了正确应用 patch。</string>
+    <string name="donate_screen_message_2">我们用你的捐赠来改进应用。</string>
+    <string name="donate_screen_send_bitcoin_button">发送比特币</string>
+    <string name="donate_screen_bitcoin_copied_to_clipboard">比特币钱包的地址已复制到剪贴板。</string>
+    <string name="snes_smc_header_help">此功能仅适用于超级任天堂 ROM。\n\n某些补丁要求 ROM 没有 SMC 标头。 此功能将帮助您删除它。</string>
+    <string name="donate_screen_message_3">谢谢！</string>
+    <string name="donate_screen_message_1">如果你喜欢 UniPatcher，你可以在此处表达感谢之情。</string>
+    <string name="about_used_libraries"><b>所用库文件：</b>\n\n - <b>ACRA</b> by ACRA team, licensed under the Apache 2.0 license. https://github.com/ACRA/acra \n - <b>Apache Commons IO</b> by The Apache Software Foundation, licensed under the Apache 2.0 license. https://commons.apache.org/proper/commons-io/ \n - <b>Dagger</b> by The Dagger Authors, licensed under the Apache 2.0 license. https://github.com/google/dagger \n - <b>Material design icons</b> by Google, licensed under the Apache 2.0 license. https://github.com/google/material-design-icons \n - <b>Material design icons</b> by community, licensed under SIL Open Font License 1.1. https://materialdesignicons.com \n - <b>Timber</b> by Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber \n - <b>XDelta version 3</b> by Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta</string>
 </resources>

@@ -185,4 +185,9 @@
     <string name="donate_activity_title">Doar</string>
     <string name="error_file_picker_app_is_no_installed">Erro: Não há um aplicativo de arquivos instalado</string>
     <string name="settings_ignore_checksum_description">Não interrompa o aplicativo se você usar a ROM errada. Aviso: essa opção pode quebrar o seu jogo.</string>
+    <string name="donate_screen_message_1">Se você gosta do UniPatcher, pode expressar sua apreciação aqui.</string>
+    <string name="donate_screen_message_2">Usamos suas doações para melhorar o app.</string>
+    <string name="donate_screen_message_3">Obrigado!</string>
+    <string name="donate_screen_send_bitcoin_button">Enviar Bitcoins</string>
+    <string name="donate_screen_bitcoin_copied_to_clipboard">O endereço da carteira Bitcoin foi copiado para a área de transferência.</string>
 </resources>
