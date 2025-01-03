@@ -1,6 +1,4 @@
 buildscript {
-    ext.kotlin_version = '1.9.24'
-    ext.hilt_version = '2.51.1'
     repositories {
         google()
         maven { url "https://jitpack.io" }
@@ -8,14 +6,14 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.3.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath libs.gradle
+        classpath libs.kotlin.gradle.plugin
+        classpath libs.hilt.android.gradle.plugin
     }
 }
 
 plugins {
-    id "de.undercouch.download" version "5.6.0"
+    alias libs.plugins.download.plugin
 }
 
 allprojects {
