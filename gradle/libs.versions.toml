@@ -1,0 +1,50 @@
+[versions]
+acraVersion = "5.11.3"
+appcompatVersion = "1.7.0"
+cardviewVersion = "1.0.0"
+commonsIoVersion = "2.5" # 2.6 crashes the application on Android below 8, because java.nio.file is not available in these versions
+constraintlayoutVersion = "2.2.0"
+coreKtxVersion = "1.13.1"
+documentfileVersion = "1.0.1"
+downloadPluginVersion = "5.6.0"
+fragmentKtxVersion = "1.8.5"
+gradleVersion = "8.3.2"
+hiltVersion = "2.51.1"
+junitVersion = "4.13.2"
+kotlinVersion = "1.9.24"
+kotlinxCoroutinesVersion = "1.8.1"
+lifecycleVersion = "2.8.7"
+materialVersion = "1.12.0"
+mockitoCoreVersion = "3.12.4"
+preferenceKtxVersion = "1.2.1"
+timberVersion = "5.0.1"
+
+[libraries]
+acra-mail = { module = "ch.acra:acra-mail", version.ref = "acraVersion" }
+acra-notification = { module = "ch.acra:acra-notification", version.ref = "acraVersion" }
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
+cardview = { module = "androidx.cardview:cardview", version.ref = "cardviewVersion" }
+commons-io = { module = "commons-io:commons-io", version.ref = "commonsIoVersion" }
+constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayoutVersion" }
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtxVersion" }
+documentfile = { module = "androidx.documentfile:documentfile", version.ref = "documentfileVersion" }
+fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtxVersion" }
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradleVersion" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltVersion" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltVersion" }
+hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltVersion" }
+junit = { module = "junit:junit", version.ref = "junitVersion" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinVersion" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesVersion" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesVersion" }
+lifecycle-common = { module = "androidx.lifecycle:lifecycle-common", version.ref = "lifecycleVersion" }
+lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleVersion" }
+lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleVersion" }
+material = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCoreVersion" }
+preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtxVersion" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timberVersion" }
+
+[plugins]
+download-plugin = { id = "de.undercouch.download", version.ref = "downloadPluginVersion" }
