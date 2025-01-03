@@ -56,7 +56,7 @@
     <string name="help_activity_title">Trợ giúp</string>
     <string name="help_activity_faq_tab_title">Câu hỏi thường gặp</string>
     <string name="help_activity_about_tab_title">Giới thiệu</string>
-    <string name="help_activity_about_tab_version">Phiên bản</string>
+    <string name="help_activity_about_tab_version">Phiên bản %1$s</string>
     <string name="help_activity_about_tab_license">Giấy phép: GNU GPLv3</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
     <string name="help_activity_action_visit_site">Truy cập trang web</string>
