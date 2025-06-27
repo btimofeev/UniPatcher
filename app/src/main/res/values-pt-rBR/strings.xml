@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="main_activity_toast_output_not_selected">Nenhum arquivo de saída selecionado</string>
-    <string name="main_activity_toast_patch_not_selected">Nenhum arquivo de patch selecionado</string>
+    <string name="main_activity_toast_patch_not_selected">No patch file selected</string>
     <string name="main_activity_toast_rom_not_selected">Nenhum arquivo ROM selecionado</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">toque para selecionar onde salvar o ROM</string>
     <string name="main_activity_tap_to_select_where_to_save_patch">toque para selecionar onde salvar o patch</string>
@@ -91,7 +91,7 @@
 \nAlguns patches requerem que a ROM não tenha o cabeçalho SMC. Esta função o ajudará a removê-lo.</string>
     <string name="create_patch_fragment_toast_patch_not_selected">O arquivo de patch não está selecionado</string>
     <string name="create_patch_fragment_toast_modified_not_selected">O arquivo modificado não foi selecionado</string>
-    <string name="create_patch_fragment_toast_source_not_selected">O arquivo original não está selecionado</string>
+    <string name="create_patch_fragment_toast_source_not_selected">No patch file selected</string>
     <string name="create_patch_fragment_patch_file">Arquivo de patch</string>
     <string name="create_patch_fragment_modified_file">Arquivo modificado</string>
     <string name="create_patch_fragment_source_file">Arquivo original</string>
