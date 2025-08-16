@@ -181,4 +181,9 @@
     <string name="snes_rom_has_no_smc_header">ROM ini tidak memiliki header SMC. Kamu tidak perlu menghapus apa pun.</string>
     <string name="snes_smc_header_will_be_removed">ROM ini memiliki header SMC. Ini akan dihapus.</string>
     <string name="snes_smc_header_help">Fitur ini hanya untuk ROM Super Nintendo. \n \nBeberapa patch mengharuskan ROM untuk tidak memiliki header SMC. Fungsi ini akan membantumu menghapusnya.</string>
+    <string name="donate_screen_message_1">donate_screen_message_1</string>
+    <string name="donate_screen_message_2">donate_screen_message_2</string>
+    <string name="donate_screen_message_3">donate_screen_message_3</string>
+    <string name="donate_screen_send_bitcoin_button">donate_screen_send_bitcoin_buttom</string>
+    <string name="donate_screen_bitcoin_copied_to_clipboard">donate_screen_bitcoin_copied_to_clipboardInggris.</string>
 </resources>
