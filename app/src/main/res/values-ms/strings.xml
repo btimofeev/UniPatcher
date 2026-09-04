@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="main_activity_patch_file">Fail Tampalan</string>
-    <string name="main_activity_rom_with_smc_file">Fail ROM dengan pengapala SMC</string>
-    <string name="main_activity_rom_without_smc_file">Fail ROM Keluaran tanpa pengapala</string>
+    <string name="main_activity_patch_file">Fail Patch</string>
+    <string name="main_activity_rom_with_smc_file">Fail ROM dengan SMC Header</string>
+    <string name="main_activity_rom_without_smc_file">Fail ROM Headerless Output</string>
     <string name="main_activity_tap_to_select">Tekan untuk pilih</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">Tekan untuk memilih tempat menyimpan ROM</string>
     <string name="main_activity_toast_rom_not_selected">Tiada fail ROM Yang dipilih</string>
     <string name="main_activity_toast_patch_not_selected">Tiada fail Tampalan yang dipilih</string>
     <string name="main_activity_toast_output_not_selected">Tiada fail Keluaran yang dipilih</string>
-    <string name="main_activity_toast_archives_not_supported">Arkib hendaklah dibongkar di luar program</string>
+    <string name="main_activity_toast_archives_not_supported">Arkib hendaklah dibongkar di program luaran</string>
     <string name="main_activity_donate_snackbar_button">Menderma</string>
     <string name="main_activity_button_how_to_use_app">Cara menggunakan aplikasi</string>
     <string name="main_activity_double_back_to_exit_message">Tekan KEMBALI lagi untuk keluar.Ini boleh menganggu semua operasi berjalan</string>
@@ -31,7 +31,7 @@
     <string name="notify_error_not_ips_patch">Tampalan IPS tidak sah</string>
     <string name="snes_smc_header_will_be_removed">ROM ini mempunyai pengapala SMC.Ia akan dihapus.</string>
     <string name="notify_error_not_ups_patch">Tampalan UPS tidak sah</string>
-    <string name="app_name">UniPenampal</string>
+    <string name="app_name">UniPatcher</string>
     <string name="notify_error_not_ppf_patch">Tampalan PPF tidak sah</string>
     <string name="notify_error_not_aps_patch">Tampalan APS tidak sah</string>
     <string name="notify_error_not_ebp_patch">Tampalan EBP tidak sah</string>
@@ -71,11 +71,11 @@
     <string name="error_crash_send_button">Hantar</string>
     <string name="error_crash_discard_button">Buang</string>
     <string name="error_file_picker_app_is_no_installed">Ralat: tiada aplikasi fail dimuat turun</string>
-    <string name="error_crash_title"/>
+    <string name="error_crash_title">Crash</string>
     <string name="nav_apply_patch">Mohon tampalan</string>
     <string name="nav_create_patch">Cipta tampalan</string>
     <string name="main_activity_rom_file">Fail ROM</string>
-    <string name="main_activity_output_file">Fail Keluaran</string>
+    <string name="main_activity_output_file">Fail Output</string>
     <string name="main_activity_tap_to_select_where_to_save_patch">Tekan untuk memilih tempat menyimpan tampalan</string>
     <string name="main_activity_donate_snackbar_text">Sokong pengembangan UniPatcher dengan melakukan derma</string>
     <string name="create_patch_fragment_source_file">Fail sumber</string>
@@ -93,4 +93,18 @@
     <string name="share_text">Muat turun penampal ROM terbaik untuk Android.ianya menyokong jenis tampalan IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF,DPS, EBP dan XDelta3.
 \n
 \n</string>
+    <string name="settings_ignore_checksum_description">Jangan hentikan patching jika anda menggunakan Rom yang Salah. Hati-hati; Pilihan ini boleh menyebabkan Kerosakan pada permainan anda.</string>
+    <string name="help_activity_title">Bantuan</string>
+    <string name="error_crash_message">Maaf, Aplikasi Crash. Sila hantar laporan kepada pengembang.</string>
+    <string name="nav_smd_fix_checksum">Betulkan checksum (SMD)</string>
+    <string name="nav_snes_add_del_smc_header">Hapuskan SMC header (SNES)</string>
+    <string name="nav_settings">Pengaturan</string>
+    <string name="nav_rate">Menilai aplikasi ini</string>
+    <string name="nav_donate">Derma</string>
+    <string name="nav_share">Kongsi</string>
+    <string name="nav_help">Bantuan</string>
+    <string name="help_why_not_distribute_modified_games_title">Kenapa Pengodam ROM tidak mendistribusikan Permainan yang dimodifikasi?</string>
+    <string name="help_why_not_distribute_modified_games_body">Hacks dan terjemahan selalunya diedarkan sebagai Patch untuk mengurangkan saiz muat turun dan mengelakkan Isu Hak Cipta.</string>
+    <string name="help_how_to_apply_patch_to_rom_title">Bagaimana untuk patch pada ROM</string>
+    <string name="notification_channel_name">Notifikasi</string>
 </resources>
