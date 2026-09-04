@@ -35,27 +35,7 @@
 \n Você pode relatar um erro no Rastreador de Problemas do GitHub https://github.com/btimofeev/UniPatcher/issues
 \n
 \n Você também pode entrar em contato com o autor do aplicativo através do e-mail unipatcher@gmail.com. Por favor, escreva em inglês. Se você tiver problemas com o patch, anexe o patch ao e-mail e escreva o nome da sua ROM, isso economizará nosso tempo.</string>
-    <string name="about_translators"><b>Tradutores:</b>
-\n
-\n - <b>Chinês</b>: Nabarl Wang, Eric
-\n - <b>Francês</b>: Thibaut Panis, J. Lavoie
-\n - <b>Alemão</b>: Honigdieb
-\n - <b>Hebraico</b>: Tamer Dabsan
-\n - <b>Indonésio</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
-\n - <b>Italiano</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n - <b>Japonês</b>: Naofumi Fukue
-\n - <b>Lituano</b>: Gediminas Murauskas
-\n - <b>Coreano</b>: Minseo Lee
-\n - <b>Bokmål norueguês</b>: Allan Nordhøy
-\n - <b>Polonês</b>: Michal Bychowski, Jarek Karpiel, hayneken993
-\n - <b>Português</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n - <b>Português (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
-\n - <b>Russo</b>: Борис Тимофеев
-\n - <b>Espanhol</b>: Carlos Sánchez, Swyter
-\n - <b>Turco</b>: Oğuz Ersen
-\n - <b>Ucraniano</b>: Володимир Шевчук
-\n
-\nAjude a traduzir o aplicativo no seu idioma: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="about_translators"><b>Tradutores:</b> \n \n - <b>Chinês</b>: Nabarl Wang, Eric \n - <b>Francês</b>: Thibaut Panis, J. Lavoie \n - <b>Alemão</b>: Honigdieb \n - <b>Hebraico</b>: Tamer Dabsan \n - <b>Indonésio</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda \n - <b>Italiano</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli \n - <b>Japonês</b>: Naofumi Fukue \n - <b>Lituano</b>: Gediminas Murauskas \n - <b>Coreano</b>: Minseo Lee \n - <b>Bokmål norueguês</b>: Allan Nordhøy \n - <b>Polonês</b>: Michal Bychowski, Jarek Karpiel, hayneken993 \n - <b>Português</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos \n - <b>Português (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes \n - <b>Russo</b>: Борис Тимофеев \n - <b>Espanhol</b>: Carlos Sánchez, Swyter \n - <b>Turco</b>: Oğuz Ersen \n - <b>Ucraniano</b>: Володимир Шевчук \n \nAjude a traduzir o aplicativo no seu idioma: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="notify_error_patch_corrupted">O arquivo de patch está corrompido</string>
     <string name="notify_error_unexpected_end_of_file">Fim de arquivo inesperado</string>
     <string name="notify_error_unknown_patch_format">Formato de patch desconhecido</string>
