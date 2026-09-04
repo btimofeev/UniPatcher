@@ -103,28 +103,7 @@
     <string name="share_text">باشترین ROM Patcher دابگرە بۆ ئەندرۆید پشتگیری لە IPS، IPS32، UPS، BPS، APS (GBA)، APS (N64)، PPF، DPS، EBP و XDelta3 دەکات.
 \n
 \n</string>
-    <string name="about_translators"><b>Translators:</b>
-\n
-\n-<b>Kurdish</b>: Diary Droid, Eric
-\n- <b>Chinese</b>: Nabarl Wang, Eric
-\n- <b>French</b>: Thibaut Panis, J. Lavoie
-\n- <b>German</b>: Honigdieb
-\n- <b>Hebrew</b>: Tamer Dabsan
-\n- <b>Indonesian</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
-\n- <b>Italian</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n- <b>Japanese</b>: Naofumi Fukue
-\n- <b>Lithuanian</b>: Gediminas Murauskas
-\n- <b>Korean</b>: Minseo Lee
-\n- <b>Norwegian Bokmål</b>: Allan Nordhøy
-\n- <b>Polish</b>: Michal Bychowski, Jarek Karpiel, hayneken993
-\n- <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n- <b>Portuguese (Brazil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
-\n- <b>Russian</b>: Борис Тимофеев
-\n- <b>Spanish</b>: Carlos Sánchez, Swyter
-\n- <b>Turkish</b>: Oğuz Ersen
-\n- <b>Ukrainian</b>: Володимир Шевчук
-\n
-\nHelp translate the app into your language: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="about_translators"><b>Translators:</b> \n \n-<b>Kurdish</b>: Diary Droid, Eric \n- <b>Chinese</b>: Nabarl Wang, Eric \n- <b>French</b>: Thibaut Panis, J. Lavoie \n- <b>German</b>: Honigdieb \n- <b>Hebrew</b>: Tamer Dabsan \n- <b>Indonesian</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda \n- <b>Italian</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli \n- <b>Japanese</b>: Naofumi Fukue \n- <b>Lithuanian</b>: Gediminas Murauskas \n- <b>Korean</b>: Minseo Lee \n- <b>Norwegian Bokmål</b>: Allan Nordhøy \n- <b>Polish</b>: Michal Bychowski, Jarek Karpiel, hayneken993 \n- <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos \n- <b>Portuguese (Brazil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes \n- <b>Russian</b>: Борис Тимофеев \n- <b>Spanish</b>: Carlos Sánchez, Swyter \n- <b>Turkish</b>: Oğuz Ersen \n- <b>Ukrainian</b>: Володимир Шевчук \n \nHelp translate the app into your language: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_feedback_title">پرسیارێکم هەیە، داواکاری تایبەتمەندییەک یان ڕاپۆرتی هەڵەیەکم هەیە.</string>
     <string name="help_how_to_apply_patch_to_rom_body">دەبێت فایلێکی ڕووم و پاچێک هەڵبژێریت و کام فایل خەزن بکەیت، پاشان کلیک لەسەر دوگمەی بازنەسورەکە بکە. فایلەکان لە ڕێگەی بەرنامەی ستانداردی فایلەکانەوە هەڵدەبژێردرێن (یان لە ڕێگەی یەکێک لەو بەڕێوەبەرە پەڕگانەی کە دامەزراندووە). بەرنامەکە پەیامێک پیشان دەدات کاتێک فایلەکە پاچ دەکرێت. تا فایلەکە پاچ نەکرێت بەرنامەکە دامەخە.</string>
     <string name="help_i_cant_patch_smw_rom_body">ئەم ڕوومە سەردێڕی SMC لەخۆدەگرێت، لەکاتێکدا زۆربەی پاچەکان بۆ ئەم یارییە پێویستیان بە ڕوومەکە هەیە کە ئەم سەردێڕەی نەبێت. دەتوانیت سەردێڕی SMC لاببەیت بە هەڵبژاردنی بابەتی گونجاو لە لیستی لای چەپ و پاشان پاچەکە لەسەر ئەنجامی ڕوومەکە جێبەجێ بکەیت.</string>
