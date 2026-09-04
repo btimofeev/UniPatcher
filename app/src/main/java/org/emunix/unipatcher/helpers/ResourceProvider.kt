@@ -66,7 +66,7 @@ class ResourceProviderImpl @Inject constructor(private val context: Context) : R
 
     override val appVersion: String
         get() = try {
-            context.packageManager.getPackageInfo(context.packageName, 0).versionName
+            context.packageManager?.getPackageInfo(context.packageName, 0)?.versionName.orEmpty()
         } catch (e: Exception) {
             Timber.e("Application version is not available")
             ""

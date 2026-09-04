@@ -3,6 +3,7 @@ project(lzma)
 set(XZ_DIR "xz/src")
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -DHAVE_INTTYPES_H -DHAVE_STDINT_H -DHAVE_LIMITS_H -DHAVE_STDBOOL_H -std=c99 -DMYTHREAD_POSIX -DHAVE_COMMON_H -DHAVE_DECODER_LZMA1 -DHAVE_DECODER_LZMA2 -DHAVE_DECODER_DELTA")
+add_compile_options(-Wno-error=implicit-function-declaration)
 
 include_directories("${XZ_DIR}/common"
         "${XZ_DIR}/liblzma/api"
