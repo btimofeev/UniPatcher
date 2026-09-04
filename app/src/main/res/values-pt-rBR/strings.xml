@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="main_activity_toast_output_not_selected">Nenhum arquivo de saída selecionado</string>
-    <string name="main_activity_toast_patch_not_selected">Nenhum arquivo de patch selecionado</string>
+    <string name="main_activity_toast_patch_not_selected">Nenhum arquivo patch selecionado</string>
     <string name="main_activity_toast_rom_not_selected">Nenhum arquivo ROM selecionado</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">toque para selecionar onde salvar o ROM</string>
     <string name="main_activity_tap_to_select_where_to_save_patch">toque para selecionar onde salvar o patch</string>
     <string name="main_activity_tap_to_select">toque para selecionar</string>
-    <string name="main_activity_rom_without_smc_file">ROM resultante sem cabeçalho</string>
-    <string name="main_activity_rom_with_smc_file">Arquivo ROM com cabeçalho SMC</string>
-    <string name="main_activity_output_file">ROM após patch</string>
+    <string name="main_activity_rom_without_smc_file">Saída de arquivo ROM sem cabeçalho</string>
+    <string name="main_activity_rom_with_smc_file">Arquivo Rom com cabeçalho SMC</string>
+    <string name="main_activity_output_file">Arquivo de saída</string>
     <string name="main_activity_patch_file">Arquivo de patch</string>
     <string name="main_activity_rom_file">Arquivo ROM</string>
     <string name="app_name">UniPatcher</string>
@@ -91,7 +91,7 @@
 \nAlguns patches requerem que a ROM não tenha o cabeçalho SMC. Esta função o ajudará a removê-lo.</string>
     <string name="create_patch_fragment_toast_patch_not_selected">O arquivo de patch não está selecionado</string>
     <string name="create_patch_fragment_toast_modified_not_selected">O arquivo modificado não foi selecionado</string>
-    <string name="create_patch_fragment_toast_source_not_selected">O arquivo original não está selecionado</string>
+    <string name="create_patch_fragment_toast_source_not_selected">O arquivo de origem não está selecionado</string>
     <string name="create_patch_fragment_patch_file">Arquivo de patch</string>
     <string name="create_patch_fragment_modified_file">Arquivo modificado</string>
     <string name="create_patch_fragment_source_file">Arquivo original</string>
@@ -163,7 +163,7 @@
     <string name="help_can_i_hack_android_game_title">Posso hackear ou crackear um jogo Andorid usando este aplicativo?</string>
     <string name="help_what_patch_formats_are_supported_body">Este aplicativo suporta patches IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP e XDelta3.</string>
     <string name="help_what_patch_formats_are_supported_title">Que formatos de patch são suportados\?</string>
-    <string name="help_what_is_unipatcher_body">UniPatcher é uma ferramenta Android para aplicar patches para imagens ROM de vários consoles de videogame.</string>
+    <string name="help_what_is_unipatcher_body">UniPatcher é uma ferramenta de Android para aplicar patches para imagens ROM de vários consoles de videogame.</string>
     <string name="help_what_is_unipatcher_title">O que é o UniPatcher\?</string>
     <string name="help_title">Perguntas Frequentes:</string>
     <string name="notification_channel_name">Notificações</string>

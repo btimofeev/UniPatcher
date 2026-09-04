@@ -146,27 +146,7 @@
     <string name="error_crash_discard_button">Скасувати</string>
     <string name="error_file_picker_app_is_no_installed">Помилка: не встановлено застосунок Файли</string>
     <string name="help_snes_smc_body">Заголовок SMC - це 512 байт, які знаходяться на початку деяких образів SNES ROM. Ці байти не мають ніякого призначення, але вони змінюють розташування решти даних. Видалення заголовка іноді використовується з метою коректного застосування патчу.</string>
-    <string name="about_translators"><b>Перекладачі:</b>
-\n
-\n - <b>Китайська</b>: Nabarl Wang, Eric
-\n - <b>Французька</b>: Thibaut Panis, J. Lavoie
-\n - <b>Німецька</b>: Honigdieb
-\n - <b>Іврит</b>: Tamer Dabsan
-\n - <b>Індонезійська</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
-\n - <b>Італійська</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n - <b>Японська</b>: Naofumi Fukue
-\n - <b>Литовська</b>: Gediminas Murauskas
-\n - <b>Корейська</b>: Minseo Lee
-\n - <b>Норвезька Бокмоль</b>: Allan Nordhøy
-\n - <b>Польська</b>: Michal Bychowski, Jarek Karpiel, hayneken993
-\n - <b>Португальська</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n - <b>Португальська (Бразилія)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
-\n - <b>Російська</b>: Борис Тимофєєв
-\n - <b>Іспанська</b>: Carlos Sánchez, Swyter
-\n - <b>Турецька</b>: Oğuz Ersen
-\n - <b>Українська</b>: Володимир Шевчук, Kefir2105
-\n
-\nДопоможіть перекласти застосунок на вашу мову: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="about_translators"><b>Перекладачі:</b> \n \n - <b>Arabic</b>: Fayçal Boukamel \n - <b>Chinese</b>: Nabarl Wang, Eric, jane \n - <b>Esperanto</b>: Jakub Fabijan \n - <b>French</b>: Thibaut Panis, J. Lavoie, Un Anonyme \n - <b>German</b>: Honigdieb \n - <b>Hebrew</b>: Tamer Dabsan, Yaron Shahrabani \n - <b>Indonesian</b>: Tsaqib Fadhlurrahman Soka, Lim Jia Ming, Reza Almanda \n - <b>Italian</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli, TM, Da C \n - <b>Japanese</b>: Naofumi Fukue \n - <b>Lithuanian</b>: Gediminas Murauskas \n - <b>Malay</b>: Muhammad Ammar Bin Rozi \n - <b>Korean</b>: Minseo Lee, 이정희 \n - <b>Kurdish (Central)</b>: دیاری ئەرسەلان جەبار \n - <b>Norwegian Bokmål</b>: Allan Nordhøy \n - <b>Polish</b>: Michal Bychowski, Jarek Karpiel, hayneken993, Henio Szewczyk, Dawid Jaszczyk \n - <b>Portuguese</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos, Kauã Azevedo da Silva Vicente \n - <b>Portuguese (Brazil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes, Kauã Azevedo da Silva Vicente, Vinícius, Dinowattz \n - <b>Russian</b>: Борис Тимофеев, AHOHNMYC \n - <b>Spanish</b>: Carlos Sánchez, Swyter \n - <b>Turkish</b>: Oğuz Ersen \n - <b>Ukrainian</b>: Володимир Шевчук, Kefir2105, Artem \n - <b>Vietnamese</b>: Haibara Ai \n \nДопоможіть перекласти додаток вашою мовою: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="about_used_libraries"><b>Використані бібліотеки:</b> \n \n - <b>ACRA</b> від команди ACRA, під ліцензією Apache 2.0. https://github.com/ACRA/acra \n - <b>Apache Commons IO</b> від The Apache Software Foundation, під ліцензією Apache 2.0. https://commons.apache.org/proper/commons-io/ \n - <b>Dagger</b> від The Dagger Authors, ліцензовано за ліцензією Apache 2.0. https://github.com/google/dagger \n - <b>Іконки Material design</b> від Google, ліцензовано за ліцензією Apache 2.0. https://github.com/google/material-design-icons \n - <b>Іконки Material design</b> від спільноти, ліцензовано за ліцензією SIL Open Font License 1.1. https://materialdesignicons.com \n - <b>Timber</b> від Jake Wharton, ліцензовано за ліцензією Apache 2.0. https://github.com/JakeWharton/timber \n - <b>XDelta версії 3</b> від Joshua MacDonald, ліцензована згідно з ліцензією Apache 2.0. https://github.com/jmacd/xdelta</string>
     <string name="help_activity_about_tab_copyright">© Борис Тимофєєв, 2013–2024</string>
     <string name="notify_error_unable_open_source_file">Неможливо відкрити вихідний файл</string>
@@ -188,7 +168,7 @@
 \n<b>Попередження:</b> Ця функція не створює резервну копію ROM.</string>
     <string name="donate_screen_message_1">Якщо вам подобається UniPatcher, ви можете висловити свою вдячність тут.</string>
     <string name="donate_screen_message_2">Ми використовуємо ваші пожертви для покращення програми.</string>
-    <string name="donate_screen_message_3">дякую!</string>
+    <string name="donate_screen_message_3">Дякую вам!</string>
     <string name="donate_screen_send_bitcoin_button">Надіслати біткойни</string>
     <string name="donate_screen_bitcoin_copied_to_clipboard">Адресу біткоін-гаманця скопійовано в буфер обміну.</string>
 </resources>

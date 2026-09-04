@@ -163,26 +163,11 @@
     <string name="help_what_is_unipatcher_body">UniPatcher, çeşitli video oyun konsollarının ROM kalıplarına yamalar uygulamak için bir Android aracıdır.</string>
     <string name="help_what_is_unipatcher_title">UniPatcher nedir\?</string>
     <string name="help_title">Sık Sorulan Sorular:</string>
-    <string name="about_translators"><b>Çevirmenler:</b>
-\n
-\n - <b>Almanca</b>: Honigdieb
-\n - <b>Bokmål Norveççe</b>: Allan Nordhøy
-\n - <b>Çince</b>: Nabarl Wang, Eric
-\n - <b>Endonezyaca</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
-\n - <b>Fransızca</b>: Thibaut Panis, J. Lavoie
-\n - <b>İbranice</b>: Tamer Dabsan
-\n - <b>İspanyolca</b>: Carlos Sánchez, Swyter
-\n - <b>İtalyanca</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n - <b>Japonca</b>: Naofumi Fukue
-\n - <b>Korece</b>: Minseo Lee
-\n - <b>Lehçe</b>: Michal Bychowski, Jarek Karpiel, hayneken993
-\n - <b>Litvanyaca</b>: Gediminas Murauskas
-\n - <b>Portekizce</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n - <b>Portekizce (Brezilya)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
-\n - <b>Rusça</b>: Борис Тимофеев
-\n - <b>Türkçe</b>: Oğuz Ersen
-\n - <b>Ukraynaca</b>: Володимир Шевчук
-\n
-\nUygulamanın dilinize çevrilmesine yardımcı olun: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="about_translators"><b>Çevirmenler:</b> \n \n - <b>Almanca</b>: Honigdieb \n - <b>Arapça</b>: Fayçal Boukamel \n - <b>Bokmål Norveççe</b>: Allan Nordhøy \n - <b>Çince</b>: Nabarl Wang, Eric, jane \n - <b>Endonezyaca</b>: Tsaqib Fadhlurrahman Soka, Lim Jia Ming, Reza Almanda \n - <b>Esperanto</b>: Jakub Fabijan \n - <b>Fransızca</b>: Thibaut Panis, J. Lavoie, Un Anonyme \n - <b>İbranice</b>: Tamer Dabsan, Yaron Shahrabani \n - <b>İspanyolca</b>: Carlos Sánchez, Swyter \n - <b>İtalyanca</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli, TM, Da C \n - <b>Japonca</b>: Naofumi Fukue \n - <b>Korece</b>: Minseo Lee, 이정희 \n - <b>Kürtçe (Orta)</b>: دیاری ئەرسەلان جەبار \n - <b>Lehçe</b>: Michal Bychowski, Jarek Karpiel, hayneken993, Henio Szewczyk, Dawid Jaszczyk \n - <b>Litvanyaca</b>: Gediminas Murauskas \n - <b>Malayca</b>: Muhammad Ammar Bin Rozi \n - <b>Portekizce</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos, Kauã Azevedo da Silva Vicente \n - <b>Portekizce (Brezilya)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes, Kauã Azevedo da Silva Vicente, Vinícius, Dinowattz \n - <b>Rusça</b>: Борис Тимофеев, AHOHNMYC \n - <b>Türkçe</b>: Oğuz Ersen \n - <b>Ukraynaca</b>: Володимир Шевчук, Kefir2105, Artem \n - <b>Vietnamca</b>: Haibara Ai \n \nUygulamanın dilinize çevrilmesine yardımcı olun: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="about_used_libraries"><b>Kullanılan kütüphaneler:</b> \n \n - ACRA ekibi tarafından Apache 2.0 lisansı altında lisanslanan <b>ACRA</b>. https://github.com/ACRA/acra \n - Apache Yazılım Vakfı tarafından Apache 2.0 lisansı altında lisanslanan <b>Apache Commons IO</b>. https://commons.apache.org/proper/commons-io/ \n - Dagger yazarları tarafından Apache 2.0 lisansı altında lisanslanan <b>Dagger</b>. https://github.com/google/dagger \n - Google tarafından Apache 2.0 lisansı altında lisanslanan <b>Material tasarım simgeleri</b>. https://github.com/google/material-design-icons \n - Topluluk tarafından SIL Açık Yazı Tipi Lisansı 1.1 altında lisanslanan <b>Material tasarım simgeleri</b>. https://materialdesignicons.com \n - Jake Wharton tarafından Apache 2.0 lisansı altında lisanslanan <b>Timber</b>. https://github.com/JakeWharton/timber \n - Joshua MacDonald tarafından Apache 2.0 lisansı altında lisanslanan <b>XDelta sürüm 3</b>. https://github.com/jmacd/xdelta</string>
+    <string name="donate_screen_message_1">UniPatcher\'ı beğendiyseniz, burada memnuniyetinizi ifade edebilirsiniz.</string>
+    <string name="donate_screen_message_2">Bağışlarınızı uygulamayı iyileştirmek için kullanıyoruz.</string>
+    <string name="donate_screen_message_3">Teşekkürler!</string>
+    <string name="donate_screen_send_bitcoin_button">Bitcoin Gönder</string>
+    <string name="donate_screen_bitcoin_copied_to_clipboard">Bitcoin cüzdanının adresi panoya kopyalandı.</string>
 </resources>

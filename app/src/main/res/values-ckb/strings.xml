@@ -3,7 +3,7 @@
     <string name="settings_interface_header">ڕووکاری بەکارهێنەر</string>
     <string name="create_patch_fragment_toast_modified_not_selected">فایلی گۆڕدراو دیارینەکراوە</string>
     <string name="error_file_picker_app_is_no_installed">هەڵە: هیچ بەرنامەیەکی فایل دانەمەزراوە</string>
-    <string name="main_activity_patch_file">فایلی پاچ</string>
+    <string name="main_activity_patch_file">پەڕگەی پاچ</string>
     <string name="settings_ignore_checksum">پشتگوێ خستنی پشکنین</string>
     <string name="settings_show_button_how_to_use_app_description">پیشاندانی دوگمەی \"چۆنیەتی بەکارهێنانی بەرنامە\" لەسەر شاشەی سەرەکی</string>
     <string name="notify_create_patch_complete">پاچ دروستکرا</string>
@@ -65,7 +65,7 @@
     <string name="main_activity_donate_snackbar_text">هاوکاری کردنی Uni پاچەر بە بەخشینی بڕێک پارە</string>
     <string name="settings_theme">ڕووکار</string>
     <string name="notify_error_not_dps_patch">پاچێکی DPS دروست نیە</string>
-    <string name="main_activity_output_file">فایلی دەرەوە</string>
+    <string name="main_activity_output_file">پەڕگەی دەرچە</string>
     <string name="settings_show_button_how_to_use_app">پیشاندانی دوگمەی یارمەتی</string>
     <string name="settings_theme_name_follow_system">بەکارهێنانی ئاسایی سیستەم</string>
     <string name="notify_error_unknown">هەڵەی نەناسراو</string>
@@ -81,8 +81,8 @@
     <string name="settings_ignore_checksum_description">پاچەکە مەپچڕە ئەگەر لەناو ڕۆم هەڵە بەکاربهێنیت.وریابە: ئەم هەڵبژاردنە لەوانەیە یاریەکەت بشکێنێت.</string>
     <string name="notify_snes_delete_smc_header_complete">SMC header سڕدرایەوە</string>
     <string name="help_activity_faq_tab_title">پرسیارەکان</string>
-    <string name="app_name">Uni پاچەر</string>
-    <string name="main_activity_rom_file">فایل ROM</string>
+    <string name="app_name">یوونی پاچەر</string>
+    <string name="main_activity_rom_file">پەڕگەی ڕۆم</string>
     <string name="settings_patching_header">پاچکردنی</string>
     <string name="help_activity_action_changelog">گۆڕانکاری</string>
     <string name="main_activity_toast_rom_not_selected">هیچ فایلێک دیارینەکراوە</string>
