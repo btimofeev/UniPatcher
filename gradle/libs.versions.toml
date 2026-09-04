@@ -8,7 +8,7 @@ coreKtxVersion = "1.16.0"
 documentfileVersion = "1.1.0"
 downloadPluginVersion = "5.7.0"
 fragmentKtxVersion = "1.9.0"
-gradleVersion = "8.13.2"
+androidGradlePlugin = "8.13.2"
 hiltVersion = "2.57.1"
 junitVersion = "4.13.2"
 kotlinVersion = "2.2.20"
@@ -29,12 +29,9 @@ constraintlayout = { module = "androidx.constraintlayout:constraintlayout", vers
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtxVersion" }
 documentfile = { module = "androidx.documentfile:documentfile", version.ref = "documentfileVersion" }
 fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtxVersion" }
-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradleVersion" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltVersion" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltVersion" }
-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltVersion" }
 junit = { module = "junit:junit", version.ref = "junitVersion" }
-kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinVersion" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesVersion" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesVersion" }
@@ -47,4 +44,7 @@ preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = 
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timberVersion" }
 
 [plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinVersion" }
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
 download-plugin = { id = "de.undercouch.download", version.ref = "downloadPluginVersion" }
