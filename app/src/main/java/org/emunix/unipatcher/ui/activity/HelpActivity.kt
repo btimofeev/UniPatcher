@@ -19,6 +19,7 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.activity
 
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -30,6 +31,7 @@ import org.emunix.unipatcher.ui.adapter.HelpStateAdapter
 class HelpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
         val binding = ActivityHelpBinding.inflate(layoutInflater)

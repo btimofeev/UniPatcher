@@ -9,29 +9,28 @@ android {
         release
     }
 
+    compileSdk = 36
+
     defaultConfig {
         applicationId "org.emunix.unipatcher"
-        minSdkVersion 21
-        compileSdk 34
-        targetSdkVersion 34
-        ndkVersion "22.1.7171670"
+        minSdk 24
+        targetSdk 36
+        ndkVersion "29.0.14206865"
         versionCode 170300
         versionName "0.17.3"
         ndk {
-            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+            abiFilters 'arm64-v8a', 'x86_64'
         }
         externalNativeBuild {
             cmake {
                 cppFlags ""
-                arguments "-DANDROID_PLATFORM=android-21", "-DCMAKE_BUILD_TYPE=Release",
-                        "-DANDROID_ARM_MODE=arm"
-                version "3.10.2"
+                arguments "-DANDROID_PLATFORM=android-24", "-DCMAKE_BUILD_TYPE=Release"
+                version "3.31.6"
             }
         }
     }
 
     buildFeatures {
-        dataBinding true
         viewBinding true
     }
 
@@ -76,10 +75,13 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
     namespace 'org.emunix.unipatcher'
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
 }
 
 Properties props = new Properties()

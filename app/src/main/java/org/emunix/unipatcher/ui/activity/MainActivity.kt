@@ -22,6 +22,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -67,6 +68,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var settings: Settings
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
         _binding = ActivityMainBinding.inflate(layoutInflater)
