@@ -17,6 +17,11 @@ android {
         create("release") { /** see below **/ }
     }
 
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "org.emunix.unipatcher"
         minSdk = 24
@@ -36,10 +41,6 @@ android {
                 version = "3.31.6"
             }
         }
-    }
-
-    buildFeatures {
-        viewBinding = true
     }
 
     buildTypes {
