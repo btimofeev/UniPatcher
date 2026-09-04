@@ -1,5 +1,6 @@
 #### develop
 - Compatibility update: support from Android 7 up to Android 16
+- Tamil translation (thanks to TamilNeram)
 
 #### 0.17.3 (November 15, 2024)
 - Arabic translation (thanks to Fayçal Boukamel)
