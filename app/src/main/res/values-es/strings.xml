@@ -142,27 +142,7 @@
     <string name="about_used_libraries"><b>Bibliotecas en uso:</b> \n \n - <b>ACRA</b> por el equipo de ACRA, creado bajo la licencia Apache 2.0. https://github.com/ACRA/acra \n - <b>Apache Commons IO</b> por The Apache Software Foundation, creado bajo la licencia Apache 2.0. https://commons.apache.org/proper/commons-io/ \n - <b>Dagger</b> por The Dagger Authors, creado bajo la licencia Apache 2.0. https://github.com/google/dagger \n - <b>Material design icons</b> por Google, creado bajo la licencia Apache 2.0. https://github.com/google/material-design-icons \n - <b>Material design icons</b> creados por los autores de su comunidad, creado bajo la licencia SIL Open Font License 1.1. https://materialdesignicons.com \n - <b>Timber</b> por Jake Wharton, creado bajo la licencia Apache 2.0. https://github.com/JakeWharton/timber \n - <b>XDelta version 3</b> por Joshua MacDonald, creado bajo la licencia Apache 2.0. https://github.com/jmacd/xdelta</string>
     <string name="help_i_cant_patch_smw_rom_body">Esta ROM contiene un encabezado SMC y casi todos los parches disponibles esperan el otro formato. Puedes quitar dicho encabezado SMC mediante la opción del menú de la izquierda y luego aplicar el parche sobre la ROM resultante.</string>
     <string name="help_snes_smc_body">Ciertas imágenes ROM para SNES contienen 512 bytes a mayores al principio del todo. Este espacio extra no sirve de nada, pero mueve y altera el tamaño de lo que va detrás y hace que no coincida. Quitarlo te permite conseguir el archivo original y poder aplicar el parche.</string>
-    <string name="about_translators"><b>Traductores:</b>
-\n 
-\n - <b>Chino</b>: Nabarl Wang, Eric
-\n - <b>Francés</b>: Thibaut Panis, J. Lavoie
-\n - <b>Alemán</b>: Honigdieb
-\n - <b>Hebreo</b>: Tamer Dabsan
-\n - <b>Indonesio</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
-\n - <b>Italiano</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n - <b>Japonés</b>: Naofumi Fukue
-\n - <b>Lituano</b>: Gediminas Murauskas
-\n - <b>Coreano</b>: Minseo Lee
-\n - <b>Noruego bokmål</b>: Allan Nordhøy
-\n - <b>Polaco</b>: Michal Bychowski, Jarek Karpiel, hayneken993
-\n - <b>Portugués</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n - <b>Portugués de Brasil</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
-\n - <b>Ruso</b>: Борис Тимофеев
-\n - <b>Castellano</b>: Carlos Sánchez, Swyter
-\n - <b>Turco</b>: Oğuz Ersen
-\n - <b>Ucraniano</b>: Володимир Шевчук
-\n 
-\nAyúdanos a traducir la aplicación a tu idioma materno: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="about_translators"><b>Traductores:</b> \n \n - <b>Chino</b>: Nabarl Wang, Eric \n - <b>Francés</b>: Thibaut Panis, J. Lavoie \n - <b>Alemán</b>: Honigdieb \n - <b>Hebreo</b>: Tamer Dabsan \n - <b>Indonesio</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda \n - <b>Italiano</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli \n - <b>Japonés</b>: Naofumi Fukue \n - <b>Lituano</b>: Gediminas Murauskas \n - <b>Coreano</b>: Minseo Lee \n - <b>Noruego bokmål</b>: Allan Nordhøy \n - <b>Polaco</b>: Michal Bychowski, Jarek Karpiel, hayneken993 \n - <b>Portugués</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos \n - <b>Portugués de Brasil</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes \n - <b>Ruso</b>: Борис Тимофеев \n - <b>Castellano</b>: Carlos Sánchez, Swyter \n - <b>Turco</b>: Oğuz Ersen \n - <b>Ucraniano</b>: Володимир Шевчук \n \nAyúdanos a traducir la aplicación a tu idioma materno: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="nav_snes_add_del_smc_header">Quitar encabezado SMC (SNES)</string>
     <string name="snes_smc_header_help">Ten en cuenta que esta función es sólo para ROMs de Super Nintendo.
 \n
