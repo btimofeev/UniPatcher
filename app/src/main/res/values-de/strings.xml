@@ -12,27 +12,7 @@
     <string name="help_find_rom_pokemon_emerald_body">Die meisten Patches für dieses Spiel funktionieren mit dem ROM „Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
     <string name="help_i_cant_patch_smw_rom_body">Das ROM enthält einen SMC-Header, wobei die meisten Patches für dieses Spiel voraussetzen, dass es keinen SMC-Header hat. Du kannst den Header über den entsprechenden Menüeintrag entfernen und dann den Patch auf das so erzeugte ROM anwenden.</string>
     <string name="about_used_libraries"><b>Benutzte Bibliotheken:</b> \n \n - <b>ACRA</b> vom ACRA-Team, licensed under the Apache 2.0 license. https://github.com/ACRA/acra \n - <b>Apache Commons IO</b> von The Apache Software Foundation, licensed under the Apache 2.0 license. https://commons.apache.org/proper/commons-io/ \n - <b>Dagger</b> von The Dagger Authors, licensed under the Apache 2.0 license. https://github.com/google/dagger \n - <b>Icons im Material-Design</b> von Google, licensed under the Apache 2.0 license. https://github.com/google/material-design-icons \n - <b>Icons im Material-Design</b> der Community, licensed under SIL Open Font License 1.1. https://materialdesignicons.com \n - <b>Timber</b> von Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber \n - <b>XDelta version 3</b> von Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta</string>
-    <string name="about_translators"><b>Übersetzer:</b>
-\n
-\n - <b>Chinesisch</b>: Nabarl Wang, Eric
-\n - <b>Französisch</b>: Thibaut Panis, J. Lavoie
-\n - <b>Deutsch</b>: Honigdieb
-\n - <b>Hebräisch</b>: Tamer Dabsan
-\n - <b>Indonesisch</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
-\n - <b>Italienisch</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n - <b>Japanisch</b>: Naofumi Fukue
-\n - <b>Litauisch</b>: Gediminas Murauskas
-\n - <b>Koreanisch</b>: Minseo Lee
-\n - <b>Norwegisch Bokmål</b>: Allan Nordhøy
-\n - <b>Polnisch</b>: Michal Bychowski, Jarek Karpiel, hayneken993
-\n - <b>Portugiesisch</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n - <b>Portugiesisch (Brasilien)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
-\n - <b>Russisch</b>: Борис Тимофеев
-\n - <b>Spanisch</b>: Carlos Sánchez, Swyter
-\n - <b>Türkisch</b>: Oğuz Ersen
-\n - <b>Ukrainisch</b>: Володимир Шевчук
-\n
-\nHelfen Sie mit, die App in Ihre Sprache zu übersetzen: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="about_translators"><b>Übersetzer:</b> \n \n - <b>Chinesisch</b>: Nabarl Wang, Eric \n - <b>Französisch</b>: Thibaut Panis, J. Lavoie \n - <b>Deutsch</b>: Honigdieb \n - <b>Hebräisch</b>: Tamer Dabsan \n - <b>Indonesisch</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda \n - <b>Italienisch</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli \n - <b>Japanisch</b>: Naofumi Fukue \n - <b>Litauisch</b>: Gediminas Murauskas \n - <b>Koreanisch</b>: Minseo Lee \n - <b>Norwegisch Bokmål</b>: Allan Nordhøy \n - <b>Polnisch</b>: Michal Bychowski, Jarek Karpiel, hayneken993 \n - <b>Portugiesisch</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos \n - <b>Portugiesisch (Brasilien)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes \n - <b>Russisch</b>: Борис Тимофеев \n - <b>Spanisch</b>: Carlos Sánchez, Swyter \n - <b>Türkisch</b>: Oğuz Ersen \n - <b>Ukrainisch</b>: Володимир Шевчук \n \nHelfen Sie mit, die App in Ihre Sprache zu übersetzen: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_feedback_title">Ich habe eine Frage, einen Wunsch für ein Feature oder einen Fehlerbericht.</string>
     <string name="help_how_to_translate_body">Wenn du die App in eine andere Sprache übersetzen oder eine bestehende Übersetzung verbessern willst, kannst du dies auf der Weblate-Seite https://hosted.weblate.org/engage/unipatcher/ tun</string>
     <string name="help_how_to_translate_title">Wie kann ich die App übersetzen\?</string>

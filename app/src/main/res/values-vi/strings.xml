@@ -82,8 +82,7 @@
     <string name="help_what_is_unipatcher_body">UniPatcher là một công cụ Android để áp dụng các bản vá vào tệp ROM của nhiều hệ máy chơi game video khác nhau.</string>
     <string name="help_what_patch_formats_are_supported_body">UniPatcher hỗ trợ các bản vá IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP và XDelta3.</string>
     <string name="help_can_i_hack_android_game_title">Tôi có thể hack hoặc bẻ khóa trò chơi Android bằng ứng dụng này không?</string>
-    <string name="help_can_i_hack_android_game_body">Không. UniPatcher không được thiết kế để hack các trò chơi Android.
-\nNgủ đi rồi mơ cái gì cũng có</string>
+    <string name="help_can_i_hack_android_game_body">Không. UniPatcher không được thiết kế để hack các trò chơi Android. \nNgủ đi rồi mơ cái gì cũng có</string>
     <string name="help_what_is_rom_image_title">ROM là gì?</string>
     <string name="help_what_is_rom_hacking_title">ROM hack là gì?</string>
     <string name="help_what_is_a_patch_title">Bản vá là gì?</string>
