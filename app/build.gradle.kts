@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.download.plugin)
 }
 
 android {
@@ -168,8 +169,6 @@ tasks.register("downloadDependencies") {
     val downloadDir = layout.buildDirectory.get().asFile.path
 
     doLast {
-        val download = extensions.getByType(de.undercouch.gradle.tasks.download.DownloadAction::class.java)
-
         download.run {
             src("https://github.com/jmacd/xdelta/archive/v${xDelta}.tar.gz")
             dest(File(downloadDir, "xdelta-${xDelta}.tar.gz"))
