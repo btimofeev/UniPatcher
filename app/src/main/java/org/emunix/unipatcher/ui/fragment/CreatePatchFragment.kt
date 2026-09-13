@@ -1,5 +1,5 @@
 /*
- Copyright (C) 2017, 2020, 2022 Boris Timofeev
+ Copyright (C) 2017, 2020, 2022, 2026 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -19,117 +19,50 @@
  */
 package org.emunix.unipatcher.ui.fragment
 
-import android.content.ActivityNotFoundException
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
-import androidx.core.view.isVisible
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
-import org.emunix.unipatcher.MIME_TYPE_OCTET_STREAM
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.databinding.CreatePatchFragmentBinding
-import org.emunix.unipatcher.utils.registerActivityResult
+import org.emunix.unipatcher.ui.main.CreatePatchScreen
+import org.emunix.unipatcher.ui.theme.UniPatcherTheme
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.CreatePatchViewModel
 
 @AndroidEntryPoint
-class CreatePatchFragment : ActionFragment(), View.OnClickListener {
+class CreatePatchFragment : ActionFragment() {
 
     private val viewModel by viewModels<CreatePatchViewModel>()
     private val actionIsRunningViewModel by activityViewModels<ActionIsRunningViewModel>()
 
-    private lateinit var activitySourceFile: ActivityResultLauncher<Intent>
-    private lateinit var activityModifiedFile: ActivityResultLauncher<Intent>
-    private lateinit var activityPatchFile: ActivityResultLauncher<Intent>
-
-    private var _binding: CreatePatchFragmentBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = CreatePatchFragmentBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        return ComposeView(requireContext()).apply {
+            setViewCompositionStrategy(
+                ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed
+            )
+            setContent {
+                UniPatcherTheme {
+                    CreatePatchScreen(
+                        viewModel = viewModel,
+                        actionIsRunningViewModel = actionIsRunningViewModel,
+                    )
+                }
+            }
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.setTitle(R.string.nav_create_patch)
-
-        activitySourceFile = registerActivityResult(viewModel::sourceSelected)
-        activityModifiedFile = registerActivityResult(viewModel::modifiedSelected)
-        activityPatchFile = registerActivityResult(viewModel::patchSelected)
-
-        viewModel.getSourceName().observe(viewLifecycleOwner) {
-            binding.sourceFileNameTextView.text = it
-        }
-        viewModel.getModifiedName().observe(viewLifecycleOwner) {
-            binding.modifiedFileNameTextView.text = it
-        }
-        viewModel.getPatchName().observe(viewLifecycleOwner) {
-            binding.patchFileNameTextView.text = it
-        }
-        viewModel.getMessage().observe(viewLifecycleOwner) { event ->
-            event.getContentIfNotHandled()?.let { message ->
-                Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
-            }
-        }
-        viewModel.getActionIsRunning().observe(viewLifecycleOwner) { isRunning ->
-            actionIsRunningViewModel.createPatch(isRunning)
-            binding.progressBar.isVisible = isRunning
-        }
-        binding.sourceFileCardView.setOnClickListener(this)
-        binding.modifiedFileCardView.setOnClickListener(this)
-        binding.patchFileCardView.setOnClickListener(this)
-    }
-
-    override fun onClick(view: View) {
-        when (view.id) {
-            R.id.sourceFileCardView -> {
-                val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
-                    addCategory(Intent.CATEGORY_OPENABLE)
-                    type = MIME_TYPE_ALL_FILES
-                }
-                try {
-                    activitySourceFile.launch(intent)
-                } catch (e: ActivityNotFoundException) {
-                    Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
-                }
-            }
-            R.id.modifiedFileCardView -> {
-                val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
-                    addCategory(Intent.CATEGORY_OPENABLE)
-                    type = MIME_TYPE_ALL_FILES
-                }
-                try {
-                    activityModifiedFile.launch(intent)
-                } catch (e: ActivityNotFoundException) {
-                    Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
-                }
-            }
-            R.id.patchFileCardView -> {
-                val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-                    addCategory(Intent.CATEGORY_OPENABLE)
-                    type = MIME_TYPE_OCTET_STREAM
-                    putExtra(Intent.EXTRA_TITLE, "patch.xdelta")
-                }
-                try {
-                    activityPatchFile.launch(intent)
-                } catch (e: ActivityNotFoundException) {
-                    Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
     }
 
     override fun runAction() {
