@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014, 2020-2022 Boris Timofeev
+Copyright (C) 2014, 2020-2022, 2026 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -18,78 +18,50 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 package org.emunix.unipatcher.ui.fragment
 
-import android.content.ActivityNotFoundException
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
-import androidx.core.view.isVisible
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.databinding.SmdFixChecksumFragmentBinding
-import org.emunix.unipatcher.utils.registerActivityResult
+import org.emunix.unipatcher.ui.main.SmdFixChecksumScreen
+import org.emunix.unipatcher.ui.theme.UniPatcherTheme
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.SmdFixChecksumViewModel
 
 @AndroidEntryPoint
-class SmdFixChecksumFragment : ActionFragment(), View.OnClickListener {
+class SmdFixChecksumFragment : ActionFragment() {
 
     private val viewModel by viewModels<SmdFixChecksumViewModel>()
     private val actionIsRunningViewModel by activityViewModels<ActionIsRunningViewModel>()
 
-    private lateinit var activityRomFile: ActivityResultLauncher<Intent>
-
-    private var _binding: SmdFixChecksumFragmentBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = SmdFixChecksumFragmentBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        return ComposeView(requireContext()).apply {
+            setViewCompositionStrategy(
+                ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed
+            )
+            setContent {
+                UniPatcherTheme {
+                    SmdFixChecksumScreen(
+                        viewModel = viewModel,
+                        actionIsRunningViewModel = actionIsRunningViewModel,
+                    )
+                }
+            }
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.setTitle(R.string.nav_smd_fix_checksum)
-
-        activityRomFile = registerActivityResult(viewModel::romSelected)
-
-        viewModel.getRomName().observe(viewLifecycleOwner) {
-            binding.romNameTextView.text = it
-        }
-        viewModel.getMessage().observe(viewLifecycleOwner) { event ->
-            event.getContentIfNotHandled()?.let { message ->
-                Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
-            }
-        }
-        viewModel.getActionIsRunning().observe(viewLifecycleOwner) { isRunning ->
-            actionIsRunningViewModel.fixChecksum(isRunning)
-            binding.progressBar.isVisible = isRunning
-        }
-
-        binding.romCardView.setOnClickListener(this)
-    }
-
-    override fun onClick(view: View) {
-        val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
-            addCategory(Intent.CATEGORY_OPENABLE)
-            type = MIME_TYPE_ALL_FILES
-        }
-        try {
-            activityRomFile.launch(intent)
-        } catch (e: ActivityNotFoundException) {
-            Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
-        }
     }
 
     override fun runAction() {
