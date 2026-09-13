@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017-2021 Boris Timofeev
+ Copyright (c) 2017-2021, 2026 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -21,17 +21,20 @@
 package org.emunix.unipatcher.viewmodels
 
 import android.net.Uri
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
-import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.tools.CreateXDelta3
 import org.emunix.unipatcher.utils.FileUtils
@@ -48,60 +51,65 @@ class CreatePatchViewModel @Inject constructor(
     private var sourceUri: Uri? = null
     private var modifiedUri: Uri? = null
     private var patchUri: Uri? = null
-    private val sourceName: MutableLiveData<String> = MutableLiveData()
-    private val modifiedName: MutableLiveData<String> = MutableLiveData()
-    private val patchName: MutableLiveData<String> = MutableLiveData()
-    private val message: MutableLiveData<ConsumableEvent<String>> = MutableLiveData()
-    private val actionIsRunning: MutableLiveData<Boolean> = MutableLiveData()
 
-    fun getSourceName(): LiveData<String> = sourceName
-    fun getModifiedName(): LiveData<String> = modifiedName
-    fun getPatchName(): LiveData<String> = patchName
-    fun getMessage(): LiveData<ConsumableEvent<String>> = message
-    fun getActionIsRunning(): LiveData<Boolean> = actionIsRunning
+    private val _sourceName: MutableStateFlow<String> = MutableStateFlow("")
+    val sourceName: StateFlow<String> = _sourceName.asStateFlow()
 
-    init {
-        actionIsRunning.value = false
-    }
+    private val _modifiedName: MutableStateFlow<String> = MutableStateFlow("")
+    val modifiedName: StateFlow<String> = _modifiedName.asStateFlow()
+
+    private val _patchName: MutableStateFlow<String> = MutableStateFlow("")
+    val patchName: StateFlow<String> = _patchName.asStateFlow()
+
+    private val _actionIsRunning: MutableStateFlow<Boolean> = MutableStateFlow(false)
+    val actionIsRunning: StateFlow<Boolean> = _actionIsRunning.asStateFlow()
+
+    private val _message: MutableSharedFlow<String> = MutableSharedFlow(extraBufferCapacity = 1)
+    val message: SharedFlow<String> = _message.asSharedFlow()
 
     fun sourceSelected(uri: Uri) = viewModelScope.launch {
         sourceUri = uri
-        sourceName.value = fileUtils.getFileName(uri)
+        _sourceName.value = fileUtils.getFileName(uri)
     }
 
     fun modifiedSelected(uri: Uri) = viewModelScope.launch {
         modifiedUri = uri
-        modifiedName.value = fileUtils.getFileName(uri)
+        _modifiedName.value = fileUtils.getFileName(uri)
     }
 
     fun patchSelected(uri: Uri) = viewModelScope.launch {
         patchUri = uri
-        patchName.value = fileUtils.getFileName(uri)
+        _patchName.value = fileUtils.getFileName(uri)
     }
 
     fun runActionClicked() = viewModelScope.launch {
-        if (actionIsRunning.value == true) return@launch
+        if (_actionIsRunning.value) return@launch
         when {
             sourceUri == null -> {
-                message.value =
-                    ConsumableEvent(resourceProvider.getString(R.string.create_patch_fragment_toast_source_not_selected))
+                _message.emit(
+                    resourceProvider.getString(R.string.create_patch_fragment_toast_source_not_selected)
+                )
                 return@launch
             }
             modifiedUri == null -> {
-                message.value =
-                    ConsumableEvent(resourceProvider.getString(R.string.create_patch_fragment_toast_modified_not_selected))
+                _message.emit(
+                    resourceProvider.getString(R.string.create_patch_fragment_toast_modified_not_selected)
+                )
                 return@launch
             }
             patchUri == null -> {
-                message.value =
-                    ConsumableEvent(resourceProvider.getString(R.string.create_patch_fragment_toast_patch_not_selected))
+                _message.emit(
+                    resourceProvider.getString(R.string.create_patch_fragment_toast_patch_not_selected)
+                )
                 return@launch
             }
             else -> {
                 try {
-                    actionIsRunning.value = true
+                    _actionIsRunning.value = true
                     createPatch()
-                    message.postValue(ConsumableEvent(resourceProvider.getString(R.string.notify_create_patch_complete)))
+                    _message.emit(
+                        resourceProvider.getString(R.string.notify_create_patch_complete)
+                    )
                 } catch (e: Exception) {
                     val errorMsg =
                         "${resourceProvider.getString(R.string.notify_error)}: ${
@@ -109,9 +117,9 @@ class CreatePatchViewModel @Inject constructor(
                                 R.string.notify_error_unknown
                             )
                         }"
-                    message.postValue(ConsumableEvent(errorMsg))
+                    _message.emit(errorMsg)
                 } finally {
-                    actionIsRunning.value = false
+                    _actionIsRunning.value = false
                 }
             }
         }
