@@ -80,6 +80,7 @@ class CreatePatchViewModel @Inject constructor(
     }
 
     fun runActionClicked() = viewModelScope.launch {
+        if (actionIsRunning.value == true) return@launch
         when {
             sourceUri == null -> {
                 message.value =

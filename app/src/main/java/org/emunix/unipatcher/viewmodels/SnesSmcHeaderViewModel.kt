@@ -97,6 +97,7 @@ class SnesSmcHeaderViewModel @Inject constructor(
     }
 
     fun runActionClicked() = viewModelScope.launch {
+        if (actionIsRunning.value == true) return@launch
         when {
             romUri == null -> {
                 message.value =

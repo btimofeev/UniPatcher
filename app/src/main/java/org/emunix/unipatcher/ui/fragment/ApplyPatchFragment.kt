@@ -27,6 +27,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.core.view.isVisible
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
@@ -45,7 +46,7 @@ class ApplyPatchFragment : ActionFragment(), View.OnClickListener {
     @Inject lateinit var settings: Settings
 
     private val viewModel by viewModels<ApplyPatchViewModel>()
-    private val actionIsRunningViewModel by viewModels<ActionIsRunningViewModel>()
+    private val actionIsRunningViewModel by activityViewModels<ActionIsRunningViewModel>()
 
     private lateinit var activityPatchFile: ActivityResultLauncher<Intent>
     private lateinit var activityRomFile: ActivityResultLauncher<Intent>

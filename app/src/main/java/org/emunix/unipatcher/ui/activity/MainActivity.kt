@@ -27,6 +27,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.core.view.isVisible
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.google.android.material.navigation.NavigationView
@@ -96,6 +98,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         actionIsRunningViewModel.get().observe(this, {
             actionIsRunning = it
+            binding.blockUserInput.isVisible = it
+            binding.drawerLayout.setDrawerLockMode(
+                if (it) DrawerLayout.LOCK_MODE_LOCKED_CLOSED else DrawerLayout.LOCK_MODE_UNLOCKED
+            )
         })
 
         if (BuildConfig.FLAVOR == FLAVOR_FREE) {
