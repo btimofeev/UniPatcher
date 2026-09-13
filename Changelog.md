@@ -1,5 +1,8 @@
-#### develop
-- Compatibility update: support from Android 7 up to Android 16
+#### 0.18 (September 13, 2026)
+- Support for Android 16
+- Support for devices with 16 KB page size
+- Minimum supported Android version raised from 5.0 to 7.0 (Nougat)
+- BPS patching rewritten, lower memory usage
 - Tamil translation (thanks to TamilNeram)
 
 #### 0.17.3 (November 15, 2024)

@@ -1,0 +1,5 @@
+- Support for Android 16
+- Support for devices with 16 KB page size
+- Minimum supported Android version raised from 5.0 to 7.0 (Nougat)
+- BPS patching rewritten, lower memory usage
+- Tamil translation (thanks to TamilNeram)
