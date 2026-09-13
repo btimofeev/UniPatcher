@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2013-2021 Boris Timofeev
+ Copyright (c) 2013-2021, 2026 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -21,15 +21,20 @@
 package org.emunix.unipatcher.viewmodels
 
 import android.net.Uri
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
-import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.patcher.PatcherFactory
 import org.emunix.unipatcher.utils.FileUtils
@@ -49,74 +54,87 @@ class ApplyPatchViewModel @Inject constructor(
     private var patchUri: Uri? = null
     private var romUri: Uri? = null
     private var outputUri: Uri? = null
-    private val patchName: MutableLiveData<String> = MutableLiveData()
-    private val romName: MutableLiveData<String> = MutableLiveData()
-    private val outputName: MutableLiveData<String> = MutableLiveData()
-    private val suggestedOutputName: MutableLiveData<String> = MutableLiveData()
-    private val message: MutableLiveData<ConsumableEvent<String>> = MutableLiveData()
-    private val actionIsRunning: MutableLiveData<Boolean> = MutableLiveData()
 
-    fun getPatchName(): LiveData<String> = patchName
-    fun getRomName(): LiveData<String> = romName
-    fun getOutputName(): LiveData<String> = outputName
-    fun getSuggestedOutputName(): LiveData<String> = suggestedOutputName
-    fun getMessage(): LiveData<ConsumableEvent<String>> = message
-    fun getActionIsRunning(): LiveData<Boolean> = actionIsRunning
+    private val _patchName: MutableStateFlow<String> = MutableStateFlow("")
+    val patchName: StateFlow<String> = _patchName.asStateFlow()
 
-    init {
-        actionIsRunning.value = false
-    }
+    private val _romName: MutableStateFlow<String> = MutableStateFlow("")
+    val romName: StateFlow<String> = _romName.asStateFlow()
+
+    private val _outputName: MutableStateFlow<String> = MutableStateFlow("")
+    val outputName: StateFlow<String> = _outputName.asStateFlow()
+
+    private val _suggestedOutputName: MutableStateFlow<String> = MutableStateFlow("")
+    val suggestedOutputName: StateFlow<String> = _suggestedOutputName.asStateFlow()
+
+    private val _showHelpButton: MutableStateFlow<Boolean> =
+        MutableStateFlow(settings.getShowHelpButton())
+    val showHelpButton: StateFlow<Boolean> = _showHelpButton.asStateFlow()
+
+    private val _actionIsRunning: MutableStateFlow<Boolean> = MutableStateFlow(false)
+    val actionIsRunning: StateFlow<Boolean> = _actionIsRunning.asStateFlow()
+
+    private val _message: MutableSharedFlow<String> = MutableSharedFlow(extraBufferCapacity = 1)
+    val message: SharedFlow<String> = _message.asSharedFlow()
 
     fun patchSelected(uri: Uri) = viewModelScope.launch {
         patchUri = uri
         val name = fileUtils.getFileName(uri)
-        patchName.value = name
+        _patchName.value = name
         checkArchive(name)
     }
 
     fun romSelected(uri: Uri) = viewModelScope.launch {
         romUri = uri
         val name = fileUtils.getFileName(uri)
-        romName.value = name
+        _romName.value = name
         checkArchive(name)
         suggestOutputName(name)
     }
 
     fun outputSelected(uri: Uri) = viewModelScope.launch {
         outputUri = uri
-        outputName.value = fileUtils.getFileName(uri)
+        _outputName.value = fileUtils.getFileName(uri)
+    }
+
+    fun refreshSettings() {
+        _showHelpButton.value = settings.getShowHelpButton()
     }
 
     fun runActionClicked() = viewModelScope.launch {
-        if (actionIsRunning.value == true) return@launch
+        if (_actionIsRunning.value) return@launch
         when {
             patchUri == null -> {
-                message.value =
-                    ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_patch_not_selected))
+                _message.emit(
+                    resourceProvider.getString(R.string.main_activity_toast_patch_not_selected)
+                )
                 return@launch
             }
             romUri == null -> {
-                message.value =
-                    ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_rom_not_selected))
+                _message.emit(
+                    resourceProvider.getString(R.string.main_activity_toast_rom_not_selected)
+                )
                 return@launch
             }
             outputUri == null -> {
-                message.value =
-                    ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_output_not_selected))
+                _message.emit(
+                    resourceProvider.getString(R.string.main_activity_toast_output_not_selected)
+                )
                 return@launch
             }
             else -> {
                 try {
-                    actionIsRunning.value = true
+                    _actionIsRunning.value = true
                     applyPatch()
-                    message.postValue(ConsumableEvent(resourceProvider.getString(R.string.notify_patching_complete)))
+                    _message.emit(resourceProvider.getString(R.string.notify_patching_complete))
                 } catch (e: Exception) {
-                    val errorMsg = "${resourceProvider.getString(R.string.notify_error)}: ${
-                        e.message ?: resourceProvider.getString(R.string.notify_error_unknown)
-                    }"
-                    message.postValue(ConsumableEvent(errorMsg))
+                    val errorMsg =
+                        "${resourceProvider.getString(R.string.notify_error)}: ${
+                            e.message ?: resourceProvider.getString(R.string.notify_error_unknown)
+                        }"
+                    _message.emit(errorMsg)
                 } finally {
-                    actionIsRunning.value = false
+                    _actionIsRunning.value = false
                 }
             }
         }
@@ -125,26 +143,28 @@ class ApplyPatchViewModel @Inject constructor(
     private fun checkArchive(fileName: String) {
         val isArchive = File(fileName).isArchive()
         Timber.d("isArchive = $isArchive")
-        if (isArchive)
-            message.value =
-                ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_archives_not_supported))
+        if (isArchive) {
+            _message.tryEmit(
+                resourceProvider.getString(R.string.main_activity_toast_archives_not_supported)
+            )
+        }
     }
 
     private suspend fun suggestOutputName(romName: String) = withContext(Dispatchers.Default) {
         val baseName = fileUtils.getBaseName(romName)
         val ext = fileUtils.getExtension(romName)
-        suggestedOutputName.postValue("$baseName [patched].$ext")
+        _suggestedOutputName.value = "$baseName [patched].$ext"
     }
 
     private suspend fun applyPatch() = withContext(Dispatchers.IO) {
         val romUri = romUri
         val patchUri = patchUri
         val outputUri = outputUri
-        val patchName = patchName.value
+        val patchName = _patchName.value
         require(romUri != null) { "romUri is null" }
         require(patchUri != null) { "patchUri is null" }
         require(outputUri != null) { "outputUri is null" }
-        require(patchName != null) { "patchName is null" }
+        require(patchName.isNotEmpty()) { "patchName is empty" }
         var patchFile: File? = null
         var romFile: File? = null
         var outputFile: File? = null
