@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2014, 2020-2022 Boris Timofeev
+Copyright (C) 2014, 2020-2022, 2026 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -18,112 +18,53 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 package org.emunix.unipatcher.ui.fragment
 
-import android.content.ActivityNotFoundException
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
-import androidx.core.view.isVisible
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
-import org.emunix.unipatcher.MIME_TYPE_OCTET_STREAM
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.databinding.SnesSmcHeaderFragmentBinding
-import org.emunix.unipatcher.utils.registerActivityResult
+import org.emunix.unipatcher.ui.main.SnesSmcHeaderScreen
+import org.emunix.unipatcher.ui.theme.UniPatcherTheme
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.SnesSmcHeaderViewModel
 
 @AndroidEntryPoint
-class SnesSmcHeaderFragment : ActionFragment(), View.OnClickListener {
+class SnesSmcHeaderFragment : ActionFragment() {
 
     private val viewModel by viewModels<SnesSmcHeaderViewModel>()
     private val actionIsRunningViewModel by activityViewModels<ActionIsRunningViewModel>()
 
-    private lateinit var activityRomFile: ActivityResultLauncher<Intent>
-    private lateinit var activityOutputFile: ActivityResultLauncher<Intent>
-
-    private var _binding: SnesSmcHeaderFragmentBinding? = null
-    private val binding get() = _binding!!
-
-    private var suggestedOutputName: String = "headerless_rom.smc"
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = SnesSmcHeaderFragmentBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        return ComposeView(requireContext()).apply {
+            setViewCompositionStrategy(
+                ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed
+            )
+            setContent {
+                UniPatcherTheme {
+                    SnesSmcHeaderScreen(
+                        viewModel = viewModel,
+                        actionIsRunningViewModel = actionIsRunningViewModel,
+                    )
+                }
+            }
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.setTitle(R.string.nav_snes_add_del_smc_header)
-
-        activityRomFile = registerActivityResult(viewModel::romSelected)
-        activityOutputFile = registerActivityResult(viewModel::outputSelected)
-
-        viewModel.getRomName().observe(viewLifecycleOwner) {
-            binding.romNameTextView.text = it
-        }
-        viewModel.getOutputName().observe(viewLifecycleOwner) {
-            binding.outputNameTextView.text = it
-        }
-        viewModel.getSuggestedOutputName().observe(viewLifecycleOwner) {
-            suggestedOutputName = it
-        }
-        viewModel.getMessage().observe(viewLifecycleOwner) { event ->
-            event.getContentIfNotHandled()?.let { message ->
-                Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
-            }
-        }
-        viewModel.getInfoText().observe(viewLifecycleOwner) { text ->
-            binding.headerInfoTextView.text = text
-        }
-        viewModel.getActionIsRunning().observe(viewLifecycleOwner) { isRunning ->
-            actionIsRunningViewModel.removeSmc(isRunning)
-            binding.progressBar.isVisible = isRunning
-        }
-
-        binding.romCardView.setOnClickListener(this)
-        binding.outputCardView.setOnClickListener(this)
     }
 
-    override fun onClick(view: View) {
-        when (view.id) {
-            R.id.romCardView -> {
-                val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
-                    addCategory(Intent.CATEGORY_OPENABLE)
-                    type = MIME_TYPE_ALL_FILES
-                }
-                try {
-                    activityRomFile.launch(intent)
-                } catch (e: ActivityNotFoundException) {
-                    Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
-                }
-            }
-            R.id.outputCardView -> {
-                val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-                    addCategory(Intent.CATEGORY_OPENABLE)
-                    type = MIME_TYPE_OCTET_STREAM
-                    putExtra(Intent.EXTRA_TITLE, suggestedOutputName)
-                }
-                try {
-                    activityOutputFile.launch(intent)
-                } catch (e: ActivityNotFoundException) {
-                    Toast.makeText(requireContext(), R.string.error_file_picker_app_is_no_installed, Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-    }
-
-    override fun runAction(){
+    override fun runAction() {
         viewModel.runActionClicked()
     }
 }

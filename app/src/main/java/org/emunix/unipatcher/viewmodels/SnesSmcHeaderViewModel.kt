@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2014-2021 Boris Timofeev
+ Copyright (c) 2014-2021, 2026 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -21,16 +21,19 @@
 package org.emunix.unipatcher.viewmodels
 
 import android.net.Uri
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.helpers.ConsumableEvent
 import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.tools.SnesSmcHeader
 import org.emunix.unipatcher.utils.FileUtils
@@ -45,75 +48,80 @@ class SnesSmcHeaderViewModel @Inject constructor(
 
     private var romUri: Uri? = null
     private var outputUri: Uri? = null
-    private val romName: MutableLiveData<String> = MutableLiveData()
-    private val outputName: MutableLiveData<String> = MutableLiveData()
-    private val suggestedOutputName: MutableLiveData<String> = MutableLiveData()
-    private val infoText: MutableLiveData<String> = MutableLiveData()
-    private val message: MutableLiveData<ConsumableEvent<String>> = MutableLiveData()
-    private val actionIsRunning: MutableLiveData<Boolean> = MutableLiveData()
 
-    fun getRomName(): LiveData<String> = romName
-    fun getOutputName(): LiveData<String> = outputName
-    fun getSuggestedOutputName(): LiveData<String> = suggestedOutputName
-    fun getInfoText(): LiveData<String> = infoText
-    fun getMessage(): LiveData<ConsumableEvent<String>> = message
-    fun getActionIsRunning(): LiveData<Boolean> = actionIsRunning
+    private val _romName: MutableStateFlow<String> = MutableStateFlow("")
+    val romName: StateFlow<String> = _romName.asStateFlow()
 
-    init {
-        actionIsRunning.value = false
-    }
+    private val _outputName: MutableStateFlow<String> = MutableStateFlow("")
+    val outputName: StateFlow<String> = _outputName.asStateFlow()
+
+    private val _suggestedOutputName: MutableStateFlow<String> = MutableStateFlow("")
+    val suggestedOutputName: StateFlow<String> = _suggestedOutputName.asStateFlow()
+
+    private val _infoText: MutableStateFlow<String> = MutableStateFlow("")
+    val infoText: StateFlow<String> = _infoText.asStateFlow()
+
+    private val _actionIsRunning: MutableStateFlow<Boolean> = MutableStateFlow(false)
+    val actionIsRunning: StateFlow<Boolean> = _actionIsRunning.asStateFlow()
+
+    private val _message: MutableSharedFlow<String> = MutableSharedFlow(extraBufferCapacity = 1)
+    val message: SharedFlow<String> = _message.asSharedFlow()
 
     fun romSelected(uri: Uri) = viewModelScope.launch {
         romUri = uri
-        val name = fileUtils.getFileName(uri)
-        romName.value = name
+        _romName.value = fileUtils.getFileName(uri)
         checkSmc(uri)
-        suggestOutputName(name)
+        suggestOutputName(_romName.value)
     }
 
     fun outputSelected(uri: Uri) = viewModelScope.launch {
         outputUri = uri
-        outputName.value = fileUtils.getFileName(uri)
+        _outputName.value = fileUtils.getFileName(uri)
     }
 
     private suspend fun suggestOutputName(romName: String) = withContext(Dispatchers.Default) {
         val baseName = fileUtils.getBaseName(romName)
         val ext = fileUtils.getExtension(romName)
-        suggestedOutputName.postValue("$baseName [headerless].$ext")
+        _suggestedOutputName.value = "$baseName [headerless].$ext"
     }
 
     private suspend fun checkSmc(uri: Uri) = withContext(Dispatchers.Default) {
         val uriFileSize = fileUtils.getFileSize(uri)
         if (uriFileSize == null || uriFileSize == 0L) {
-            infoText.postValue(resourceProvider.getString(R.string.snes_smc_error_unable_to_get_file_size))
+            _infoText.value =
+                resourceProvider.getString(R.string.snes_smc_error_unable_to_get_file_size)
             return@withContext
         }
         val checker = SnesSmcHeader()
         if (checker.isRomHasSmcHeader(uriFileSize)) {
-            infoText.postValue(resourceProvider.getString(R.string.snes_smc_header_will_be_removed))
+            _infoText.value = resourceProvider.getString(R.string.snes_smc_header_will_be_removed)
         } else {
-            infoText.postValue(resourceProvider.getString(R.string.snes_rom_has_no_smc_header))
+            _infoText.value = resourceProvider.getString(R.string.snes_rom_has_no_smc_header)
         }
     }
 
     fun runActionClicked() = viewModelScope.launch {
-        if (actionIsRunning.value == true) return@launch
+        if (_actionIsRunning.value) return@launch
         when {
             romUri == null -> {
-                message.value =
-                    ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_rom_not_selected))
+                _message.emit(
+                    resourceProvider.getString(R.string.main_activity_toast_rom_not_selected)
+                )
                 return@launch
             }
             outputUri == null -> {
-                message.value =
-                    ConsumableEvent(resourceProvider.getString(R.string.main_activity_toast_output_not_selected))
+                _message.emit(
+                    resourceProvider.getString(R.string.main_activity_toast_output_not_selected)
+                )
                 return@launch
             }
             else -> {
                 try {
-                    actionIsRunning.value = true
+                    _actionIsRunning.value = true
                     removeSmc()
-                    message.postValue(ConsumableEvent(resourceProvider.getString(R.string.notify_snes_delete_smc_header_complete)))
+                    _message.emit(
+                        resourceProvider.getString(R.string.notify_snes_delete_smc_header_complete)
+                    )
                 } catch (e: Exception) {
                     val errorMsg =
                         "${resourceProvider.getString(R.string.notify_error)}: ${
@@ -121,9 +129,9 @@ class SnesSmcHeaderViewModel @Inject constructor(
                                 R.string.notify_error_unknown
                             )
                         }"
-                    message.postValue(ConsumableEvent(errorMsg))
+                    _message.emit(errorMsg)
                 } finally {
-                    actionIsRunning.value = false
+                    _actionIsRunning.value = false
                 }
             }
         }
