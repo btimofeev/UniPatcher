@@ -6,8 +6,8 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -18,7 +18,7 @@ import org.emunix.unipatcher.ui.donate.DonateScreen
 import org.emunix.unipatcher.ui.theme.UniPatcherTheme
 import org.emunix.unipatcher.utils.enableEdgeToEdgeWithLightStatusBar
 
-class DonateActivity : ComponentActivity() {
+class DonateActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdgeWithLightStatusBar()

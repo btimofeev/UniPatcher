@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016, 2020, 2021 Boris Timofeev
+Copyright (C) 2016, 2020, 2021, 2026 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -19,26 +19,31 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.activity
 
 import android.os.Bundle
+import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
-import org.emunix.unipatcher.R
-import org.emunix.unipatcher.databinding.ActivitySettingsBinding
-import org.emunix.unipatcher.ui.fragment.SettingsFragment
+import dagger.hilt.android.AndroidEntryPoint
+import org.emunix.unipatcher.ui.settings.SettingsScreen
+import org.emunix.unipatcher.ui.theme.UniPatcherTheme
 import org.emunix.unipatcher.utils.enableEdgeToEdgeWithLightStatusBar
+import org.emunix.unipatcher.viewmodels.SettingsViewModel
 
+@AndroidEntryPoint
 class SettingsActivity : AppCompatActivity() {
+
+    private val settingsViewModel: SettingsViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdgeWithLightStatusBar()
         super.onCreate(savedInstanceState)
-        val binding = ActivitySettingsBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        setSupportActionBar(binding.includes.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportFragmentManager.commit {
-            replace<SettingsFragment>(R.id.settings_container)
-        }
 
-        binding.includes.toolbar.setNavigationOnClickListener { finish() }
+        setContent {
+            UniPatcherTheme {
+                SettingsScreen(
+                    viewModel = settingsViewModel,
+                    onBackPressed = { finish() },
+                )
+            }
+        }
     }
 }

@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016, 2019-2021 Boris Timofeev
+Copyright (C) 2016, 2019-2021, 2026 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -19,8 +19,8 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.activity
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import dagger.Lazy
 import dagger.hilt.android.AndroidEntryPoint
 import org.emunix.unipatcher.helpers.ResourceProvider
@@ -31,7 +31,7 @@ import org.emunix.unipatcher.utils.enableEdgeToEdgeWithLightStatusBar
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class HelpActivity : ComponentActivity() {
+class HelpActivity : AppCompatActivity() {
 
     @Inject
     lateinit var social: Lazy<SocialHelper>

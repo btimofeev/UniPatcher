@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2016, 2017, 2019-2021 Boris Timofeev
+Copyright (C) 2016, 2017, 2019-2021, 2026 Boris Timofeev
 
 This file is part of UniPatcher.
 
@@ -29,7 +29,11 @@ interface Settings {
 
     fun getShowHelpButton(): Boolean
 
+    fun setShowHelpButton(show: Boolean)
+
     fun getIgnoreChecksum(): Boolean
+
+    fun setIgnoreChecksum(ignore: Boolean)
 
     fun setPatchingSuccessful(isSuccessful: Boolean)
 
@@ -40,6 +44,8 @@ interface Settings {
     fun getDontShowDonateSnackbarCount(): Int
 
     fun getTheme(): String
+
+    fun setTheme(theme: String)
 }
 
 
@@ -49,8 +55,16 @@ class SettingsImpl @Inject constructor(private val prefs: SharedPreferences) : S
         return prefs.getBoolean("show_how_to_use_app_button", true)
     }
 
+    override fun setShowHelpButton(show: Boolean) {
+        prefs.edit { putBoolean("show_how_to_use_app_button", show) }
+    }
+
     override fun getIgnoreChecksum(): Boolean {
         return prefs.getBoolean("ignore_checksum", false)
+    }
+
+    override fun setIgnoreChecksum(ignore: Boolean) {
+        prefs.edit { putBoolean("ignore_checksum", ignore) }
     }
 
     override fun setPatchingSuccessful(isSuccessful: Boolean) {
@@ -71,5 +85,9 @@ class SettingsImpl @Inject constructor(private val prefs: SharedPreferences) : S
 
     override fun getTheme(): String {
         return prefs.getString(PREFERENCES_THEME_KEY, ThemeHelper.DEFAULT_MODE) ?: ThemeHelper.DEFAULT_MODE
+    }
+
+    override fun setTheme(theme: String) {
+        prefs.edit { putString(PREFERENCES_THEME_KEY, theme) }
     }
 }
