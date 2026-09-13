@@ -23,7 +23,6 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -46,6 +45,7 @@ import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.databinding.ActivityMainBinding
 import org.emunix.unipatcher.helpers.SocialHelper
 import org.emunix.unipatcher.ui.fragment.*
+import org.emunix.unipatcher.utils.enableEdgeToEdgeWithLightStatusBar
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import java.util.*
 import javax.inject.Inject
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var settings: Settings
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
+        enableEdgeToEdgeWithLightStatusBar()
         super.onCreate(savedInstanceState)
 
         _binding = ActivityMainBinding.inflate(layoutInflater)

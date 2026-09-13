@@ -22,7 +22,12 @@ package org.emunix.unipatcher.utils
 
 import android.app.Activity
 import android.content.Intent
+import android.content.res.Configuration
+import android.graphics.Color
 import android.net.Uri
+import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.fragment.app.Fragment
@@ -30,6 +35,19 @@ import kotlinx.coroutines.Job
 import timber.log.Timber
 import java.io.File
 import kotlin.reflect.KFunction1
+
+fun ComponentActivity.enableEdgeToEdgeWithLightStatusBar() {
+    val isNight =
+        (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) ==
+            Configuration.UI_MODE_NIGHT_YES
+    enableEdgeToEdge(
+        statusBarStyle = if (isNight) {
+            SystemBarStyle.auto(Color.TRANSPARENT, Color.TRANSPARENT)
+        } else {
+            SystemBarStyle.light(Color.WHITE, Color.WHITE)
+        }
+    )
+}
 
 fun Fragment.registerActivityResult(
     viewModelUri: KFunction1<Uri, Job>
