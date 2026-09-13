@@ -153,27 +153,7 @@
 \n
 \nNiektóre aktualizacje wymagają żeby ROM nie posiadał SMC header. Ta funkcja pomoże go usunąć.</string>
     <string name="about_used_libraries"><b>Używate biblioteki:</b> \n \n- <b>ACRA</b> przez zespół ACRA, na licencji Apache 2.0. https://github.com/ACRA/acra \n- <b>Apache Commons IO</b> autorstwa The Apache Software Foundation, na licencji Apache 2.0. https://commons.apache.org/proper/commons-io/ \n- <b>Dagger</b> autorstwa The Dagger Authors, na licencji Apache 2.0. https://github.com/google/sztylet \n- <b>Ikony projektowania materiałów</b> firmy Google na licencji Apache 2.0. https://github.com/google/material-design-icons \n- <b>Ikony projektowania materiałów</b> przez społeczność, na licencji SIL Open Font License 1.1. https://materialdesignicons.com \n- <b>Timber</b> Jake\'a Whartona, na licencji Apache 2.0. https://github.com/JakeWharton/timber \n- <b>XDelta w wersji 3</b> autorstwa Joshua MacDonald, na licencji Apache 2.0. https://github.com/jmacd/xdelta</string>
-    <string name="about_translators"><b>Tłumacze:</b>
-\n
-\n- <b>chiński</b>: Nabarl Wang, Er
-\n- <b>francuski</b>: Thibaut Panis, J. Lavo
-\n- <b>niemiecki</b>: Honigdieb
-\n- <b>hebrajski</b>: Tamer Dabsan
-\n- <b>indonezyjski</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
-\n- <b>włoski</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n- <b>japoński</b>: Naofumi Fukue
-\n- <b>litewski</b>: Gediminas Murauskas
-\n- <b>koreański</b>: Minseo Lee
-\n- <b>norweski bokmål</b>: Allan Nordhøy
-\n- <b>polski</b>: Michał Bychowski, Jarek Karpiel, hayneken993
-\n- <b>portugalski</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n- <b>portugalski (Brazylia)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SILc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
-\n- <b>rosyjski</b>: Борис Тимофеев
-\n- <b>hiszpański</b>: Carlos Sánchez, Swyter
-\n- <b>turecki</b>: Oğuz Ersen
-\n- <b>ukraiński</b>: Володимир Шевчук
-\n
-\nPomóż przetłumaczyć aplikację na swój język: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="about_translators"><b>Tłumacze:</b> \n \n- <b>chiński</b>: Nabarl Wang, Er \n- <b>francuski</b>: Thibaut Panis, J. Lavo \n- <b>niemiecki</b>: Honigdieb \n- <b>hebrajski</b>: Tamer Dabsan \n- <b>indonezyjski</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda \n- <b>włoski</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli \n- <b>japoński</b>: Naofumi Fukue \n- <b>litewski</b>: Gediminas Murauskas \n- <b>koreański</b>: Minseo Lee \n- <b>norweski bokmål</b>: Allan Nordhøy \n- <b>polski</b>: Michał Bychowski, Jarek Karpiel, hayneken993 \n- <b>portugalski</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos \n- <b>portugalski (Brazylia)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SILc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes \n- <b>rosyjski</b>: Борис Тимофеев \n- <b>hiszpański</b>: Carlos Sánchez, Swyter \n- <b>turecki</b>: Oğuz Ersen \n- <b>ukraiński</b>: Володимир Шевчук \n \nPomóż przetłumaczyć aplikację na swój język: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_snes_smc_body">Nagłówek SMC ma 512 bajtów na początku niektórych obrazów SNES ROM. Te bajty nie mają żadnego celu, ale zmieniają lokalizację pozostałych danych. Usunięcie nagłówka jest czasami używane w celu prawidłowego zastosowania poprawki.</string>
     <string name="help_snes_smc_title">Dlaczego czasami trzeba usunąć nagłówki SMC z gier Super Nintendo\?</string>
     <string name="help_ips_no_checksum_body">Poprawki formatu IPS nie zawierają sumy kontrolnej. W związku z tym poprawka zostanie zastosowana do dowolnego (nawet błędnego) pliku ROM. W takim przypadku musisz poszukać innego pliku ROM.</string>
