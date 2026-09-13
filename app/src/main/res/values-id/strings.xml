@@ -23,27 +23,7 @@
     <string name="main_activity_rom_file">File ROM</string>
     <string name="app_name">UniPatcher</string>
     <string name="create_patch_fragment_toast_patch_not_selected">File patch tidak dipilih</string>
-    <string name="about_translators"><b> Penerjemah:</b>
-\n
-\n- <b>Tiongkok</b>: Nabarl Wang, Eric
-\n - <b>Prancis</b>: Thibaut Panis, J. Lavoie
-\n - <b>Jerman</b>: Honigdieb
-\n - <b>Ibrani</b>: Tamer Dabsan
-\n - <b>Indonesia</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda
-\n - <b>Italia</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli
-\n - <b>Jepang</b>: Naofumi Fukue
-\n - <b>Lithuania</b>: Gediminas Murauskas
-\n - <b>Korea</b>: Minseo Lee
-\n - <b>Bokmål Norwegia</b>: Allan Nordhøy
-\n - <b>Polandia</b>: Michal Bychowski, Jarek Karpie, hayneken993
-\n - <b>Portugis</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos
-\n - <b>Portugis (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes
-\n - <b>Rusia</b>: Борис Тимофеев
-\n - <b>Spanyol</b>: Carlos Sánchez, Swyter
-\n - <b>Turki</b>: Oğuz Ersen
-\n - <b>Ukraina</b>: Володимир Шевчук
-\n
-\nBantu terjemahkan aplikasi ke dalam bahasa Anda: https://hosted.weblate.org/engage/unipatcher/</string>
+    <string name="about_translators"><b> Penerjemah:</b> \n \n- <b>Tiongkok</b>: Nabarl Wang, Eric \n - <b>Prancis</b>: Thibaut Panis, J. Lavoie \n - <b>Jerman</b>: Honigdieb \n - <b>Ibrani</b>: Tamer Dabsan \n - <b>Indonesia</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda \n - <b>Italia</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli \n - <b>Jepang</b>: Naofumi Fukue \n - <b>Lithuania</b>: Gediminas Murauskas \n - <b>Korea</b>: Minseo Lee \n - <b>Bokmål Norwegia</b>: Allan Nordhøy \n - <b>Polandia</b>: Michal Bychowski, Jarek Karpie, hayneken993 \n - <b>Portugis</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos \n - <b>Portugis (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes \n - <b>Rusia</b>: Борис Тимофеев \n - <b>Spanyol</b>: Carlos Sánchez, Swyter \n - <b>Turki</b>: Oğuz Ersen \n - <b>Ukraina</b>: Володимир Шевчук \n \nBantu terjemahkan aplikasi ke dalam bahasa Anda: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="notify_patching_complete">Modifikasi berhasil</string>
     <string name="snes_smc_error_unable_to_get_file_size">Kesalahan: tidak dapat mengukur ukuran file</string>
     <string name="notify_error_not_enough_space">Penyimpanan yang tersedia tidak mencukupi</string>
