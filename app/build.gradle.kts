@@ -5,6 +5,7 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
     id("kotlin-kapt")
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.download.plugin)
@@ -20,6 +21,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        compose = true
         buildConfig = true
     }
 
@@ -137,6 +139,19 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.preference.ktx)
     implementation(libs.material)
+
+    // Compose
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.material3)
+    implementation(libs.compose.ui)
+    implementation(libs.compose.ui.tooling.preview)
+    implementation(libs.compose.runtime)
+    implementation(libs.compose.foundation)
+    implementation(libs.compose.material.icons.core)
+    implementation(libs.compose.activity)
+    implementation(libs.compose.lifecycle.runtime.compose)
+    implementation(libs.compose.lifecycle.viewmodel.compose)
+    debugImplementation(libs.compose.ui.tooling)
 
     // Third-party
     implementation(libs.commons.io)
