@@ -40,6 +40,14 @@
             app:tint="@android:color/white"
             app:srcCompat="@drawable/ic_save"/>
 
+        <View
+            android:id="@+id/block_user_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone"/>
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
