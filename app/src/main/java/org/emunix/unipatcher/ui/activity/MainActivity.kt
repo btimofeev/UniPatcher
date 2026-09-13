@@ -22,6 +22,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -31,11 +32,11 @@ import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import dagger.Lazy
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.emunix.unipatcher.BuildConfig
@@ -104,6 +105,30 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             )
         })
 
+        onBackPressedDispatcher.addCallback(
+            this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    if (!actionIsRunning || doubleBackToExitPressedOnce) {
+                        finish()
+                        return
+                    }
+
+                    doubleBackToExitPressedOnce = true
+                    Toast.makeText(
+                        this@MainActivity,
+                        getString(R.string.main_activity_double_back_to_exit_message),
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                    lifecycleScope.launch {
+                        delay(2000L)
+                        doubleBackToExitPressedOnce = false
+                    }
+                }
+            }
+        )
+
         if (BuildConfig.FLAVOR == FLAVOR_FREE) {
             showDonateMenuItem()
             tryToShowDonateSnackbar()
@@ -142,26 +167,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportFragmentManager.commit {
             setCustomAnimations(R.anim.slide_from_bottom, android.R.anim.fade_out)
             replace(R.id.content_frame, fragment)
-        }
-    }
-
-    @Deprecated("Deprecated in Java")
-    override fun onBackPressed() {
-        if (!actionIsRunning || doubleBackToExitPressedOnce) {
-            super.onBackPressed()
-            return
-        }
-
-        this.doubleBackToExitPressedOnce = true
-        Toast.makeText(
-            /* context = */ this,
-            /* text = */ getString(R.string.main_activity_double_back_to_exit_message),
-            /* duration = */ Toast.LENGTH_SHORT
-        ).show()
-
-        GlobalScope.launch {
-            delay(2000L)
-            doubleBackToExitPressedOnce = false
         }
     }
 
