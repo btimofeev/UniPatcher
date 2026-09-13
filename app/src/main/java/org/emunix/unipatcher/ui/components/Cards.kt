@@ -66,7 +66,7 @@ fun FileSelectCard(
                 fontFamily = FontFamily.SansSerif,
                 fontWeight = FontWeight.Light,
                 fontSize = 24.sp,
-                color = MaterialTheme.colorScheme.primary,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(8.dp),
             )
             HorizontalDivider(
@@ -115,7 +115,7 @@ fun InfoCard(
             Text(
                 text = text,
                 fontFamily = FontFamily.SansSerif,
-                fontWeight = FontWeight.Normal,
+                fontWeight = FontWeight.Light,
                 fontSize = 16.sp,
                 modifier = Modifier.padding(8.dp),
             )

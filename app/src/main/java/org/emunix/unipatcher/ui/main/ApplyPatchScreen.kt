@@ -23,6 +23,7 @@ package org.emunix.unipatcher.ui.main
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Box
@@ -37,15 +38,11 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarHost
-import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -66,6 +63,8 @@ import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
 fun ApplyPatchScreen(
     viewModel: ApplyPatchViewModel,
     actionIsRunningViewModel: ActionIsRunningViewModel,
+    registerRunAction: (String, () -> Unit) -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     val patchName by viewModel.patchName.collectAsStateWithLifecycle()
     val romName by viewModel.romName.collectAsStateWithLifecycle()
@@ -74,17 +73,23 @@ fun ApplyPatchScreen(
     val showHelpButton by viewModel.showHelpButton.collectAsStateWithLifecycle()
     val actionIsRunning by viewModel.actionIsRunning.collectAsStateWithLifecycle()
 
-    val snackbarHostState = remember { SnackbarHostState() }
-    val scope = rememberCoroutineScope()
     val context = LocalContext.current
+
+    DisposableEffect(viewModel) {
+        registerRunAction(MainRoutes.APPLY_PATCH, viewModel::runActionClicked)
+        onDispose { registerRunAction(MainRoutes.APPLY_PATCH, {}) }
+    }
 
     LaunchedEffect(actionIsRunning) {
         actionIsRunningViewModel.applyPatch(actionIsRunning)
     }
     LaunchedEffect(viewModel) {
         viewModel.message.collect { message ->
-            snackbarHostState.showSnackbar(message)
+            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
         }
+    }
+    LaunchedEffect(Unit) {
+        viewModel.refreshSettings()
     }
 
     val patchPicker = rememberLauncherForActivityResult(
@@ -119,11 +124,7 @@ fun ApplyPatchScreen(
         try {
             launch(intent)
         } catch (e: ActivityNotFoundException) {
-            scope.launch {
-                snackbarHostState.showSnackbar(
-                    context.getString(R.string.error_file_picker_app_is_no_installed)
-                )
-            }
+            Toast.makeText(context, context.getString(R.string.error_file_picker_app_is_no_installed), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -136,81 +137,72 @@ fun ApplyPatchScreen(
         try {
             outputPicker.launch(intent)
         } catch (e: ActivityNotFoundException) {
-            scope.launch {
-                snackbarHostState.showSnackbar(
-                    context.getString(R.string.error_file_picker_app_is_no_installed)
-                )
-            }
+            Toast.makeText(context, context.getString(R.string.error_file_picker_app_is_no_installed), Toast.LENGTH_SHORT).show()
         }
     }
 
-    Scaffold(
-        snackbarHost = { SnackbarHost(snackbarHostState) },
-    ) { padding ->
-        Box(
+    Box(
+        modifier = modifier
+            .fillMaxSize(),
+        contentAlignment = Alignment.TopCenter,
+    ) {
+        Column(
             modifier = Modifier
+                .maxContentWidth()
                 .fillMaxSize()
-                .padding(padding),
-            contentAlignment = Alignment.TopCenter,
+                .verticalScroll(rememberScrollState())
+                .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 8.dp),
         ) {
-            Column(
-                modifier = Modifier
-                    .maxContentWidth()
-                    .fillMaxSize()
-                    .verticalScroll(rememberScrollState())
-                    .padding(horizontal = 16.dp, vertical = 8.dp),
-            ) {
-                FileSelectCard(
-                    title = stringResource(R.string.main_activity_patch_file),
-                    fileName = patchName.ifEmpty { stringResource(R.string.main_activity_tap_to_select) },
-                    onClick = { pickFile(patchPicker::launch) },
-                )
+            FileSelectCard(
+                title = stringResource(R.string.main_activity_patch_file),
+                fileName = patchName.ifEmpty { stringResource(R.string.main_activity_tap_to_select) },
+                onClick = { pickFile(patchPicker::launch) },
+            )
 
-                Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(16.dp))
 
-                FileSelectCard(
-                    title = stringResource(R.string.main_activity_rom_file),
-                    fileName = romName.ifEmpty { stringResource(R.string.main_activity_tap_to_select) },
-                    onClick = { pickFile(romPicker::launch) },
-                )
+            FileSelectCard(
+                title = stringResource(R.string.main_activity_rom_file),
+                fileName = romName.ifEmpty { stringResource(R.string.main_activity_tap_to_select) },
+                onClick = { pickFile(romPicker::launch) },
+            )
 
-                Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(16.dp))
 
-                FileSelectCard(
-                    title = stringResource(R.string.main_activity_output_file),
-                    fileName = outputName.ifEmpty { stringResource(R.string.main_activity_tap_to_select_where_to_save_rom) },
-                    onClick = launchCreateDocument,
-                )
+            FileSelectCard(
+                title = stringResource(R.string.main_activity_output_file),
+                fileName = outputName.ifEmpty { stringResource(R.string.main_activity_tap_to_select_where_to_save_rom) },
+                onClick = launchCreateDocument,
+            )
 
-                if (showHelpButton) {
-                    Spacer(Modifier.height(24.dp))
+            if (showHelpButton) {
+                Spacer(Modifier.height(24.dp))
 
-                    OutlinedButton(
-                        onClick = {
-                            val helpIntent = Intent(context, HelpActivity::class.java)
-                            context.startActivity(helpIntent)
-                        },
-                        modifier = Modifier.align(Alignment.CenterHorizontally),
-                    ) {
-                        Icon(
+                OutlinedButton(
+                    onClick = {
+                        val helpIntent = Intent(context, HelpActivity::class.java)
+                        context.startActivity(helpIntent)
+                    },
+                    modifier = Modifier.align(Alignment.CenterHorizontally),
+                ) {
+Icon(
                             painter = painterResource(R.drawable.ic_book),
                             contentDescription = null,
-                            tint = MaterialTheme.colorScheme.primary,
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                         Text(
                             text = stringResource(R.string.main_activity_button_how_to_use_app),
-                            color = MaterialTheme.colorScheme.primary,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.padding(start = 8.dp),
                         )
-                    }
                 }
             }
+        }
 
-            if (actionIsRunning) {
-                CircularProgressIndicator(
-                    modifier = Modifier.align(Alignment.Center),
-                )
-            }
+        if (actionIsRunning) {
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center),
+            )
         }
     }
 }
