@@ -58,7 +58,7 @@
     <string name="help_activity_about_tab_title">Giới thiệu</string>
     <string name="help_activity_about_tab_version">Phiên bản %1$s</string>
     <string name="help_activity_about_tab_license">Giấy phép: GNU GPLv3</string>
-    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
+    <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2026</string>
     <string name="help_activity_action_visit_site">Truy cập trang web</string>
     <string name="error_crash_message">Rất tiếc, ứng dụng đã bị sập (crash). Vui lòng gửi báo cáo cho nhà phát triển.</string>
     <string name="error_crash_send_button">Gởi</string>
@@ -82,7 +82,7 @@
     <string name="help_what_is_unipatcher_body">UniPatcher là một công cụ Android để áp dụng các bản vá vào tệp ROM của nhiều hệ máy chơi game video khác nhau.</string>
     <string name="help_what_patch_formats_are_supported_body">UniPatcher hỗ trợ các bản vá IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP và XDelta3.</string>
     <string name="help_can_i_hack_android_game_title">Tôi có thể hack hoặc bẻ khóa trò chơi Android bằng ứng dụng này không?</string>
-    <string name="help_can_i_hack_android_game_body">Không. UniPatcher không được thiết kế để hack các trò chơi Android. \nNgủ đi rồi mơ cái gì cũng có</string>
+    <string name="help_can_i_hack_android_game_body">Không. UniPatcher không được thiết kế để hack các trò chơi Android.</string>
     <string name="help_what_is_rom_image_title">ROM là gì?</string>
     <string name="help_what_is_rom_hacking_title">ROM hack là gì?</string>
     <string name="help_what_is_a_patch_title">Bản vá là gì?</string>
