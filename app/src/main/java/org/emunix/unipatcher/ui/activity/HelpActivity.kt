@@ -19,33 +19,39 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.activity
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import dagger.Lazy
 import dagger.hilt.android.AndroidEntryPoint
-import org.emunix.unipatcher.databinding.ActivityHelpBinding
-import org.emunix.unipatcher.ui.adapter.HelpStateAdapter
+import org.emunix.unipatcher.helpers.ResourceProvider
+import org.emunix.unipatcher.helpers.SocialHelper
+import org.emunix.unipatcher.ui.help.HelpScreen
+import org.emunix.unipatcher.ui.theme.UniPatcherTheme
 import org.emunix.unipatcher.utils.enableEdgeToEdgeWithLightStatusBar
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class HelpActivity : AppCompatActivity() {
+class HelpActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var social: Lazy<SocialHelper>
+
+    @Inject
+    lateinit var resourceProvider: ResourceProvider
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdgeWithLightStatusBar()
         super.onCreate(savedInstanceState)
 
-        val binding = ActivityHelpBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        val adapter = HelpStateAdapter(this)
-        binding.viewpager.adapter = adapter
-        TabLayoutMediator(binding.tabLayout, binding.viewpager) { tab, position ->
-            tab.text = getString(adapter.getPageTitle(position))
-        }.attach()
-        binding.tabLayout.tabGravity = TabLayout.GRAVITY_FILL
-
-        binding.toolbar.setNavigationOnClickListener { finish() }
+        setContent {
+            UniPatcherTheme {
+                HelpScreen(
+                    appVersion = resourceProvider.appVersion,
+                    onBackPressed = { finish() },
+                    onVisitSiteClick = { social.get().openWebsite() },
+                    onChangelogClick = { social.get().showChangelog() },
+                )
+            }
+        }
     }
 }
