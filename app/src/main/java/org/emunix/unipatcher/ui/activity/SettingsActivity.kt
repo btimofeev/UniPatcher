@@ -19,17 +19,17 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.activity
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.databinding.ActivitySettingsBinding
 import org.emunix.unipatcher.ui.fragment.SettingsFragment
+import org.emunix.unipatcher.utils.enableEdgeToEdgeWithLightStatusBar
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
+        enableEdgeToEdgeWithLightStatusBar()
         super.onCreate(savedInstanceState)
         val binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)

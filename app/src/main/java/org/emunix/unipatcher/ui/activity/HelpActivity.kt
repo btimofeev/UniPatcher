@@ -19,19 +19,19 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 package org.emunix.unipatcher.ui.activity
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 import org.emunix.unipatcher.databinding.ActivityHelpBinding
 import org.emunix.unipatcher.ui.adapter.HelpStateAdapter
+import org.emunix.unipatcher.utils.enableEdgeToEdgeWithLightStatusBar
 
 @AndroidEntryPoint
 class HelpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
+        enableEdgeToEdgeWithLightStatusBar()
         super.onCreate(savedInstanceState)
 
         val binding = ActivityHelpBinding.inflate(layoutInflater)
