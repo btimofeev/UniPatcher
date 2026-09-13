@@ -129,13 +129,8 @@ dependencies {
 
     // AndroidX
     implementation(libs.appcompat)
-    implementation(libs.cardview)
-    implementation(libs.constraintlayout)
     implementation(libs.core.ktx)
     implementation(libs.documentfile)
-    implementation(libs.fragment.ktx)
-    implementation(libs.lifecycle.common)
-    implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.preference.ktx)
     implementation(libs.material)
@@ -151,6 +146,7 @@ dependencies {
     implementation(libs.compose.activity)
     implementation(libs.compose.lifecycle.runtime.compose)
     implementation(libs.compose.lifecycle.viewmodel.compose)
+    implementation(libs.navigation.compose)
     debugImplementation(libs.compose.ui.tooling)
 
     // Third-party
@@ -158,6 +154,7 @@ dependencies {
 
     // DI
     implementation(libs.hilt.android)
+    implementation(libs.hilt.lifecycle.viewmodel.compose)
     kapt(libs.hilt.android.compiler)
 
     // Logs

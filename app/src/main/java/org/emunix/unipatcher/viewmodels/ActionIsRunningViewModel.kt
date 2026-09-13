@@ -20,12 +20,14 @@
 
 package org.emunix.unipatcher.viewmodels
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 
-class ActionIsRunningViewModel: ViewModel(){
-    private val actionIsRunning: MutableLiveData<Boolean> = MutableLiveData()
+class ActionIsRunningViewModel : ViewModel() {
+    private val _actionIsRunning: MutableStateFlow<Boolean> = MutableStateFlow(false)
+    val actionIsRunning: StateFlow<Boolean> = _actionIsRunning.asStateFlow()
 
     private var applyPatch = false
     private var createPatch = false
@@ -36,11 +38,9 @@ class ActionIsRunningViewModel: ViewModel(){
         updateState()
     }
 
-    fun get(): LiveData<Boolean> = actionIsRunning
-
     private fun updateState() {
         val result = applyPatch || createPatch || fixChecksum || removeSmc
-        actionIsRunning.value = result
+        _actionIsRunning.value = result
     }
 
     fun applyPatch(value: Boolean) {
