@@ -24,7 +24,6 @@ import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -43,6 +42,7 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.NavigationDrawerItem
@@ -90,22 +90,7 @@ import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.ui.help.HelpScreen
 import org.emunix.unipatcher.ui.settings.SettingsScreen
-import org.emunix.unipatcher.ui.theme.AccentDark
-import org.emunix.unipatcher.ui.theme.AccentLight
-import org.emunix.unipatcher.ui.theme.CardLineDark
-import org.emunix.unipatcher.ui.theme.CardLineLight
-import org.emunix.unipatcher.ui.theme.DrawerSelectedTextDark
-import org.emunix.unipatcher.ui.theme.DrawerSelectedTextLight
-import org.emunix.unipatcher.ui.theme.DrawerSelectorDark
-import org.emunix.unipatcher.ui.theme.DrawerSelectorLight
-import org.emunix.unipatcher.ui.theme.DrawerTextDark
-import org.emunix.unipatcher.ui.theme.DrawerTextLight
-import org.emunix.unipatcher.ui.theme.ToolbarBackArrowDark
-import org.emunix.unipatcher.ui.theme.ToolbarBackArrowLight
-import org.emunix.unipatcher.ui.theme.ToolbarBackgroundDark
-import org.emunix.unipatcher.ui.theme.ToolbarBackgroundLight
-import org.emunix.unipatcher.ui.theme.ToolbarTextDark
-import org.emunix.unipatcher.ui.theme.ToolbarTextLight
+import org.emunix.unipatcher.ui.theme.LocalExtendedColors
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
 import org.emunix.unipatcher.viewmodels.CreatePatchViewModel
@@ -125,7 +110,6 @@ fun MainScreen(
     onShare: () -> Unit,
 ) {
     val context = LocalContext.current
-    val isDark = isSystemInDarkTheme()
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
@@ -230,7 +214,6 @@ fun MainScreen(
                     gesturesEnabled = !actionIsRunning,
                     drawerContent = {
                         DrawerContent(
-                            isDark = isDark,
                             currentRoute = currentRoute,
                             onActionClick = navigateToAction,
                             onSecondaryClick = navigateToSecondary,
@@ -243,7 +226,6 @@ fun MainScreen(
                     Scaffold(
                         topBar = {
                             TopBar(
-                                isDark = isDark,
                                 title = stringResource(titleForRoute(currentRoute)),
                                 onMenuClick = { scope.launch { drawerState.open() } },
                             )
@@ -254,11 +236,7 @@ fun MainScreen(
                                 onClick = {
                                     currentRoute?.let { runActions[it]?.invoke() }
                                 },
-                                containerColor = if (isDark) {
-                                    AccentDark
-                                } else {
-                                    AccentLight
-                                },
+                                containerColor = MaterialTheme.colorScheme.secondary,
                                 contentColor = Color.White,
                             ) {
                                 Icon(
@@ -333,16 +311,11 @@ fun MainScreen(
 
 @Composable
 private fun TopBar(
-    isDark: Boolean,
     title: String,
     onMenuClick: () -> Unit,
 ) {
-    val background = if (isDark) ToolbarBackgroundDark else ToolbarBackgroundLight
-    val titleColor = if (isDark) ToolbarTextDark else ToolbarTextLight
-    val backArrow = if (isDark) ToolbarBackArrowDark else ToolbarBackArrowLight
-
     Surface(
-        color = background,
+        color = LocalExtendedColors.current.toolbarBackground,
         shadowElevation = 4.dp,
         modifier = Modifier.fillMaxWidth(),
     ) {
@@ -357,12 +330,12 @@ private fun TopBar(
                 Icon(
                     imageVector = Icons.Filled.Menu,
                     contentDescription = stringResource(R.string.nav_drawer_open),
-                    tint = backArrow,
+                    tint = LocalExtendedColors.current.toolbarBackArrow,
                 )
             }
             Text(
                 text = title,
-                color = titleColor,
+                color = LocalExtendedColors.current.toolbarText,
                 fontFamily = FontFamily.SansSerif,
                 fontSize = 20.sp,
                 maxLines = 1,
@@ -374,7 +347,6 @@ private fun TopBar(
 
 @Composable
 private fun DrawerContent(
-    isDark: Boolean,
     currentRoute: String?,
     onActionClick: (String) -> Unit,
     onSecondaryClick: (String) -> Unit,
@@ -382,16 +354,14 @@ private fun DrawerContent(
     onRate: () -> Unit,
     onShare: () -> Unit,
 ) {
-    val drawerText = if (isDark) DrawerTextDark else DrawerTextLight
-    val drawerSelectedText = if (isDark) DrawerSelectedTextDark else DrawerSelectedTextLight
-    val drawerSelector = if (isDark) DrawerSelectorDark else DrawerSelectorLight
+    val extendedColors = LocalExtendedColors.current
 
     val itemColors = NavigationDrawerItemDefaults.colors(
-        selectedContainerColor = drawerSelector,
-        selectedIconColor = drawerSelectedText,
-        selectedTextColor = drawerSelectedText,
-        unselectedIconColor = drawerText,
-        unselectedTextColor = drawerText,
+        selectedContainerColor = extendedColors.drawerSelector,
+        selectedIconColor = extendedColors.drawerSelectedText,
+        selectedTextColor = extendedColors.drawerSelectedText,
+        unselectedIconColor = extendedColors.drawerText,
+        unselectedTextColor = extendedColors.drawerText,
     )
 
     val itemShape = RoundedCornerShape(
@@ -456,11 +426,7 @@ private fun DrawerContent(
 
             HorizontalDivider(
                 modifier = Modifier.padding(vertical = 8.dp),
-                color = if (isDark) {
-                    CardLineDark
-                } else {
-                    CardLineLight
-                },
+                color = MaterialTheme.colorScheme.outline,
             )
 
             NavigationDrawerItem(

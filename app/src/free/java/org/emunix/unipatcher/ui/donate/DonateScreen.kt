@@ -20,7 +20,6 @@
 
 package org.emunix.unipatcher.ui.donate
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -54,8 +53,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.ui.theme.DonateButtonLight
-import org.emunix.unipatcher.ui.theme.DonateButtonDark
+import org.emunix.unipatcher.ui.theme.LocalExtendedColors
 import org.emunix.unipatcher.ui.theme.maxContentWidth
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -120,7 +118,7 @@ fun DonateScreen(
                 Button(
                     onClick = onBitcoinClick,
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = if (isSystemInDarkTheme()) DonateButtonDark else DonateButtonLight,
+                        containerColor = LocalExtendedColors.current.donateButton,
                     ),
                     modifier = Modifier.height(64.dp),
                 ) {

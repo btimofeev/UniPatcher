@@ -28,6 +28,7 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
@@ -86,9 +87,35 @@ fun UniPatcherTheme(
         else -> LightColorScheme
     }
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content,
-    )
+    val extendedColors = if (darkTheme) {
+        ExtendedColors(
+            cardHeaderText = CardHeaderTextDark,
+            toolbarBackground = ToolbarBackgroundDark,
+            toolbarText = ToolbarTextDark,
+            toolbarBackArrow = ToolbarBackArrowDark,
+            drawerText = DrawerTextDark,
+            drawerSelectedText = DrawerSelectedTextDark,
+            drawerSelector = DrawerSelectorDark,
+            donateButton = DonateButtonDark,
+        )
+    } else {
+        ExtendedColors(
+            cardHeaderText = CardHeaderTextLight,
+            toolbarBackground = ToolbarBackgroundLight,
+            toolbarText = ToolbarTextLight,
+            toolbarBackArrow = ToolbarBackArrowLight,
+            drawerText = DrawerTextLight,
+            drawerSelectedText = DrawerSelectedTextLight,
+            drawerSelector = DrawerSelectorLight,
+            donateButton = DonateButtonLight,
+        )
+    }
+
+    CompositionLocalProvider(LocalExtendedColors provides extendedColors) {
+        MaterialTheme(
+            colorScheme = colorScheme,
+            typography = Typography,
+            content = content,
+        )
+    }
 }

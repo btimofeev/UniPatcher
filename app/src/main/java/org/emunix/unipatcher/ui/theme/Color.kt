@@ -20,10 +20,10 @@
 
 package org.emunix.unipatcher.ui.theme
 
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
 val PrimaryLight = Color(0xFF795548)
-val PrimaryDarkLight = Color(0xFF6B6B6B)
 val AccentLight = Color(0xFFFF5252)
 val ActivityBackgroundLight = Color(0xFFFFFFFF)
 val CardHeaderTextLight = Color(0xFF795548)
@@ -35,12 +35,9 @@ val DrawerSelectorLight = Color(0xFFFFEBEE)
 val ToolbarBackgroundLight = Color(0xFFFFFFFF)
 val ToolbarTextLight = Color(0xFF000000)
 val ToolbarBackArrowLight = Color(0xFF000000)
-val TabSelectedTextLight = Color(0xFFFF5252)
-val TabIndicatorColorLight = Color(0xFFFF5252)
 val DonateButtonLight = Color(0xFFE6921F)
 
 val PrimaryDark = Color(0xFFF2777A)
-val PrimaryDarkDark = Color(0xFF2D2D2D)
 val AccentDark = Color(0xFFF2777A)
 val ActivityBackgroundDark = Color(0xFF2D2D2D)
 val CardHeaderTextDark = Color(0xFFCCCCCC)
@@ -52,6 +49,19 @@ val DrawerSelectorDark = Color(0x2CF3E5F5)
 val ToolbarBackgroundDark = Color(0xFF393939)
 val ToolbarTextDark = Color(0xFFCCCCCC)
 val ToolbarBackArrowDark = Color(0xFFCCCCCC)
-val TabSelectedTextDark = Color(0xFFF2777A)
-val TabIndicatorColorDark = Color(0xFFF2777A)
 val DonateButtonDark = Color(0xFFD5A167)
+
+data class ExtendedColors(
+    val cardHeaderText: Color,
+    val toolbarBackground: Color,
+    val toolbarText: Color,
+    val toolbarBackArrow: Color,
+    val drawerText: Color,
+    val drawerSelectedText: Color,
+    val drawerSelector: Color,
+    val donateButton: Color,
+)
+
+val LocalExtendedColors = staticCompositionLocalOf<ExtendedColors> {
+    error("No ExtendedColors provided")
+}
