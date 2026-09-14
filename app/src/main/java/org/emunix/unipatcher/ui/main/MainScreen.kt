@@ -65,7 +65,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -90,7 +89,6 @@ import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.ui.help.HelpScreen
 import org.emunix.unipatcher.ui.settings.SettingsScreen
-import org.emunix.unipatcher.ui.theme.LocalExtendedColors
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
 import org.emunix.unipatcher.viewmodels.CreatePatchViewModel
@@ -236,8 +234,6 @@ fun MainScreen(
                                 onClick = {
                                     currentRoute?.let { runActions[it]?.invoke() }
                                 },
-                                containerColor = MaterialTheme.colorScheme.secondary,
-                                contentColor = Color.White,
                             ) {
                                 Icon(
                                     painter = painterResource(R.drawable.ic_save),
@@ -315,7 +311,7 @@ private fun TopBar(
     onMenuClick: () -> Unit,
 ) {
     Surface(
-        color = LocalExtendedColors.current.toolbarBackground,
+        color = MaterialTheme.colorScheme.surface,
         shadowElevation = 4.dp,
         modifier = Modifier.fillMaxWidth(),
     ) {
@@ -330,12 +326,12 @@ private fun TopBar(
                 Icon(
                     imageVector = Icons.Filled.Menu,
                     contentDescription = stringResource(R.string.nav_drawer_open),
-                    tint = LocalExtendedColors.current.toolbarBackArrow,
+                    tint = MaterialTheme.colorScheme.onSurface,
                 )
             }
             Text(
                 text = title,
-                color = LocalExtendedColors.current.toolbarText,
+                color = MaterialTheme.colorScheme.onSurface,
                 fontFamily = FontFamily.SansSerif,
                 fontSize = 20.sp,
                 maxLines = 1,
@@ -354,16 +350,6 @@ private fun DrawerContent(
     onRate: () -> Unit,
     onShare: () -> Unit,
 ) {
-    val extendedColors = LocalExtendedColors.current
-
-    val itemColors = NavigationDrawerItemDefaults.colors(
-        selectedContainerColor = extendedColors.drawerSelector,
-        selectedIconColor = extendedColors.drawerSelectedText,
-        selectedTextColor = extendedColors.drawerSelectedText,
-        unselectedIconColor = extendedColors.drawerText,
-        unselectedTextColor = extendedColors.drawerText,
-    )
-
     val itemShape = RoundedCornerShape(
         topEnd = 32.dp,
         bottomEnd = 32.dp,
@@ -392,7 +378,6 @@ private fun DrawerContent(
                 selected = currentRoute == MainRoutes.APPLY_PATCH,
                 onClick = { onActionClick(MainRoutes.APPLY_PATCH) },
                 icon = { Icon(painterResource(R.drawable.ic_healing), contentDescription = null) },
-                colors = itemColors,
                 shape = itemShape,
                 modifier = Modifier.padding(end = 8.dp),
             )
@@ -401,7 +386,6 @@ private fun DrawerContent(
                 selected = currentRoute == MainRoutes.CREATE_PATCH,
                 onClick = { onActionClick(MainRoutes.CREATE_PATCH) },
                 icon = { Icon(painterResource(R.drawable.ic_add_box), contentDescription = null) },
-                colors = itemColors,
                 shape = itemShape,
                 modifier = Modifier.padding(end = 8.dp),
             )
@@ -410,7 +394,6 @@ private fun DrawerContent(
                 selected = currentRoute == MainRoutes.SMD_FIX_CHECKSUM,
                 onClick = { onActionClick(MainRoutes.SMD_FIX_CHECKSUM) },
                 icon = { Icon(painterResource(R.drawable.ic_fingerprint), contentDescription = null) },
-                colors = itemColors,
                 shape = itemShape,
                 modifier = Modifier.padding(end = 8.dp),
             )
@@ -419,7 +402,6 @@ private fun DrawerContent(
                 selected = currentRoute == MainRoutes.SNES_SMC_HEADER,
                 onClick = { onActionClick(MainRoutes.SNES_SMC_HEADER) },
                 icon = { Icon(painterResource(R.drawable.ic_content_cut), contentDescription = null) },
-                colors = itemColors,
                 shape = itemShape,
                 modifier = Modifier.padding(end = 8.dp),
             )
@@ -437,7 +419,6 @@ private fun DrawerContent(
                     onSecondaryClick(MainRoutes.SETTINGS)
                 },
                 icon = { Icon(painterResource(R.drawable.ic_settings), contentDescription = null) },
-                colors = itemColors,
                 shape = itemShape,
                 modifier = Modifier.padding(end = 8.dp),
             )
@@ -449,7 +430,6 @@ private fun DrawerContent(
                     onRate()
                 },
                 icon = { Icon(painterResource(R.drawable.ic_thumb_up), contentDescription = null) },
-                colors = itemColors,
                 shape = itemShape,
                 modifier = Modifier.padding(end = 8.dp),
             )
@@ -462,8 +442,7 @@ private fun DrawerContent(
                         onSecondaryClick(MainRoutes.DONATE)
                     },
                     icon = { Icon(painterResource(R.drawable.ic_gift), contentDescription = null) },
-                    colors = itemColors,
-                    shape = itemShape,
+                        shape = itemShape,
                     modifier = Modifier.padding(end = 8.dp),
                 )
             }
@@ -475,7 +454,6 @@ private fun DrawerContent(
                     onShare()
                 },
                 icon = { Icon(painterResource(R.drawable.ic_share), contentDescription = null) },
-                colors = itemColors,
                 shape = itemShape,
                 modifier = Modifier.padding(end = 8.dp),
             )
@@ -487,7 +465,6 @@ private fun DrawerContent(
                     onSecondaryClick(MainRoutes.HELP)
                 },
                 icon = { Icon(painterResource(R.drawable.ic_help), contentDescription = null) },
-                colors = itemColors,
                 shape = itemShape,
                 modifier = Modifier.padding(end = 8.dp),
             )

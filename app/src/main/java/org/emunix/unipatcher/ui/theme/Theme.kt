@@ -28,94 +28,74 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
-private val LightColorScheme = lightColorScheme(
-    primary = PrimaryLight,
+private val LightRedScheme = lightColorScheme(
+    primary = Color(0xFF8F4B3E),
     onPrimary = Color.White,
-    primaryContainer = PrimaryLight.copy(alpha = 0.12f),
-    onPrimaryContainer = PrimaryLight,
-    secondary = AccentLight,
+    primaryContainer = Color(0xFFF9DED0),
+    onPrimaryContainer = Color(0xFF35150D),
+    secondary = Color(0xFF77574C),
     onSecondary = Color.White,
-    secondaryContainer = AccentLight.copy(alpha = 0.12f),
-    onSecondaryContainer = AccentLight,
-    background = ActivityBackgroundLight,
+    secondaryContainer = Color(0xFFFFDBD4),
+    onSecondaryContainer = Color(0xFF2C150F),
+    tertiary = Color(0xFF745A48),
+    onTertiary = Color.White,
+    background = Color.White,
     onBackground = Color(0xFF1C1B1F),
-    surface = ActivityBackgroundLight,
+    surface = Color.White,
     onSurface = Color(0xFF1C1B1F),
-    surfaceVariant = CardBackgroundLight,
-    onSurfaceVariant = Color(0xFF757575),
-    outline = CardLineLight,
-    error = AccentLight,
+    surfaceVariant = Color(0xFFF4DED8),
+    onSurfaceVariant = Color(0xFF53433F),
+    outline = Color(0xFF857371),
+    error = Color(0xFFBA1A1A),
     onError = Color.White,
+    errorContainer = Color(0xFFFFDAD6),
+    onErrorContainer = Color(0xFF410002),
 )
 
-private val DarkColorScheme = darkColorScheme(
-    primary = PrimaryDark,
-    onPrimary = Color(0xFF381E1E),
-    primaryContainer = PrimaryDark.copy(alpha = 0.12f),
-    onPrimaryContainer = PrimaryDark,
-    secondary = AccentDark,
-    onSecondary = Color(0xFF381E1E),
-    secondaryContainer = AccentDark.copy(alpha = 0.12f),
-    onSecondaryContainer = AccentDark,
-    background = ActivityBackgroundDark,
-    onBackground = Color(0xFFE6E1E5),
-    surface = ActivityBackgroundDark,
-    onSurface = Color(0xFFE6E1E5),
-    surfaceVariant = CardBackgroundDark,
-    onSurfaceVariant = Color(0xFFB0B0B0),
-    outline = CardLineDark,
-    error = AccentDark,
-    onError = Color(0xFF601410),
+private val DarkRedScheme = darkColorScheme(
+    primary = Color(0xFFD9A28C),
+    onPrimary = Color(0xFF512A1C),
+    primaryContainer = Color(0xFF6B3E2C),
+    onPrimaryContainer = Color(0xFFFFDACA),
+    secondary = Color(0xFFCBA79A),
+    onSecondary = Color(0xFF3E2A21),
+    secondaryContainer = Color(0xFF574038),
+    onSecondaryContainer = Color(0xFFF6DCD2),
+    tertiary = Color(0xFFB7ACA4),
+    onTertiary = Color(0xFF2D221B),
+    background = Color(0xFF0E0E0E),
+    onBackground = Color(0xFFF8F8F8),
+    surface = Color(0xFF0E0E0E),
+    onSurface = Color(0xFFF8F8F8),
+    surfaceVariant = Color(0xFF52443E),
+    onSurfaceVariant = Color(0xFFE0E0E0),
+    outline = Color(0xFF9E8D86),
+    error = Color(0xFFFFB4AB),
+    onError = Color(0xFF690005),
+    errorContainer = Color(0xFF93000A),
+    onErrorContainer = Color(0xFFFFDAD6),
 )
 
 @Composable
 fun UniPatcherTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicColor: Boolean = false,
     content: @Composable () -> Unit,
 ) {
     val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        darkTheme -> DarkRedScheme
+        else -> LightRedScheme
     }
 
-    val extendedColors = if (darkTheme) {
-        ExtendedColors(
-            cardHeaderText = CardHeaderTextDark,
-            toolbarBackground = ToolbarBackgroundDark,
-            toolbarText = ToolbarTextDark,
-            toolbarBackArrow = ToolbarBackArrowDark,
-            drawerText = DrawerTextDark,
-            drawerSelectedText = DrawerSelectedTextDark,
-            drawerSelector = DrawerSelectorDark,
-            donateButton = DonateButtonDark,
-        )
-    } else {
-        ExtendedColors(
-            cardHeaderText = CardHeaderTextLight,
-            toolbarBackground = ToolbarBackgroundLight,
-            toolbarText = ToolbarTextLight,
-            toolbarBackArrow = ToolbarBackArrowLight,
-            drawerText = DrawerTextLight,
-            drawerSelectedText = DrawerSelectedTextLight,
-            drawerSelector = DrawerSelectorLight,
-            donateButton = DonateButtonLight,
-        )
-    }
-
-    CompositionLocalProvider(LocalExtendedColors provides extendedColors) {
-        MaterialTheme(
-            colorScheme = colorScheme,
-            typography = Typography,
-            content = content,
-        )
-    }
+    MaterialTheme(
+        colorScheme = colorScheme,
+        typography = Typography,
+        content = content,
+    )
 }
