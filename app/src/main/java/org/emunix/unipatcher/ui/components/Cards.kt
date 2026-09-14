@@ -20,7 +20,6 @@
 
 package org.emunix.unipatcher.ui.components
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -43,8 +42,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.ui.theme.CardHeaderTextDark
-import org.emunix.unipatcher.ui.theme.CardHeaderTextLight
+import org.emunix.unipatcher.ui.theme.LocalExtendedColors
 
 @Composable
 fun FileSelectCard(
@@ -69,7 +67,7 @@ fun FileSelectCard(
                 fontFamily = FontFamily.SansSerif,
                 fontWeight = FontWeight.Light,
                 fontSize = 24.sp,
-                color = if (isSystemInDarkTheme()) CardHeaderTextDark else CardHeaderTextLight,
+                color = LocalExtendedColors.current.cardHeaderText,
                 modifier = Modifier.padding(8.dp),
             )
             HorizontalDivider(

@@ -26,7 +26,6 @@ import android.content.Intent
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -55,8 +54,7 @@ import kotlinx.coroutines.launch
 import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.ui.components.FileSelectCard
-import org.emunix.unipatcher.ui.theme.CardHeaderTextDark
-import org.emunix.unipatcher.ui.theme.CardHeaderTextLight
+import org.emunix.unipatcher.ui.theme.LocalExtendedColors
 import org.emunix.unipatcher.ui.theme.maxContentWidth
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
@@ -181,7 +179,7 @@ fun ApplyPatchScreen(
             if (showHelpButton) {
                 Spacer(Modifier.height(24.dp))
 
-                val helpColor = if (isSystemInDarkTheme()) CardHeaderTextDark else CardHeaderTextLight
+                val helpColor = LocalExtendedColors.current.cardHeaderText
                 OutlinedButton(
                     onClick = onShowHelp,
                     modifier = Modifier.align(Alignment.CenterHorizontally),

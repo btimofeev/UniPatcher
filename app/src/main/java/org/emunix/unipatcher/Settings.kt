@@ -21,6 +21,9 @@ package org.emunix.unipatcher
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import org.emunix.unipatcher.helpers.ThemeHelper
 import javax.inject.Inject
 
@@ -46,10 +49,14 @@ interface Settings {
     fun getTheme(): String
 
     fun setTheme(theme: String)
+
+    fun getThemeFlow(): StateFlow<String>
 }
 
 
 class SettingsImpl @Inject constructor(private val prefs: SharedPreferences) : Settings {
+
+    private val _theme: MutableStateFlow<String> = MutableStateFlow(getTheme())
 
     override fun getShowHelpButton(): Boolean {
         return prefs.getBoolean("show_how_to_use_app_button", true)
@@ -89,5 +96,10 @@ class SettingsImpl @Inject constructor(private val prefs: SharedPreferences) : S
 
     override fun setTheme(theme: String) {
         prefs.edit { putString(PREFERENCES_THEME_KEY, theme) }
+        _theme.value = theme
+    }
+
+    override fun getThemeFlow(): StateFlow<String> {
+        return _theme.asStateFlow()
     }
 }
