@@ -114,7 +114,7 @@
 \n
 \nAté este momento, o UniPatcher não pode extrair arquivos, então precisará descompactar o seu arquivo num software diferente. Recomendo uma app gratuita ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">A app mostra uma mensagem após selecionar um ficheiro: \" O ficheiro deve ser decomprimido em num software externo\".</string>
-    <string name="help_how_to_apply_patch_to_rom_body">Selecionou a ficheiro ROM, um remendo e escolha qual ficheiro gravar, então clique on botão vermelho redondo. Ficheiro são selecionados através do padrão Aplicação de Ficheiros (ou através de um dos gestores de ficheiro que instalou). A aplicação mostrará uma mensagem quando o ficheiro é remendado. Não feche a aplicação até o ficheiro estiver remendado.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">Selecionou a ficheiro ROM, um remendo e escolha qual ficheiro gravar, então clique no botão na parte inferior. Ficheiro são selecionados através do padrão Aplicação de Ficheiros (ou através de um dos gestores de ficheiro que instalou). A aplicação mostrará uma mensagem quando o ficheiro é remendado. Não feche a aplicação até o ficheiro estiver remendado.</string>
     <string name="help_how_to_apply_patch_to_rom_title">Como aplicar um patch em uma ROM\?</string>
     <string name="help_why_not_distribute_modified_games_body">Hacks e traduções são geralmente distribuídos como patches para reduzir o tamanho da descarrega e evitar problemas com direitos autorais.</string>
     <string name="help_why_not_distribute_modified_games_title">Por quê ROM hackers não distribúem jogos modificados\?</string>

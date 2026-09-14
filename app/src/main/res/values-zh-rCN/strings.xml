@@ -160,7 +160,7 @@
     <string name="help_find_rom_pokemon_emerald_body">此游戏的多数 patch 适用 ROM “Pokemon - Emerald Version (U) [f1] (Save Type).gba”.</string>
     <string name="settings_theme_name_auto_battery">由节电程序设置</string>
     <string name="error_crash_discard_button">关闭</string>
-    <string name="help_how_to_apply_patch_to_rom_body">你必须选择一个 ROM 文件、一个 patch，选择保存哪个文件，接着单击红色的圆形按钮。通过标准的 Files 应用选择文件（或者通过你已经安装的文件管理器中的一个）。当文件被 patch 时，应用会显示消息。在文件被 patch 前，不要关闭应用。</string>
+    <string name="help_how_to_apply_patch_to_rom_body">你必须选择一个 ROM 文件、一个 patch，选择保存哪个文件，接着单击下面的按钮。通过标准的 Files 应用选择文件（或者通过你已经安装的文件管理器中的一个）。当文件被 patch 时，应用会显示消息。在文件被 patch 前，不要关闭应用。</string>
     <string name="help_snes_smc_body">SMC 标头是在某些 SNES ROM 映像文件开头处找到的 512 字节。这些字节没有目的，但它们改变剩余数据的位置。移除标头有时是为了正确应用 patch。</string>
     <string name="donate_screen_message_2">我们用你的捐赠来改进应用。</string>
     <string name="donate_screen_send_bitcoin_button">发送比特币</string>

@@ -151,7 +151,7 @@
     <string name="snes_smc_header_help">이 기능은 슈퍼 닌텐도 롬 전용입니다.
 \n
 \n일부 패치는 롬에 SMC 헤더가 없어야 합니다. 이 기능은 제거하는 데 도움이 됩니다.</string>
-    <string name="help_how_to_apply_patch_to_rom_body">롬 파일, 패치를 선택하고 저장할 파일을 선택한 다음 빨간색 둥근 버튼을 클릭해야 합니다. 파일은 표준 파일 응용프로그램을 통해(또는 설치한 파일 관리자 중 하나를 통해) 선택됩니다. 파일이 패치되면 응용프로그램에 메시지가 표시됩니다. 파일이 패치될 때까지 응용프로그램을 닫지 마십시오.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">롬 파일, 패치를 선택하고 저장할 파일을 선택한 다음 화면 아래의 버튼을 클릭해야 합니다. 파일은 표준 파일 응용프로그램을 통해(또는 설치한 파일 관리자 중 하나를 통해) 선택됩니다. 파일이 패치되면 응용프로그램에 메시지가 표시됩니다. 파일이 패치될 때까지 응용프로그램을 닫지 마십시오.</string>
     <string name="help_snes_smc_title">슈퍼 닌텐도 게임에서 SMC 헤더를 제거해야 하는 이유는 무엇입니까\?</string>
     <string name="main_activity_tap_to_select_where_to_save_patch">탭하여 패치를 저장할 위치 선택</string>
     <string name="main_activity_toast_output_not_selected">선택한 출력 파일이 없습니다</string>

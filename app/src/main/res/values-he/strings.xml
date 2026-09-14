@@ -38,7 +38,7 @@
 \n
 \nנכון לעכשיו UniPatcher לא יכול לחלץ ארכיונים, לכן יש לפרוק את הארכיון שלך בתוכנה אחרת. יישמון ZArchiver החינמי הוא המועדף עלי https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_archive_should_be_unpacked_title">האפליקציה מציגה הודעה לאחר בחירת הקובץ: \"יש לפרוק את הארכיון בתוכנה חיצונית\".</string>
-    <string name="help_how_to_apply_patch_to_rom_body">יש לבחור בקובץ ROM, בטלאי ולבחור איזה קובץ לשמור, ואז ללחוץ על הכפתור העגול האדום. את הקבצים ניתן לבחור באמצעות יישומון הקבצים הסטנדרטי (או דרך אחד ממנהלי הקבצים שהתקנת). היישומון יציג הודעה כאשר הטלאי ייושם. אין לסגור את היישומון עד לתיקון הקובץ.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">יש לבחור בקובץ ROM, בטלאי ולבחור איזה קובץ לשמור, ואז ללחוץ על הכפתור למטה. את הקבצים ניתן לבחור באמצעות יישומון הקבצים הסטנדרטי (או דרך אחד ממנהלי הקבצים שהתקנת). היישומון יציג הודעה כאשר הטלאי ייושם. אין לסגור את היישומון עד לתיקון הקובץ.</string>
     <string name="help_how_to_apply_patch_to_rom_title">כיצד להחיל תיקון על ROM\?</string>
     <string name="help_why_not_distribute_modified_games_body">פריצות ותרגומים מופצים בדרך כלל כטלאים כדי להקטין את גודל ההורדה ולהימנע מבעיות בזכויות יוצרים.</string>
     <string name="help_why_not_distribute_modified_games_title">מדוע האקרים של ROM אינם מפיצים משחקים ששונו\?</string>
