@@ -35,7 +35,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -149,12 +148,11 @@ fun SettingsScreen(
 
 @Composable
 private fun CategoryHeader(text: String) {
-    HorizontalDivider()
     Text(
         text = text,
         style = MaterialTheme.typography.titleSmall,
         color = MaterialTheme.colorScheme.onSurfaceVariant,
-        modifier = Modifier.padding(start = 56.dp, top = 16.dp, end = 16.dp, bottom = 8.dp),
+        modifier = Modifier.padding(start = 56.dp, top = 24.dp, end = 16.dp, bottom = 4.dp),
     )
 }
 
