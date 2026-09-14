@@ -59,6 +59,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.createBitmap
@@ -281,14 +282,20 @@ private fun AboutTab(
                 onClick = onVisitSiteClick,
                 modifier = Modifier.weight(1f),
             ) {
-                Text(stringResource(R.string.help_activity_action_visit_site))
+                Text(
+                    text = stringResource(R.string.help_activity_action_visit_site),
+                    textAlign = TextAlign.Center,
+                )
             }
             Spacer(Modifier.width(8.dp))
             OutlinedButton(
                 onClick = onChangelogClick,
                 modifier = Modifier.weight(1f),
             ) {
-                Text(stringResource(R.string.help_activity_action_changelog))
+                Text(
+                    text = stringResource(R.string.help_activity_action_changelog),
+                    textAlign = TextAlign.Center,
+                )
             }
         }
 

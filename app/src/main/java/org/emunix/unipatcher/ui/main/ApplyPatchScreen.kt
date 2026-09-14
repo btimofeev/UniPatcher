@@ -54,7 +54,6 @@ import kotlinx.coroutines.launch
 import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.ui.components.FileSelectCard
-import org.emunix.unipatcher.ui.theme.LocalExtendedColors
 import org.emunix.unipatcher.ui.theme.maxContentWidth
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
@@ -179,7 +178,6 @@ fun ApplyPatchScreen(
             if (showHelpButton) {
                 Spacer(Modifier.height(24.dp))
 
-                val helpColor = LocalExtendedColors.current.cardHeaderText
                 OutlinedButton(
                     onClick = onShowHelp,
                     modifier = Modifier.align(Alignment.CenterHorizontally),
@@ -187,11 +185,9 @@ fun ApplyPatchScreen(
                     Icon(
                         painter = painterResource(R.drawable.ic_book),
                         contentDescription = null,
-                        tint = helpColor,
                     )
                     Text(
                         text = stringResource(R.string.main_activity_button_how_to_use_app),
-                        color = helpColor,
                         modifier = Modifier.padding(start = 8.dp),
                     )
                 }

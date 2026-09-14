@@ -153,7 +153,7 @@ private fun CategoryHeader(text: String) {
     Text(
         text = text,
         style = MaterialTheme.typography.titleSmall,
-        color = MaterialTheme.colorScheme.secondary,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
         modifier = Modifier.padding(start = 56.dp, top = 16.dp, end = 16.dp, bottom = 8.dp),
     )
 }
