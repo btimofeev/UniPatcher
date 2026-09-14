@@ -18,13 +18,13 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 package org.emunix.unipatcher.ui.activity
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import dagger.Lazy
 import dagger.hilt.android.AndroidEntryPoint
 import org.emunix.unipatcher.Settings
+import org.emunix.unipatcher.helpers.ResourceProvider
 import org.emunix.unipatcher.helpers.SocialHelper
 import org.emunix.unipatcher.ui.main.MainScreen
 import org.emunix.unipatcher.ui.theme.UniPatcherTheme
@@ -38,6 +38,8 @@ class MainActivity : ComponentActivity() {
     lateinit var social: Lazy<SocialHelper>
     @Inject
     lateinit var settings: Settings
+    @Inject
+    lateinit var resourceProvider: ResourceProvider
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdgeWithLightStatusBar()
@@ -47,9 +49,9 @@ class MainActivity : ComponentActivity() {
             UniPatcherTheme {
                 MainScreen(
                     settings = settings,
-                    onOpenSettings = { startActivity(Intent(this, SettingsActivity::class.java)) },
-                    onOpenHelp = { startActivity(Intent(this, HelpActivity::class.java)) },
-                    onOpenDonate = { startActivity(Intent(this, DonateActivity::class.java)) },
+                    appVersion = resourceProvider.appVersion,
+                    onVisitSiteClick = { social.get().openWebsite() },
+                    onChangelogClick = { social.get().showChangelog() },
                     onRate = { social.get().rateApp() },
                     onShare = { social.get().shareApp() },
                 )

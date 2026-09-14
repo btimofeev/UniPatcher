@@ -26,4 +26,8 @@ object MainRoutes {
     const val CREATE_PATCH = "create_patch"
     const val SMD_FIX_CHECKSUM = "smd_fix_checksum"
     const val SNES_SMC_HEADER = "snes_smc_header"
+
+    const val SETTINGS = "settings"
+    const val HELP = "help"
+    const val DONATE = "donate"
 }

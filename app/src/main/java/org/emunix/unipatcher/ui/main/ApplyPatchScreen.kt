@@ -53,7 +53,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.launch
 import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
 import org.emunix.unipatcher.R
-import org.emunix.unipatcher.ui.activity.HelpActivity
 import org.emunix.unipatcher.ui.components.FileSelectCard
 import org.emunix.unipatcher.ui.theme.maxContentWidth
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
@@ -64,6 +63,7 @@ fun ApplyPatchScreen(
     viewModel: ApplyPatchViewModel,
     actionIsRunningViewModel: ActionIsRunningViewModel,
     registerRunAction: (String, () -> Unit) -> Unit,
+    onShowHelp: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val patchName by viewModel.patchName.collectAsStateWithLifecycle()
@@ -179,10 +179,7 @@ fun ApplyPatchScreen(
                 Spacer(Modifier.height(24.dp))
 
                 OutlinedButton(
-                    onClick = {
-                        val helpIntent = Intent(context, HelpActivity::class.java)
-                        context.startActivity(helpIntent)
-                    },
+                    onClick = onShowHelp,
                     modifier = Modifier.align(Alignment.CenterHorizontally),
                 ) {
 Icon(
