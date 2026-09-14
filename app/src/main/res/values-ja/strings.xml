@@ -139,7 +139,7 @@
     <string name="help_snes_smc_title">スーパーファミコンのゲームからSMCヘッダーを削除する必要があるのはなぜですか\?</string>
     <string name="help_i_cant_patch_smw_rom_body">このROMにはSMCヘッダーが含まれていますが、このゲーム用のほとんどのパッチではヘッダーのないROMが必要です。SMC ヘッダーを削除するには、左側のメニューで適切な項目を選択し、その後、そのパッチを ROM に適用します。</string>
     <string name="help_i_cant_patch_smw_rom_title">“Super Mario World (U) [!].smc” にパッチを当てることができません</string>
-    <string name="help_how_to_apply_patch_to_rom_body">ROMファイル、パッチを選択し、保存するファイルを選択して、赤い丸いボタンをクリックする必要があります。ファイルは、標準のファイルアプリケーション (またはインストールされたファイルマネージャのいずれか) を使用して選択してください。ファイルにパッチが適用されると、アプリケーションはメッセージを表示します。ファイルにパッチが適用されるまで、アプリケーションを閉じないでください。</string>
+    <string name="help_how_to_apply_patch_to_rom_body">ROMファイル、パッチを選択し、保存するファイルを選択して、画面下部のボタンをクリックする必要があります。ファイルは、標準のファイルアプリケーション (またはインストールされたファイルマネージャのいずれか) を使用して選択してください。ファイルにパッチが適用されると、アプリケーションはメッセージを表示します。ファイルにパッチが適用されるまで、アプリケーションを閉じないでください。</string>
     <string name="nav_snes_add_del_smc_header">SMC ヘッダーを削除 (SNES)</string>
     <string name="error_file_picker_app_is_no_installed">エラー: ファイルアプリがインストールされていません</string>
     <string name="error_crash_discard_button">取り消し</string>

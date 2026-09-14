@@ -38,7 +38,7 @@
     <string name="nav_apply_patch">تطبيق الترقيع</string>
     <string name="help_what_is_a_patch_title">ما هو الترقيع؟</string>
     <string name="help_why_not_distribute_modified_games_body">يتم توزيع الاختراقات والترجمات بشكل عام كترقيعات لتقليل حجم التنزيل وتجنب مشكلات حقوق النشر.</string>
-    <string name="help_how_to_apply_patch_to_rom_body">يجب عليك تحديد ملف الـROM، ملف الترقيع واختيار الملف الذي تريد حفظه ، ثم إضغط على الزر الأحمر الدائري. يتم تحديد الملفات من خلال تطبيق الملفات الرئيسي (أو من خلال أحد مديري الملفات الذين قمت بتحميلهم). سيعرض التطبيق رسالة عند الانتهاء من ترقيع الملف. لا تغلق التطبيق حتى يتم ترقيع الملف.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">يجب عليك تحديد ملف الـROM، ملف الترقيع واختيار الملف الذي تريد حفظه ، ثم إضغط على الزر السفلي. يتم تحديد الملفات من خلال تطبيق الملفات الرئيسي (أو من خلال أحد مديري الملفات الذين قمت بتحميلهم). سيعرض التطبيق رسالة عند الانتهاء من ترقيع الملف. لا تغلق التطبيق حتى يتم ترقيع الملف.</string>
     <string name="help_i_cant_patch_smw_rom_title">لا أستطيع ترقيع \"Super Mario World (U) [!].smc\"</string>
     <string name="help_find_rom_pokemon_emerald_title">لا أستطيع أن أجد الـROM الصحيح للعبة \"Pokémon Emerald \".</string>
     <string name="help_ecm_image_body">ECM هو تنسيق ضغط بيانات مصمم خصيصا لصور القرص. يمكنك فك ضغط الملف باستخدام تطبيق ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>

@@ -144,7 +144,7 @@
 \n
 \nŞu anda UniPatcher arşivleri çıkaramıyor, bu nedenle arşivinizi farklı bir programda açmanız gerekir. Ücretsiz olan https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver ZArchiver uygulamasını tavsiye ederim.</string>
     <string name="help_archive_should_be_unpacked_title">Uygulama dosya seçiminden sonra bir mesaj gösteriyor: “Arşiv harici bir programda açılmalıdır”.</string>
-    <string name="help_how_to_apply_patch_to_rom_body">Bir ROM dosyası, bir yama ve hangi dosyanın kaydedileceğini seçmeniz ve ardından kırmızı yuvarlak düğmeye tıklamanız gerekir. Dosyalar, standart dosya uygulaması (veya yüklediğiniz dosya yöneticilerinden biri) aracılığıyla seçilir. Uygulama, yama dosyaya uygulandığında bir mesaj gösterecektir. Yama dosyaya uygulanana kadar uygulamayı kapatmayın.</string>
+    <string name="help_how_to_apply_patch_to_rom_body">Bir ROM dosyası, bir yama ve hangi dosyanın kaydedileceğini seçmeniz ve ardından alttaki düğmeye tıklamanız gerekir. Dosyalar, standart dosya uygulaması (veya yüklediğiniz dosya yöneticilerinden biri) aracılığıyla seçilir. Uygulama, yama dosyaya uygulandığında bir mesaj gösterecektir. Yama dosyaya uygulanana kadar uygulamayı kapatmayın.</string>
     <string name="help_how_to_apply_patch_to_rom_title">ROM\'a yama nasıl uygulanır\?</string>
     <string name="help_why_not_distribute_modified_games_body">Değişiklikler ve çeviriler, indirme boyutunu küçültmek ve telif hakkı sorunlarını önlemek için genellikle yamalar halinde dağıtılır.</string>
     <string name="help_why_not_distribute_modified_games_title">ROM değiştiricileri neden değiştirilmiş oyunları dağıtmaz\?</string>
