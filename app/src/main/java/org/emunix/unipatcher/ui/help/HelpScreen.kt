@@ -28,6 +28,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -39,7 +40,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -299,7 +299,7 @@ private fun AboutTab(
             }
         }
 
-        HorizontalDivider(modifier = Modifier.padding(top = 16.dp, bottom = 16.dp))
+        Spacer(Modifier.height(32.dp))
 
         SelectionContainer {
             Column {
@@ -308,7 +308,7 @@ private fun AboutTab(
                         style = MaterialTheme.typography.bodyLarge,
                     )
 
-                    HorizontalDivider(modifier = Modifier.padding(top = 16.dp, bottom = 16.dp))
+                    Spacer(Modifier.height(48.dp))
 
                     Text(
                         text = resourceText(R.string.about_used_libraries),
