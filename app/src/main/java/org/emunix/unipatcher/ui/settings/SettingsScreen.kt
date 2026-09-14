@@ -40,6 +40,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
@@ -106,14 +107,14 @@ fun SettingsScreen(
                 CategoryHeader(stringResource(R.string.settings_interface_header))
 
                 SettingsListItem(
-                    icon = { Icon(painterResource(R.drawable.ic_brightness_medium), contentDescription = null) },
+                    icon = { Icon(painterResource(R.drawable.ic_brightness_medium), contentDescription = null, tint = MaterialTheme.colorScheme.onSurfaceVariant) },
                     title = stringResource(R.string.settings_theme),
                     summary = themeNames.getOrElse(themeValues.indexOf(theme)) { "" },
                     onClick = { showThemeDialog = true },
                 )
 
                 SettingsSwitchItem(
-                    icon = { Icon(painterResource(R.drawable.ic_book), contentDescription = null) },
+                    icon = { Icon(painterResource(R.drawable.ic_book), contentDescription = null, tint = MaterialTheme.colorScheme.onSurfaceVariant) },
                     title = stringResource(R.string.settings_show_button_how_to_use_app),
                     summary = stringResource(R.string.settings_show_button_how_to_use_app_description),
                     checked = showHelpButton,
@@ -123,7 +124,7 @@ fun SettingsScreen(
                 CategoryHeader(stringResource(R.string.settings_patching_header))
 
                 SettingsSwitchItem(
-                    icon = { Icon(painterResource(R.drawable.ic_fingerprint), contentDescription = null) },
+                    icon = { Icon(painterResource(R.drawable.ic_fingerprint), contentDescription = null, tint = MaterialTheme.colorScheme.onSurfaceVariant) },
                     title = stringResource(R.string.settings_ignore_checksum),
                     summary = stringResource(R.string.settings_ignore_checksum_description),
                     checked = ignoreChecksum,
@@ -149,13 +150,13 @@ fun SettingsScreen(
 
 @Composable
 private fun CategoryHeader(text: String) {
+    HorizontalDivider()
     Text(
         text = text,
         style = MaterialTheme.typography.titleSmall,
-        color = MaterialTheme.colorScheme.primary,
-        modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 8.dp),
+        color = MaterialTheme.colorScheme.secondary,
+        modifier = Modifier.padding(start = 56.dp, top = 16.dp, end = 16.dp, bottom = 8.dp),
     )
-    HorizontalDivider()
 }
 
 @Composable
@@ -253,6 +254,9 @@ private fun ThemeDialog(
                         RadioButton(
                             selected = value == selectedTheme,
                             onClick = null,
+                            colors = RadioButtonDefaults.colors(
+                                selectedColor = MaterialTheme.colorScheme.secondary,
+                            ),
                         )
                         Spacer(Modifier.width(8.dp))
                         Text(
