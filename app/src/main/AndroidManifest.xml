@@ -22,18 +22,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".ui.activity.SettingsActivity"
-            android:label="@string/settings_activity_title"/>
-
-        <activity
-            android:name=".ui.activity.HelpActivity"
-            android:label="@string/help_activity_title"/>
-
-        <activity
-            android:name=".ui.activity.DonateActivity"
-            android:label="@string/donate_activity_title"/>
-
     </application>
 
 </manifest>

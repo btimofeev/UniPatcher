@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, 2020, 2022, 2024 Boris Timofeev
+ Copyright (c) 2026 Boris Timofeev
 
  This file is part of UniPatcher.
 
@@ -17,15 +17,14 @@
  along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
  */
-package org.emunix.unipatcher.ui.activity
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+package org.emunix.unipatcher.ui.main
 
-class DonateActivity : AppCompatActivity() {
+import androidx.compose.runtime.Composable
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        finish()
-    }
+@Composable
+fun DonateScreenRoute(
+    onBackPressed: () -> Unit,
+) {
+    onBackPressed()
 }

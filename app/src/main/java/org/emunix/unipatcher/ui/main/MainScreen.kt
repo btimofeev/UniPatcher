@@ -88,6 +88,8 @@ import org.emunix.unipatcher.BuildConfig
 import org.emunix.unipatcher.FLAVOR_FREE
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
+import org.emunix.unipatcher.ui.help.HelpScreen
+import org.emunix.unipatcher.ui.settings.SettingsScreen
 import org.emunix.unipatcher.ui.theme.AccentDark
 import org.emunix.unipatcher.ui.theme.AccentLight
 import org.emunix.unipatcher.ui.theme.CardLineDark
@@ -116,9 +118,9 @@ private const val DOUBLE_BACK_EXIT_DELAY_MS = 2000L
 @Composable
 fun MainScreen(
     settings: Settings,
-    onOpenSettings: () -> Unit,
-    onOpenHelp: () -> Unit,
-    onOpenDonate: () -> Unit,
+    appVersion: String,
+    onVisitSiteClick: () -> Unit,
+    onChangelogClick: () -> Unit,
     onRate: () -> Unit,
     onShare: () -> Unit,
 ) {
@@ -152,25 +154,35 @@ fun MainScreen(
         scope.launch { drawerState.close() }
     }
 
+    val navigateToSecondary: (String) -> Unit = { route ->
+        navController.navigate(route) {
+            launchSingleTop = true
+        }
+        scope.launch { drawerState.close() }
+    }
+
     val donateSnackbarText = stringResource(R.string.main_activity_donate_snackbar_text)
     val donateSnackbarButton = stringResource(R.string.main_activity_donate_snackbar_button)
     val doubleBackMessage = stringResource(R.string.main_activity_double_back_to_exit_message)
 
     BackHandler {
-        if (drawerState.isOpen) {
-            scope.launch { drawerState.close() }
-        } else if (!actionIsRunning || doubleBackToExitPressedOnce) {
-            (context as? android.app.Activity)?.finish()
-        } else {
-            doubleBackToExitPressedOnce = true
-            Toast.makeText(
-                context,
-                doubleBackMessage,
-                Toast.LENGTH_SHORT,
-            ).show()
-            scope.launch {
-                delay(DOUBLE_BACK_EXIT_DELAY_MS)
-                doubleBackToExitPressedOnce = false
+        when {
+            drawerState.isOpen -> scope.launch { drawerState.close() }
+            isSecondaryRoute(currentRoute) -> navController.popBackStack()
+            !actionIsRunning || doubleBackToExitPressedOnce -> {
+                (context as? android.app.Activity)?.finish()
+            }
+            else -> {
+                doubleBackToExitPressedOnce = true
+                Toast.makeText(
+                    context,
+                    doubleBackMessage,
+                    Toast.LENGTH_SHORT,
+                ).show()
+                scope.launch {
+                    delay(DOUBLE_BACK_EXIT_DELAY_MS)
+                    doubleBackToExitPressedOnce = false
+                }
             }
         }
     }
@@ -184,7 +196,7 @@ fun MainScreen(
                     duration = SnackbarDuration.Indefinite,
                 )
                 when (result) {
-                    SnackbarResult.ActionPerformed -> onOpenDonate()
+                    SnackbarResult.ActionPerformed -> navigateToSecondary(MainRoutes.DONATE)
                     SnackbarResult.Dismissed -> {
                         // Dismissed is triggered only by swipe-out for an indefinite snackbar
                         settings.setDontShowDonateSnackbarCount(30)
@@ -195,104 +207,126 @@ fun MainScreen(
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        ModalNavigationDrawer(
-            drawerState = drawerState,
-            gesturesEnabled = !actionIsRunning,
-            drawerContent = {
-                DrawerContent(
-                    isDark = isDark,
-                    currentRoute = currentRoute,
-                    onActionClick = navigateToAction,
-                    onCloseDrawer = { scope.launch { drawerState.close() } },
-                    onOpenSettings = onOpenSettings,
-                    onOpenHelp = onOpenHelp,
-                    onOpenDonate = onOpenDonate,
-                    onRate = onRate,
-                    onShare = onShare,
-                )
-            },
-        ) {
-            Scaffold(
-                topBar = {
-                    TopBar(
-                        isDark = isDark,
-                        title = stringResource(titleForRoute(currentRoute)),
-                        onMenuClick = { scope.launch { drawerState.open() } },
-                    )
-                },
-                snackbarHost = { SnackbarHost(snackbarHostState) },
-                floatingActionButton = {
-                    FloatingActionButton(
-                        onClick = {
-                            currentRoute?.let { runActions[it]?.invoke() }
-                        },
-                        containerColor = if (isDark) {
-                            AccentDark
-                        } else {
-                            AccentLight
-                        },
-                        contentColor = Color.White,
-                    ) {
-                        Icon(
-                            painter = painterResource(R.drawable.ic_save),
-                            contentDescription = null,
+        when (currentRoute) {
+            MainRoutes.SETTINGS -> SettingsScreen(
+                viewModel = hiltViewModel(),
+                onBackPressed = { navController.popBackStack() },
+            )
+
+            MainRoutes.HELP -> HelpScreen(
+                appVersion = appVersion,
+                onBackPressed = { navController.popBackStack() },
+                onVisitSiteClick = onVisitSiteClick,
+                onChangelogClick = onChangelogClick,
+            )
+
+            MainRoutes.DONATE -> DonateScreenRoute(
+                onBackPressed = { navController.popBackStack() },
+            )
+
+            else -> {
+                ModalNavigationDrawer(
+                    drawerState = drawerState,
+                    gesturesEnabled = !actionIsRunning,
+                    drawerContent = {
+                        DrawerContent(
+                            isDark = isDark,
+                            currentRoute = currentRoute,
+                            onActionClick = navigateToAction,
+                            onSecondaryClick = navigateToSecondary,
+                            onCloseDrawer = { scope.launch { drawerState.close() } },
+                            onRate = onRate,
+                            onShare = onShare,
                         )
-                    }
-                },
-            ) { padding ->
-                NavHost(
-                    navController = navController,
-                    startDestination = MainRoutes.APPLY_PATCH,
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(padding),
+                    },
                 ) {
-                    composable(MainRoutes.APPLY_PATCH) {
-                        val viewModel = hiltViewModel<ApplyPatchViewModel>()
-                        ApplyPatchScreen(
-                            viewModel = viewModel,
-                            actionIsRunningViewModel = actionIsRunningViewModel,
-                            registerRunAction = registerRunAction,
-                        )
-                    }
-                    composable(MainRoutes.CREATE_PATCH) {
-                        val viewModel = hiltViewModel<CreatePatchViewModel>()
-                        CreatePatchScreen(
-                            viewModel = viewModel,
-                            actionIsRunningViewModel = actionIsRunningViewModel,
-                            registerRunAction = registerRunAction,
-                        )
-                    }
-                    composable(MainRoutes.SMD_FIX_CHECKSUM) {
-                        val viewModel = hiltViewModel<SmdFixChecksumViewModel>()
-                        SmdFixChecksumScreen(
-                            viewModel = viewModel,
-                            actionIsRunningViewModel = actionIsRunningViewModel,
-                            registerRunAction = registerRunAction,
-                        )
-                    }
-                    composable(MainRoutes.SNES_SMC_HEADER) {
-                        val viewModel = hiltViewModel<SnesSmcHeaderViewModel>()
-                        SnesSmcHeaderScreen(
-                            viewModel = viewModel,
-                            actionIsRunningViewModel = actionIsRunningViewModel,
-                            registerRunAction = registerRunAction,
-                        )
+                    Scaffold(
+                        topBar = {
+                            TopBar(
+                                isDark = isDark,
+                                title = stringResource(titleForRoute(currentRoute)),
+                                onMenuClick = { scope.launch { drawerState.open() } },
+                            )
+                        },
+                        snackbarHost = { SnackbarHost(snackbarHostState) },
+                        floatingActionButton = {
+                            FloatingActionButton(
+                                onClick = {
+                                    currentRoute?.let { runActions[it]?.invoke() }
+                                },
+                                containerColor = if (isDark) {
+                                    AccentDark
+                                } else {
+                                    AccentLight
+                                },
+                                contentColor = Color.White,
+                            ) {
+                                Icon(
+                                    painter = painterResource(R.drawable.ic_save),
+                                    contentDescription = null,
+                                )
+                            }
+                        },
+                    ) { padding ->
+                        NavHost(
+                            navController = navController,
+                            startDestination = MainRoutes.APPLY_PATCH,
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .padding(padding),
+                        ) {
+                            composable(MainRoutes.APPLY_PATCH) {
+                                val viewModel = hiltViewModel<ApplyPatchViewModel>()
+                                ApplyPatchScreen(
+                                    viewModel = viewModel,
+                                    actionIsRunningViewModel = actionIsRunningViewModel,
+                                    registerRunAction = registerRunAction,
+                                    onShowHelp = { navigateToSecondary(MainRoutes.HELP) },
+                                )
+                            }
+                            composable(MainRoutes.CREATE_PATCH) {
+                                val viewModel = hiltViewModel<CreatePatchViewModel>()
+                                CreatePatchScreen(
+                                    viewModel = viewModel,
+                                    actionIsRunningViewModel = actionIsRunningViewModel,
+                                    registerRunAction = registerRunAction,
+                                )
+                            }
+                            composable(MainRoutes.SMD_FIX_CHECKSUM) {
+                                val viewModel = hiltViewModel<SmdFixChecksumViewModel>()
+                                SmdFixChecksumScreen(
+                                    viewModel = viewModel,
+                                    actionIsRunningViewModel = actionIsRunningViewModel,
+                                    registerRunAction = registerRunAction,
+                                )
+                            }
+                            composable(MainRoutes.SNES_SMC_HEADER) {
+                                val viewModel = hiltViewModel<SnesSmcHeaderViewModel>()
+                                SnesSmcHeaderScreen(
+                                    viewModel = viewModel,
+                                    actionIsRunningViewModel = actionIsRunningViewModel,
+                                    registerRunAction = registerRunAction,
+                                )
+                            }
+                            composable(MainRoutes.SETTINGS) {}
+                            composable(MainRoutes.HELP) {}
+                            composable(MainRoutes.DONATE) {}
+                        }
                     }
                 }
-            }
-        }
 
-        if (actionIsRunning) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .clickable(
-                        interactionSource = remember { MutableInteractionSource() },
-                        indication = null,
-                        onClick = {},
-                    ),
-            )
+                if (actionIsRunning) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .clickable(
+                                interactionSource = remember { MutableInteractionSource() },
+                                indication = null,
+                                onClick = {},
+                            ),
+                    )
+                }
+            }
         }
     }
 }
@@ -343,10 +377,8 @@ private fun DrawerContent(
     isDark: Boolean,
     currentRoute: String?,
     onActionClick: (String) -> Unit,
+    onSecondaryClick: (String) -> Unit,
     onCloseDrawer: () -> Unit,
-    onOpenSettings: () -> Unit,
-    onOpenHelp: () -> Unit,
-    onOpenDonate: () -> Unit,
     onRate: () -> Unit,
     onShare: () -> Unit,
 ) {
@@ -433,10 +465,10 @@ private fun DrawerContent(
 
             NavigationDrawerItem(
                 label = { Text(stringResource(R.string.nav_settings)) },
-                selected = false,
+                selected = currentRoute == MainRoutes.SETTINGS,
                 onClick = {
                     onCloseDrawer()
-                    onOpenSettings()
+                    onSecondaryClick(MainRoutes.SETTINGS)
                 },
                 icon = { Icon(painterResource(R.drawable.ic_settings), contentDescription = null) },
                 colors = itemColors,
@@ -458,10 +490,10 @@ private fun DrawerContent(
             if (BuildConfig.FLAVOR == FLAVOR_FREE) {
                 NavigationDrawerItem(
                     label = { Text(stringResource(R.string.nav_donate)) },
-                    selected = false,
+                    selected = currentRoute == MainRoutes.DONATE,
                     onClick = {
                         onCloseDrawer()
-                        onOpenDonate()
+                        onSecondaryClick(MainRoutes.DONATE)
                     },
                     icon = { Icon(painterResource(R.drawable.ic_gift), contentDescription = null) },
                     colors = itemColors,
@@ -483,10 +515,10 @@ private fun DrawerContent(
             )
             NavigationDrawerItem(
                 label = { Text(stringResource(R.string.nav_help)) },
-                selected = false,
+                selected = currentRoute == MainRoutes.HELP,
                 onClick = {
                     onCloseDrawer()
-                    onOpenHelp()
+                    onSecondaryClick(MainRoutes.HELP)
                 },
                 icon = { Icon(painterResource(R.drawable.ic_help), contentDescription = null) },
                 colors = itemColors,
@@ -504,6 +536,12 @@ private fun titleForRoute(route: String?): Int {
         MainRoutes.SNES_SMC_HEADER -> R.string.nav_snes_add_del_smc_header
         else -> R.string.nav_apply_patch
     }
+}
+
+private fun isSecondaryRoute(route: String?): Boolean {
+    return route == MainRoutes.SETTINGS ||
+        route == MainRoutes.HELP ||
+        route == MainRoutes.DONATE
 }
 
 private fun canShowDonateSnackbar(settings: Settings): Boolean {
