@@ -55,7 +55,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.emunix.unipatcher.R
@@ -185,8 +184,6 @@ private fun SettingsListItem(
                 text = summary,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
             )
         }
     }
@@ -218,8 +215,6 @@ private fun SettingsSwitchItem(
                 text = summary,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
             )
         }
         Spacer(Modifier.width(16.dp))
@@ -249,7 +244,7 @@ private fun ThemeDialog(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable { onThemeSelected(value) }
-                            .padding(vertical = 4.dp),
+                            .padding(vertical = 12.dp),
                     ) {
                         RadioButton(
                             selected = value == selectedTheme,
