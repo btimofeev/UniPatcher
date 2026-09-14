@@ -174,12 +174,12 @@ fun MainScreen(
                 val result = snackbarHostState.showSnackbar(
                     message = donateSnackbarText,
                     actionLabel = donateSnackbarButton,
+                    withDismissAction = true,
                     duration = SnackbarDuration.Indefinite,
                 )
                 when (result) {
                     SnackbarResult.ActionPerformed -> navigateToSecondary(MainRoutes.DONATE)
                     SnackbarResult.Dismissed -> {
-                        // Dismissed is triggered only by swipe-out for an indefinite snackbar
                         settings.setDontShowDonateSnackbarCount(30)
                     }
                 }
