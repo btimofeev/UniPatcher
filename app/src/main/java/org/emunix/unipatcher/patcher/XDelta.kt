@@ -26,12 +26,15 @@ import java.io.File
 import java.io.FileInputStream
 import java.io.IOException
 
-class XDelta(patch: File?, rom: File?, output: File?, resourceProvider: ResourceProvider?, fileUtils: FileUtils) :
+class XDelta(patch: File, rom: File, output: File, resourceProvider: ResourceProvider, fileUtils: FileUtils) :
     Patcher(patch, rom, output, resourceProvider, fileUtils) {
 
     @Throws(PatchException::class, IOException::class)
     override fun apply(ignoreChecksum: Boolean) {
-        if (checkXDelta1(patchFile)) throw PatchException(resourceProvider.getString(string.notify_error_xdelta1_unsupported))
+        if (checkXDelta1(patchFile)) {
+            applyXDelta1()
+            return
+        }
         try {
             System.loadLibrary("xdelta3")
         } catch (e: UnsatisfiedLinkError) {
@@ -78,6 +81,23 @@ class XDelta(patch: File?, rom: File?, output: File?, resourceProvider: Resource
         outputPath: String?,
         ignoreChecksum: Boolean
     ): Int
+
+    private external fun xdelta1apply(
+        patchPath: String?,
+        romPath: String?,
+        outputPath: String?
+    ): Int
+
+    private fun applyXDelta1() {
+        try {
+            System.loadLibrary("xdelta1")
+        } catch (e: UnsatisfiedLinkError) {
+            throw PatchException(resourceProvider.getString(string.notify_error_failed_load_lib_xdelta3))
+        }
+        val ret = xdelta1apply(patchFile.path, romFile.path, outputFile.path)
+        Timber.d("XDelta1 return code: %s", ret)
+        if (ret != 0) throw PatchException(resourceProvider.getString(string.notify_error_unknown))
+    }
 
     companion object {
 

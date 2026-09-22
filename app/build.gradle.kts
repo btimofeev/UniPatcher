@@ -34,7 +34,7 @@ android {
         versionName = "0.18"
 
         ndk {
-            abiFilters.addAll(setOf("arm64-v8a", "x86_64"))
+            abiFilters.addAll(setOf("armeabi-v7a", "arm64-v8a", "x86_64"))
         }
 
         externalNativeBuild {
@@ -166,8 +166,10 @@ dependencies {
 
     // Testing
     testImplementation(libs.junit)
-    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockk)
 }
+
+
 
 val deleteDependencies by tasks.registering(Delete::class) {
     delete("src/main/cpp/xdelta3/xdelta")
