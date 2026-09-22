@@ -16,113 +16,108 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
+package org.emunix.unipatcher.patcher
 
-package org.emunix.unipatcher.patcher;
+import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
+import org.emunix.unipatcher.utils.FileUtils
+import java.io.BufferedInputStream
+import java.io.File
+import java.io.FileInputStream
+import java.io.IOException
+import java.io.RandomAccessFile
 
-import org.emunix.unipatcher.R;
+class DPS(
+    patch: File,
+    rom: File,
+    output: File,
+    resourceProvider: ResourceProvider,
+    fileUtils: FileUtils,
+) : Patcher(patch, rom, output, resourceProvider, fileUtils) {
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import org.emunix.unipatcher.utils.FileUtils;
-import org.emunix.unipatcher.helpers.ResourceProvider;
-
-public class DPS extends Patcher {
-
-    private static final int MIN_SIZE_PATCH = 136;
-    private static final int BUFFER_SIZE = 32768;
-    private static final int COPY_DATA = 0;
-    private static final int ENCLOSED_DATA = 1;
-
-    public DPS(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
-        super(patch, rom, output, resourceProvider, fileUtils);
-    }
-
-    @Override
-    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
-
+    @Throws(PatchException::class, IOException::class)
+    override fun apply(ignoreChecksum: Boolean) {
         if (patchFile.length() < MIN_SIZE_PATCH) {
-            throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+            throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
         }
 
-        BufferedInputStream patchStream = null;
-        RandomAccessFile romStream = null;
-        RandomAccessFile outputStream = null;
+        var patchStream: BufferedInputStream? = null
+        var romStream: RandomAccessFile? = null
+        var outputStream: RandomAccessFile? = null
 
         try {
-            patchStream = new BufferedInputStream(new FileInputStream(patchFile));
+            patchStream = BufferedInputStream(FileInputStream(patchFile))
 
-            byte[] buffer = new byte[BUFFER_SIZE];
+            val buffer = ByteArray(BUFFER_SIZE)
 
             // check version of dps patch
-            long i = patchStream.read(buffer, 0, 198);
-            if (buffer[193] != 1)
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_dps_patch));
+            patchStream.read(buffer, 0, 198)
+            if (buffer[193] != 1.toByte())
+                throw PatchException(resourceProvider.getString(R.string.notify_error_not_dps_patch))
 
             // verify rom
             if (!ignoreChecksum) {
-                long romSize = getUInt(buffer, 194);
+                val romSize = getUInt(buffer, 194)
                 if (romSize != romFile.length())
-                    throw new IOException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                    throw IOException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch))
             }
 
-            romStream = new RandomAccessFile(romFile, "r");
-            outputStream = new RandomAccessFile(outputFile, "rw");
+            romStream = RandomAccessFile(romFile, "r")
+            outputStream = RandomAccessFile(outputFile, "rw")
 
-            int mode;
-            long offset;
-            long length;
-            while ((i = patchStream.read(buffer, 0, 5)) != -1) {
-                mode = buffer[0];
-                offset = getUInt(buffer, 1);
-                outputStream.seek(offset);
+            while (patchStream.read(buffer, 0, 5) != -1) {
+                val mode = buffer[0].toInt()
+                var offset = getUInt(buffer, 1)
+                outputStream.seek(offset)
 
-                switch (mode) {
-                    case COPY_DATA:
-                        i = patchStream.read(buffer, 0, 8);
-                        offset = getUInt(buffer, 0);
-                        length = getUInt(buffer, 4);
-                        romStream.seek(offset);
+                when (mode) {
+                    COPY_DATA -> {
+                        patchStream.read(buffer, 0, 8)
+                        offset = getUInt(buffer, 0)
+                        var length = getUInt(buffer, 4)
+                        romStream.seek(offset)
                         while (length > 0) {
-                            if (length < BUFFER_SIZE) {
-                                i = romStream.read(buffer, 0, (int) length);
-                                outputStream.write(buffer, 0, (int) i);
-                                length -= i;
+                            val count = if (length < BUFFER_SIZE) {
+                                romStream.read(buffer, 0, length.toInt())
                             } else {
-                                i = romStream.read(buffer, 0, BUFFER_SIZE);
-                                outputStream.write(buffer, 0, (int) i);
-                                length -= i;
+                                romStream.read(buffer, 0, BUFFER_SIZE)
                             }
+                            outputStream.write(buffer, 0, count)
+                            length -= count
                         }
-                        break;
-                    case ENCLOSED_DATA:
-                        i = patchStream.read(buffer, 0, 4);
-                        length = getUInt(buffer, 0);
+                    }
+                    ENCLOSED_DATA -> {
+                        patchStream.read(buffer, 0, 4)
+                        var length = getUInt(buffer, 0)
                         while (length > 0) {
-                            if (length < BUFFER_SIZE) {
-                                i = patchStream.read(buffer, 0, (int) length);
-                                outputStream.write(buffer, 0, (int) i);
-                                length -= i;
+                            val count = if (length < BUFFER_SIZE) {
+                                patchStream.read(buffer, 0, length.toInt())
                             } else {
-                                i = patchStream.read(buffer, 0, BUFFER_SIZE);
-                                outputStream.write(buffer, 0, (int) i);
-                                length -= i;
+                                patchStream.read(buffer, 0, BUFFER_SIZE)
                             }
+                            outputStream.write(buffer, 0, count)
+                            length -= count
                         }
-                        break;
+                    }
                 }
             }
         } finally {
-            fileUtils.closeQuietly(romStream);
-            fileUtils.closeQuietly(outputStream);
-            fileUtils.closeQuietly(patchStream);
+            fileUtils.closeQuietly(romStream)
+            fileUtils.closeQuietly(outputStream)
+            fileUtils.closeQuietly(patchStream)
         }
     }
 
-    private long getUInt(byte[] a, int offset) {
-        return ((long) (a[offset] & 0xff)) + ((long) (a[offset + 1] & 0xff) << 8) +
-                ((long) (a[offset + 2] & 0xff) << 16) + ((long) (a[offset + 3] & 0xff) << 24);
+    private fun getUInt(a: ByteArray, offset: Int): Long =
+        (a[offset].toLong() and 0xff) +
+            ((a[offset + 1].toLong() and 0xff) shl 8) +
+            ((a[offset + 2].toLong() and 0xff) shl 16) +
+            ((a[offset + 3].toLong() and 0xff) shl 24)
+
+    companion object {
+        private const val MIN_SIZE_PATCH = 136
+        private const val BUFFER_SIZE = 32768
+        private const val COPY_DATA = 0
+        private const val ENCLOSED_DATA = 1
     }
 }

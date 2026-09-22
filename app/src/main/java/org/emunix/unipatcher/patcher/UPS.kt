@@ -16,266 +16,224 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
+package org.emunix.unipatcher.patcher
 
-package org.emunix.unipatcher.patcher;
+import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
+import org.emunix.unipatcher.utils.FileUtils
+import java.io.BufferedInputStream
+import java.io.BufferedOutputStream
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
+import java.io.IOException
+import java.util.zip.CRC32
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.zip.CRC32;
-import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.helpers.ResourceProvider;
-import org.emunix.unipatcher.utils.FileUtils;
+class UPS(
+    patch: File,
+    rom: File,
+    output: File,
+    resourceProvider: ResourceProvider,
+    fileUtils: FileUtils,
+) : Patcher(patch, rom, output, resourceProvider, fileUtils) {
 
-public class UPS extends Patcher {
-
-    private static final byte[] MAGIC_NUMBER = {0x55, 0x50, 0x53, 0x31}; // "UPS1"
-
-    public UPS(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
-        super(patch, rom, output, resourceProvider, fileUtils);
-    }
-
-    @Override
-    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
-
+    @Throws(PatchException::class, IOException::class)
+    override fun apply(ignoreChecksum: Boolean) {
         if (patchFile.length() < 18) {
-            throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+            throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
         }
 
-        BufferedInputStream patchStream = null;
-        BufferedInputStream romStream = null;
-        BufferedOutputStream outputStream = null;
-        UpsCrc upsCrc;
+        var patchStream: BufferedInputStream? = null
+        var romStream: BufferedInputStream? = null
+        var outputStream: BufferedOutputStream? = null
+        lateinit var upsCrc: UpsCrc
         try {
             if (!checkMagic(patchFile)) {
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_ups_patch));
+                throw PatchException(resourceProvider.getString(R.string.notify_error_not_ups_patch))
             }
 
-            upsCrc = readUpsCrc(patchFile, resourceProvider);
-            if (upsCrc.getPatchFileCRC() != upsCrc.getRealPatchCRC()) {
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+            upsCrc = readUpsCrc(patchFile, resourceProvider)
+            if (upsCrc.patchFileCRC != upsCrc.realPatchCRC) {
+                throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
             }
 
-            patchStream = new BufferedInputStream(new FileInputStream(patchFile));
-            long patchPos = 0;
+            patchStream = BufferedInputStream(FileInputStream(patchFile))
+            var patchPos = 0L
             // skip magic
-            for (int i = 0; i < 4; i++) {
-                patchStream.read();
+            for (i in 0 until 4) {
+                patchStream.read()
             }
-            patchPos += 4;
+            patchPos += 4
 
             // decode rom and output size
-            Pair p;
-            p = decode(patchStream);
-            long xSize = p.getValue();
-            patchPos += p.getSize();
-            p = decode(patchStream);
-            long ySize = p.getValue();
-            patchPos += p.getSize();
+            var p = decode(patchStream)
+            var xSize = p.value
+            patchPos += p.size
+            p = decode(patchStream)
+            var ySize = p.value
+            patchPos += p.size
 
-            long realRomCrc = fileUtils.checksumCRC32(romFile);
+            val realRomCrc = fileUtils.checksumCRC32(romFile)
 
-            if (romFile.length() == xSize && realRomCrc == upsCrc.getInputFileCRC()) {
+            if (romFile.length() == xSize && realRomCrc == upsCrc.inputFileCRC) {
                 // xSize, ySize, inCRC, outCRC not change
-            } else if (romFile.length() == ySize && realRomCrc == upsCrc.getOutputFileCRC()) {
+            } else if (romFile.length() == ySize && realRomCrc == upsCrc.outputFileCRC) {
                 // swap(xSize, ySize) and swap(inCRC, outCRC)
-                long tmp = xSize;
-                xSize = ySize;
-                ySize = tmp;
-                upsCrc.swapInOut();
+                val tmp = xSize
+                xSize = ySize
+                ySize = tmp
+                upsCrc.swapInOut()
             } else {
                 if (!ignoreChecksum) {
-                    throw new IOException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                    throw IOException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch))
                 }
             }
 
-            romStream = new BufferedInputStream(new FileInputStream(romFile));
-            outputStream = new BufferedOutputStream(new FileOutputStream(outputFile));
-            long outPos = 0;
+            romStream = BufferedInputStream(FileInputStream(romFile))
+            outputStream = BufferedOutputStream(FileOutputStream(outputFile))
+            var outPos = 0L
 
-            int x, y;
-            long offset = 0;
+            var offset = 0L
             while (patchPos < patchFile.length() - 12) {
-                p = decode(patchStream);
-                offset += p.getValue();
-                patchPos += p.getSize();
+                p = decode(patchStream)
+                offset += p.value
+                patchPos += p.size
                 if (offset > ySize) {
-                    continue;
+                    continue
                 }
-                fileUtils.copy(romStream, outputStream, offset - outPos);
-                outPos += offset - outPos;
-                for (long i = offset; i < ySize; i++) {
-                    x = patchStream.read();
-                    patchPos++;
-                    offset++;
+                fileUtils.copy(romStream, outputStream, offset - outPos)
+                outPos += offset - outPos
+                for (i in offset until ySize) {
+                    val x = patchStream.read()
+                    patchPos++
+                    offset++
                     if (x == 0x00) {
-                        break; // chunk terminating byte - 0x00
+                        break // chunk terminating byte - 0x00
                     }
-                    y = i < xSize ? romStream.read() : 0x00;
-                    outputStream.write(x ^ y);
-                    outPos++;
+                    val y = if (i < xSize) romStream.read() else 0x00
+                    outputStream.write(x xor y)
+                    outPos++
                 }
             }
             // write rom tail and trim
-            fileUtils.copy(romStream, outputStream, ySize - outPos);
-
+            fileUtils.copy(romStream, outputStream, ySize - outPos)
         } finally {
-            fileUtils.closeQuietly(patchStream);
-            fileUtils.closeQuietly(romStream);
-            fileUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(patchStream)
+            fileUtils.closeQuietly(romStream)
+            fileUtils.closeQuietly(outputStream)
         }
 
         if (!ignoreChecksum) {
-            long realOutCrc = fileUtils.checksumCRC32(outputFile);
-            if (realOutCrc != upsCrc.getOutputFileCRC()) {
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_wrong_checksum_after_patching));
+            val realOutCrc = fileUtils.checksumCRC32(outputFile)
+            if (realOutCrc != upsCrc.outputFileCRC) {
+                throw PatchException(resourceProvider.getString(R.string.notify_error_wrong_checksum_after_patching))
             }
         }
     }
 
     // decode pointer
-    private Pair decode(BufferedInputStream stream) throws PatchException, IOException {
-        long offset = 0;
-        long size = 0;
-        int shift = 1;
-        int x;
+    @Throws(PatchException::class, IOException::class)
+    private fun decode(stream: BufferedInputStream): Pair {
+        var offset = 0L
+        var size = 0L
+        var shift = 1L
         while (true) {
-            x = stream.read();
+            val x = stream.read()
             if (x == -1) {
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+                throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
             }
-            size++;
-            offset += (x & 0x7fL) * shift;
-            if ((x & 0x80) != 0) {
-                break;
+            size++
+            offset += (x.toLong() and 0x7f) * shift
+            if (x and 0x80 != 0) {
+                break
             }
-            shift <<= 7;
-            offset += shift;
+            shift = shift shl 7
+            offset += shift
         }
-        return new Pair(offset, size);
+        return Pair(offset, size)
     }
 
-    public static boolean checkMagic(File f) throws IOException {
-        try (FileInputStream stream = new FileInputStream(f)) {
-            byte[] buffer = new byte[4];
-            stream.read(buffer);
-            return Arrays.equals(buffer, MAGIC_NUMBER);
+    class UpsCrc(
+        var inputFileCRC: Long,
+        var outputFileCRC: Long,
+        var patchFileCRC: Long,
+        var realPatchCRC: Long,
+    ) {
+        fun swapInOut() {
+            val tmp = inputFileCRC
+            inputFileCRC = outputFileCRC
+            outputFileCRC = tmp
         }
     }
 
-    public static UpsCrc readUpsCrc(File f, ResourceProvider resourceProvider) throws PatchException, IOException {
-        try (BufferedInputStream stream = new BufferedInputStream(new FileInputStream(f))) {
-            CRC32 crc = new CRC32();
-            int x;
-            for (long i = f.length() - 12; i != 0; i--) {
-                x = stream.read();
-                if (x == -1) {
-                    throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+    class Pair(val value: Long, val size: Long)
+
+    companion object {
+
+        private val MAGIC_NUMBER = byteArrayOf(0x55, 0x50, 0x53, 0x31) // "UPS1"
+
+        @Throws(IOException::class)
+        fun checkMagic(f: File): Boolean {
+            FileInputStream(f).use { stream ->
+                val buffer = ByteArray(4)
+                stream.read(buffer)
+                return buffer.contentEquals(MAGIC_NUMBER)
+            }
+        }
+
+        @Throws(PatchException::class, IOException::class)
+        fun readUpsCrc(f: File, resourceProvider: ResourceProvider): UpsCrc {
+            BufferedInputStream(FileInputStream(f)).use { stream ->
+                val crc = CRC32()
+                var x: Int
+                for (i in 0 until (f.length() - 12)) {
+                    x = stream.read()
+                    if (x == -1) {
+                        throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
+                    }
+                    crc.update(x)
                 }
-                crc.update(x);
-            }
 
-            long inputCrc = 0;
-            for (int i = 0; i < 4; i++) {
-                x = stream.read();
-                if (x == -1) {
-                    throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+                var inputCrc = 0L
+                for (i in 0 until 4) {
+                    x = stream.read()
+                    if (x == -1) {
+                        throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
+                    }
+                    crc.update(x)
+                    inputCrc += (x.toLong()) shl (i * 8)
                 }
-                crc.update(x);
-                inputCrc += ((long) x) << (i * 8);
-            }
 
-            long outputCrc = 0;
-            for (int i = 0; i < 4; i++) {
-                x = stream.read();
-                if (x == -1) {
-                    throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+                var outputCrc = 0L
+                for (i in 0 until 4) {
+                    x = stream.read()
+                    if (x == -1) {
+                        throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
+                    }
+                    crc.update(x)
+                    outputCrc += (x.toLong()) shl (i * 8)
                 }
-                crc.update(x);
-                outputCrc += ((long) x) << (i * 8);
+
+                val realPatchCrc = crc.value
+                val patchCrc = readLong(stream)
+                if (patchCrc == -1L) {
+                    throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
+                }
+                return UpsCrc(inputCrc, outputCrc, patchCrc, realPatchCrc)
             }
+        }
 
-            long realPatchCrc = crc.getValue();
-            long patchCrc = readLong(stream);
-            if (patchCrc == -1) {
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+        @Throws(IOException::class)
+        private fun readLong(stream: BufferedInputStream): Long {
+            var result = 0L
+            for (i in 0 until 4) {
+                val x = stream.read()
+                if (x == -1) {
+                    return -1
+                }
+                result += (x.toLong()) shl (i * 8)
             }
-            return new UpsCrc(inputCrc, outputCrc, patchCrc, realPatchCrc);
-        }
-    }
-
-    private static long readLong(BufferedInputStream stream) throws IOException {
-        long result = 0;
-        int x;
-        for (int i = 0; i < 4; i++) {
-            x = stream.read();
-            if (x == -1) {
-                return -1;
-            }
-            result += ((long) x) << (i * 8);
-        }
-        return result;
-    }
-
-    public static class UpsCrc {
-
-        private long inputFileCRC;
-        private long outputFileCRC;
-        private long patchFileCRC;
-        private long realPatchCRC;
-
-        public UpsCrc(long inputFileCRC, long outputFileCRC, long patchFileCRC, long realPatchCRC) {
-
-            this.inputFileCRC = inputFileCRC;
-            this.outputFileCRC = outputFileCRC;
-            this.patchFileCRC = patchFileCRC;
-            this.realPatchCRC = realPatchCRC;
-        }
-
-        public long getInputFileCRC() {
-            return inputFileCRC;
-        }
-
-        public long getOutputFileCRC() {
-            return outputFileCRC;
-        }
-
-        public long getPatchFileCRC() {
-            return patchFileCRC;
-        }
-
-        public long getRealPatchCRC() {
-            return realPatchCRC;
-        }
-
-        public void swapInOut() {
-            long tmp;
-            tmp = inputFileCRC;
-            inputFileCRC = outputFileCRC;
-            outputFileCRC = tmp;
-        }
-    }
-
-    final class Pair {
-
-        private final long value;
-        private final long size;
-
-        public Pair(long value, long size) {
-            this.value = value;
-            this.size = size;
-        }
-
-        public long getValue() {
-            return value;
-        }
-
-        public long getSize() {
-            return size;
+            return result
         }
     }
 }

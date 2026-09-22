@@ -54,7 +54,7 @@ https://github.com/btimofeev/UniPatcher/wiki
 ## Project layout
 
 - `app/src/main/java/org/emunix/unipatcher/`
-  - `patcher/` — patch engines (BPS.kt, IPS.kt, XDelta.kt, PPF.java, ...) plus `PatcherFactory.kt`. Format implementations may be Kotlin or Java; keep matching existing style per file.
+  - `patcher/` — patch engines (APS_GBA.kt, APS_N64.kt, BPS.kt, DPS.kt, EBP.kt, IPS.kt, PPF.kt, UPS.kt, XDelta.kt) plus `Patcher.kt`, `PatchException.kt`, `PatcherFactory.kt`. All code is Kotlin.
   - `tools/` — ROM operations (CreateXDelta3, SnesSmcHeader, SmdFixChecksum)
   - `ui/` — Compose screens (ApplyPatch, CreatePatch, Settings, Help, SnesSmcHeader, SmdFixChecksum, MainScreen)
   - `viewmodels/` — one ViewModel per screen
@@ -67,7 +67,7 @@ https://github.com/btimofeev/UniPatcher/wiki
 - `Constants.kt` holds global constants; don't scatter string constants.
 - Strings go to `res/values/strings.xml` (translations elsewhere; `MissingTranslation` lint is disabled).
 - Source files carry a GPL-3.0 license header (see `Constants.kt`).
-- Code is Kotlin-first; Java reused only for existing patcher files (PPF/DPS/APS_GBA etc.).
+- Code is Kotlin-first; no Java sources remain (all patchers converted). New code must be Kotlin.
 - Tests are Kotlin and use MockK for mocking.
 - Existing code often uses functional helpers from `utils/Extensions.kt` and `utils/FileUtils.kt` — prefer those over rewriting.
 - `ui/main/MainRoutes.kt` defines navigation routes.

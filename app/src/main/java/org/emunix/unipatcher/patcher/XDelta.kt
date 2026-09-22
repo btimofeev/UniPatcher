@@ -26,7 +26,7 @@ import java.io.File
 import java.io.FileInputStream
 import java.io.IOException
 
-class XDelta(patch: File?, rom: File?, output: File?, resourceProvider: ResourceProvider?, fileUtils: FileUtils) :
+class XDelta(patch: File, rom: File, output: File, resourceProvider: ResourceProvider, fileUtils: FileUtils) :
     Patcher(patch, rom, output, resourceProvider, fileUtils) {
 
     @Throws(PatchException::class, IOException::class)

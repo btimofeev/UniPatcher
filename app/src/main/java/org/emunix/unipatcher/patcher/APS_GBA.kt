@@ -16,133 +16,136 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
+package org.emunix.unipatcher.patcher
 
-package org.emunix.unipatcher.patcher;
+import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
+import org.emunix.unipatcher.utils.Crc16
+import org.emunix.unipatcher.utils.FileUtils
+import java.io.BufferedInputStream
+import java.io.File
+import java.io.FileInputStream
+import java.io.IOException
+import java.io.InputStream
+import java.io.RandomAccessFile
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.RandomAccessFile;
-import java.util.Arrays;
-import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.utils.FileUtils;
-import org.emunix.unipatcher.helpers.ResourceProvider;
-import org.emunix.unipatcher.utils.Crc16;
+class APS_GBA(
+    patch: File,
+    rom: File,
+    output: File,
+    resourceProvider: ResourceProvider,
+    fileUtils: FileUtils,
+) : Patcher(patch, rom, output, resourceProvider, fileUtils) {
 
-public class APS_GBA extends Patcher {
-    private static final byte[] MAGIC_NUMBER = {0x41, 0x50, 0x53, 0x31}; // APS1
-    private static final int CHUNK_SIZE = 65536;
+    @Throws(PatchException::class, IOException::class)
+    override fun apply(ignoreChecksum: Boolean) {
+        var fileSize1: Long
+        var fileSize2: Long
+        var isOriginal = false
+        var isModified = false
 
-    public APS_GBA(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
-        super(patch, rom, output, resourceProvider, fileUtils);
-    }
+        val romBuf = ByteArray(CHUNK_SIZE)
+        val patchBuf = ByteArray(CHUNK_SIZE)
 
-    @Override
-    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
-        long fileSize1, fileSize2, bytesLeft, offset;
-        int crc, patchCrc1, patchCrc2, pCount, oCount;
-        boolean isOriginal = false;
-        boolean isModified = false;
+        var patchStream: BufferedInputStream? = null
+        var output: RandomAccessFile? = null
 
-        byte[] romBuf = new byte[CHUNK_SIZE];
-        byte[] patchBuf = new byte[CHUNK_SIZE];
-
-        BufferedInputStream patchStream = null;
-        RandomAccessFile output = null;
-
-        fileUtils.copyFile(romFile, outputFile);
+        fileUtils.copyFile(romFile, outputFile)
 
         try {
-            patchStream = new BufferedInputStream(new FileInputStream(patchFile));
-            output = new RandomAccessFile(outputFile, "rw");
+            patchStream = BufferedInputStream(FileInputStream(patchFile))
+            output = RandomAccessFile(outputFile, "rw")
 
-            byte[] magic = new byte[4];
-            pCount = patchStream.read(magic);
-            if (pCount < 4 || !Arrays.equals(magic, MAGIC_NUMBER))
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
+            val magic = ByteArray(4)
+            var count = patchStream.read(magic)
+            if (count < 4 || !magic.contentEquals(MAGIC_NUMBER))
+                throw PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch))
 
-            fileSize1 = readLEInt(patchStream);
-            fileSize2 = readLEInt(patchStream);
+            fileSize1 = readLEInt(patchStream)
+            fileSize2 = readLEInt(patchStream)
             if (fileSize1 < 0 || fileSize2 < 0)
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
+                throw PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch))
 
-            bytesLeft = patchFile.length() - 12;
+            var bytesLeft = patchFile.length() - 12
 
             while (bytesLeft > 0) {
-                offset = readLEInt(patchStream);
-                patchCrc1 = readLEChar(patchStream);
-                patchCrc2 = readLEChar(patchStream);
-                bytesLeft -= 8;
+                val offset = readLEInt(patchStream)
+                val patchCrc1 = readLEChar(patchStream)
+                val patchCrc2 = readLEChar(patchStream)
+                bytesLeft -= 8
                 if (offset < 0 || patchCrc1 < 0 || patchCrc2 < 0)
-                    throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
+                    throw PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch))
 
-                output.seek(offset);
-                oCount = output.read(romBuf);
-                pCount = patchStream.read(patchBuf);
-                bytesLeft -= CHUNK_SIZE;
-                if (pCount < CHUNK_SIZE)
-                    throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
+                output.seek(offset)
+                val oCount = output.read(romBuf)
+                count = patchStream.read(patchBuf)
+                bytesLeft -= CHUNK_SIZE
+                if (count < CHUNK_SIZE)
+                    throw PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch))
 
                 if (oCount < CHUNK_SIZE) {
-                    if (oCount < 0) oCount = 0;
-                    for (int i = oCount; i < CHUNK_SIZE; i++)
-                        romBuf[i] = 0x0;
+                    val start = if (oCount < 0) 0 else oCount
+                    for (i in start until CHUNK_SIZE)
+                        romBuf[i] = 0
                 }
 
-                crc = new Crc16().calculate(romBuf);
+                val crc = Crc16().calculate(romBuf)
 
-                for (int i = 0; i < CHUNK_SIZE; i++)
-                    romBuf[i] ^= patchBuf[i];
+                for (i in 0 until CHUNK_SIZE)
+                    romBuf[i] = (romBuf[i].toInt() xor patchBuf[i].toInt()).toByte()
 
                 if (crc == patchCrc1) {
-                    isOriginal = true;
+                    isOriginal = true
                 } else if (crc == patchCrc2) {
-                    isModified = true;
+                    isModified = true
                 } else {
                     if (!ignoreChecksum)
-                        throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                        throw PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch))
                 }
                 if (isOriginal && isModified)
-                    throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
+                    throw PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch))
 
-                output.seek(offset);
-                output.write(romBuf);
+                output.seek(offset)
+                output.write(romBuf)
             }
         } finally {
-            fileUtils.closeQuietly(patchStream);
-            fileUtils.closeQuietly(output);
+            fileUtils.closeQuietly(patchStream)
+            fileUtils.closeQuietly(output)
         }
 
         if (isOriginal) {
-            fileUtils.truncateFile(outputFile, fileSize2);
+            fileUtils.truncateFile(outputFile, fileSize2)
         } else if (isModified) {
-            fileUtils.truncateFile(outputFile, fileSize1);
+            fileUtils.truncateFile(outputFile, fileSize1)
         }
     }
 
-    private long readLEInt(InputStream stream) throws IOException {
-        long result = 0;
-        int x;
-        for (int i = 0; i < 4; i++) {
-            x = stream.read();
+    @Throws(IOException::class)
+    private fun readLEInt(stream: InputStream): Long {
+        var result = 0L
+        for (i in 0 until 4) {
+            val x = stream.read()
             if (x == -1)
-                return -1;
-            result += ((long) x) << (i * 8);
+                return -1
+            result += (x.toLong()) shl (i * 8)
         }
-        return result;
+        return result
     }
 
-    private int readLEChar(InputStream stream) throws IOException {
-        int result = 0;
-        int x;
-        for (int i = 0; i < 2; i++) {
-            x = stream.read();
+    @Throws(IOException::class)
+    private fun readLEChar(stream: InputStream): Int {
+        var result = 0
+        for (i in 0 until 2) {
+            val x = stream.read()
             if (x == -1)
-                return -1;
-            result += x << (i * 8);
+                return -1
+            result += x shl (i * 8)
         }
-        return result;
+        return result
+    }
+
+    companion object {
+        private val MAGIC_NUMBER = byteArrayOf(0x41, 0x50, 0x53, 0x31) // APS1
+        private const val CHUNK_SIZE = 65536
     }
 }

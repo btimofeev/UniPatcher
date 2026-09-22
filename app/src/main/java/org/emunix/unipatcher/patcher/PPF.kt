@@ -16,230 +16,221 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
+package org.emunix.unipatcher.patcher
 
-package org.emunix.unipatcher.patcher;
+import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
+import org.emunix.unipatcher.utils.FileUtils
+import java.io.File
+import java.io.FileInputStream
+import java.io.IOException
+import java.io.RandomAccessFile
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.util.Arrays;
-import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.utils.FileUtils;
-import org.emunix.unipatcher.helpers.ResourceProvider;
-
-public class PPF extends Patcher {
-
-    private static final byte[] MAGIC_NUMBER = {0x50, 0x50, 0x46}; // "PPF" without version
-
-    private RandomAccessFile patchStream;
-    private RandomAccessFile outputStream;
-
-    public PPF(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
-        super(patch, rom, output, resourceProvider, fileUtils);
-    }
+class PPF(
+    patch: File,
+    rom: File,
+    output: File,
+    resourceProvider: ResourceProvider,
+    fileUtils: FileUtils,
+) : Patcher(patch, rom, output, resourceProvider, fileUtils) {
 
     /**
      * Check what PPF version we have.
      *
      * @param file PPF patch
      * @return PPF patch version or 0 if the file is not a PPF patch
-     * @throws IOException
      */
-    private int getPPFVersion(File file) throws IOException {
-        FileInputStream stream = null;
-        int version = 0;
+    @Throws(IOException::class)
+    private fun getPPFVersion(file: File): Int {
+        var version = 0
+        val stream = FileInputStream(file)
         try {
-            stream = new FileInputStream(file);
-            byte[] buffer = new byte[3];
-            stream.read(buffer);
-            if (Arrays.equals(buffer, MAGIC_NUMBER)) {
-                int b = stream.read();
-                if (b == 0x31) version = 1;
-                else if (b == 0x32) version = 2;
-                else if (b == 0x33) version = 3;
+            val buffer = ByteArray(3)
+            stream.read(buffer)
+            if (buffer.contentEquals(MAGIC_NUMBER)) {
+                val b = stream.read()
+                if (b == 0x31) version = 1
+                else if (b == 0x32) version = 2
+                else if (b == 0x33) version = 3
             }
         } finally {
-            fileUtils.closeQuietly(stream);
+            fileUtils.closeQuietly(stream)
         }
-        return version;
+        return version
     }
 
-    @Override
-    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
+    @Throws(PatchException::class, IOException::class)
+    override fun apply(ignoreChecksum: Boolean) {
         if (patchFile.length() < 61) {
-            throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
+            throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
         }
 
-        fileUtils.copyFile(romFile, outputFile);
+        fileUtils.copyFile(romFile, outputFile)
 
-        switch (getPPFVersion(patchFile)) {
-            case 1:
-                applyPPF1();
-                break;
-            case 2:
-                applyPPF2(ignoreChecksum);
-                break;
-            case 3:
-                applyPPF3(ignoreChecksum);
-                break;
-            default:
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_ppf_patch));
+        when (getPPFVersion(patchFile)) {
+            1 -> applyPPF1()
+            2 -> applyPPF2(ignoreChecksum)
+            3 -> applyPPF3(ignoreChecksum)
+            else -> throw PatchException(resourceProvider.getString(R.string.notify_error_not_ppf_patch))
         }
     }
 
-    private void applyPPF1() throws IOException {
+    @Throws(IOException::class)
+    private fun applyPPF1() {
+        var patchStream: RandomAccessFile? = null
+        var outputStream: RandomAccessFile? = null
         try {
-            patchStream = new RandomAccessFile(patchFile, "r");
-            outputStream = new RandomAccessFile(outputFile, "rw");
+            patchStream = RandomAccessFile(patchFile, "r")
+            outputStream = RandomAccessFile(outputFile, "rw")
 
-            long dataEnd = patchFile.length();
-            int chunkSize;
-            byte[] chunkData = new byte[256];
-            long offset;
+            val dataEnd = patchFile.length()
+            val chunkData = ByteArray(256)
 
-            patchStream.seek(56);
-            while (patchStream.getFilePointer() < dataEnd) {
-                offset = readLittleEndianInt(patchStream);
-                chunkSize = patchStream.readUnsignedByte();
-                patchStream.read(chunkData, 0, chunkSize);
-                outputStream.seek(offset);
-                outputStream.write(chunkData, 0, chunkSize);
+            patchStream.seek(56)
+            while (patchStream.filePointer < dataEnd) {
+                val offset = readLittleEndianInt(patchStream)
+                val chunkSize = patchStream.readUnsignedByte()
+                patchStream.read(chunkData, 0, chunkSize)
+                outputStream.seek(offset.toLong())
+                outputStream.write(chunkData, 0, chunkSize)
             }
         } finally {
-            fileUtils.closeQuietly(patchStream);
-            fileUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(patchStream)
+            fileUtils.closeQuietly(outputStream)
         }
     }
 
-    private void applyPPF2(boolean ignoreChecksum) throws IOException, PatchException {
+    @Throws(IOException::class, PatchException::class)
+    private fun applyPPF2(ignoreChecksum: Boolean) {
+        var patchStream: RandomAccessFile? = null
+        var outputStream: RandomAccessFile? = null
         try {
-            patchStream = new RandomAccessFile(patchFile, "r");
+            patchStream = RandomAccessFile(patchFile, "r")
 
             // Check size of ROM
-            patchStream.seek(56);
-            long romSize = readLittleEndianInt(patchStream);
+            patchStream.seek(56)
+            val romSize = readLittleEndianInt(patchStream)
             if (!ignoreChecksum) {
-                if (romSize != romFile.length()) {
-                    throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                if (romSize.toLong() != romFile.length()) {
+                    throw PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch))
                 }
             }
 
-            outputStream = new RandomAccessFile(outputFile, "rw");
+            outputStream = RandomAccessFile(outputFile, "rw")
 
             // Check binary block
-            byte[] patchBinaryBlock = new byte[1024];
-            byte[] romBinaryBlock = new byte[1024];
-            outputStream.seek(0x9320);
-            patchStream.read(patchBinaryBlock, 0, 1024);
-            outputStream.read(romBinaryBlock, 0, 1024);
+            val patchBinaryBlock = ByteArray(1024)
+            val romBinaryBlock = ByteArray(1024)
+            outputStream.seek(0x9320)
+            patchStream.read(patchBinaryBlock, 0, 1024)
+            outputStream.read(romBinaryBlock, 0, 1024)
             if (!ignoreChecksum) {
-                if (!Arrays.equals(patchBinaryBlock, romBinaryBlock))
-                    throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                if (!patchBinaryBlock.contentEquals(romBinaryBlock))
+                    throw PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch))
             }
 
             // Calculate end of patch data
-            long dataEnd = patchFile.length();
-            int sizeFileId = getSizeFileId(patchStream, 2);
+            var dataEnd = patchFile.length()
+            val sizeFileId = getSizeFileId(patchStream, 2)
             if (sizeFileId > 0) {
-                dataEnd -= (18 + sizeFileId + 16 + 4);
+                dataEnd -= (18 + sizeFileId + 16 + 4)
             }
 
             // Apply patch
-            int chunkSize;
-            byte[] chunkData = new byte[256];
-            long offset;
+            val chunkData = ByteArray(256)
 
-            patchStream.seek(1084);
-            while (patchStream.getFilePointer() < dataEnd) {
-                offset = readLittleEndianInt(patchStream);
-                chunkSize = patchStream.readUnsignedByte();
-                patchStream.read(chunkData, 0, chunkSize);
-                outputStream.seek(offset);
-                outputStream.write(chunkData, 0, chunkSize);
+            patchStream.seek(1084)
+            while (patchStream.filePointer < dataEnd) {
+                val offset = readLittleEndianInt(patchStream)
+                val chunkSize = patchStream.readUnsignedByte()
+                patchStream.read(chunkData, 0, chunkSize)
+                outputStream.seek(offset.toLong())
+                outputStream.write(chunkData, 0, chunkSize)
             }
         } finally {
-            fileUtils.closeQuietly(patchStream);
-            fileUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(patchStream)
+            fileUtils.closeQuietly(outputStream)
         }
     }
 
-    private void applyPPF3(boolean ignoreChecksum) throws IOException, PatchException {
+    @Throws(IOException::class, PatchException::class)
+    private fun applyPPF3(ignoreChecksum: Boolean) {
+        var patchStream: RandomAccessFile? = null
+        var outputStream: RandomAccessFile? = null
         try {
-            patchStream = new RandomAccessFile(patchFile, "r");
-            outputStream = new RandomAccessFile(outputFile, "rw");
+            patchStream = RandomAccessFile(patchFile, "r")
+            outputStream = RandomAccessFile(outputFile, "rw")
 
-            patchStream.seek(56);
-            byte imagetype = patchStream.readByte();
-            byte blockcheck = patchStream.readByte();
-            byte undo = patchStream.readByte();
+            patchStream.seek(56)
+            val imagetype = patchStream.readByte()
+            val blockcheck = patchStream.readByte()
+            val undo = patchStream.readByte()
 
             // Check binary block
-            if (blockcheck == 0x01) {
-                byte[] patchBinaryBlock = new byte[1024];
-                byte[] romBinaryBlock = new byte[1024];
-                patchStream.seek(60);
-                if (imagetype == 0x01) {
-                    outputStream.seek(0x80A0);
+            if (blockcheck == 0x01.toByte()) {
+                val patchBinaryBlock = ByteArray(1024)
+                val romBinaryBlock = ByteArray(1024)
+                patchStream.seek(60)
+                if (imagetype == 0x01.toByte()) {
+                    outputStream.seek(0x80A0)
                 } else {
-                    outputStream.seek(0x9320);
+                    outputStream.seek(0x9320)
                 }
-                patchStream.read(patchBinaryBlock, 0, 1024);
-                outputStream.read(romBinaryBlock, 0, 1024);
+                patchStream.read(patchBinaryBlock, 0, 1024)
+                outputStream.read(romBinaryBlock, 0, 1024)
                 if (!ignoreChecksum) {
-                    if (!Arrays.equals(patchBinaryBlock, romBinaryBlock))
-                        throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                    if (!patchBinaryBlock.contentEquals(romBinaryBlock))
+                        throw PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch))
                 }
             }
 
             // Calculate end of patch data
-            long dataEnd = patchFile.length();
-            int sizeFileId = getSizeFileId(patchStream, 3);
+            var dataEnd = patchFile.length()
+            val sizeFileId = getSizeFileId(patchStream, 3)
             if (sizeFileId > 0) {
-                dataEnd -= (18 + sizeFileId + 16 + 2);
+                dataEnd -= (18 + sizeFileId + 16 + 2)
             }
 
             // Seek start address of patch data
-            if (blockcheck == 0x01) {
-                patchStream.seek(1084);
+            if (blockcheck == 0x01.toByte()) {
+                patchStream.seek(1084)
             } else {
-                patchStream.seek(60);
+                patchStream.seek(60)
             }
 
             // Apply patch
-            int chunkSize;
-            byte[] chunkData = new byte[512];
-            long offset;
+            val chunkData = ByteArray(512)
 
-            while (patchStream.getFilePointer() < dataEnd) {
-                offset = readLittleEndianLong(patchStream);
-                //Log.d(LOG_TAG, String.valueOf(patchStream.getFilePointer()) + ' ' + String.valueOf(offset));
-                chunkSize = patchStream.readUnsignedByte();
-                patchStream.read(chunkData, 0, chunkSize);
-                if (undo == 0x01) patchStream.seek(patchStream.getFilePointer() + chunkSize);
-                outputStream.seek(offset);
-                outputStream.write(chunkData, 0, chunkSize);
+            while (patchStream.filePointer < dataEnd) {
+                val offset = readLittleEndianLong(patchStream)
+                val chunkSize = patchStream.readUnsignedByte()
+                patchStream.read(chunkData, 0, chunkSize)
+                if (undo == 0x01.toByte()) patchStream.seek(patchStream.filePointer + chunkSize)
+                outputStream.seek(offset)
+                outputStream.write(chunkData, 0, chunkSize)
             }
         } finally {
-            fileUtils.closeQuietly(patchStream);
-            fileUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(patchStream)
+            fileUtils.closeQuietly(outputStream)
         }
     }
 
-    private long readLittleEndianLong(RandomAccessFile stream) throws IOException {
-        byte[] b = new byte[8];
-        stream.read(b);
-        return ((long) (b[7] & 0xff) << 56) + ((long) (b[6] & 0xff) << 48) +
-                ((long) (b[5] & 0xff) << 40) + ((long) (b[4] & 0xff) << 32) +
-                ((long) (b[3] & 0xff) << 24) + ((long) (b[2] & 0xff) << 16) +
-                ((long) (b[1] & 0xff) << 8) + ((long) b[0] & 0xff);
+    @Throws(IOException::class)
+    private fun readLittleEndianLong(stream: RandomAccessFile): Long {
+        val b = ByteArray(8)
+        stream.read(b)
+        return ((b[7].toLong() and 0xff) shl 56) + ((b[6].toLong() and 0xff) shl 48) +
+            ((b[5].toLong() and 0xff) shl 40) + ((b[4].toLong() and 0xff) shl 32) +
+            ((b[3].toLong() and 0xff) shl 24) + ((b[2].toLong() and 0xff) shl 16) +
+            ((b[1].toLong() and 0xff) shl 8) + (b[0].toLong() and 0xff)
     }
 
-    private int readLittleEndianInt(RandomAccessFile stream) throws IOException {
-        byte[] b = new byte[4];
-        stream.read(b);
-        return ((b[3] & 0xff) << 24) + ((b[2] & 0xff) << 16) +
-                ((b[1] & 0xff) << 8) + (b[0] & 0xff);
+    @Throws(IOException::class)
+    private fun readLittleEndianInt(stream: RandomAccessFile): Int {
+        val b = ByteArray(4)
+        stream.read(b)
+        return ((b[3].toInt() and 0xff) shl 24) + ((b[2].toInt() and 0xff) shl 16) +
+            ((b[1].toInt() and 0xff) shl 8) + (b[0].toInt() and 0xff)
     }
 
     /**
@@ -249,30 +240,34 @@ public class PPF extends Patcher {
      * @param ppfVersion version of PPF patch
      * @return size of FileID or 0
      */
-    private int getSizeFileId(RandomAccessFile stream, int ppfVersion) throws IOException {
-        final byte[] magic = {0x2E, 0x44, 0x49, 0x5A}; // ".DIZ"
-        byte[] buffer = new byte[4];
-        int result;
+    @Throws(IOException::class)
+    private fun getSizeFileId(stream: RandomAccessFile, ppfVersion: Int): Int {
+        val magic = byteArrayOf(0x2E, 0x44, 0x49, 0x5A) // ".DIZ"
+        val buffer = ByteArray(4)
 
         if (ppfVersion == 2) {
-            stream.seek(stream.length() - 4 - 4);
+            stream.seek(stream.length() - 4 - 4)
         } else {
-            stream.seek(stream.length() - 2 - 4);
+            stream.seek(stream.length() - 2 - 4)
         }
 
-        stream.read(buffer, 0, 4);
-        if (!Arrays.equals(magic, buffer)) {
-            return 0;
+        stream.read(buffer, 0, 4)
+        if (!buffer.contentEquals(magic)) {
+            return 0
         }
 
+        var result: Int
         if (ppfVersion == 2) {
-            result = readLittleEndianInt(stream);
+            result = readLittleEndianInt(stream)
         } else {
-            result = stream.readUnsignedByte() + (stream.readUnsignedByte() << 8);
+            result = stream.readUnsignedByte() + (stream.readUnsignedByte() shl 8)
         }
 
-        if (result > 3072) result = 3072;
-        return result;
+        if (result > 3072) result = 3072
+        return result
     }
 
+    companion object {
+        private val MAGIC_NUMBER = byteArrayOf(0x50, 0x50, 0x46) // "PPF" without version
+    }
 }

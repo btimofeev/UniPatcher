@@ -16,29 +16,21 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
+package org.emunix.unipatcher.patcher
 
-package org.emunix.unipatcher.patcher;
+import org.emunix.unipatcher.helpers.ResourceProvider
+import org.emunix.unipatcher.utils.FileUtils
+import java.io.File
+import java.io.IOException
 
-import java.io.File;
-import java.io.IOException;
-import org.emunix.unipatcher.utils.FileUtils;
-import org.emunix.unipatcher.helpers.ResourceProvider;
+abstract class Patcher(
+    val patchFile: File,
+    val romFile: File,
+    val outputFile: File,
+    val resourceProvider: ResourceProvider,
+    val fileUtils: FileUtils,
+) {
 
-public abstract class Patcher {
-
-    protected File patchFile;
-    protected File romFile;
-    protected File outputFile;
-    protected ResourceProvider resourceProvider;
-    protected FileUtils fileUtils;
-
-    public Patcher(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
-        patchFile = patch;
-        romFile = rom;
-        outputFile = output;
-        this.resourceProvider = resourceProvider;
-        this.fileUtils = fileUtils;
-    }
-
-    public abstract void apply(boolean ignoreChecksum) throws PatchException, IOException;
+    @Throws(PatchException::class, IOException::class)
+    abstract fun apply(ignoreChecksum: Boolean)
 }

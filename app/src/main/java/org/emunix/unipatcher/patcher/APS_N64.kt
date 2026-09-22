@@ -16,216 +16,220 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
+package org.emunix.unipatcher.patcher
 
-package org.emunix.unipatcher.patcher;
+import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
+import org.emunix.unipatcher.utils.FileUtils
+import java.io.BufferedInputStream
+import java.io.BufferedOutputStream
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.InputStream
+import java.io.RandomAccessFile
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.RandomAccessFile;
-import java.util.Arrays;
-import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.utils.FileUtils;
-import org.emunix.unipatcher.helpers.ResourceProvider;
+class APS_N64(
+    patch: File,
+    rom: File,
+    output: File,
+    resourceProvider: ResourceProvider,
+    fileUtils: FileUtils,
+) : Patcher(patch, rom, output, resourceProvider, fileUtils) {
 
-public class APS_N64 extends Patcher {
-
-    private static final byte[] MAGIC_NUMBER = {0x41, 0x50, 0x53, 0x31, 0x30}; // APS10
-    private static final int TYPE_SIMPLE_PATCH = 0;
-    private static final int TYPE_N64_PATCH = 1;
-    private static final int ENCODING_SIMPLE = 0;
-
-    public APS_N64(File patch, File rom, File output, ResourceProvider resourceProvider, FileUtils fileUtils) {
-        super(patch, rom, output, resourceProvider, fileUtils);
-    }
-
-    @Override
-    public void apply(boolean ignoreChecksum) throws PatchException, IOException {
-        BufferedInputStream romStream = null;
-        BufferedInputStream patchStream = null;
-        BufferedOutputStream outputStream = null;
+    @Throws(PatchException::class, IOException::class)
+    override fun apply(ignoreChecksum: Boolean) {
+        var romStream: BufferedInputStream? = null
+        var patchStream: BufferedInputStream? = null
+        var outputStream: BufferedOutputStream? = null
 
         try {
-            patchStream = new BufferedInputStream(new FileInputStream(patchFile));
+            patchStream = BufferedInputStream(FileInputStream(patchFile))
 
-            long patchSize = patchFile.length();
-            long romSize = romFile.length();
-            long outSize;
-            int romPos = 0;
-            int outPos = 0;
-            int patchPos = 0;
-            long offset, size;
+            val patchSize = patchFile.length()
+            val romSize = romFile.length()
+            var outSize = 0L
+            var romPos = 0L
+            var outPos = 0L
+            var patchPos = 0L
+            var offset = 0L
+            var size = 0L
 
             // check magic string
-            byte[] magic = new byte[5];
-            size = patchStream.read(magic);
-            if (size != 5 || !Arrays.equals(magic, MAGIC_NUMBER))
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
-            patchPos += 5;
+            val magic = ByteArray(5)
+            var count = patchStream.read(magic)
+            if (count != 5 || !magic.contentEquals(MAGIC_NUMBER))
+                throw PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch))
+            patchPos += 5
 
             // read and check type of the patch
-            int patchType = patchStream.read();
-            if ((patchType != TYPE_SIMPLE_PATCH) && (patchType != TYPE_N64_PATCH))
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
-            patchPos++;
+            var patchType = patchStream.read()
+            if (patchType != TYPE_SIMPLE_PATCH && patchType != TYPE_N64_PATCH)
+                throw PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch))
+            patchPos++
 
             // check encoding method
-            int encoding = patchStream.read();
+            val encoding = patchStream.read()
             if (encoding != ENCODING_SIMPLE)
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
-            patchPos++;
+                throw PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch))
+            patchPos++
 
             // skip description
-            byte[] description = new byte[50];
-            size = patchStream.read(description);
-            if (size < 50)
-                throw new PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch));
-            patchPos += 50;
+            val description = ByteArray(50)
+            count = patchStream.read(description)
+            if (count < 50)
+                throw PatchException(resourceProvider.getString(R.string.notify_error_not_aps_patch))
+            patchPos += 50
 
             // validate ROM
             if (patchType == TYPE_N64_PATCH) {
-                int endianness = patchStream.read();
-                int cardID = ((patchStream.read() & 0xff) << 8) + (patchStream.read() & 0xff);
-                int country = patchStream.read();
-                byte[] crc = new byte[8];
-                patchStream.read(crc);
+                val endianness = patchStream.read()
+                val cardID = (((patchStream.read() and 0xff) shl 8) + (patchStream.read() and 0xff))
+                val country = patchStream.read()
+                val crc = ByteArray(8)
+                patchStream.read(crc)
                 if (!ignoreChecksum) {
                     if (!validateROM(endianness, cardID, country, crc))
-                        throw new PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch));
+                        throw PatchException(resourceProvider.getString(R.string.notify_error_rom_not_compatible_with_patch))
                 }
                 // skip bytes for future expansion
-                byte[] skip = new byte[5];
-                patchStream.read(skip);
-                patchPos += 17;
+                val skip = ByteArray(5)
+                patchStream.read(skip)
+                patchPos += 17
             }
 
             // read size of destination image.
-            outSize = readLELong(patchStream);
-            patchPos += 4;
+            outSize = readLELong(patchStream).toLong()
+            patchPos += 4
 
-            romStream = new BufferedInputStream(new FileInputStream(romFile));
-            outputStream = new BufferedOutputStream(new FileOutputStream(outputFile));
+            romStream = BufferedInputStream(FileInputStream(romFile))
+            outputStream = BufferedOutputStream(FileOutputStream(outputFile))
 
             // apply patch
             while (patchPos < patchSize) {
-                offset = readLELong(patchStream);
+                offset = readLELong(patchStream).toLong()
                 if (offset < 0)
-                    throw new PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted));
-                patchPos += 4;
+                    throw PatchException(resourceProvider.getString(R.string.notify_error_patch_corrupted))
+                patchPos += 4
 
                 // copy data from rom to out
                 if (offset <= romSize) {
                     if (outPos < offset) {
-                        size = offset - outPos;
-                        fileUtils.copy(romStream, outputStream, size);
-                        romPos += size;
-                        outPos += size;
+                        size = offset - outPos
+                        fileUtils.copy(romStream, outputStream, size)
+                        romPos += size
+                        outPos += size
                     }
                 } else {
                     if (outPos < romSize) {
-                        size = (int) romSize - outPos;
-                        fileUtils.copy(romStream, outputStream, size);
-                        romPos += size;
-                        outPos += size;
+                        size = romSize - outPos
+                        fileUtils.copy(romStream, outputStream, size)
+                        romPos += size
+                        outPos += size
                     }
                     if (outPos < offset) {
-                        size = offset - outPos;
-                        fileUtils.copy(size, (byte) 0x0, outputStream);
-                        outPos += size;
+                        size = offset - outPos
+                        fileUtils.copy(size, 0x0.toByte(), outputStream)
+                        outPos += size
                     }
                 }
 
                 // copy data from patch to out
-                size = patchStream.read();
-                patchPos++;
-                if (size != 0) {
-                    byte[] data = new byte[(int) size];
-                    patchStream.read(data);
-                    patchPos += size;
-                    outputStream.write(data);
-                    outPos += size;
+                size = patchStream.read().toLong()
+                patchPos++
+                if (size != 0L) {
+                    val data = ByteArray(size.toInt())
+                    patchStream.read(data)
+                    patchPos += size
+                    outputStream.write(data)
+                    outPos += size
                 } else { // RLE
-                    byte val = (byte) patchStream.read();
-                    size = patchStream.read();
-                    patchPos += 2;
-                    byte[] data = new byte[(int) size];
-                    Arrays.fill(data, val);
-                    outputStream.write(data);
-                    outPos += size;
+                    val value = patchStream.read().toByte()
+                    size = patchStream.read().toLong()
+                    patchPos += 2
+                    val data = ByteArray(size.toInt())
+                    data.fill(value)
+                    outputStream.write(data)
+                    outPos += size
                 }
 
                 // skip rom data
                 if (offset <= romSize) {
                     if (romPos + size > romSize) {
-                        romPos = (int) romSize;
+                        romPos = romSize
                     } else {
-                        byte[] buf = new byte[(int) size];
-                        romStream.read(buf);
-                        romPos += size;
+                        val buf = ByteArray(size.toInt())
+                        romStream.read(buf)
+                        romPos += size
                     }
                 }
             }
             // write rom tail and trim
-            fileUtils.copy(romStream, outputStream, outSize - outPos);
+            fileUtils.copy(romStream, outputStream, outSize - outPos)
         } finally {
-            fileUtils.closeQuietly(romStream);
-            fileUtils.closeQuietly(patchStream);
-            fileUtils.closeQuietly(outputStream);
+            fileUtils.closeQuietly(romStream)
+            fileUtils.closeQuietly(patchStream)
+            fileUtils.closeQuietly(outputStream)
         }
     }
 
-    private boolean validateROM(int endianness, int cartID, int country, byte[] crc) throws IOException {
-        RandomAccessFile rom = new RandomAccessFile(romFile, "r");
-        int val;
+    @Throws(IOException::class)
+    private fun validateROM(endianness: Int, cartID: Int, country: Int, crc: ByteArray): Boolean {
+        val rom = RandomAccessFile(romFile, "r")
         try {
             // check endianness
-            val = rom.read();
-            if ((endianness == 1 && val != 0x80) || (endianness == 0 && val != 0x37))
-                return false;
+            var value = rom.read()
+            if ((endianness == 1 && value != 0x80) || (endianness == 0 && value != 0x37))
+                return false
 
             // check cartID
-            rom.seek(0x3c);
-            if (endianness == 1) {
-                val = ((rom.read() & 0xff) << 8) + (rom.read() & 0xff);
+            rom.seek(0x3c)
+            value = if (endianness == 1) {
+                ((rom.read() and 0xff) shl 8) + (rom.read() and 0xff)
             } else {
-                val = (rom.read() & 0xff) + ((rom.read() & 0xff) << 8);
+                (rom.read() and 0xff) + ((rom.read() and 0xff) shl 8)
             }
-            if (cartID != val)
-                return false;
+            if (cartID != value)
+                return false
 
             // check country
-            val = rom.read();
+            value = rom.read()
             if (endianness == 0)
-                val = rom.read();
-            if (country != val)
-                return false;
+                value = rom.read()
+            if (country != value)
+                return false
 
             // check crc
-            byte[] buf = new byte[8];
-            rom.seek(0x10);
-            rom.read(buf);
+            val buf = ByteArray(8)
+            rom.seek(0x10)
+            rom.read(buf)
             if (endianness == 0) {
-                byte tmp;
-                for (int i = 0; i < buf.length; i += 2) {
-                    tmp = buf[i];
-                    buf[i] = buf[i + 1];
-                    buf[i + 1] = tmp;
+                var i = 0
+                while (i < buf.size) {
+                    val tmp = buf[i]
+                    buf[i] = buf[i + 1]
+                    buf[i + 1] = tmp
+                    i += 2
                 }
             }
-            if (!Arrays.equals(crc, buf))
-                return false;
+            if (!crc.contentEquals(buf))
+                return false
         } finally {
-            fileUtils.closeQuietly(rom);
+            fileUtils.closeQuietly(rom)
         }
-        return true;
+        return true
     }
 
-    private long readLELong(InputStream stream) throws IOException {
-        return (stream.read() & 0xff) + ((stream.read() & 0xff) << 8)
-                + ((stream.read() & 0xff) << 16) + ((stream.read() & 0xff) << 24);
+    @Throws(IOException::class)
+    private fun readLELong(stream: InputStream): Int =
+        (stream.read() and 0xff) + ((stream.read() and 0xff) shl 8) +
+            ((stream.read() and 0xff) shl 16) + ((stream.read() and 0xff) shl 24)
+
+    companion object {
+        private val MAGIC_NUMBER = byteArrayOf(0x41, 0x50, 0x53, 0x31, 0x30) // APS10
+        private const val TYPE_SIMPLE_PATCH = 0
+        private const val TYPE_N64_PATCH = 1
+        private const val ENCODING_SIMPLE = 0
     }
 }
