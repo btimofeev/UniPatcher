@@ -1,3 +1,8 @@
+#### develop (unreleased)
+- Added support for XDelta1 patches
+- Fixed applying some XDelta3 patches with DJW compression that previously failed with an error
+- Updated interface design based on Material 3, added dynamic color themes
+
 #### 0.18 (September 13, 2026)
 - Support for Android 16
 - Support for devices with 16 KB page size

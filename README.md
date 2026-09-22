@@ -6,11 +6,11 @@
 UniPatcher
 ----------
 
-UniPatcher is a ROM patcher for Android that supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patch types.
+UniPatcher is a ROM patcher for Android that supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta patch types.
 
 ### Additional features:
 
-* Creating XDelta3 patches
+* Creating XDelta patches
 * Fix checksum in Sega Mega Drive ROMs
 * Remove SMC header in Super Nintendo ROMs
 

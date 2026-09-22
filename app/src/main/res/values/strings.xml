@@ -45,9 +45,8 @@
     <string name="notify_error_not_aps_patch">Not a valid APS patch</string>
     <string name="notify_error_not_ebp_patch">Not a valid EBP patch</string>
     <string name="notify_error_not_dps_patch">Not a valid DPS patch</string>
-    <string name="notify_error_not_xdelta3_patch">Not a valid XDelta3 patch</string>
-    <string name="notify_error_xdelta3_internal_error">XDelta3 internal error</string>
-    <string name="notify_error_xdelta1_unsupported">I am not able to work with XDelta1 patches</string>
+    <string name="notify_error_not_xdelta3_patch">Not a valid XDelta patch</string>
+    <string name="notify_error_xdelta3_internal_error">XDelta internal error</string>
     <string name="notify_error_unable_open_file">Unable to open file</string>
     <string name="notify_error_unable_open_source_file">Unable to open source file</string>
     <string name="notify_error_unable_open_modified_file">Unable to open modified file</string>
@@ -57,7 +56,7 @@
     <string name="notify_error_patch_corrupted">The patch file is corrupted</string>
     <string name="notify_error_rom_not_compatible_with_patch">This ROM is not compatible with the patch</string>
     <string name="notify_error_wrong_checksum_after_patching">File have the wrong checksum after it was patched</string>
-    <string name="notify_error_failed_load_lib_xdelta3">Failed to load library libxdelta3.so</string>
+    <string name="notify_error_failed_load_lib_xdelta3">Failed to load XDelta library</string>
     <string name="notify_error_unknown">Unknown error</string>
     <string name="notify_error_not_smd_rom">Not a Sega Mega Drive ROM</string>
     <string name="notify_smd_fix_checksum_complete">Checksum fixed</string>
@@ -92,7 +91,7 @@
     <string name="error_file_picker_app_is_no_installed">Error: There are no File app installed</string>
     <string name="donate_activity_title">Donate</string>
     <string name="share_dialog_title">Share UniPatcher</string>
-    <string name="share_text">Download the best ROM patcher for Android. It supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patch types.\n\n</string>
+    <string name="share_text">Download the best ROM patcher for Android. It supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta patch types.\n\n</string>
     <!-- Navigation list -->
     <string name="nav_apply_patch">Apply patch</string>
     <string name="nav_create_patch">Create patch</string>
@@ -110,7 +109,7 @@
     <string name="help_what_is_unipatcher_title">What is UniPatcher?</string>
     <string name="help_what_is_unipatcher_body">UniPatcher is an Android tool for applying patches to ROM images of various video game consoles.</string>
     <string name="help_what_patch_formats_are_supported_title">What patch formats are supported?</string>
-    <string name="help_what_patch_formats_are_supported_body">The app supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta3 patches.</string>
+    <string name="help_what_patch_formats_are_supported_body">The app supports IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP and XDelta patches.</string>
     <string name="help_can_i_hack_android_game_title">Can I hack or crack Android game using this app?</string>
     <string name="help_can_i_hack_android_game_body">No. UniPatcher is not designed to hack the Android games.</string>
     <string name="help_what_is_rom_image_title">What is ROM image?</string>
@@ -136,7 +135,7 @@
     <string name="help_ecm_image_title">What can I do with .ECM file type?</string>
     <string name="help_ecm_image_body">ECM is a data compression format designed specifically for disc images. You can decompress the file using ZArchiver app https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver</string>
     <string name="help_additional_features_title">Has UniPatcher some additional features?</string>
-    <string name="help_additional_features_body">Yes. UniPatcher can:\n\n- Create XDelta3 patches.\n- Fix checksum for a Sega Mega Drive / Sega Genesis games.\n- Remove SMC header in Super Nintendo games.</string>
+    <string name="help_additional_features_body">Yes. UniPatcher can:\n\n- Create XDelta patches.\n- Fix checksum for a Sega Mega Drive / Sega Genesis games.\n- Remove SMC header in Super Nintendo games.</string>
     <string name="help_sega_fix_checksum_title">Why do I have to fix checksum for the Sega Mega Drive games?</string>
     <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) games have their checksum written into the ROM. If you only change any part of the game, they will not match, failing to run as a result. What this does is calculate the correct checksum of the change and write it to the modified ROM-file.\n\n<b>Warning:</b> This function does not create a backup ROM.</string>
     <string name="help_snes_smc_title">Why is it sometimes necessary to remove SMC headers from Super Nintendo games?</string>
@@ -172,7 +171,7 @@
 \n - <b>Vietnamese</b>: Haibara Ai
 \n
 \nHelp translate the app into your language: https://hosted.weblate.org/engage/unipatcher/</string>
-    <string name="about_used_libraries"><b>Used libraries:</b>\n\n - <b>ACRA</b> by ACRA team, licensed under the Apache 2.0 license. https://github.com/ACRA/acra \n - <b>Apache Commons IO</b> by The Apache Software Foundation, licensed under the Apache 2.0 license. https://commons.apache.org/proper/commons-io/ \n - <b>Dagger</b> by The Dagger Authors, licensed under the Apache 2.0 license. https://github.com/google/dagger \n - <b>Material design icons</b> by Google, licensed under the Apache 2.0 license. https://github.com/google/material-design-icons \n - <b>Material design icons</b> by community, licensed under SIL Open Font License 1.1. https://materialdesignicons.com \n - <b>Timber</b> by Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber \n - <b>XDelta version 3</b> by Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta</string>
+    <string name="about_used_libraries"><b>Used libraries:</b>\n\n - <b>ACRA</b> by ACRA team, licensed under the Apache 2.0 license. https://github.com/ACRA/acra \n - <b>Apache Commons IO</b> by The Apache Software Foundation, licensed under the Apache 2.0 license. https://commons.apache.org/proper/commons-io/ \n - <b>Dagger</b> by The Dagger Authors, licensed under the Apache 2.0 license. https://github.com/google/dagger \n - <b>Material design icons</b> by Google, licensed under the Apache 2.0 license. https://github.com/google/material-design-icons \n - <b>Material design icons</b> by community, licensed under SIL Open Font License 1.1. https://materialdesignicons.com \n - <b>Timber</b> by Jake Wharton, licensed under the Apache 2.0 license. https://github.com/JakeWharton/timber \n - <b>XDelta version 3</b> by Joshua MacDonald, licensed under the Apache 2.0 license. https://github.com/jmacd/xdelta \n - <b>XDelta version 1</b> by Joshua MacDonald, licensed under the GNU General Public License v2.0 or later. https://xdelta.org</string>
     <string name="donate_screen_message_1">If you like UniPatcher, you can express your appreciation here.</string>
     <string name="donate_screen_message_2">We use your donations to improve the app.</string>
     <string name="donate_screen_message_3">Thank you!</string>

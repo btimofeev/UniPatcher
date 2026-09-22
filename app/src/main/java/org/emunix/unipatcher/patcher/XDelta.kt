@@ -96,7 +96,24 @@ class XDelta(patch: File, rom: File, output: File, resourceProvider: ResourcePro
         }
         val ret = xdelta1apply(patchFile.path, romFile.path, outputFile.path)
         Timber.d("XDelta1 return code: %s", ret)
-        if (ret != 0) throw PatchException(resourceProvider.getString(string.notify_error_unknown))
+        when (ret) {
+            NO_ERROR -> return
+            XD1_ERR_BAD_MAGIC -> throw PatchException(
+                resourceProvider.getString(string.notify_error_not_xdelta3_patch)
+            )
+            XD1_ERR_UNABLE_OPEN_ROM -> throw PatchException(
+                resourceProvider.getString(string.notify_error_unable_open_file)
+                        + " " + romFile.name
+            )
+            XD1_ERR_UNABLE_OPEN_OUTPUT, XD1_ERR_UNABLE_CLOSE_OUTPUT -> throw PatchException(
+                resourceProvider.getString(string.notify_error_unable_open_file)
+                        + " " + outputFile.name
+            )
+            XD1_ERR_ROM_LENGTH_MISMATCH, XD1_ERR_APPLY_FAILED -> throw PatchException(
+                resourceProvider.getString(string.notify_error_rom_not_compatible_with_patch)
+            )
+            else -> throw PatchException(resourceProvider.getString(string.notify_error_unknown))
+        }
     }
 
     companion object {
@@ -113,5 +130,12 @@ class XDelta(patch: File, rom: File, output: File, resourceProvider: ResourcePro
         private const val ERR_WRONG_CHECKSUM = -5010
         private const val ERR_INTERNAL = -17710
         private const val ERR_INVALID_INPUT = -17712
+
+        private const val XD1_ERR_BAD_MAGIC = 7
+        private const val XD1_ERR_UNABLE_OPEN_ROM = 10
+        private const val XD1_ERR_UNABLE_OPEN_OUTPUT = 8
+        private const val XD1_ERR_UNABLE_CLOSE_OUTPUT = 13
+        private const val XD1_ERR_ROM_LENGTH_MISMATCH = 11
+        private const val XD1_ERR_APPLY_FAILED = 12
     }
 }

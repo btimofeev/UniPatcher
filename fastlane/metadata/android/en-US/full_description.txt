@@ -6,7 +6,7 @@ A file with the modified data of the game. For example, a game translated from J
 This program will not help you hack native Android games, it was created for the old console games (SNES, PS1, GBA, N64, SMD\Genesis etc.)
 
 Features:
-* Supported formats of patches: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta3
+* Supported formats of patches: IPS, IPS32, UPS, BPS, APS (GBA), APS (N64), PPF, DPS, EBP, XDelta
 * Create XDelta patches
 * Fix the checksum in SMD\Genesis ROMs
 * Remove the SMC header from SNES ROMs
