@@ -1,6 +1,6 @@
 project(xdelta3)
 
-set(CMAKE_C_FLAGS "-O2 -std=c99 -DHAVE_LZMA_H")
+set(CMAKE_C_FLAGS "-O2 -std=c99 -DHAVE_LZMA_H -DSECONDARY_DJW=1")
 
 include_directories("../xz/xz/src/liblzma/api/")
 
