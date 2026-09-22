@@ -58,6 +58,21 @@ G_GNUC_EXTENSION typedef unsigned long long guint64;
 #define G_GINT64_FORMAT "lli"
 #define G_GUINT64_FORMAT "llu"
 
+#if defined(__LP64__) || defined(_LP64)
+#define GLIB_SIZEOF_VOID_P 8
+#define GLIB_SIZEOF_LONG   8
+#define GLIB_SIZEOF_SIZE_T 8
+
+typedef signed long gssize;
+typedef unsigned long gsize;
+#define G_GSIZE_MODIFIER "l"
+#define G_GSSIZE_FORMAT "li"
+#define G_GSIZE_FORMAT "lu"
+
+#define G_MAXSIZE	G_MAXULONG
+#define G_MINSSIZE	G_MINLONG
+#define G_MAXSSIZE	G_MAXLONG
+#else
 #define GLIB_SIZEOF_VOID_P 4
 #define GLIB_SIZEOF_LONG   4
 #define GLIB_SIZEOF_SIZE_T 4
@@ -71,6 +86,7 @@ typedef unsigned int gsize;
 #define G_MAXSIZE	G_MAXUINT
 #define G_MINSSIZE	G_MININT
 #define G_MAXSSIZE	G_MAXINT
+#endif
 
 typedef gint64 goffset;
 #define G_MINOFFSET	G_MININT64
@@ -87,12 +103,21 @@ typedef gint64 goffset;
 #define GINT_TO_POINTER(i)	((gpointer)  (i))
 #define GUINT_TO_POINTER(u)	((gpointer)  (u))
 
+#if defined(__LP64__) || defined(_LP64)
+typedef signed long gintptr;
+typedef unsigned long guintptr;
+
+#define G_GINTPTR_MODIFIER "l"
+#define G_GINTPTR_FORMAT "li"
+#define G_GUINTPTR_FORMAT "lu"
+#else
 typedef signed int gintptr;
 typedef unsigned int guintptr;
 
-#define G_GINTPTR_MODIFIER      ""
-#define G_GINTPTR_FORMAT        "i"
-#define G_GUINTPTR_FORMAT       "u"
+#define G_GINTPTR_MODIFIER ""
+#define G_GINTPTR_FORMAT "i"
+#define G_GUINTPTR_FORMAT "u"
+#endif
 
 #ifdef NeXT /* @#%@! NeXTStep */
 # define g_ATEXIT(proc)	(!atexit (proc))

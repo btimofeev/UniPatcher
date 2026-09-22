@@ -3,6 +3,7 @@
 						*/
 #include <jni.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <glib.h>
 extern gint    main    (gint argc, gchar** argv);
 /*int Java_com_xperia64_rompatcher_MainActivity_xdelta1PatchRom(JNIEnv * env, jobject this, jstring romPath, jstring patchPath, jstring outputFile)*/
