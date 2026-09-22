@@ -166,7 +166,7 @@ dependencies {
 
     // Testing
     testImplementation(libs.junit)
-    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockk)
 }
 
 val deleteDependencies by tasks.registering(Delete::class) {

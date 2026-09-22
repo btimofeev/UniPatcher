@@ -15,7 +15,7 @@ kotlinVersion = "2.4.10"
 kotlinxCoroutinesVersion = "1.11.0"
 lifecycleVersion = "2.10.0"
 materialVersion = "1.14.0"
-mockitoCoreVersion = "3.12.4"
+mockkVersion = "1.14.11"
 preferenceKtxVersion = "1.2.1"
 timberVersion = "5.0.1"
 
@@ -35,7 +35,7 @@ kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutine
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesVersion" }
 lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleVersion" }
 material = { module = "com.google.android.material:material", version.ref = "materialVersion" }
-mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCoreVersion" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockkVersion" }
 preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtxVersion" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timberVersion" }
 

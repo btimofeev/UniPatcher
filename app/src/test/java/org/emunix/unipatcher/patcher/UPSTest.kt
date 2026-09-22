@@ -1,81 +1,98 @@
-package org.emunix.unipatcher.patcher;
+/*
+ Copyright (c) 2026 Boris Timofeev
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+ This file is part of UniPatcher.
 
-import android.content.Context;
-import java.io.File;
-import java.io.IOException;
-import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.utils.FileUtils;
-import org.emunix.unipatcher.helpers.ResourceProvider;
-import org.junit.*;
-import org.junit.rules.*;
-import org.junit.runner.*;
-import org.mockito.*;
-import org.mockito.junit.*;
+ UniPatcher is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
 
-@RunWith(MockitoJUnitRunner.Silent.class)
-public class UPSTest {
+ UniPatcher is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-    private static final String PATCH_CORRUPTED = "The patch file is corrupted.";
+ You should have received a copy of the GNU General Public License
+ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
-    @Rule
-    public TemporaryFolder folder = new TemporaryFolder();
+ */
 
-    @Mock
-    ResourceProvider resourceProvider;
+package org.emunix.unipatcher.patcher
 
-    @Mock
-    Context context;
+import android.content.Context
+import io.mockk.every
+import io.mockk.mockk
+import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
+import org.emunix.unipatcher.utils.FileUtils
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
+import org.junit.Assert.fail
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
+import org.junit.rules.TemporaryFolder
+import java.io.File
+import java.io.IOException
 
-    private FileUtils fileUtils;
+class UPSTest {
+
+    private companion object {
+        const val PATCH_CORRUPTED = "The patch file is corrupted."
+    }
+
+    @get:Rule
+    val folder = TemporaryFolder()
+
+    private val resourceProvider: ResourceProvider = mockk()
+    private val context: Context = mockk()
+
+    private lateinit var fileUtils: FileUtils
 
     @Before
-    public void setUp() throws Exception {
-        when(resourceProvider.getString(R.string.notify_error_patch_corrupted))
-                .thenReturn(PATCH_CORRUPTED);
-        fileUtils = new FileUtils(context, resourceProvider);
+    fun setUp() {
+        every { resourceProvider.getString(R.string.notify_error_patch_corrupted) }
+            .returns(PATCH_CORRUPTED)
+        fileUtils = FileUtils(context, resourceProvider)
     }
 
     @Test
-    public void testApply() throws Exception {
-        assertTrue(ApplyPatch("/ups/readUpsCrc.ups", "/ups/readUpsCrc.bin", "/ups/readUpsCrc_m.bin"));
+    fun testApply() {
+        assertTrue(applyPatch("/ups/readUpsCrc.ups", "/ups/readUpsCrc.bin", "/ups/readUpsCrc_m.bin"))
     }
 
     @Test
-    public void testReadUpsCrc() throws Exception {
-        File patch = new File(this.getClass().getResource("/ups/readUpsCrc.ups").getPath());
-        UPS.UpsCrc pCrc = null;
+    fun testReadUpsCrc() {
+        val patch = File(javaClass.getResource("/ups/readUpsCrc.ups")!!.path)
+        val pCrc = UPS.readUpsCrc(patch, resourceProvider)
+        assertEquals(pCrc.patchFileCRC, pCrc.realPatchCRC)
+    }
+
+    @Test
+    fun testCheckMagic() {
+        val patch = File(javaClass.getResource("/ups/readUpsCrc.ups")!!.path)
+        assertTrue(UPS.checkMagic(patch))
+        val noPatch = File(javaClass.getResource("/ups/readUpsCrc.bin")!!.path)
+        assertFalse(UPS.checkMagic(noPatch))
+    }
+
+    private fun applyPatch(patchName: String, origName: String, modifiedName: String): Boolean {
+        val patch = File(javaClass.getResource(patchName)!!.path)
+        val origFile = File(javaClass.getResource(origName)!!.path)
+        val out = folder.newFile("out.bin")
+
+        val patcher = UPS(patch, origFile, out, resourceProvider, fileUtils)
         try {
-            pCrc = UPS.readUpsCrc(patch, resourceProvider);
-        } catch (PatchException e) {
-            fail("Patch exception");
-        }
-        assertEquals(pCrc.getPatchFileCRC(), pCrc.getRealPatchCRC());
-    }
-
-    @Test
-    public void testCheckMagic() throws Exception {
-        File patch = new File(this.getClass().getResource("/ups/readUpsCrc.ups").getPath());
-        assertTrue(UPS.checkMagic(patch));
-        File noPatch = new File(this.getClass().getResource("/ups/readUpsCrc.bin").getPath());
-        assertFalse(UPS.checkMagic(noPatch));
-    }
-
-    private boolean ApplyPatch(String patchName, String origName, String modifiedName) throws Exception {
-        File patch = new File(this.getClass().getResource(patchName).getPath());
-        File in = new File(getClass().getResource(origName).getPath());
-        File out = folder.newFile("out.bin");
-
-        UPS patcher = new UPS(patch, in, out, resourceProvider, fileUtils);
-        try {
-            patcher.apply(false);
-        } catch (PatchException | IOException e) {
-            fail("Patching failed");
+            patcher.apply(false)
+        } catch (e: PatchException) {
+            fail("Patching failed")
+        } catch (e: IOException) {
+            fail("Patching failed")
         }
 
-        File origOut = new File(getClass().getResource(modifiedName).getPath());
-        return fileUtils.checksumCRC32(out) == fileUtils.checksumCRC32(origOut);
+        val origOut = File(javaClass.getResource(modifiedName)!!.path)
+        return fileUtils.checksumCRC32(out) == fileUtils.checksumCRC32(origOut)
     }
 }

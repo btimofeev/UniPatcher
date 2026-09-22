@@ -1,109 +1,128 @@
-package org.emunix.unipatcher.patcher;
+/*
+ Copyright (c) 2026 Boris Timofeev
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+ This file is part of UniPatcher.
 
-import android.content.Context;
-import java.io.File;
-import java.io.IOException;
-import org.emunix.unipatcher.R;
-import org.emunix.unipatcher.helpers.ResourceProvider;
-import org.emunix.unipatcher.utils.FileUtils;
-import org.junit.*;
-import org.junit.rules.*;
-import org.junit.runner.*;
-import org.mockito.*;
-import org.mockito.junit.*;
+ UniPatcher is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
 
-@RunWith(MockitoJUnitRunner.class)
-public class IPSTest {
+ UniPatcher is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-    private static final String NOT_IPS_PATCH = "Not an IPS patch.";
+ You should have received a copy of the GNU General Public License
+ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 
-    @Rule
-    public TemporaryFolder folder = new TemporaryFolder();
+ */
 
-    @Mock
-    ResourceProvider resourceProvider;
+package org.emunix.unipatcher.patcher
 
-    @Mock
-    Context context;
+import android.content.Context
+import io.mockk.every
+import io.mockk.mockk
+import org.emunix.unipatcher.R
+import org.emunix.unipatcher.helpers.ResourceProvider
+import org.emunix.unipatcher.utils.FileUtils
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
+import org.junit.Assert.fail
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
+import org.junit.rules.TemporaryFolder
+import java.io.File
+import java.io.IOException
 
-    private FileUtils fileUtils;
+class IPSTest {
+
+    private companion object {
+        const val NOT_IPS_PATCH = "Not an IPS patch."
+    }
+
+    @get:Rule
+    val folder = TemporaryFolder()
+
+    private val resourceProvider: ResourceProvider = mockk()
+    private val context: Context = mockk()
+
+    private lateinit var fileUtils: FileUtils
 
     @Before
-    public void setUp() throws Exception {
-        when(resourceProvider.getString(R.string.notify_error_not_ips_patch))
-                .thenReturn(NOT_IPS_PATCH);
-        fileUtils = new FileUtils(context, resourceProvider);
+    fun setUp() {
+        every { resourceProvider.getString(R.string.notify_error_not_ips_patch) }
+            .returns(NOT_IPS_PATCH)
+        fileUtils = FileUtils(context, resourceProvider)
     }
 
     @Test
-    public void IPS_InvalidPatch_NoMagic() throws Exception {
-        File patch = new File(this.getClass().getResource("/ips/not_ips.ips").getPath());
-        File in = new File(getClass().getResource("/ips/min_ips.bin").getPath());
-        File out = folder.newFile("out.bin");
+    fun IPS_InvalidPatch_NoMagic() {
+        val patch = File(javaClass.getResource("/ips/not_ips.ips")!!.path)
+        val origFile = File(javaClass.getResource("/ips/min_ips.bin")!!.path)
+        val out = folder.newFile("out.bin")
 
-        IPS patcher = new IPS(patch, in, out, resourceProvider, fileUtils);
+        val patcher = IPS(patch, origFile, out, resourceProvider, fileUtils)
 
         try {
-            patcher.apply();
-            fail("Expected an PatchException to be thrown");
-        } catch (PatchException e) {
-            assertThat(e.getMessage(), is("Not an IPS patch."));
+            patcher.apply()
+            fail("Expected an PatchException to be thrown")
+        } catch (e: PatchException) {
+            assertEquals("Not an IPS patch.", e.message)
         }
     }
 
     @Test
-    public void IPS_MinPatch() throws Exception {
-        assertTrue(ApplyPatch("/ips/min_ips.ips", "/ips/min_ips.bin", "/ips/min_ips_modified.bin"));
+    fun IPS_MinPatch() {
+        assertTrue(applyPatch("/ips/min_ips.ips", "/ips/min_ips.bin", "/ips/min_ips_modified.bin"))
     }
 
     @Test
-    public void IPS_RlePatch() throws Exception {
-        assertTrue(ApplyPatch("/ips/rle_ips.ips", "/ips/rle_ips.bin", "/ips/rle_ips_modified.bin"));
+    fun IPS_RlePatch() {
+        assertTrue(applyPatch("/ips/rle_ips.ips", "/ips/rle_ips.bin", "/ips/rle_ips_modified.bin"))
     }
 
     @Test
-    public void IPS_ExtendPatch() throws Exception {
-        assertTrue(ApplyPatch("/ips/extend_ips.ips", "/ips/extend_ips.bin", "/ips/extend_ips_modified.bin"));
+    fun IPS_ExtendPatch() {
+        assertTrue(applyPatch("/ips/extend_ips.ips", "/ips/extend_ips.bin", "/ips/extend_ips_modified.bin"))
     }
 
     @Test
-    public void IPS_TruncateRom() throws Exception {
-        assertTrue(ApplyPatch("/ips/truncate.ips", "/ips/truncate.bin", "/ips/truncate_modified.bin"));
+    fun IPS_TruncateRom() {
+        assertTrue(applyPatch("/ips/truncate.ips", "/ips/truncate.bin", "/ips/truncate_modified.bin"))
     }
 
     @Test
-    public void IPS32_MinPatch() throws Exception {
-        assertTrue(ApplyPatch("/ips/min_ips32.ips", "/ips/min_ips32.bin", "/ips/min_ips32_mod.bin"));
+    fun IPS32_MinPatch() {
+        assertTrue(applyPatch("/ips/min_ips32.ips", "/ips/min_ips32.bin", "/ips/min_ips32_mod.bin"))
     }
 
     @Test
-    public void IPS32_RlePatch() throws Exception {
-        assertTrue(ApplyPatch("/ips/rle_ips32.ips", "/ips/rle_ips32.bin", "/ips/rle_ips32_mod.bin"));
+    fun IPS32_RlePatch() {
+        assertTrue(applyPatch("/ips/rle_ips32.ips", "/ips/rle_ips32.bin", "/ips/rle_ips32_mod.bin"))
     }
 
     @Test
-    public void IPS32_ExtendPatch() throws Exception {
-        assertTrue(ApplyPatch("/ips/extend_ips32.ips", "/ips/extend_ips32.bin", "/ips/extend_ips32_mod.bin"));
+    fun IPS32_ExtendPatch() {
+        assertTrue(applyPatch("/ips/extend_ips32.ips", "/ips/extend_ips32.bin", "/ips/extend_ips32_mod.bin"))
     }
 
-    private boolean ApplyPatch(String patchName, String origName, String modifiedName) throws Exception {
-        File patch = new File(this.getClass().getResource(patchName).getPath());
-        File in = new File(getClass().getResource(origName).getPath());
-        File out = folder.newFile("out.bin");
+    private fun applyPatch(patchName: String, origName: String, modifiedName: String): Boolean {
+        val patch = File(javaClass.getResource(patchName)!!.path)
+        val origFile = File(javaClass.getResource(origName)!!.path)
+        val out = folder.newFile("out.bin")
 
-        IPS patcher = new IPS(patch, in, out, resourceProvider, fileUtils);
+        val patcher = IPS(patch, origFile, out, resourceProvider, fileUtils)
         try {
-            patcher.apply();
-        } catch (PatchException | IOException e) {
-            fail("Patching failed");
+            patcher.apply()
+        } catch (e: PatchException) {
+            fail("Patching failed")
+        } catch (e: IOException) {
+            fail("Patching failed")
         }
 
-        File origOut = new File(getClass().getResource(modifiedName).getPath());
-        return fileUtils.checksumCRC32(out) == fileUtils.checksumCRC32(origOut);
+        val origOut = File(javaClass.getResource(modifiedName)!!.path)
+        return fileUtils.checksumCRC32(out) == fileUtils.checksumCRC32(origOut)
     }
 }
