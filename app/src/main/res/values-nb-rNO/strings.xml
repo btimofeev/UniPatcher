@@ -89,16 +89,12 @@
     <string name="main_activity_tap_to_select_where_to_save_patch">trykk for å velge hvor programfiksen skal lagres</string>
     <string name="snes_smc_error_unable_to_get_file_size">Feil: kunne ikke bestemme filstørrelse</string>
     <string name="snes_rom_has_no_smc_header">Denne ROM-filen har ikke noe SMC-hode. Du trenger ikke å slette noe.</string>
-    <string name="snes_smc_header_help">Denne funksjonen er kun for ROM-filer for Super Nintendo.
-\n
-\nNoen feilfikser krever at ROM-filen ikke har noe SMC-hode. Denne funksjonen hjelper deg å fjerne det.</string>
     <string name="main_activity_double_back_to_exit_message">Trykk \"Tilbake\" igjen for å avslutte. Dette kan forstyrre alle kjørende operasjoner.</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">trykk for å velge hvor ROM-fil skal lagres</string>
     <string name="main_activity_rom_without_smc_file">Send ut hodeløs ROM-fil</string>
     <string name="main_activity_button_how_to_use_app">Hvordan bruke programmet</string>
     <string name="settings_show_button_how_to_use_app_description">Vis \"Hvordan bruke programmet\"-knappen på hovedskjermen</string>
     <string name="settings_show_button_how_to_use_app">Vis \"Hjelp\"-knapp</string>
-    <string name="nav_snes_add_del_smc_header">Fjern SMC-hode (SNES)</string>
     <string name="error_crash_discard_button">Forkast</string>
     <string name="error_crash_send_button">Send</string>
     <string name="error_crash_title">Krasj</string>
@@ -161,9 +157,7 @@
     <string name="help_title">Ofte Stilte Spørsmål:</string>
     <string name="about_translators"><b>Oversettere:</b> \n \n - <b>Kinesisk</b>: Nabarl Wang, Eric \n - <b>Fransk</b>: Thibaut Panis, J. Lavoie \n - <b>Tysk</b>: Honigdieb \n - <b>Hebraisk</b>: Tamer Dabsan \n - <b>Italiensk</b>: Matteo Sechi, J.Lavoie \n - <b>Japansk</b>: Naofumi Fukue \n - <b>Koreansk</b>: Minseo Lee \n - <b>Norsk bokmål</b>: Allan Nordhøy \n - <b>Polisk</b>: Michal Bychowski, Jarek Karpiel \n - <b>Portugisisk</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes \n - <b>Russisk</b>: Борис Тимофеев \n - <b>Spansk</b>: Carlos Sánchez, Swyter \n - <b>Tyrkisk</b>: Oğuz Ersen \n - <b>Ukrainsk</b>: Володимир Шевчук \n \nBistå oversettelsen til ditt språk: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="about_used_libraries"><b>Brukte bibliotek:</b> \n \n - <b>ACRA</b> av ACRA-laget, lisensiert Apache 2.0. https://github.com/ACRA/acra \n - <b>Apache Commons IO</b> av Apache Software Foundation, lisensiert Apache 2.0. https://commons.apache.org/proper/commons-io/ \n - <b>Dagger</b> av Dagger-utviklerne, lisensiert Apache 2.0. https://github.com/google/dagger \n - <b>Material design icons</b> av Google, lisensiert Apache 2.0. https://github.com/google/material-design-icons \n - <b>Material design icons</b> av gemenskapen, lisensiert SIL Open Font-lisens 1.1. https://materialdesignicons.com \n - <b>Timber</b> av Jake Wharton, lisensiert Apache 2.0. https://github.com/JakeWharton/timber \n - <b>XDelta version 3</b> av Joshua MacDonald, lisensiert Apache 2.0. https://github.com/jmacd/xdelta</string>
-    <string name="help_snes_smc_body">Et SMC-hode er 512 byte på starten av noen ROM-avbildninger for SNES. Disse bytene har ikke noe formål, men de endrer hvor resten av dataen er. Å fjerne et hode brukes noen ganger for å kunne utføre en programfiks riktig.</string>
     <string name="help_i_cant_patch_smw_rom_body">Denne ROM-filen inneholder et SMC-hode, selv om de fleste programfiksene for denne ROM-filen ikke har dette hodet. Du kan fjerne SMC-hodet ved å velge ønsket element i menyen til venstre og så utføre programfiksen for resulterende ROM-fil.</string>
     <string name="help_i_cant_patch_smw_rom_title">Jeg kan ikke utføre programfiks for «Super Wario World (U) [!].smc»</string>
     <string name="help_how_to_apply_patch_to_rom_body">Du må velge en ROM-fil, en programfiks, og velge hvilken fil å lagre, og så klikke på knappen nederst. Filer velges med forvalgt filutforsker (eller en av dem du har installert). Programmet viser en melding når filen er programfikset. Ikke lukk programmet før det har skjedd.</string>
-    <string name="help_snes_smc_title">Hvorfor er det noen ganger nødvendig å fjerne SMC-hoder fra Super Nintendo-spill\?</string>
 </resources>

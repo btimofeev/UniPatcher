@@ -67,7 +67,7 @@ class EBP(
     private fun prepareCleanRom(file: File, ignoreChecksum: Boolean) {
         // delete smc header
         try {
-            SnesSmcHeader().deleteSnesSmcHeader(romFile, file, resourceProvider, fileUtils)
+            SnesSmcHeader().deleteSnesSmcHeader(romFile, file, null, resourceProvider, fileUtils)
         } catch (_: RomException) {
             // no header
         }

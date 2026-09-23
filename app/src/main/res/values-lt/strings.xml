@@ -39,7 +39,6 @@
 \n Galite pranešti apie klaidą „GitHub Issue Tracker“ https://github.com/btimofeev/UniPatcher/issues
 \n
 \n Taip pat galite susisiekti su programos autoriumi el. paštu unipatcher@gmail.com. Prašome parašyti anglų kalba. Jei kyla problemų dėl pataisų pritaikymo, pridėkite pataisą prie laiško ir parašykite savo ROM pavadinimą, tai sutaupys mūsų laiko.</string>
-    <string name="help_snes_smc_body">SMC antraštė yra 512 baitų, esančių kai kurių SNES ROM vaizdų pradžioje. Šie baitai neturi tikslo, tačiau pakeičia likusių duomenų vietą. Antraštės pašalinimas kartais naudojamas siekiant teisingai uždėti pataisą.</string>
     <string name="help_sega_fix_checksum_body">„Sega Mega Drive“ („Genesis“) žaidimų kontrolinė suma įrašyta į ROM. Jei pakeisite tik kurią nors žaidimo dalį, jos nesutaps, todėl nepavyks paleisti. Tai apskaičiuoja teisingą pakeitimo kontrolinę sumą ir įrašo ją į pakeistą ROM failą.
 \n
 \n<b> Įspėjimas: </b> Ši funkcija nesukuria atsarginio ROM.</string>
@@ -93,9 +92,6 @@
     <string name="notify_error_not_ips_patch">Neleistina IPS pataisa</string>
     <string name="notify_create_patch_complete">Pataisa sukurta</string>
     <string name="notify_patching_complete">Pataisa baigta</string>
-    <string name="snes_smc_header_help">Ši funkcija skirta tik „Super Nintendo“ ROM.
-\n
-\nKai kurios pataisos reikalauja, kad ROM nebūtų SMC antraštės. Ši funkcija padės ją pašalinti.</string>
     <string name="create_patch_fragment_toast_patch_not_selected">Pataisos failas nepasirinktas</string>
     <string name="create_patch_fragment_toast_modified_not_selected">Modifikuotas failas nepasirinktas</string>
     <string name="create_patch_fragment_patch_file">Pataisos failas</string>
@@ -107,7 +103,6 @@
     <string name="help_feedback_title">Turiu klausimą, funkcijų užklausą arba pranešimą apie klaidą.</string>
     <string name="help_how_to_translate_body">Jei norite išversti programėlę į kitą kalbą arba patobulinti esamą vertimą, tai galite padaryti žiniatinklio svetainėje https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Kaip išversti programėlę\?</string>
-    <string name="help_snes_smc_title">Kodėl kartais reikia pašalinti SMC antraštes iš „Super Nintendo“ žaidimų\?</string>
     <string name="help_additional_features_title">Ar UniPatcher turi papildomų funkcijų\?</string>
     <string name="help_ecm_image_body">ECM yra duomenų glaudinimo formatas, specialiai sukurtas disko vaizdams. Failą galite išarchyvuoti naudodami „ZArchiver“ programėlę https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="help_ecm_image_title">Ką aš galiu daryti su .ECM failo tipu\?</string>
@@ -130,7 +125,6 @@
     <string name="nav_donate">Paaukoti</string>
     <string name="nav_rate">Įvertinkite šią programėlę</string>
     <string name="nav_settings">Nustatymai</string>
-    <string name="nav_snes_add_del_smc_header">Pašalinti SMC antraštę (SNES)</string>
     <string name="share_dialog_title">Dalytis UniPatcher</string>
     <string name="donate_activity_title">Paaukoti</string>
     <string name="error_file_picker_app_is_no_installed">Klaida: Nėra įdiegtos failų programėlės</string>

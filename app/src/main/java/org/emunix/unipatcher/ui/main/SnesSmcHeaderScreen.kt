@@ -64,9 +64,15 @@ fun SnesSmcHeaderScreen(
 ) {
     val romName by viewModel.romName.collectAsStateWithLifecycle()
     val outputName by viewModel.outputName.collectAsStateWithLifecycle()
+    val headerName by viewModel.headerName.collectAsStateWithLifecycle()
+    val headerOutputName by viewModel.headerOutputName.collectAsStateWithLifecycle()
+    val hasSmcHeader by viewModel.hasSmcHeader.collectAsStateWithLifecycle()
     val suggestedOutputName by viewModel.suggestedOutputName.collectAsStateWithLifecycle()
+    val suggestedHeaderOutputName by viewModel.suggestedHeaderOutputName.collectAsStateWithLifecycle()
     val infoText by viewModel.infoText.collectAsStateWithLifecycle()
     val actionIsRunning by viewModel.actionIsRunning.collectAsStateWithLifecycle()
+
+    val addHeaderMode = hasSmcHeader == false
 
     val context = LocalContext.current
 
@@ -100,6 +106,22 @@ fun SnesSmcHeaderScreen(
         }
     }
 
+    val headerPicker = rememberLauncherForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            result.data?.data?.let { uri -> viewModel.headerFileSelected(uri) }
+        }
+    }
+
+    val headerOutputPicker = rememberLauncherForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            result.data?.data?.let { uri -> viewModel.headerOutputSelected(uri) }
+        }
+    }
+
     val selectRom: () -> Unit = {
         val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
@@ -125,6 +147,31 @@ fun SnesSmcHeaderScreen(
         }
     }
 
+    val selectHeader: () -> Unit = {
+        val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = MIME_TYPE_ALL_FILES
+        }
+        try {
+            headerPicker.launch(intent)
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(context, context.getString(R.string.error_file_picker_app_is_no_installed), Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    val selectHeaderOutput: () -> Unit = {
+        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = MIME_TYPE_OCTET_STREAM
+            putExtra(Intent.EXTRA_TITLE, suggestedHeaderOutputName)
+        }
+        try {
+            headerOutputPicker.launch(intent)
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(context, context.getString(R.string.error_file_picker_app_is_no_installed), Toast.LENGTH_SHORT).show()
+        }
+    }
+
     Box(
         modifier = modifier
             .fillMaxSize(),
@@ -138,17 +185,15 @@ fun SnesSmcHeaderScreen(
                 .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 8.dp),
         ) {
             FileSelectCard(
-                title = stringResource(R.string.main_activity_rom_with_smc_file),
+                title = stringResource(
+                    when (hasSmcHeader) {
+                        null -> R.string.main_activity_rom_file
+                        false -> R.string.main_activity_rom_without_smc_header
+                        true -> R.string.main_activity_rom_with_smc_file
+                    }
+                ),
                 fileName = romName.ifEmpty { stringResource(R.string.main_activity_tap_to_select) },
                 onClick = selectRom,
-            )
-
-            Spacer(Modifier.height(16.dp))
-
-            FileSelectCard(
-                title = stringResource(R.string.main_activity_rom_without_smc_file),
-                fileName = outputName.ifEmpty { stringResource(R.string.main_activity_tap_to_select_where_to_save_rom) },
-                onClick = selectOutput,
             )
 
             Spacer(Modifier.height(16.dp))
@@ -156,6 +201,37 @@ fun SnesSmcHeaderScreen(
             InfoCard(
                 text = infoText.ifEmpty { stringResource(R.string.snes_smc_header_help) },
             )
+
+            if (hasSmcHeader != null) {
+                Spacer(Modifier.height(16.dp))
+
+                FileSelectCard(
+                    title = stringResource(
+                        if (addHeaderMode) R.string.main_activity_rom_with_header_output
+                        else R.string.main_activity_rom_without_smc_file
+                    ),
+                    fileName = outputName.ifEmpty { stringResource(R.string.main_activity_tap_to_select_where_to_save_rom) },
+                    onClick = selectOutput,
+                )
+
+                if (addHeaderMode) {
+                    Spacer(Modifier.height(16.dp))
+
+                    FileSelectCard(
+                        title = stringResource(R.string.main_activity_header_file),
+                        fileName = headerName.ifEmpty { stringResource(R.string.main_activity_tap_to_select_optional) },
+                        onClick = selectHeader,
+                    )
+                } else {
+                    Spacer(Modifier.height(16.dp))
+
+                    FileSelectCard(
+                        title = stringResource(R.string.snes_smc_header_save_title),
+                        fileName = headerOutputName.ifEmpty { stringResource(R.string.main_activity_tap_to_select_optional) },
+                        onClick = selectHeaderOutput,
+                    )
+                }
+            }
         }
 
         if (actionIsRunning) {

@@ -25,8 +25,6 @@
     <string name="help_sega_fix_checksum_body">Os jogos de Sega Mega Drive (Genesis) têm sua soma de verificação gravado na ROM. Se você alterar apenas qualquer parte do jogo, eles não irão corresponder, deixando de funcionar como resultado. O que isso faz é calcular a soma de verificação da mudança e gravar no arquivo ROM modificado.
 \n
 \n<b>Aviso</b>: Essa função não cria algum tipo de backup do arquivo ROM.</string>
-    <string name="help_snes_smc_title">Por que às vezes é preciso remover os cabeçalhos SMC dos jogos de Super Nintendo?</string>
-    <string name="help_snes_smc_body">Um cabeçalho SMC é de 512 bytes encontrado no início de algumas imagens nas ROMs de SNES. Esses bytes não têm propósito, mas mudam a localização dos dados restantes. Remover um cabeçalho às vezes é usado para aplicar corretamente um patch.</string>
     <string name="help_how_to_translate_body">Se você gostaria de traduzir o aplicativo para outro idioma ou melhorar uma tradução existente, você pode fazê-lo no site do Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Como traduzir o app\?</string>
     <string name="help_feedback_title">Tenho uma pergunta, um pedido de recurso ou um relatório de erros.</string>
@@ -66,9 +64,6 @@
     <string name="snes_smc_error_unable_to_get_file_size">Erro: não foi possível determinar o tamanho do arquivo</string>
     <string name="snes_rom_has_no_smc_header">Esta ROM não tem cabeçalho SMC. Você não precisa deletar algo.</string>
     <string name="snes_smc_header_will_be_removed">Esta ROM possui o cabeçalho SMC. Ele será removido.</string>
-    <string name="snes_smc_header_help">Este recurso é apenas para ROMs do Super Nintendo.
-\n
-\nAlguns patches requerem que a ROM não tenha o cabeçalho SMC. Esta função o ajudará a removê-lo.</string>
     <string name="create_patch_fragment_toast_patch_not_selected">O arquivo de patch não está selecionado</string>
     <string name="create_patch_fragment_toast_modified_not_selected">O arquivo modificado não foi selecionado</string>
     <string name="create_patch_fragment_toast_source_not_selected">O arquivo de origem não está selecionado</string>
@@ -154,7 +149,6 @@
     <string name="nav_donate">Doar</string>
     <string name="nav_rate">Avaliar este aplicativo</string>
     <string name="nav_settings">Configurações</string>
-    <string name="nav_snes_add_del_smc_header">Remover cabeçalho de SMC (SNES)</string>
     <string name="nav_smd_fix_checksum">Corrigir soma de verificação (SMD)</string>
     <string name="nav_create_patch">Criar patch</string>
     <string name="nav_apply_patch">Aplicar patch</string>

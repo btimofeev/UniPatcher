@@ -12,7 +12,6 @@
     <string name="nav_donate">Bağış yap</string>
     <string name="nav_rate">Uygulamaya puan ver</string>
     <string name="nav_settings">Ayarlar</string>
-    <string name="nav_snes_add_del_smc_header">SMC başlığını kaldır (SNES)</string>
     <string name="nav_smd_fix_checksum">Sağlama toplamını düzelt (SMD)</string>
     <string name="nav_create_patch">Yama oluştur</string>
     <string name="nav_apply_patch">Yama uygula</string>
@@ -81,9 +80,6 @@
     <string name="snes_smc_error_unable_to_get_file_size">Hata: dosya boyutu belirlenemiyor</string>
     <string name="snes_rom_has_no_smc_header">Bu ROM\'un SMC başlığı yok. Hiçbir şeyi silmeniz gerekmiyor.</string>
     <string name="snes_smc_header_will_be_removed">Bu ROM\'un SMC başlığı var. Kaldırılacak.</string>
-    <string name="snes_smc_header_help">Bu özellik yalnızca Super Nintendo ROM\'ları içindir.
-\n
-\nBazı yamalar ROM\'un SMC başlığına sahip olmamasını gerektirir. Bu işlev, onu kaldırmanıza yardımcı olacaktır.</string>
     <string name="create_patch_fragment_toast_patch_not_selected">Yama dosyası seçilmedi</string>
     <string name="create_patch_fragment_toast_modified_not_selected">Değiştirilmiş dosya seçilmedi</string>
     <string name="create_patch_fragment_patch_file">Yama dosyası</string>
@@ -114,8 +110,6 @@
     <string name="help_feedback_title">Bir sorum, özellik isteğim veya hata bildirimim var.</string>
     <string name="help_how_to_translate_body">Uygulamayı başka bir dile çevirmek veya var olan bir çeviriyi iyileştirmek istiyorsanız, bunu https://hosted.weblate.org/engage/unipatcher/ Weblate sitesinde yapabilirsiniz.</string>
     <string name="help_how_to_translate_title">Uygulamanın çevirileri nasıl yapılıyor\?</string>
-    <string name="help_snes_smc_body">SMC başlığı, bazı SNES ROM kalıplarının başlangıcında bulunan 512 bayttır. Bu baytların bir amacı yoktur, ancak sonraki verilerin yerini değiştirirler. Bir başlığın kaldırılması bazen bir yamanın doğru şekilde uygulanması amacıyla kullanılır.</string>
-    <string name="help_snes_smc_title">Neden bazen Super Nintendo oyunlarından SMC başlıklarını kaldırmak gerekiyor\?</string>
     <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) oyunlarının sağlama toplamları ROM\'a yazılır. Oyunun yalnızca herhangi bir bölümünü değiştirirseniz, bunlar eşleşmeyecek ve sonuç olarak çalışmayacaktır. Bunun yaptığı şey, değişikliğin doğru sağlama toplamını hesaplamak ve onu değiştirilmiş ROM dosyasına yazmaktır.
 \n
 \n<b>Uyarı:</b> Bu işlev bir yedek ROM oluşturmaz.</string>

@@ -55,7 +55,6 @@
     <string name="error_crash_send_button">Kirim</string>
     <string name="nav_rate">Nilai aplikasi ini</string>
     <string name="nav_settings">Pengaturan</string>
-    <string name="nav_snes_add_del_smc_header">Hapus header SMC (SNES)</string>
     <string name="nav_smd_fix_checksum">Perbaiki checksum (SMD)</string>
     <string name="nav_create_patch">Buat patch</string>
     <string name="nav_apply_patch">Terapkan patch</string>
@@ -77,8 +76,6 @@
 \nAnda dapat melaporkan bug di GitHub Issue Tracker https://github.com/btimofeev/UniPatcher/issues
 \n
 \nAnda juga dapat menghubungi penulis aplikasi melalui email unipatcher@gmail.com. Silahkan menulis dalam bahasa Inggris. Jika Anda memiliki masalah dengan patching, melampirkan patch ke surat dan menulis nama ROM Anda, itu akan menghemat waktu kita.</string>
-    <string name="help_snes_smc_body">Header SMC adalah 512 byte yang ditemukan pada awal beberapa gambar ROM SNES. Byte ini tidak memiliki tujuan, tetapi mereka mengubah lokasi data yang tersisa. Menghapus header kadang-kadang digunakan untuk tujuan menerapkan patch dengan benar.</string>
-    <string name="help_snes_smc_title">Mengapa terkadang perlu menghapus header SMC dari game Super Nintendo\?</string>
     <string name="help_sega_fix_checksum_body">Sega Mega Drive (Genesis) game memiliki checksum mereka ditulis ke dalam ROM. Jika Anda hanya mengubah bagian mana pun dari game, mereka tidak akan cocok, gagal run sebagai hasilnya. Apa yang dilakukan ini adalah menghitung checksum yang benar dari perubahan dan menulisnya ke file ROM yang dimodifikasi.
 \n
 \n<b>Peringatan:</b> Fungsi ini tidak membuat ROM cadangan.</string>
@@ -160,5 +157,4 @@
 \nPeringatan: Fungsi ini tidak membuat cadangan.</string>
     <string name="snes_rom_has_no_smc_header">ROM ini tidak memiliki header SMC. Kamu tidak perlu menghapus apa pun.</string>
     <string name="snes_smc_header_will_be_removed">ROM ini memiliki header SMC. Ini akan dihapus.</string>
-    <string name="snes_smc_header_help">Fitur ini hanya untuk ROM Super Nintendo. \n \nBeberapa patch mengharuskan ROM untuk tidak memiliki header SMC. Fungsi ini akan membantumu menghapusnya.</string>
 </resources>

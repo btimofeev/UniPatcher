@@ -46,9 +46,6 @@
     <string name="main_activity_tap_to_select_where_to_save_patch">دەستیلێبدە بۆ دیاریکردنی ئەو شوێنەی کە پاچەکەی تێدا خەزن دەکات</string>
     <string name="create_patch_fragment_toast_patch_not_selected">فایل دیارینەکرا</string>
     <string name="error_crash_send_button">ناردن</string>
-    <string name="snes_smc_header_help">ئەم تایبەتمەندییە تەنها بۆ Romی سوپەر Nintendo دەبێت.
-\n
-\nهەندێک لە پەڕەکان پێویستیان بە Rom هەیە کە SMC نەبێت. ئەم کردارە یارمەتیت دەدات بۆ لابردنی.</string>
     <string name="notify_error_xdelta1_unsupported">من ناتوانم کار بە پاچەکانی XDelta3 بکەم</string>
     <string name="notify_error_unable_open_file">ناتوانێت فایل بکاتەوە</string>
     <string name="notify_error_not_ips_patch">پاچێکی IPS دروست نیە</string>
@@ -113,14 +110,12 @@
 \n <b>ئاگاداری:</b> بۆ ئەم کارە ڕوومە دروستکراوەکە هەڵناگرێت .</string>
     <string name="help_what_is_rom_hacking_body">هاککردنی ڕووم گۆڕانکاری لە داتاکان دەکات لە rom ڕووم لە شێوەی گۆڕینی گرافیک و زمان، گۆڕینی ئاستی یاری، گۆڕینی فاکتەری ساختە، یان تەنانەت وەرگێڕان بۆ زمانێک کە لە بنەڕەتدا.</string>
     <string name="nav_apply_patch">جێبەجێکردنی پاچ</string>
-    <string name="nav_snes_add_del_smc_header">لابردنی SMC header (SNES)</string>
     <string name="help_title">پرسیارە زۆر دوبارەکان:</string>
     <string name="help_what_is_unipatcher_title">ئایا Uni پاچەر چیە؟</string>
     <string name="help_archive_should_be_unpacked_body">ئەو فایلەی کە هەڵتبژاردووە ئەرشیفە. ئەرشیفەکە بەڕێوەبەرایەتی و فایلەکان بە شێوەی پاڵەپەستۆکراو لەخۆدەگرێت.
 \n
 \nلە ئێستادا Uni پاچەر ناتوانێت ئەرشیفەکان دەربهێنێت، بۆیە پێویستە ئەرشیفەکەت لە بەرنامەیەکی جیاوازدا هەڵبکەیتەوە. پێشنیاری ئەپی ZArchiverدەکەم https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
     <string name="nav_drawer_open">کردنەوەی نەخشەکێشی ڕێنیشاندەر</string>
-    <string name="help_snes_smc_title">بۆچی هەندێک جار پێویستە سەردێڕی SMC لە یارییەکانی Super Nintendo لاببرێت؟</string>
     <string name="help_rom_not_compatible_with_patch_body">ئەپەکە ئەم هەڵەیە پیشان دەدات ئەگەر ئەو کۆی پشکنینەی کە لە پاچەکەدا هەڵگیراوە لەگەڵ کۆی پشکنینی ڕوومەکەدا نەگونجێت. ئەمەش واتە فایلە ڕوومەکە لەگەڵ پاچەکەدا ناگونجێت. پێویستە فایلێکی ڕوومی جیاواز هەڵبژێریت. بەزۆری بۆ هەر یارییەک چەند ڕۆمێک هەیە (وەک وەشانی بۆ ئەوروپا، ئەمریکا، ژاپۆن، دامپی باش یان خراپ و هتد).
 \n
 \nزۆرجار هاکەرانی ڕۆم کۆی پشکنینی پەڕگەی ڕۆمی هاوپێچ بڵاودەکەنەوە (لە لاپەڕەی وێب یان لە فایلێکی README). ئەوە بەراورد بکە بەو کەسەی کە هەتە. ئەگەر کۆی پشکنینەکە هاوتا بێت ئەوا تۆ ئەو ڕۆمەت هەیە کە پاچەکە بۆی نووسراوە. ئەگەر نا، پێویستت بە ڕۆمێکی جیاوازە.
@@ -153,7 +148,6 @@
     <string name="help_archive_should_be_unpacked_title">ئەپەکە دوای هەڵبژاردنی فایل پەیامێک پیشان دەدات: “پێویستە ئەرشیف لە بەرنامەیەکی دەرەکیدا پاک بکرێتەوە”.</string>
     <string name="help_why_not_distribute_modified_games_title">بۆچی هاککەرەکانی ڕووم یارییە گۆڕدراوەکان دابەش ناکەن؟</string>
     <string name="help_why_not_distribute_modified_games_body">هاککردن و وەرگێڕانەکان بە شێوەیەکی گشتی دابەش دەکرێن وەک پاچ بۆ کەمکردنەوەی قەبارەی دابەزاندن و خۆدوورگرتن لە کێشەی مافی لەبەرگرتنەوە.</string>
-    <string name="help_snes_smc_body">سەردێڕی SMC 512بایتە کە لە سەرەتای هەندێک ڕوومی SNES دەدۆزرێتەوە. ئەم بایتانە هیچ ئامانجێکیان نییە، بەڵام شوێنی ئەو داتایانەی کە ماونەتەوە دەگۆڕن. لابردنی سەردێڕ هەندێک جار بە مەبەستی جێبەجێکردنی دروستی پاچێک بەکاردەهێنرێت.</string>
     <string name="nav_help">یارمەتی</string>
     <string name="help_feedback_body">ئێمە باس لە کارایی نوێ دەکەین و وەڵامی پرسیارەکان دەدەینەوە لە گفتوگۆکانی GitHub https://github.com/btimofeev/UniPatcher/discussions
 \n

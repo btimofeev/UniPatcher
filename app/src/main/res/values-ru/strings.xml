@@ -26,9 +26,6 @@
     <string name="create_patch_fragment_toast_modified_not_selected">Сначала выберите изменённый файл</string>
     <string name="create_patch_fragment_toast_patch_not_selected">Сначала выберите, где сохранить патч</string>
     <!-- Info for SNES SMC header -->
-    <string name="snes_smc_header_help">Эта функция только для ROM-файлов Super Nintendo.
-\n
-\nНекоторые патчи требуют, чтобы в ROM-файле не было SMC заголовка. Данная функция поможет удалить его.</string>
     <string name="snes_smc_header_will_be_removed">У этого ROM-файла есть SMC заголовок. Он будет удалён.</string>
     <string name="snes_rom_has_no_smc_header">Этот ROM-файл не содержит SMC заголовка. Удалять ничего не нужно.</string>
     <string name="snes_smc_error_unable_to_get_file_size">Ошибка: невозможно определить размер файла</string>
@@ -103,7 +100,6 @@
     <string name="nav_apply_patch">Применить патч</string>
     <string name="nav_create_patch">Создать патч</string>
     <string name="nav_smd_fix_checksum">Испр. контр. сумму (SMD)</string>
-    <string name="nav_snes_add_del_smc_header">Убрать SMC заголовок (SNES)</string>
     <string name="nav_settings">Настройки</string>
     <string name="nav_rate">Оценить приложение</string>
     <string name="nav_donate">Пожертвование</string>
@@ -120,8 +116,6 @@
     <string name="help_feedback_title">У меня есть вопрос, идея для новой функции или сообщение об ошибке.</string>
     <string name="help_how_to_translate_body">Если Вы хотите перевести приложение на другой язык или улучшить существующий перевод, Вы можете сделать это на сайте Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Как перевести приложение на другой язык\?</string>
-    <string name="help_snes_smc_body">SMC заголовок — это 512 байт, находящиеся в начале некоторых SNES ROM\'ов. Эти байты не имеют значения, но они меняют расположение данных. Удаление заголовка иногда используется с целью корректного наложения патча.</string>
-    <string name="help_snes_smc_title">Зачем иногда необходимо удалять SMC заголовки в играх Super Nintendo\?</string>
     <string name="help_sega_fix_checksum_body">Некоторые игры Sega Mega Drive хранят внутри ROM\'а контрольную сумму. Если Вы измените любую часть игры, контрольные суммы не совпадут и игра не запустится (Вы увидите красный экран вместо игры). Эта функция вычисляет и записывает корректную контрольную сумму в модифицированный ROM.
 \n
 \n<b>Предупреждение:</b> эта функция не создаёт резервной копии ROM\'а.</string>

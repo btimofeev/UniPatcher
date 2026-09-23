@@ -157,9 +157,6 @@
     <string name="main_activity_tap_to_select_where_to_save_rom">appuyez pour sélectionner où enregistrer le ROM</string>
     <string name="main_activity_rom_without_smc_file">Fichier de sortie ROM sans en-tête</string>
     <string name="snes_rom_has_no_smc_header">Cette ROM n\'a pas d\'en-tête SMC. Vous n\'avez rien à supprimer.</string>
-    <string name="snes_smc_header_help">Cette fonctionnalité est réservée aux ROM Super Nintendo.
-\n
-\nCertains correctifs exigent que la ROM n\'ait pas d\'en-tête SMC. Cette fonction vous aidera à le supprimer.</string>
     <string name="about_used_libraries"><b> Bibliothèques utilisées : </b> \n \n - <b> ACRA </b> par l\'équipe ACRA, sous licence Apache 2.0. https ://github.com/ACRA/acra \n - <b> Apache Commons IO </b> par The Apache Software Foundation, sous licence Apache 2.0. https ://commons.apache.org/proper/commons-io/ \n - <b> Dagger </b> par The Dagger Authors, sous licence Apache 2.0. https ://github.com/google/dagger \n - <b> Icônes de conception matérielle </b> de Google, sous licence Apache 2.0. https ://github.com/google/material-design-icons \n - <b> Icônes de conception matérielle </b> par communauté, sous licence SIL Open Font License 1.1. https ://materialdesignicons.com \n - <b> Timber </b> par Jake Wharton, sous licence Apache 2.0. https ://github.com/JakeWharton/timber \n - <b> XDelta version 3 </b> par Joshua MacDonald, sous licence Apache 2.0. https ://github.com/jmacd/xdelta</string>
     <string name="about_translators"><b> Traducteurs : </b>
 \n
@@ -180,12 +177,9 @@
 \n - <b> ukrainien </b> : Володимир Шевчук
 \n
 \nAidez à traduire l\'application dans votre langue : https ://hosted.weblate.org/engage/unipatcher/</string>
-    <string name="help_snes_smc_body">Un en-tête SMC est de 512 octets trouvés au début de certaines images ROM SNES. Ces octets n\'ont aucun but, mais ils changent l\'emplacement des données restantes. La suppression d\'un en-tête est parfois utilisée dans le but d\'appliquer correctement un correctif.</string>
-    <string name="help_snes_smc_title">Pourquoi est-il parfois nécessaire de supprimer les en-têtes SMC des jeux Super Nintendo \?</string>
     <string name="help_i_cant_patch_smw_rom_body">Cette ROM contient un en-tête SMC, alors que la plupart des correctifs pour ce jeu nécessitent que la ROM ne possède pas cet en-tête. Vous pouvez supprimer l\'en-tête SMC en sélectionnant l\'élément approprié dans le menu de gauche, puis appliquer le correctif à la ROM résultante.</string>
     <string name="help_i_cant_patch_smw_rom_title">Je ne peux pas patcher \"Super Mario World (U) [!]. Smc\"</string>
     <string name="help_how_to_apply_patch_to_rom_body">Vous devez sélectionner un fichier ROM, un patch et choisir le fichier à enregistrer, puis cliquer sur le bouton en bas. Les fichiers sont sélectionnés via l\'application Fichiers standard (ou via l\'un des gestionnaires de fichiers que vous avez installés). L\'application affichera un message lorsque le fichier est corrigé. Ne fermez pas l\'application tant que le fichier n\'a pas été corrigé.</string>
-    <string name="nav_snes_add_del_smc_header">Retirer l\'en-tête SMC (SNES)</string>
     <string name="error_file_picker_app_is_no_installed">Erreur : aucun fichiers d\'applications installer</string>
     <string name="notify_error_xdelta3_internal_error">XDelta3 : Erreur interne</string>
 </resources>

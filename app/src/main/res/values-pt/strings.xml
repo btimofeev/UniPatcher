@@ -93,7 +93,6 @@
     <string name="help_feedback_title">Tenho uma pergunta, um requerimento de função ou uma denúncia de bug.</string>
     <string name="help_how_to_translate_body">Se você gostaria de traduzir a app para outro idioma ou melhorar uma tradução existente, você pode fazer isso no site Weblate https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_how_to_translate_title">Como traduzir o app\?</string>
-    <string name="help_snes_smc_title">Por que algumas vezes é necessário remover cabeçalhos SMC dos Jogos de Super Nintendo\?</string>
     <string name="help_sega_fix_checksum_body">Os jogos para Sega Mega Drive (Genesis) possuem o checksum escritas dentro da ROM. Se você modificar qualquer parte do jogo, eles não vão coincidir, ocasionando uma falha ao tentar executar. O que esta opção faz é calcular o checksum correto da mudança realizada e escrever o mesmo dentro da ROM modificada.
 \n
 \n<b>AVISO:</b> Esta função não cria uma ROM de backup.</string>
@@ -135,7 +134,6 @@
     <string name="help_title">Perguntas mais frequentes:</string>
     <string name="about_used_libraries"><b>Used libraries:</b> \n \n - <b>ACRA</b> pelo time ACRA, licençiado sob a licença Apache 2.0. https://github.com/ACRA/acra \n - <b>Apache Commons IO</b> pela fundação de software Apache, licençiado sob a licença Apache 2.0. https://commons.apache.org/proper/commons-io/ \n - <b>Punhal</b> pelo grupo de Autores, licençiados sob a licença Apache 2.0. https://github.com/google/dagger \n - <b>Ícones do Material Design</b> por Google, licençiados sob a licença Apache 2.0. https://github.com/google/material-design-icons \n - <b>Ícones do Material Design</b> pela comunidade, licençiado sobe a licença SIL Open Font 1.1. https://materialdesignicons.com \n - <b>Timber</b> por Jake Wharton, licençiado sob a licença Apache 2.0. https://github.com/JakeWharton/timber \n - <b>XDelta versão 3</b> por Joshua MacDonald, licençiado sob a licença Apache 2.0. https://github.com/jmacd/xdelta</string>
     <string name="about_translators"><b>Tradutores:</b> \n \n - <b>Chinês</b>: Nabarl Wang, Eric \n - <b> Francês</b>: Thibaut Panis, J. Lavoie \n - <b>Alemão</b>: Honigdieb \n - <b>Hebraico</b>: Tamer Dabsan \n - <b>Indonésio</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda \n - <b>Italiano</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli \n - <b>Japonês</b>: Naofumi Fukue \n - <b>Lituano</b>: Gediminas Murauskas \n - <b> Coreano</b>: Minseo Lee \n - <b>Bokmål norueguês</b>: Allan Nordhøy \n - <b>Polonês</b>: Michal Bychowski, Jarek Karpiel, hayneken993 \n - <b>Português</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos \n - <b>Português (Brasil)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes \n - <b>Russo</b>: Борис Тимофеев \n - <b>Espanhol</b>: Carlos Sánchez, Swyter \n - <b> Turco</b>: Oğuz Ersen \n - <b>Ucraniano</b>: Володимир Шевчук \n \nAjude a traduzir a app para o seu idioma: https://hosted.weblate.org/engage/unipatcher/</string>
-    <string name="help_snes_smc_body">Um cabeçalho SMC são 512 bytes encontrados no início de algumas imagems ROM do SNES. Esses byte não têm propósito, mas, eles mudam a localização dos dados restante. Remover um cabeçalho é, algumas vezes, usado para o propósito de aplicar corretamente um remendo.</string>
     <string name="help_ips_no_checksum_body">Remendos de formato IPS não contém uma soma de verificação. Além do mais, o remendo irá aplicar qualquer (mesmo errado) ficheiro ROM. Neste caso, precisa procurar outro ficheiro ROM.</string>
     <string name="help_i_cant_patch_smw_rom_body">Este ROM contém um cabeçalho SMC, enquanto a maioria dos remendos para este jogo pedem ao ROM para não ter este cabeçalho. Você pode remover cabeçalho SMC selecionando o item apropriado no menu à esquerda, e então aplicar o remendo ao ROM resultante.</string>
     <string name="help_i_cant_patch_smw_rom_title">Eu não consigo remendar \"Super Mario World (U) [I].smc\"</string>
@@ -144,7 +142,6 @@
 \nHackers ROM frequentemente publicam soma de verificação junto ao ficheiro ROM (na página da web ou num ficheiro LEIAME). Compare esse ao que tem. Se a soma de verificação combina, tem o ficheiro ROM para o qual o remendo foi escrito. Se não, precisa de um ROM diferente.
 \n
 \nNo pior dos casos, se não encontrar o ficheiro ROM correto, pode configurar a opção \"Ignora a soma de verficação\" nas configurações. Porém, tenha em mente que neste caso, o jogo pode conter bugs ou ser completamente injogável.</string>
-    <string name="nav_snes_add_del_smc_header">Remover cabeçalho SMC (SNES)</string>
     <string name="error_file_picker_app_is_no_installed">Erro: não há app de ficheiro instalado</string>
     <string name="error_crash_discard_button">Descartar</string>
     <string name="error_crash_send_button">Enviar</string>
@@ -161,9 +158,6 @@
     <string name="notify_error_xdelta3_internal_error">Erro interno XDelta3</string>
     <string name="snes_smc_error_unable_to_get_file_size">Erro: incapaz de determinar tamanho do ficheiro</string>
     <string name="snes_rom_has_no_smc_header">Esta ROM não tem cabeçalho SMC. Você não precisa deletar nada.</string>
-    <string name="snes_smc_header_help">Esta característica é somente para ROMs do Super Nintendo.
-\n
-\nAlguns remendo necessitam da ROM para não ter cabeçalho SMC. Essa função ajudará você a removê-lo.</string>
     <string name="create_patch_fragment_toast_patch_not_selected">O ficheiro remendo não está selecionado</string>
     <string name="main_activity_double_back_to_exit_message">Pressione VOLTAR novamente para sair . Isso pode interromper todas as operações executando</string>
     <string name="main_activity_button_how_to_use_app">Como usar a app</string>

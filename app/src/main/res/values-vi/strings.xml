@@ -69,7 +69,6 @@
     <string name="nav_apply_patch">Áp dụng bản vá</string>
     <string name="nav_create_patch">Tạo bản vá</string>
     <string name="nav_smd_fix_checksum">Sửa lỗi checksum (SMD)</string>
-    <string name="nav_snes_add_del_smc_header">Gỡ bỏ tiêu đề SMC (SNES)</string>
     <string name="nav_settings">Cài đặt</string>
     <string name="nav_rate">Đánh giá ứng dụng nầy</string>
     <string name="nav_donate">Quyên góp</string>
@@ -96,9 +95,6 @@
     <string name="main_activity_donate_snackbar_text">Hãy hỗ trợ sự phát triển của UniPatcher bằng cách quyên góp</string>
     <string name="main_activity_donate_snackbar_button">Quyên góp</string>
     <string name="main_activity_double_back_to_exit_message">Nhấn phím BACK lần nữa để thoát. Điều nầy sẽ làm gián đoạn các tiến trình đang chạy</string>
-    <string name="snes_smc_header_help">Tính năng nầy chỉ dành cho ROM của hệ máy Super Nintendo (SNES).
-\n
-\nMột số bản vá yêu cầu ROM không có tiêu đề SMC. Tính năng nầy sẽ giúp bạn xoá tiêu đề đó.</string>
     <string name="snes_smc_error_unable_to_get_file_size">Lỗi: không thể xác định kích thước tệp</string>
     <string name="notify_patching_complete">Đã vá xong</string>
     <string name="notify_error_not_ebp_patch">Không phải là bản vá EBP hợp lệ</string>

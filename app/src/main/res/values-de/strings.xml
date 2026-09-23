@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="help_snes_smc_body">Ein SMC-Header besteht aus 512 Bytes am Beginn mancher SNES-ROM-Abbilder. Diese Bytes haben keinen Zweck, aber ändern die Speicherposition der übrigen Daten. Der Header muss manchmal entfernt werden, um einen Patch korrekt anzuwenden.</string>
     <string name="help_rom_not_compatible_with_patch_title">Die App zeigt den Fehler: „Dieses ROM ist nicht zu dem Patch kompatibel“.</string>
     <string name="help_how_to_apply_patch_to_rom_body">Du musst eine ROM-Datei, einen Patch und eine Datei zum Abspeichern auswählen und dann den Knopf drücken. Die Dateien werden durch die standard Datei-Anwendung (oder durch Dateimanager, falls installiert) ausgewählt. Die App wird dir eine Nachricht anzeigen, sobald die Datei gepatcht ist. Schließe die Anwendung nicht, so lange der Patchvorgang noch läuft.</string>
     <string name="main_activity_double_back_to_exit_message">Drücke nochmals ZURÜCK um zu beenden. Dies kann alle laufenden Operationen unterbrechen</string>
@@ -16,7 +15,6 @@
     <string name="help_feedback_title">Ich habe eine Frage, einen Wunsch für ein Feature oder einen Fehlerbericht.</string>
     <string name="help_how_to_translate_body">Wenn du die App in eine andere Sprache übersetzen oder eine bestehende Übersetzung verbessern willst, kannst du dies auf der Weblate-Seite https://hosted.weblate.org/engage/unipatcher/ tun</string>
     <string name="help_how_to_translate_title">Wie kann ich die App übersetzen\?</string>
-    <string name="help_snes_smc_title">Warum muss man manchmal SMC-Header aus Super Nintendo Spielen entfernen\?</string>
     <string name="help_sega_fix_checksum_body">Bei Sega Mega Drive (Genesis) Spielen ist die Prüfsumme in das ROM geschrieben. Wenn du auch nur einen kleinen Teil des Spiels ändert, stimmen die Prüfsummen nicht mehr überein und die Spiele laufen nicht mehr. Man muss daher die korrekte Prüfsumme nach Änderung berechnen und in das geänderte ROM schreiben.
 \n
 \n<b>Achtung:</b> Diese Funktion erstellt kein Backup-ROM.</string>
@@ -63,7 +61,6 @@
     <string name="nav_donate">Spenden</string>
     <string name="nav_rate">Bewerte diese App</string>
     <string name="nav_settings">Einstellungen</string>
-    <string name="nav_snes_add_del_smc_header">Entferne SMC-Header (SNES)</string>
     <string name="nav_smd_fix_checksum">Reprariere Prüfsumme (SMD)</string>
     <string name="nav_create_patch">Patch erzeugen</string>
     <string name="nav_apply_patch">Patch anwenden</string>
@@ -135,9 +132,6 @@
     <string name="snes_smc_error_unable_to_get_file_size">Fehler: Konnte Dateigröße nicht ermitteln</string>
     <string name="snes_rom_has_no_smc_header">Dieses ROM hat keinen SMC-Header. Du musst nichts entfernen oder löschen.</string>
     <string name="snes_smc_header_will_be_removed">Dieses ROM hat einen SMC-Header. Er wird entfernt werden.</string>
-    <string name="snes_smc_header_help">Dieses Feature steht nur für Super Nintendo ROMs zur Verfügung.
-\n
-\nManche Patches setzen voraus, dass das ROM keinen SMC-Header hat. Diese Funktion hilft dir dabei, diesen zu entfernen.</string>
     <string name="create_patch_fragment_toast_patch_not_selected">Patch-Datei nicht ausgewählt</string>
     <string name="create_patch_fragment_toast_modified_not_selected">Geänderte Datei nicht ausgewählt</string>
     <string name="create_patch_fragment_toast_source_not_selected">Quelldatei nicht ausgewählt</string>

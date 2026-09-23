@@ -79,9 +79,6 @@
     <string name="main_activity_tap_to_select_where_to_save_patch">Tekan untuk memilih tempat menyimpan tampalan</string>
     <string name="main_activity_donate_snackbar_text">Sokong pengembangan UniPatcher dengan melakukan derma</string>
     <string name="create_patch_fragment_source_file">Fail sumber</string>
-    <string name="snes_smc_header_help">Ciri ini hanya digunakan untuk Super Nintendo ROM.
-\n
-\nBeberapa tampalan memerlukan ROM yang tidak mempunyai pengepala SMC.Fungsi ini akan membantu anda menghapuskannya.</string>
     <string name="notify_error">Ralat</string>
     <string name="notify_error_not_bps_patch">Tampalan BPS tidak sah</string>
     <string name="notify_error_unable_open_modified_file">Tidak boleh membuka fail diubah suai</string>
@@ -97,7 +94,6 @@
     <string name="help_activity_title">Bantuan</string>
     <string name="error_crash_message">Maaf, Aplikasi Crash. Sila hantar laporan kepada pengembang.</string>
     <string name="nav_smd_fix_checksum">Betulkan checksum (SMD)</string>
-    <string name="nav_snes_add_del_smc_header">Hapuskan SMC header (SNES)</string>
     <string name="nav_settings">Pengaturan</string>
     <string name="nav_rate">Menilai aplikasi ini</string>
     <string name="nav_donate">Derma</string>

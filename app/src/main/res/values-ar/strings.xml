@@ -10,9 +10,6 @@
     <string name="create_patch_fragment_modified_file">ملف معدل</string>
     <string name="create_patch_fragment_patch_file">ملف الرقعة</string>
     <string name="create_patch_fragment_toast_modified_not_selected">لم يتم تحديد الملف المعدل</string>
-    <string name="snes_smc_header_help">هذه الميزة متوفرة فقط على الـROMs الخاصة بـSuper Nintendo
-\n
-\nبعض الرقع تحتاج إلى الـROM لتكون بدون رأس. هذه الإمكاتية ستساعدك في حذفه.</string>
     <string name="create_patch_fragment_toast_patch_not_selected">لم يتم تحديد ملف الرقعة</string>
     <string name="snes_smc_header_will_be_removed">هذا الـROM يملك رأس SMC. سيحذف.</string>
     <string name="snes_rom_has_no_smc_header">هذا الـROM لا يملك رأس SMC. لن تحتاج إلى حذف أي شيء.</string>
@@ -42,7 +39,6 @@
     <string name="help_i_cant_patch_smw_rom_title">لا أستطيع ترقيع \"Super Mario World (U) [!].smc\"</string>
     <string name="help_find_rom_pokemon_emerald_title">لا أستطيع أن أجد الـROM الصحيح للعبة \"Pokémon Emerald \".</string>
     <string name="help_ecm_image_body">ECM هو تنسيق ضغط بيانات مصمم خصيصا لصور القرص. يمكنك فك ضغط الملف باستخدام تطبيق ZArchiver https://play.google.com/store/apps/details\?id=ru.zdevs.zarchiver</string>
-    <string name="help_snes_smc_title">لماذا من الضروري في بعض الأحيان إزالة رؤوس SMC من ألعاب Super Nintendo؟</string>
     <string name="help_feedback_title">لدي سؤال، طلب ميزة أو تقرير خطأ.</string>
     <string name="help_feedback_body">نناقش الوظائف الجديدة ونجيب على الأسئلة حول مناقشات GitHub https://github.com/btimofeev/UniPatcher/discussions
 \n
@@ -58,7 +54,6 @@
     <string name="settings_interface_header">واجهة المستخدم</string>
     <string name="settings_theme">المظهر</string>
     <string name="nav_smd_fix_checksum">إصلاح المجموع الإختباري (SMD)</string>
-    <string name="nav_snes_add_del_smc_header">حذف رأس SMC (SNES)</string>
     <string name="nav_settings">الإعدادات</string>
     <string name="nav_rate">قيم هذا التطبيق</string>
     <string name="nav_donate">تبرع</string>
@@ -159,7 +154,6 @@
     <string name="help_ips_no_checksum_title">أنا قمت بتطبيق تصحيح IPS وبعد ذلك اللعبة لم تعمل / تحتوي على خلل في الرسوميات. ما الذي أفعله خاطأً؟</string>
     <string name="help_ecm_image_title">ماذا يمكنني أن أفعله بنوع ملف ECM.؟</string>
     <string name="help_how_to_translate_title">كيف تترجم التطبيق؟</string>
-    <string name="help_snes_smc_body">رأس SMC هو 512 بايت وجدت في بداية بعض صور ROM SNES. هذه البيانات ليس لها غرض ، لكنها تغير موقع البيانات المتبقية. تستخدم إزالة الرأس أحيانا لغرض تطبيق الترقيع بشكل صحيح.</string>
     <string name="help_how_to_translate_body">إذا كنت ترغب في ترجمة التطبيق إلى لغة أخرى أو تحسين ترجمة موجودة ، فيمكنك القيام بذلك على موقع Weblate
 \n/https://hosted.weblate.org/engage/unipatcher</string>
     <string name="help_sega_fix_checksum_body">تحتوي ألعاب Sega Mega Drive (Genesis) على مجموع اختباري مكتوب في ذاكرة القراءة فقط. إذا قمت بتغيير أي جزء من اللعبة فقط، فلن يتطابقوا ، ويفشلون في العمل نتيجة لذلك. ما يفعله هذا هو حساب المجموع الاختباري الصحيح للتغيير وكتابته في ملف ROM المعدل.

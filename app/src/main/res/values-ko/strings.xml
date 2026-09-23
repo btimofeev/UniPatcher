@@ -148,11 +148,7 @@
     <string name="error_file_picker_app_is_no_installed">오류: 설치된 파일 앱이 없습니다</string>
     <string name="main_activity_tap_to_select_where_to_save_rom">탭하여 롬을 저장할 위치 선택</string>
     <string name="main_activity_rom_without_smc_file">헤더 없는 롬 파일 출력</string>
-    <string name="snes_smc_header_help">이 기능은 슈퍼 닌텐도 롬 전용입니다.
-\n
-\n일부 패치는 롬에 SMC 헤더가 없어야 합니다. 이 기능은 제거하는 데 도움이 됩니다.</string>
     <string name="help_how_to_apply_patch_to_rom_body">롬 파일, 패치를 선택하고 저장할 파일을 선택한 다음 화면 아래의 버튼을 클릭해야 합니다. 파일은 표준 파일 응용프로그램을 통해(또는 설치한 파일 관리자 중 하나를 통해) 선택됩니다. 파일이 패치되면 응용프로그램에 메시지가 표시됩니다. 파일이 패치될 때까지 응용프로그램을 닫지 마십시오.</string>
-    <string name="help_snes_smc_title">슈퍼 닌텐도 게임에서 SMC 헤더를 제거해야 하는 이유는 무엇입니까\?</string>
     <string name="main_activity_tap_to_select_where_to_save_patch">탭하여 패치를 저장할 위치 선택</string>
     <string name="main_activity_toast_output_not_selected">선택한 출력 파일이 없습니다</string>
     <string name="main_activity_button_how_to_use_app">앱 사용 방법</string>
@@ -167,9 +163,7 @@
     <string name="error_crash_message">죄송합니다. 응용프로그램이 충돌했습니다. 개발자에게 보고서를 보내주십시오.</string>
     <string name="error_crash_send_button">전송</string>
     <string name="error_crash_discard_button">폐기</string>
-    <string name="nav_snes_add_del_smc_header">SMC 헤더(SNES) 제거</string>
     <string name="help_i_cant_patch_smw_rom_body">이 롬에는 SMC 헤더가 포함되어 있지만 이 게임에 대한 대부분의 패치에는 이 헤더가 없는 롬이 필요합니다. 왼쪽 메뉴에서 해당 항목을 선택하여 SMC 헤더를 제거한 다음 생기는 롬에 패치를 적용할 수 있습니다.</string>
-    <string name="help_snes_smc_body">SMC 헤더는 일부 SNES 롬 이미지의 시작 부분에서 발견되는 512바이트입니다. 이 바이트는 목적이 없지만 나머지 데이터의 위치를 변경합니다. 패치를 올바르게 적용하기 위해 헤더를 제거하는 경우가 있습니다.</string>
     <string name="about_translators"><b>번역자:</b> \n \n - <b>중국어</b>: Nabarl Wang, Eric \n - <b>프랑스어</b>: Thibaut Panis, J. Lavoie \n - <b>독일어</b>: Honigdieb \n - <b>히브리어</b>: Tamer Dabsan \n - <b>인도네시아어</b>: Tsaqib Fadhlurrahman Soka, Reza Almanda \n - <b>이탈리아어</b>: Matteo Sechi, J.Lavoie, Dany79, Alessandro Mandelli \n - <b>일본어</b>: Naofumi Fukue \n - <b>리투아어니아어</b>: Gediminas Murauskas \n - <b>한국어</b>: Minseo Lee, Junghee Lee \n - <b>노르웨이 보크말어</b>: Allan Nordhøy \n - <b>폴란드어</b>: Michal Bychowski, Jarek Karpiel, hayneken993 \n - <b>포르투갈어</b>: Davi Lopes, Matheus Silva Sales, Jhonatan Cardoso, Marvin SIlc, ssantos \n - <b>포르투갈어 (브라질)</b>: Yoshi LevelLand, Alberane Lúcio, Marvin SIlc, Alission Queiroz Santos, Daniel de Souza Melo, Joey Mendes \n - <b>러시아어</b>: Борис Тимофеев \n - <b>스페인어</b>: Carlos Sánchez, Swyter \n - <b>튀르키예어</b>: Oğuz Ersen \n - <b>우크라이나어</b>: Володимир Шевчук \n \n앱을 사용자의 언어로 번역할 수 있도록 도와주세요: https://hosted.weblate.org/engage/unipatcher/</string>
     <string name="help_activity_about_tab_copyright">© Boris Timofeev, 2013–2024</string>
 </resources>
