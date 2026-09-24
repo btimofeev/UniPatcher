@@ -35,10 +35,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Done
@@ -491,7 +493,12 @@ private fun DrawerContent(
     ModalDrawerSheet(
         windowInsets = WindowInsets(0.dp),
     ) {
-        Column(modifier = Modifier.fillMaxSize()) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .safeDrawingPadding()
+                .verticalScroll(rememberScrollState()),
+        ) {
             Text(
                 text = stringResource(R.string.app_name),
                 fontFamily = FontFamily.SansSerif,
@@ -499,7 +506,6 @@ private fun DrawerContent(
                 fontSize = 30.sp,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .statusBarsPadding()
                     .padding(16.dp),
                 textAlign = TextAlign.Center,
             )
