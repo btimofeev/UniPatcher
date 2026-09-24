@@ -1,0 +1,9 @@
+.git
+.gradle
+**/build
+app/src/main/cpp/xdelta3/xdelta
+app/src/main/cpp/xz/xz
+local.properties
+signing.properties
+*.apk
+*.zip

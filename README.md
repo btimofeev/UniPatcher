@@ -42,5 +42,16 @@ Help translate UniPatcher into another language on the [Weblate project page](ht
 ./gradlew installFreeDebug
 ```
 
+Alternatively, build in a Docker container to keep the host clean
+([Dockerfile](docker/Dockerfile), no host NDK/SDK needed):
+
+```
+./docker/build.sh
+```
+
+The first run builds the `unipatcher-builder` image automatically. The debug APK
+is placed at `app/build/outputs/apk/free/debug/`. For details run
+`./docker/build.sh --help`.
+
 ### License
 UniPatcher is licensed under the GPL version 3. You can find the license text in the COPYING file.

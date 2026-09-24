@@ -1,0 +1,4 @@
+## Docker build container: sdk.dir points into the container, not the host.
+# Mounted over the repo's local.properties when building in Docker (see
+# build.sh in this directory). This file only carries the container SDK path.
+sdk.dir=/opt/android-sdk
