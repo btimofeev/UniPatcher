@@ -34,7 +34,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -63,6 +62,7 @@ fun SmdFixChecksumScreen(
 ) {
     val romName by viewModel.romName.collectAsStateWithLifecycle()
     val actionIsRunning by viewModel.actionIsRunning.collectAsStateWithLifecycle()
+    val status by viewModel.status.collectAsStateWithLifecycle()
 
     val context = LocalContext.current
 
@@ -71,13 +71,12 @@ fun SmdFixChecksumScreen(
         onDispose { registerRunAction(MainRoutes.SMD_FIX_CHECKSUM, {}) }
     }
 
-    LaunchedEffect(actionIsRunning) {
+    LaunchedEffect(actionIsRunning, status) {
         actionIsRunningViewModel.fixChecksum(actionIsRunning)
+        actionIsRunningViewModel.setStatus(status)
     }
     LaunchedEffect(viewModel) {
-        viewModel.message.collect { message ->
-            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-        }
+        viewModel.message.collect(actionIsRunningViewModel::setResult)
     }
 
     val filePicker = rememberLauncherForActivityResult(
@@ -121,12 +120,6 @@ fun SmdFixChecksumScreen(
             Spacer(Modifier.height(16.dp))
 
             InfoCard(text = stringResource(R.string.smd_fix_checksum_help))
-        }
-
-        if (actionIsRunning) {
-            CircularProgressIndicator(
-                modifier = Modifier.align(Alignment.Center),
-            )
         }
     }
 }

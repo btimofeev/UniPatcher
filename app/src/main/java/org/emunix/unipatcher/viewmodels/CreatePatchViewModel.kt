@@ -64,8 +64,11 @@ class CreatePatchViewModel @Inject constructor(
     private val _actionIsRunning: MutableStateFlow<Boolean> = MutableStateFlow(false)
     val actionIsRunning: StateFlow<Boolean> = _actionIsRunning.asStateFlow()
 
-    private val _message: MutableSharedFlow<String> = MutableSharedFlow(extraBufferCapacity = 1)
-    val message: SharedFlow<String> = _message.asSharedFlow()
+    private val _status: MutableStateFlow<Int?> = MutableStateFlow(null)
+    val status: StateFlow<Int?> = _status.asStateFlow()
+
+    private val _message: MutableSharedFlow<ActionResult> = MutableSharedFlow(extraBufferCapacity = 1)
+    val message: SharedFlow<ActionResult> = _message.asSharedFlow()
 
     fun sourceSelected(uri: Uri) = viewModelScope.launch {
         sourceUri = uri
@@ -86,40 +89,43 @@ class CreatePatchViewModel @Inject constructor(
         if (_actionIsRunning.value) return@launch
         when {
             sourceUri == null -> {
-                _message.emit(
-                    resourceProvider.getString(R.string.create_patch_fragment_toast_source_not_selected)
-                )
+                _message.emit(ActionResult(
+                    resourceProvider.getString(R.string.create_patch_fragment_toast_source_not_selected),
+                    true,
+                ))
                 return@launch
             }
             modifiedUri == null -> {
-                _message.emit(
-                    resourceProvider.getString(R.string.create_patch_fragment_toast_modified_not_selected)
-                )
+                _message.emit(ActionResult(
+                    resourceProvider.getString(R.string.create_patch_fragment_toast_modified_not_selected),
+                    true,
+                ))
                 return@launch
             }
             patchUri == null -> {
-                _message.emit(
-                    resourceProvider.getString(R.string.create_patch_fragment_toast_patch_not_selected)
-                )
+                _message.emit(ActionResult(
+                    resourceProvider.getString(R.string.create_patch_fragment_toast_patch_not_selected),
+                    true,
+                ))
                 return@launch
             }
             else -> {
                 try {
                     _actionIsRunning.value = true
                     createPatch()
-                    _message.emit(
-                        resourceProvider.getString(R.string.notify_create_patch_complete)
-                    )
+                    _message.emit(ActionResult(
+                        resourceProvider.getString(R.string.notify_create_patch_complete),
+                        false,
+                    ))
                 } catch (e: Exception) {
                     val errorMsg =
-                        "${resourceProvider.getString(R.string.notify_error)}: ${
-                            e.message ?: resourceProvider.getString(
-                                R.string.notify_error_unknown
-                            )
-                        }"
-                    _message.emit(errorMsg)
+                        e.message ?: resourceProvider.getString(
+                            R.string.notify_error_unknown
+                        )
+                    _message.emit(ActionResult(errorMsg, true))
                 } finally {
                     _actionIsRunning.value = false
+                    _status.value = null
                 }
             }
         }
@@ -133,12 +139,15 @@ class CreatePatchViewModel @Inject constructor(
         require(modifiedUri != null) { "modifiedUri is null" }
         require(patchUri != null) { "patchUri is null" }
 
+        _status.value = R.string.status_copying_files
         val sourceFile = fileUtils.copyToTempFile(sourceUri)
         val modifiedFile = fileUtils.copyToTempFile(modifiedUri)
         val patchFile = File.createTempFile("patch", ".xdelta", fileUtils.getTempDir())
         try {
+            _status.value = R.string.status_creating_patch
             val patchMaker = CreateXDelta3(patchFile, sourceFile, modifiedFile, resourceProvider)
             patchMaker.create()
+            _status.value = R.string.status_writing_result
             fileUtils.copy(patchFile, patchUri)
             settings.setPatchingSuccessful(true)
         } finally {

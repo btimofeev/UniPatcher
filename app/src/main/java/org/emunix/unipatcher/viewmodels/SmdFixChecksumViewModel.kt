@@ -54,8 +54,11 @@ class SmdFixChecksumViewModel @Inject constructor(
     private val _actionIsRunning: MutableStateFlow<Boolean> = MutableStateFlow(false)
     val actionIsRunning: StateFlow<Boolean> = _actionIsRunning.asStateFlow()
 
-    private val _message: MutableSharedFlow<String> = MutableSharedFlow(extraBufferCapacity = 1)
-    val message: SharedFlow<String> = _message.asSharedFlow()
+    private val _status: MutableStateFlow<Int?> = MutableStateFlow(null)
+    val status: StateFlow<Int?> = _status.asStateFlow()
+
+    private val _message: MutableSharedFlow<ActionResult> = MutableSharedFlow(extraBufferCapacity = 1)
+    val message: SharedFlow<ActionResult> = _message.asSharedFlow()
 
     fun romSelected(uri: Uri) = viewModelScope.launch {
         romUri = uri
@@ -66,24 +69,29 @@ class SmdFixChecksumViewModel @Inject constructor(
         if (_actionIsRunning.value) return@launch
         when (romUri) {
             null -> {
-                _message.emit(resourceProvider.getString(R.string.main_activity_toast_rom_not_selected))
+                _message.emit(ActionResult(
+                    resourceProvider.getString(R.string.main_activity_toast_rom_not_selected),
+                    true,
+                ))
                 return@launch
             }
             else -> {
                 try {
                     _actionIsRunning.value = true
                     fixChecksum()
-                    _message.emit(resourceProvider.getString(R.string.notify_smd_fix_checksum_complete))
+                    _message.emit(ActionResult(
+                        resourceProvider.getString(R.string.notify_smd_fix_checksum_complete),
+                        false,
+                    ))
                 } catch (e: Exception) {
                     val errorMsg =
-                        "${resourceProvider.getString(R.string.notify_error)}: ${
-                            e.message ?: resourceProvider.getString(
-                                R.string.notify_error_unknown
-                            )
-                        }"
-                    _message.emit(errorMsg)
+                        e.message ?: resourceProvider.getString(
+                            R.string.notify_error_unknown
+                        )
+                    _message.emit(ActionResult(errorMsg, true))
                 } finally {
                     _actionIsRunning.value = false
+                    _status.value = null
                 }
             }
         }
@@ -95,9 +103,12 @@ class SmdFixChecksumViewModel @Inject constructor(
 
         var tmpFile: File? = null
         try {
+            _status.value = R.string.status_copying_files
             tmpFile = fileUtils.copyToTempFile(romUri)
+            _status.value = R.string.status_fixing_checksum
             val worker = SmdFixChecksum(tmpFile, resourceProvider, fileUtils)
             worker.fixChecksum()
+            _status.value = R.string.status_writing_result
             fileUtils.copy(tmpFile, romUri)
         } finally {
             fileUtils.delete(tmpFile)

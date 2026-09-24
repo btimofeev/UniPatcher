@@ -78,8 +78,11 @@ class SnesSmcHeaderViewModel @Inject constructor(
     private val _actionIsRunning: MutableStateFlow<Boolean> = MutableStateFlow(false)
     val actionIsRunning: StateFlow<Boolean> = _actionIsRunning.asStateFlow()
 
-    private val _message: MutableSharedFlow<String> = MutableSharedFlow(extraBufferCapacity = 1)
-    val message: SharedFlow<String> = _message.asSharedFlow()
+    private val _status: MutableStateFlow<Int?> = MutableStateFlow(null)
+    val status: StateFlow<Int?> = _status.asStateFlow()
+
+    private val _message: MutableSharedFlow<ActionResult> = MutableSharedFlow(extraBufferCapacity = 1)
+    val message: SharedFlow<ActionResult> = _message.asSharedFlow()
 
     fun romSelected(uri: Uri) = viewModelScope.launch {
         romUri = uri
@@ -139,15 +142,17 @@ class SnesSmcHeaderViewModel @Inject constructor(
         if (_actionIsRunning.value) return@launch
         when {
             romUri == null -> {
-                _message.emit(
-                    resourceProvider.getString(R.string.main_activity_toast_rom_not_selected)
-                )
+                _message.emit(ActionResult(
+                    resourceProvider.getString(R.string.main_activity_toast_rom_not_selected),
+                    true,
+                ))
                 return@launch
             }
             outputUri == null -> {
-                _message.emit(
-                    resourceProvider.getString(R.string.main_activity_toast_output_not_selected)
-                )
+                _message.emit(ActionResult(
+                    resourceProvider.getString(R.string.main_activity_toast_output_not_selected),
+                    true,
+                ))
                 return@launch
             }
             else -> {
@@ -155,25 +160,26 @@ class SnesSmcHeaderViewModel @Inject constructor(
                     _actionIsRunning.value = true
                     if (_hasSmcHeader.value == false) {
                         addSmc()
-                        _message.emit(
-                            resourceProvider.getString(R.string.notify_snes_add_smc_header_complete)
-                        )
+                        _message.emit(ActionResult(
+                            resourceProvider.getString(R.string.notify_snes_add_smc_header_complete),
+                            false,
+                        ))
                     } else {
                         removeSmc()
-                        _message.emit(
-                            resourceProvider.getString(R.string.notify_snes_delete_smc_header_complete)
-                        )
+                        _message.emit(ActionResult(
+                            resourceProvider.getString(R.string.notify_snes_delete_smc_header_complete),
+                            false,
+                        ))
                     }
                 } catch (e: Exception) {
                     val errorMsg =
-                        "${resourceProvider.getString(R.string.notify_error)}: ${
-                            e.message ?: resourceProvider.getString(
-                                R.string.notify_error_unknown
-                            )
-                        }"
-                    _message.emit(errorMsg)
+                        e.message ?: resourceProvider.getString(
+                            R.string.notify_error_unknown
+                        )
+                    _message.emit(ActionResult(errorMsg, true))
                 } finally {
                     _actionIsRunning.value = false
+                    _status.value = null
                 }
             }
         }
@@ -189,10 +195,13 @@ class SnesSmcHeaderViewModel @Inject constructor(
         var outputFile: File? = null
         var headerOutputFile: File? = null
         try {
+            _status.value = R.string.status_copying_files
             romFile = fileUtils.copyToTempFile(romUri)
             outputFile = fileUtils.copyToTempFile(outputUri)
             headerOutputFile = headerOutputUri?.let { fileUtils.copyToTempFile(it) }
+            _status.value = R.string.status_removing_header
             SnesSmcHeader().deleteSnesSmcHeader(romFile, outputFile, headerOutputFile, resourceProvider, fileUtils)
+            _status.value = R.string.status_writing_result
             fileUtils.copy(outputFile, outputUri)
             headerOutputFile?.let { fileUtils.copy(it, headerOutputUri!!) }
         } finally {
@@ -212,10 +221,13 @@ class SnesSmcHeaderViewModel @Inject constructor(
         var outputFile: File? = null
         var headerFile: File? = null
         try {
+            _status.value = R.string.status_copying_files
             romFile = fileUtils.copyToTempFile(romUri)
             outputFile = fileUtils.copyToTempFile(outputUri)
             headerFile = headerUri?.let { fileUtils.copyToTempFile(it) }
+            _status.value = R.string.status_adding_header
             SnesSmcHeader().addSnesSmcHeader(romFile, outputFile, headerFile, resourceProvider, fileUtils)
+            _status.value = R.string.status_writing_result
             fileUtils.copy(outputFile, outputUri)
         } finally {
             fileUtils.delete(headerFile)

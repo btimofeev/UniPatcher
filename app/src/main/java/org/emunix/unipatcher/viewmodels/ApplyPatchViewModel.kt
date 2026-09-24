@@ -77,8 +77,11 @@ class ApplyPatchViewModel @Inject constructor(
     private val _actionIsRunning: MutableStateFlow<Boolean> = MutableStateFlow(false)
     val actionIsRunning: StateFlow<Boolean> = _actionIsRunning.asStateFlow()
 
-    private val _message: MutableSharedFlow<String> = MutableSharedFlow(extraBufferCapacity = 1)
-    val message: SharedFlow<String> = _message.asSharedFlow()
+    private val _status: MutableStateFlow<Int?> = MutableStateFlow(null)
+    val status: StateFlow<Int?> = _status.asStateFlow()
+
+    private val _message: MutableSharedFlow<ActionResult> = MutableSharedFlow(extraBufferCapacity = 1)
+    val message: SharedFlow<ActionResult> = _message.asSharedFlow()
 
     fun patchSelected(uri: Uri) = viewModelScope.launch {
         patchUri = uri
@@ -108,41 +111,44 @@ class ApplyPatchViewModel @Inject constructor(
         if (_actionIsRunning.value) return@launch
         when {
             patchUri == null -> {
-                _message.emit(
-                    resourceProvider.getString(R.string.main_activity_toast_patch_not_selected)
-                )
+                _message.emit(ActionResult(
+                    resourceProvider.getString(R.string.main_activity_toast_patch_not_selected),
+                    true,
+                ))
                 return@launch
             }
             romUri == null -> {
-                _message.emit(
-                    resourceProvider.getString(R.string.main_activity_toast_rom_not_selected)
-                )
+                _message.emit(ActionResult(
+                    resourceProvider.getString(R.string.main_activity_toast_rom_not_selected),
+                    true,
+                ))
                 return@launch
             }
             outputUri == null -> {
-                _message.emit(
-                    resourceProvider.getString(R.string.main_activity_toast_output_not_selected)
-                )
+                _message.emit(ActionResult(
+                    resourceProvider.getString(R.string.main_activity_toast_output_not_selected),
+                    true,
+                ))
                 return@launch
             }
             else -> {
                 try {
                     _actionIsRunning.value = true
                     applyPatch()
-                    _message.emit(resourceProvider.getString(R.string.notify_patching_complete))
+                    _message.emit(ActionResult(
+                        resourceProvider.getString(R.string.notify_patching_complete),
+                        false,
+                    ))
                 } catch (e: Exception) {
                     val errorMsg = if (e.isNoSpaceLeft()) {
-                        "${resourceProvider.getString(R.string.notify_error)}: ${
-                            resourceProvider.getString(R.string.notify_error_not_enough_space)
-                        }"
+                        resourceProvider.getString(R.string.notify_error_not_enough_space)
                     } else {
-                        "${resourceProvider.getString(R.string.notify_error)}: ${
-                            e.message ?: resourceProvider.getString(R.string.notify_error_unknown)
-                        }"
+                        e.message ?: resourceProvider.getString(R.string.notify_error_unknown)
                     }
-                    _message.emit(errorMsg)
+                    _message.emit(ActionResult(errorMsg, true))
                 } finally {
                     _actionIsRunning.value = false
+                    _status.value = null
                 }
             }
         }
@@ -152,9 +158,10 @@ class ApplyPatchViewModel @Inject constructor(
         val isArchive = File(fileName).isArchive()
         Timber.d("isArchive = $isArchive")
         if (isArchive) {
-            _message.tryEmit(
-                resourceProvider.getString(R.string.main_activity_toast_archives_not_supported)
-            )
+            _message.tryEmit(ActionResult(
+                resourceProvider.getString(R.string.main_activity_toast_archives_not_supported),
+                true,
+            ))
         }
     }
 
@@ -181,15 +188,18 @@ class ApplyPatchViewModel @Inject constructor(
                 fileUtils.getFileSize(romUri) ?: 0L,
                 fileUtils.getFileSize(patchUri) ?: 0L,
             )
+            _status.value = R.string.status_copying_files
             romFile = fileUtils.copyToTempFile(romUri)
             patchFile = fileUtils.copyToTempFile(patchUri, patchName)
             outputFile = File.createTempFile("output", ".rom", fileUtils.getTempDir())
+            _status.value = R.string.status_applying_patch
             val patcher = patcherFactory.createPatcher(patchFile, romFile, outputFile)
             patcher.apply(settings.getIgnoreChecksum())
             fileUtils.delete(romFile)
             romFile = null
             fileUtils.delete(patchFile)
             patchFile = null
+            _status.value = R.string.status_writing_result
             try {
                 fileUtils.copy(outputFile, outputUri)
             } catch (e: IOException) {

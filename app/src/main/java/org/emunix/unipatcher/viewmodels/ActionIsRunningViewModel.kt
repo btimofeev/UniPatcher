@@ -20,14 +20,23 @@
 
 package org.emunix.unipatcher.viewmodels
 
+import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
+data class ActionResult(val message: String, val isError: Boolean)
+
 class ActionIsRunningViewModel : ViewModel() {
     private val _actionIsRunning: MutableStateFlow<Boolean> = MutableStateFlow(false)
     val actionIsRunning: StateFlow<Boolean> = _actionIsRunning.asStateFlow()
+
+    private val _status: MutableStateFlow<Int?> = MutableStateFlow(null)
+    val status: StateFlow<Int?> = _status.asStateFlow()
+
+    private val _result: MutableStateFlow<ActionResult?> = MutableStateFlow(null)
+    val result: StateFlow<ActionResult?> = _result.asStateFlow()
 
     private var applyPatch = false
     private var createPatch = false
@@ -41,6 +50,18 @@ class ActionIsRunningViewModel : ViewModel() {
     private fun updateState() {
         val result = applyPatch || createPatch || fixChecksum || removeSmc
         _actionIsRunning.value = result
+    }
+
+    fun setStatus(@StringRes statusRes: Int?) {
+        _status.value = statusRes
+    }
+
+    fun setResult(result: ActionResult) {
+        _result.value = result
+    }
+
+    fun clearResult() {
+        _result.value = null
     }
 
     fun applyPatch(value: Boolean) {

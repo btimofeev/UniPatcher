@@ -34,7 +34,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -71,6 +70,7 @@ fun SnesSmcHeaderScreen(
     val suggestedHeaderOutputName by viewModel.suggestedHeaderOutputName.collectAsStateWithLifecycle()
     val infoText by viewModel.infoText.collectAsStateWithLifecycle()
     val actionIsRunning by viewModel.actionIsRunning.collectAsStateWithLifecycle()
+    val status by viewModel.status.collectAsStateWithLifecycle()
 
     val addHeaderMode = hasSmcHeader == false
 
@@ -81,13 +81,12 @@ fun SnesSmcHeaderScreen(
         onDispose { registerRunAction(MainRoutes.SNES_SMC_HEADER, {}) }
     }
 
-    LaunchedEffect(actionIsRunning) {
+    LaunchedEffect(actionIsRunning, status) {
         actionIsRunningViewModel.removeSmc(actionIsRunning)
+        actionIsRunningViewModel.setStatus(status)
     }
     LaunchedEffect(viewModel) {
-        viewModel.message.collect { message ->
-            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-        }
+        viewModel.message.collect(actionIsRunningViewModel::setResult)
     }
 
     val romPicker = rememberLauncherForActivityResult(
@@ -232,12 +231,6 @@ fun SnesSmcHeaderScreen(
                     )
                 }
             }
-        }
-
-        if (actionIsRunning) {
-            CircularProgressIndicator(
-                modifier = Modifier.align(Alignment.Center),
-            )
         }
     }
 }

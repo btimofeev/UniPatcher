@@ -39,6 +39,7 @@
     <string name="notify_patching_complete">Применение патча завершено</string>
     <string name="notify_create_patch_complete">Патч создан</string>
     <string name="notify_error">Ошибка</string>
+    <string name="notify_success">Успех</string>
     <string name="notify_error_could_not_copy_file">Не удалось скопировать файл</string>
     <string name="notify_error_not_enough_space">Не хватает места на диске</string>
     <string name="notify_error_not_ips_patch">Некорректный IPS патч</string>
@@ -170,4 +171,13 @@
     <string name="donate_screen_message_3">Спасибо!</string>
     <string name="donate_screen_send_bitcoin_button">Отправить Биткойны</string>
     <string name="donate_screen_bitcoin_copied_to_clipboard">Адрес биткоин-кошелька был скопирован в буфер обмена.</string>
+    <string name="status_copying_files">Копирование файлов во временную папку…</string>
+    <string name="status_applying_patch">Применение патча…</string>
+    <string name="status_creating_patch">Создание патча…</string>
+    <string name="status_fixing_checksum">Исправление контрольной суммы…</string>
+    <string name="status_removing_header">Удаление SMC-заголовка…</string>
+    <string name="status_adding_header">Добавление SMC-заголовка…</string>
+    <string name="status_writing_result">Копирование результата в место назначения…</string>
+    <string name="status_working">Пожалуйста, подождите…</string>
+    <string name="action_dialog_close">Закрыть</string>
 </resources>

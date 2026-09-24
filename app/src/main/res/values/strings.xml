@@ -43,6 +43,7 @@
     <string name="notify_patching_complete">Patching complete</string>
     <string name="notify_create_patch_complete">Patch created</string>
     <string name="notify_error">Error</string>
+    <string name="notify_success">Success</string>
     <string name="notify_error_could_not_copy_file">Could not copy file</string>
     <string name="notify_error_not_enough_space">Not enough space on the disk</string>
     <string name="notify_error_not_enough_space_details">Need about %1$s of free space, available %2$s</string>
@@ -186,4 +187,13 @@
     <string name="donate_screen_message_3">Thank you!</string>
     <string name="donate_screen_send_bitcoin_button">Send Bitcoins</string>
     <string name="donate_screen_bitcoin_copied_to_clipboard">The address of the bitcoin wallet has been copied to the clipboard.</string>
+    <string name="status_copying_files">Copying files to a temporary folder…</string>
+    <string name="status_applying_patch">Applying patch…</string>
+    <string name="status_creating_patch">Creating patch…</string>
+    <string name="status_fixing_checksum">Fixing checksum…</string>
+    <string name="status_removing_header">Removing SMC header…</string>
+    <string name="status_adding_header">Adding SMC header…</string>
+    <string name="status_writing_result">Copying the result to its destination…</string>
+    <string name="status_working">Please wait…</string>
+    <string name="action_dialog_close">Close</string>
 </resources>

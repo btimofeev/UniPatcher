@@ -34,7 +34,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -74,6 +73,7 @@ fun ApplyPatchScreen(
     val suggestedOutputName by viewModel.suggestedOutputName.collectAsStateWithLifecycle()
     val showHelpButton by viewModel.showHelpButton.collectAsStateWithLifecycle()
     val actionIsRunning by viewModel.actionIsRunning.collectAsStateWithLifecycle()
+    val status by viewModel.status.collectAsStateWithLifecycle()
 
     val context = LocalContext.current
 
@@ -82,13 +82,12 @@ fun ApplyPatchScreen(
         onDispose { registerRunAction(MainRoutes.APPLY_PATCH, {}) }
     }
 
-    LaunchedEffect(actionIsRunning) {
+    LaunchedEffect(actionIsRunning, status) {
         actionIsRunningViewModel.applyPatch(actionIsRunning)
+        actionIsRunningViewModel.setStatus(status)
     }
     LaunchedEffect(viewModel) {
-        viewModel.message.collect { message ->
-            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-        }
+        viewModel.message.collect(actionIsRunningViewModel::setResult)
     }
     LaunchedEffect(Unit) {
         viewModel.refreshSettings()
@@ -202,12 +201,6 @@ fun ApplyPatchScreen(
                     )
                 }
             }
-        }
-
-        if (actionIsRunning) {
-            CircularProgressIndicator(
-                modifier = Modifier.align(Alignment.Center),
-            )
         }
     }
 }

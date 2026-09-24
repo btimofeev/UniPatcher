@@ -34,7 +34,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -65,6 +64,7 @@ fun CreatePatchScreen(
     val modifiedName by viewModel.modifiedName.collectAsStateWithLifecycle()
     val patchName by viewModel.patchName.collectAsStateWithLifecycle()
     val actionIsRunning by viewModel.actionIsRunning.collectAsStateWithLifecycle()
+    val status by viewModel.status.collectAsStateWithLifecycle()
 
     val context = LocalContext.current
 
@@ -73,13 +73,12 @@ fun CreatePatchScreen(
         onDispose { registerRunAction(MainRoutes.CREATE_PATCH, {}) }
     }
 
-    LaunchedEffect(actionIsRunning) {
+    LaunchedEffect(actionIsRunning, status) {
         actionIsRunningViewModel.createPatch(actionIsRunning)
+        actionIsRunningViewModel.setStatus(status)
     }
     LaunchedEffect(viewModel) {
-        viewModel.message.collect { message ->
-            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-        }
+        viewModel.message.collect(actionIsRunningViewModel::setResult)
     }
 
     val sourcePicker = rememberLauncherForActivityResult(
@@ -163,12 +162,6 @@ fun CreatePatchScreen(
                 title = stringResource(R.string.create_patch_fragment_patch_file),
                 fileName = patchName.ifEmpty { stringResource(R.string.main_activity_tap_to_select_where_to_save_patch) },
                 onClick = launchCreateDocument,
-            )
-        }
-
-        if (actionIsRunning) {
-            CircularProgressIndicator(
-                modifier = Modifier.align(Alignment.Center),
             )
         }
     }

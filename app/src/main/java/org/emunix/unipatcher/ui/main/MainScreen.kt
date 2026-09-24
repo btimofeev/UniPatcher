@@ -20,22 +20,32 @@
 
 package org.emunix.unipatcher.ui.main
 
+import android.os.SystemClock
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.Done
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -52,6 +62,7 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
@@ -97,6 +108,8 @@ import org.emunix.unipatcher.viewmodels.SnesSmcHeaderViewModel
 import kotlin.random.Random
 
 private const val DOUBLE_BACK_EXIT_DELAY_MS = 2000L
+private const val DIALOG_SHOW_DELAY_MS = 300L
+private const val DIALOG_MIN_VISIBLE_MS = 600L
 
 @Composable
 fun MainScreen(
@@ -116,6 +129,50 @@ fun MainScreen(
 
     val actionIsRunningViewModel: ActionIsRunningViewModel = viewModel()
     val actionIsRunning by actionIsRunningViewModel.actionIsRunning.collectAsStateWithLifecycle()
+    val actionStatus by actionIsRunningViewModel.status.collectAsStateWithLifecycle()
+    val actionResult by actionIsRunningViewModel.result.collectAsStateWithLifecycle()
+
+    var showDialog by remember { mutableStateOf(false) }
+    var dialogShownAt by remember { mutableStateOf(0L) }
+    var resultMessage by remember { mutableStateOf<String?>(null) }
+    var resultIsError by remember { mutableStateOf(false) }
+    var lastActionStatus by remember { mutableStateOf<Int?>(null) }
+
+    val closeActionDialog: () -> Unit = {
+        showDialog = false
+        resultMessage = null
+        actionIsRunningViewModel.clearResult()
+    }
+
+    LaunchedEffect(actionIsRunning) {
+        if (actionIsRunning) {
+            delay(DIALOG_SHOW_DELAY_MS)
+            if (actionIsRunning && resultMessage == null) {
+                dialogShownAt = SystemClock.uptimeMillis()
+                showDialog = true
+            }
+        } else {
+            if (resultMessage == null && showDialog) {
+                val remaining = DIALOG_MIN_VISIBLE_MS -
+                    (SystemClock.uptimeMillis() - dialogShownAt)
+                if (remaining > 0) delay(remaining)
+                showDialog = false
+            }
+        }
+    }
+
+    LaunchedEffect(actionStatus) {
+        actionStatus?.let { lastActionStatus = it }
+    }
+
+    LaunchedEffect(actionResult) {
+        val result = actionResult
+        if (result != null) {
+            resultMessage = result.message
+            resultIsError = result.isError
+            showDialog = true
+        }
+    }
 
     val runActions = remember { mutableStateMapOf<String, () -> Unit>() }
     var doubleBackToExitPressedOnce by remember { mutableStateOf(false) }
@@ -157,6 +214,7 @@ fun MainScreen(
 
     BackHandler {
         when {
+            showDialog && resultMessage != null -> closeActionDialog()
             drawerState.isOpen -> scope.launch { drawerState.close() }
             isSecondaryRoute(currentRoute) -> navController.popBackStack()
             !actionIsRunning || doubleBackToExitPressedOnce -> {
@@ -298,16 +356,93 @@ fun MainScreen(
                     }
                 }
 
-                if (actionIsRunning) {
+                if (showDialog) {
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
+                            .background(MaterialTheme.colorScheme.scrim.copy(alpha = 0.5f))
                             .clickable(
                                 interactionSource = remember { MutableInteractionSource() },
                                 indication = null,
                                 onClick = {},
                             ),
-                    )
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Card(
+                            modifier = Modifier.width(280.dp),
+                            shape = RoundedCornerShape(16.dp),
+                            colors = CardDefaults.cardColors(
+                                containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                            ),
+                        ) {
+                            if (resultMessage != null) {
+                                Column(modifier = Modifier.padding(24.dp)) {
+                                    Text(
+                                        text = stringResource(
+                                            if (resultIsError) {
+                                                R.string.notify_error
+                                            } else {
+                                                R.string.notify_success
+                                            }
+                                        ),
+                                        style = MaterialTheme.typography.titleMedium,
+                                        color = if (resultIsError) {
+                                            MaterialTheme.colorScheme.error
+                                        } else {
+                                            MaterialTheme.colorScheme.primary
+                                        },
+                                    )
+                                    Spacer(modifier = Modifier.height(16.dp))
+                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                        Icon(
+                                            imageVector = if (resultIsError) {
+                                                Icons.Filled.Clear
+                                            } else {
+                                                Icons.Filled.Done
+                                            },
+                                            contentDescription = null,
+                                            tint = if (resultIsError) {
+                                                MaterialTheme.colorScheme.error
+                                            } else {
+                                                MaterialTheme.colorScheme.primary
+                                            },
+                                            modifier = Modifier.size(32.dp),
+                                        )
+                                        Spacer(modifier = Modifier.width(16.dp))
+                                        Text(
+                                            text = resultMessage.orEmpty(),
+                                            style = MaterialTheme.typography.bodyLarge,
+                                        )
+                                    }
+                                    Spacer(modifier = Modifier.height(16.dp))
+                                    TextButton(
+                                        onClick = closeActionDialog,
+                                        modifier = Modifier.align(Alignment.End),
+                                    ) {
+                                        Text(text = stringResource(R.string.action_dialog_close))
+                                    }
+                                }
+                            } else {
+                                Row(
+                                    modifier = Modifier
+                                        .padding(24.dp),
+                                    verticalAlignment = Alignment.CenterVertically,
+                                ) {
+                                    CircularProgressIndicator(
+                                        modifier = Modifier.size(32.dp),
+                                        strokeWidth = 3.dp,
+                                    )
+                                    Spacer(modifier = Modifier.width(16.dp))
+                                    Text(
+                                        text = stringResource(
+                                            lastActionStatus ?: R.string.status_working
+                                        ),
+                                        style = MaterialTheme.typography.bodyLarge,
+                                    )
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
