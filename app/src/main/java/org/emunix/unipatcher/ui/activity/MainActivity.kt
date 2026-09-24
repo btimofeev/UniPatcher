@@ -18,6 +18,7 @@ along with UniPatcher.  If not, see <http://www.gnu.org/licenses/>.
 */
 package org.emunix.unipatcher.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -32,7 +33,11 @@ import org.emunix.unipatcher.helpers.SocialHelper
 import org.emunix.unipatcher.helpers.ThemeHelper
 import org.emunix.unipatcher.ui.main.MainScreen
 import org.emunix.unipatcher.ui.theme.UniPatcherTheme
+import org.emunix.unipatcher.utils.FileUtils
+import org.emunix.unipatcher.utils.PendingPatch
 import org.emunix.unipatcher.utils.enableEdgeToEdgeWithLightStatusBar
+import org.emunix.unipatcher.utils.isSupportedPatchFileName
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -44,10 +49,18 @@ class MainActivity : ComponentActivity() {
     lateinit var settings: Settings
     @Inject
     lateinit var resourceProvider: ResourceProvider
+    @Inject
+    lateinit var fileUtils: FileUtils
+    @Inject
+    lateinit var pendingPatch: PendingPatch
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdgeWithLightStatusBar()
         super.onCreate(savedInstanceState)
+
+        if (savedInstanceState == null) {
+            handleViewIntent(intent)
+        }
 
         setContent {
             val theme by settings.getThemeFlow().collectAsStateWithLifecycle()
@@ -60,12 +73,30 @@ class MainActivity : ComponentActivity() {
                 MainScreen(
                     settings = settings,
                     appVersion = resourceProvider.appVersion,
+                    pendingPatch = pendingPatch,
                     onVisitSiteClick = { social.get().openWebsite() },
                     onChangelogClick = { social.get().showChangelog() },
                     onRate = { social.get().rateApp() },
                     onShare = { social.get().shareApp() },
                 )
             }
+        }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        handleViewIntent(intent)
+    }
+
+    private fun handleViewIntent(intent: Intent?) {
+        if (intent?.action != Intent.ACTION_VIEW) return
+        val uri = intent.data ?: return
+        if (uri.scheme != "content" && uri.scheme != "file") return
+        val fileName = fileUtils.getFileName(uri)
+        Timber.d("Received VIEW intent for $fileName")
+        if (fileName.isSupportedPatchFileName()) {
+            pendingPatch.set(uri)
         }
     }
 }

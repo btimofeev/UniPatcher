@@ -20,6 +20,51 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="application/octet-stream"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="*/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:pathPattern=".*\\.ips"/>
+                <data android:pathPattern=".*\\.IPS"/>
+                <data android:pathPattern=".*\\.ups"/>
+                <data android:pathPattern=".*\\.UPS"/>
+                <data android:pathPattern=".*\\.bps"/>
+                <data android:pathPattern=".*\\.BPS"/>
+                <data android:pathPattern=".*\\.aps"/>
+                <data android:pathPattern=".*\\.APS"/>
+                <data android:pathPattern=".*\\.ppf"/>
+                <data android:pathPattern=".*\\.PPF"/>
+                <data android:pathPattern=".*\\.dps"/>
+                <data android:pathPattern=".*\\.DPS"/>
+                <data android:pathPattern=".*\\.ebp"/>
+                <data android:pathPattern=".*\\.EBP"/>
+                <data android:pathPattern=".*\\.xdelta"/>
+                <data android:pathPattern=".*\\.XDELTA"/>
+                <data android:pathPattern=".*\\.xdelta3"/>
+                <data android:pathPattern=".*\\.XDELTA3"/>
+                <data android:pathPattern=".*\\.xd"/>
+                <data android:pathPattern=".*\\.XD"/>
+                <data android:pathPattern=".*\\.vcdiff"/>
+                <data android:pathPattern=".*\\.VCDIFF"/>
+            </intent-filter>
         </activity>
 
     </application>

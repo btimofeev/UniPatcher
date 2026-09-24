@@ -25,6 +25,17 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import java.io.File
+import java.util.Locale
+
+private val SUPPORTED_PATCH_EXTENSIONS = setOf(
+    "ips", "ups", "bps", "aps", "ppf", "dps", "ebp",
+    "xdelta", "xdelta3", "xd", "vcdiff",
+)
+
+fun String.isSupportedPatchFileName(): Boolean {
+    val ext = this.substringAfterLast('.', "").lowercase(Locale.getDefault())
+    return ext in SUPPORTED_PATCH_EXTENSIONS
+}
 
 fun ComponentActivity.enableEdgeToEdgeWithLightStatusBar() {
     enableEdgeToEdge(

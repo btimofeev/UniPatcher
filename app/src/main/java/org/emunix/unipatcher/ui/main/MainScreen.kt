@@ -88,6 +88,7 @@ import org.emunix.unipatcher.R
 import org.emunix.unipatcher.Settings
 import org.emunix.unipatcher.ui.help.HelpScreen
 import org.emunix.unipatcher.ui.settings.SettingsScreen
+import org.emunix.unipatcher.utils.PendingPatch
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
 import org.emunix.unipatcher.viewmodels.CreatePatchViewModel
@@ -101,6 +102,7 @@ private const val DOUBLE_BACK_EXIT_DELAY_MS = 2000L
 fun MainScreen(
     settings: Settings,
     appVersion: String,
+    pendingPatch: PendingPatch,
     onVisitSiteClick: () -> Unit,
     onChangelogClick: () -> Unit,
     onRate: () -> Unit,
@@ -133,6 +135,13 @@ fun MainScreen(
             launchSingleTop = true
         }
         scope.launch { drawerState.close() }
+    }
+
+    val pendingPatchUri by pendingPatch.patch.collectAsStateWithLifecycle()
+    LaunchedEffect(pendingPatchUri, currentRoute) {
+        if (pendingPatchUri != null && currentRoute != null && currentRoute != MainRoutes.APPLY_PATCH) {
+            navigateToAction(MainRoutes.APPLY_PATCH)
+        }
     }
 
     val navigateToSecondary: (String) -> Unit = { route ->
@@ -253,6 +262,7 @@ fun MainScreen(
                                 ApplyPatchScreen(
                                     viewModel = viewModel,
                                     actionIsRunningViewModel = actionIsRunningViewModel,
+                                    pendingPatch = pendingPatch,
                                     registerRunAction = registerRunAction,
                                     onShowHelp = { navigateToSecondary(MainRoutes.HELP) },
                                 )

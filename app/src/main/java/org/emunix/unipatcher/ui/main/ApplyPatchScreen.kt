@@ -55,6 +55,7 @@ import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.ui.components.FileSelectCard
 import org.emunix.unipatcher.ui.theme.maxContentWidth
+import org.emunix.unipatcher.utils.PendingPatch
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
 
@@ -62,6 +63,7 @@ import org.emunix.unipatcher.viewmodels.ApplyPatchViewModel
 fun ApplyPatchScreen(
     viewModel: ApplyPatchViewModel,
     actionIsRunningViewModel: ActionIsRunningViewModel,
+    pendingPatch: PendingPatch,
     registerRunAction: (String, () -> Unit) -> Unit,
     onShowHelp: () -> Unit,
     modifier: Modifier = Modifier,
@@ -90,6 +92,14 @@ fun ApplyPatchScreen(
     }
     LaunchedEffect(Unit) {
         viewModel.refreshSettings()
+    }
+
+    val pendingPatchUri by pendingPatch.patch.collectAsStateWithLifecycle()
+    LaunchedEffect(pendingPatchUri) {
+        pendingPatchUri?.let { uri ->
+            viewModel.patchSelected(uri)
+            pendingPatch.clear()
+        }
     }
 
     val patchPicker = rememberLauncherForActivityResult(
