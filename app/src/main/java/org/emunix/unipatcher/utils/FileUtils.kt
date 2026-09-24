@@ -22,6 +22,7 @@ package org.emunix.unipatcher.utils
 import android.content.Context
 import android.net.Uri
 import android.os.StatFs
+import android.text.format.Formatter
 import androidx.documentfile.provider.DocumentFile
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -44,6 +45,23 @@ class FileUtils @Inject constructor(
     fun getFreeSpace(file: File): Long {
         val stat = StatFs(file.path)
         return stat.availableBytes
+    }
+
+    fun formatSize(bytes: Long): String = Formatter.formatShortFileSize(context, bytes)
+
+    @Throws(IOException::class)
+    fun checkSpaceForPatching(romSize: Long, patchSize: Long) {
+        val neededBytes = romSize * 2 + patchSize
+        val freeBytes = getFreeSpace(getTempDir())
+        if (freeBytes < neededBytes) {
+            throw IOException(
+                resourceProvider.getString(
+                    string.notify_error_not_enough_space_details,
+                    formatSize(neededBytes),
+                    formatSize(freeBytes),
+                )
+            )
+        }
     }
 
     @Throws(IOException::class)
@@ -166,6 +184,13 @@ class FileUtils @Inject constructor(
 
     fun delete(file: File?) {
         file?.deleteRecursively()
+    }
+
+    fun delete(uri: Uri?) {
+        try {
+            if (uri != null) context.contentResolver.delete(uri, null, null)
+        } catch (_: Exception) {
+        }
     }
 
     fun getBaseName(filename: String): String = FilenameUtils.getBaseName(filename)

@@ -45,6 +45,7 @@
     <string name="notify_error">Error</string>
     <string name="notify_error_could_not_copy_file">Could not copy file</string>
     <string name="notify_error_not_enough_space">Not enough space on the disk</string>
+    <string name="notify_error_not_enough_space_details">Need about %1$s of free space, available %2$s</string>
     <string name="notify_error_not_ips_patch">Not a valid IPS patch</string>
     <string name="notify_error_not_ups_patch">Not a valid UPS patch</string>
     <string name="notify_error_not_bps_patch">Not a valid BPS patch</string>

@@ -21,6 +21,8 @@
 package org.emunix.unipatcher.viewmodels
 
 import android.net.Uri
+import android.system.ErrnoException
+import android.system.OsConstants
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -41,6 +43,7 @@ import org.emunix.unipatcher.utils.FileUtils
 import org.emunix.unipatcher.utils.isArchive
 import timber.log.Timber
 import java.io.File
+import java.io.IOException
 import javax.inject.Inject
 
 @HiltViewModel
@@ -128,10 +131,15 @@ class ApplyPatchViewModel @Inject constructor(
                     applyPatch()
                     _message.emit(resourceProvider.getString(R.string.notify_patching_complete))
                 } catch (e: Exception) {
-                    val errorMsg =
+                    val errorMsg = if (e.isNoSpaceLeft()) {
+                        "${resourceProvider.getString(R.string.notify_error)}: ${
+                            resourceProvider.getString(R.string.notify_error_not_enough_space)
+                        }"
+                    } else {
                         "${resourceProvider.getString(R.string.notify_error)}: ${
                             e.message ?: resourceProvider.getString(R.string.notify_error_unknown)
                         }"
+                    }
                     _message.emit(errorMsg)
                 } finally {
                     _actionIsRunning.value = false
@@ -169,12 +177,25 @@ class ApplyPatchViewModel @Inject constructor(
         var romFile: File? = null
         var outputFile: File? = null
         try {
+            fileUtils.checkSpaceForPatching(
+                fileUtils.getFileSize(romUri) ?: 0L,
+                fileUtils.getFileSize(patchUri) ?: 0L,
+            )
             romFile = fileUtils.copyToTempFile(romUri)
             patchFile = fileUtils.copyToTempFile(patchUri, patchName)
             outputFile = File.createTempFile("output", ".rom", fileUtils.getTempDir())
             val patcher = patcherFactory.createPatcher(patchFile, romFile, outputFile)
             patcher.apply(settings.getIgnoreChecksum())
-            fileUtils.copy(outputFile, outputUri)
+            fileUtils.delete(romFile)
+            romFile = null
+            fileUtils.delete(patchFile)
+            patchFile = null
+            try {
+                fileUtils.copy(outputFile, outputUri)
+            } catch (e: IOException) {
+                fileUtils.delete(outputUri)
+                throw e
+            }
             settings.setPatchingSuccessful(true)
         } finally {
             fileUtils.delete(outputFile)
@@ -182,4 +203,14 @@ class ApplyPatchViewModel @Inject constructor(
             fileUtils.delete(patchFile)
         }
     }
+
+    private fun Throwable.isNoSpaceLeft(): Boolean =
+        when (this) {
+            is ErrnoException -> this.errno == OsConstants.ENOSPC
+            is IOException ->
+                this.message?.contains("No space left") == true ||
+                    this.message?.contains("ENOSPC") == true ||
+                    this.cause?.isNoSpaceLeft() == true
+            else -> false
+        }
 }

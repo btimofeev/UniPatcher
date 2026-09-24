@@ -55,6 +55,14 @@ interface ResourceProvider {
      * @return The string data associated with the resource, stripped of styled text information.
      */
     fun getString(@StringRes resId: Int): String
+
+    /**
+     * Returns a localized formatted string from the application's package's default string table.
+     * @param resId – Resource id for the string
+     * @param formatArgs – Arguments that will be formatted into the string
+     * @return The string data associated with the resource, stripped of styled text information.
+     */
+    fun getString(@StringRes resId: Int, vararg formatArgs: Any): String
 }
 
 /**
@@ -78,4 +86,7 @@ class ResourceProviderImpl @Inject constructor(private val context: Context) : R
     override fun getAsset(fileName: String): InputStream = context.assets.open(fileName)
 
     override fun getString(resId: Int): String = context.getString(resId)
+
+    override fun getString(resId: Int, vararg formatArgs: Any): String =
+        context.getString(resId, *formatArgs)
 }
