@@ -20,7 +20,6 @@
 
 package org.emunix.unipatcher.utils
 
-import android.content.res.Configuration
 import android.graphics.Color
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
@@ -28,15 +27,8 @@ import androidx.activity.enableEdgeToEdge
 import java.io.File
 
 fun ComponentActivity.enableEdgeToEdgeWithLightStatusBar() {
-    val isNight =
-        (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) ==
-            Configuration.UI_MODE_NIGHT_YES
     enableEdgeToEdge(
-        statusBarStyle = if (isNight) {
-            SystemBarStyle.auto(Color.TRANSPARENT, Color.TRANSPARENT)
-        } else {
-            SystemBarStyle.light(Color.WHITE, Color.WHITE)
-        }
+        statusBarStyle = SystemBarStyle.auto(Color.TRANSPARENT, Color.TRANSPARENT),
     )
 }
 
