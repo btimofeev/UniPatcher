@@ -31,20 +31,21 @@ jobs:
           java-version: '25'
           cache: gradle
 
-      - name: Install NDK, CMake and platform
+      - name: Install cmdline-tools, NDK, CMake and platform
         run: |
           SDKROOT="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-/usr/local/lib/android/sdk}}"
-          sdkmanager() {
-            local cmd="$(command -v sdkmanager || true)"
-            if [ -n "$cmd" ]; then
-              "$cmd" "$@"
-            else
-              "$SDKROOT/cmdline-tools/latest/bin/sdkmanager" "$@"
-            fi
-          }
-          yes | sdkmanager --licenses > /dev/null 2>&1 || true
-          sdkmanager "platforms;android-36" "build-tools;36.0.0" \
-                     "ndk;29.0.14206865" "cmake;3.31.6"
+          mkdir -p "$SDKROOT/cmdline-tools/latest"
+          if [ ! -x "$SDKROOT/cmdline-tools/latest/bin/sdkmanager" ]; then
+            curl -fsSL -o /tmp/cmdtools.zip \
+              https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            unzip -q /tmp/cmdtools.zip -d /tmp/cmdtools
+            mv /tmp/cmdtools/cmdline-tools/* "$SDKROOT/cmdline-tools/latest/"
+            rm -rf /tmp/cmdtools /tmp/cmdtools.zip
+          fi
+          SDKMANAGER="$SDKROOT/cmdline-tools/latest/bin/sdkmanager"
+          yes | "$SDKMANAGER" --licenses > /dev/null 2>&1 || true
+          "$SDKMANAGER" "platforms;android-36" "build-tools;36.0.0" \
+                        "ndk;29.0.14206865" "cmake;3.31.6"
 
       - name: Cache native dependencies
         id: cache-native
