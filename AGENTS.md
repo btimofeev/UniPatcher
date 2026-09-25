@@ -66,9 +66,17 @@ https://github.com/btimofeev/UniPatcher/wiki
 
 - `Constants.kt` holds global constants; don't scatter string constants.
 - Strings go to `res/values/strings.xml` (translations elsewhere; `MissingTranslation` lint is disabled).
+- **NEVER edit translation files manually.** Only `app/src/main/res/values/strings.xml` (the English source) is edited in the repo. All `values-*/strings.xml` are owned exclusively by Weblate and must not be touched in code or commits.
 - Source files carry a GPL-3.0 license header (see `Constants.kt`).
 - Code is Kotlin-first; no Java sources remain (all patchers converted). New code must be Kotlin.
 - Tests are Kotlin and use MockK for mocking.
 - Existing code often uses functional helpers from `utils/Extensions.kt` and `utils/FileUtils.kt` — prefer those over rewriting.
 - `ui/main/MainRoutes.kt` defines navigation routes.
 - Don't reformat/rewrite files unrelated to the task; match local style.
+
+## Translations (Weblate)
+
+- Weblate owns every translated file (`values-*/strings.xml`). Never add, remove, or edit strings there manually — it causes merge conflicts/blocked Weblate merges.
+- To add a string: add the key + English text only to `res/values/strings.xml` and use it in code. Weblate picks it up on sync and translators fill the rest.
+- To remove a string: remove the key from `res/values/strings.xml` and its usages in code. The string becomes "obsolete" in Weblate and is cleaned up there (component has the "Remove obsolete strings" addon).
+- To change a string's meaning significantly: introduce a NEW key instead of reusing an existing one, so translators re-translate from scratch (changing only the English text keeps old translations flagged as outdated, not cleared).
