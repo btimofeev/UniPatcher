@@ -1,0 +1,5 @@
+- Android 16 desteği
+- 16 KB sayfa boyutuna sahip aygıtlar için destek
+- Desteklenen en düşük Android sürümü 5.0'dan 7.0'a (Nougat) yükseltildi
+- BPS yama işleme süreci yeniden yazıldı; bellek kullanımı azaldı
+- Tamilce çeviri (teşekkürler TamilNeram)
