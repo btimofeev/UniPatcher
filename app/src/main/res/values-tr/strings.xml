@@ -57,7 +57,6 @@
     <string name="notify_error_unexpected_end_of_file">Beklenmeyen dosya sonu</string>
     <string name="notify_error_unknown_patch_format">Bilinmeyen yama biçimi</string>
     <string name="create_patch_fragment_toast_source_not_selected">Kaynak dosyası seçilmedi</string>
-    <string name="notify_error_xdelta1_unsupported">XDelta1 yamalarıyla çalışamıyorum</string>
     <string name="notify_error_xdelta3_internal_error">Dahili XDelta3 hatası</string>
     <string name="notify_error_not_xdelta3_patch">Geçerli bir XDelta3 yaması değil</string>
     <string name="notify_error_not_dps_patch">Geçerli bir DPS yaması değil</string>
