@@ -46,7 +46,6 @@
     <string name="main_activity_tap_to_select_where_to_save_patch">دەستیلێبدە بۆ دیاریکردنی ئەو شوێنەی کە پاچەکەی تێدا خەزن دەکات</string>
     <string name="create_patch_fragment_toast_patch_not_selected">فایل دیارینەکرا</string>
     <string name="error_crash_send_button">ناردن</string>
-    <string name="notify_error_xdelta1_unsupported">من ناتوانم کار بە پاچەکانی XDelta3 بکەم</string>
     <string name="notify_error_unable_open_file">ناتوانێت فایل بکاتەوە</string>
     <string name="notify_error_not_ips_patch">پاچێکی IPS دروست نیە</string>
     <string name="notify_error_unknown_patch_format">جۆری پاچ نەناسراوە</string>

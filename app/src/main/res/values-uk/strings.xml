@@ -32,7 +32,6 @@
     <string name="notify_error_not_ebp_patch">Не дійсний EBP Патч</string>
     <string name="notify_error_not_dps_patch">Не дійсний DPS Патч</string>
     <string name="notify_error_not_xdelta3_patch">Не дійсний XDelta3 Патч</string>
-    <string name="notify_error_xdelta1_unsupported">Я не в змозі працювати з XDelta1 патчами</string>
     <string name="notify_error_unable_open_file">Неможливо відкрити файл</string>
     <string name="notify_error_unknown_patch_format">Невідомий формат Патчу</string>
     <string name="notify_error_unexpected_end_of_file">Несподіване закінчення файлу</string>

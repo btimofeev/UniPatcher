@@ -91,7 +91,6 @@
 \nتحذير: هذه الميزة لا تصنع نسخة إحتياطية.</string>
     <string name="notify_error_not_bps_patch">ليست رقعة BPS صالحة</string>
     <string name="notify_error_not_dps_patch">ليست رقعة DPS صالحة</string>
-    <string name="notify_error_xdelta1_unsupported">لا يمكنني أن أعمل مع رقعات XDelta1</string>
     <string name="notify_error_not_xdelta3_patch">ليست رقعة XDelta3 صالحة</string>
     <string name="notify_error_xdelta3_internal_error">خطأ XDelta3 داخلي</string>
     <string name="notify_error_unable_open_file">لا يمكن فتح الملف</string>
