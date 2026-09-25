@@ -196,4 +196,7 @@
     <string name="status_writing_result">Copying the result to its destination…</string>
     <string name="status_working">Please wait…</string>
     <string name="action_dialog_close">Close</string>
+    <string name="cancel">Cancel</string>
+    <string name="output_file_name_title">Enter file name</string>
+    <string name="output_file_name_save">Save</string>
 </resources>

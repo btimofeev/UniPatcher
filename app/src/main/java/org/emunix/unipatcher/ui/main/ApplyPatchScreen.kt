@@ -53,6 +53,7 @@ import kotlinx.coroutines.launch
 import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.ui.components.FileSelectCard
+import org.emunix.unipatcher.ui.components.rememberOutputFilePicker
 import org.emunix.unipatcher.ui.theme.maxContentWidth
 import org.emunix.unipatcher.utils.PendingPatch
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
@@ -117,13 +118,11 @@ fun ApplyPatchScreen(
         }
     }
 
-    val outputPicker = rememberLauncherForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            result.data?.data?.let { uri -> viewModel.outputSelected(uri) }
-        }
-    }
+    val outputPicker = rememberOutputFilePicker(
+        suggestedName = suggestedOutputName,
+        mimeType = MIME_TYPE_ALL_FILES,
+        onFileCreated = viewModel::outputSelected,
+    )
 
     val pickFile: ((Intent) -> Unit) -> Unit = { launch ->
         val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
@@ -132,19 +131,6 @@ fun ApplyPatchScreen(
         }
         try {
             launch(intent)
-        } catch (e: ActivityNotFoundException) {
-            Toast.makeText(context, context.getString(R.string.error_file_picker_app_is_no_installed), Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    val launchCreateDocument: () -> Unit = {
-        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-            addCategory(Intent.CATEGORY_OPENABLE)
-            type = MIME_TYPE_ALL_FILES
-            putExtra(Intent.EXTRA_TITLE, suggestedOutputName)
-        }
-        try {
-            outputPicker.launch(intent)
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(context, context.getString(R.string.error_file_picker_app_is_no_installed), Toast.LENGTH_SHORT).show()
         }
@@ -181,7 +167,7 @@ fun ApplyPatchScreen(
             FileSelectCard(
                 title = stringResource(R.string.main_activity_output_file),
                 fileName = outputName.ifEmpty { stringResource(R.string.main_activity_tap_to_select_where_to_save_rom) },
-                onClick = launchCreateDocument,
+                onClick = outputPicker,
             )
 
             if (showHelpButton) {

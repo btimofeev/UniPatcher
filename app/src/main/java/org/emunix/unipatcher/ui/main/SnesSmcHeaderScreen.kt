@@ -50,6 +50,7 @@ import org.emunix.unipatcher.MIME_TYPE_OCTET_STREAM
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.ui.components.FileSelectCard
 import org.emunix.unipatcher.ui.components.InfoCard
+import org.emunix.unipatcher.ui.components.rememberOutputFilePicker
 import org.emunix.unipatcher.ui.theme.maxContentWidth
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.SnesSmcHeaderViewModel
@@ -97,13 +98,11 @@ fun SnesSmcHeaderScreen(
         }
     }
 
-    val outputPicker = rememberLauncherForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            result.data?.data?.let { uri -> viewModel.outputSelected(uri) }
-        }
-    }
+    val outputPicker = rememberOutputFilePicker(
+        suggestedName = suggestedOutputName,
+        mimeType = MIME_TYPE_OCTET_STREAM,
+        onFileCreated = viewModel::outputSelected,
+    )
 
     val headerPicker = rememberLauncherForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -113,13 +112,11 @@ fun SnesSmcHeaderScreen(
         }
     }
 
-    val headerOutputPicker = rememberLauncherForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            result.data?.data?.let { uri -> viewModel.headerOutputSelected(uri) }
-        }
-    }
+    val headerOutputPicker = rememberOutputFilePicker(
+        suggestedName = suggestedHeaderOutputName,
+        mimeType = MIME_TYPE_OCTET_STREAM,
+        onFileCreated = viewModel::headerOutputSelected,
+    )
 
     val selectRom: () -> Unit = {
         val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
@@ -133,18 +130,7 @@ fun SnesSmcHeaderScreen(
         }
     }
 
-    val selectOutput: () -> Unit = {
-        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-            addCategory(Intent.CATEGORY_OPENABLE)
-            type = MIME_TYPE_OCTET_STREAM
-            putExtra(Intent.EXTRA_TITLE, suggestedOutputName)
-        }
-        try {
-            outputPicker.launch(intent)
-        } catch (e: ActivityNotFoundException) {
-            Toast.makeText(context, context.getString(R.string.error_file_picker_app_is_no_installed), Toast.LENGTH_SHORT).show()
-        }
-    }
+    val selectOutput: () -> Unit = outputPicker
 
     val selectHeader: () -> Unit = {
         val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
@@ -158,18 +144,7 @@ fun SnesSmcHeaderScreen(
         }
     }
 
-    val selectHeaderOutput: () -> Unit = {
-        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-            addCategory(Intent.CATEGORY_OPENABLE)
-            type = MIME_TYPE_OCTET_STREAM
-            putExtra(Intent.EXTRA_TITLE, suggestedHeaderOutputName)
-        }
-        try {
-            headerOutputPicker.launch(intent)
-        } catch (e: ActivityNotFoundException) {
-            Toast.makeText(context, context.getString(R.string.error_file_picker_app_is_no_installed), Toast.LENGTH_SHORT).show()
-        }
-    }
+    val selectHeaderOutput: () -> Unit = headerOutputPicker
 
     Box(
         modifier = modifier

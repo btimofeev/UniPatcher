@@ -49,6 +49,7 @@ import org.emunix.unipatcher.MIME_TYPE_ALL_FILES
 import org.emunix.unipatcher.MIME_TYPE_OCTET_STREAM
 import org.emunix.unipatcher.R
 import org.emunix.unipatcher.ui.components.FileSelectCard
+import org.emunix.unipatcher.ui.components.rememberOutputFilePicker
 import org.emunix.unipatcher.ui.theme.maxContentWidth
 import org.emunix.unipatcher.viewmodels.ActionIsRunningViewModel
 import org.emunix.unipatcher.viewmodels.CreatePatchViewModel
@@ -97,13 +98,11 @@ fun CreatePatchScreen(
         }
     }
 
-    val patchPicker = rememberLauncherForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            result.data?.data?.let { uri -> viewModel.patchSelected(uri) }
-        }
-    }
+    val patchPicker = rememberOutputFilePicker(
+        suggestedName = "patch.xdelta",
+        mimeType = MIME_TYPE_OCTET_STREAM,
+        onFileCreated = viewModel::patchSelected,
+    )
 
     val pickFile: ((Intent) -> Unit) -> Unit = { launch ->
         val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
@@ -112,19 +111,6 @@ fun CreatePatchScreen(
         }
         try {
             launch(intent)
-        } catch (e: ActivityNotFoundException) {
-            Toast.makeText(context, context.getString(R.string.error_file_picker_app_is_no_installed), Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    val launchCreateDocument: () -> Unit = {
-        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-            addCategory(Intent.CATEGORY_OPENABLE)
-            type = MIME_TYPE_OCTET_STREAM
-            putExtra(Intent.EXTRA_TITLE, "patch.xdelta")
-        }
-        try {
-            patchPicker.launch(intent)
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(context, context.getString(R.string.error_file_picker_app_is_no_installed), Toast.LENGTH_SHORT).show()
         }
@@ -161,7 +147,7 @@ fun CreatePatchScreen(
             FileSelectCard(
                 title = stringResource(R.string.create_patch_fragment_patch_file),
                 fileName = patchName.ifEmpty { stringResource(R.string.main_activity_tap_to_select_where_to_save_patch) },
-                onClick = launchCreateDocument,
+                onClick = patchPicker,
             )
         }
     }
