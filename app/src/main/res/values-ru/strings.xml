@@ -180,4 +180,17 @@
     <string name="status_writing_result">Копирование результата в место назначения…</string>
     <string name="status_working">Пожалуйста, подождите…</string>
     <string name="action_dialog_close">Закрыть</string>
+    <string name="main_activity_rom_without_smc_header">ROM файл без SMC заголовка</string>
+    <string name="main_activity_rom_with_header_output">Измененный ROM файл с SMC заголовком</string>
+    <string name="main_activity_header_file">Файл заголовка</string>
+    <string name="main_activity_tap_to_select_optional">нажмите, чтобы выбрать (необязательно)</string>
+    <string name="snes_smc_header_help">Эта функция создана только для игр Super Nintendo.\n\nЕсли ROM содержит SMC заголовок, то он будет удален. Иначе будет добавлен.</string>
+    <string name="snes_smc_header_will_be_added">Этот ROM не имеет SMC заголовка. Он будет добавлен. Вы можете выбрать свой файл заголовка вместо дефолтного.</string>
+    <string name="snes_rom_has_smc_header">Этот ROM уже имеет SMC заголовок.</string>
+    <string name="snes_smc_header_save_title">Сохранить SMC заголовок в файл</string>
+    <string name="notify_error_not_enough_space_details">Нужно примерно %1$s свободного места, доступно %2$s</string>
+    <string name="notify_snes_add_smc_header_complete">SMC заголовок добавлен</string>
+    <string name="nav_snes_add_del_smc_header">Доб/Удал SMC заголовок (SNES)</string>
+    <string name="help_snes_smc_title">Зачем может понадобиться добавлять или удалять заголовки SMC для игр Super Nintendo?</string>
+    <string name="help_snes_smc_body">"Заголовок SMC — это 512 байт в начале некоторых образов ПЗУ для SNES.  Эти байты не несут никакой смысловой нагрузки, но они изменяют расположение остальных данных. \n\nУдаление заголовка иногда нужно для корректного применения патчей. Но, если патч создан для ROM с заголовком, а у вас ROM без него, то вы можете добавить заголовок: пустой, либо тот который удаляли ранее."</string>
 </resources>
