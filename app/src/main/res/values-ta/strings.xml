@@ -63,7 +63,6 @@
     <string name="notify_error_not_xdelta3_patch">செல்லுபடியாகும் எக்ச்டெல்டா 3 ஒட்டு அல்ல</string>
     <string name="notify_error_not_aps_patch">செல்லுபடியாகும் APS இணைப்பு அல்ல</string>
     <string name="notify_error_xdelta3_internal_error">Xdelta3 உள் பிழை</string>
-    <string name="notify_error_xdelta1_unsupported">எக்ச்டெல்டா 1 திட்டுகளுடன் என்னால் வேலை செய்ய முடியவில்லை</string>
     <string name="notify_error_unable_open_file">கோப்பைத் திறக்க முடியவில்லை</string>
     <string name="notify_error_unable_open_source_file">மூல கோப்பைத் திறக்க முடியவில்லை</string>
     <string name="notify_error_unable_open_modified_file">மாற்றியமைக்கப்பட்ட கோப்பைத் திறக்க முடியவில்லை</string>

@@ -44,7 +44,6 @@
     <string name="notify_error_unable_open_modified_file">Neeblas malfermi modifitan dosieron</string>
     <string name="notify_error_unable_open_source_file">Neeblas malfermi fontan dosieron</string>
     <string name="notify_error_unable_open_file">Neeblas malfermi dosieron</string>
-    <string name="notify_error_xdelta1_unsupported">Mi ne povas labori kun flikaĵoj de XDelta1</string>
     <string name="notify_error_xdelta3_internal_error">Interna eraro de XDelta3</string>
     <string name="notify_error_not_xdelta3_patch">Nevalida flikaĵo de XDelta3</string>
     <string name="notify_error_not_dps_patch">Nevalida flikaĵo de DPS</string>

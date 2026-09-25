@@ -51,7 +51,6 @@
     <string name="notify_error_not_dps_patch">Некорректный DPS патч</string>
     <string name="notify_error_not_xdelta3_patch">Некорректный XDelta3 патч</string>
     <string name="notify_error_xdelta3_internal_error">внутренняя ошибка XDelta3</string>
-    <string name="notify_error_xdelta1_unsupported">Не умею работать с XDelta1 патчами</string>
     <string name="notify_error_unable_open_file">Не удалось открыть файл</string>
     <string name="notify_error_unable_open_source_file">Не удалось открыть исходный файл</string>
     <string name="notify_error_unable_open_modified_file">Не удалось открыть изменённый файл</string>

@@ -149,7 +149,6 @@
     <string name="notify_error_unable_open_source_file">Tidak dapat membuka file sumber</string>
     <string name="notify_error_unable_open_file">Tidak dapat membuka file</string>
     <string name="notify_error_xdelta3_internal_error">Kesalahan internal XDelta3</string>
-    <string name="notify_error_xdelta1_unsupported">Saya tidak dapat bekerja dengan patch XDelta1</string>
     <string name="smd_fix_checksum_help">Fitur ini hanya untuk ROM SEGA Mega Drive (Sega Genesis).
 \n
 \nIni memperbaiki \"layar merah kematian\".

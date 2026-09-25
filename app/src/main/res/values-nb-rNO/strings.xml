@@ -34,7 +34,6 @@
     <string name="notify_error_not_ebp_patch">Ikke en gyldig EBP-programfiks</string>
     <string name="notify_error_not_dps_patch">Ikke en gyldig DPS-programfiks</string>
     <string name="notify_error_not_xdelta3_patch">Ikke en gyldig XDelta3-programfiks</string>
-    <string name="notify_error_xdelta1_unsupported">Jeg kan ikke lenger jobbe med XDelta1-programfikser</string>
     <string name="notify_error_unable_open_file">Kunne ikke åpne fil</string>
     <string name="notify_error_unknown_patch_format">Ukjent programfiks-format</string>
     <string name="notify_error_unexpected_end_of_file">Uventet filendelse</string>
