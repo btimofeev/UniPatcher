@@ -38,7 +38,6 @@
     <string name="notify_error_not_dps_patch">Tampalan DPS tidak sah</string>
     <string name="notify_error_not_xdelta3_patch">Tampalan XDelta3 tidak sah</string>
     <string name="notify_error_xdelta3_internal_error">Ralat dalaman XDelda3</string>
-    <string name="notify_error_xdelta1_unsupported">Saya tidak boleh mengerjakan dengan tampalan XDelta1</string>
     <string name="notify_error_unable_open_file">Tidak boleh membuka fail</string>
     <string name="notify_error_unable_open_source_file">Tidak boleh membuka fail sumber</string>
     <string name="notify_error_unable_open_patch_file">Tidak boleh membuka fail tampalan</string>

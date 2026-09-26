@@ -38,7 +38,6 @@
     <string name="notify_error_not_ebp_patch">Patch EBP inválido</string>
     <string name="notify_error_not_dps_patch">Patch DPS inválido</string>
     <string name="notify_error_not_xdelta3_patch">Patch XDelta3 inválido</string>
-    <string name="notify_error_xdelta1_unsupported">Não tenho como operar patches do tipo XDelta1</string>
     <string name="notify_error_unable_open_file">Incapaz de abrir o ficheiro</string>
     <string name="notify_error_unknown_patch_format">Formato de patch desconhecido</string>
     <string name="notify_error_unexpected_end_of_file">Final não-esperado do ficheiro</string>

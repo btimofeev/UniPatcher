@@ -38,7 +38,6 @@
     <string name="notify_error_not_ebp_patch">유효한 EBP 패치가 아님</string>
     <string name="notify_error_not_dps_patch">유효한 DPS 패치가 아님</string>
     <string name="notify_error_not_xdelta3_patch">유효한 XDelta3 패치가 아님</string>
-    <string name="notify_error_xdelta1_unsupported">XDelta1 패치로 작업할 수 없습니다</string>
     <string name="notify_error_unable_open_file">파일을 열 수 없음</string>
     <string name="notify_error_unknown_patch_format">알 수 없는 패치 형식</string>
     <string name="notify_error_unexpected_end_of_file">예기치 않은 파일의 끝</string>
