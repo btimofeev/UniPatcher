@@ -54,6 +54,7 @@ jobs:
           path: |
             app/src/main/cpp/xdelta3/xdelta
             app/src/main/cpp/xz/xz
+            app/src/main/cpp/xdelta1/xdelta1
           key: native-${{ runner.os }}-${{ hashFiles('app/build.gradle.kts') }}
 
       - name: Download native dependencies

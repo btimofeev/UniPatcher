@@ -95,7 +95,7 @@ done
 # check on the host whether :app:downloadDependencies is still needed.
 native_deps_present() {
     local c="$REPO_ROOT/app/src/main/cpp"
-    for d in xdelta3/xdelta xz/xz; do
+    for d in xdelta3/xdelta xz/xz xdelta1/xdelta1; do
         [[ -d "$c/$d" ]] || return 1
     done
     return 0

@@ -14,7 +14,7 @@ Open-source, GPL-3.0.
 - Kotlin 2.x + Jetpack Compose (Material 3), single-activity architecture, Navigation Compose
 - Hilt for DI, ViewModels + Coroutines
 - ViewBinding enabled but UI is Compose
-- Native code: C (xdelta3 + liblzma) built via CMake/ndk-build
+- Native code: C (xdelta3 + liblzma + xdelta1) built via CMake
 - minSdk 24, targetSdk 36, version 0.18
 - Test: JUnit 4 + MockK, all in Kotlin, in `app/src/test`
 
@@ -59,7 +59,7 @@ https://github.com/btimofeev/UniPatcher/wiki
   - `ui/` — Compose screens (ApplyPatch, CreatePatch, Settings, Help, SnesSmcHeader, SmdFixChecksum, MainScreen)
   - `viewmodels/` — one ViewModel per screen
   - `utils/`, `helpers/`, `di/` — utilities, helpers (ResourceProvider, ThemeHelper, SocialHelper), Hilt modules
-- `app/src/main/cpp/` — xdelta3 and xz (xz) native sources; `xdelta`/`xz` subdirs are downloaded
+- `app/src/main/cpp/` — xdelta3, xz (xz) and xdelta1 native sources; the `xdelta`/`xz`/`xdelta1` subdirs are downloaded (xdelta1 comes from https://github.com/btimofeev/xdelta1-android)
 - `app/src/free/` and `app/src/google/` — flavor-specific code (e.g. DonateScreen)
 
 ## Conventions

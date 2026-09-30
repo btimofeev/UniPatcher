@@ -41,6 +41,7 @@ build
 # Dependencies
 app/src/main/cpp/xdelta3/xdelta/
 app/src/main/cpp/xz/xz/
+app/src/main/cpp/xdelta1/xdelta1/
 
 # AppBundle
 /app/google/release/

@@ -174,12 +174,14 @@ dependencies {
 val deleteDependencies by tasks.registering(Delete::class) {
     delete("src/main/cpp/xdelta3/xdelta")
     delete("src/main/cpp/xz/xz")
+    delete("src/main/cpp/xdelta1/xdelta1")
 }
 
 tasks.register("downloadDependencies") {
     dependsOn(deleteDependencies)
     val xDelta = "3.1.0"
     val xz = "5.2.4"
+    val xdelta1 = "1.1.3-1"
     val downloadDir = layout.buildDirectory.get().asFile.path
 
     doLast {
@@ -203,5 +205,17 @@ tasks.register("downloadDependencies") {
             into("src/main/cpp/xz/")
         }
         file("src/main/cpp/xz/xz-${xz}").renameTo(file("src/main/cpp/xz/xz"))
+
+        download.run {
+            src("https://github.com/btimofeev/xdelta1-android/archive/v${xdelta1}.tar.gz")
+            dest(File(downloadDir, "xdelta1-android-${xdelta1}.tar.gz"))
+        }
+        copy {
+            from(tarTree(resources.gzip("${downloadDir}/xdelta1-android-${xdelta1}.tar.gz")))
+            into("src/main/cpp/xdelta1/")
+        }
+        file("src/main/cpp/xdelta1/xdelta1-android-${xdelta1}")
+            .renameTo(file("src/main/cpp/xdelta1/xdelta1"))
+        delete("src/main/cpp/xdelta1/pax_global_header")
     }
 }

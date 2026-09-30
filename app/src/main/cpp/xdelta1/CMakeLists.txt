@@ -1,6 +1,6 @@
 project(xdelta1)
 
-set(XDELTA1_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+set(XDELTA1_DIR ${CMAKE_CURRENT_SOURCE_DIR}/xdelta1)
 set(XD_INCLUDES
     ${XDELTA1_DIR}
     ${XDELTA1_DIR}/glib

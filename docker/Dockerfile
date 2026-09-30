@@ -47,7 +47,7 @@ ENV HOME=/home/build
 ENV GRADLE_USER_HOME=$HOME/.gradle
 RUN mkdir -p "$HOME" && chmod 0777 "$HOME"
 
-# System dependencies. The native code (xdelta3, xz) is pure C and is
+# System dependencies. The native code (xdelta3, xz, xdelta1) is pure C and is
 # cross-compiled by the NDK toolchain, so no host C compiler is needed.
 RUN apt-get update && apt-get install -y --no-install-recommends \
         ca-certificates \
