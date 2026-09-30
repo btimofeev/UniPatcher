@@ -46,6 +46,10 @@ Mounts:
 Environment:
   GRADLE_CACHE_DIR    override the host directory used for the cache above,
                       e.g.: GRADLE_CACHE_DIR=~/docker-cache ./docker/build.sh
+  UNIPATCHER_GITHUB_TOKEN
+                      GitHub credentials, forwarded into the container as both
+                      UNIPATCHER_GITHUB_TOKEN and GH_TOKEN,
+                      e.g.: UNIPATCHER_GITHUB_TOKEN=ghp_... ./docker/build.sh opencode
 EOF
 }
 
@@ -139,6 +143,20 @@ if [[ -d "$HOST_OPENCODE_CONFIG" ]]; then
     MOUNTS+=(-v "$HOST_OPENCODE_CONFIG":/home/build/.config/opencode)
 fi
 
+# Forward GitHub credentials from the host environment, so that
+# `UNIPATCHER_GITHUB_TOKEN=ghp_... ./docker/build.sh opencode` (or an exported
+# variable) gives the container an authenticated `gh`. The token arrives under
+# both names: UNIPATCHER_GITHUB_TOKEN (project-scoped, cannot collide with a
+# generic token in the container) and GH_TOKEN (what gh and git credential
+# helpers read). Nothing is forwarded when the host variable is unset. A token
+# passed this way is visible in `docker inspect`; for a long-lived setup prefer
+# dropping a hosts.yml/token into $GRADLE_CACHE/.config/gh instead, which is
+# already mounted as the container HOME.
+ENV_ARGS=()
+if [[ -n "${UNIPATCHER_GITHUB_TOKEN:-}" ]]; then
+    ENV_ARGS+=(-e UNIPATCHER_GITHUB_TOKEN -e GH_TOKEN="$UNIPATCHER_GITHUB_TOKEN")
+fi
+
 if (( REBUILD == 1 )); then
     docker build -t "$IMAGE_TAG" "$SCRIPT_DIR"
 fi
@@ -154,6 +172,7 @@ if [[ -t 0 ]]; then
 fi
 
 exec docker run --rm "${TTY_ARGS[@]}" \
+    ${ENV_ARGS[@]+"${ENV_ARGS[@]}"} \
     --user "$UID_GID" \
     "${MOUNTS[@]}" \
     -w /workspace \
