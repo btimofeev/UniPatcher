@@ -38,7 +38,6 @@
     <string name="notify_error_not_ebp_patch">No es un parche EBP válido</string>
     <string name="notify_error_not_dps_patch">No es un parche DPS válido</string>
     <string name="notify_error_not_xdelta3_patch">No es un parche XDelta3 válido</string>
-    <string name="notify_error_xdelta1_unsupported">Esta aplicación todavía no es compatible con parches XDelta1</string>
     <string name="notify_error_unable_open_file">No se pudo abrir el archivo</string>
     <string name="notify_error_unknown_patch_format">Formato de parche desconocido</string>
     <string name="notify_error_unexpected_end_of_file">Final inesperado de archivo</string>

@@ -34,7 +34,6 @@
     <string name="notify_error_not_ebp_patch">無効な EBP パッチ</string>
     <string name="notify_error_not_dps_patch">無効な DPS パッチ</string>
     <string name="notify_error_not_xdelta3_patch">無効な XDelta3 パッチ</string>
-    <string name="notify_error_xdelta1_unsupported">XDelta1 パッチを扱うことができません</string>
     <string name="notify_error_unable_open_file">ファイルを開くことができません</string>
     <string name="notify_error_unknown_patch_format">不明なパッチ形式</string>
     <string name="notify_error_unexpected_end_of_file">予期しないファイルの終了（EOF）</string>

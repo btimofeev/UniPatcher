@@ -81,7 +81,6 @@
     <string name="notify_error_patch_corrupted">Pataisos failas yra sugadintas</string>
     <string name="notify_error_unknown_patch_format">Nežinomas pataisos formatas</string>
     <string name="notify_error_unable_open_patch_file">Nepavyko atidaryti pataisos failo</string>
-    <string name="notify_error_xdelta1_unsupported">Aš negaliu dirbti su XDelta1 pataisomis</string>
     <string name="notify_error_not_xdelta3_patch">Neleistina XDelta3 pataisa</string>
     <string name="notify_error_not_dps_patch">Neleistina DPS pataisa</string>
     <string name="notify_error_not_ebp_patch">Neleistina EBP pataisa</string>

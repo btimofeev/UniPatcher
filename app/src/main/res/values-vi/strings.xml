@@ -32,7 +32,6 @@
     <string name="notify_error_not_dps_patch">Không phải là bản vá DPS hợp lệ</string>
     <string name="notify_error_not_xdelta3_patch">Không phải là bản vá XDelta3 hợp lệ</string>
     <string name="notify_error_xdelta3_internal_error">XDelta3 lỗi nội bộ</string>
-    <string name="notify_error_xdelta1_unsupported">Ứng dụng không thể hoạt động trên bản vá XDelta1</string>
     <string name="notify_error_unable_open_source_file">Không thể mở tệp tin nguồn</string>
     <string name="notify_error_unknown_patch_format">Định dạng bản vá không xác định</string>
     <string name="notify_error_unexpected_end_of_file">Kết thúc tệp tin bất ngờ</string>

@@ -41,7 +41,6 @@
     <string name="notify_error_unable_open_modified_file">Não foi possível abrir o arquivo modificado</string>
     <string name="notify_error_unable_open_source_file">Não foi possível abrir o arquivo de origem</string>
     <string name="notify_error_unable_open_file">Não foi possível abrir o arquivo</string>
-    <string name="notify_error_xdelta1_unsupported">Não consigo trabalhar com patches XDelta1</string>
     <string name="notify_error_xdelta3_internal_error">Erro interno no XDelta3</string>
     <string name="notify_error_not_xdelta3_patch">Patch XDelta3 inválido</string>
     <string name="notify_error_not_dps_patch">Patch DPS inválido</string>
