@@ -192,4 +192,7 @@
     <string name="nav_snes_add_del_smc_header">Доб/Удал SMC заголовок (SNES)</string>
     <string name="help_snes_smc_title">Зачем может понадобиться добавлять или удалять заголовки SMC для игр Super Nintendo?</string>
     <string name="help_snes_smc_body">Заголовок SMC — это 512 байт в начале некоторых образов ПЗУ для SNES. Эти байты не несут никакой смысловой нагрузки, но они изменяют расположение остальных данных. \n\nУдаление заголовка иногда нужно для корректного применения патчей. Но, если патч создан для ROM с заголовком, а у вас ROM без него, то вы можете добавить заголовок: пустой, либо тот который удаляли ранее.</string>
+    <string name="cancel">Отмена</string>
+    <string name="output_file_name_title">Введите имя файла</string>
+    <string name="output_file_name_save">Сохранить</string>
 </resources>
