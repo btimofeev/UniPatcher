@@ -186,4 +186,7 @@
     <string name="status_writing_result">Sonuç hedefine kopyalanıyor…</string>
     <string name="status_working">Lütfen bekleyin…</string>
     <string name="action_dialog_close">Kapat</string>
+    <string name="cancel">İptal</string>
+    <string name="output_file_name_title">Dosya adını yazın</string>
+    <string name="output_file_name_save">Kaydet</string>
 </resources>
