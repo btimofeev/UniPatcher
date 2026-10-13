@@ -187,4 +187,7 @@
     <string name="status_writing_result">正复制结果到其目的地…</string>
     <string name="status_working">请等待…</string>
     <string name="action_dialog_close">关闭</string>
+    <string name="cancel">取消</string>
+    <string name="output_file_name_title">输入文件名</string>
+    <string name="output_file_name_save">保存</string>
 </resources>
