@@ -30,8 +30,8 @@ android {
         minSdk = 24
         targetSdk = 36
         ndkVersion = "29.0.14206865"
-        versionCode = 180000
-        versionName = "0.18"
+        versionCode = 190000
+        versionName = "0.19"
 
         ndk {
             abiFilters.addAll(setOf("armeabi-v7a", "arm64-v8a", "x86_64"))
