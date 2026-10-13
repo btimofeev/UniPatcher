@@ -1,6 +1,7 @@
 #### 0.19 (October 13, 2026)
 - Added support for XDelta1 patches
 - Fixed applying some XDelta3 patches with DJW compression that previously failed with an error
+- Restored the ability to add SMC header to SNES ROMs
 - Updated interface design based on Material 3, added dynamic color themes
 
 #### 0.18 (September 13, 2026)
