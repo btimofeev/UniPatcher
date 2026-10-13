@@ -1,0 +1,4 @@
+- XDelta1 yamaları için destek eklendi
+- Daha önce bir hata nedeniyle başarısız olan, DJW sıkıştırmalı bazı XDelta3 yamalarının uygulanması sorunu giderildi
+- SNES ROM'larına SMC başlığı ekleme özelliği geri getirildi
+- Material 3 temel alınarak arayüz tasarımı güncellendi, değişken renk temaları eklendi
